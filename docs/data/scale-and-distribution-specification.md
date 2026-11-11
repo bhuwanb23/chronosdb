@@ -1,0 +1,35 @@
+# Phase 3D: Scale and Distribution Specification
+
+## Scale profiles
+
+| Entity | Tiny | Standard | Stress |
+|---|---:|---:|---:|
+| suppliers | 4 | 24 | 120 |
+| components | 12 | 80 | 500 |
+| products | 4 | 16 | 100 |
+| BOM versions | 6 | 32 | 240 |
+| warehouses | 2 | 3 | 12 |
+| facilities | 1 | 2 | 8 |
+| customers | 12 | 80 | 1,000 |
+| purchase orders | 30 | 600 | 12,000 |
+| production orders | 20 | 400 | 8,000 |
+| customer orders | 40 | 1,000 | 25,000 |
+
+Phase 3G generates the master subset: locations, facilities, warehouses,
+transfer lanes, suppliers, components, agreements, products, BOMs, customers,
+and SLA policies.
+
+## Time and distributions
+
+- History window: 180 days before the dataset reference timestamp.
+- Planning horizon: 30 days after the reference timestamp.
+- Reference timestamp: `2026-11-11T02:30:00Z` (08:00 IST).
+- Supplier lead times: discrete 3–14 days, weighted toward 7.
+- Component unit prices: INR 25–25,000, positive log-like buckets.
+- Product BOM size: 1–6 lines, with one mandatory bottleneck component where
+  applicable.
+- Customer priority: HIGH 20%, MEDIUM 50%, LOW 30%.
+- All distribution parameters are configuration, not hidden code constants.
+
+Stress scale is intended for performance tests; it must preserve the same
+invariants and serialization contract as standard scale.

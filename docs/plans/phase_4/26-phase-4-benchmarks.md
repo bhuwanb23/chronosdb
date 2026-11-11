@@ -1,0 +1,72 @@
+26. Phase 4 Benchmarks
+26.1 Structural integrity
+StructuralIntegrity=ValidRecordsAllRecordsStructuralIntegrity = \frac{ValidRecords}{AllRecords}StructuralIntegrity=AllRecordsValidRecords​
+
+Target:
+
+Plain Text
+100%
+26.2 Referential integrity
+ReferentialIntegrity=ValidForeignReferencesAllForeignReferencesReferentialIntegrity = \frac{ValidForeignReferences}{AllForeignReferences}ReferentialIntegrity=AllForeignReferencesValidForeignReferences​
+
+Target:
+
+Plain Text
+100%
+26.3 Inventory reconciliation
+InventoryReconciliation=ReconciledWarehouseComponentTimelinesAllWarehouseComponentTimelinesInventoryReconciliation = \frac{ReconciledWarehouseComponentTimelines} {AllWarehouseComponentTimelines}InventoryReconciliation=AllWarehouseComponentTimelinesReconciledWarehouseComponentTimelines​
+
+Target:
+
+Plain Text
+100%
+26.4 Temporal validity
+TemporalValidity=ValidTemporalRelationshipsAllCheckedTemporalRelationshipsTemporalValidity = \frac{ValidTemporalRelationships} {AllCheckedTemporalRelationships}TemporalValidity=AllCheckedTemporalRelationshipsValidTemporalRelationships​
+
+Target:
+
+Plain Text
+100%
+26.5 Ground-truth completeness
+GroundTruthCompleteness=ScenariosWithCompleteExpectedOutputsAllFrozenScenariosGroundTruthCompleteness = \frac{ScenariosWithCompleteExpectedOutputs} {AllFrozenScenarios}GroundTruthCompleteness=AllFrozenScenariosScenariosWithCompleteExpectedOutputs​
+
+Target:
+
+Plain Text
+100%
+26.6 Provenance completeness
+ProvenanceCompleteness=ExpectedKeyOutputsWithCompleteProvenanceAllExpectedKeyOutputsProvenanceCompleteness = \frac{ExpectedKeyOutputsWithCompleteProvenance} {AllExpectedKeyOutputs}ProvenanceCompleteness=AllExpectedKeyOutputsExpectedKeyOutputsWithCompleteProvenance​
+
+Target:
+
+Plain Text
+100%
+26.7 Reproducibility
+Reproducibility=MatchingDeterministicFilesAllDeterministicFilesReproducibility = \frac{MatchingDeterministicFiles} {AllDeterministicFiles}Reproducibility=AllDeterministicFilesMatchingDeterministicFiles​
+
+Target:
+
+Plain Text
+100%
+26.8 Golden-scenario agreement
+GoldenAgreement=MatchingReviewedGoldenValuesAllReviewedGoldenValuesGoldenAgreement = \frac{MatchingReviewedGoldenValues} {AllReviewedGoldenValues}GoldenAgreement=AllReviewedGoldenValuesMatchingReviewedGoldenValues​
+
+Target:
+
+Plain Text
+100%
+26.9 Evidence-metadata completeness
+EvidenceCompleteness=DocumentsWithAllRequiredMetadataAllDocumentsEvidenceCompleteness = \frac{DocumentsWithAllRequiredMetadata} {AllDocuments}EvidenceCompleteness=AllDocumentsDocumentsWithAllRequiredMetadata​
+
+Target:
+
+Plain Text
+100%
+26.10 Benchmark diversity
+
+Required:
+
+Five intervention classes represented
+At least four scenario outcome classes
+All four difficulty levels represented
+No single intervention dominates more than 50% of solvable scenarios without written justification
