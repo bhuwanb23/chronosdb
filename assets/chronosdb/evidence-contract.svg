@@ -1,0 +1,55 @@
+        <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900"
+             viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+          <title id="title">Evidence contract</title>
+          <desc id="desc">ChronosDB visual asset in the Temporal Operations design system.</desc>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#07141E"/>
+    <stop offset="0.58" stop-color="#0A1D2A"/>
+    <stop offset="1" stop-color="#102C3A"/>
+  </linearGradient>
+  <linearGradient id="cyanFlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6EF3FF" stop-opacity="0.15"/>
+    <stop offset="0.5" stop-color="#6EF3FF"/>
+    <stop offset="1" stop-color="#2DD4BF"/>
+  </linearGradient>
+  <linearGradient id="riskFlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFC857"/>
+    <stop offset="1" stop-color="#FF6B6B"/>
+  </linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#193E4D" stop-opacity="0.95"/>
+    <stop offset="1" stop-color="#0B202D" stop-opacity="0.8"/>
+  </linearGradient>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#194456" stroke-width="1" opacity="0.42"/>
+    <circle cx="0" cy="0" r="1.4" fill="#6EF3FF" opacity="0.35"/>
+  </pattern>
+  <filter id="glowCyan" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="7" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glowAmber" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="6" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.3"/>
+  </filter>
+  <marker id="arrowCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#6EF3FF"/>
+  </marker>
+  <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFC857"/>
+  </marker>
+</defs>
+
+          <rect width="1600" height="900" rx="28" fill="url(#bg)"/>
+          <rect width="1600" height="900" rx="28" fill="url(#grid)" opacity="0.42"/>
+          <circle cx="1470" cy="-20" r="260" fill="#6EF3FF" opacity="0.05"/>
+          <circle cx="-90" cy="960" r="270" fill="#2DD4BF" opacity="0.04"/>
+          <text x="76" y="78" fill="#ECF8FA" font-size="30" font-weight="700"
+                font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.3">EVIDENCE CONTRACT</text>
+          <text x="76" y="116" fill="#91B4C0" font-size="20" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0.4">NO FLOATING NUMBERS  /  NO MYSTERY SOURCES  /  NO UNVERIFIED CLAIMS</text>
+<text x="78" y="186" fill="#ECF8FA" font-size="26" font-weight="600" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">A metric is only useful when you can walk backwards from it.</text><rect x="92" y="350" width="248" height="160" rx="22" fill="url(#glass)" stroke="#FF6B6B" stroke-width="1.5" opacity="1"/><text x="116" y="388" fill="#FF6B6B" font-size="12" font-weight="700" text-anchor="start" letter-spacing="1.6" font-family="Segoe UI, Arial, sans-serif">CLAIM</text><text x="116" y="448" fill="#ECF8FA" font-size="17" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">₹18.4L revenue at risk</text><path d="M 340 430 H 378" stroke="#6EF3FF" stroke-width="3" marker-end="url(#arrowCyan)"/><rect x="392" y="350" width="248" height="160" rx="22" fill="url(#glass)" stroke="#6EF3FF" stroke-width="1.5" opacity="1"/><text x="416" y="388" fill="#6EF3FF" font-size="12" font-weight="700" text-anchor="start" letter-spacing="1.6" font-family="Segoe UI, Arial, sans-serif">RUN</text><text x="416" y="448" fill="#ECF8FA" font-size="17" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">SR-2026-0118</text><path d="M 640 430 H 678" stroke="#6EF3FF" stroke-width="3" marker-end="url(#arrowCyan)"/><rect x="692" y="350" width="248" height="160" rx="22" fill="url(#glass)" stroke="#FFC857" stroke-width="1.5" opacity="1"/><text x="716" y="388" fill="#FFC857" font-size="12" font-weight="700" text-anchor="start" letter-spacing="1.6" font-family="Segoe UI, Arial, sans-serif">RULE</text><text x="716" y="448" fill="#ECF8FA" font-size="17" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">revenue_at_risk_v3</text><path d="M 940 430 H 978" stroke="#6EF3FF" stroke-width="3" marker-end="url(#arrowCyan)"/><rect x="992" y="350" width="248" height="160" rx="22" fill="url(#glass)" stroke="#B8F16B" stroke-width="1.5" opacity="1"/><text x="1016" y="388" fill="#B8F16B" font-size="12" font-weight="700" text-anchor="start" letter-spacing="1.6" font-family="Segoe UI, Arial, sans-serif">ROWS</text><text x="1016" y="448" fill="#ECF8FA" font-size="17" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">47 Db2 records</text><path d="M 1240 430 H 1278" stroke="#6EF3FF" stroke-width="3" marker-end="url(#arrowCyan)"/><rect x="1292" y="350" width="248" height="160" rx="22" fill="url(#glass)" stroke="#6EF3FF" stroke-width="1.5" opacity="1"/><text x="1316" y="388" fill="#6EF3FF" font-size="12" font-weight="700" text-anchor="start" letter-spacing="1.6" font-family="Segoe UI, Arial, sans-serif">AUDIT</text><text x="1316" y="448" fill="#ECF8FA" font-size="17" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">verified  /  14:02</text><rect x="250" y="640" width="1100" height="100" rx="16" fill="#102B39" stroke="#194456" stroke-width="1.5" opacity="1"/><text x="286" y="681" fill="#91B4C0" font-size="11" font-weight="700" text-anchor="start" letter-spacing="1.4" font-family="Segoe UI, Arial, sans-serif">SOURCE CLASS</text><rect x="286" y="700" width="145" height="32" rx="16" fill="#6EF3FF" stroke="#6EF3FF" stroke-width="1.5" opacity="0.13"/><circle cx="302" cy="716" r="4" fill="#6EF3FF"/><text x="314" y="721" fill="#6EF3FF" font-size="12" font-weight="700" text-anchor="start" letter-spacing="0.7" font-family="Segoe UI, Arial, sans-serif">DATABASE FACT</text><rect x="470" y="700" width="150" height="32" rx="16" fill="#FFC857" stroke="#FFC857" stroke-width="1.5" opacity="0.13"/><circle cx="486" cy="716" r="4" fill="#FFC857"/><text x="498" y="721" fill="#FFC857" font-size="12" font-weight="700" text-anchor="start" letter-spacing="0.7" font-family="Segoe UI, Arial, sans-serif">DERIVED VALUE</text><rect x="660" y="700" width="160" height="32" rx="16" fill="#B8F16B" stroke="#B8F16B" stroke-width="1.5" opacity="0.13"/><circle cx="676" cy="716" r="4" fill="#B8F16B"/><text x="688" y="721" fill="#B8F16B" font-size="12" font-weight="700" text-anchor="start" letter-spacing="0.7" font-family="Segoe UI, Arial, sans-serif">RETRIEVED DOC</text><rect x="860" y="700" width="178" height="32" rx="16" fill="#FF6B6B" stroke="#FF6B6B" stroke-width="1.5" opacity="0.13"/><circle cx="876" cy="716" r="4" fill="#FF6B6B"/><text x="888" y="721" fill="#FF6B6B" font-size="12" font-weight="700" text-anchor="start" letter-spacing="0.7" font-family="Segoe UI, Arial, sans-serif">MODEL NARRATIVE</text><text x="1180" y="720" fill="#ECF8FA" font-size="14" font-weight="700" text-anchor="end" letter-spacing="1.4" font-family="Segoe UI, Arial, sans-serif">TRACEABLE</text></svg>

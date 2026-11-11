@@ -1,0 +1,55 @@
+        <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900"
+             viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+          <title id="title">Db2 as backbone</title>
+          <desc id="desc">ChronosDB visual asset in the Temporal Operations design system.</desc>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#07141E"/>
+    <stop offset="0.58" stop-color="#0A1D2A"/>
+    <stop offset="1" stop-color="#102C3A"/>
+  </linearGradient>
+  <linearGradient id="cyanFlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6EF3FF" stop-opacity="0.15"/>
+    <stop offset="0.5" stop-color="#6EF3FF"/>
+    <stop offset="1" stop-color="#2DD4BF"/>
+  </linearGradient>
+  <linearGradient id="riskFlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFC857"/>
+    <stop offset="1" stop-color="#FF6B6B"/>
+  </linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#193E4D" stop-opacity="0.95"/>
+    <stop offset="1" stop-color="#0B202D" stop-opacity="0.8"/>
+  </linearGradient>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#194456" stroke-width="1" opacity="0.42"/>
+    <circle cx="0" cy="0" r="1.4" fill="#6EF3FF" opacity="0.35"/>
+  </pattern>
+  <filter id="glowCyan" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="7" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glowAmber" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="6" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.3"/>
+  </filter>
+  <marker id="arrowCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#6EF3FF"/>
+  </marker>
+  <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFC857"/>
+  </marker>
+</defs>
+
+          <rect width="1600" height="900" rx="28" fill="url(#bg)"/>
+          <rect width="1600" height="900" rx="28" fill="url(#grid)" opacity="0.42"/>
+          <circle cx="1470" cy="-20" r="260" fill="#6EF3FF" opacity="0.05"/>
+          <circle cx="-90" cy="960" r="270" fill="#2DD4BF" opacity="0.04"/>
+          <text x="76" y="78" fill="#ECF8FA" font-size="30" font-weight="700"
+                font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.3">DB2 AS BACKBONE</text>
+          <text x="76" y="116" fill="#91B4C0" font-size="20" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0.4">ONE DATABASE  /  FIVE ROLES  /  A DECISION THAT SURVIVES RESTART</text>
+<text x="78" y="180" fill="#ECF8FA" font-size="26" font-weight="600" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">ChronosDB gives Db2 the whole memory of the decision.</text><circle cx="800" cy="510" r="270" fill="none" stroke="#194456" stroke-width="2" opacity="0.75"/><circle cx="1070" cy="510" r="11.5" fill="#194456" opacity="0.12" /><circle cx="1070" cy="510" r="5" fill="#194456" /><text x="1088" y="515" fill="#194456" font-size="13" font-weight="700" text-anchor="start" letter-spacing="1.3" font-family="Segoe UI, Arial, sans-serif">AUDIT</text><circle cx="800" cy="510" r="215" fill="none" stroke="#6EF3FF" stroke-width="2" opacity="0.75"/><circle cx="1015" cy="510" r="11.5" fill="#6EF3FF" opacity="0.12" /><circle cx="1015" cy="510" r="5" fill="#6EF3FF" /><text x="1033" y="515" fill="#6EF3FF" font-size="13" font-weight="700" text-anchor="start" letter-spacing="1.3" font-family="Segoe UI, Arial, sans-serif">EVIDENCE</text><circle cx="800" cy="510" r="160" fill="none" stroke="#FFC857" stroke-width="2" opacity="0.75"/><circle cx="960" cy="510" r="11.5" fill="#FFC857" opacity="0.12" /><circle cx="960" cy="510" r="5" fill="#FFC857" /><text x="978" y="515" fill="#FFC857" font-size="13" font-weight="700" text-anchor="start" letter-spacing="1.3" font-family="Segoe UI, Arial, sans-serif">SCENARIO</text><circle cx="800" cy="510" r="105" fill="none" stroke="#B8F16B" stroke-width="2" opacity="0.75"/><circle cx="905" cy="510" r="11.5" fill="#B8F16B" opacity="0.12" /><circle cx="905" cy="510" r="5" fill="#B8F16B" /><text x="923" y="515" fill="#B8F16B" font-size="13" font-weight="700" text-anchor="start" letter-spacing="1.3" font-family="Segoe UI, Arial, sans-serif">STATE</text><ellipse cx="800" cy="510" rx="74" ry="42" fill="#194456" stroke="#6EF3FF" stroke-width="4"/><text x="800" y="516" fill="#ECF8FA" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">IBM Db2</text><rect x="280" y="288" width="240" height="84" rx="16" fill="url(#glass)" stroke="#6EF3FF" stroke-width="1.5" opacity="1"/><text x="400" y="326" fill="#ECF8FA" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">OPERATIONAL</text><text x="400" y="348" fill="#91B4C0" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">RECORDS</text><path d="M 608.0 423.6 L 464.0 358.8" stroke="#6EF3FF" stroke-width="2" opacity="0.5"/><rect x="1070" y="288" width="240" height="84" rx="16" fill="url(#glass)" stroke="#FFC857" stroke-width="1.5" opacity="1"/><text x="1190" y="326" fill="#ECF8FA" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">HISTORICAL</text><text x="1190" y="348" fill="#91B4C0" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">STATE</text><path d="M 987.2 423.6 L 1127.6 358.8" stroke="#FFC857" stroke-width="2" opacity="0.5"/><rect x="240" y="658" width="240" height="84" rx="16" fill="url(#glass)" stroke="#B8F16B" stroke-width="1.5" opacity="1"/><text x="360" y="696" fill="#ECF8FA" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">VECTOR</text><text x="360" y="718" fill="#91B4C0" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">EVIDENCE</text><path d="M 588.8 601.2 L 430.4 669.6" stroke="#B8F16B" stroke-width="2" opacity="0.5"/><rect x="1120" y="658" width="240" height="84" rx="16" fill="url(#glass)" stroke="#FF6B6B" stroke-width="1.5" opacity="1"/><text x="1240" y="696" fill="#ECF8FA" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">DECISION</text><text x="1240" y="718" fill="#91B4C0" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">AUDIT</text><path d="M 1011.2 601.2 L 1169.6 669.6" stroke="#FF6B6B" stroke-width="2" opacity="0.5"/></svg>

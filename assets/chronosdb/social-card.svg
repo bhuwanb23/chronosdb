@@ -1,0 +1,55 @@
+        <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"
+             viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+          <title id="title">ChronosDB</title>
+          <desc id="desc">ChronosDB visual asset in the Temporal Operations design system.</desc>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#07141E"/>
+    <stop offset="0.58" stop-color="#0A1D2A"/>
+    <stop offset="1" stop-color="#102C3A"/>
+  </linearGradient>
+  <linearGradient id="cyanFlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6EF3FF" stop-opacity="0.15"/>
+    <stop offset="0.5" stop-color="#6EF3FF"/>
+    <stop offset="1" stop-color="#2DD4BF"/>
+  </linearGradient>
+  <linearGradient id="riskFlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFC857"/>
+    <stop offset="1" stop-color="#FF6B6B"/>
+  </linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#193E4D" stop-opacity="0.95"/>
+    <stop offset="1" stop-color="#0B202D" stop-opacity="0.8"/>
+  </linearGradient>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#194456" stroke-width="1" opacity="0.42"/>
+    <circle cx="0" cy="0" r="1.4" fill="#6EF3FF" opacity="0.35"/>
+  </pattern>
+  <filter id="glowCyan" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="7" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glowAmber" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="6" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.3"/>
+  </filter>
+  <marker id="arrowCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#6EF3FF"/>
+  </marker>
+  <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFC857"/>
+  </marker>
+</defs>
+
+          <rect width="1200" height="630" rx="28" fill="url(#bg)"/>
+          <rect width="1200" height="630" rx="28" fill="url(#grid)" opacity="0.42"/>
+          <circle cx="1070" cy="-20" r="260" fill="#6EF3FF" opacity="0.05"/>
+          <circle cx="-90" cy="690" r="270" fill="#2DD4BF" opacity="0.04"/>
+          <text x="76" y="78" fill="#ECF8FA" font-size="30" font-weight="700"
+                font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.3">CHRONOSDB</text>
+          <text x="76" y="116" fill="#91B4C0" font-size="20" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0.4">AUDITABLE COUNTERFACTUAL INTELLIGENCE</text>
+<text x="80" y="220" fill="#ECF8FA" font-size="64" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">The Db2</text><text x="80" y="294" fill="#6EF3FF" font-size="64" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">time machine</text><text x="80" y="364" fill="#ECF8FA" font-size="36" font-weight="600" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">for supply-chain decisions.</text><text x="84" y="468" fill="#91B4C0" font-size="15" font-weight="700" text-anchor="start" letter-spacing="2.2" font-family="Segoe UI, Arial, sans-serif">RECONSTRUCT  /  SIMULATE  /  PROVE</text><path d="M 760 140 C 920 70 1100 150 1080 300 C 1060 450 900 530 760 450 C 640 380 640 210 760 140 Z" fill="none" stroke="#6EF3FF" stroke-width="2" opacity="0.3"/><path d="M 770 145 C 940 230 980 350 1080 445" fill="none" stroke="#FFC857" stroke-width="4" opacity="0.7"/><path d="M 740 450 C 880 350 940 260 1080 180" fill="none" stroke="#6EF3FF" stroke-width="4" opacity="0.7"/><rect x="670.0" y="258" width="180" height="84" rx="16" fill="url(#glass)" stroke="#6EF3FF" stroke-width="1.5" opacity="1"/><circle cx="692.0" cy="285" r="11.5" fill="#6EF3FF" opacity="0.12" /><circle cx="692.0" cy="285" r="5" fill="#6EF3FF" /><text x="710.0" y="289" fill="#ECF8FA" font-size="16" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">Db2</text><text x="710.0" y="316" fill="#91B4C0" font-size="12" font-weight="400" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">evidence</text><rect x="940.0" y="168" width="180" height="84" rx="16" fill="url(#glass)" stroke="#FFC857" stroke-width="1.5" opacity="1"/><circle cx="962.0" cy="195" r="11.5" fill="#FFC857" opacity="0.12" /><circle cx="962.0" cy="195" r="5" fill="#FFC857" /><text x="980.0" y="199" fill="#ECF8FA" font-size="16" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">FUTURE</text><text x="980.0" y="226" fill="#91B4C0" font-size="12" font-weight="400" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">compare</text><rect x="940.0" y="398" width="180" height="84" rx="16" fill="url(#glass)" stroke="#B8F16B" stroke-width="1.5" opacity="1"/><circle cx="962.0" cy="425" r="11.5" fill="#B8F16B" opacity="0.12" /><circle cx="962.0" cy="425" r="5" fill="#B8F16B" /><text x="980.0" y="429" fill="#ECF8FA" font-size="16" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">PROOF</text><text x="980.0" y="456" fill="#91B4C0" font-size="12" font-weight="400" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">audit</text></svg>

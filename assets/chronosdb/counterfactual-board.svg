@@ -1,0 +1,55 @@
+        <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900"
+             viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+          <title id="title">Counterfactual board</title>
+          <desc id="desc">ChronosDB visual asset in the Temporal Operations design system.</desc>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#07141E"/>
+    <stop offset="0.58" stop-color="#0A1D2A"/>
+    <stop offset="1" stop-color="#102C3A"/>
+  </linearGradient>
+  <linearGradient id="cyanFlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6EF3FF" stop-opacity="0.15"/>
+    <stop offset="0.5" stop-color="#6EF3FF"/>
+    <stop offset="1" stop-color="#2DD4BF"/>
+  </linearGradient>
+  <linearGradient id="riskFlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFC857"/>
+    <stop offset="1" stop-color="#FF6B6B"/>
+  </linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#193E4D" stop-opacity="0.95"/>
+    <stop offset="1" stop-color="#0B202D" stop-opacity="0.8"/>
+  </linearGradient>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#194456" stroke-width="1" opacity="0.42"/>
+    <circle cx="0" cy="0" r="1.4" fill="#6EF3FF" opacity="0.35"/>
+  </pattern>
+  <filter id="glowCyan" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="7" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glowAmber" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="6" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.3"/>
+  </filter>
+  <marker id="arrowCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#6EF3FF"/>
+  </marker>
+  <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFC857"/>
+  </marker>
+</defs>
+
+          <rect width="1600" height="900" rx="28" fill="url(#bg)"/>
+          <rect width="1600" height="900" rx="28" fill="url(#grid)" opacity="0.42"/>
+          <circle cx="1470" cy="-20" r="260" fill="#6EF3FF" opacity="0.05"/>
+          <circle cx="-90" cy="960" r="270" fill="#2DD4BF" opacity="0.04"/>
+          <text x="76" y="78" fill="#ECF8FA" font-size="30" font-weight="700"
+                font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.3">COUNTERFACTUAL BOARD</text>
+          <text x="76" y="116" fill="#91B4C0" font-size="20" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0.4">SAME BASELINE  /  FIVE FUTURES  /  ONE FEASIBLE RECOMMENDATION</text>
+<text x="78" y="182" fill="#ECF8FA" font-size="26" font-weight="600" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">Do nothing is also a scenario. Make the trade-off visible.</text><rect x="78" y="310" width="325" height="385" rx="22" fill="url(#glass)" stroke="#194456" stroke-width="1.5" opacity="1"/><text x="100" y="355" fill="#91B4C0" font-size="11" font-weight="700" text-anchor="start" letter-spacing="1.4" font-family="Segoe UI, Arial, sans-serif">BASELINE</text><text x="100" y="412" fill="#ECF8FA" font-size="17" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">DO NOTHING</text><text x="100" y="478" fill="#91B4C0" font-size="11" font-weight="700" text-anchor="start" letter-spacing="1.2" font-family="Segoe UI, Arial, sans-serif">REVENUE AT RISK</text><text x="100" y="520" fill="#FF6B6B" font-size="30" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">₹18.4L</text><text x="100" y="570" fill="#91B4C0" font-size="11" font-weight="700" text-anchor="start" letter-spacing="1.2" font-family="Segoe UI, Arial, sans-serif">PROTECTED</text><rect x="100" y="595" width="275" height="12" rx="6" fill="#194456" stroke="#194456" stroke-width="1.5" opacity="1"/><rect x="100" y="595" width="60.5" height="12" rx="6" fill="#FF6B6B" stroke="#FF6B6B" stroke-width="1.5" opacity="1"/><text x="100" y="656" fill="#FF6B6B" font-size="15" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">3 SLA</text><rect x="443" y="310" width="325" height="385" rx="22" fill="url(#glass)" stroke="#B8F16B" stroke-width="1.5" opacity="1"/><rect x="465" y="332" width="104" height="32" rx="16" fill="#B8F16B" stroke="#B8F16B" stroke-width="1.5" opacity="0.13"/><circle cx="481" cy="348" r="4" fill="#B8F16B"/><text x="493" y="353" fill="#B8F16B" font-size="12" font-weight="700" text-anchor="start" letter-spacing="0.7" font-family="Segoe UI, Arial, sans-serif">SELECTED</text><text x="465" y="412" fill="#ECF8FA" font-size="17" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">TRANSFER STOCK</text><text x="465" y="478" fill="#91B4C0" font-size="11" font-weight="700" text-anchor="start" letter-spacing="1.2" font-family="Segoe UI, Arial, sans-serif">REVENUE AT RISK</text><text x="465" y="520" fill="#B8F16B" font-size="30" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">₹5.2L</text><text x="465" y="570" fill="#91B4C0" font-size="11" font-weight="700" text-anchor="start" letter-spacing="1.2" font-family="Segoe UI, Arial, sans-serif">PROTECTED</text><rect x="465" y="595" width="275" height="12" rx="6" fill="#194456" stroke="#194456" stroke-width="1.5" opacity="1"/><rect x="465" y="595" width="198.0" height="12" rx="6" fill="#B8F16B" stroke="#B8F16B" stroke-width="1.5" opacity="1"/><text x="465" y="656" fill="#B8F16B" font-size="15" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">1 SLA</text><rect x="808" y="310" width="325" height="385" rx="22" fill="url(#glass)" stroke="#194456" stroke-width="1.5" opacity="1"/><text x="830" y="355" fill="#91B4C0" font-size="11" font-weight="700" text-anchor="start" letter-spacing="1.4" font-family="Segoe UI, Arial, sans-serif">FEASIBLE</text><text x="830" y="412" fill="#ECF8FA" font-size="17" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">ALT SUPPLIER</text><text x="830" y="478" fill="#91B4C0" font-size="11" font-weight="700" text-anchor="start" letter-spacing="1.2" font-family="Segoe UI, Arial, sans-serif">REVENUE AT RISK</text><text x="830" y="520" fill="#6EF3FF" font-size="30" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">₹8.7L</text><text x="830" y="570" fill="#91B4C0" font-size="11" font-weight="700" text-anchor="start" letter-spacing="1.2" font-family="Segoe UI, Arial, sans-serif">PROTECTED</text><rect x="830" y="595" width="275" height="12" rx="6" fill="#194456" stroke="#194456" stroke-width="1.5" opacity="1"/><rect x="830" y="595" width="159.5" height="12" rx="6" fill="#6EF3FF" stroke="#6EF3FF" stroke-width="1.5" opacity="1"/><text x="830" y="656" fill="#6EF3FF" font-size="15" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">2 SLA</text><rect x="1173" y="310" width="325" height="385" rx="22" fill="url(#glass)" stroke="#194456" stroke-width="1.5" opacity="1"/><text x="1195" y="355" fill="#91B4C0" font-size="11" font-weight="700" text-anchor="start" letter-spacing="1.4" font-family="Segoe UI, Arial, sans-serif">FEASIBLE</text><text x="1195" y="412" fill="#ECF8FA" font-size="17" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">EXPEDITE</text><text x="1195" y="478" fill="#91B4C0" font-size="11" font-weight="700" text-anchor="start" letter-spacing="1.2" font-family="Segoe UI, Arial, sans-serif">REVENUE AT RISK</text><text x="1195" y="520" fill="#FFC857" font-size="30" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">₹11.1L</text><text x="1195" y="570" fill="#91B4C0" font-size="11" font-weight="700" text-anchor="start" letter-spacing="1.2" font-family="Segoe UI, Arial, sans-serif">PROTECTED</text><rect x="1195" y="595" width="275" height="12" rx="6" fill="#194456" stroke="#194456" stroke-width="1.5" opacity="1"/><rect x="1195" y="595" width="123.75" height="12" rx="6" fill="#FFC857" stroke="#FFC857" stroke-width="1.5" opacity="1"/><text x="1195" y="656" fill="#FFC857" font-size="15" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">2 SLA</text><text x="78" y="785" fill="#91B4C0" font-size="18" font-weight="600" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">Rank by service, cost, delay, and risk — never by an opaque model score.</text></svg>

@@ -1,0 +1,55 @@
+        <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900"
+             viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+          <title id="title">Signal grid</title>
+          <desc id="desc">ChronosDB visual asset in the Temporal Operations design system.</desc>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#07141E"/>
+    <stop offset="0.58" stop-color="#0A1D2A"/>
+    <stop offset="1" stop-color="#102C3A"/>
+  </linearGradient>
+  <linearGradient id="cyanFlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6EF3FF" stop-opacity="0.15"/>
+    <stop offset="0.5" stop-color="#6EF3FF"/>
+    <stop offset="1" stop-color="#2DD4BF"/>
+  </linearGradient>
+  <linearGradient id="riskFlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFC857"/>
+    <stop offset="1" stop-color="#FF6B6B"/>
+  </linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#193E4D" stop-opacity="0.95"/>
+    <stop offset="1" stop-color="#0B202D" stop-opacity="0.8"/>
+  </linearGradient>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#194456" stroke-width="1" opacity="0.42"/>
+    <circle cx="0" cy="0" r="1.4" fill="#6EF3FF" opacity="0.35"/>
+  </pattern>
+  <filter id="glowCyan" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="7" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glowAmber" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="6" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.3"/>
+  </filter>
+  <marker id="arrowCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#6EF3FF"/>
+  </marker>
+  <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFC857"/>
+  </marker>
+</defs>
+
+          <rect width="1600" height="900" rx="28" fill="url(#bg)"/>
+          <rect width="1600" height="900" rx="28" fill="url(#grid)" opacity="0.42"/>
+          <circle cx="1470" cy="-20" r="260" fill="#6EF3FF" opacity="0.05"/>
+          <circle cx="-90" cy="960" r="270" fill="#2DD4BF" opacity="0.04"/>
+          <text x="76" y="78" fill="#ECF8FA" font-size="30" font-weight="700"
+                font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.3">SIGNAL GRID</text>
+          <text x="76" y="116" fill="#91B4C0" font-size="20" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0.4">CHRONOSDB VISUAL LANGUAGE  /  TIME, FLOW, EVIDENCE</text>
+<text x="78" y="180" fill="#ECF8FA" font-size="26" font-weight="600" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">A visual system for decisions under pressure.</text><path d="M 130 300 V 760" stroke="#194456" stroke-width="1"/><path d="M 380 300 V 760" stroke="#194456" stroke-width="1"/><path d="M 630 300 V 760" stroke="#194456" stroke-width="1"/><path d="M 880 300 V 760" stroke="#194456" stroke-width="1"/><path d="M 1130 300 V 760" stroke="#194456" stroke-width="1"/><path d="M 1380 300 V 760" stroke="#194456" stroke-width="1"/><path d="M 130 300 H 1430" stroke="#194456" stroke-width="1"/><path d="M 130 415 H 1430" stroke="#194456" stroke-width="1"/><path d="M 130 530 H 1430" stroke="#194456" stroke-width="1"/><path d="M 130 645 H 1430" stroke="#194456" stroke-width="1"/><circle cx="220" cy="620" r="25.299999999999997" fill="#6EF3FF" opacity="0.12" filter="url(#glowCyan)"/><circle cx="220" cy="620" r="11" fill="#6EF3FF" filter="url(#glowCyan)"/><circle cx="440" cy="500" r="25.299999999999997" fill="#FFC857" opacity="0.12" /><circle cx="440" cy="500" r="11" fill="#FFC857" /><path d="M 220 620 L 440 500" stroke="#FFC857" stroke-width="3" opacity="0.72"/><circle cx="690" cy="620" r="25.299999999999997" fill="#FF6B6B" opacity="0.12" /><circle cx="690" cy="620" r="11" fill="#FF6B6B" /><path d="M 440 500 L 690 620" stroke="#FF6B6B" stroke-width="3" opacity="0.72"/><circle cx="890" cy="410" r="25.299999999999997" fill="#B8F16B" opacity="0.12" /><circle cx="890" cy="410" r="11" fill="#B8F16B" /><path d="M 690 620 L 890 410" stroke="#B8F16B" stroke-width="3" opacity="0.72"/><circle cx="1120" cy="525" r="25.299999999999997" fill="#6EF3FF" opacity="0.12" filter="url(#glowCyan)"/><circle cx="1120" cy="525" r="11" fill="#6EF3FF" filter="url(#glowCyan)"/><path d="M 890 410 L 1120 525" stroke="#6EF3FF" stroke-width="3" opacity="0.72"/><circle cx="1350" cy="355" r="25.299999999999997" fill="#FFC857" opacity="0.12" /><circle cx="1350" cy="355" r="11" fill="#FFC857" /><path d="M 1120 525 L 1350 355" stroke="#FFC857" stroke-width="3" opacity="0.72"/><rect x="180" y="300" width="390" height="110" rx="16" fill="#102B39" stroke="#6EF3FF" stroke-width="1.5" opacity="1"/><text x="210" y="340" fill="#6EF3FF" font-size="12" font-weight="700" text-anchor="start" letter-spacing="1.5" font-family="Segoe UI, Arial, sans-serif">TEMPORAL</text><text x="210" y="380" fill="#ECF8FA" font-size="22" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">Replay the state</text><rect x="610" y="680" width="390" height="110" rx="16" fill="#102B39" stroke="#FF6B6B" stroke-width="1.5" opacity="1"/><text x="640" y="720" fill="#FF6B6B" font-size="12" font-weight="700" text-anchor="start" letter-spacing="1.5" font-family="Segoe UI, Arial, sans-serif">COUNTERFACTUAL</text><text x="640" y="760" fill="#ECF8FA" font-size="22" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">Compare the futures</text><rect x="1060" y="280" width="390" height="110" rx="16" fill="#102B39" stroke="#B8F16B" stroke-width="1.5" opacity="1"/><text x="1090" y="320" fill="#B8F16B" font-size="12" font-weight="700" text-anchor="start" letter-spacing="1.5" font-family="Segoe UI, Arial, sans-serif">EVIDENCE</text><text x="1090" y="360" fill="#ECF8FA" font-size="22" font-weight="700" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">Prove the decision</text></svg>

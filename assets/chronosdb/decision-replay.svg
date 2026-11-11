@@ -1,0 +1,55 @@
+        <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900"
+             viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+          <title id="title">Decision replay</title>
+          <desc id="desc">ChronosDB visual asset in the Temporal Operations design system.</desc>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#07141E"/>
+    <stop offset="0.58" stop-color="#0A1D2A"/>
+    <stop offset="1" stop-color="#102C3A"/>
+  </linearGradient>
+  <linearGradient id="cyanFlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6EF3FF" stop-opacity="0.15"/>
+    <stop offset="0.5" stop-color="#6EF3FF"/>
+    <stop offset="1" stop-color="#2DD4BF"/>
+  </linearGradient>
+  <linearGradient id="riskFlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFC857"/>
+    <stop offset="1" stop-color="#FF6B6B"/>
+  </linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#193E4D" stop-opacity="0.95"/>
+    <stop offset="1" stop-color="#0B202D" stop-opacity="0.8"/>
+  </linearGradient>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#194456" stroke-width="1" opacity="0.42"/>
+    <circle cx="0" cy="0" r="1.4" fill="#6EF3FF" opacity="0.35"/>
+  </pattern>
+  <filter id="glowCyan" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="7" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glowAmber" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="6" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.3"/>
+  </filter>
+  <marker id="arrowCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#6EF3FF"/>
+  </marker>
+  <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFC857"/>
+  </marker>
+</defs>
+
+          <rect width="1600" height="900" rx="28" fill="url(#bg)"/>
+          <rect width="1600" height="900" rx="28" fill="url(#grid)" opacity="0.42"/>
+          <circle cx="1470" cy="-20" r="260" fill="#6EF3FF" opacity="0.05"/>
+          <circle cx="-90" cy="960" r="270" fill="#2DD4BF" opacity="0.04"/>
+          <text x="76" y="78" fill="#ECF8FA" font-size="30" font-weight="700"
+                font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.3">DECISION REPLAY</text>
+          <text x="76" y="116" fill="#91B4C0" font-size="20" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0.4">TIME IS A FIRST-CLASS INPUT  /  MOVE BACKWARD  /  SEE WHAT WAS KNOWABLE</text>
+<text x="78" y="184" fill="#ECF8FA" font-size="25" font-weight="600" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">Every recommendation has a before, a turning point, and an after.</text><rect x="120" y="300" width="1360" height="220" rx="24" fill="url(#glass)" stroke="#194456" stroke-width="1.5" opacity="1"/><path d="M 190 410 H 1400" stroke="#194456" stroke-width="4" opacity="0.42"/><circle cx="250" cy="410" r="23.0" fill="#6EF3FF" opacity="0.12" filter="url(#glowCyan)"/><circle cx="250" cy="410" r="10" fill="#6EF3FF" filter="url(#glowCyan)"/><text x="250" y="350" fill="#6EF3FF" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">08:00</text><text x="250" y="470" fill="#ECF8FA" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1.1" font-family="Segoe UI, Arial, sans-serif">BASELINE</text><text x="250" y="496" fill="#91B4C0" font-size="12" font-weight="400" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">healthy</text><circle cx="570" cy="410" r="23.0" fill="#FFC857" opacity="0.12" /><circle cx="570" cy="410" r="10" fill="#FFC857" /><text x="570" y="350" fill="#FFC857" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">10:00</text><text x="570" y="470" fill="#ECF8FA" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1.1" font-family="Segoe UI, Arial, sans-serif">DETECTED</text><text x="570" y="496" fill="#91B4C0" font-size="12" font-weight="400" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">S-104 outage</text><circle cx="890" cy="410" r="23.0" fill="#FF6B6B" opacity="0.12" /><circle cx="890" cy="410" r="10" fill="#FF6B6B" /><text x="890" y="350" fill="#FF6B6B" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">12:00</text><text x="890" y="470" fill="#ECF8FA" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1.1" font-family="Segoe UI, Arial, sans-serif">PROJECTED</text><text x="890" y="496" fill="#91B4C0" font-size="12" font-weight="400" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">cascade visible</text><circle cx="1210" cy="410" r="23.0" fill="#B8F16B" opacity="0.12" /><circle cx="1210" cy="410" r="10" fill="#B8F16B" /><text x="1210" y="350" fill="#B8F16B" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">14:00</text><text x="1210" y="470" fill="#ECF8FA" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1.1" font-family="Segoe UI, Arial, sans-serif">DECIDED</text><text x="1210" y="496" fill="#91B4C0" font-size="12" font-weight="400" text-anchor="middle" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">transfer stock</text><rect x="120" y="610" width="620" height="160" rx="16" fill="#102B39" stroke="#6EF3FF" stroke-width="1.5" opacity="1"/><rect x="150" y="638" width="108" height="32" rx="16" fill="#6EF3FF" stroke="#6EF3FF" stroke-width="1.5" opacity="0.13"/><circle cx="166" cy="654" r="4" fill="#6EF3FF"/><text x="178" y="659" fill="#6EF3FF" font-size="12" font-weight="700" text-anchor="start" letter-spacing="0.7" font-family="Segoe UI, Arial, sans-serif">AT 10:00</text><text x="150" y="708" fill="#ECF8FA" font-size="17" font-weight="600" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">The system knew the supplier was down.</text><text x="150" y="736" fill="#91B4C0" font-size="17" font-weight="400" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">It did not yet know the full cascade.</text><rect x="820" y="610" width="660" height="160" rx="16" fill="#102B39" stroke="#B8F16B" stroke-width="1.5" opacity="1"/><rect x="850" y="638" width="108" height="32" rx="16" fill="#B8F16B" stroke="#B8F16B" stroke-width="1.5" opacity="0.13"/><circle cx="866" cy="654" r="4" fill="#B8F16B"/><text x="878" y="659" fill="#B8F16B" font-size="12" font-weight="700" text-anchor="start" letter-spacing="0.7" font-family="Segoe UI, Arial, sans-serif">AT 14:00</text><text x="850" y="708" fill="#ECF8FA" font-size="17" font-weight="600" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">The evidence-backed intervention is selected.</text><text x="850" y="736" fill="#91B4C0" font-size="17" font-weight="400" text-anchor="start" letter-spacing="0" font-family="Segoe UI, Arial, sans-serif">The baseline remains untouched.</text></svg>
