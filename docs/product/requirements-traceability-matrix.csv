@@ -1,46 +1,75 @@
-requirement_id,requirement_text,priority,stakeholder,user_need_id,use_case_id,journey_stage,data_requirement,acceptance_test_id,planned_phase,status,notes
-FR-SCN-001,Create structured supplier-outage scenario,P0,Operations manager,UN-001,UC-001,Define disruption,Supplier and disruption fields,AT-001,Phase 11,Approved,Core input
-FR-SCN-002,Assign unique scenario ID,P0,Operations manager,UN-007,UC-001,Create scenario,Scenario identifier,AT-001,Phase 4,Approved,Audit identity
-FR-SCN-003,Store scenario metadata and rule version,P0,Auditor,UN-007,UC-001,Create scenario,State and rule metadata,AT-001,Phase 4,Approved,Traceability
-FR-SCN-004,Validate active supplier,P0,Procurement analyst,UN-001,UC-001,Define disruption,Supplier status,AT-002,Phase 5,Approved,Domain validation
-FR-SCN-005,Reject invalid duration,P0,Operations manager,UN-001,UC-001,Define disruption,Duration,AT-002,Phase 11,Approved,Input validation
-FR-SCN-006,Reject unsupported objective or constraint,P0,Operations manager,UN-006,UC-001,Define constraints,Objective and constraint fields,AT-002,Phase 7,Approved,Constraint validation
-FR-SCN-007,Preserve scenario input after execution,P0,Auditor,UN-007,UC-007,Create scenario,Scenario state reference,AT-010,Phase 6,Approved,Immutability
-FR-SCN-008,Duplicate scenario into a new scenario,P1,Operations manager,UN-004,UC-001,Create scenario,Scenario inputs,AT-001,Phase 11,Planned,Supporting feature
-FR-IMP-001,Identify components supplied by disrupted supplier,P0,Operations manager,UN-002,UC-002,Baseline impact,Supplier component relationship,AT-003,Phase 5,Approved,Causal traversal
-FR-IMP-002,Identify replenishments and project inventory,P0,Warehouse manager,UN-003,UC-002,Baseline impact,Inventory and purchase orders,AT-003,Phase 5,Approved,Inventory projection
-FR-IMP-003,Calculate shortage date and quantity,P0,Warehouse manager,UN-003,UC-002,Baseline impact,Inventory snapshots and consumption,AT-003,Phase 5,Approved,Deterministic output
-FR-IMP-004,Traverse bill-of-material dependencies,P0,Production planner,UN-002,UC-002,Baseline impact,BOM records,AT-003,Phase 2,Approved,Causal traversal
-FR-IMP-005,Identify production orders and delay,P0,Production planner,UN-003,UC-002,Baseline impact,Production orders and capacity,AT-003,Phase 5,Approved,Deterministic output
-FR-IMP-006,Identify customer orders and projected delivery,P0,Customer-service manager,UN-003,UC-002,Baseline impact,Customer orders and commitments,AT-003,Phase 5,Approved,Deterministic output
-FR-IMP-007,Classify projected SLA status,P0,Customer-service manager,UN-003,UC-002,Baseline impact,SLA class and promised date,AT-003,Phase 5,Approved,Service impact
-FR-IMP-008,Calculate revenue at risk by documented rule,P0,Finance manager,UN-006,UC-002,Baseline impact,Revenue and SLA policy,AT-003,Phase 5,Approved,Not confirmed loss
-FR-IMP-009,Preserve intermediate values and baseline,P0,Auditor,UN-007,UC-002,Baseline impact,Calculation trace,AT-003,Phase 5,Approved,Evidence
-FR-INT-001,Evaluate required intervention types,P0,Operations manager,UN-004,UC-003,Candidate generation,Transfer expedite supplier and production data,AT-004,Phase 7,Approved,Candidate set
-FR-INT-002,Evaluate hybrid intervention,P1,Operations manager,UN-004,UC-003,Candidate generation,Intervention combinations,AT-005,Phase 7,Planned,Supporting feature
-FR-INT-003,Preserve infeasible candidates and reasons,P0,Operations manager,UN-005,UC-003,Candidate validation,Constraint results,AT-004,Phase 7,Approved,Explainability
-FR-INT-004,Enforce hard intervention constraints,P0,Warehouse manager,UN-005,UC-003,Candidate validation,Stock approval capacity and budget,AT-004,Phase 7,Approved,Safety gate
-FR-INT-005,Calculate intervention cost,P0,Finance manager,UN-006,UC-003,Candidate validation,Cost fields,AT-005,Phase 7,Approved,Unit contract
-FR-SIM-001,Run each candidate against immutable baseline,P0,Operations manager,UN-004,UC-004,Simulation,Baseline state,AT-009,Phase 6,Approved,Isolation
-FR-SIM-002,Do not mutate baseline records,P0,Auditor,UN-007,UC-004,Simulation,Operational state,AT-009,Phase 6,Approved,Isolation
-FR-SIM-003,Assign simulation run ID and rule version,P0,Auditor,UN-007,UC-004,Simulation,Run metadata,AT-010,Phase 6,Approved,Audit identity
-FR-SIM-004,Record simulation warnings and errors,P1,Auditor,UN-007,UC-004,Simulation,Run status,AT-009,Phase 6,Planned,Failure visibility
-FR-SIM-005,Produce repeatable results,P0,Auditor,UN-007,UC-004,Simulation,State input and rule version,AT-009,Phase 6,Approved,Determinism
-FR-OPT-001,Rank only feasible candidates,P0,Operations manager,UN-004,UC-005,Recommendation,Feasibility status,AT-011,Phase 7,Approved,Hard gate
-FR-OPT-002,Rank according to selected objective,P0,Operations manager,UN-006,UC-005,Recommendation,Objective and candidate metrics,AT-005,Phase 7,Approved,Selection
-FR-OPT-003,Expose objective weights and constraints,P0,Auditor,UN-007,UC-005,Recommendation,Optimization settings,AT-005,Phase 7,Approved,Transparency
-FR-OPT-004,Identify ties,P1,Operations manager,UN-004,UC-005,Recommendation,Candidate scores,AT-005,Phase 7,Planned,Decision rule
-FR-OPT-005,Return no feasible intervention,P0,Operations manager,UN-005,UC-005,Recommendation,Feasibility results,AT-011,Phase 7,Approved,Explicit state
-FR-OPT-006,Explain selected intervention and trade-off,P0,Operations manager,UN-008,UC-005,Recommendation,Selection trace,AT-005,Phase 9,Approved,Human review
-FR-EVD-001,Link numerical claims to run,P0,Auditor,UN-007,UC-006,Evidence,Scenario and simulation IDs,AT-008,Phase 8,Approved,Claim chain
-FR-EVD-002,Identify source records and rule version,P0,Auditor,UN-007,UC-006,Evidence,Source record identifiers,AT-003,Phase 8,Approved,Claim chain
-FR-EVD-003,Retain document source version and chunk,P1,Auditor,UN-007,UC-006,Evidence,Document metadata,AT-010,Phase 8,Planned,Retrieval evidence
-FR-EVD-004,Distinguish facts derived values and documents,P0,Auditor,UN-007,UC-006,Evidence,Evidence classification,AT-008,Phase 8,Approved,Authority
-FR-EVD-005,Report unavailable evidence without fabrication,P0,Auditor,UN-007,UC-006,Evidence,Evidence status,AT-012,Phase 8,Approved,Failure behavior
-FR-EXP-001,Explain baseline recommendation trade-offs and risks,P0,Operations manager,UN-008,UC-005,Review recommendation,Verified result fields,AT-005,Phase 9,Approved,Explanation
-FR-EXP-002,Verify generated numerical statements,P1,Auditor,UN-007,UC-006,Evidence,Structured result fields,AT-008,Phase 9,Planned,AI control
-FR-EXP-003,Provide deterministic summary without LLM,P0,Operations manager,UN-010,UC-009,Review recommendation,Verified result fields,AT-007,Phase 9,Approved,Fallback
-FR-AUD-001,Record scenario simulation feasibility recommendation and verification,P0,Auditor,UN-007,UC-007,Audit,Audit event fields,AT-010,Phase 10,Approved,Audit trail
-FR-AUD-002,Preserve decision history,P0,Auditor,UN-009,UC-007,Replay,Audit records,AT-010,Phase 10,Approved,History
-FR-AUD-003,Replay completed decision without mutation,P1,Auditor,UN-009,UC-007,Replay,Stored result and evidence,AT-010,Phase 10,Planned,Replay
-FR-AUD-004,Prevent normal role audit mutation,P0,Auditor,UN-007,UC-007,Audit,Db2 permissions,AT-010,Phase 10,Approved,Security
+requirement_id,requirement_text,priority,stakeholder,user_need_id,use_case_id,journey_stage,data_requirement,acceptance_test_id,rubric_category,planned_phase,status,notes
+FR-AUD-001,Record scenario simulation feasibility recommendation and verification,P0,Auditor,UN-007,UC-007,Audit,Audit event fields,AT-010,IBM Db2 integration and depth,Phase 10,Approved,Audit trail
+FR-AUD-002,Preserve decision history,P0,Auditor,UN-009,UC-007,Replay,Audit records,AT-010,IBM Db2 integration and depth,Phase 10,Approved,History
+FR-AUD-003,Replay completed decision without mutation,P1,Auditor,UN-009,UC-007,Replay,Stored result and evidence,AT-010,IBM Db2 integration and depth,Phase 10,Planned,Replay
+FR-AUD-004,Prevent normal role audit mutation,P0,Auditor,UN-007,UC-007,Audit,Db2 permissions,AT-010,IBM Db2 integration and depth,Phase 10,Approved,Security
+FR-AUD-005,Record model calls,P0,Auditor,UN-007,UC-007,Audit,Audit event fields,AT-010,IBM Db2 integration and depth,Phase 10,Approved,Audit trail
+FR-AUD-006,Record verification results,P0,Auditor,UN-007,UC-007,Audit,Audit event fields,AT-010,IBM Db2 integration and depth,Phase 10,Approved,Audit trail
+FR-AUD-007,Allow replay of completed decision,P1,Auditor,UN-009,UC-007,Replay,Stored result and evidence,AT-010,IBM Db2 integration and depth,Phase 10,Planned,Replay
+FR-AUD-008,Prevent normal role audit mutation,P0,Auditor,UN-007,UC-007,Audit,Db2 permissions,AT-010,IBM Db2 integration and depth,Phase 10,Approved,Security
+FR-EVD-001,Link numerical claims to run,P0,Auditor,UN-007,UC-006,Evidence,Scenario and simulation IDs,AT-008,IBM Db2 integration and depth,Phase 8,Approved,Claim chain
+FR-EVD-002,Identify source records and rule version,P0,Auditor,UN-007,UC-006,Evidence,Source record identifiers,AT-003,IBM Db2 integration and depth,Phase 8,Approved,Claim chain
+FR-EVD-003,Retain document source version and chunk,P1,Auditor,UN-007,UC-006,Evidence,Document metadata,AT-010,IBM Db2 integration and depth,Phase 8,Planned,Retrieval evidence
+FR-EVD-004,Distinguish facts derived values and documents,P0,Auditor,UN-007,UC-006,Evidence,Evidence classification,AT-008,IBM Db2 integration and depth,Phase 8,Approved,Authority
+FR-EVD-005,Report unavailable evidence without fabrication,P0,Auditor,UN-007,UC-006,Evidence,Evidence status,AT-012,IBM Db2 integration and depth,Phase 8,Approved,Failure behavior
+FR-EVD-006,Preserve document version and chunk identity,P1,Auditor,UN-007,UC-006,Evidence,Document metadata,AT-010,IBM Db2 integration and depth,Phase 8,Planned,Retrieval evidence
+FR-EVD-007,Distinguish database facts from retrieved documents,P0,Auditor,UN-007,UC-006,Evidence,Evidence classification,AT-008,IBM Db2 integration and depth,Phase 8,Approved,Authority
+FR-EVD-008,Indicate unavailable evidence,P0,Auditor,UN-007,UC-006,Evidence,Evidence status,AT-012,IBM Db2 integration and depth,Phase 8,Approved,Failure behavior
+FR-EVD-009,Do not fabricate evidence links,P0,Auditor,UN-007,UC-006,Evidence,Evidence status,AT-012,IBM Db2 integration and depth,Phase 8,Approved,Failure behavior
+FR-EXP-001,Explain baseline recommendation trade-offs and risks,P0,Operations manager,UN-008,UC-005,Review recommendation,Verified result fields,AT-005,Technical architecture and AI integration,Phase 9,Approved,Explanation
+FR-EXP-002,Verify generated numerical statements,P1,Auditor,UN-007,UC-006,Evidence,Structured result fields,AT-008,Technical architecture and AI integration,Phase 9,Planned,AI control
+FR-EXP-003,Provide deterministic summary without LLM,P0,Operations manager,UN-010,UC-009,Review recommendation,Verified result fields,AT-007,Technical architecture and AI integration,Phase 9,Approved,Fallback
+FR-EXP-004,Expose remaining risks,P0,Operations manager,UN-008,UC-005,Review recommendation,Verified result fields,AT-005,Technical architecture and AI integration,Phase 9,Approved,Explanation
+FR-EXP-005,Verify generated numerical statements,P1,Auditor,UN-007,UC-006,Evidence,Structured result fields,AT-008,Technical architecture and AI integration,Phase 9,Planned,AI control
+FR-EXP-006,Remove or reject unsupported numerical statements,P1,Auditor,UN-007,UC-006,Evidence,Structured result fields,AT-008,Technical architecture and AI integration,Phase 9,Planned,AI control
+FR-EXP-007,Provide deterministic summary without LLM,P0,Operations manager,UN-010,UC-009,Review recommendation,Verified result fields,AT-007,Technical architecture and AI integration,Phase 9,Approved,Fallback
+FR-IMP-001,Identify components supplied by disrupted supplier,P0,Operations manager,UN-002,UC-002,Baseline impact,Supplier component relationship,AT-003,Innovation and real-world impact,Phase 5,Approved,Causal traversal
+FR-IMP-002,Identify replenishments and project inventory,P0,Warehouse manager,UN-003,UC-002,Baseline impact,Inventory and purchase orders,AT-003,Innovation and real-world impact,Phase 5,Approved,Inventory projection
+FR-IMP-003,Calculate shortage date and quantity,P0,Warehouse manager,UN-003,UC-002,Baseline impact,Inventory snapshots and consumption,AT-003,Innovation and real-world impact,Phase 5,Approved,Deterministic output
+FR-IMP-004,Traverse bill-of-material dependencies,P0,Production planner,UN-002,UC-002,Baseline impact,BOM records,AT-003,Innovation and real-world impact,Phase 2,Approved,Causal traversal
+FR-IMP-005,Identify production orders and delay,P0,Production planner,UN-003,UC-002,Baseline impact,Production orders and capacity,AT-003,Innovation and real-world impact,Phase 5,Approved,Deterministic output
+FR-IMP-006,Identify customer orders and projected delivery,P0,Customer-service manager,UN-003,UC-002,Baseline impact,Customer orders and commitments,AT-003,Innovation and real-world impact,Phase 5,Approved,Deterministic output
+FR-IMP-007,Classify projected SLA status,P0,Customer-service manager,UN-003,UC-002,Baseline impact,SLA class and promised date,AT-003,Innovation and real-world impact,Phase 5,Approved,Service impact
+FR-IMP-008,Calculate revenue at risk by documented rule,P0,Finance manager,UN-006,UC-002,Baseline impact,Revenue and SLA policy,AT-003,Innovation and real-world impact,Phase 5,Approved,Not confirmed loss
+FR-IMP-009,Preserve intermediate values and baseline,P0,Auditor,UN-007,UC-002,Baseline impact,Calculation trace,AT-003,Innovation and real-world impact,Phase 5,Approved,Evidence
+FR-IMP-010,Calculate projected customer delivery dates,P0,Customer-service manager,UN-003,UC-002,Baseline impact,Customer orders and commitments,AT-003,Innovation and real-world impact,Phase 5,Approved,Deterministic output
+FR-IMP-011,Classify projected SLA status,P0,Customer-service manager,UN-003,UC-002,Baseline impact,SLA class and promised date,AT-003,Innovation and real-world impact,Phase 5,Approved,Service impact
+FR-IMP-012,Calculate revenue at risk by documented rule,P0,Finance manager,UN-006,UC-002,Baseline impact,Revenue and SLA policy,AT-003,Innovation and real-world impact,Phase 5,Approved,Not confirmed loss
+FR-IMP-013,Preserve intermediate calculation values,P0,Auditor,UN-007,UC-002,Baseline impact,Calculation trace,AT-003,Innovation and real-world impact,Phase 5,Approved,Evidence
+FR-IMP-014,Produce do-nothing baseline,P0,Operations manager,UN-001,UC-002,Baseline impact,Scenario state,AT-003,Innovation and real-world impact,Phase 5,Approved,Baseline
+FR-INT-001,Evaluate required intervention types,P0,Operations manager,UN-004,UC-003,Candidate generation,Transfer expedite supplier and production data,AT-004,Innovation and real-world impact,Phase 7,Approved,Candidate set
+FR-INT-002,Evaluate hybrid intervention,P1,Operations manager,UN-004,UC-003,Candidate generation,Intervention combinations,AT-005,Innovation and real-world impact,Phase 7,Planned,Supporting feature
+FR-INT-003,Preserve infeasible candidates and reasons,P0,Operations manager,UN-005,UC-003,Candidate validation,Constraint results,AT-004,Innovation and real-world impact,Phase 7,Approved,Explainability
+FR-INT-004,Enforce hard intervention constraints,P0,Warehouse manager,UN-005,UC-003,Candidate validation,Stock approval capacity and budget,AT-004,Innovation and real-world impact,Phase 7,Approved,Safety gate
+FR-INT-005,Calculate intervention cost,P0,Finance manager,UN-006,UC-003,Candidate validation,Cost fields,AT-005,Innovation and real-world impact,Phase 7,Approved,Unit contract
+FR-INT-006,Evaluate hybrid intervention,P1,Operations manager,UN-004,UC-003,Candidate generation,Intervention combinations,AT-005,Innovation and real-world impact,Phase 7,Planned,Supporting feature
+FR-INT-007,Preserve infeasible candidates and rejection reasons,P0,Operations manager,UN-005,UC-003,Candidate validation,Constraint results,AT-004,Innovation and real-world impact,Phase 7,Approved,Explainability
+FR-INT-008,Detect safety-stock violations,P0,Warehouse manager,UN-005,UC-003,Candidate validation,Stock thresholds,AT-004,Innovation and real-world impact,Phase 7,Approved,Safety gate
+FR-INT-009,Detect budget violations,P0,Finance manager,UN-006,UC-003,Candidate validation,Cost fields,AT-005,Innovation and real-world impact,Phase 7,Approved,Budget gate
+FR-INT-010,Reject unapproved supplier substitution,P0,Procurement analyst,UN-005,UC-003,Candidate validation,Supplier approval,AT-006,Innovation and real-world impact,Phase 7,Approved,Approval gate
+FR-INT-011,Calculate intervention cost,P0,Finance manager,UN-006,UC-003,Candidate validation,Cost components,AT-005,Innovation and real-world impact,Phase 7,Approved,Unit contract
+FR-OPT-001,Rank only feasible candidates,P0,Operations manager,UN-004,UC-005,Recommendation,Feasibility status,AT-011,Innovation and real-world impact,Phase 7,Approved,Hard gate
+FR-OPT-002,Rank according to selected objective,P0,Operations manager,UN-006,UC-005,Recommendation,Objective and candidate metrics,AT-005,Innovation and real-world impact,Phase 7,Approved,Selection
+FR-OPT-003,Expose objective weights and constraints,P0,Auditor,UN-007,UC-005,Recommendation,Optimization settings,AT-005,Innovation and real-world impact,Phase 7,Approved,Transparency
+FR-OPT-004,Identify ties,P1,Operations manager,UN-004,UC-005,Recommendation,Candidate scores,AT-005,Innovation and real-world impact,Phase 7,Planned,Decision rule
+FR-OPT-005,Return no feasible intervention,P0,Operations manager,UN-005,UC-005,Recommendation,Feasibility results,AT-011,Innovation and real-world impact,Phase 7,Approved,Explicit state
+FR-OPT-006,Explain selected intervention and trade-off,P0,Operations manager,UN-008,UC-005,Recommendation,Selection trace,AT-005,Innovation and real-world impact,Phase 9,Approved,Human review
+FR-OPT-007,Provide reason for selected intervention,P0,Operations manager,UN-008,UC-005,Recommendation,Selection trace,AT-005,Innovation and real-world impact,Phase 7,Approved,Human review
+FR-OPT-008,Expose Pareto-efficient candidates,P1,Operations manager,UN-004,UC-005,Recommendation,Candidate scores,AT-005,Innovation and real-world impact,Phase 7,Planned,Supporting feature
+FR-SCN-001,Create structured supplier-outage scenario,P0,Operations manager,UN-001,UC-001,Define disruption,Supplier and disruption fields,AT-001,Technical architecture and AI integration,Phase 11,Approved,Core input
+FR-SCN-002,Assign unique scenario ID,P0,Operations manager,UN-007,UC-001,Create scenario,Scenario identifier,AT-001,Technical architecture and AI integration,Phase 4,Approved,Audit identity
+FR-SCN-003,Store scenario metadata and rule version,P0,Auditor,UN-007,UC-001,Create scenario,State and rule metadata,AT-001,Technical architecture and AI integration,Phase 4,Approved,Traceability
+FR-SCN-004,Validate active supplier,P0,Procurement analyst,UN-001,UC-001,Define disruption,Supplier status,AT-002,Technical architecture and AI integration,Phase 5,Approved,Domain validation
+FR-SCN-005,Reject invalid duration,P0,Operations manager,UN-001,UC-001,Define disruption,Duration,AT-002,Technical architecture and AI integration,Phase 11,Approved,Input validation
+FR-SCN-006,Reject unsupported objective or constraint,P0,Operations manager,UN-006,UC-001,Define constraints,Objective and constraint fields,AT-002,Technical architecture and AI integration,Phase 7,Approved,Constraint validation
+FR-SCN-007,Preserve scenario input after execution,P0,Auditor,UN-007,UC-007,Create scenario,Scenario state reference,AT-010,Technical architecture and AI integration,Phase 6,Approved,Immutability
+FR-SCN-008,Duplicate scenario into a new scenario,P1,Operations manager,UN-004,UC-001,Create scenario,Scenario inputs,AT-001,Technical architecture and AI integration,Phase 11,Planned,Supporting feature
+FR-SCN-009,Preserve scenario input after execution begins,P0,Auditor,UN-007,UC-001,Create scenario,Scenario state reference,AT-010,Technical architecture and AI integration,Phase 6,Approved,Immutability
+FR-SCN-010,Permit scenario duplication,P1,Operations manager,UN-004,UC-001,Create scenario,Scenario inputs,AT-001,Technical architecture and AI integration,Phase 11,Planned,Supporting feature
+FR-SIM-001,Run each candidate against immutable baseline,P0,Operations manager,UN-004,UC-004,Simulation,Baseline state,AT-009,Reproducibility and code quality,Phase 6,Approved,Isolation
+FR-SIM-002,Do not mutate baseline records,P0,Auditor,UN-007,UC-004,Simulation,Operational state,AT-009,Reproducibility and code quality,Phase 6,Approved,Isolation
+FR-SIM-003,Assign simulation run ID and rule version,P0,Auditor,UN-007,UC-004,Simulation,Run metadata,AT-010,Reproducibility and code quality,Phase 6,Approved,Audit identity
+FR-SIM-004,Record simulation warnings and errors,P1,Auditor,UN-007,UC-004,Simulation,Run status,AT-009,Reproducibility and code quality,Phase 6,Planned,Failure visibility
+FR-SIM-005,Produce repeatable results,P0,Auditor,UN-007,UC-004,Simulation,State input and rule version,AT-009,Reproducibility and code quality,Phase 6,Approved,Determinism
+FR-SIM-006,Produce identical results for same input and rule version,P0,Auditor,UN-007,UC-004,Simulation,State input and rule version,AT-009,Reproducibility and code quality,Phase 6,Approved,Determinism
+FR-SIM-007,Prevent scenario contamination,P0,Auditor,UN-007,UC-004,Simulation,Scenario isolation,AT-009,Reproducibility and code quality,Phase 6,Approved,Isolation
