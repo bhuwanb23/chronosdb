@@ -1,8 +1,8 @@
-Phase 1 Deep Dive: Product and Judging Specification
+# Phase 1 Deep Dive: Product and Judging Specification
 
 You have completed Phase 0, so we now treat the repository, environment, IBM Db2 connectivity, compliance controls, and engineering baseline as stable. Phase 1 converts the locked ChronosDB concept into a testable product contract so that Phase 2 can model the supply-chain domain without ambiguity.
 
-Phase 1 is where we decide precisely:
+## Phase 1 is where we decide precisely:
 
 Who ChronosDB is for
 What operational decision it improves
@@ -14,15 +14,15 @@ Which requirements later phases must implement and test
 1. Phase 1 purpose
 Phase name
 
-Product, User, Requirements and Judging Specification
+## Product, User, Requirements and Judging Specification
 
-Primary goal
+## Primary goal
 
 Convert ChronosDB from a strong idea into a complete, testable specification for an auditable supply-chain decision system.
 
-Required result
+## Required result
 
-At the end of Phase 1, another engineer should be able to read the specification and know:
+## At the end of Phase 1, another engineer should be able to read the specification and know:
 
 The exact user and problem.
 The exact workflow.
@@ -36,7 +36,7 @@ How every feature maps to the judging criteria.
 What Phase 2 must model.
 Phase 1 is not
 
-Phase 1 is not the stage for:
+## Phase 1 is not the stage for:
 
 Designing database tables
 Generating the synthetic dataset
@@ -75,9 +75,9 @@ Goal
 
 Confirm that Phase 1 starts from an actual foundation rather than assumptions.
 
-Inputs required from Phase 0
+## Inputs required from Phase 0
 
-Verify the existence of:
+## Verify the existence of:
 
 Product charter
 Submission requirement register
@@ -91,22 +91,25 @@ Foundation benchmark
 Phase 0 completion report
 Foundation commit hash or tag
 Handoff checks
-Check	Required resultProject name	ChronosDB
-Primary domain	Supply-chain disruption intelligence
-Primary scenario	Critical supplier outage
-Primary database	IBM Db2
-AI framework	LangChain
-Backend	Python and FastAPI
-Calculation authority	Deterministic Python and SQL
-LLM authority	Interpretation and explanation only
-Foundation tests	Passing
-Critical Phase 0 risks	Zero untreated
+| Check | Required result |
+| --- | --- |
+| Project name | ChronosDB |
+| Primary domain | Supply-chain disruption intelligence |
+| Primary scenario | Critical supplier outage |
+| Primary database | IBM Db2 |
+| AI framework | LangChain |
+| Backend | Python and FastAPI |
+| Calculation authority | Deterministic Python and SQL |
+| LLM authority | Interpretation and explanation only |
+| Foundation tests | Passing |
+| Critical Phase 0 risks | Zero untreated |
+
 Deliverable
 docs/product/phase-0-handoff-review.md
 
-Exit gate
+## Exit gate
 
-Phase 1A passes when:
+## Phase 1A passes when:
 
 Every required input exists.
 No decision contradicts the locked architecture.
@@ -125,25 +128,25 @@ Descriptive title
 
 ChronosDB: Auditable Counterfactual Intelligence for Supply-Chain Disruptions
 
-Category
+## Category
 
-Db2-native operational decision intelligence
+## Db2-native operational decision intelligence
 
-Primary tagline
+## Primary tagline
 
 Reconstruct the past. Simulate the future. Prove the decision.
 
-One-sentence description
+## One-sentence description
 
 ChronosDB helps supply-chain operations managers understand the cascading impact of a supplier disruption, compare feasible recovery interventions, and verify every recommendation using evidence stored in IBM Db2.
 
-Thirty-second description
+## Thirty-second description
 
 When a critical supplier fails, normal dashboards show the immediate delay but not the full operational cascade. ChronosDB reconstructs the current supply-chain state from IBM Db2, calculates which components, production orders and customer commitments are affected, simulates recovery options, and recommends the best feasible action under cost and service constraints. Every result links back to the database records and calculation rules that produced it.
 
-Product promise
+## Product promise
 
-ChronosDB must answer five questions:
+## ChronosDB must answer five questions:
 
 What happened?
 What will be affected?
@@ -154,9 +157,9 @@ Product differentiator
 
 ChronosDB is not an AI chatbot that guesses what might happen. It is a deterministic decision simulator with an AI-assisted interface and a Db2-backed evidence trail.
 
-Narrative constraints
+## Narrative constraints
 
-Avoid these claims unless later validated:
+## Avoid these claims unless later validated:
 
 “Digital twin of the entire enterprise”
 “Predicts the future”
@@ -167,7 +170,7 @@ Avoid these claims unless later validated:
 “Guaranteed optimal decision”
 “Prevents every disruption”
 
-Use these defensible alternatives:
+## Use these defensible alternatives:
 
 “Scenario-based operational model”
 “Projects counterfactual outcomes”
@@ -178,9 +181,9 @@ Use these defensible alternatives:
 Deliverable
 docs/product/product-identity.md
 
-Exit gate
+## Exit gate
 
-Every project-facing description must use the same:
+## Every project-facing description must use the same:
 
 Name
 User
@@ -197,7 +200,7 @@ Define who uses ChronosDB, who depends on its outputs, and which needs take prio
 5.1 Primary user
 Supply-chain operations manager
 
-The primary user is responsible for:
+## The primary user is responsible for:
 
 Monitoring supplier disruptions
 Protecting production continuity
@@ -208,7 +211,7 @@ Controlling recovery expenditure
 Explaining recovery decisions to management
 Primary-user goals
 
-The user needs to:
+## The user needs to:
 
 Understand the consequence of a disruption quickly.
 Identify the operational bottleneck.
@@ -227,7 +230,7 @@ Decisions are difficult to audit after the event.
 5.2 Secondary stakeholders
 Production planner
 
-Needs:
+## Needs:
 
 Component availability
 Production-order impact
@@ -235,7 +238,7 @@ Rescheduling possibilities
 Facility capacity consequences
 Procurement analyst
 
-Needs:
+## Needs:
 
 Alternate supplier availability
 Lead-time changes
@@ -243,7 +246,7 @@ Supply cost
 Supplier qualification status
 Warehouse manager
 
-Needs:
+## Needs:
 
 Transferable inventory
 Safety-stock constraints
@@ -251,7 +254,7 @@ Transfer timing
 Source-warehouse impact
 Customer-service manager
 
-Needs:
+## Needs:
 
 Affected customer orders
 Promised dates
@@ -259,7 +262,7 @@ Projected delay
 SLA exposure
 Finance or business manager
 
-Needs:
+## Needs:
 
 Revenue at risk
 Recovery cost
@@ -267,7 +270,7 @@ Revenue protected
 Trade-off explanation
 Auditor or risk reviewer
 
-Needs:
+## Needs:
 
 Scenario inputs
 Source records
@@ -277,7 +280,7 @@ Final recommendation
 Timestamps and decision history
 5.3 User-priority hierarchy
 
-When stakeholder goals conflict, ChronosDB should use this default priority:
+## When stakeholder goals conflict, ChronosDB should use this default priority:
 
 Data integrity and intervention feasibility
 Committed customer service level
@@ -288,7 +291,7 @@ Convenience or narrative quality
 
 This ordering is a product default, not an immutable business rule. Later phases should make optimization weights configurable.
 
-5.4 User-persona specification
+## 5.4 User-persona specification
 
 Create one detailed primary persona.
 
@@ -326,26 +329,26 @@ Benchmark
 User-need coverage
 UNC=primary user needs mapped to requirementstotal documented primary user needsUNC = \frac{\text{primary user needs mapped to requirements}} {\text{total documented primary user needs}}
 
-Target:
+## Target:
 
-UNC = 100%
+## UNC = 100%
 
 6. Phase 1D: Problem and decision specification
 Goal
 
 Define the exact decision ChronosDB supports.
 
-Core problem statement
+## Core problem statement
 
 When a critical supplier becomes unavailable, operational dependencies cause delayed components to propagate into inventory shortages, production delays, customer-order breaches and revenue exposure. Existing dashboards show isolated operational facts but do not consistently simulate alternative recovery actions or preserve an auditable explanation of the selected intervention.
 
-Core decision
+## Core decision
 
 Given a supplier disruption, the current operational state, available interventions and business constraints, which feasible intervention produces the best service and financial outcome?
 
-Decision inputs
+## Decision inputs
 
-The decision requires:
+## The decision requires:
 
 Disrupted supplier
 Disruption start time
@@ -367,7 +370,7 @@ Safety-stock rules
 Facility capacity
 Decision outputs
 
-The system must return:
+## The system must return:
 
 Baseline or do-nothing impact
 Affected components
@@ -381,7 +384,7 @@ Projected SLA breaches
 Revenue at risk
 Intervention comparison
 
-For each candidate:
+## For each candidate:
 
 Intervention type
 Required actions
@@ -409,7 +412,7 @@ Human-review statement
 
 ChronosDB does not make a procurement transaction. It provides a decision-support recommendation.
 
-The user remains responsible for:
+## The user remains responsible for:
 
 Approving the intervention
 Contacting suppliers
@@ -419,9 +422,9 @@ Communicating with customers
 
 This distinction reduces safety, governance and credibility risks.
 
-6.2 Objective hierarchy
+## 6.2 Objective hierarchy
 
-The application must support at least these objectives:
+## The application must support at least these objectives:
 
 MINIMIZE_SLA_BREACHES
 MINIMIZE_REVENUE_AT_RISK
@@ -430,9 +433,9 @@ MINIMIZE_RECOVERY_COST
 BALANCED_RECOVERY
 
 
-The MVP demo should default to:
+## The MVP demo should default to:
 
-MINIMIZE_SLA_BREACHES
+## MINIMIZE_SLA_BREACHES
 
 
 subject to:
@@ -458,9 +461,9 @@ Goal
 
 Specify the complete user experience before APIs and screens are designed.
 
-Journey stage 1: Select operational state
+## Journey stage 1: Select operational state
 
-The user chooses:
+## The user chooses:
 
 Current operational state, or
 Historical as-of timestamp
@@ -474,7 +477,7 @@ Required snapshot unavailable
 Some records have conflicting effective dates
 Journey stage 2: Define disruption
 
-The user enters:
+## The user enters:
 
 Event type: supplier outage
 Supplier identifier
@@ -483,11 +486,11 @@ Duration
 Optional affected purchase orders
 Operational notes
 
-Example:
+## Example:
 
 Supplier S-104 is unavailable for 14 days beginning 11 November.
 
-Result
+## Result
 
 A validated scenario request is created.
 
@@ -499,7 +502,7 @@ Start date is invalid
 Required field is missing
 Journey stage 3: Define constraints
 
-The user enters:
+## The user enters:
 
 Maximum recovery budget
 Minimum service level
@@ -507,15 +510,15 @@ Safety-stock policy
 Optimization objective
 Optional intervention exclusions
 
-Example:
+## Example:
 
 Maximum recovery cost: ₹200,000
 Objective: Minimize SLA breaches
 Do not use unapproved suppliers
 
-Journey stage 4: Create immutable scenario
+## Journey stage 4: Create immutable scenario
 
-ChronosDB stores:
+## ChronosDB stores:
 
 Scenario inputs
 Operational-state reference
@@ -527,11 +530,11 @@ Rule version
 
 Once simulation begins, the original scenario input cannot be silently changed.
 
-Journey stage 5: Calculate do-nothing impact
+## Journey stage 5: Calculate do-nothing impact
 
 ChronosDB calculates the consequence of taking no intervention.
 
-The user sees:
+## The user sees:
 
 Dependency cascade
 Shortage timeline
@@ -541,7 +544,7 @@ SLA exposure
 Revenue at risk
 Journey stage 6: Generate candidate interventions
 
-ChronosDB creates candidates such as:
+## ChronosDB creates candidates such as:
 
 Do nothing
 Transfer inventory from another warehouse
@@ -551,7 +554,7 @@ Reschedule production
 Use a hybrid recovery plan
 Journey stage 7: Validate candidates
 
-Each candidate is checked against:
+## Each candidate is checked against:
 
 Available quantity
 Warehouse safety stock
@@ -566,9 +569,9 @@ An infeasible candidate remains visible with its rejection reason.
 
 This is better than silently deleting it because judges can see the constraint reasoning.
 
-Journey stage 8: Simulate candidates
+## Journey stage 8: Simulate candidates
 
-For every feasible intervention, ChronosDB calculates:
+## For every feasible intervention, ChronosDB calculates:
 
 New inventory projection
 New production completion
@@ -578,7 +581,7 @@ New revenue-at-risk value
 Additional cost
 Journey stage 9: Compare alternatives
 
-The user compares:
+## The user compares:
 
 Do nothing
 Cheapest intervention
@@ -587,7 +590,7 @@ Lowest-delay intervention
 Balanced recommendation
 Journey stage 10: Review recommendation
 
-ChronosDB explains:
+## ChronosDB explains:
 
 Why the intervention was selected
 Which constraints affected selection
@@ -597,7 +600,7 @@ Which risks remain
 Which evidence was used
 Journey stage 11: Inspect evidence
 
-The user can open:
+## The user can open:
 
 Source Db2 records
 Calculation trace
@@ -608,7 +611,7 @@ Simulation run
 Decision audit record
 Journey stage 12: Replay decision
 
-The user can move through:
+## The user can move through:
 
 Initial operational state
 Disruption introduced
@@ -620,16 +623,16 @@ Final audit snapshot
 Deliverable
 docs/product/end-to-end-user-journey.md
 
-Benchmark
+## Benchmark
 
-Every journey step must map to:
+## Every journey step must map to:
 
 At least one functional requirement
 At least one success condition
 At least one failure behavior
 At least one future test
 
-Target coverage:
+## Target coverage:
 
 100%
 
@@ -641,7 +644,7 @@ Create formal use cases with preconditions, triggers, flows and outcomes.
 UC-001: Create supplier-outage scenario
 Actor
 
-Supply-chain operations manager
+## Supply-chain operations manager
 
 Preconditions
 Supplier exists.
@@ -685,9 +688,9 @@ Postcondition
 
 A reproducible baseline outcome exists.
 
-UC-003: Generate intervention candidates
+## UC-003: Generate intervention candidates
 
-Candidate set:
+## Candidate set:
 
 Inventory transfer
 Shipment expedition
@@ -696,31 +699,31 @@ Production rescheduling
 Hybrid intervention
 Postcondition
 
-Every candidate is marked:
+## Every candidate is marked:
 
 FEASIBLE
 INFEASIBLE
 INSUFFICIENT_DATA
 
-UC-004: Compare intervention outcomes
+## UC-004: Compare intervention outcomes
 
 The system presents comparable metrics using the same units and baseline.
 
-UC-005: Recommend an intervention
+## UC-005: Recommend an intervention
 
 The system selects the highest-ranking feasible candidate under the selected objective.
 
-UC-006: Inspect evidence
+## UC-006: Inspect evidence
 
 The user can follow each major result to its source records and calculation trace.
 
-UC-007: Replay an earlier decision
+## UC-007: Replay an earlier decision
 
 The user can load a completed scenario without recomputing or changing its original result.
 
-UC-008: Handle insufficient data
+## UC-008: Handle insufficient data
 
-The system must distinguish:
+## The system must distinguish:
 
 NO_IMPACT
 NO_FEASIBLE_INTERVENTION
@@ -730,9 +733,9 @@ SIMULATION_FAILED
 
 These are not equivalent states.
 
-UC-009: Operate without LLM service
+## UC-009: Operate without LLM service
 
-The system must still:
+## The system must still:
 
 Accept a structured scenario
 Run deterministic calculations
@@ -745,9 +748,9 @@ Natural-language parsing and narration may be unavailable.
 Deliverable
 docs/product/use-case-catalogue.md
 
-Exit criteria
+## Exit criteria
 
-Each use case contains:
+## Each use case contains:
 
 ID
 Actor
@@ -764,7 +767,7 @@ Goal
 
 Create atomic, testable product requirements.
 
-Use requirement language consistently:
+## Use requirement language consistently:
 
 SHALL means mandatory.
 SHOULD means important but deferrable.
@@ -775,39 +778,39 @@ FR-SCN-001
 
 The system SHALL create a supplier-outage scenario from structured input.
 
-FR-SCN-002
+## FR-SCN-002
 
 The system SHALL assign a unique scenario identifier.
 
-FR-SCN-003
+## FR-SCN-003
 
 The system SHALL store the scenario creation timestamp.
 
-FR-SCN-004
+## FR-SCN-004
 
 The system SHALL validate the supplier against active supplier records.
 
-FR-SCN-005
+## FR-SCN-005
 
 The system SHALL reject non-positive disruption durations.
 
-FR-SCN-006
+## FR-SCN-006
 
 The system SHALL store the selected optimization objective.
 
-FR-SCN-007
+## FR-SCN-007
 
 The system SHALL store all user-defined constraints.
 
-FR-SCN-008
+## FR-SCN-008
 
 The system SHALL preserve the exact operational-state reference used for the scenario.
 
-FR-SCN-009
+## FR-SCN-009
 
 The system SHALL NOT silently modify scenario inputs after execution begins.
 
-FR-SCN-010
+## FR-SCN-010
 
 The system SHALL permit a user to duplicate an existing scenario into a new scenario.
 
@@ -816,55 +819,55 @@ FR-IMP-001
 
 The system SHALL determine the components supplied by the disrupted supplier.
 
-FR-IMP-002
+## FR-IMP-002
 
 The system SHALL determine which expected replenishments are affected.
 
-FR-IMP-003
+## FR-IMP-003
 
 The system SHALL project available inventory over the simulation horizon.
 
-FR-IMP-004
+## FR-IMP-004
 
 The system SHALL calculate the earliest shortage date for every affected component.
 
-FR-IMP-005
+## FR-IMP-005
 
 The system SHALL calculate the projected shortage quantity.
 
-FR-IMP-006
+## FR-IMP-006
 
 The system SHALL identify products whose bills of material depend on affected components.
 
-FR-IMP-007
+## FR-IMP-007
 
 The system SHALL identify affected production orders.
 
-FR-IMP-008
+## FR-IMP-008
 
 The system SHALL calculate projected production-order delay.
 
-FR-IMP-009
+## FR-IMP-009
 
 The system SHALL identify affected customer orders.
 
-FR-IMP-010
+## FR-IMP-010
 
 The system SHALL calculate projected customer delivery dates.
 
-FR-IMP-011
+## FR-IMP-011
 
 The system SHALL classify projected SLA status.
 
-FR-IMP-012
+## FR-IMP-012
 
 The system SHALL calculate revenue at risk using a documented rule.
 
-FR-IMP-013
+## FR-IMP-013
 
 The system SHALL preserve intermediate calculation values.
 
-FR-IMP-014
+## FR-IMP-014
 
 The system SHALL produce a do-nothing baseline for every valid scenario.
 
@@ -873,43 +876,43 @@ FR-INT-001
 
 The system SHALL create a do-nothing candidate.
 
-FR-INT-002
+## FR-INT-002
 
 The system SHALL evaluate inventory transfer where transferable stock exists.
 
-FR-INT-003
+## FR-INT-003
 
 The system SHALL evaluate expedition of eligible purchase orders.
 
-FR-INT-004
+## FR-INT-004
 
 The system SHALL evaluate approved alternate suppliers.
 
-FR-INT-005
+## FR-INT-005
 
 The system SHALL evaluate production rescheduling.
 
-FR-INT-006
+## FR-INT-006
 
 The system SHOULD evaluate at least one hybrid intervention.
 
-FR-INT-007
+## FR-INT-007
 
 The system SHALL preserve infeasible candidates and rejection reasons.
 
-FR-INT-008
+## FR-INT-008
 
 The system SHALL detect violations of minimum safety stock.
 
-FR-INT-009
+## FR-INT-009
 
 The system SHALL detect violations of the recovery budget.
 
-FR-INT-010
+## FR-INT-010
 
 The system SHALL reject unapproved supplier substitution.
 
-FR-INT-011
+## FR-INT-011
 
 The system SHALL calculate intervention cost using documented components.
 
@@ -918,27 +921,27 @@ FR-SIM-001
 
 The system SHALL simulate each feasible intervention against the same baseline state.
 
-FR-SIM-002
+## FR-SIM-002
 
 The system SHALL NOT mutate baseline operational records.
 
-FR-SIM-003
+## FR-SIM-003
 
 The system SHALL assign a unique simulation-run identifier.
 
-FR-SIM-004
+## FR-SIM-004
 
 The system SHALL record the calculation-rule version.
 
-FR-SIM-005
+## FR-SIM-005
 
 The system SHALL record simulation warnings and errors.
 
-FR-SIM-006
+## FR-SIM-006
 
 The system SHALL produce identical results for the same input state and rule version.
 
-FR-SIM-007
+## FR-SIM-007
 
 The system SHALL prevent scenarios from contaminating one another.
 
@@ -947,31 +950,31 @@ FR-OPT-001
 
 The system SHALL rank only feasible interventions.
 
-FR-OPT-002
+## FR-OPT-002
 
 The system SHALL rank candidates according to the selected objective.
 
-FR-OPT-003
+## FR-OPT-003
 
 The system SHALL expose the objective and weights used.
 
-FR-OPT-004
+## FR-OPT-004
 
 The system SHALL expose the constraints applied.
 
-FR-OPT-005
+## FR-OPT-005
 
 The system SHALL identify ties.
 
-FR-OPT-006
+## FR-OPT-006
 
 The system SHALL return NO_FEASIBLE_INTERVENTION when no candidate satisfies the constraints.
 
-FR-OPT-007
+## FR-OPT-007
 
 The system SHALL provide a reason for the selected intervention.
 
-FR-OPT-008
+## FR-OPT-008
 
 The system SHOULD expose Pareto-efficient candidates when objectives conflict.
 
@@ -980,35 +983,35 @@ FR-EVD-001
 
 The system SHALL associate every major numerical claim with a simulation run.
 
-FR-EVD-002
+## FR-EVD-002
 
 The system SHALL identify the source records used by major calculations.
 
-FR-EVD-003
+## FR-EVD-003
 
 The system SHALL store the calculation rule version.
 
-FR-EVD-004
+## FR-EVD-004
 
 The system SHALL retrieve relevant historical incidents.
 
-FR-EVD-005
+## FR-EVD-005
 
 The system SHALL retrieve relevant operating procedures.
 
-FR-EVD-006
+## FR-EVD-006
 
 The system SHALL preserve document version and chunk identity for retrieved evidence.
 
-FR-EVD-007
+## FR-EVD-007
 
 The system SHALL distinguish database facts from retrieved documents.
 
-FR-EVD-008
+## FR-EVD-008
 
 The system SHALL indicate when supporting evidence is unavailable.
 
-FR-EVD-009
+## FR-EVD-009
 
 The system SHALL NOT fabricate an evidence link.
 
@@ -1017,27 +1020,27 @@ FR-EXP-001
 
 The system SHALL explain the do-nothing impact.
 
-FR-EXP-002
+## FR-EXP-002
 
 The system SHALL explain why the recommended intervention was selected.
 
-FR-EXP-003
+## FR-EXP-003
 
 The system SHALL explain the primary trade-off.
 
-FR-EXP-004
+## FR-EXP-004
 
 The system SHALL expose remaining risks.
 
-FR-EXP-005
+## FR-EXP-005
 
 The system SHALL verify generated numerical statements against structured outputs.
 
-FR-EXP-006
+## FR-EXP-006
 
 The system SHALL remove or reject unsupported numerical statements.
 
-FR-EXP-007
+## FR-EXP-007
 
 The system SHALL provide a deterministic summary if the LLM is unavailable.
 
@@ -1046,40 +1049,40 @@ FR-AUD-001
 
 The system SHALL record scenario creation.
 
-FR-AUD-002
+## FR-AUD-002
 
 The system SHALL record each simulation run.
 
-FR-AUD-003
+## FR-AUD-003
 
 The system SHALL record candidate feasibility decisions.
 
-FR-AUD-004
+## FR-AUD-004
 
 The system SHALL record the selected recommendation.
 
-FR-AUD-005
+## FR-AUD-005
 
 The system SHALL record model calls used for planning or narration.
 
-FR-AUD-006
+## FR-AUD-006
 
 The system SHALL record verification results.
 
-FR-AUD-007
+## FR-AUD-007
 
 The system SHALL allow a completed decision to be replayed.
 
-FR-AUD-008
+## FR-AUD-008
 
 The normal application role SHALL NOT modify historical audit records.
 
 Functional requirement deliverable
 docs/product/functional-requirements.md
 
-Requirement-quality gate
+## Requirement-quality gate
 
-Every functional requirement must be:
+## Every functional requirement must be:
 
 Atomic
 Necessary
@@ -1099,30 +1102,33 @@ NFR-COR-001
 
 For the frozen golden scenario, deterministic results must exactly match the approved expected outcomes.
 
-NFR-COR-002
+## NFR-COR-002
 
 Numerical fidelity must be 100% for displayed deterministic values.
 
-NFR-COR-003
+## NFR-COR-003
 
 All recommended interventions must pass feasibility validation.
 
-NFR-COR-004
+## NFR-COR-004
 
 The same scenario, state and rule version must produce the same output.
 
-10.2 Performance
+## 10.2 Performance
 
-Initial MVP targets:
+## Initial MVP targets:
 
-Operation	TargetScenario validation	p95 below 200 ms
-Baseline impact calculation	p95 below 2 seconds
-One intervention simulation	p95 below 1 second
-Five-candidate comparison	p95 below 5 seconds
-Evidence retrieval	p95 below 2 seconds
-Full response without LLM	p95 below 8 seconds
-Full response with LLM	p95 below 15 seconds
-Historical scenario replay	p95 below 3 seconds
+| Operation | Target |
+| --- | --- |
+| Scenario validation | p95 below 200 ms |
+| Baseline impact calculation | p95 below 2 seconds |
+| One intervention simulation | p95 below 1 second |
+| Five-candidate comparison | p95 below 5 seconds |
+| Evidence retrieval | p95 below 2 seconds |
+| Full response without LLM | p95 below 8 seconds |
+| Full response with LLM | p95 below 15 seconds |
+| Historical scenario replay | p95 below 3 seconds |
+
 
 These are engineering targets to be tested later, not current performance claims.
 
@@ -1131,15 +1137,15 @@ NFR-REL-001
 
 A failed LLM call must not destroy deterministic simulation results.
 
-NFR-REL-002
+## NFR-REL-002
 
 A failed candidate simulation must not invalidate successful candidates.
 
-NFR-REL-003
+## NFR-REL-003
 
 The system must distinguish total failure from partial completion.
 
-NFR-REL-004
+## NFR-REL-004
 
 Scenario execution must be idempotent when the same idempotency key is used.
 
@@ -1152,7 +1158,7 @@ Prompt content must not override calculation authority.
 Sensitive configuration must not appear in logs or API responses.
 10.5 Explainability
 
-Every recommendation must expose:
+## Every recommendation must expose:
 
 Objective
 Constraints
@@ -1164,7 +1170,7 @@ Calculation version
 Remaining risk
 10.6 Usability
 
-The judge-facing workflow should:
+## The judge-facing workflow should:
 
 Communicate the problem within 10 seconds.
 Create a seeded scenario within three interactions.
@@ -1174,7 +1180,7 @@ Open evidence within one additional interaction.
 Avoid requiring knowledge of SQL.
 10.7 Accessibility
 
-Target:
+## Target:
 
 Keyboard-accessible controls
 Visible focus states
@@ -1185,7 +1191,7 @@ Text alternatives for charts
 Responsive behavior at common laptop widths
 10.8 Reproducibility
 
-A clean environment must be able to:
+## A clean environment must be able to:
 
 Configure Db2.
 Run migrations.
@@ -1282,7 +1288,7 @@ Customer SLA policy
 Recovery approval policy
 11.3 Data quality requirements
 
-The system must detect:
+## The system must detect:
 
 Missing foreign-key relationships
 Negative quantities
@@ -1296,13 +1302,13 @@ Unsupported currencies
 Unqualified alternate supplier
 11.4 Evidence hierarchy
 
-Use:
+## Use:
 
-Level 1: Operational fact
+## Level 1: Operational fact
 
 Structured Db2 record.
 
-Examples:
+## Examples:
 
 Inventory quantity
 Purchase-order arrival date
@@ -1312,7 +1318,7 @@ Level 2: Deterministic derived value
 
 Calculated from structured facts.
 
-Examples:
+## Examples:
 
 Shortage date
 Delay days
@@ -1322,7 +1328,7 @@ Level 3: Controlled reference evidence
 
 Retrieved procedure or historical incident.
 
-Examples:
+## Examples:
 
 Transfer procedure
 Alternate-supplier policy
@@ -1336,9 +1342,9 @@ Level 4 must never override Levels 1–2.
 Deliverable
 docs/product/data-and-evidence-requirements.md
 
-Phase 2 dependency
+## Phase 2 dependency
 
-Phase 2 must translate these requirements into:
+## Phase 2 must translate these requirements into:
 
 Entities
 Relationships
@@ -1389,17 +1395,20 @@ Hide warnings
 Claim certainty not present in the structured output
 AI failure policy
 
-When AI is unavailable:
+## When AI is unavailable:
 
-Capability	BehaviorNatural-language parsing	Use structured form
-Evidence-query generation	Use predefined structured query
-Recommendation narration	Use deterministic template
-Simulation	Continue normally
-Optimization	Continue normally
-Audit	Record AI unavailability
-Numerical claim contract
+| Capability | Behavior |
+| --- | --- |
+| Natural-language parsing | Use structured form |
+| Evidence-query generation | Use predefined structured query |
+| Recommendation narration | Use deterministic template |
+| Simulation | Continue normally |
+| Optimization | Continue normally |
+| Audit | Record AI unavailability |
 
-For every number produced in narrative text:
+## Numerical claim contract
+
+## For every number produced in narrative text:
 
 Claim
 → Structured field
@@ -1413,9 +1422,9 @@ If the chain cannot be completed, the number must not be displayed.
 Deliverable
 docs/product/ai-authority-contract.md
 
-Exit gate
+## Exit gate
 
-Every planned AI capability is classified as:
+## Every planned AI capability is classified as:
 
 ALLOWED
 VALIDATED
@@ -1427,9 +1436,9 @@ Goal
 
 Protect the winning vertical slice from unnecessary expansion.
 
-13.1 MVP, Priority 0
+## 13.1 MVP, Priority 0
 
-The minimum valid product must:
+## The minimum valid product must:
 
 Accept a structured supplier outage.
 Validate the supplier and duration.
@@ -1468,7 +1477,7 @@ Confidence classification based on data completeness
 Downloadable decision report
 13.4 Deferred, Priority 3
 
-Do not implement until Priority 0 and Priority 1 are stable:
+## Do not implement until Priority 0 and Priority 1 are stable:
 
 Demand-spike scenarios
 Warehouse closure
@@ -1483,7 +1492,7 @@ Automatic purchase-order execution
 Real external supplier feeds
 Scope-change process
 
-A new feature enters the MVP only if:
+## A new feature enters the MVP only if:
 
 It directly improves a judging category.
 It does not delay a Priority 0 feature.
@@ -1514,7 +1523,7 @@ Constraints, indexing and database roles
 Query plans and measured performance
 Demo moment
 
-Open an evidence panel showing:
+## Open an evidence panel showing:
 
 Scenario run
 Impact calculation
@@ -1588,9 +1597,9 @@ Failure condition
 
 Strong code is hidden behind unclear documentation or a chat-only interface.
 
-Rubric traceability matrix
+## Rubric traceability matrix
 
-Create fields:
+## Create fields:
 
 criterion
 weight
@@ -1606,9 +1615,9 @@ status
 Deliverable
 docs/product/rubric-evidence-matrix.csv
 
-Exit gate
+## Exit gate
 
-Every criterion must have:
+## Every criterion must have:
 
 At least one implementation artifact
 At least one test
@@ -1624,14 +1633,14 @@ Define metrics before implementation so later benchmarks cannot be manipulated a
 Impact precision
 Impact Precision=correctly predicted affected entitiesall predicted affected entities\text{Impact Precision} = \frac{\text{correctly predicted affected entities}} {\text{all predicted affected entities}}
 
-Target:
+## Target:
 
 ≥ 95%
 
 Impact recall
 Impact Recall=correctly predicted affected entitiesall actually affected entities\text{Impact Recall} = \frac{\text{correctly predicted affected entities}} {\text{all actually affected entities}}
 
-Target:
+## Target:
 
 ≥ 95%
 
@@ -1641,14 +1650,14 @@ For the golden deterministic scenario, both should reach 100%.
 15.2 Numerical fidelity
 Numerical Fidelity=displayed numerical claims matching structured outputsall displayed numerical claims\text{Numerical Fidelity} = \frac{\text{displayed numerical claims matching structured outputs}} {\text{all displayed numerical claims}}
 
-Target:
+## Target:
 
 100%
 
 15.3 Intervention feasibility
 Feasibility Accuracy=correct candidate feasibility classificationsall candidate classifications\text{Feasibility Accuracy} = \frac{\text{correct candidate feasibility classifications}} {\text{all candidate classifications}}
 
-Target:
+## Target:
 
 100% for golden scenario
 ≥ 98% for benchmark suite
@@ -1656,7 +1665,7 @@ Target:
 15.4 Recommendation agreement
 Optimal Plan Agreement=scenarios where selected plan matches benchmark optimumevaluated benchmark scenarios\text{Optimal Plan Agreement} = \frac{\text{scenarios where selected plan matches benchmark optimum}} {\text{evaluated benchmark scenarios}}
 
-Target:
+## Target:
 
 ≥ 90%
 
@@ -1666,7 +1675,7 @@ If multiple plans are tied or Pareto-efficient, the benchmark must recognize all
 15.5 Evidence coverage
 Evidence Coverage=verifiable claims linked to evidenceall verifiable claims\text{Evidence Coverage} = \frac{\text{verifiable claims linked to evidence}} {\text{all verifiable claims}}
 
-Target:
+## Target:
 
 100%
 
@@ -1678,7 +1687,7 @@ Unsupported objective rejection: 100%
 Invented identifier acceptance: 0%
 15.7 Retrieval metrics
 
-Targets for the frozen evidence corpus:
+## Targets for the frozen evidence corpus:
 
 Recall@5: at least 0.85
 Precision@5: at least 0.75
@@ -1687,7 +1696,7 @@ Structured-filter compliance: 100%
 Unauthorized-document retrieval: 0%
 15.8 Performance metrics
 
-Report:
+## Report:
 
 Median
 p95
@@ -1700,9 +1709,9 @@ Warm versus cold execution
 
 No single latency number should be reported without test conditions.
 
-15.9 Human-understanding metrics
+## 15.9 Human-understanding metrics
 
-For a small evaluation with at least five reviewers, measure:
+## For a small evaluation with at least five reviewers, measure:
 
 Can identify affected orders in under 30 seconds
 Can identify recommended intervention in under 15 seconds
@@ -1740,7 +1749,7 @@ Given
 
 Supplier S-999 does not exist.
 
-When
+## When
 
 The user creates a scenario.
 
@@ -1754,13 +1763,13 @@ Given
 
 A frozen golden scenario.
 
-When
+## When
 
 The baseline is calculated.
 
-Then
+## Then
 
-Results exactly match:
+## Results exactly match:
 
 Expected affected components
 Expected affected production orders
@@ -1776,36 +1785,36 @@ Given
 
 A warehouse has surplus stock above zero but below the transferable threshold.
 
-When
+## When
 
 An inventory-transfer candidate is evaluated.
 
-Then
+## Then
 
-The candidate is marked infeasible with:
+## The candidate is marked infeasible with:
 
-SOURCE_SAFETY_STOCK_VIOLATION
+## SOURCE_SAFETY_STOCK_VIOLATION
 
 AT-005: Budget violation
 Given
 
 An intervention costs more than the scenario budget.
 
-Then
+## Then
 
 It is marked infeasible or excluded from selection, but its projected operational result remains available for comparison if calculated.
 
-AT-006: Alternate supplier not approved
+## AT-006: Alternate supplier not approved
 
 An unapproved supplier must never be recommended.
 
-AT-007: LLM unavailable
+## AT-007: LLM unavailable
 
 The deterministic workflow continues and produces a templated report.
 
-AT-008: Unsupported numerical claim
+## AT-008: Unsupported numerical claim
 
-If the narrator emits a value not present in structured results:
+## If the narrator emits a value not present in structured results:
 
 Verification fails.
 The value is removed or the narrative is regenerated.
@@ -1814,24 +1823,24 @@ AT-009: Scenario isolation
 
 Two scenarios using the same baseline but different outages must not modify one another.
 
-AT-010: Decision replay
+## AT-010: Decision replay
 
 Loading a completed scenario must reproduce the stored decision state and original evidence links.
 
-AT-011: No feasible intervention
+## AT-011: No feasible intervention
 
-The system returns:
+## The system returns:
 
-NO_FEASIBLE_INTERVENTION
+## NO_FEASIBLE_INTERVENTION
 
 
 It must not recommend the least-invalid option.
 
-AT-012: Insufficient data
+## AT-012: Insufficient data
 
-Missing information required for calculation returns:
+## Missing information required for calculation returns:
 
-INSUFFICIENT_DATA
+## INSUFFICIENT_DATA
 
 
 It must not be treated as zero.
@@ -1839,7 +1848,7 @@ It must not be treated as zero.
 Deliverable
 docs/product/product-acceptance-tests.md
 
-Exit gate
+## Exit gate
 
 At least one acceptance test exists for every Priority 0 requirement group.
 
@@ -1853,39 +1862,39 @@ A-001
 
 One supplier may supply multiple components.
 
-A-002
+## A-002
 
 A component may have multiple approved suppliers.
 
-A-003
+## A-003
 
 Products may require multiple components.
 
-A-004
+## A-004
 
 A production order is constrained by required component availability.
 
-A-005
+## A-005
 
 Customer orders are associated with products and delivery commitments.
 
-A-006
+## A-006
 
 Revenue at risk is the value of projected SLA-breaching orders, not confirmed revenue loss.
 
-A-007
+## A-007
 
 Recovery cost and revenue at risk use one normalized currency in the MVP.
 
-A-008
+## A-008
 
 Transportation capacity is simplified to transfer lead time and cost.
 
-A-009
+## A-009
 
 The MVP uses synthetic data.
 
-A-010
+## A-010
 
 Interventions require human approval.
 
@@ -1918,16 +1927,19 @@ OPT-004 How are ties handled?
 OPT-005 Can mixed interventions be partially applied?
 
 Product risks
-ID	Risk	Impact	Phase 1 treatmentP1-R01	Too many features dilute the core	Critical	Lock Priority 0 and 1
-P1-R02	Revenue-at-risk definition is misleading	High	Define exact rule
-P1-R03	AI receives calculation authority	Critical	Enforce AI contract
-P1-R04	Simulation looks like prediction	High	Use precise terminology
-P1-R05	Requirements cannot be tested	High	Acceptance-test mapping
-P1-R06	Db2 appears superficial	Critical	Rubric evidence matrix
-P1-R07	Synthetic dataset appears unrealistic	High	Domain rules in Phase 2
-P1-R08	Optimization recommends infeasible action	Critical	Hard feasibility gate
-P1-R09	No feasible plan is hidden	High	Explicit no-plan state
-P1-R10	Success metrics are decided after results	High	Freeze measurement contract
+| ID | Risk | Impact | Phase 1 treatment |
+| --- | --- | --- | --- |
+| P1-R01 | Too many features dilute the core | Critical | Lock Priority 0 and 1 |
+| P1-R02 | Revenue-at-risk definition is misleading | High | Define exact rule |
+| P1-R03 | AI receives calculation authority | Critical | Enforce AI contract |
+| P1-R04 | Simulation looks like prediction | High | Use precise terminology |
+| P1-R05 | Requirements cannot be tested | High | Acceptance-test mapping |
+| P1-R06 | Db2 appears superficial | Critical | Rubric evidence matrix |
+| P1-R07 | Synthetic dataset appears unrealistic | High | Domain rules in Phase 2 |
+| P1-R08 | Optimization recommends infeasible action | Critical | Hard feasibility gate |
+| P1-R09 | No feasible plan is hidden | High | Explicit no-plan state |
+| P1-R10 | Success metrics are decided after results | High | Freeze measurement contract |
+
 Deliverables
 docs/product/product-risk-register.md
 docs/product/product-assumption-register.md
@@ -1941,41 +1953,41 @@ Measure whether the specification is complete enough to enter domain design.
 18.1 Requirement coverage
 RC=user needs mapped to requirementstotal user needsRC = \frac{\text{user needs mapped to requirements}} {\text{total user needs}}
 
-Target:
+## Target:
 
 100%
 
 18.2 Use-case coverage
 UC=Priority 0 requirements mapped to use casestotal Priority 0 requirementsUC = \frac{\text{Priority 0 requirements mapped to use cases}} {\text{total Priority 0 requirements}}
 
-Target:
+## Target:
 
 100%
 
 18.3 Acceptance-test coverage
 ATC=Priority 0 requirements with acceptance teststotal Priority 0 requirementsATC = \frac{\text{Priority 0 requirements with acceptance tests}} {\text{total Priority 0 requirements}}
 
-Target:
+## Target:
 
 100%
 
 
-Priority 1 target:
+## Priority 1 target:
 
 ≥ 80%
 
 18.4 Rubric traceability
 RT=rubric categories with implementation, test, metric and demo evidence5RT = \frac{\text{rubric categories with implementation, test, metric and demo evidence}} {5}
 
-Target:
+## Target:
 
 100%
 
-18.5 Requirement ambiguity rate
+## 18.5 Requirement ambiguity rate
 
 Review all mandatory requirements and count those containing undefined qualitative terms.
 
-Examples:
+## Examples:
 
 Fast
 Intelligent
@@ -1988,27 +2000,27 @@ Real-time
 Optimal
 AR=ambiguous mandatory requirementsall mandatory requirementsAR = \frac{\text{ambiguous mandatory requirements}} {\text{all mandatory requirements}}
 
-Target:
+## Target:
 
 0%
 
-18.6 Orphan requirement rate
+## 18.6 Orphan requirement rate
 
 An orphan requirement has no user need, use case or acceptance method.
 
-Target:
+## Target:
 
 0%
 
-18.7 Scope stability
+## 18.7 Scope stability
 
 Count proposed features that have not been assigned a priority.
 
-Target:
+## Target:
 
 0
 
-18.8 Specification review exercise
+## 18.8 Specification review exercise
 
 Conduct three paper walkthroughs.
 
@@ -2027,7 +2039,7 @@ Missing inventory snapshot
 Conflicting supplier capacity
 Incomplete customer due date
 
-For each walkthrough, verify that the specification determines:
+## For each walkthrough, verify that the specification determines:
 
 Accepted input
 Required calculation
@@ -2036,25 +2048,28 @@ User-visible message
 Audit behavior
 Test behavior
 Phase 1 scorecard
-Category	WeightProduct clarity	10
-User and stakeholder definition	10
-Decision specification	15
-Functional requirement completeness	15
-Non-functional requirements	10
-AI authority controls	10
-Scope discipline	10
-Rubric alignment	10
-Measurement contract	5
-Acceptance-test coverage	5
-Total	100
+| Category | Weight |
+| --- | --- |
+| Product clarity | 10 |
+| User and stakeholder definition | 10 |
+| Decision specification | 15 |
+| Functional requirement completeness | 15 |
+| Non-functional requirements | 10 |
+| AI authority controls | 10 |
+| Scope discipline | 10 |
+| Rubric alignment | 10 |
+| Measurement contract | 5 |
+| Acceptance-test coverage | 5 |
+| Total | 100 |
+
 Passing threshold
 95–100: Pass
 90–94: Conditional pass
 Below 90: Fail
 
-Automatic failures
+## Automatic failures
 
-Phase 1 fails regardless of score if:
+## Phase 1 fails regardless of score if:
 
 The primary user is undefined.
 The decision output is undefined.
@@ -2104,7 +2119,7 @@ Acceptance-test identifiers
 Phase 1 quality report
 Phase 2 mandatory results
 
-Phase 2 must convert this product specification into:
+## Phase 2 must convert this product specification into:
 
 Entity model
 Relationship model
@@ -2140,14 +2155,14 @@ docs/product/
 ├── requirements-traceability-matrix.csv
 └── phase-1-completion-report.md
 
-21. Requirements traceability matrix
+## 21. Requirements traceability matrix
 
-Create:
+## Create:
 
 docs/product/requirements-traceability-matrix.csv
 
 
-Recommended columns:
+## Recommended columns:
 
 requirement_id
 requirement_text
@@ -2164,7 +2179,7 @@ status
 notes
 
 
-Example:
+## Example:
 
 FR-IMP-009,
 Identify affected customer orders,
@@ -2179,7 +2194,7 @@ Innovation and Impact,
 Phase 5,
 Approved,
 
-22. Phase 1 execution order
+## 22. Phase 1 execution order
 
 Follow this exact order.
 
@@ -2283,13 +2298,13 @@ Handoff
  Phase 1 completion report is written.
 Phase 1 Definition of Done
 
-Phase 1 is complete only when this statement is true:
+## Phase 1 is complete only when this statement is true:
 
 ChronosDB has a precise user, decision, workflow, scope, requirement set, evidence contract, AI authority boundary, judging strategy, measurement contract and acceptance-test suite. Every Priority 0 capability is traceable from user need to requirement to future test, and Phase 2 can construct the domain and causal model without inventing product behavior.
 
-Locked output of Phase 1
+## Locked output of Phase 1
 
-After this phase, we should no longer debate:
+## After this phase, we should no longer debate:
 
 What ChronosDB is
 Who it serves
@@ -2299,8 +2314,8 @@ What the LLM may control
 What the output means
 How success will be measured
 
-Phase 2 will begin with:
+## Phase 2 will begin with:
 
-Domain, Temporal and Causal Model
+## Domain, Temporal and Causal Model
 
 Its first task will be to convert the Phase 1 requirements into the exact supply-chain entities, relationships, causal rules, time semantics, formulas and manually verified golden scenario.
