@@ -1,8 +1,8 @@
 You should optimize for the actual scoring rubric, not for flashy AI. The judges give the highest weight to IBM Db2 integration (30%), then Innovation & Impact (25%), then Technical Architecture & AI Integration (20%), followed by code quality and documentation.
 
-First: Reverse Engineer the Winning Formula
+## First: Reverse Engineer the Winning Formula
 
-Most participants will likely submit:
+### Most participants will likely submit:
 
 Generic RAG chatbot
 PDF Q&A assistant
@@ -13,7 +13,7 @@ Simple CrewAI workflow
 
 Those projects satisfy the requirement, but they are unlikely to dominate the Innovation score.
 
-To win, your project should:
+### To win, your project should:
 
 ✅ Use Db2 deeply
  ✅ Use vector search
@@ -27,21 +27,21 @@ My Recommendation
 Project: Enterprise Digital Twin AI
 Codename
 
-ChronosDB AI
+## ChronosDB AI
 
 "Ask the future. Query the past. Simulate decisions."
 
-The Problem
+## The Problem
 
-Current RAG systems can only answer:
+### Current RAG systems can only answer:
 
 "What happened?"
 
-They cannot answer:
+### They cannot answer:
 
 "What will happen if we change something?"
 
-Imagine:
+### Imagine:
 
 Supply chain disruption
 Manufacturing delays
@@ -49,14 +49,14 @@ Cloud infrastructure incidents
 Business risk management
 Hospital resource planning
 
-Organizations need AI that reasons over:
+### Organizations need AI that reasons over:
 
 Historical records
 Current state
 Future scenarios
 Core Innovation
 
-Instead of:
+### Instead of:
 
 Documents
    ↓
@@ -65,7 +65,7 @@ Vector DB
 Chatbot
 
 
-Build:
+### Build:
 
 Enterprise State
        ↓
@@ -79,67 +79,67 @@ Simulation Engine
        ↓
 Decision Intelligence
 
-What Makes It Novel
+## What Makes It Novel
 
-The AI becomes:
+### The AI becomes:
 
-Agent 1
+## Agent 1
 
-Historian
+## Historian
 
 Uses Db2 records.
 
-Answers:
+### Answers:
 
-What happened?
+## What happened?
 
-Agent 2
+## Agent 2
 
-Analyst
+## Analyst
 
 Finds patterns.
 
-Answers:
+### Answers:
 
-Why did it happen?
+## Why did it happen?
 
-Agent 3
+## Agent 3
 
-Predictor
+## Predictor
 
 Uses forecasting.
 
-Answers:
+### Answers:
 
-What may happen next?
+## What may happen next?
 
-Agent 4
+## Agent 4
 
-Simulator
+## Simulator
 
 Creates multiple futures.
 
-Answers:
+### Answers:
 
-What happens if we change X?
+## What happens if we change X?
 
-Agent 5
+## Agent 5
 
-Optimizer
+## Optimizer
 
 Recommends best action.
 
-Answers:
+### Answers:
 
-What should we do?
+## What should we do?
 
 This is dramatically more advanced than a RAG chatbot.
 
-IBM Db2 Usage
+## IBM Db2 Usage
 
 Judges explicitly value deep Db2 integration.
 
-Use Db2 for:
+### Use Db2 for:
 
 Structured Data
 Events
@@ -150,31 +150,31 @@ Vector Store
 
 Store embeddings.
 
-Time-Series Storage
+## Time-Series Storage
 
 Maintain temporal history.
 
-Agent Memory
+## Agent Memory
 
 Long-term memory.
 
-Semantic Search
+## Semantic Search
 
 Vector retrieval.
 
-Scenario State Tracking
+## Scenario State Tracking
 
 Simulation snapshots.
 
 This directly maximizes Db2 Integration score.
 
-Example Demo
+## Example Demo
 
-User asks:
+### User asks:
 
-What happens if a key supplier fails next month?
+## What happens if a key supplier fails next month?
 
-System:
+### System:
 
 Retrieves supplier history
 Analyzes dependencies
@@ -182,7 +182,7 @@ Runs simulations
 Forecasts impact
 Generates mitigation plan
 
-Output:
+### Output:
 
 Revenue impact:
 -8.4%
@@ -224,15 +224,15 @@ Nomic Embed
 Extra Killer Feature
 Time Travel AI
 
-Ask:
+### Ask:
 
-Why were we performing better 2 months ago?
+## Why were we performing better 2 months ago?
 
 AI queries historical Db2 snapshots.
 
-Produces:
+### Produces:
 
-Root Cause Analysis
+## Root Cause Analysis
 
 
 with evidence.
@@ -261,9 +261,9 @@ This creates an impressive demo.
 Extra Killer Feature #3
 Confidence-Based Reasoning
 
-Every answer includes:
+### Every answer includes:
 
-Confidence: 92%
+## Confidence: 92%
 
 Evidence:
 23 database records
@@ -294,7 +294,7 @@ Vector Search
  ↓
 Report Generator
 
-Metrics to Track
+## Metrics to Track
 
 If you want a "102/100" style project, quantify everything.
 
@@ -310,7 +310,7 @@ If you want a "102/100" style project, quantify everything.
 | User satisfaction demo | > 4.5/5 |
 Why This Can Actually Win
 
-Against typical submissions:
+### Against typical submissions:
 
 | Project | Innovation |
 | --- | --- |
@@ -321,7 +321,7 @@ Against typical submissions:
 | AI Agent Workflow | High |
 | Digital Twin Decision Intelligence Platform | Very High |
 
-This aligns almost perfectly with the judging rubric:
+### This aligns almost perfectly with the judging rubric:
 
 Db2 Integration: 10/10
 Innovation: 10/10
@@ -331,11 +331,11 @@ Presentation: 10/10 if demo is polished
 
 The opportunity to contribute winning use cases to the IBM Db2 GitHub organization further favors solutions demonstrating a meaningful enterprise-grade Db2 use case rather than a generic chatbot.
 
-If you only have ~3 hours before submission
+## If you only have ~3 hours before submission
 
 Don't build the full platform.
 
-Build an MVP version:
+### Build an MVP version:
 
 Db2 database with historical operational data.
 Vector search in Db2.

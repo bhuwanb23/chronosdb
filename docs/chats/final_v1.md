@@ -3,7 +3,7 @@ Executive verdict
 
 The original“Enterprise Digital Twin AI” direction is visually attractive, but it is currently too broad and too close to generic agentic RAG. “Historian, Analyst, Predictor, Simulator, Optimizer” sounds sophisticated, yet without a concrete domain, deterministic simulation, real data, and measurable validation, judges may perceive it as five LLM prompts wrapped around Db2.
 
-The strongest repositioning is:
+### The strongest repositioning is:
 
 ChronosDB: Auditable Counterfactual Intelligence for Supply-Chain Disruptions
 
@@ -13,9 +13,9 @@ This is narrower, more credible, easier to demonstrate, and meaningfully differe
 
 One critical timing issue: the official sources state that submissions closed on 10 November 2026 at 5:00 PM IST, while the current date is 11 November 2026. If your PR and Google Form were not already submitted, confirm immediately with the organizers whether updates or late submissions are permitted. The public Devpost page also displays inconsistent deadline information, so preserve screenshots and organizer messages.
 
-1. What the visible competition tells us
+## 1. What the visible competition tells us
 
-The publicly discoverable projects are much stronger than generic hackathon prototypes. The apparent competitive standard is not “make a chatbot.” It is:
+### The publicly discoverable projects are much stronger than generic hackathon prototypes. The apparent competitive standard is not “make a chatbot.” It is:
 
 A narrowly defined enterprise problem
 Non-trivial Db2 functionality
@@ -32,7 +32,7 @@ Competitive project benchmark
 | DataSentry AI | Profiles datasets, detects anomalies and generates actionable data-quality reports with Db2, Gemini, LangChain.js, Node.js and React. | Medium | It monitors data quality rather than business-system resilience. |
 Market conclusion
 
-A standard RAG agent will not stand out. The strongest competitors already demonstrate:
+### A standard RAG agent will not stand out. The strongest competitors already demonstrate:
 
 Db2-native retrieval
 Database security
@@ -42,7 +42,7 @@ Audit records
 Exact business-rule execution
 Real or realistically structured datasets
 
-ChronosDB must therefore compete on a different axis:
+### ChronosDB must therefore compete on a different axis:
 
 Temporal causality + counterfactual simulation + constrained optimization + decision replay
 
@@ -59,7 +59,7 @@ Current concept score
 
 The official rubric gives 30% to Db2 integration, 25% to innovation and impact, 20% to architecture, 15% to reproducibility, and 10% to documentation and presentation.
 
-A project can be beautiful and still lose if the judge cannot answer:
+### A project can be beautiful and still lose if the judge cannot answer:
 
 Why must this use Db2?
 Which conclusions are deterministic?
@@ -73,17 +73,17 @@ Name
 ChronosDB
 Subtitle
 
-Auditable Counterfactual Intelligence on IBM Db2
+## Auditable Counterfactual Intelligence on IBM Db2
 
-One-line pitch
+## One-line pitch
 
 ChronosDB turns a live supply-chain database into a decision simulator that can replay past disruptions, forecast cascading effects, compare interventions and show the exact Db2 evidence behind every recommendation.
 
-Judge-facing hook
+## Judge-facing hook
 
 “A normal dashboard tells you that a shipment is late. ChronosDB tells you what will fail next, compares three recovery plans, and proves why the selected plan is safest.”
 
-4. Choose one concrete scenario
+## 4. Choose one concrete scenario
 
 Do not build a universal enterprise digital twin. Build one excellent vertical slice.
 
@@ -92,7 +92,7 @@ Example organization
 
 An electronics manufacturer receives components from multiple suppliers. A shipment of microcontrollers is delayed by 14 days.
 
-ChronosDB determines:
+### ChronosDB determines:
 
 Which purchase orders are affected
 Which bills of material depend on that component
@@ -104,22 +104,22 @@ Demo question
 
 “Supplier S-104 will be unavailable for 14 days. What happens, and what should we do?”
 
-Expected output
+## Expected output
 
-Baseline impact
+## Baseline impact
 
 7 production orders disrupted
 3 customer SLA breaches
 ₹18.4 lakh estimated revenue at risk
 11.6 average delay days
 
-Recommended intervention
+## Recommended intervention
 
 Transfer 320 units from Chennai warehouse to Pune
 Expedite 180 units from Supplier S-208
 Reschedule Production Order PO-882 after PO-876
 
-Projected result
+## Projected result
 
 SLA breaches reduced from 3 to 1
 Revenue at risk reduced by 71%
@@ -131,7 +131,7 @@ These should be computed from database records and simulator rules, not invented
 5. The actual novelty
 Feature 1: Temporal state reconstruction
 
-ChronosDB should answer:
+### ChronosDB should answer:
 
 What did the system know at 10:00 AM yesterday?
 What changed between two operational snapshots?
@@ -159,11 +159,11 @@ DECISION_AUDIT
 
 This makes Db2 central rather than decorative.
 
-Feature 2: Deterministic counterfactual simulator
+## Feature 2: Deterministic counterfactual simulator
 
 The LLM must not calculate business outcomes.
 
-Use deterministic Python or SQL procedures to evaluate:
+### Use deterministic Python or SQL procedures to evaluate:
 
 Inventory depletion
 Component dependencies
@@ -174,7 +174,7 @@ SLA breach
 Expediting cost
 Revenue at risk
 
-The LLM should only:
+### The LLM should only:
 
 Interpret the question
 Produce a typed scenario request
@@ -195,11 +195,11 @@ Typed scenario request
 
 Reject unknown suppliers, invalid durations and malformed constraints before simulation.
 
-Feature 3: Constrained intervention optimization
+## Feature 3: Constrained intervention optimization
 
 Do not merely generate “suggestions.”
 
-Generate candidate interventions and calculate each outcome:
+### Generate candidate interventions and calculate each outcome:
 
 Do nothing
 Transfer inventory
@@ -208,7 +208,7 @@ Expedite shipment
 Reschedule production
 Combine transfer and supplier substitution
 
-Evaluate them using:
+### Evaluate them using:
 
 Utility=w1(SLA saved)−w2(additional cost)−w3(delay)−w4(risk)\text{Utility} = w_1(\text{SLA saved}) - w_2(\text{additional cost}) - w_3(\text{delay}) - w_4(\text{risk})
 
@@ -216,9 +216,9 @@ Save every candidate and score in Db2.
 
 This gives judges a visible decision table rather than unverifiable prose.
 
-Feature 4: Evidence contract
+## Feature 4: Evidence contract
 
-Every numerical claim should carry:
+### Every numerical claim should carry:
 
 Metric name
 Value
@@ -230,7 +230,7 @@ Calculation version
 Timestamp
 Confidence classification
 
-Example:
+### Example:
 
 Revenue at risk: ₹18.4 lakh
 
@@ -244,11 +244,11 @@ Model-generated numbers = 0
 
 This directly differentiates ChronosDB from agent demos.
 
-Feature 5: Decision replay
+## Feature 5: Decision replay
 
 This should become the signature visual.
 
-The user moves a timeline from:
+### The user moves a timeline from:
 
 Before disruption
 Disruption detected
@@ -256,7 +256,7 @@ Initial projection
 Intervention selected
 Projected recovery
 
-At each point, the interface shows:
+### At each point, the interface shows:
 
 Active risks
 Database facts
@@ -267,7 +267,7 @@ Audit record
 
 The judge can click“Replay decision” and watch the system reconstruct the reasoning.
 
-6. How to use Db2 deeply
+## 6. How to use Db2 deeply
 
 Db2 12.1.2 introduced the native VECTOR type and vector-distance operations, while Db2 12.1.5 adds vector indexes for accelerated approximate nearest-neighbor retrieval. IBM documents vector indexes as appropriate for semantic search, recommendations, classification and other large-scale embedding workloads.
 
@@ -286,11 +286,11 @@ Db2 capability map
 
 IBM’s LangChain connector supports creating vector columns, storing embeddings and performing cosine, Euclidean and dot-product searches through Python workflows.
 
-Important differentiation
+## Important differentiation
 
 IBM already provides runnable RAG and agentic-RAG examples featuring vector retrieval, relevance grading, query rewriting and fallback retrieval. Merely reproducing that pattern will look like a cookbook implementation, not a novel project.
 
-ChronosDB must go beyond retrieval by using Db2 as:
+### ChronosDB must go beyond retrieval by using Db2 as:
 
 Operational state store
 Scenario ledger
@@ -309,9 +309,9 @@ Produces a strict, validated scenario object.
 Allowed output: JSON only
  Not allowed: calculations or recommendations
 
-2. Evidence Retriever
+## 2. Evidence Retriever
 
-Retrieves:
+### Retrieves:
 
 Structured operational facts
 Similar historical disruptions
@@ -319,9 +319,9 @@ Relevant SOP passages
 
 Use Db2 relational queries plus native vector retrieval.
 
-3. Decision Narrator
+## 3. Decision Narrator
 
-Explains:
+### Explains:
 
 Baseline outcome
 Candidate interventions
@@ -332,9 +332,9 @@ Evidence
 
 It cannot introduce unsupported numbers.
 
-Deterministic services
+## Deterministic services
 
-Outside the LLM:
+### Outside the LLM:
 
 Scenario validator
 Dependency resolver
@@ -345,7 +345,7 @@ Audit writer
 
 This architecture is stronger than “agents debate one another” because it reduces hallucination and can be tested.
 
-8. Benchmark framework
+## 8. Benchmark framework
 
 Do not claim “90% accurate” without a defined test.
 
@@ -364,23 +364,23 @@ Scenario distribution
 
 Each synthetic scenario should have a deterministic expected outcome.
 
-Baselines
+## Baselines
 
-Compare ChronosDB against:
+### Compare ChronosDB against:
 
-Baseline A: Naive LLM
+## Baseline A: Naive LLM
 
 Prompt contains a textual summary, no Db2 tools.
 
-Baseline B: Standard RAG
+## Baseline B: Standard RAG
 
 Retrieves relevant documents but does not run simulation.
 
-Baseline C: Rule-only simulator
+## Baseline C: Rule-only simulator
 
 Calculates outcomes but provides no semantic evidence or natural-language interface.
 
-ChronosDB
+## ChronosDB
 
 Relational evidence + vector retrieval + deterministic simulator + constrained optimizer + verified narration.
 
@@ -415,9 +415,9 @@ Performance
 
 These are targets, not claims. Report observed median, p95 and maximum values from your actual environment.
 
-Safety and reliability
+## Safety and reliability
 
-Test at least:
+### Test at least:
 
 SQL injection
 Prompt injection inside an SOP document
@@ -432,7 +432,7 @@ Db2 connection failure
 Unsupported numerical claim
 Duplicate scenario execution
 
-Target:
+### Target:
 
 Write attempts blocked: 100%
 Unsupported numerical claims removed: 100%
@@ -450,7 +450,7 @@ Critical test failures: 0
 
 A credible 92/100 is better than claiming “102/100.” Judges reward proof, not exaggerated self-scoring.
 
-11. Eye-catching interface
+## 11. Eye-catching interface
 
 Use an operations war-room, not a chatbot-first design.
 
@@ -469,7 +469,7 @@ Optimization objective
 “Run counterfactual” button
 Center: dependency cascade
 
-Show:
+### Show:
 
 Supplier S-104
 → Component MCU-42
@@ -484,7 +484,7 @@ Alternate supplier
 Expedite
 Hybrid plan
 
-Use horizontal bars for:
+### Use horizontal bars for:
 
 Cost
 Delay
@@ -509,7 +509,7 @@ Show the healthy supply chain turning red.
 
 0:20–0:45: Trigger disruption
 
-Enter:
+### Enter:
 
 Supplier S-104 unavailable for 14 days. Keep recovery cost below ₹2 lakh.
 
@@ -517,7 +517,7 @@ Click Run counterfactual.
 
 0:45–1:20: Show cascade
 
-Animate:
+### Animate:
 
 Supplier
 Components
@@ -525,7 +525,7 @@ Production orders
 Customer orders
 Revenue and SLA impact
 
-State clearly:
+### State clearly:
 
 “These values come from deterministic dependency and inventory calculations, not the language model.”
 
@@ -533,14 +533,14 @@ State clearly:
 
 Show five intervention cards.
 
-Select the best option:
+### Select the best option:
 
 71% reduction in revenue at risk
 Two SLA breaches avoided
 ₹1.32 lakh intervention cost
 1:55–2:25: Prove it
 
-Open the evidence drawer:
+### Open the evidence drawer:
 
 Db2 source rows
 Similar incident retrieved through vector search
@@ -555,7 +555,7 @@ Move the timeline backward to show what the organization knew before the disrupt
 
 “ChronosDB does not ask you to trust an AI recommendation. It lets you replay, compare and verify the decision directly against IBM Db2.”
 
-13. Repository standard
+## 13. Repository standard
 
 The canonical submission guide expects the project under a submission folder with README.md, architecture.md, submission.json, .env.example, source code, and screenshots. It also recommends tests and provides a local validator.
 
@@ -601,7 +601,7 @@ One-command requirement
 make demo
 
 
-It should:
+### It should:
 
 Start Db2 and the application
 Create the schema
@@ -612,9 +612,9 @@ Print the local URL
 
 The public submission instructions emphasize working source code, setup details, architecture, screenshots and a demonstration video.
 
-14. What to cut
+## 14. What to cut
 
-Remove these unless they are fully implemented and measured:
+### Remove these unless they are fully implemented and measured:
 
 Five autonomous agents
 Agent debate
@@ -637,15 +637,15 @@ Build this
 
 ChronosDB: Auditable Counterfactual Intelligence for Supply-Chain Disruptions
 
-Do not build this
+## Do not build this
 
 A generic enterprise digital twin with five conversational agents.
 
-Defensible differentiator
+## Defensible differentiator
 
 Competitors retrieve, diagnose or verify. ChronosDB reconstructs, simulates, optimizes and proves.
 
-Judge memory line
+## Judge memory line
 
 “ChronosDB is the Db2 time machine for enterprise decisions.”
 

@@ -1,9 +1,9 @@
 Absolutely clear. The idea is now locked as ChronosDB: Auditable Counterfactual Intelligence for Supply-Chain Disruptions. We will treat the plan below as the project’s master execution framework, then take one phase at a time, investigate it deeply, produce its artifacts, run its gate, and only then move forward.
 
-ChronosDB Master Build Plan
-Project mission
+# ChronosDB Master Build Plan
+## Project mission
 
-Build an IBM Db2-native decision-intelligence system that can:
+### Build an IBM Db2-native decision-intelligence system that can:
 
 Reconstruct the operational state at any point in time.
 Detect the cascading impact of a supply-chain disruption.
@@ -11,15 +11,15 @@ Simulate multiple recovery interventions.
 Select the best feasible intervention under business constraints.
 Explain every result using traceable Db2 evidence.
 Replay and audit the full decision process.
-Locked product statement
+## Locked product statement
 
 ChronosDB turns enterprise supply-chain data into an auditable counterfactual decision system that reconstructs the past, simulates possible futures, compares interventions, and proves every recommendation using IBM Db2 evidence.
 
-Locked demonstration scenario
+## Locked demonstration scenario
 
 An electronics manufacturer depends on several suppliers, warehouses and production facilities.
 
-A critical supplier becomes unavailable for 14 days. ChronosDB must calculate:
+### A critical supplier becomes unavailable for 14 days. ChronosDB must calculate:
 
 Affected components
 Affected production orders
@@ -32,13 +32,13 @@ Alternative interventions
 Intervention cost
 Revenue protected
 Best feasible recovery plan
-Execution principles
+## Execution principles
 
 These rules apply to every phase.
 
-Rule 1: Db2 is the execution backbone
+## Rule 1: Db2 is the execution backbone
 
-IBM Db2 must not be used merely as a place to store documents. It must support:
+### IBM Db2 must not be used merely as a place to store documents. It must support:
 
 Operational records
 Historical state
@@ -49,16 +49,16 @@ Simulation outcomes
 Decision audit history
 Agent and model traces
 Benchmark results
-Rule 2: LLMs do not calculate business results
+## Rule 2: LLMs do not calculate business results
 
-The LLM may:
+### The LLM may:
 
 Interpret a user request
 Convert it into a validated scenario
 Retrieve explanatory evidence
 Explain verified results
 
-The LLM may not independently calculate:
+### The LLM may not independently calculate:
 
 Revenue at risk
 Inventory depletion
@@ -69,9 +69,9 @@ Optimal recovery plan
 
 Those outputs must come from deterministic SQL or application logic.
 
-Rule 3: Every important claim requires evidence
+## Rule 3: Every important claim requires evidence
 
-Every displayed metric must be connected to:
+### Every displayed metric must be connected to:
 
 Scenario run ID
 Db2 source records
@@ -80,15 +80,15 @@ Timestamp
 Units
 Evidence query or rule
 Verification status
-Rule 4: One strong vertical slice before expansion
+## Rule 4: One strong vertical slice before expansion
 
 We will first make supplier outage → impact cascade → intervention comparison → evidence replay work end to end.
 
 Demand spikes, warehouse failures and production-capacity failures come later.
 
-Rule 5: No phase passes through screenshots alone
+## Rule 5: No phase passes through screenshots alone
 
-A phase passes only when its required:
+### A phase passes only when its required:
 
 Code
 Tests
@@ -98,7 +98,7 @@ Reproduction instructions
 
 are complete.
 
-Phase map
+## Phase map
 | Phase | Name | Primary outcome |
 | --- | --- | --- |
 | 0 | Project Control and Submission Safety | Establish constraints, repository and working baseline |
@@ -130,7 +130,7 @@ Create a controlled project environment before implementation begins.
 Workstreams
 0.1 Submission-status verification
 
-Because the public event information previously showed conflicting deadline details, establish:
+### Because the public event information previously showed conflicting deadline details, establish:
 
 Whether registration is complete
 Whether an initial PR already exists
@@ -141,7 +141,7 @@ Whether a specific framework is mandatory
 Whether LinkedIn posting is mandatory
 0.2 Source-of-truth register
 
-Create:
+### Create:
 
 docs/project-control/
 ├── official-requirements.md
@@ -151,9 +151,9 @@ docs/project-control/
 ├── risk-register.md
 └── decision-log.md
 
-0.3 Repository initialization
+## 0.3 Repository initialization
 
-Set up:
+### Set up:
 
 Submission branch
 Project directory
@@ -168,7 +168,7 @@ Pre-commit checks
 Basic CI workflow
 0.4 Version baseline
 
-Record exact versions for:
+### Record exact versions for:
 
 IBM Db2
 Python
@@ -189,7 +189,7 @@ Initial CI check
 Submission safety report
 Exit gate
 
-Phase 0 passes only when:
+## Phase 0 passes only when:
 
 The repository builds in a clean environment.
 No secret is committed.
@@ -205,7 +205,7 @@ Translate the idea into a precise product specification aligned with the judging
 Workstreams
 1.1 User definition
 
-The primary user will be an operations or supply-chain manager responsible for:
+### The primary user will be an operations or supply-chain manager responsible for:
 
 Supplier disruption response
 Inventory allocation
@@ -214,7 +214,7 @@ Customer-service commitments
 Recovery-cost control
 1.2 Core user journey
 
-The complete journey must be defined:
+### The complete journey must be defined:
 
 Select or describe a disruption.
 Validate the disruption parameters.
@@ -229,7 +229,7 @@ Inspect Db2 evidence.
 Replay and audit the decision.
 1.3 Functional requirements
 
-Assign identifiers:
+### Assign identifiers:
 
 FR-001 Create supplier-outage scenario
 FR-002 Validate supplier and disruption duration
@@ -247,9 +247,9 @@ FR-013 Generate verified explanation
 FR-014 Store immutable audit record
 FR-015 Replay a previous decision
 
-1.4 Non-functional requirements
+## 1.4 Non-functional requirements
 
-Define measurable targets for:
+### Define measurable targets for:
 
 Correctness
 Numerical fidelity
@@ -263,7 +263,7 @@ Accessibility
 UI responsiveness
 1.5 Rubric evidence matrix
 
-For every judging category, document:
+### For every judging category, document:
 
 Feature that addresses it
 Artifact that proves it
@@ -291,7 +291,7 @@ Define exactly how supply-chain entities, constraints and disruptions interact.
 Workstreams
 2.1 Entity model
 
-Define:
+### Define:
 
 Supplier
 Component
@@ -311,7 +311,7 @@ Simulation run
 Decision record
 2.2 Dependency model
 
-Establish deterministic relationships:
+### Establish deterministic relationships:
 
 Supplier
 → Component
@@ -321,9 +321,9 @@ Supplier
 → Customer order
 → SLA and revenue
 
-2.3 Time semantics
+## 2.3 Time semantics
 
-Define:
+### Define:
 
 Event time
 Ingestion time
@@ -335,7 +335,7 @@ Scenario as-of time
 Simulation horizon
 2.4 Business rules
 
-Examples:
+### Examples:
 
 Shortage begins when required quantity exceeds usable inventory before replenishment.
 A production order is delayed if any mandatory BOM component is unavailable.
@@ -345,7 +345,7 @@ Alternate supplier substitution is allowed only for approved components.
 Warehouse transfer is feasible only when source safety stock remains above its minimum.
 2.5 Uncertainty model
 
-Separate:
+### Separate:
 
 Known facts
 Derived deterministic values
@@ -371,9 +371,9 @@ Objective
 
 Build a realistic, internally consistent dataset that demonstrates the complete problem.
 
-Dataset target
+## Dataset target
 
-A practical initial dataset could contain:
+### A practical initial dataset could contain:
 
 15–25 suppliers
 60–100 components
@@ -392,7 +392,7 @@ The precise final size should be large enough to appear realistic but small enou
 Workstreams
 3.1 Data generation specification
 
-Specify:
+### Specify:
 
 Primary keys
 Dates
@@ -408,9 +408,9 @@ Referential relationships
 
 Create one carefully engineered supplier-outage scenario with known results.
 
-3.3 Benchmark scenario generation
+## 3.3 Benchmark scenario generation
 
-Create at least:
+### Create at least:
 
 10 supplier outages
 10 shipment delays
@@ -420,7 +420,7 @@ Create at least:
 10 multi-event scenarios
 3.4 Ground-truth outcomes
 
-For every benchmark case, preserve:
+### For every benchmark case, preserve:
 
 Expected affected entities
 Expected shortage
@@ -430,7 +430,7 @@ Expected feasible interventions
 Expected optimal intervention
 3.5 Data validation
 
-Check:
+### Check:
 
 Foreign-key integrity
 Non-negative quantities
@@ -462,7 +462,7 @@ Implement Db2 as the operational, temporal, vector and audit backbone.
 Workstreams
 4.1 Operational schema
 
-Implement normalized tables for:
+### Implement normalized tables for:
 
 Supply
 Inventory
@@ -474,7 +474,7 @@ Simulations
 Decisions
 4.2 Constraints
 
-Add:
+### Add:
 
 Primary keys
 Foreign keys
@@ -485,7 +485,7 @@ Valid status checks
 Date consistency checks
 4.3 Historical model
 
-Implement a consistent history approach using:
+### Implement a consistent history approach using:
 
 Effective-from and effective-to fields
 State snapshot tables
@@ -493,14 +493,14 @@ Event ledger
 Scenario AS_OF_TIMESTAMP
 4.4 Vector schema
 
-Store embeddings for:
+### Store embeddings for:
 
 Disruption reports
 Supplier notices
 Operating procedures
 Historical incident summaries
 
-Retain:
+### Retain:
 
 Source ID
 Document version
@@ -510,7 +510,7 @@ Embedding dimension
 Ingestion timestamp
 4.5 Audit schema
 
-Create separate tables for:
+### Create separate tables for:
 
 Scenario requests
 Simulation runs
@@ -522,7 +522,7 @@ Verification status
 Errors
 4.6 Roles and permissions
 
-At minimum:
+### At minimum:
 
 Read-only application role
 Simulation writer role
@@ -560,7 +560,7 @@ Disrupted supplier
 Workstreams
 5.1 Inventory projection
 
-Calculate:
+### Calculate:
 
 Opening available stock
 Reserved stock
@@ -574,9 +574,9 @@ Shortage quantity
 
 Determine all finished products affected by disrupted components.
 
-5.3 Production impact
+## 5.3 Production impact
 
-Calculate:
+### Calculate:
 
 Earliest feasible start
 Component-constrained start
@@ -585,7 +585,7 @@ Projected completion
 Delay days
 5.4 Customer impact
 
-Calculate:
+### Calculate:
 
 Affected customer orders
 Projected delivery
@@ -627,9 +627,9 @@ Workstreams
 
 A simulation must never mutate live baseline data.
 
-6.2 Scenario overlay
+## 6.2 Scenario overlay
 
-Apply changes as an isolated overlay:
+### Apply changes as an isolated overlay:
 
 Added supply
 Changed lead time
@@ -638,7 +638,7 @@ Changed production priority
 Changed transfer quantity
 6.3 Simulation ledger
 
-Record:
+### Record:
 
 Initial state reference
 Intervention definition
@@ -649,7 +649,7 @@ Warnings
 Errors
 6.4 Comparative engine
 
-Calculate differences between:
+### Calculate differences between:
 
 Baseline
 Do-nothing scenario
@@ -681,7 +681,7 @@ Maximize service level
 Balance cost and customer impact
 Constraints
 
-Examples:
+### Examples:
 
 Maximum additional cost
 Minimum safety stock
@@ -695,17 +695,17 @@ Workstreams
 
 Reject impossible interventions before ranking.
 
-7.2 Scoring
+## 7.2 Scoring
 
 Use normalized business metrics rather than arbitrary LLM rankings.
 
-7.3 Pareto comparison
+## 7.3 Pareto comparison
 
 Show when no single plan is best on all dimensions.
 
-7.4 Sensitivity analysis
+## 7.4 Sensitivity analysis
 
-Test whether the selected plan changes when:
+### Test whether the selected plan changes when:
 
 Cost weight changes
 SLA weight changes
@@ -739,7 +739,7 @@ Warehouse-transfer procedures
 Workstreams
 8.1 Document ingestion
 
-Implement:
+### Implement:
 
 Parsing
 Chunking
@@ -749,7 +749,7 @@ Versioning
 Duplicate detection
 8.2 Structured retrieval
 
-Filter by:
+### Filter by:
 
 Supplier
 Component
@@ -762,13 +762,13 @@ User access
 
 Retrieve semantically related incidents and procedures.
 
-8.4 Hybrid ranking
+## 8.4 Hybrid ranking
 
 Combine semantic score with structured relevance and recency.
 
-8.5 Evaluation
+## 8.5 Evaluation
 
-Measure:
+### Measure:
 
 Recall@K
 Precision@K
@@ -793,26 +793,26 @@ Objective
 
 Add natural-language interaction without allowing the model to control business truth.
 
-Component 1: Scenario Planner
+## Component 1: Scenario Planner
 
-Convert:
+### Convert:
 
 “Supplier S-104 is down for two weeks. Keep recovery under ₹2 lakh.”
 
 into a typed request.
 
-Component 2: Evidence Selector
+## Component 2: Evidence Selector
 
 Select which verified simulation outputs and retrieved sources are relevant to the response.
 
-Component 3: Decision Narrator
+## Component 3: Decision Narrator
 
 Explain trade-offs using only approved evidence.
 
 Workstreams
 9.1 Structured output
 
-Use a strict schema for:
+### Use a strict schema for:
 
 Event type
 Entity identifiers
@@ -822,7 +822,7 @@ Constraints
 As-of time
 9.2 Validation
 
-Reject:
+### Reject:
 
 Unknown entity
 Impossible duration
@@ -833,9 +833,9 @@ Missing required parameters
 
 Check every generated numerical claim against structured results.
 
-9.4 Graceful fallback
+## 9.4 Graceful fallback
 
-If the model fails:
+### If the model fails:
 
 Preserve simulation results.
 Show a deterministic summary.
@@ -944,7 +944,7 @@ Create a memorable operations war-room experience.
 Required views
 12.1 Executive impact view
 
-Show:
+### Show:
 
 Revenue at risk
 SLA breaches
@@ -956,9 +956,9 @@ Revenue protected
 
 Show the path from supplier disruption to customer impact.
 
-12.3 Intervention comparison
+## 12.3 Intervention comparison
 
-Compare:
+### Compare:
 
 Cost
 Delay
@@ -970,9 +970,9 @@ Feasibility
 
 Allow movement between operational states and decision stages.
 
-12.5 Evidence drawer
+## 12.5 Evidence drawer
 
-Show:
+### Show:
 
 Source records
 Retrieved procedures
@@ -982,7 +982,7 @@ Audit ID
 Claim verification status
 12.6 Degraded states
 
-Design:
+### Design:
 
 Loading
 No results
@@ -1111,7 +1111,7 @@ make benchmark
 make demo
 
 
-Where feasible, consolidate demo startup into:
+### Where feasible, consolidate demo startup into:
 
 make demo
 
@@ -1329,13 +1329,13 @@ The core use case runs without competition-specific assumptions.
 Architecture boundaries support additional disruption types.
 Repository can be reviewed as a reusable Db2 example.
 Technical debt introduced for the deadline is documented.
-Cross-phase workstreams
+## Cross-phase workstreams
 
 These must remain active throughout the project.
 
 A. Decision log
 
-For every major choice, record:
+### For every major choice, record:
 
 Decision
 Date
@@ -1345,7 +1345,7 @@ Consequences
 Reversal condition
 B. Risk register
 
-Track at least:
+### Track at least:
 
 | Risk | Impact | Primary mitigation |
 | --- | --- | --- |
@@ -1359,7 +1359,7 @@ Track at least:
 | Unsupported claims | High | Generate metrics directly from benchmark artifacts |
 C. Traceability matrix
 
-Maintain the chain:
+### Maintain the chain:
 
 Judging criterion
 → Requirement
@@ -1372,7 +1372,7 @@ Judging criterion
 
 D. Definition of done
 
-A feature is complete only when it has:
+### A feature is complete only when it has:
 
 Implementation
 Automated test
@@ -1380,7 +1380,7 @@ Error handling
 Audit behavior
 Documentation
 Demo representation where relevant
-Priority tiers
+## Priority tiers
 Tier 0: Mandatory to have a valid project
 Working Db2 integration
 Official framework integration
@@ -1415,9 +1415,9 @@ Multiple LLM providers
 Autonomous agent debate
 Real-time external feeds
 ERP integration
-Recommended implementation order
+## Recommended implementation order
 
-The numbered phases define the governance sequence, but the practical build order should be:
+### The numbered phases define the governance sequence, but the practical build order should be:
 
 Phase 0  Project control
 Phase 1  Requirements
@@ -1444,46 +1444,46 @@ Phase 20 Post-submission preparation
 
 Backend APIs are introduced early enough to connect the deterministic system, but they are finalized after the computational core is stable.
 
-Milestone gates
+## Milestone gates
 Milestone M1: Foundation complete
 
 Includes Phases 0–4.
 
 Proof: A clean Db2 database can be created and seeded with a verified golden scenario.
 
-Milestone M2: Decision engine complete
+## Milestone M2: Decision engine complete
 
 Includes Phases 5–7.
 
 Proof: The system deterministically calculates impact and selects a feasible recovery plan.
 
-Milestone M3: Trustworthy AI complete
+## Milestone M3: Trustworthy AI complete
 
 Includes Phases 8–10.
 
 Proof: Natural-language interaction and semantic evidence work without transferring numerical authority to the LLM.
 
-Milestone M4: Product complete
+## Milestone M4: Product complete
 
 Includes Phases 11–12.
 
 Proof: A user can complete the entire workflow through the application.
 
-Milestone M5: Evidence complete
+## Milestone M5: Evidence complete
 
 Includes Phases 13–16.
 
 Proof: Correctness, security, speed and reproducibility are measured and documented.
 
-Milestone M6: Submission complete
+## Milestone M6: Submission complete
 
 Includes Phases 17–19.
 
 Proof: A judge can understand, run, verify and evaluate the submitted release.
 
-How we will work phase by phase
+## How we will work phase by phase
 
-When you ask for a phase, we will not merely expand these bullets. For each phase, we will produce:
+### When you ask for a phase, we will not merely expand these bullets. For each phase, we will produce:
 
 Purpose and boundaries
 Questions that must be answered
@@ -1500,10 +1500,10 @@ Inputs required by the following phase
 
 We will maintain the locked decisions from completed phases and avoid silently changing the architecture later.
 
-Starting point
+## Starting point
 
-The first detailed execution unit is:
+### The first detailed execution unit is:
 
-Phase 0: Project Control, Submission Safety and Repository Baseline
+## Phase 0: Project Control, Submission Safety and Repository Baseline
 
 That phase must resolve submission eligibility and deadline risk immediately, then establish the repository, environment, decision register, requirements register and initial Db2 connectivity baseline.

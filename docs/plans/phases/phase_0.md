@@ -1,6 +1,6 @@
-Phase 0 Deep Dive: Project Control, Submission Safety and Engineering Baseline
+# Phase 0 Deep Dive: Project Control, Submission Safety and Engineering Baseline
 
-Phase 0 is not a planning formality. Its purpose is to remove every administrative, environmental, repository and dependency risk that could invalidate ChronosDB before product development begins.
+## Phase 0 is not a planning formality. Its purpose is to remove every administrative, environmental, repository and dependency risk that could invalidate ChronosDB before product development begins.
 
 There is one immediate blocker: it is currently 11 November 2026 in Chennai, while the official IBM Db2Hack 2026 rules state a final submission deadline of 10 November 2026 at 5:00 PM IST. The header reportedly shows 7:00 PM, so the official page itself is inconsistent. The event listing also says results are scheduled for 11 November. Therefore, Phase 0A must be completed before writing new product code.
 
@@ -9,7 +9,7 @@ There is one immediate blocker: it is currently 11 November 2026 in Chennai, whi
 
 Establish a verified and reproducible foundation from which every later phase can proceed safely.
 
-At the end of Phase 0, we must know:
+### At the end of Phase 0, we must know:
 
 Whether the project is eligible for evaluation.
 Whether an existing submission can still be updated.
@@ -23,12 +23,12 @@ Whether decisions, risks and evidence are being recorded consistently.
 Whether Phase 1 can begin without unresolved critical ambiguity.
 0.2 Required final result
 
-Phase 0 is complete only when we have a Foundation Release, tagged:
+## Phase 0 is complete only when we have a Foundation Release, tagged:
 
 phase-0-foundation
 
 
-That release must include:
+### That release must include:
 
 Verified eligibility and submission status
 Official requirements register
@@ -67,9 +67,9 @@ Goal
 
 Determine whether ChronosDB can still be submitted, evaluated or updated.
 
-Why this is the first gate
+## Why this is the first gate
 
-The official IBM Db2Hack 2026 rules say:
+### The official IBM Db2Hack 2026 rules say:
 
 Submission requires a Pull Request to the official GitHub repository.
 The PR link must be submitted through the official Google Form.
@@ -77,7 +77,7 @@ Working code, setup instructions and documentation are required.
 The project use case must be shared on LinkedIn.
 Late or incomplete submissions may not qualify.
 
-The event listing adds that:
+### The event listing adds that:
 
 Participation is individual.
 Both the GitHub PR and Google Form are mandatory.
@@ -87,9 +87,9 @@ The listed frameworks include LangChain, LlamaIndex, Haystack, CrewAI and Langfl
 
 However, the canonical GitHub FAQ says AI frameworks are optional and says teams may be eligible subject to official rules. That conflicts with the event listing, which says individual participation and framework use are mandatory.
 
-Subphase 0A.1: Submission-state inventory
+### Subphase 0A.1: Submission-state inventory
 
-Record the status of each item:
+### Record the status of each item:
 
 | Item | Required evidence |
 | --- | --- |
@@ -103,7 +103,7 @@ Record the status of each item:
 | Demo video | Accessible URL |
 | Organizer permission | Message, email or announcement |
 
-Use statuses:
+### Use statuses:
 
 CONFIRMED
 NOT COMPLETED
@@ -111,9 +111,9 @@ UNKNOWN
 NOT APPLICABLE
 BLOCKED
 
-Subphase 0A.2: Deadline reconciliation
+### Subphase 0A.2: Deadline reconciliation
 
-Create a deadline evidence table:
+### Create a deadline evidence table:
 
 | Source | Displayed deadline | Authority level |
 | --- | --- | --- |
@@ -125,9 +125,9 @@ Create a deadline evidence table:
 
 The official public sources are inconsistent, so do not infer continued eligibility from the countdown alone.
 
-Subphase 0A.3: Organizer clarification
+### Subphase 0A.3: Organizer clarification
 
-Send one precise message through the official community or direct contacts:
+### Send one precise message through the official community or direct contacts:
 
 I registered for IBM Db2Hack 2026 and am preparing ChronosDB. Devpost displays conflicting deadline information: the rules body lists 10 November 2026 at 5:00 PM IST, while another page display shows a different time. Please confirm whether a new submission is still accepted or whether an existing PR can still receive commits. I will follow the official decision immediately.
 
@@ -140,13 +140,13 @@ Proceed, but establish whether additional commits are allowed.
 
 The repository FAQ says an existing PR can be updated by pushing additional commits before the deadline. It does not authorize post-deadline commits.
 
-State B: PR exists, form not submitted
+## State B: PR exists, form not submitted
 
 Treat eligibility as blocked until organizers explicitly approve.
 
-State C: Neither exists
+## State C: Neither exists
 
-Treat official competition submission as blocked unless organizers grant an exception. Continue building only as:
+### Treat official competition submission as blocked unless organizers grant an exception. Continue building only as:
 
 Portfolio project
 Open-source contribution candidate
@@ -160,7 +160,7 @@ Required deliverable
 docs/project-control/submission-status.md
 
 
-It must contain:
+### It must contain:
 
 Status of every submission requirement
 Deadline evidence
@@ -179,9 +179,9 @@ Goal
 
 Create one traceable source of truth from conflicting public instructions.
 
-Source hierarchy
+## Source hierarchy
 
-Use this order:
+### Use this order:
 
 Written organizer clarification
 Devpost rules
@@ -192,7 +192,7 @@ Community messages
 Personal interpretations
 Important current requirements
 
-The official rules assign:
+### The official rules assign:
 
 30% to Db2 integration and depth
 25% to innovation and impact
@@ -200,26 +200,26 @@ The official rules assign:
 15% to reproducibility and code quality
 10% to documentation and presentation
 
-The canonical submission guide requires the project under:
+### The canonical submission guide requires the project under:
 
 submissions/<project-slug>/
 
 
-with the main implementation under src/, plus required metadata and documentation. It uses a feature branch named:
+### with the main implementation under src/, plus required metadata and documentation. It uses a feature branch named:
 
 submission/<project-slug>
 
 
 and requires lowercase alphanumeric characters and hyphens in the slug.
 
-Subphase 0B.1: Requirements register
+### Subphase 0B.1: Requirements register
 
-Create:
+### Create:
 
 docs/project-control/requirements-register.csv
 
 
-Recommended fields:
+### Recommended fields:
 
 requirement_id
 requirement_text
@@ -235,7 +235,7 @@ conflict_id
 notes
 
 
-Example:
+### Example:
 
 SUB-001
 Project must be submitted through a PR
@@ -249,9 +249,9 @@ Manual verification
 Open
 None
 
-Subphase 0B.2: Conflict register
+### Subphase 0B.2: Conflict register
 
-Create identifiers such as:
+### Create identifiers such as:
 
 CONFLICT-001 Deadline mismatch
 CONFLICT-002 Individual versus team eligibility
@@ -260,7 +260,7 @@ CONFLICT-004 Correct official repository and current template
 CONFLICT-005 Post-deadline update permission
 
 
-Each conflict needs:
+### Each conflict needs:
 
 Conflicting statements
 Source references
@@ -270,7 +270,7 @@ Resolution owner
 Final resolution
 Conservative behavior
 
-Until clarified:
+### Until clarified:
 
 Treat participation as individual.
 Include an approved framework.
@@ -279,12 +279,12 @@ Use the canonical KunalGolaIBM repository.
 Do not assume post-deadline changes are accepted.
 Subphase 0B.3: Compliance matrix
 
-Create:
+### Create:
 
 docs/project-control/compliance-matrix.md
 
 
-Each requirement must map to:
+### Each requirement must map to:
 
 Requirement
 → Repository artifact
@@ -295,16 +295,16 @@ Benchmark
 Requirement Coverage Ratio
 RCR=mandatory requirements with verificationtotal mandatory requirementsRCR = \frac{\text{mandatory requirements with verification}}{\text{total mandatory requirements}}
 
-Target:
+### Target:
 
-RCR = 100%
+## RCR = 100%
 
 Conflict Closure Ratio
 CCR=resolved critical conflictstotal critical conflictsCCR = \frac{\text{resolved critical conflicts}}{\text{total critical conflicts}}
 
-Required to leave Phase 0:
+### Required to leave Phase 0:
 
-CCR = 100%
+## CCR = 100%
 
 
 A conflict can remain open only if it is non-critical and the conservative interpretation prevents non-compliance.
@@ -328,20 +328,20 @@ Primary user: Supply-chain operations manager
 
 LangChain is the recommended qualifying framework because it can support typed planning and retrieval without forcing the simulation engine into an agent framework. This lets deterministic Python and SQL retain authority over business calculations.
 
-Subphase 0C.1: Product charter
+### Subphase 0C.1: Product charter
 
-Create:
+### Create:
 
 docs/project-control/product-charter.md
 
 
-It must include:
+### It must include:
 
-Problem
+## Problem
 
 Operations teams can observe disruptions but struggle to trace cascading impacts and compare auditable recovery plans.
 
-Product promise
+## Product promise
 
 ChronosDB reconstructs supply-chain state, simulates alternative interventions and proves every recommendation using Db2 evidence.
 
@@ -367,7 +367,7 @@ Agent debate
 Direct production actions
 Subphase 0C.2: Terminology lock
 
-Define exact meanings:
+### Define exact meanings:
 
 revenue_at_risk, not revenue lost
 projected_delay_days, not confirmed delay
@@ -384,9 +384,9 @@ Goal
 
 Create a repository structure that passes the official validator and remains maintainable.
 
-Canonical setup
+## Canonical setup
 
-Use the canonical repository described in the submission guide:
+### Use the canonical repository described in the submission guide:
 
 git clone https://github.com/<username>/IBM_Db2_TechX_Project_Submission.git
 cd IBM_Db2_TechX_Project_Submission
@@ -441,7 +441,7 @@ Populate all known fields with valid, honest values. Do not leave invalid placeh
 
 .env.example
 
-Only variable names and dummy values:
+### Only variable names and dummy values:
 
 DB2_HOST=localhost
 DB2_PORT=50000
@@ -459,7 +459,7 @@ Never commit .env.
 
 .gitignore
 
-Include:
+### Include:
 
 .env
 .env.*
@@ -474,9 +474,9 @@ coverage/
 *.log
 .DS_Store
 
-Local submission validation
+## Local submission validation
 
-The repository provides:
+### The repository provides:
 
 python scripts/validate_submission.py submissions/chronosdb
 
@@ -530,14 +530,14 @@ Java 17 for the Db2 Developer Extension
 
 The official extension documentation currently lists Visual Studio Code 1.103.0 or newer and Java 17 or newer as prerequisites.
 
-Subphase 0E.1: Version manifest
+### Subphase 0E.1: Version manifest
 
-Create:
+### Create:
 
 docs/project-control/version-matrix.md
 
 
-Include:
+### Include:
 
 | Component | Required | Detected | Verification command |
 | --- | --- | --- | --- |
@@ -550,16 +550,16 @@ Include:
 | ibm_db | Locked | Actual | Package query |
 Subphase 0E.2: Dependency locking
 
-Do not rely solely on broad ranges such as:
+### Do not rely solely on broad ranges such as:
 
 fastapi>=0.100
 
 
 Create deterministic locks or exact package versions.
 
-Subphase 0E.3: Standard commands
+### Subphase 0E.3: Standard commands
 
-The following command contract should exist:
+### The following command contract should exist:
 
 make doctor
 make install
@@ -571,11 +571,11 @@ make security
 make db-health
 
 
-Phase 0 does not need make demo; that comes later.
+## Phase 0 does not need make demo; that comes later.
 
-Environment benchmark
+## Environment benchmark
 
-On a clean checkout:
+### On a clean checkout:
 
 Environment diagnosis: under 30 seconds
 Dependency installation: ideally under 10 minutes on normal broadband
@@ -587,25 +587,25 @@ Goal
 
 Establish a real, stable and documented Db2 environment.
 
-Environment decision
+## Environment decision
 
 Select one primary environment and one fallback.
 
-Recommended primary
+## Recommended primary
 
 IBM Db2 Community Edition, created through the official Db2 Developer Extension or documented container workflow.
 
 The official extension can create a Community Edition instance, create databases and establish connection profiles. It can also browse schemas and execute SQL directly inside Visual Studio Code.
 
-Recommended fallback
+## Recommended fallback
 
 Existing Db2 instance or approved IBM Cloud Db2 environment, if already available.
 
 Do not use SQLite or PostgreSQL as a silent replacement. Those may support isolated unit tests, but the Phase 0 integration test must connect to actual Db2.
 
-Subphase 0F.1: Instance creation
+### Subphase 0F.1: Instance creation
 
-Record:
+### Record:
 
 Edition
 Version
@@ -622,9 +622,9 @@ Initialization time
 
 Do not record passwords.
 
-Subphase 0F.2: Database creation
+### Subphase 0F.2: Database creation
 
-Use a project-specific database where possible:
+### Use a project-specific database where possible:
 
 Database: CHRONOS
 Schema: CHRONOS
@@ -632,16 +632,16 @@ Schema: CHRONOS
 
 If database naming is constrained, use a dedicated schema.
 
-Subphase 0F.3: Connection proof
+### Subphase 0F.3: Connection proof
 
-Run a minimal query:
+### Run a minimal query:
 
 VALUES CURRENT SERVER;
 VALUES CURRENT TIMESTAMP;
 VALUES CURRENT USER;
 
 
-Then create a Phase 0 health table:
+### Then create a Phase 0 health table:
 
 CREATE TABLE CHRONOS.SYSTEM_HEALTH (
     CHECK_ID VARCHAR(36) NOT NULL PRIMARY KEY,
@@ -654,9 +654,9 @@ CREATE TABLE CHRONOS.SYSTEM_HEALTH (
 
 Insert and retrieve one record.
 
-Subphase 0F.4: Capability inventory
+### Subphase 0F.4: Capability inventory
 
-Capture whether the selected Db2 environment supports:
+### Capture whether the selected Db2 environment supports:
 
 Required SQL functionality
 Vector data type
@@ -670,9 +670,9 @@ Required Python driver
 
 Do not assume vector support merely because the project intends to use it. Record the actual Db2 edition and version.
 
-Db2 foundation benchmark
+## Db2 foundation benchmark
 
-Run at least 30 iterations after warm-up:
+### Run at least 30 iterations after warm-up:
 
 | Measurement | Phase 0 target |
 | --- | --- |
@@ -690,7 +690,7 @@ Deliverable
 artifacts/phase-0/db2-baseline.json
 
 
-Example:
+### Example:
 
 {
   "runs": 30,
@@ -720,7 +720,7 @@ Liveness
 GET /health/live
 
 
-Response:
+### Response:
 
 {
   "status": "alive"
@@ -733,7 +733,7 @@ Readiness
 GET /health/ready
 
 
-Successful response:
+### Successful response:
 
 {
   "status": "ready",
@@ -750,7 +750,7 @@ Version
 GET /version
 
 
-Return:
+### Return:
 
 Application version
 Git commit, when available
@@ -779,7 +779,7 @@ Parameterized query test succeeds.
 Connections are released after requests.
 Benchmark
 
-Run readiness 50 times:
+### Run readiness 50 times:
 
 Success rate: 100%
 Median latency: <250 ms locally
@@ -812,16 +812,16 @@ ESLint
 → unit tests
 → production build
 
-Pipeline 4: Secret detection
+## Pipeline 4: Secret detection
 
-Use:
+### Use:
 
 Gitleaks or equivalent scanner
 .env file detection
 Common cloud/API key patterns
 Branch protection target
 
-If repository permissions permit:
+### If repository permissions permit:
 
 CI required before merge
 No direct commits to protected release branch
@@ -838,7 +838,7 @@ Benchmark
 | Critical dependency vulnerabilities | 0 |
 | Secrets detected | 0 |
 
-If a dependency advisory has no immediate fix, document:
+### If a dependency advisory has no immediate fix, document:
 
 Package
 Advisory
@@ -853,16 +853,16 @@ Goal
 
 Prevent disqualification, credential exposure and unusable third-party assets.
 
-Subphase 0I.1: Secrets policy
+### Subphase 0I.1: Secrets policy
 
-Allowed:
+### Allowed:
 
 .env.example
 Dummy tokens
 Environment-variable names
 Local secret storage
 
-Forbidden:
+### Forbidden:
 
 .env
 API keys
@@ -874,11 +874,11 @@ Credentials in screenshots
 
 The repository guidance explicitly uses a zero-secrets policy and requires dummy placeholders in .env.example.
 
-Subphase 0I.2: Git-history scan
+### Subphase 0I.2: Git-history scan
 
 Scan the entire branch history, not only the current working tree.
 
-If a secret was committed:
+### If a secret was committed:
 
 Revoke it immediately.
 Replace it.
@@ -887,14 +887,14 @@ Re-scan.
 Record the incident without storing the secret.
 Subphase 0I.3: Dependency inventory
 
-Generate:
+### Generate:
 
 artifacts/phase-0/backend-dependencies.txt
 artifacts/phase-0/frontend-dependencies.json
 artifacts/phase-0/licenses.csv
 
 
-Fields:
+### Fields:
 
 Package
 Version
@@ -904,7 +904,7 @@ Source
 Compatibility concern
 Subphase 0I.4: Asset policy
 
-For future screenshots and diagrams:
+### For future screenshots and diagrams:
 
 Create original diagrams.
 Use licensed icons.
@@ -947,7 +947,7 @@ Evidence:
 Revisit condition:
 
 
-Initial architectural decision records:
+### Initial architectural decision records:
 
 ADR-0001 Use LangChain for typed planning and retrieval
 ADR-0002 Use deterministic Python/SQL for all business calculations
@@ -958,13 +958,13 @@ ADR-0006 Separate liveness from Db2 readiness
 ADR-0007 Use synthetic data with explicit disclosure
 ADR-0008 Never allow LLM-generated numerical business truth
 
-Risk scoring
+## Risk scoring
 
-Use:
+### Use:
 
 Risk Score=Likelihood(1−5)×Impact(1−5)\text{Risk Score} = \text{Likelihood}(1-5) \times \text{Impact}(1-5)
 
-Priority:
+### Priority:
 
 20–25: Critical
 12–19: High
@@ -983,7 +983,7 @@ Initial Phase 0 risks
 | R-008 | Framework-rule conflict | 3 | 4 | 12 | Include LangChain conservatively |
 Acceptance criterion
 
-Every Critical and High risk must have:
+### Every Critical and High risk must have:
 
 Owner
 Mitigation
@@ -1006,11 +1006,11 @@ Input: submissions/chronosdb
 Runs: 3
 Target: 3/3 passes
 
-B0-02 Clean-install reproducibility
+### B0-02 Clean-install reproducibility
 
 Perform from a clean checkout.
 
-Measure:
+### Measure:
 
 Installation success
 Time to ready
@@ -1018,7 +1018,7 @@ Manual interventions
 Missing instructions
 Package conflicts
 
-Target:
+### Target:
 
 Success: 100%
 Undocumented manual steps: 0
@@ -1037,16 +1037,16 @@ Restart Db2.
 Confirm readiness recovers.
 Run read/write verification.
 
-Target:
+### Target:
 
 Correct failure detection: 100%
 Correct recovery detection: 100%
 Data loss: 0
 Manual code changes: 0
 
-B0-05 Secret scan
+### B0-05 Secret scan
 
-Run against:
+### Run against:
 
 Working tree
 Git history
@@ -1054,30 +1054,30 @@ Config files
 Documentation
 Screenshot folder
 
-Target:
+### Target:
 
-Verified secrets: 0
+## Verified secrets: 0
 
-B0-06 CI repeatability
+### B0-06 CI repeatability
 
 Run the full foundation pipeline three times.
 
-Target:
+### Target:
 
 Passes: 3/3
 Flaky tests: 0
 Result differences: 0
 
-B0-07 Error-quality test
+### B0-07 Error-quality test
 
-Trigger:
+### Trigger:
 
 Missing DB2_HOST
 Invalid credentials
 Db2 unavailable
 Invalid port
 
-Target:
+### Target:
 
 Clear actionable internal logs
 Sanitized user response
@@ -1103,7 +1103,7 @@ Required result
 Below 80: Phase 0 fails
 
 
-However, the following are automatic failures regardless of score:
+### However, the following are automatic failures regardless of score:
 
 Eligibility remains unknown.
 A real secret exists in Git history.
@@ -1126,7 +1126,7 @@ Record the foundation commit hash.
 Do not depend on uncommitted local changes.
 Database
 
-Phase 0 database contains little data, but validate:
+## Phase 0 database contains little data, but validate:
 
 Schema recreation script
 Seed script
@@ -1135,16 +1135,16 @@ Database reset procedure
 
 The system must be reconstructible from code. A database backup alone is not enough.
 
-Configuration
+## Configuration
 
-Store:
+### Store:
 
 .env.example
 Configuration documentation
 No real credentials
 Recovery drill
 
-Simulate:
+### Simulate:
 
 New project directory
 Clean clone
@@ -1195,9 +1195,9 @@ submissions/chronosdb/
     ├── security-summary.md
     └── recovery-drill.md
 
-Phase 1 handoff inputs
+## Phase 1 handoff inputs
 
-Phase 1 will receive:
+## Phase 1 will receive:
 
 Locked product name
 Locked problem domain
@@ -1221,7 +1221,7 @@ make security
 make db-health
 
 
-If all pass:
+### If all pass:
 
 git add submissions/chronosdb
 git commit -m "chore(chronosdb): complete phase 0 foundation"
@@ -1232,7 +1232,7 @@ git push origin phase-0-foundation
 
 Only push if doing so is allowed under the confirmed submission status. A post-deadline commit must not be made on the assumption that it is accepted.
 
-15. Phase 0 Work Order
+## 15. Phase 0 Work Order
 
 Execute Phase 0 in this exact order.
 
@@ -1378,7 +1378,7 @@ Handoff
  Phase 1 inputs are complete
 Phase 0 Definition of Done
 
-Phase 0 passes only when this statement is true:
+## Phase 0 passes only when this statement is true:
 
 From a clean checkout, an evaluator can identify the official requirements, install the foundation, connect the application to a real IBM Db2 instance, run the health checks and tests, pass the repository validator, verify that no secrets are exposed, and understand exactly what ChronosDB will build in Phase 1.
 
