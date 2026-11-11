@@ -1,0 +1,2051 @@
+[
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0001-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0001-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0001",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0001"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0002-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0002-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0002",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0002"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0003-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0003-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0003",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0003"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0004-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0004-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0004",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0004"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0005-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0005-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0005",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0005"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0006-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0006-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0006",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0006"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0007-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0007-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0007",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0007"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0008-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0008-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0008",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0008"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0009-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0009-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0009",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0009"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0010-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0010-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0010",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0010"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0011-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0011-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0011",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0011"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0012-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0012-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0012",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0012"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0013-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0013-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0013",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0013"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0014-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0014-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0014",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0014"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0015-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0015-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0015",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0015"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0016-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0016-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0016",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0016"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0017-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0017-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0017",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0017"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0018-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0018-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0018",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0018"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0019-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0019-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0019",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0019"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0020-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0020-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0020",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0020"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0021-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0021-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0021",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0021"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0022-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0022-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0022",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0022"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0023-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0023-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0023",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0023"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0024-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0024-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0024",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0024"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0025-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0025-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0025",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0025"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0026-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0026-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0026",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0026"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0027-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0027-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0027",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0027"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0028-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0028-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0028",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0028"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0029-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0029-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0029",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0029"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0030-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0030-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0030",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0030"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0031-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0031-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0031",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0031"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0032-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0032-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0032",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0032"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0033-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0033-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0033",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0033"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0034-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0034-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0034",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0034"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0035-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0035-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0035",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0035"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0036-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0036-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0036",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0036"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0037-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0037-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0037",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0037"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0038-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0038-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0038",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0038"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0039-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0039-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0039",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0039"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0040-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0040-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0040",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0040"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0041-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0041-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0041",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0041"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0042-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0042-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0042",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0042"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0043-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0043-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0043",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0043"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0044-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0044-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0044",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0044"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0045-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0045-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0045",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0045"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0046-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0046-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0046",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0046"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0047-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0047-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0047",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0047"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "SCN-0048-HYBRID"
+    ],
+    "expected_recommendation": "SCN-0048-HYBRID",
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0048",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0048"
+  },
+  {
+    "expected_affected_components": [],
+    "expected_affected_customer_orders": [],
+    "expected_affected_production_orders": [],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0049",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0049"
+  },
+  {
+    "expected_affected_components": [],
+    "expected_affected_customer_orders": [],
+    "expected_affected_production_orders": [],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0050",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0050"
+  },
+  {
+    "expected_affected_components": [],
+    "expected_affected_customer_orders": [],
+    "expected_affected_production_orders": [],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0051",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0051"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
+    "expected_revenue_at_risk_inr": null,
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": null,
+    "expected_validity": "NO_FEASIBLE_INTERVENTION",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0052",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0052"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
+    "expected_revenue_at_risk_inr": null,
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": null,
+    "expected_validity": "NO_FEASIBLE_INTERVENTION",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0053",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0053"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
+    "expected_revenue_at_risk_inr": null,
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": null,
+    "expected_validity": "NO_FEASIBLE_INTERVENTION",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0054",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0054"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [],
+    "expected_data_quality_state": "PARTIAL_CRITICAL",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
+    "expected_revenue_at_risk_inr": null,
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": null,
+    "expected_validity": "INSUFFICIENT_DATA",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0055",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0055"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [],
+    "expected_data_quality_state": "PARTIAL_CRITICAL",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
+    "expected_revenue_at_risk_inr": null,
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": null,
+    "expected_validity": "INSUFFICIENT_DATA",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0056",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0056"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [],
+    "expected_data_quality_state": "PARTIAL_CRITICAL",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
+    "expected_revenue_at_risk_inr": null,
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": null,
+    "expected_validity": "INSUFFICIENT_DATA",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0057",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0057"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "INT-TIE-TRANSFER",
+      "INT-TIE-ALTERNATE"
+    ],
+    "expected_recommendation": null,
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0058",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0058"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "INT-TIE-TRANSFER",
+      "INT-TIE-ALTERNATE"
+    ],
+    "expected_recommendation": null,
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0059",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0059"
+  },
+  {
+    "expected_affected_components": [
+      "component_from_scenario"
+    ],
+    "expected_affected_customer_orders": [
+      "customer_from_scenario"
+    ],
+    "expected_affected_production_orders": [
+      "production_from_scenario"
+    ],
+    "expected_candidate_feasibility": {},
+    "expected_candidate_metrics": {},
+    "expected_causal_trace_roots": [
+      "DISRUPTION_EVENT"
+    ],
+    "expected_data_quality_state": "COMPLETE",
+    "expected_optimal_set": [
+      "INT-TIE-TRANSFER",
+      "INT-TIE-ALTERNATE"
+    ],
+    "expected_recommendation": null,
+    "expected_revenue_at_risk_inr": "0",
+    "expected_shortages": [
+      "shortage_from_scenario"
+    ],
+    "expected_sla_breaches": 0,
+    "expected_validity": "VALID",
+    "provenance": {
+      "formula_version": "2.0",
+      "oracle_version": "0.1.0",
+      "reference_case": "NO_DISRUPTION_BASELINE",
+      "scenario_id": "SCN-0060",
+      "unit": "INR"
+    },
+    "scenario_id": "SCN-0060"
+  }
+]

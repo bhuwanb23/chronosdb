@@ -1,0 +1,6 @@
+{
+  "case": "completed_exceeds_planned",
+  "expected_error": "INVALID_QUANTITY",
+  "family": "invalid",
+  "fixture_id": "FIX-0010"
+}

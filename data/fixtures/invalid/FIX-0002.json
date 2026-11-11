@@ -1,0 +1,6 @@
+{
+  "case": "unknown_component",
+  "expected_error": "UNKNOWN_ENTITY",
+  "family": "invalid",
+  "fixture_id": "FIX-0002"
+}

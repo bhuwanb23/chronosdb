@@ -1,0 +1,6 @@
+{
+  "case": "unauthorized_or_expired_evidence",
+  "expected_error": "UNAUTHORIZED_EVIDENCE",
+  "family": "adversarial",
+  "fixture_id": "FIX-0030"
+}

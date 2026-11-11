@@ -1,0 +1,13 @@
+{
+  "dataset_version": "1.0.0",
+  "expected_output_count": 60,
+  "partitions": {
+    "adversarial": 3,
+    "development": 24,
+    "golden": 3,
+    "review_holdout": 3,
+    "test": 18,
+    "validation": 12
+  },
+  "scenario_count": 60
+}

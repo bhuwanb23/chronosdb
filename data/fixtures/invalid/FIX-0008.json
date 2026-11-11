@@ -1,0 +1,6 @@
+{
+  "case": "negative_disruption_duration",
+  "expected_error": "INVALID_INTERVAL",
+  "family": "invalid",
+  "fixture_id": "FIX-0008"
+}

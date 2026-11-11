@@ -1,0 +1,6 @@
+{
+  "case": "inactive_supplier_active_agreement",
+  "expected_error": "CONTRADICTORY_STATE",
+  "family": "adversarial",
+  "fixture_id": "FIX-0021"
+}

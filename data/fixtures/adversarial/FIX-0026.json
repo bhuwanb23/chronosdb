@@ -1,0 +1,6 @@
+{
+  "case": "cheapest_violates_sla",
+  "expected_error": "INFEASIBLE_INTERVENTION",
+  "family": "adversarial",
+  "fixture_id": "FIX-0026"
+}

@@ -1,0 +1,6 @@
+{
+  "case": "negative_inventory",
+  "expected_error": "INVALID_QUANTITY",
+  "family": "invalid",
+  "fixture_id": "FIX-0006"
+}

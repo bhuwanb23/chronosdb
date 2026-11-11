@@ -1,6 +1,6 @@
 {
   "canonical_timezone": "UTC",
-  "config_sha256": "21555e78ee720c45c83abca043227a1174b82f4a46aa70d22b8345bf87721a9f",
+  "config_sha256": "311a1e5f4127102d5c6db1814ee6ab72bccc2925977d50a34c1ad16f99034fc9",
   "currency": "INR",
   "dataset_name": "chronosdb-synthetic-supply-chain",
   "dataset_version": "1.0.0",

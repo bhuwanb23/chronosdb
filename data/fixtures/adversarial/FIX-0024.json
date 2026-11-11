@@ -1,0 +1,6 @@
+{
+  "case": "production_without_materials",
+  "expected_error": "CONTRADICTORY_STATE",
+  "family": "adversarial",
+  "fixture_id": "FIX-0024"
+}

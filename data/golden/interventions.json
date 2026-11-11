@@ -1,0 +1,17 @@
+[
+  {
+    "id": "INT-GOLD-A",
+    "quantity": 400,
+    "type": "TRANSFER"
+  },
+  {
+    "id": "INT-GOLD-B",
+    "quantity": 400,
+    "type": "ALTERNATE_SUPPLY"
+  },
+  {
+    "id": "INT-GOLD-C",
+    "quantity": 400,
+    "type": "HYBRID"
+  }
+]

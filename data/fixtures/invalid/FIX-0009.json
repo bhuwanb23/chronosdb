@@ -1,0 +1,6 @@
+{
+  "case": "transfer_exceeds_source_stock",
+  "expected_error": "INFEASIBLE_INTERVENTION",
+  "family": "invalid",
+  "fixture_id": "FIX-0009"
+}

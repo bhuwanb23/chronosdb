@@ -1,0 +1,542 @@
+[
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0001",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0002",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0003",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0004",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0005",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0006",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0007",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0008",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0009",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0010",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0011",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0012",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0013",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0014",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_1",
+    "id": "SCN-0015",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0016",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0017",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "FULL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0018",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "PARTIAL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0019",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "PARTIAL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0020",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "PARTIAL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0021",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "PARTIAL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0022",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "PARTIAL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0023",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "PARTIAL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0024",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "PARTIAL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0025",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "PARTIAL_SUPPLIER_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0026",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "SELECTED_COMPONENT_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0027",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "SELECTED_COMPONENT_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0028",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "SELECTED_COMPONENT_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0029",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "SELECTED_COMPONENT_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0030",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "SELECTED_COMPONENT_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0031",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "SELECTED_COMPONENT_OUTAGE",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0032",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "PURCHASE_ORDER_DISRUPTION",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0033",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "PURCHASE_ORDER_DISRUPTION",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0034",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "PURCHASE_ORDER_DISRUPTION",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_2",
+    "id": "SCN-0035",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "PURCHASE_ORDER_DISRUPTION",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0036",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "INVENTORY_TRANSFER_CONSTRAINT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0037",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "INVENTORY_TRANSFER_CONSTRAINT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0038",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "INVENTORY_TRANSFER_CONSTRAINT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0039",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "INVENTORY_TRANSFER_CONSTRAINT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0040",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "ALTERNATE_SUPPLIER_CONSTRAINT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0041",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "ALTERNATE_SUPPLIER_CONSTRAINT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0042",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "ALTERNATE_SUPPLIER_CONSTRAINT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0043",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "ALTERNATE_SUPPLIER_CONSTRAINT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0044",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "BUDGET_CONSTRAINED_RECOVERY",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0045",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "BUDGET_CONSTRAINED_RECOVERY",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0046",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "BUDGET_CONSTRAINED_RECOVERY",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0047",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "BUDGET_CONSTRAINED_RECOVERY",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0048",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "NO_OPERATIONAL_IMPACT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0049",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "NO_OPERATIONAL_IMPACT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0050",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "NO_OPERATIONAL_IMPACT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0051",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "NO_FEASIBLE_INTERVENTION",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_3",
+    "id": "SCN-0052",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "NO_FEASIBLE_INTERVENTION",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_4",
+    "id": "SCN-0053",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "NO_FEASIBLE_INTERVENTION",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_4",
+    "id": "SCN-0054",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "INSUFFICIENT_CRITICAL_DATA",
+    "data_quality_state": "PARTIAL_CRITICAL",
+    "difficulty": "LEVEL_4",
+    "id": "SCN-0055",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "INSUFFICIENT_CRITICAL_DATA",
+    "data_quality_state": "PARTIAL_CRITICAL",
+    "difficulty": "LEVEL_4",
+    "id": "SCN-0056",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "INSUFFICIENT_CRITICAL_DATA",
+    "data_quality_state": "PARTIAL_CRITICAL",
+    "difficulty": "LEVEL_4",
+    "id": "SCN-0057",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "TIE_OR_PARETO_EQUIVALENT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_4",
+    "id": "SCN-0058",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "TIE_OR_PARETO_EQUIVALENT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_4",
+    "id": "SCN-0059",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  },
+  {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "category": "TIE_OR_PARETO_EQUIVALENT",
+    "data_quality_state": "COMPLETE",
+    "difficulty": "LEVEL_4",
+    "id": "SCN-0060",
+    "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "simulation_horizon_days": 30
+  }
+]

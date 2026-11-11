@@ -1,0 +1,6 @@
+{
+  "case": "missing_intervention_cost",
+  "expected_error": "MISSING_CRITICAL_DATA",
+  "family": "boundary",
+  "fixture_id": "FIX-0020"
+}

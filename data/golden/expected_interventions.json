@@ -1,0 +1,116 @@
+[
+  {
+    "breached_customer_orders": 1,
+    "candidate_id": "INT-GOLD-A",
+    "customer_lines": [
+      {
+        "customer_order_id": "CO-0701",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0876",
+        "projected_delivery": "2026-11-15T00:00:00Z",
+        "promised_delivery": "2026-11-15T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0704",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0882",
+        "projected_delivery": "2026-11-18T00:00:00Z",
+        "promised_delivery": "2026-11-18T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0711",
+        "delay_hours": 264,
+        "late_quantity": 200,
+        "production_order_id": "MO-0889",
+        "projected_delivery": "2026-12-02T00:00:00Z",
+        "promised_delivery": "2026-11-21T00:00:00Z",
+        "revenue_at_risk_inr": "800000.00"
+      }
+    ],
+    "intervention_cost_inr": "60000",
+    "net_protected_value_inr": "740000.00",
+    "revenue_at_risk_inr": "800000.00",
+    "revenue_protected_inr": "800000.00",
+    "total_delay_hours": 52800
+  },
+  {
+    "breached_customer_orders": 1,
+    "candidate_id": "INT-GOLD-B",
+    "customer_lines": [
+      {
+        "customer_order_id": "CO-0701",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0876",
+        "projected_delivery": "2026-11-15T00:00:00Z",
+        "promised_delivery": "2026-11-15T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0704",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0882",
+        "projected_delivery": "2026-11-18T00:00:00Z",
+        "promised_delivery": "2026-11-18T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0711",
+        "delay_hours": 264,
+        "late_quantity": 200,
+        "production_order_id": "MO-0889",
+        "projected_delivery": "2026-12-02T00:00:00Z",
+        "promised_delivery": "2026-11-21T00:00:00Z",
+        "revenue_at_risk_inr": "800000.00"
+      }
+    ],
+    "intervention_cost_inr": "72000",
+    "net_protected_value_inr": "728000.00",
+    "revenue_at_risk_inr": "800000.00",
+    "revenue_protected_inr": "800000.00",
+    "total_delay_hours": 52800
+  },
+  {
+    "breached_customer_orders": 0,
+    "candidate_id": "INT-GOLD-C",
+    "customer_lines": [
+      {
+        "customer_order_id": "CO-0701",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0876",
+        "projected_delivery": "2026-11-15T00:00:00Z",
+        "promised_delivery": "2026-11-15T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0704",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0882",
+        "projected_delivery": "2026-11-18T00:00:00Z",
+        "promised_delivery": "2026-11-18T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0711",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0889",
+        "projected_delivery": "2026-11-21T00:00:00Z",
+        "promised_delivery": "2026-11-21T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      }
+    ],
+    "intervention_cost_inr": "132000",
+    "net_protected_value_inr": "1468000.00",
+    "revenue_at_risk_inr": "0.00",
+    "revenue_protected_inr": "1600000.00",
+    "total_delay_hours": 0
+  }
+]

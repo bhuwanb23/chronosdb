@@ -1,0 +1,6 @@
+{
+  "case": "best_sla_exceeds_budget",
+  "expected_error": "INFEASIBLE_INTERVENTION",
+  "family": "adversarial",
+  "fixture_id": "FIX-0027"
+}

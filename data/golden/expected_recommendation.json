@@ -1,0 +1,8 @@
+{
+  "expected_optimal_set": [
+    "INT-GOLD-C"
+  ],
+  "hard_constraints_satisfied": true,
+  "objective_mode": "MINIMIZE_SLA_BREACHES",
+  "recommended_intervention": "INT-GOLD-C"
+}

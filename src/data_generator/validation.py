@@ -158,3 +158,128 @@ def validate_master(entities: dict[str, list[dict[str, Any]]]) -> None:
         product_boms = [row for row in entities["bom_versions"] if row["product_id"] == product]
         if not any(row["status"] == "ACTIVE" for row in product_boms):
             raise ValidationError(f"product has no active BOM: {product}")
+
+
+def validate_operational(
+    master: dict[str, list[dict[str, Any]]],
+    operational: dict[str, list[dict[str, Any]]],
+) -> None:
+    """Validate Phase 3H relationships, temporal rules, and inventory conservation."""
+    required = {
+        "customer_orders",
+        "customer_order_lines",
+        "production_orders",
+        "production_customer_allocations",
+        "production_material_requirements",
+        "purchase_orders",
+        "inventory_transactions",
+        "inventory_snapshots",
+    }
+    if set(operational) != required:
+        raise ValidationError(f"operational entity set mismatch: {set(operational) ^ required}")
+    customer_ids = _ids(master["customers"])
+    product_ids = _ids(master["products"])
+    facility_ids = _ids(master["facilities"])
+    warehouse_ids = _ids(master["warehouses"])
+    component_ids = _ids(master["components"])
+    agreement_ids = _ids(master["supplier_component_agreements"])
+    order_ids = _ids(operational["customer_orders"])
+    line_ids = _ids(operational["customer_order_lines"])
+    production_ids = _ids(operational["production_orders"])
+    po_ids = _ids(operational["purchase_orders"])
+    requirement_ids = _ids(operational["production_material_requirements"])
+    for row in operational["customer_orders"]:
+        if row["customer_id"] not in customer_ids:
+            raise ValidationError(f"unknown customer order customer: {row}")
+    for row in operational["customer_order_lines"]:
+        if row["customer_order_id"] not in order_ids or row["product_id"] not in product_ids:
+            raise ValidationError(f"unknown customer order line reference: {row}")
+        if int(row["ordered_quantity"]) <= 0:
+            raise ValidationError(f"invalid customer order quantity: {row}")
+        order_time = next(
+            order["order_time"]
+            for order in operational["customer_orders"]
+            if order["id"] == row["customer_order_id"]
+        )
+        promised = datetime.fromisoformat(row["promised_delivery"].replace("Z", "+00:00"))
+        if promised <= datetime.fromisoformat(order_time.replace("Z", "+00:00")):
+            raise ValidationError(f"promised date is not after order time: {row}")
+    for row in operational["production_orders"]:
+        if row["facility_id"] not in facility_ids or row["product_id"] not in product_ids:
+            raise ValidationError(f"unknown production reference: {row}")
+        if int(row["planned_quantity"]) <= 0:
+            raise ValidationError(f"invalid planned quantity: {row}")
+        planned_start = datetime.fromisoformat(row["planned_start"].replace("Z", "+00:00"))
+        planned_completion = datetime.fromisoformat(
+            row["planned_completion"].replace("Z", "+00:00")
+        )
+        if planned_completion < planned_start:
+            raise ValidationError(f"production time ordering: {row}")
+    for row in operational["production_customer_allocations"]:
+        if (
+            row["production_order_id"] not in production_ids
+            or row["customer_order_line_id"] not in line_ids
+        ):
+            raise ValidationError(f"unknown production allocation: {row}")
+        if int(row["allocated_quantity"]) <= 0:
+            raise ValidationError(f"invalid allocation: {row}")
+    for row in operational["production_material_requirements"]:
+        if (
+            row["production_order_id"] not in production_ids
+            or row["component_id"] not in component_ids
+        ):
+            raise ValidationError(f"unknown material requirement: {row}")
+        if row["id"] not in requirement_ids or int(row["required_quantity"]) <= 0:
+            raise ValidationError(f"invalid material requirement: {row}")
+    for row in operational["purchase_orders"]:
+        if (
+            row["component_id"] not in component_ids
+            or row["destination_warehouse_id"] not in warehouse_ids
+        ):
+            raise ValidationError(f"unknown purchase order reference: {row}")
+        if int(row["ordered_quantity"]) <= 0 or int(row["received_quantity"]) > int(
+            row["ordered_quantity"]
+        ):
+            raise ValidationError(f"invalid purchase order quantity: {row}")
+    for row in operational["inventory_transactions"]:
+        if row["warehouse_id"] not in warehouse_ids or row["component_id"] not in component_ids:
+            raise ValidationError(f"unknown inventory transaction reference: {row}")
+        if int(row["quantity"]) < 0:
+            raise ValidationError(f"negative inventory transaction: {row}")
+        if (
+            row["reference_id"]
+            and row["transaction_type"] == "PURCHASE_RECEIPT"
+            and row["reference_id"] not in po_ids
+        ):
+            raise ValidationError(f"unknown receipt purchase order: {row}")
+    snapshot_keys = {
+        (row["snapshot_time"], row["warehouse_id"], row["component_id"])
+        for row in operational["inventory_snapshots"]
+    }
+    if len(snapshot_keys) != len(operational["inventory_snapshots"]):
+        raise ValidationError("duplicate inventory snapshot")
+    if not agreement_ids:
+        raise ValidationError("operational data requires supply agreements")
+    latest_snapshot_time = max(row["snapshot_time"] for row in operational["inventory_snapshots"])
+    for snapshot in operational["inventory_snapshots"]:
+        if snapshot["snapshot_time"] != latest_snapshot_time:
+            continue
+        relevant = [
+            transaction
+            for transaction in operational["inventory_transactions"]
+            if transaction["warehouse_id"] == snapshot["warehouse_id"]
+            and transaction["component_id"] == snapshot["component_id"]
+            and transaction["event_time"] <= latest_snapshot_time
+        ]
+        expected = sum(
+            int(transaction["quantity"])
+            * (
+                1
+                if transaction["transaction_type"]
+                in {"OPENING_BALANCE", "PURCHASE_RECEIPT", "PRODUCTION_RETURN"}
+                else -1
+            )
+            for transaction in relevant
+        )
+        if int(snapshot["on_hand_quantity"]) != expected:
+            raise ValidationError(f"inventory conservation failure: {snapshot['id']}")
