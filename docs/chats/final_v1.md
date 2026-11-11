@@ -24,10 +24,12 @@ Measured results
 Reproducible deployment
 A focused, credible demo
 Competitive project benchmark
-Visible project	What makes it strong	Threat to ChronosDB	Gap we can exploitNEEDLE	Searches more than 26,000 OSV advisories using hybrid semantic and keyword retrieval, Db2 row permissions, temporal exposure history, exact version joins and deterministic verification. It reports zero leaks in its held-out access-control test.	Very high	It diagnoses current vulnerability exposure. It does not appear to perform counterfactual operational simulation or intervention optimization.
-MetricGuard	Uses AI only for typed planning, while deterministic code compiles governed SQL. It includes parameterized queries, hash-locked metric definitions, 11 checks, an append-only audit log, 173 backend tests and 37 live cases.	Very high	It verifies analytics, not future operational decisions. ChronosDB can own “evidence-backed counterfactual decisions.”
-Db2 Copilot	Combines structured customer records with native Db2 vector retrieval, deterministic date calculations, SQL guardrails, query auditing, Docker Compose and adversarial tests.	High	It makes policy decisions for refunds. It does not model cascading disruption, temporal state or alternative futures.
-DataSentry AI	Profiles datasets, detects anomalies and generates actionable data-quality reports with Db2, Gemini, LangChain.js, Node.js and React.	Medium	It monitors data quality rather than business-system resilience.
+| Visible project | What makes it strong | Threat to ChronosDB | Gap we can exploit |
+| --- | --- | --- | --- |
+| NEEDLE | Searches more than 26,000 OSV advisories using hybrid semantic and keyword retrieval, Db2 row permissions, temporal exposure history, exact version joins and deterministic verification. It reports zero leaks in its held-out access-control test. | Very high | It diagnoses current vulnerability exposure. It does not appear to perform counterfactual operational simulation or intervention optimization. |
+| MetricGuard | Uses AI only for typed planning, while deterministic code compiles governed SQL. It includes parameterized queries, hash-locked metric definitions, 11 checks, an append-only audit log, 173 backend tests and 37 live cases. | Very high | It verifies analytics, not future operational decisions. ChronosDB can own “evidence-backed counterfactual decisions.” |
+| Db2 Copilot | Combines structured customer records with native Db2 vector retrieval, deterministic date calculations, SQL guardrails, query auditing, Docker Compose and adversarial tests. | High | It makes policy decisions for refunds. It does not model cascading disruption, temporal state or alternative futures. |
+| DataSentry AI | Profiles datasets, detects anomalies and generates actionable data-quality reports with Db2, Gemini, LangChain.js, Node.js and React. | Medium | It monitors data quality rather than business-system resilience. |
 Market conclusion
 
 A standard RAG agent will not stand out. The strongest competitors already demonstrate:
@@ -46,12 +48,14 @@ Temporal causality + counterfactual simulation + constrained optimization + deci
 
 2. Why the current idea would not yet win
 Current concept score
-Rubric	Current idea	Main problemDb2 Integration, 30	17/30	Db2 is described as storage, vector search and memory, rather than the execution backbone.
-Innovation & Impact, 25	18/25	Digital-twin simulation is interesting, but “enterprise state” is too generic.
-Architecture & AI, 20	15/20	Multiple named agents do not automatically create technical depth.
-Reproducibility & Code, 15	7/15	No defined dataset, benchmark, baseline, tests or deterministic simulator.
-Documentation & Presentation, 10	7/10	The story is attractive, but the proof is not yet visible.
-Projected total	64/100	Interesting concept, insufficient proof.
+| Rubric | Current idea | Main problem |
+| --- | --- | --- |
+| Db2 Integration, 30 | 17/30 | Db2 is described as storage, vector search and memory, rather than the execution backbone. |
+| Innovation & Impact, 25 | 18/25 | Digital-twin simulation is interesting, but “enterprise state” is too generic. |
+| Architecture & AI, 20 | 15/20 | Multiple named agents do not automatically create technical depth. |
+| Reproducibility & Code, 15 | 7/15 | No defined dataset, benchmark, baseline, tests or deterministic simulator. |
+| Documentation & Presentation, 10 | 7/10 | The story is attractive, but the proof is not yet visible. |
+| Projected total | 64/100 | Interesting concept, insufficient proof. |
 
 The official rubric gives 30% to Db2 integration, 25% to innovation and impact, 20% to architecture, 15% to reproducibility, and 10% to documentation and presentation.
 
@@ -268,15 +272,17 @@ The judge can click“Replay decision” and watch the system reconstruct the re
 Db2 12.1.2 introduced the native VECTOR type and vector-distance operations, while Db2 12.1.5 adds vector indexes for accelerated approximate nearest-neighbor retrieval. IBM documents vector indexes as appropriate for semantic search, recommendations, classification and other large-scale embedding workloads.
 
 Db2 capability map
-Db2 role	Implementation	Why judges careSystem of record	Orders, suppliers, inventory, BOM and events	Demonstrates relational depth
-Temporal evidence	Snapshot and event tables with effective timestamps	Enables replay and causality
-Vector retrieval	Embed disruption reports, SOPs and supplier notes	Adds semantic evidence
-Hybrid retrieval	Structured filters plus vector similarity	Better than an isolated vector database
-Scenario persistence	Inputs, constraints, candidates and outcomes	Makes simulations auditable
-Security	Read-only application role and restricted audit writer	Enterprise credibility
-Auditability	Append-only decision and evidence records	Trustworthy AI
-Analytics	Window functions, CTEs and recursive dependency traversal	Demonstrates Db2 SQL depth
-Performance	Index query columns and benchmark vector retrieval	Reproducibility and engineering quality
+| Db2 role | Implementation | Why judges care |
+| --- | --- | --- |
+| System of record | Orders, suppliers, inventory, BOM and events | Demonstrates relational depth |
+| Temporal evidence | Snapshot and event tables with effective timestamps | Enables replay and causality |
+| Vector retrieval | Embed disruption reports, SOPs and supplier notes | Adds semantic evidence |
+| Hybrid retrieval | Structured filters plus vector similarity | Better than an isolated vector database |
+| Scenario persistence | Inputs, constraints, candidates and outcomes | Makes simulations auditable |
+| Security | Read-only application role and restricted audit writer | Enterprise credibility |
+| Auditability | Append-only decision and evidence records | Trustworthy AI |
+| Analytics | Window functions, CTEs and recursive dependency traversal | Demonstrates Db2 SQL depth |
+| Performance | Index query columns and benchmark vector retrieval | Reproducibility and engineering quality |
 
 IBM’s LangChain connector supports creating vector columns, storing embeddings and performing cosine, Euclidean and dot-product searches through Python workflows.
 
@@ -346,13 +352,15 @@ Do not claim “90% accurate” without a defined test.
 Create a benchmark with at least 30 scenario cases, preferably 50.
 
 Scenario distribution
-Scenario type	CasesSupplier outage	10
-Shipment delay	10
-Demand spike	10
-Warehouse inventory loss	5
-Production-capacity reduction	5
-Multi-event disruption	10
-Total	50
+| Scenario type | Cases |
+| --- | --- |
+| Supplier outage | 10 |
+| Shipment delay | 10 |
+| Demand spike | 10 |
+| Warehouse inventory loss | 5 |
+| Production-capacity reduction | 5 |
+| Multi-event disruption | 10 |
+| Total | 50 |
 
 Each synthetic scenario should have a deterministic expected outcome.
 
@@ -378,26 +386,32 @@ Relational evidence + vector retrieval + deterministic simulator + constrained o
 
 9. Metrics that are defensible
 Correctness
-Metric	Calculation	TargetScenario parse success	Valid scenario objects / valid prompts	≥95%
-Invalid-input rejection	Correctly rejected / invalid inputs	100%
-Impact-set precision	Correct affected orders / predicted affected orders	≥95%
-Impact-set recall	Correct affected orders found / total affected orders	≥95%
-Numerical fidelity	Supported numerical claims / all numerical claims	100%
-Intervention feasibility	Feasible recommended plans / plans produced	100%
-Optimal-plan agreement	Selected optimal plan / benchmark-optimal plan	≥90%
-Citation coverage	Claims linked to evidence / verifiable claims	100%
+| Metric | Calculation | Target |
+| --- | --- | --- |
+| Scenario parse success | Valid scenario objects / valid prompts | ≥95% |
+| Invalid-input rejection | Correctly rejected / invalid inputs | 100% |
+| Impact-set precision | Correct affected orders / predicted affected orders | ≥95% |
+| Impact-set recall | Correct affected orders found / total affected orders | ≥95% |
+| Numerical fidelity | Supported numerical claims / all numerical claims | 100% |
+| Intervention feasibility | Feasible recommended plans / plans produced | 100% |
+| Optimal-plan agreement | Selected optimal plan / benchmark-optimal plan | ≥90% |
+| Citation coverage | Claims linked to evidence / verifiable claims | 100% |
 Retrieval
-Metric	TargetRecall@5	≥0.85
-Mean Reciprocal Rank	≥0.80
-Unsupported evidence rate	0%
-Structured filter compliance	100%
+| Metric | Target |
+| --- | --- |
+| Recall@5 | ≥0.85 |
+| Mean Reciprocal Rank | ≥0.80 |
+| Unsupported evidence rate | 0% |
+| Structured filter compliance | 100% |
 Performance
-Operation	Practical targetScenario validation	<100 ms
-Structured impact query	<500 ms
-Evidence retrieval	<1 second
-Simulation of six interventions	<2 seconds
-End-to-end response	<8 seconds
-Decision replay load	<2 seconds
+| Operation | Practical target |
+| --- | --- |
+| Scenario validation | <100 ms |
+| Structured impact query | <500 ms |
+| Evidence retrieval | <1 second |
+| Simulation of six interventions | <2 seconds |
+| End-to-end response | <8 seconds |
+| Decision replay load | <2 seconds |
 
 These are targets, not claims. Report observed median, p95 and maximum values from your actual environment.
 
@@ -425,12 +439,14 @@ Unsupported numerical claims removed: 100%
 Secrets in repository: 0
 Critical test failures: 0
 10. Judge-score projection after redesign
-Criterion	Evidence needed	Target scoreDb2 Integration, 30	Relational operations, vectors, temporal evidence, scenarios, audit, SQL depth	28/30
-Innovation & Impact, 25	Counterfactual disruption intelligence with measurable cost and SLA impact	23/25
-Architecture & AI, 20	Typed planning, deterministic simulation, evidence verification	18/20
-Reproducibility & Code, 15	Docker setup, seeds, tests, benchmark script and one-command demo	14/15
-Documentation & Presentation, 10	Architecture, screenshots, benchmark report and polished demo	9/10
-Target		92/100
+| Criterion | Evidence needed | Target score |
+| --- | --- | --- |
+| Db2 Integration, 30 | Relational operations, vectors, temporal evidence, scenarios, audit, SQL depth | 28/30 |
+| Innovation & Impact, 25 | Counterfactual disruption intelligence with measurable cost and SLA impact | 23/25 |
+| Architecture & AI, 20 | Typed planning, deterministic simulation, evidence verification | 18/20 |
+| Reproducibility & Code, 15 | Docker setup, seeds, tests, benchmark script and one-command demo | 14/15 |
+| Documentation & Presentation, 10 | Architecture, screenshots, benchmark report and polished demo | 9/10 |
+| Target |  | 92/100 |
 
 A credible 92/100 is better than claiming “102/100.” Judges reward proof, not exaggerated self-scoring.
 

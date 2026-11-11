@@ -91,15 +91,17 @@ Subphase 0A.1: Submission-state inventory
 
 Record the status of each item:
 
-Item	Required evidenceDevpost registration	Screenshot or registration confirmation
-Luma/Unstop registration	Confirmation or participant page
-Official repository fork	Fork URL
-Submission branch	Branch URL
-Existing PR	PR URL and timestamp
-Google Form	Confirmation screenshot or email
-LinkedIn post	Public URL
-Demo video	Accessible URL
-Organizer permission	Message, email or announcement
+| Item | Required evidence |
+| --- | --- |
+| Devpost registration | Screenshot or registration confirmation |
+| Luma/Unstop registration | Confirmation or participant page |
+| Official repository fork | Fork URL |
+| Submission branch | Branch URL |
+| Existing PR | PR URL and timestamp |
+| Google Form | Confirmation screenshot or email |
+| LinkedIn post | Public URL |
+| Demo video | Accessible URL |
+| Organizer permission | Message, email or announcement |
 
 Use statuses:
 
@@ -113,11 +115,13 @@ Subphase 0A.2: Deadline reconciliation
 
 Create a deadline evidence table:
 
-Source	Displayed deadline	Authority levelDevpost rules body	10 Nov 2026, 5:00 PM IST	Highest available public rule
-Devpost page header	10 Nov 2026, 7:00 PM IST	Conflicting platform display
-Luma listing	10 Nov 2026, 5:00 PM IST	Organizer listing
-User-provided display	11 Nov 2026, 1:30 PM IST	Conflicting personalized display
-Organizer message	To be captured	Final operational clarification
+| Source | Displayed deadline | Authority level |
+| --- | --- | --- |
+| Devpost rules body | 10 Nov 2026, 5:00 PM IST | Highest available public rule |
+| Devpost page header | 10 Nov 2026, 7:00 PM IST | Conflicting platform display |
+| Luma listing | 10 Nov 2026, 5:00 PM IST | Organizer listing |
+| User-provided display | 11 Nov 2026, 1:30 PM IST | Conflicting personalized display |
+| Organizer message | To be captured | Final operational clarification |
 
 The official public sources are inconsistent, so do not infer continued eligibility from the countdown alone.
 
@@ -480,12 +484,14 @@ python scripts/validate_submission.py submissions/chronosdb
 Run this in Phase 0 and in CI. The submission guide explicitly recommends the local validator.
 
 Benchmarks
-Test	TargetOfficial validator	100% pass
-Required files present	4/4
-Invalid JSON	0
-Files outside project folder changed	0
-Broken internal documentation links	0
-Untracked required source files	0
+| Test | Target |
+| --- | --- |
+| Official validator | 100% pass |
+| Required files present | 4/4 |
+| Invalid JSON | 0 |
+| Files outside project folder changed | 0 |
+| Broken internal documentation links | 0 |
+| Untracked required source files | 0 |
 Exit criterion
 
 A clean branch containing only the foundation structure passes the official validator.
@@ -533,13 +539,15 @@ docs/project-control/version-matrix.md
 
 Include:
 
-Component	Required	Detected	Verification commandPython	3.11.x or chosen version	Actual	python --version
-Node.js	Chosen LTS	Actual	node --version
-npm	Locked	Actual	npm --version
-Java	17+	Actual	java -version
-Git	Recorded	Actual	git --version
-Db2	Exact edition/version	Actual	Db2 version query
-ibm_db	Locked	Actual	Package query
+| Component | Required | Detected | Verification command |
+| --- | --- | --- | --- |
+| Python | 3.11.x or chosen version | Actual | python --version |
+| Node.js | Chosen LTS | Actual | node --version |
+| npm | Locked | Actual | npm --version |
+| Java | 17+ | Actual | java -version |
+| Git | Recorded | Actual | git --version |
+| Db2 | Exact edition/version | Actual | Db2 version query |
+| ibm_db | Locked | Actual | Package query |
 Subphase 0E.2: Dependency locking
 
 Do not rely solely on broad ranges such as:
@@ -666,13 +674,15 @@ Db2 foundation benchmark
 
 Run at least 30 iterations after warm-up:
 
-Measurement	Phase 0 targetConnection success rate	100%
-SELECT 1 equivalent success	100%
-Median connection acquisition	<1 second locally
-p95 health-query latency	<500 ms locally
-Insert/read consistency	100%
-Restart recovery	<5 minutes
-Credential leakage	0
+| Measurement | Phase 0 target |
+| --- | --- |
+| Connection success rate | 100% |
+| SELECT 1 equivalent success | 100% |
+| Median connection acquisition | <1 second locally |
+| p95 health-query latency | <500 ms locally |
+| Insert/read consistency | 100% |
+| Restart recovery | <5 minutes |
+| Credential leakage | 0 |
 
 These are engineering thresholds, not hackathon performance claims.
 
@@ -818,13 +828,15 @@ No direct commits to protected release branch
 No merge with failed validator
 One final clean status before submission
 Benchmark
-Metric	TargetCI pass rate on foundation commit	100%
-CI runtime	<8 minutes
-Lint errors	0
-Type errors in foundation code	0
-Failed foundation tests	0
-Critical dependency vulnerabilities	0
-Secrets detected	0
+| Metric | Target |
+| --- | --- |
+| CI pass rate on foundation commit | 100% |
+| CI runtime | <8 minutes |
+| Lint errors | 0 |
+| Type errors in foundation code | 0 |
+| Failed foundation tests | 0 |
+| Critical dependency vulnerabilities | 0 |
+| Secrets detected | 0 |
 
 If a dependency advisory has no immediate fix, document:
 
@@ -959,14 +971,16 @@ Priority:
 6–11: Medium
 1–5: Low
 Initial Phase 0 risks
-ID	Risk	Likelihood	Impact	Score	TreatmentR-001	Submission deadline passed	5	5	25	Organizer confirmation
-R-002	Post-deadline commits rejected	4	5	20	Freeze or obtain permission
-R-003	Db2 vector feature unavailable	3	5	15	Verify version immediately
-R-004	Db2 setup unstable	3	5	15	Test restart and clean setup
-R-005	Secret committed	2	5	10	Gitleaks and protected config
-R-006	Scope expands beyond time	4	4	16	Lock MVP
-R-007	Repository validator fails	2	5	10	Run locally and in CI
-R-008	Framework-rule conflict	3	4	12	Include LangChain conservatively
+| ID | Risk | Likelihood | Impact | Score | Treatment |
+| --- | --- | --- | --- | --- | --- |
+| R-001 | Submission deadline passed | 5 | 5 | 25 | Organizer confirmation |
+| R-002 | Post-deadline commits rejected | 4 | 5 | 20 | Freeze or obtain permission |
+| R-003 | Db2 vector feature unavailable | 3 | 5 | 15 | Verify version immediately |
+| R-004 | Db2 setup unstable | 3 | 5 | 15 | Test restart and clean setup |
+| R-005 | Secret committed | 2 | 5 | 10 | Gitleaks and protected config |
+| R-006 | Scope expands beyond time | 4 | 4 | 16 | Lock MVP |
+| R-007 | Repository validator fails | 2 | 5 | 10 | Run locally and in CI |
+| R-008 | Framework-rule conflict | 3 | 4 | 12 | Include LangChain conservatively |
 Acceptance criterion
 
 Every Critical and High risk must have:
@@ -1073,14 +1087,16 @@ Phase 0 Foundation Score
 
 Use a strict gate, not a vanity score.
 
-Category	Weight	Passing conditionSubmission certainty	25	Eligibility and update permission documented
-Compliance	15	100% mandatory requirement coverage
-Repository validity	10	Validator passes 3/3
-Environment reproducibility	15	Clean install succeeds
-Db2 reliability	15	Connectivity and restart tests pass
-CI and quality	10	Pipeline passes 3/3
-Security and licensing	10	No secrets or critical vulnerabilities
-Total	100	
+| Category | Weight | Passing condition |
+| --- | --- | --- |
+| Submission certainty | 25 | Eligibility and update permission documented |
+| Compliance | 15 | 100% mandatory requirement coverage |
+| Repository validity | 10 | Validator passes 3/3 |
+| Environment reproducibility | 15 | Clean install succeeds |
+| Db2 reliability | 15 | Connectivity and restart tests pass |
+| CI and quality | 10 | Pipeline passes 3/3 |
+| Security and licensing | 10 | No secrets or critical vulnerabilities |
+| Total | 100 |  |
 Required result
 90–100: Phase 0 passes
 80–89: Conditional pass; no critical defect permitted

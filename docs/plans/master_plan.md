@@ -99,27 +99,29 @@ Reproduction instructions
 are complete.
 
 Phase map
-Phase	Name	Primary outcome0	Project Control and Submission Safety	Establish constraints, repository and working baseline
-1	Product and Judging Specification	Convert the idea into measurable requirements
-2	Domain and Causal Model	Define the supply-chain system and disruption mechanics
-3	Dataset Engineering	Produce a coherent, validated demonstration dataset
-4	Db2 Data Architecture	Implement Db2 schema, constraints, roles and indexes
-5	Deterministic Impact Engine	Calculate cascading disruption impact
-6	Counterfactual Simulation Engine	Run alternative future scenarios
-7	Intervention Optimization	Rank feasible recovery actions
-8	Evidence and Retrieval Layer	Add Db2-native semantic and structured evidence
-9	Controlled AI Orchestration	Add typed planning and verified narration
-10	Trust, Security and Auditability	Protect the system and preserve decision history
-11	Backend and API Integration	Expose the full workflow through stable APIs
-12	Judge-Facing User Experience	Build the visual operations war room
-13	Benchmark and Evaluation System	Measure correctness, retrieval, speed and safety
-14	Testing and Reliability	Validate all normal and failure paths
-15	Packaging and Reproducibility	Make the project runnable from a clean environment
-16	Documentation and Architecture Package	Produce evaluator-ready technical documentation
-17	Demo, Storytelling and Visual Assets	Build the three-minute judging experience
-18	Submission Compliance	Complete every official submission requirement
-19	Final Red-Team and Release Gate	Run the final independent acceptance review
-20	Post-Submission and IBM Contribution Readiness	Prepare a clean reusable upstream use case
+| Phase | Name | Primary outcome |
+| --- | --- | --- |
+| 0 | Project Control and Submission Safety | Establish constraints, repository and working baseline |
+| 1 | Product and Judging Specification | Convert the idea into measurable requirements |
+| 2 | Domain and Causal Model | Define the supply-chain system and disruption mechanics |
+| 3 | Dataset Engineering | Produce a coherent, validated demonstration dataset |
+| 4 | Db2 Data Architecture | Implement Db2 schema, constraints, roles and indexes |
+| 5 | Deterministic Impact Engine | Calculate cascading disruption impact |
+| 6 | Counterfactual Simulation Engine | Run alternative future scenarios |
+| 7 | Intervention Optimization | Rank feasible recovery actions |
+| 8 | Evidence and Retrieval Layer | Add Db2-native semantic and structured evidence |
+| 9 | Controlled AI Orchestration | Add typed planning and verified narration |
+| 10 | Trust, Security and Auditability | Protect the system and preserve decision history |
+| 11 | Backend and API Integration | Expose the full workflow through stable APIs |
+| 12 | Judge-Facing User Experience | Build the visual operations war room |
+| 13 | Benchmark and Evaluation System | Measure correctness, retrieval, speed and safety |
+| 14 | Testing and Reliability | Validate all normal and failure paths |
+| 15 | Packaging and Reproducibility | Make the project runnable from a clean environment |
+| 16 | Documentation and Architecture Package | Produce evaluator-ready technical documentation |
+| 17 | Demo, Storytelling and Visual Assets | Build the three-minute judging experience |
+| 18 | Submission Compliance | Complete every official submission requirement |
+| 19 | Final Red-Team and Release Gate | Run the final independent acceptance review |
+| 20 | Post-Submission and IBM Contribution Readiness | Prepare a clean reusable upstream use case |
 Phase 0: Project Control and Submission Safety
 Objective
 
@@ -1345,14 +1347,16 @@ B. Risk register
 
 Track at least:
 
-Risk	Impact	Primary mitigationDb2 environment instability	Critical	Validate connection and seed process first
-Vector feature/version mismatch	High	Detect Db2 version and provide clear compatibility behavior
-LLM API unavailable	Medium	Deterministic fallback summary
-Scope explosion	Critical	Lock supplier-outage vertical slice
-Weak benchmark	High	Freeze ground-truth scenarios early
-Attractive but shallow UI	High	Complete deterministic core before polish
-Submission failure	Critical	Treat compliance as its own phase
-Unsupported claims	High	Generate metrics directly from benchmark artifacts
+| Risk | Impact | Primary mitigation |
+| --- | --- | --- |
+| Db2 environment instability | Critical | Validate connection and seed process first |
+| Vector feature/version mismatch | High | Detect Db2 version and provide clear compatibility behavior |
+| LLM API unavailable | Medium | Deterministic fallback summary |
+| Scope explosion | Critical | Lock supplier-outage vertical slice |
+| Weak benchmark | High | Freeze ground-truth scenarios early |
+| Attractive but shallow UI | High | Complete deterministic core before polish |
+| Submission failure | Critical | Treat compliance as its own phase |
+| Unsupported claims | High | Generate metrics directly from benchmark artifacts |
 C. Traceability matrix
 
 Maintain the chain:

@@ -298,24 +298,28 @@ Metrics to Track
 
 If you want a "102/100" style project, quantify everything.
 
-Metric	TargetQuery latency	< 3 sec
-Agent execution	< 10 sec
-RAG precision	> 85%
-Simulation accuracy	> 80%
-Hallucination rate	< 5%
-Citation coverage	100%
-Db2 retrieval accuracy	> 90%
-User satisfaction demo	> 4.5/5
+| Metric | Target |
+| --- | --- |
+| Query latency | < 3 sec |
+| Agent execution | < 10 sec |
+| RAG precision | > 85% |
+| Simulation accuracy | > 80% |
+| Hallucination rate | < 5% |
+| Citation coverage | 100% |
+| Db2 retrieval accuracy | > 90% |
+| User satisfaction demo | > 4.5/5 |
 Why This Can Actually Win
 
 Against typical submissions:
 
-Project	InnovationPDF Chatbot	Low
-Resume AI	Low
-Text-to-SQL	Medium
-Basic RAG	Medium
-AI Agent Workflow	High
-Digital Twin Decision Intelligence Platform	Very High
+| Project | Innovation |
+| --- | --- |
+| PDF Chatbot | Low |
+| Resume AI | Low |
+| Text-to-SQL | Medium |
+| Basic RAG | Medium |
+| AI Agent Workflow | High |
+| Digital Twin Decision Intelligence Platform | Very High |
 
 This aligns almost perfectly with the judging rubric:
 
