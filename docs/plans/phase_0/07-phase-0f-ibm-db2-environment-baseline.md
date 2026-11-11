@@ -117,3 +117,4 @@ artifacts/phase-0/db2-baseline.json
   "vector_capability": "verified-or-unavailable",
   "timestamp": "record-actual-value"
 }
+

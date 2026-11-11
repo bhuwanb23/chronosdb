@@ -132,3 +132,4 @@ CCR=resolved critical conflictstotal critical conflictsCCR = \frac{\text{res
 
 
 A conflict can remain open only if it is non-critical and the conservative interpretation prevents non-compliance.
+
