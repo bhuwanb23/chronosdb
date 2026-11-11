@@ -2,5 +2,5 @@ case,breached_customer_orders,revenue_at_risk_inr,cost_inr
 baseline,0,0.00,0
 do_nothing,2,1600000.00,0
 INT-GOLD-A,1,800000.00,60000
-INT-GOLD-B,1,800000.00,72000
+INT-GOLD-B,2,1600000.00,72000
 INT-GOLD-C,0,0.00,132000

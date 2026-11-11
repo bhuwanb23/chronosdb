@@ -3,5 +3,5 @@
   "expected_error": "INFEASIBLE_INTERVENTION",
   "family": "adversarial",
   "fixture_id": "FIX-0027",
-  "payload": "{}"
+  "payload": "{\"cost_inr\": 300000, \"budget_inr\": 200000, \"sla_breaches\": 0}"
 }

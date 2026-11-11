@@ -1,0 +1,7 @@
+{
+  "case": "unrelated_component_historical_incident",
+  "expected_error": "EXPIRED_EVIDENCE",
+  "family": "adversarial",
+  "fixture_id": "FIX-0035",
+  "payload": "{\"document_component_id\": \"CMP-0002\", \"scenario_component_id\": \"CMP-0001\"}"
+}

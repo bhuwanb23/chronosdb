@@ -3,5 +3,5 @@
   "expected_error": "UNKNOWN_ENTITY",
   "family": "invalid",
   "fixture_id": "FIX-0004",
-  "payload": "{}"
+  "payload": "{\"production_order_id\": \"MO-UNKNOWN\"}"
 }

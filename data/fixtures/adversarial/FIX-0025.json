@@ -3,5 +3,5 @@
   "expected_error": "CONTRADICTORY_STATE",
   "family": "adversarial",
   "fixture_id": "FIX-0025",
-  "payload": "{}"
+  "payload": "{\"transfer_receipt\": true, \"transfer_dispatch\": false}"
 }

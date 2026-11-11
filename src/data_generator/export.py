@@ -27,8 +27,10 @@ def write_csv_rows(path: Path, rows: list[dict[str, Any]]) -> dict[str, Any]:
         writer.writeheader()
         for row in ordered:
             writer.writerow({key: _value(value) for key, value in row.items()})
+    parts = path.parts
+    relative = "/".join(parts[parts.index("data") :]) if "data" in parts else path.name
     return {
-        "path": path.as_posix(),
+        "path": relative,
         "record_count": len(rows),
         "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
     }

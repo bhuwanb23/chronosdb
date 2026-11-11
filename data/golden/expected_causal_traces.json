@@ -2,7 +2,7 @@
   {
     "result": {
       "evidence_status": "complete",
-      "reference_case": "BASELINE",
+      "reference_case": "DO-NOTHING",
       "unit": "hours",
       "value": 288
     },
@@ -43,7 +43,7 @@
         "edge_id": "CE-008",
         "output": "projected_delivery",
         "rule_id": "SLA-001",
-        "source_id": "CO-0704",
+        "source_id": "COL-CO-0704-01",
         "source_type": "customer_order_line"
       }
     ],
@@ -56,7 +56,7 @@
   {
     "result": {
       "evidence_status": "complete",
-      "reference_case": "BASELINE",
+      "reference_case": "DO-NOTHING",
       "unit": "hours",
       "value": 264
     },
@@ -97,7 +97,7 @@
         "edge_id": "CE-008",
         "output": "projected_delivery",
         "rule_id": "SLA-001",
-        "source_id": "CO-0711",
+        "source_id": "COL-CO-0711-01",
         "source_type": "customer_order_line"
       }
     ],

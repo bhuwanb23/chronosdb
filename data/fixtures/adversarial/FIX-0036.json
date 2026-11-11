@@ -1,0 +1,7 @@
+{
+  "case": "contradictory_evidence_document",
+  "expected_error": "CONTRADICTORY_STATE",
+  "family": "adversarial",
+  "fixture_id": "FIX-0036",
+  "payload": "{\"document_status\": \"ACTIVE\", \"structured_supplier_status\": \"INACTIVE\"}"
+}

@@ -3,5 +3,5 @@
   "expected_error": "INFEASIBLE_INTERVENTION",
   "family": "adversarial",
   "fixture_id": "FIX-0028",
-  "payload": "{}"
+  "payload": "{\"candidate_a_score\": 0, \"candidate_b_score\": 0}"
 }

@@ -3,5 +3,5 @@
   "expected_error": "CONTRADICTORY_STATE",
   "family": "adversarial",
   "fixture_id": "FIX-0024",
-  "payload": "{}"
+  "payload": "{\"material_ready\": false, \"production_status\": \"COMPLETED\"}"
 }

@@ -1,0 +1,7 @@
+{
+  "case": "negative_supplier_premium",
+  "expected_error": "INVALID_QUANTITY",
+  "family": "adversarial",
+  "fixture_id": "FIX-0034",
+  "payload": "{\"alternate_unit_price\": 900, \"baseline_unit_price\": 1000, \"premium_inr\": -40000}"
+}

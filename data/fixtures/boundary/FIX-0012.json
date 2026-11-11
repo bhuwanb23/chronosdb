@@ -3,5 +3,5 @@
   "expected_error": "INVALID_INTERVAL",
   "family": "boundary",
   "fixture_id": "FIX-0012",
-  "payload": "{}"
+  "payload": "{\"as_of_time\": \"2025-01-01T00:00:00Z\", \"active_from\": \"2026-01-01T00:00:00Z\"}"
 }

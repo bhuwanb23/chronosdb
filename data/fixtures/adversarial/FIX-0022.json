@@ -3,5 +3,5 @@
   "expected_error": "CONTRADICTORY_STATE",
   "family": "adversarial",
   "fixture_id": "FIX-0022",
-  "payload": "{}"
+  "payload": "{\"ordered_quantity\": 100, \"received_quantity\": 100, \"outstanding_quantity\": 10}"
 }

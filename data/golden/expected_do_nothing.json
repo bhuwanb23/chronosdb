@@ -31,7 +31,7 @@
     }
   ],
   "intervention_cost_inr": "0",
-  "net_protected_value_inr": "0.00",
+  "net_protected_value_inr": "0",
   "revenue_at_risk_inr": "1600000.00",
   "revenue_protected_inr": "0",
   "total_delay_hours": 110400

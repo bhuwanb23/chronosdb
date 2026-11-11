@@ -3,5 +3,5 @@
   "expected_error": "CONTRADICTORY_STATE",
   "family": "adversarial",
   "fixture_id": "FIX-0023",
-  "payload": "{}"
+  "payload": "{\"snapshot_on_hand\": 100, \"replayed_on_hand\": 90}"
 }

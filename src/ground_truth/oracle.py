@@ -15,6 +15,15 @@ def golden_scenario() -> dict[str, Any]:
         "budget_inr": "200000.00",
         "component_id": "CMP-MCU-42",
         "product_id": "PRD-CONTROLLER-X",
+        "supplier_id": "S-104",
+        "disruption": {
+            "id": "DIS-GOLD-S104",
+            "event_type": "SUPPLIER_OUTAGE",
+            "supplier_id": "S-104",
+            "start_time": "2026-11-11T02:30:00Z",
+            "end_time": "2026-11-25T02:30:00Z",
+            "recovery_lag_days": 2,
+        },
         "bom_quantity_per_product": 2,
         "pune_inventory": 400,
         "pune_safety_stock": 100,
@@ -27,6 +36,7 @@ def golden_scenario() -> dict[str, Any]:
         "disrupted_arrival": "2026-11-27T00:00:00Z",
         "production_capacity_per_day": 100,
         "delivery_lead_time_days": 1,
+        "unit_revenue_inr": "4000.00",
         "orders": [
             {
                 "production_order_id": "MO-0876",
@@ -47,6 +57,11 @@ def golden_scenario() -> dict[str, Any]:
                 "promised_delivery": "2026-11-21T00:00:00Z",
             },
         ],
+        "customer_order_lines": [
+            {"id": "COL-CO-0701-01", "customer_order_id": "CO-0701", "quantity": 200},
+            {"id": "COL-CO-0704-01", "customer_order_id": "CO-0704", "quantity": 200},
+            {"id": "COL-CO-0711-01", "customer_order_id": "CO-0711", "quantity": 200},
+        ],
     }
 
 
@@ -65,7 +80,12 @@ def _line_result(
     }
 
 
-def _outcome(name: str, lines: list[dict[str, Any]], intervention_cost: Decimal) -> dict[str, Any]:
+def _outcome(
+    name: str,
+    lines: list[dict[str, Any]],
+    intervention_cost: Decimal,
+    reference_revenue_at_risk: Decimal,
+) -> dict[str, Any]:
     breached = [line for line in lines if line["late_quantity"] > 0]
     revenue_at_risk = sum((Decimal(line["revenue_at_risk_inr"]) for line in lines), Decimal("0"))
     total_delay = sum(line["late_quantity"] * line["delay_hours"] for line in lines)
@@ -76,14 +96,40 @@ def _outcome(name: str, lines: list[dict[str, Any]], intervention_cost: Decimal)
         "revenue_at_risk_inr": str(revenue_at_risk),
         "total_delay_hours": total_delay,
         "intervention_cost_inr": str(intervention_cost),
-        "revenue_protected_inr": str(max(Decimal("0"), Decimal("1600000") - revenue_at_risk)),
-        "net_protected_value_inr": str(Decimal("1600000") - revenue_at_risk - intervention_cost),
+        "revenue_protected_inr": str(
+            max(Decimal("0"), reference_revenue_at_risk - revenue_at_risk)
+        ),
+        "net_protected_value_inr": str(
+            max(Decimal("0"), reference_revenue_at_risk - revenue_at_risk)
+            - intervention_cost
+        ),
+    }
+
+
+def _validate_golden_state(scenario: dict[str, Any]) -> dict[str, Any]:
+    transferable = (
+        scenario["chennai_inventory"]
+        - scenario["chennai_committed_demand"]
+        - scenario["chennai_safety_stock"]
+    )
+    required = scenario["orders"][0]["quantity"] * scenario["bom_quantity_per_product"]
+    if transferable != scenario["transferable_quantity"]:
+        raise ValueError("golden transferable quantity is not conserved")
+    if required != 400 or scenario["pune_inventory"] - required != 0:
+        raise ValueError("golden opening material state is inconsistent")
+    return {
+        "transferable_quantity": transferable,
+        "required_quantity_per_production_order": required,
+        "transfer_arrival": "2026-11-13T00:00:00Z",
+        "alternate_arrival": "2026-11-16T00:00:00Z",
+        "disrupted_receipt": scenario["disrupted_arrival"],
     }
 
 
 def calculate_golden() -> dict[str, Any]:
     """Calculate baseline, do-nothing, candidates, and causal traces."""
     scenario = golden_scenario()
+    intermediate = _validate_golden_state(scenario)
     orders = scenario["orders"]
     baseline_lines = [
         _line_result(order, promised, 0, 0)
@@ -100,11 +146,24 @@ def calculate_golden() -> dict[str, Any]:
         _line_result(orders[1], "2026-11-18T00:00:00Z", 0, 0),
         _line_result(orders[2], "2026-12-02T00:00:00Z", 200, 11),
     ]
+    alternate_lines = [
+        _line_result(orders[0], "2026-11-15T00:00:00Z", 0, 0),
+        _line_result(orders[1], "2026-11-19T00:00:00Z", 200, 1),
+        _line_result(orders[2], "2026-12-02T00:00:00Z", 200, 11),
+    ]
+    do_nothing_reference = sum(
+        (Decimal(line["revenue_at_risk_inr"]) for line in do_nothing_lines),
+        Decimal("0"),
+    )
     outcomes = {
-        "baseline": _outcome("BASELINE", baseline_lines, Decimal("0")),
-        "do_nothing": _outcome("DO-NOTHING", do_nothing_lines, Decimal("0")),
-        "INT-GOLD-A": _outcome("INT-GOLD-A", one_order_late, Decimal("60000")),
-        "INT-GOLD-B": _outcome("INT-GOLD-B", one_order_late, Decimal("72000")),
+        "baseline": _outcome("BASELINE", baseline_lines, Decimal("0"), Decimal("0")),
+        "do_nothing": _outcome("DO-NOTHING", do_nothing_lines, Decimal("0"), do_nothing_reference),
+        "INT-GOLD-A": _outcome(
+            "INT-GOLD-A", one_order_late, Decimal("60000"), do_nothing_reference
+        ),
+        "INT-GOLD-B": _outcome(
+            "INT-GOLD-B", alternate_lines, Decimal("72000"), do_nothing_reference
+        ),
         "INT-GOLD-C": _outcome(
             "INT-GOLD-C",
             [
@@ -113,6 +172,7 @@ def calculate_golden() -> dict[str, Any]:
                 _line_result(orders[2], "2026-11-21T00:00:00Z", 0, 0),
             ],
             Decimal("132000"),
+            do_nothing_reference,
         ),
     }
     traces = [
@@ -158,7 +218,7 @@ def calculate_golden() -> dict[str, Any]:
                 {
                     "edge_id": "CE-008",
                     "source_type": "customer_order_line",
-                    "source_id": "CO-0704",
+                    "source_id": "COL-CO-0704-01",
                     "output": "projected_delivery",
                     "rule_id": "SLA-001",
                 },
@@ -166,7 +226,7 @@ def calculate_golden() -> dict[str, Any]:
             "result": {
                 "value": 288,
                 "unit": "hours",
-                "reference_case": "BASELINE",
+                "reference_case": "DO-NOTHING",
                 "evidence_status": "complete",
             },
         },
@@ -212,7 +272,7 @@ def calculate_golden() -> dict[str, Any]:
                 {
                     "edge_id": "CE-008",
                     "source_type": "customer_order_line",
-                    "source_id": "CO-0711",
+                    "source_id": "COL-CO-0711-01",
                     "output": "projected_delivery",
                     "rule_id": "SLA-001",
                 },
@@ -220,13 +280,14 @@ def calculate_golden() -> dict[str, Any]:
             "result": {
                 "value": 264,
                 "unit": "hours",
-                "reference_case": "BASELINE",
+                "reference_case": "DO-NOTHING",
                 "evidence_status": "complete",
             },
         },
     ]
     return {
         "scenario": scenario,
+        "intermediate_calculations": intermediate,
         "baseline": outcomes["baseline"],
         "do_nothing": outcomes["do_nothing"],
         "interventions": [
@@ -241,4 +302,11 @@ def calculate_golden() -> dict[str, Any]:
             "hard_constraints_satisfied": True,
         },
         "causal_traces": traces,
+        "provenance": {
+            "scenario_id": scenario["scenario_id"],
+            "oracle_version": "0.1.0",
+            "formula_version": "2.0",
+            "reference_case": "NO_DISRUPTION_BASELINE",
+            "unit": "INR",
+        },
     }

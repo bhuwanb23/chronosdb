@@ -95,7 +95,11 @@ def generate_operational(
         product = next(row for row in products if row["id"] == line["product_id"])
         facility = next(row for row in facilities if row["id"] == product["facility_id"])
         planned_quantity = 100 + (index % 3) * 50
-        planned_start = reference + timedelta(days=index % config.planning_horizon_days)
+        planned_start = (
+            history_start + timedelta(days=(index * 7) % config.history_days)
+            if index < counts["production_orders"] // 2
+            else reference + timedelta(days=index % config.planning_horizon_days)
+        )
         capacity = int(facility["daily_capacity_units"])
         duration_days = max(1, math.ceil(planned_quantity / capacity))
         planned_completion = planned_start + timedelta(days=duration_days)
@@ -143,6 +147,7 @@ def generate_operational(
         order_time = history_start + timedelta(days=(index * 3) % config.history_days)
         ordered = int(agreement["minimum_order_quantity"]) * (1 + index % 3)
         expected = order_time + timedelta(days=int(agreement["lead_time_days"]))
+        received = ordered if expected <= config.reference_time else 0
         purchase_orders.append(
             {
                 "id": f"PO-{index + 1:06d}",
@@ -151,10 +156,10 @@ def generate_operational(
                 "destination_warehouse_id": warehouses[index % len(warehouses)]["id"],
                 "order_time": _iso(order_time),
                 "ordered_quantity": ordered,
-                "received_quantity": ordered,
-                "outstanding_quantity": 0,
+                "received_quantity": received,
+                "outstanding_quantity": ordered - received,
                 "expected_arrival": _iso(expected),
-                "status": "RECEIVED",
+                "status": "RECEIVED" if received else "OPEN",
                 "unit_price_inr": agreement["unit_price_inr"],
             }
         )
@@ -178,6 +183,8 @@ def generate_operational(
                 }
             )
     for purchase_order in purchase_orders:
+        if int(purchase_order["received_quantity"]) == 0:
+            continue
         event_time = _dt(purchase_order["expected_arrival"])
         key = (purchase_order["destination_warehouse_id"], purchase_order["component_id"])
         balances[key] += int(purchase_order["received_quantity"])
@@ -203,14 +210,28 @@ def generate_operational(
         )
         warehouse_id = warehouses[facility_index % len(warehouses)]["id"]
         key = (warehouse_id, requirement["component_id"])
-        issue = min(balances[key], int(requirement["required_quantity"]))
-        balances[key] -= issue
-        if issue:
-            production = next(
-                order
-                for order in production_orders
-                if order["id"] == requirement["production_order_id"]
+        production = next(
+            order
+            for order in production_orders
+            if order["id"] == requirement["production_order_id"]
+        )
+        issue_time = _dt(production["planned_start"])
+        available_at_issue = sum(
+            int(transaction["quantity"])
+            * (
+                1
+                if transaction["transaction_type"]
+                in {"OPENING_BALANCE", "PURCHASE_RECEIPT", "PRODUCTION_RETURN"}
+                else -1
             )
+            for transaction in inventory_transactions
+            if transaction["warehouse_id"] == warehouse_id
+            and transaction["component_id"] == requirement["component_id"]
+            and _dt(transaction["event_time"]) <= issue_time
+        )
+        issue = max(0, min(available_at_issue, int(requirement["required_quantity"])))
+        balances[key] -= issue
+        if issue and production["planned_start"] >= _iso(reference):
             inventory_transactions.append(
                 {
                     "id": f"INVTX-{len(inventory_transactions) + 1:06d}",
@@ -224,28 +245,40 @@ def generate_operational(
             )
 
     inventory_snapshots: list[dict[str, Any]] = []
-    for day in range(config.history_days + 1):
-        snapshot_time = history_start + timedelta(days=day)
-        for warehouse in warehouses:
-            for component in components:
-                key = (warehouse["id"], component["id"])
-                relevant = [
-                    transaction
-                    for transaction in inventory_transactions
-                    if transaction["warehouse_id"] == warehouse["id"]
-                    and transaction["component_id"] == component["id"]
-                    and _dt(transaction["event_time"]) <= snapshot_time
-                ]
-                on_hand = sum(
-                    int(transaction["quantity"])
-                    * (
-                        1
-                        if transaction["transaction_type"]
-                        in {"OPENING_BALANCE", "PURCHASE_RECEIPT", "PRODUCTION_RETURN"}
-                        else -1
-                    )
-                    for transaction in relevant
-                )
+    signs = {
+        "OPENING_BALANCE": 1,
+        "PURCHASE_RECEIPT": 1,
+        "PRODUCTION_RETURN": 1,
+        "TRANSFER_RECEIPT": 1,
+        "RELEASE_FROM_QUARANTINE": 1,
+        "ADJUSTMENT_POSITIVE": 1,
+        "PRODUCTION_ISSUE": -1,
+        "TRANSFER_DISPATCH": -1,
+        "QUARANTINE": -1,
+        "ADJUSTMENT_NEGATIVE": -1,
+    }
+    transaction_groups: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for transaction in inventory_transactions:
+        transaction_groups.setdefault(
+            (transaction["warehouse_id"], transaction["component_id"]), []
+        ).append(transaction)
+    for transactions in transaction_groups.values():
+        transactions.sort(key=lambda row: row["event_time"])
+    for warehouse in warehouses:
+        for component in components:
+            key = (warehouse["id"], component["id"])
+            transactions = transaction_groups.get(key, [])
+            pointer = 0
+            on_hand = 0
+            for day in range(config.history_days + 1):
+                snapshot_time = history_start + timedelta(days=day)
+                while (
+                    pointer < len(transactions)
+                    and _dt(transactions[pointer]["event_time"]) <= snapshot_time
+                ):
+                    transaction = transactions[pointer]
+                    on_hand += int(transaction["quantity"]) * signs[transaction["transaction_type"]]
+                    pointer += 1
                 inventory_snapshots.append(
                     {
                         "id": f"SNAP-{day:04d}-{warehouse['id']}-{component['id']}",
@@ -283,16 +316,22 @@ def generate_history(
     """Derive historical and bitemporal records from generated operations."""
     start = config.reference_time - timedelta(days=config.history_days)
     end = config.reference_time + timedelta(days=config.planning_horizon_days)
+    versioned_records = (
+        [("SUPPLIER_COMPONENT_AGREEMENT", row) for row in master["supplier_component_agreements"]]
+        + [("BOM_VERSION", row) for row in master["bom_versions"]]
+        + [("CUSTOMER", row) for row in master["customers"]]
+        + [("SLA_POLICY", row) for row in master["sla_policies"]]
+    )
     entity_versions = [
         {
             "id": f"VER-{index + 1:06d}",
-            "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+            "entity_type": entity_type,
             "entity_id": row["id"],
             "valid_from": row["effective_from"],
             "valid_to": row["effective_to"],
             "recorded_at": row["effective_from"],
         }
-        for index, row in enumerate(master["supplier_component_agreements"])
+        for index, (entity_type, row) in enumerate(versioned_records)
     ]
     status_events: list[dict[str, Any]] = []
     for index, order in enumerate(operational["purchase_orders"]):
@@ -338,16 +377,72 @@ def generate_history(
         }
         for index, row in enumerate(master["suppliers"])
     ]
+    safety_stock_versions = [
+        {
+            "id": f"SSV-{index + 1:06d}",
+            "component_id": row["id"],
+            "effective_from": _iso(start + timedelta(days=90)),
+            "effective_to": _iso(end),
+            "safety_stock_quantity": int(row["safety_stock_units"]) + 10,
+            "recorded_at": _iso(start + timedelta(days=91)),
+        }
+        for index, row in enumerate(master["components"])
+    ]
+    sla_versions = [
+        {
+            "id": f"SLAV-{index + 1:06d}",
+            "sla_policy_id": row["id"],
+            "effective_from": _iso(start + timedelta(days=120)),
+            "effective_to": _iso(end),
+            "delivery_lead_time_days": int(row["delivery_lead_time_days"]),
+            "recorded_at": _iso(start + timedelta(days=121)),
+        }
+        for index, row in enumerate(master["sla_policies"])
+    ]
+    supplier_delay_history = []
+    for index, row in enumerate(master["suppliers"]):
+        purchase_order = operational["purchase_orders"][
+            index % len(operational["purchase_orders"])
+        ]
+        delay_event = _dt(purchase_order["order_time"]) + timedelta(
+            days=1 + index % 3
+        )
+        supplier_delay_history.append(
+            {
+                "id": f"SUPDELAY-{index + 1:06d}",
+                "supplier_id": row["id"],
+                "purchase_order_id": purchase_order["id"],
+                "delay_days": 1 + index % 5,
+                "event_time": _iso(delay_event),
+                "recorded_at": _iso(delay_event + timedelta(hours=1)),
+            }
+        )
+    production_history = [
+        {
+            "id": f"PRODHIST-{index + 1:06d}",
+            "production_order_id": order["id"],
+            "status": "COMPLETED",
+            "event_time": order["planned_completion"],
+            "recorded_at": order["planned_completion"],
+        }
+        for index, order in enumerate(operational["production_orders"])
+    ]
+    correction_target = next(
+        snapshot
+        for snapshot in operational["inventory_snapshots"]
+        if snapshot["snapshot_time"] == _iso(config.reference_time - timedelta(days=4))
+    )
+    correction_event = _dt(correction_target["snapshot_time"])
     corrections = [
         {
             "id": "CORR-000001",
             "entity_type": "INVENTORY_SNAPSHOT",
-            "entity_id": operational["inventory_snapshots"][0]["id"],
-            "event_time": _iso(config.reference_time - timedelta(days=3, hours=15)),
-            "known_at": _iso(config.reference_time - timedelta(days=2, hours=13, minutes=55)),
-            "ingested_at": _iso(config.reference_time - timedelta(days=2, hours=13, minutes=50)),
-            "corrected_quantity": 390,
-            "original_quantity": 400,
+            "entity_id": correction_target["id"],
+            "event_time": _iso(correction_event),
+            "known_at": _iso(correction_event + timedelta(hours=17)),
+            "ingested_at": _iso(correction_event + timedelta(hours=17, minutes=5)),
+            "corrected_quantity": int(correction_target["on_hand_quantity"]) - 10,
+            "original_quantity": int(correction_target["on_hand_quantity"]),
         }
     ]
     historical_disruptions = [
@@ -365,6 +460,10 @@ def generate_history(
         "status_events": status_events,
         "daily_inventory_snapshots": operational["inventory_snapshots"],
         "supplier_performance_history": performance,
+        "safety_stock_versions": safety_stock_versions,
+        "sla_versions": sla_versions,
+        "supplier_delay_history": supplier_delay_history,
+        "production_history": production_history,
         "historical_disruptions": historical_disruptions,
         "late_arriving_corrections": corrections,
     }

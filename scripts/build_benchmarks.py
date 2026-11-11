@@ -17,10 +17,26 @@ def main() -> None:
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     args = parser.parse_args()
     config = load_config(args.root, args.scale)
-    scenarios = generate_scenarios(config, generate_master(config))["scenario_definitions"]
+    scenario_payload = generate_scenarios(config, generate_master(config))
+    scenarios = scenario_payload["scenario_definitions"]
+    candidate_rows = scenario_payload["candidate_parameters"]
+    cost_rows = scenario_payload["intervention_costs"]
+    constraints = scenario_payload["scenario_constraints"]
     benchmark_dir = args.root / "data" / "benchmarks"
     write_json(benchmark_dir / "scenarios.json", scenarios)
-    expected = [expected_for_scenario(scenario) for scenario in scenarios]
+    expected = [
+        expected_for_scenario(
+            scenario,
+            [row for row in candidate_rows if row["scenario_id"] == scenario["id"]],
+            [
+                row
+                for row in cost_rows
+                if row["candidate_id"].startswith(f"INT-{scenario['id'].split('-')[-1]}-")
+            ],
+            next(row for row in constraints if row["scenario_id"] == scenario["id"]),
+        )
+        for scenario in scenarios
+    ]
     write_json(benchmark_dir / "expected.json", expected)
     partitions = build_partitions([scenario["id"] for scenario in scenarios])
     partitions["review_holdout"] = [scenario["id"] for scenario in scenarios[57:60]]

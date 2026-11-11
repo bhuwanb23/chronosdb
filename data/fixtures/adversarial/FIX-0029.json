@@ -3,5 +3,5 @@
   "expected_error": "NO_FEASIBLE_INTERVENTION",
   "family": "adversarial",
   "fixture_id": "FIX-0029",
-  "payload": "{}"
+  "payload": "{\"feasible_candidates\": []}"
 }

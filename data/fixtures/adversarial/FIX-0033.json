@@ -1,0 +1,7 @@
+{
+  "case": "higher_priority_harm",
+  "expected_error": "INFEASIBLE_INTERVENTION",
+  "family": "adversarial",
+  "fixture_id": "FIX-0033",
+  "payload": "{\"priority\": \"HIGH\", \"displaced_order_priority\": \"HIGH\", \"displaced_delay_hours\": 48}"
+}

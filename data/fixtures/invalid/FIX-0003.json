@@ -3,5 +3,5 @@
   "expected_error": "UNKNOWN_ENTITY",
   "family": "invalid",
   "fixture_id": "FIX-0003",
-  "payload": "{}"
+  "payload": "{\"warehouse_id\": \"WH-UNKNOWN\", \"component_id\": \"CMP-0001\"}"
 }

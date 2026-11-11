@@ -3,5 +3,5 @@
   "expected_error": "EXPIRED_EVIDENCE",
   "family": "adversarial",
   "fixture_id": "FIX-0031",
-  "payload": "{}"
+  "payload": "{\"status\": \"EXPIRED\", \"effective_to\": \"2026-01-01T00:00:00Z\"}"
 }

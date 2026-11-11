@@ -1,0 +1,112 @@
+{
+  "dataset_version": "1.0.0",
+  "files": [
+    {
+      "path": "data/generated/operational/stress/customer_orders.csv",
+      "record_count": 25000,
+      "sha256": "d3a496ad8d2055d5ad7f63a65facba4edbb677daa61c18a4431c3d376f65a77b"
+    },
+    {
+      "path": "data/generated/operational/stress/customer_order_lines.csv",
+      "record_count": 25000,
+      "sha256": "d4ed5a48dac8e23de698b5d68115b2f58195bca052f3bb26b8585f7ca2562d3e"
+    },
+    {
+      "path": "data/generated/operational/stress/production_orders.csv",
+      "record_count": 8000,
+      "sha256": "85796ffe63babfeb81b18f2c19b1d8ac94cd31eb194a81af9ee841a6ed2d7b24"
+    },
+    {
+      "path": "data/generated/operational/stress/production_customer_allocations.csv",
+      "record_count": 8000,
+      "sha256": "9d5d89986c543f99229137e898df88594739a35e07e6de02b0010da3313cbea3"
+    },
+    {
+      "path": "data/generated/operational/stress/production_material_requirements.csv",
+      "record_count": 20000,
+      "sha256": "40625d7c100d5cf7ef50f29a76b1526e4c850e31e743c8185dc2bc3a0845d78f"
+    },
+    {
+      "path": "data/generated/operational/stress/purchase_orders.csv",
+      "record_count": 12000,
+      "sha256": "7f718dd2278fefd6197e49eb478d255927df28d928f50054e9e43805ff5eba45"
+    },
+    {
+      "path": "data/generated/operational/stress/inventory_transactions.csv",
+      "record_count": 23570,
+      "sha256": "3c1c141537ac38ec880168fe62b6f06bbc5e21973210b7e29fad9284f54348cd"
+    },
+    {
+      "path": "data/generated/operational/stress/inventory_snapshots.csv",
+      "record_count": 1086000,
+      "sha256": "109c56a3869253af0789d40fc661d9f55e8c6b241d73cd3ad28d876b64ba6f82"
+    },
+    {
+      "path": "data/generated/history/stress/entity_versions.csv",
+      "record_count": 2243,
+      "sha256": "6c7cc0adb8d2acfbd06c700817e4223ed64e26f336e7c94303f5a5253f37db25"
+    },
+    {
+      "path": "data/generated/history/stress/status_events.csv",
+      "record_count": 28000,
+      "sha256": "dfec011bc8a8a9000a75bd9912bb83ff9f8c85de34b02894eaf57e55a29f8845"
+    },
+    {
+      "path": "data/generated/history/stress/daily_inventory_snapshots.csv",
+      "record_count": 1086000,
+      "sha256": "109c56a3869253af0789d40fc661d9f55e8c6b241d73cd3ad28d876b64ba6f82"
+    },
+    {
+      "path": "data/generated/history/stress/supplier_performance_history.csv",
+      "record_count": 120,
+      "sha256": "990b053dc636a8d6ea5fb9f90b6ef18c417cfd3062abcde5d6a2397e916ce40e"
+    },
+    {
+      "path": "data/generated/history/stress/safety_stock_versions.csv",
+      "record_count": 500,
+      "sha256": "196d42fcfa45acb61eb4c6eefc77984947ed0fddc165b16c81e9daf33e07ba30"
+    },
+    {
+      "path": "data/generated/history/stress/sla_versions.csv",
+      "record_count": 3,
+      "sha256": "b15868e66721ff9118045b8de00b5f540181706c36a96780b9b0c2be78d52688"
+    },
+    {
+      "path": "data/generated/history/stress/supplier_delay_history.csv",
+      "record_count": 120,
+      "sha256": "e925a5dcdc5a922b59a96efbbcfd21d3dcce6ae6b53c13dd1bc926da090c880f"
+    },
+    {
+      "path": "data/generated/history/stress/production_history.csv",
+      "record_count": 8000,
+      "sha256": "f37ffda58230cfc63f058fb34b7c4f9fc9324ccd8c9e1cec4043433fda63f3d6"
+    },
+    {
+      "path": "data/generated/history/stress/historical_disruptions.csv",
+      "record_count": 1,
+      "sha256": "35d85448b7535d55d87556da9f779b48bc9a0690609357343c1e1d78a4550534"
+    },
+    {
+      "path": "data/generated/history/stress/late_arriving_corrections.csv",
+      "record_count": 1,
+      "sha256": "64900dec85aa342a76e8541a04ffc0ec5ccbb642e21c8507fa4df19a908a651a"
+    }
+  ],
+  "layer": "operational_and_history",
+  "master_entities": [
+    "locations",
+    "facilities",
+    "warehouses",
+    "transfer_lanes",
+    "suppliers",
+    "components",
+    "supplier_component_agreements",
+    "products",
+    "bom_versions",
+    "bom_lines",
+    "customers",
+    "sla_policies"
+  ],
+  "scale": "stress",
+  "seed": 260311
+}

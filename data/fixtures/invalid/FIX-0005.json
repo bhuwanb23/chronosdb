@@ -3,5 +3,5 @@
   "expected_error": "UNKNOWN_ENTITY",
   "family": "invalid",
   "fixture_id": "FIX-0005",
-  "payload": "{}"
+  "payload": "{\"scenario_id\": \"SCN-UNKNOWN\"}"
 }

@@ -3,5 +3,5 @@
   "expected_error": "INVALID_INTERVAL",
   "family": "boundary",
   "fixture_id": "FIX-0014",
-  "payload": "{}"
+  "payload": "{\"fixture_case\": \"outage_end_before_start\", \"entity_id\": \"UNKNOWN-0014\"}"
 }

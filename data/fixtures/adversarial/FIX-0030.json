@@ -3,5 +3,5 @@
   "expected_error": "UNAUTHORIZED_EVIDENCE",
   "family": "adversarial",
   "fixture_id": "FIX-0030",
-  "payload": "{}"
+  "payload": "{\"status\": \"EXPIRED\", \"confidentiality_class\": \"UNAUTHORIZED\"}"
 }

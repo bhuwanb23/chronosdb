@@ -1,21 +1,17 @@
 [
   {
-    "filtered_document_ids": [],
-    "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
+    "filtered_document_ids": [
       "DOC-0001"
     ],
+    "irrelevant_document_ids": [],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0001",
-    "relevant_document_ids": [
-      "DOC-0001"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0002"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0002",
     "relevant_document_ids": [
       "DOC-0002"
@@ -24,9 +20,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0003"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0003",
     "relevant_document_ids": [
       "DOC-0003"
@@ -35,9 +29,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0004"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0004",
     "relevant_document_ids": [
       "DOC-0004"
@@ -46,9 +38,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0005"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0005",
     "relevant_document_ids": [
       "DOC-0005"
@@ -57,9 +47,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0006"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0006",
     "relevant_document_ids": [
       "DOC-0006"
@@ -72,16 +60,12 @@
       "DOC-0007"
     ],
     "query_id": "RET-0007",
-    "relevant_document_ids": [
-      "DOC-0007"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0008"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0008",
     "relevant_document_ids": [
       "DOC-0008"
@@ -90,9 +74,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0009"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0009",
     "relevant_document_ids": [
       "DOC-0009"
@@ -101,9 +83,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0010"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0010",
     "relevant_document_ids": [
       "DOC-0010"
@@ -114,20 +94,14 @@
     "irrelevant_document_ids": [
       "DOC-0011"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0011"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0011",
-    "relevant_document_ids": [
-      "DOC-0011"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0012"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0012",
     "relevant_document_ids": [
       "DOC-0012"
@@ -136,9 +110,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0013"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0013",
     "relevant_document_ids": [
       "DOC-0013"
@@ -151,16 +123,12 @@
       "DOC-0014"
     ],
     "query_id": "RET-0014",
-    "relevant_document_ids": [
-      "DOC-0014"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0015"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0015",
     "relevant_document_ids": [
       "DOC-0015"
@@ -169,9 +137,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0016"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0016",
     "relevant_document_ids": [
       "DOC-0016"
@@ -189,9 +155,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0018"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0018",
     "relevant_document_ids": [
       "DOC-0018"
@@ -202,18 +166,14 @@
       "DOC-0019"
     ],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0019"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0019",
     "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0020"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0020",
     "relevant_document_ids": [
       "DOC-0020"
@@ -226,29 +186,21 @@
       "DOC-0021"
     ],
     "query_id": "RET-0021",
-    "relevant_document_ids": [
-      "DOC-0021"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [
       "DOC-0022"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0022"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0022",
-    "relevant_document_ids": [
-      "DOC-0022"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0023"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0023",
     "relevant_document_ids": [
       "DOC-0023"
@@ -257,9 +209,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0024"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0024",
     "relevant_document_ids": [
       "DOC-0024"
@@ -268,9 +218,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0025"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0025",
     "relevant_document_ids": [
       "DOC-0025"
@@ -279,9 +227,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0026"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0026",
     "relevant_document_ids": [
       "DOC-0026"
@@ -290,9 +236,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0027"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0027",
     "relevant_document_ids": [
       "DOC-0027"
@@ -305,16 +249,12 @@
       "DOC-0028"
     ],
     "query_id": "RET-0028",
-    "relevant_document_ids": [
-      "DOC-0028"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0029"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0029",
     "relevant_document_ids": [
       "DOC-0029"
@@ -323,9 +263,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0030"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0030",
     "relevant_document_ids": [
       "DOC-0030"
@@ -334,9 +272,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0031"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0031",
     "relevant_document_ids": [
       "DOC-0031"
@@ -345,9 +281,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0032"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0032",
     "relevant_document_ids": [
       "DOC-0032"
@@ -358,13 +292,9 @@
     "irrelevant_document_ids": [
       "DOC-0033"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0033"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0033",
-    "relevant_document_ids": [
-      "DOC-0033"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [
@@ -382,16 +312,12 @@
       "DOC-0035"
     ],
     "query_id": "RET-0035",
-    "relevant_document_ids": [
-      "DOC-0035"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0036"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0036",
     "relevant_document_ids": [
       "DOC-0036"
@@ -400,9 +326,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0037"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0037",
     "relevant_document_ids": [
       "DOC-0037"
@@ -413,18 +337,14 @@
       "DOC-0038"
     ],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0038"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0038",
     "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0039"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0039",
     "relevant_document_ids": [
       "DOC-0039"
@@ -433,9 +353,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0040"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0040",
     "relevant_document_ids": [
       "DOC-0040"
@@ -444,9 +362,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0041"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0041",
     "relevant_document_ids": [
       "DOC-0041"
@@ -459,16 +375,12 @@
       "DOC-0042"
     ],
     "query_id": "RET-0042",
-    "relevant_document_ids": [
-      "DOC-0042"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0043"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0043",
     "relevant_document_ids": [
       "DOC-0043"
@@ -479,20 +391,14 @@
     "irrelevant_document_ids": [
       "DOC-0044"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0044"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0044",
-    "relevant_document_ids": [
-      "DOC-0044"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0045"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0045",
     "relevant_document_ids": [
       "DOC-0045"
@@ -501,9 +407,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0046"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0046",
     "relevant_document_ids": [
       "DOC-0046"
@@ -512,9 +416,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0047"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0047",
     "relevant_document_ids": [
       "DOC-0047"
@@ -523,9 +425,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0048"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0048",
     "relevant_document_ids": [
       "DOC-0048"
@@ -538,16 +438,12 @@
       "DOC-0049"
     ],
     "query_id": "RET-0049",
-    "relevant_document_ids": [
-      "DOC-0049"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0050"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0050",
     "relevant_document_ids": [
       "DOC-0050"
@@ -565,9 +461,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0052"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0052",
     "relevant_document_ids": [
       "DOC-0052"
@@ -576,9 +470,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0053"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0053",
     "relevant_document_ids": [
       "DOC-0053"
@@ -587,9 +479,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0054"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0054",
     "relevant_document_ids": [
       "DOC-0054"
@@ -600,13 +490,9 @@
     "irrelevant_document_ids": [
       "DOC-0055"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0055"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0055",
-    "relevant_document_ids": [
-      "DOC-0055"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
@@ -615,27 +501,21 @@
       "DOC-0056"
     ],
     "query_id": "RET-0056",
-    "relevant_document_ids": [
-      "DOC-0056"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [
       "DOC-0057"
     ],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0057"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0057",
     "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0058"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0058",
     "relevant_document_ids": [
       "DOC-0058"
@@ -644,9 +524,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0059"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0059",
     "relevant_document_ids": [
       "DOC-0059"
@@ -655,9 +533,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0060"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0060",
     "relevant_document_ids": [
       "DOC-0060"
@@ -666,9 +542,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0061"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0061",
     "relevant_document_ids": [
       "DOC-0061"
@@ -677,9 +551,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0062"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0062",
     "relevant_document_ids": [
       "DOC-0062"
@@ -692,16 +564,12 @@
       "DOC-0063"
     ],
     "query_id": "RET-0063",
-    "relevant_document_ids": [
-      "DOC-0063"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0064"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0064",
     "relevant_document_ids": [
       "DOC-0064"
@@ -710,9 +578,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0065"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0065",
     "relevant_document_ids": [
       "DOC-0065"
@@ -723,20 +589,14 @@
     "irrelevant_document_ids": [
       "DOC-0066"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0066"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0066",
-    "relevant_document_ids": [
-      "DOC-0066"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0067"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0067",
     "relevant_document_ids": [
       "DOC-0067"
@@ -754,9 +614,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0069"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0069",
     "relevant_document_ids": [
       "DOC-0069"
@@ -769,16 +627,12 @@
       "DOC-0070"
     ],
     "query_id": "RET-0070",
-    "relevant_document_ids": [
-      "DOC-0070"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0071"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0071",
     "relevant_document_ids": [
       "DOC-0071"
@@ -787,9 +641,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0072"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0072",
     "relevant_document_ids": [
       "DOC-0072"
@@ -798,9 +650,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0073"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0073",
     "relevant_document_ids": [
       "DOC-0073"
@@ -809,9 +659,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0074"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0074",
     "relevant_document_ids": [
       "DOC-0074"
@@ -820,9 +668,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0075"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0075",
     "relevant_document_ids": [
       "DOC-0075"
@@ -833,9 +679,7 @@
       "DOC-0076"
     ],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0076"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0076",
     "relevant_document_ids": []
   },
@@ -844,20 +688,14 @@
     "irrelevant_document_ids": [
       "DOC-0077"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0077"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0077",
-    "relevant_document_ids": [
-      "DOC-0077"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0078"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0078",
     "relevant_document_ids": [
       "DOC-0078"
@@ -866,9 +704,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0079"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0079",
     "relevant_document_ids": [
       "DOC-0079"
@@ -877,9 +713,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0080"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0080",
     "relevant_document_ids": [
       "DOC-0080"
@@ -888,9 +722,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0081"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0081",
     "relevant_document_ids": [
       "DOC-0081"
@@ -899,9 +731,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0082"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0082",
     "relevant_document_ids": [
       "DOC-0082"
@@ -910,9 +740,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0083"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0083",
     "relevant_document_ids": [
       "DOC-0083"
@@ -925,9 +753,7 @@
       "DOC-0084"
     ],
     "query_id": "RET-0084",
-    "relevant_document_ids": [
-      "DOC-0084"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [
@@ -941,9 +767,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0086"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0086",
     "relevant_document_ids": [
       "DOC-0086"
@@ -952,9 +776,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0087"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0087",
     "relevant_document_ids": [
       "DOC-0087"
@@ -965,20 +787,14 @@
     "irrelevant_document_ids": [
       "DOC-0088"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0088"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0088",
-    "relevant_document_ids": [
-      "DOC-0088"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0089"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0089",
     "relevant_document_ids": [
       "DOC-0089"
@@ -987,9 +803,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0090"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0090",
     "relevant_document_ids": [
       "DOC-0090"
@@ -1002,16 +816,12 @@
       "DOC-0091"
     ],
     "query_id": "RET-0091",
-    "relevant_document_ids": [
-      "DOC-0091"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0092"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0092",
     "relevant_document_ids": [
       "DOC-0092"
@@ -1020,9 +830,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0093"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0093",
     "relevant_document_ids": [
       "DOC-0093"
@@ -1031,9 +839,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0094"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0094",
     "relevant_document_ids": [
       "DOC-0094"
@@ -1044,18 +850,14 @@
       "DOC-0095"
     ],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0095"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0095",
     "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0096"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0096",
     "relevant_document_ids": [
       "DOC-0096"
@@ -1064,9 +866,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0097"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0097",
     "relevant_document_ids": [
       "DOC-0097"
@@ -1079,29 +879,21 @@
       "DOC-0098"
     ],
     "query_id": "RET-0098",
-    "relevant_document_ids": [
-      "DOC-0098"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [
       "DOC-0099"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0099"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0099",
-    "relevant_document_ids": [
-      "DOC-0099"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0100"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0100",
     "relevant_document_ids": [
       "DOC-0100"
@@ -1110,9 +902,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0101"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0101",
     "relevant_document_ids": [
       "DOC-0101"
@@ -1130,9 +920,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0103"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0103",
     "relevant_document_ids": [
       "DOC-0103"
@@ -1141,9 +929,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0104"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0104",
     "relevant_document_ids": [
       "DOC-0104"
@@ -1156,16 +942,12 @@
       "DOC-0105"
     ],
     "query_id": "RET-0105",
-    "relevant_document_ids": [
-      "DOC-0105"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0106"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0106",
     "relevant_document_ids": [
       "DOC-0106"
@@ -1174,9 +956,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0107"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0107",
     "relevant_document_ids": [
       "DOC-0107"
@@ -1185,9 +965,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0108"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0108",
     "relevant_document_ids": [
       "DOC-0108"
@@ -1196,9 +974,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0109"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0109",
     "relevant_document_ids": [
       "DOC-0109"
@@ -1209,20 +985,14 @@
     "irrelevant_document_ids": [
       "DOC-0110"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0110"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0110",
-    "relevant_document_ids": [
-      "DOC-0110"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0111"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0111",
     "relevant_document_ids": [
       "DOC-0111"
@@ -1235,16 +1005,12 @@
       "DOC-0112"
     ],
     "query_id": "RET-0112",
-    "relevant_document_ids": [
-      "DOC-0112"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0113"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0113",
     "relevant_document_ids": [
       "DOC-0113"
@@ -1255,18 +1021,14 @@
       "DOC-0114"
     ],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0114"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0114",
     "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0115"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0115",
     "relevant_document_ids": [
       "DOC-0115"
@@ -1275,9 +1037,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0116"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0116",
     "relevant_document_ids": [
       "DOC-0116"
@@ -1286,9 +1046,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0117"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0117",
     "relevant_document_ids": [
       "DOC-0117"
@@ -1297,9 +1055,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0118"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0118",
     "relevant_document_ids": [
       "DOC-0118"
@@ -1317,9 +1073,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0120"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0120",
     "relevant_document_ids": [
       "DOC-0120"
@@ -1330,20 +1084,14 @@
     "irrelevant_document_ids": [
       "DOC-0121"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0121"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0121",
-    "relevant_document_ids": [
-      "DOC-0121"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0122"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0122",
     "relevant_document_ids": [
       "DOC-0122"
@@ -1352,9 +1100,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0123"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0123",
     "relevant_document_ids": [
       "DOC-0123"
@@ -1363,9 +1109,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0124"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0124",
     "relevant_document_ids": [
       "DOC-0124"
@@ -1374,9 +1118,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0125"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0125",
     "relevant_document_ids": [
       "DOC-0125"
@@ -1389,16 +1131,12 @@
       "DOC-0126"
     ],
     "query_id": "RET-0126",
-    "relevant_document_ids": [
-      "DOC-0126"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0127"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0127",
     "relevant_document_ids": [
       "DOC-0127"
@@ -1407,9 +1145,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0128"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0128",
     "relevant_document_ids": [
       "DOC-0128"
@@ -1418,9 +1154,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0129"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0129",
     "relevant_document_ids": [
       "DOC-0129"
@@ -1429,9 +1163,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0130"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0130",
     "relevant_document_ids": [
       "DOC-0130"
@@ -1440,9 +1172,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0131"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0131",
     "relevant_document_ids": [
       "DOC-0131"
@@ -1453,31 +1183,23 @@
     "irrelevant_document_ids": [
       "DOC-0132"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0132"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0132",
-    "relevant_document_ids": [
-      "DOC-0132"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [
       "DOC-0133"
     ],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0133"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0133",
     "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0134"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0134",
     "relevant_document_ids": [
       "DOC-0134"
@@ -1486,9 +1208,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0135"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0135",
     "relevant_document_ids": [
       "DOC-0135"
@@ -1506,9 +1226,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0137"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0137",
     "relevant_document_ids": [
       "DOC-0137"
@@ -1517,9 +1235,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0138"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0138",
     "relevant_document_ids": [
       "DOC-0138"
@@ -1528,9 +1244,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0139"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0139",
     "relevant_document_ids": [
       "DOC-0139"
@@ -1543,16 +1257,12 @@
       "DOC-0140"
     ],
     "query_id": "RET-0140",
-    "relevant_document_ids": [
-      "DOC-0140"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0141"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0141",
     "relevant_document_ids": [
       "DOC-0141"
@@ -1561,9 +1271,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0142"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0142",
     "relevant_document_ids": [
       "DOC-0142"
@@ -1574,20 +1282,14 @@
     "irrelevant_document_ids": [
       "DOC-0143"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0143"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0143",
-    "relevant_document_ids": [
-      "DOC-0143"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0144"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0144",
     "relevant_document_ids": [
       "DOC-0144"
@@ -1596,9 +1298,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0145"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0145",
     "relevant_document_ids": [
       "DOC-0145"
@@ -1607,9 +1307,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0146"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0146",
     "relevant_document_ids": [
       "DOC-0146"
@@ -1622,16 +1320,12 @@
       "DOC-0147"
     ],
     "query_id": "RET-0147",
-    "relevant_document_ids": [
-      "DOC-0147"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0148"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0148",
     "relevant_document_ids": [
       "DOC-0148"
@@ -1640,9 +1334,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0149"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0149",
     "relevant_document_ids": [
       "DOC-0149"
@@ -1651,9 +1343,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0150"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0150",
     "relevant_document_ids": [
       "DOC-0150"
@@ -1662,9 +1352,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0151"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0151",
     "relevant_document_ids": [
       "DOC-0151"
@@ -1675,9 +1363,7 @@
       "DOC-0152"
     ],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0152"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0152",
     "relevant_document_ids": []
   },
@@ -1695,20 +1381,14 @@
     "irrelevant_document_ids": [
       "DOC-0154"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0154"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0154",
-    "relevant_document_ids": [
-      "DOC-0154"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0155"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0155",
     "relevant_document_ids": [
       "DOC-0155"
@@ -1717,9 +1397,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0156"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0156",
     "relevant_document_ids": [
       "DOC-0156"
@@ -1728,9 +1406,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0157"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0157",
     "relevant_document_ids": [
       "DOC-0157"
@@ -1739,9 +1415,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0158"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0158",
     "relevant_document_ids": [
       "DOC-0158"
@@ -1750,9 +1424,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0159"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0159",
     "relevant_document_ids": [
       "DOC-0159"
@@ -1761,9 +1433,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0160"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0160",
     "relevant_document_ids": [
       "DOC-0160"
@@ -1776,16 +1446,12 @@
       "DOC-0161"
     ],
     "query_id": "RET-0161",
-    "relevant_document_ids": [
-      "DOC-0161"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0162"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0162",
     "relevant_document_ids": [
       "DOC-0162"
@@ -1794,9 +1460,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0163"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0163",
     "relevant_document_ids": [
       "DOC-0163"
@@ -1805,9 +1469,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0164"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0164",
     "relevant_document_ids": [
       "DOC-0164"
@@ -1818,20 +1480,14 @@
     "irrelevant_document_ids": [
       "DOC-0165"
     ],
-    "partially_relevant_document_ids": [
-      "DOC-0165"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0165",
-    "relevant_document_ids": [
-      "DOC-0165"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0166"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0166",
     "relevant_document_ids": [
       "DOC-0166"
@@ -1840,9 +1496,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0167"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0167",
     "relevant_document_ids": [
       "DOC-0167"
@@ -1855,16 +1509,12 @@
       "DOC-0168"
     ],
     "query_id": "RET-0168",
-    "relevant_document_ids": [
-      "DOC-0168"
-    ]
+    "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0169"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0169",
     "relevant_document_ids": [
       "DOC-0169"
@@ -1884,18 +1534,14 @@
       "DOC-0171"
     ],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0171"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0171",
     "relevant_document_ids": []
   },
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0172"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0172",
     "relevant_document_ids": [
       "DOC-0172"
@@ -1904,9 +1550,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0173"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0173",
     "relevant_document_ids": [
       "DOC-0173"
@@ -1915,9 +1559,7 @@
   {
     "filtered_document_ids": [],
     "irrelevant_document_ids": [],
-    "partially_relevant_document_ids": [
-      "DOC-0174"
-    ],
+    "partially_relevant_document_ids": [],
     "query_id": "RET-0174",
     "relevant_document_ids": [
       "DOC-0174"
@@ -1930,8 +1572,6 @@
       "DOC-0175"
     ],
     "query_id": "RET-0175",
-    "relevant_document_ids": [
-      "DOC-0175"
-    ]
+    "relevant_document_ids": []
   }
 ]
