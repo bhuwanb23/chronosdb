@@ -1,0 +1,80 @@
+{
+  "dataset_version": "0.1.0",
+  "files": [
+    {
+      "path": "data/generated/master/tiny/locations.csv",
+      "rows": 2,
+      "sha256": "9fec4222cf34fc5103d3a89f24f871eb35580084437472ce623f58fd3e3ef6b8"
+    },
+    {
+      "path": "data/generated/master/tiny/facilities.csv",
+      "rows": 1,
+      "sha256": "1ca7ff660d6c7593f0fe2a07a7bdd0f851bba07772ef198e51e84c9c2308c17e"
+    },
+    {
+      "path": "data/generated/master/tiny/warehouses.csv",
+      "rows": 2,
+      "sha256": "97d40a8e0e76b404d1304179d2faf132e881755a1aa558562c71ab6e73720360"
+    },
+    {
+      "path": "data/generated/master/tiny/transfer_lanes.csv",
+      "rows": 2,
+      "sha256": "aecec4c1c479f6e8fa9c0ff0d002aaf92d15a9e7eaebbeada55c04362a53701c"
+    },
+    {
+      "path": "data/generated/master/tiny/suppliers.csv",
+      "rows": 4,
+      "sha256": "bb354f2b6aaf37b4e376b0612a54e045dadb93150d0c373673080033608497a2"
+    },
+    {
+      "path": "data/generated/master/tiny/components.csv",
+      "rows": 12,
+      "sha256": "09d9f2e6e3c5c2c92c0da735913cab366547549307097387765a6c3ae359799b"
+    },
+    {
+      "path": "data/generated/master/tiny/supplier_component_agreements.csv",
+      "rows": 24,
+      "sha256": "88f39eaf96ec526c8a72ab1935cc39a0d5ad8e29ffbff3590cf97b1984044b03"
+    },
+    {
+      "path": "data/generated/master/tiny/products.csv",
+      "rows": 4,
+      "sha256": "f5bc6fbea772760a0a95ab3e67d00565361d54fd08d8b72c93b994b4bc587ff6"
+    },
+    {
+      "path": "data/generated/master/tiny/bom_versions.csv",
+      "rows": 6,
+      "sha256": "c9895ff0d224173bf9787f1b14edaad576db5b076f91641afbec1a2174220b74"
+    },
+    {
+      "path": "data/generated/master/tiny/bom_lines.csv",
+      "rows": 13,
+      "sha256": "006c47a244fd1c3475be76dc737f496c7a0ea66d1ad579cafe1be48353cb3e34"
+    },
+    {
+      "path": "data/generated/master/tiny/customers.csv",
+      "rows": 12,
+      "sha256": "20c56d1f27f22c1d11320477cdd14c2dc48157849a99ccf8fb6687876b740128"
+    },
+    {
+      "path": "data/generated/master/tiny/sla_policies.csv",
+      "rows": 3,
+      "sha256": "88876ed481f213fb3ba51318271aad0a7d98cae2466dec8b3932033e8aec2b95"
+    }
+  ],
+  "generator_version": "0.1.0",
+  "layer": "master",
+  "phase": "3G",
+  "reference_time": "2026-11-11T02:30:00Z",
+  "scale": "tiny",
+  "seed": 260311,
+  "seed_streams": {
+    "benchmark": 707,
+    "demand": 202,
+    "disruption": 505,
+    "document": 606,
+    "inventory": 404,
+    "master": 101,
+    "supply": 303
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "dataset_version": "0.1.0",
+  "generator_version": "0.1.0",
+  "phase": "3G",
+  "layer": "master",
+  "status": "specification_only",
+  "files": [],
+  "seed_streams": {
+    "master": 101,
+    "demand": 202,
+    "supply": 303,
+    "inventory": 404,
+    "disruption": 505,
+    "document": 606,
+    "benchmark": 707
+  }
+}

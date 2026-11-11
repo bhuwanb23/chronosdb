@@ -1,0 +1,12 @@
+name: tiny
+counts:
+  suppliers: 4
+  components: 12
+  products: 4
+  bom_versions: 6
+  warehouses: 2
+  facilities: 1
+  customers: 12
+  purchase_orders: 30
+  production_orders: 20
+  customer_orders: 40

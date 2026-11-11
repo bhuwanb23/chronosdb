@@ -1,0 +1,12 @@
+name: standard
+counts:
+  suppliers: 24
+  components: 80
+  products: 16
+  bom_versions: 32
+  warehouses: 3
+  facilities: 2
+  customers: 80
+  purchase_orders: 600
+  production_orders: 400
+  customer_orders: 1000

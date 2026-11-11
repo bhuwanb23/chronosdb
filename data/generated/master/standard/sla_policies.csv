@@ -1,0 +1,4 @@
+delivery_lead_time_days,id,late_tolerance_hours,name
+1,SLA-000001,0,STANDARD
+0,SLA-000002,0,PRIORITY
+3,SLA-000003,0,EXTENDED

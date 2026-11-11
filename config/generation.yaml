@@ -1,0 +1,19 @@
+dataset_version: "0.1.0"
+generator_version: "0.1.0"
+seed: 260311
+reference_time: "2026-11-11T02:30:00Z"
+history_days: 180
+planning_horizon_days: 30
+streams:
+  master: 101
+  demand: 202
+  supply: 303
+  inventory: 404
+  disruption: 505
+  document: 606
+  benchmark: 707
+serialization:
+  money_decimal_places: 2
+  quantity_decimal_places: 3
+  timestamp_format: iso8601_utc
+  sort_keys: true

@@ -1,0 +1,39 @@
+enterprise:
+  name: Asterion Control Systems
+  industry: industrial_electronics_manufacturing
+  currency: INR
+  quantity_unit: EA
+  storage_timezone: UTC
+  display_timezone: Asia/Kolkata
+  reference_time: "2026-11-11T02:30:00Z"
+  history_days: 180
+  planning_horizon_days: 30
+
+locations:
+  - id: LOC-PUNE
+    city: Pune
+    country: IN
+  - id: LOC-CHENNAI
+    city: Chennai
+    country: IN
+
+facilities:
+  - id: FAC-PUNE
+    location_id: LOC-PUNE
+    daily_capacity_units: 100
+  - id: FAC-CHENNAI
+    location_id: LOC-CHENNAI
+    daily_capacity_units: 80
+
+warehouses:
+  - id: WH-PUNE
+    location_id: LOC-PUNE
+  - id: WH-CHENNAI
+    location_id: LOC-CHENNAI
+  - id: WH-BENGALURU
+    location_id: LOC-PUNE
+
+generation:
+  default_scale: standard
+  seed: 260311
+  output_root: data/generated

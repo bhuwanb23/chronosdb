@@ -1,0 +1,80 @@
+{
+  "dataset_version": "0.1.0",
+  "files": [
+    {
+      "path": "data/generated/master/standard/locations.csv",
+      "rows": 3,
+      "sha256": "c9367606e1d2ecc98b7a1cce4f813f9e34b74f47eec1bf9fa60c85efeb0925d1"
+    },
+    {
+      "path": "data/generated/master/standard/facilities.csv",
+      "rows": 2,
+      "sha256": "3def02d3ecd0035926911cab47689b01abe8b9c36c8e41aefec2de951044112d"
+    },
+    {
+      "path": "data/generated/master/standard/warehouses.csv",
+      "rows": 3,
+      "sha256": "ae62119213055bc50e640ece1396a4a2bd95d560cfdf9a6597457e933e1f0af5"
+    },
+    {
+      "path": "data/generated/master/standard/transfer_lanes.csv",
+      "rows": 6,
+      "sha256": "1b05460bb141335db25af716c08a646a923ea7b89becd498be541028f251d8af"
+    },
+    {
+      "path": "data/generated/master/standard/suppliers.csv",
+      "rows": 24,
+      "sha256": "5688a2d9891cd961b7685fb4904fa00f30582752fcca5d42f551877439cfd4ac"
+    },
+    {
+      "path": "data/generated/master/standard/components.csv",
+      "rows": 80,
+      "sha256": "01a90a2d7821052a69bec6deaffab725a7c97dbb5c7b98b73b82bf51330a3815"
+    },
+    {
+      "path": "data/generated/master/standard/supplier_component_agreements.csv",
+      "rows": 160,
+      "sha256": "92c1b6db3b3b92ffdb172d134c466d4ffa48e4a53f98a881fb89e81b02a1c7bf"
+    },
+    {
+      "path": "data/generated/master/standard/products.csv",
+      "rows": 16,
+      "sha256": "85535af62423af937a45c5360c2b855d8e52c8adf02f9f130435db343d054db7"
+    },
+    {
+      "path": "data/generated/master/standard/bom_versions.csv",
+      "rows": 32,
+      "sha256": "491950ac89d3752e325136eac7bab35d4d82c030094f31a0370bdcc48d2084ab"
+    },
+    {
+      "path": "data/generated/master/standard/bom_lines.csv",
+      "rows": 80,
+      "sha256": "351a44e3b8a3774b3bf6ce729aac7071f01d06b7b5679ec4369c514573115dac"
+    },
+    {
+      "path": "data/generated/master/standard/customers.csv",
+      "rows": 80,
+      "sha256": "2a0a4c1749f0ce724c75cca1a9d454772feaf577b00aa977b4959e387c9162bb"
+    },
+    {
+      "path": "data/generated/master/standard/sla_policies.csv",
+      "rows": 3,
+      "sha256": "88876ed481f213fb3ba51318271aad0a7d98cae2466dec8b3932033e8aec2b95"
+    }
+  ],
+  "generator_version": "0.1.0",
+  "layer": "master",
+  "phase": "3G",
+  "reference_time": "2026-11-11T02:30:00Z",
+  "scale": "standard",
+  "seed": 260311,
+  "seed_streams": {
+    "benchmark": 707,
+    "demand": 202,
+    "disruption": 505,
+    "document": 606,
+    "inventory": 404,
+    "master": 101,
+    "supply": 303
+  }
+}
