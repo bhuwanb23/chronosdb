@@ -1,0 +1,6 @@
+evidence_area,requirements,product_artifact,future_test_ids,metric,status
+Db2 operational depth,"FR-SCN-003; FR-EVD-001; FR-AUD-001","Db2 schema, migrations, source-record viewer","AT-001; AT-003; AT-010","Evidence link coverage; Db2 query performance",PLANNED
+Counterfactual decision impact,"FR-IMP-001; FR-IMP-009; FR-SIM-001; FR-OPT-006","Impact trace, baseline comparison, recommendation view","AT-003; AT-011","Impact precision; impact recall; SLA reduction",PLANNED
+Controlled AI,"FR-EXP-002; FR-EXP-003","AI authority contract, claim verifier, deterministic fallback","AT-007; AT-008","Numerical fidelity; unsupported-claim rate",PLANNED
+Reproducible engineering,"FR-SIM-005; FR-AUD-002","Migrations, seeded data, repeatable scenario runner, audit records","AT-003; AT-009; AT-010","Repeatability; setup success; error rate",PLANNED
+Explainable decisions,"FR-OPT-003; FR-OPT-006; FR-EVD-004; FR-AUD-003","Candidate comparison, evidence trail, replay view","AT-005; AT-006; AT-010","Evidence coverage; reviewer understanding",PLANNED
