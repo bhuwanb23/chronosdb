@@ -16,6 +16,13 @@ class FakeDb2:
         return self.result
 
 
+class FailingDb2:
+    def readiness(self) -> dict[str, str]:
+        from chronosdb.db2 import Db2UnavailableError
+
+        raise Db2UnavailableError("internal connection details")
+
+
 def configured_settings() -> Settings:
     return Settings(
         DB2_DATABASE="CHRONOS",
@@ -56,6 +63,19 @@ def test_readiness_reports_db2_success() -> None:
         "status": "ready",
         "checks": {"configuration": "pass", "db2": "pass"},
     }
+
+
+def test_readiness_sanitizes_db2_failure() -> None:
+    client = TestClient(create_app(configured_settings(), FailingDb2()))
+
+    response = client.get("/health/ready")
+
+    assert response.status_code == 503
+    assert response.json() == {
+        "status": "not_ready",
+        "checks": {"db2": "fail"},
+    }
+    assert "internal" not in response.text
 
 
 def test_version_does_not_expose_credentials() -> None:

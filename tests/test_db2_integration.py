@@ -6,7 +6,6 @@ from chronosdb.api import health_sql_path
 from chronosdb.config import get_settings
 from chronosdb.db2 import Db2Client
 
-
 pytestmark = pytest.mark.db2
 
 

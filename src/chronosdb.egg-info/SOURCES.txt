@@ -10,6 +10,8 @@ src/chronosdb.egg-info/SOURCES.txt
 src/chronosdb.egg-info/dependency_links.txt
 src/chronosdb.egg-info/requires.txt
 src/chronosdb.egg-info/top_level.txt
+src/chronosdb/sql/001_system_health.sql
+src/chronosdb/sql/__init__.py
 tests/test_api.py
 tests/test_config.py
 tests/test_db2_integration.py

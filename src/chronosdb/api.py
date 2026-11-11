@@ -1,7 +1,8 @@
 """HTTP API for the ChronosDB foundation."""
 
 from dataclasses import dataclass
-from pathlib import Path
+from importlib.resources import files
+from importlib.resources.abc import Traversable
 
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
@@ -64,7 +65,7 @@ def create_app(
         return HealthResponse(status="alive")
 
     @app.get("/health/ready", response_model=ReadinessResponse)
-    async def readiness() -> ReadinessResponse:
+    def readiness() -> ReadinessResponse:
         if not dependencies.settings.db2_configured:
             return ReadinessResponse(
                 status="not_ready",
@@ -87,7 +88,7 @@ def create_app(
     return app
 
 
-def health_sql_path() -> Path:
-    """Return the foundation health-table migration path."""
+def health_sql_path() -> Traversable:
+    """Return the packaged foundation health-table migration."""
 
-    return Path(__file__).resolve().parents[2] / "sql" / "001_system_health.sql"
+    return files("chronosdb.sql").joinpath("001_system_health.sql")

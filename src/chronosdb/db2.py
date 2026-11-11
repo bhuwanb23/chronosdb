@@ -2,8 +2,7 @@
 
 from collections.abc import Iterator
 from contextlib import contextmanager
-from pathlib import Path
-from typing import Any
+from typing import Any, Protocol
 
 import ibm_db
 
@@ -12,6 +11,13 @@ from chronosdb.config import Settings
 
 class Db2UnavailableError(RuntimeError):
     """Raised when Db2 cannot be reached or queried."""
+
+
+class SqlResource(Protocol):
+    """Minimal protocol shared by filesystem and packaged SQL resources."""
+
+    def read_text(self, encoding: str = "utf-8") -> str:
+        ...
 
 
 class Db2Client:
@@ -58,7 +64,7 @@ class Db2Client:
                 "user": str(row[2]),
             }
 
-    def ensure_health_table(self, sql_path: Path) -> None:
+    def ensure_health_table(self, sql_path: SqlResource) -> None:
         """Create the health table when it does not already exist."""
 
         with self.connection() as connection:
@@ -83,7 +89,7 @@ class Db2Client:
                 connection,
                 """
                 INSERT INTO SYSTEM_HEALTH (CHECK_ID, COMPONENT, STATUS, DETAILS)
-                VALUES (GENERATE_UNIQUE(), ?, ?, ?)
+                VALUES (HEX(GENERATE_UNIQUE()), ?, ?, ?)
                 """,
             )
             for index, value in enumerate((component, status, details), start=1):
