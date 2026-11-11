@@ -51,6 +51,33 @@ generation and physical Db2 design.
 - [`feasibility-rule-catalogue.md`](feasibility-rule-catalogue.md)
 - [`counterfactual-model.md`](counterfactual-model.md)
 
+### Formulas, evidence, and uncertainty — Phase 2P–2R
+
+- [`formula-catalogue.md`](formula-catalogue.md)
+- [`objective-and-ranking-model.md`](objective-and-ranking-model.md)
+- [`provenance-model.md`](provenance-model.md)
+- [`uncertainty-and-data-quality-model.md`](uncertainty-and-data-quality-model.md)
+
+### Golden scenario — Phase 2S
+
+- [`golden-scenario/scenario-definition.md`](golden-scenario/scenario-definition.md)
+- [`golden-scenario/input-records.csv`](golden-scenario/input-records.csv)
+- [`golden-scenario/manual-calculation.md`](golden-scenario/manual-calculation.md)
+- [`golden-scenario/do-nothing-result.json`](golden-scenario/do-nothing-result.json)
+- [`golden-scenario/intervention-results.json`](golden-scenario/intervention-results.json)
+- [`golden-scenario/expected-recommendation.json`](golden-scenario/expected-recommendation.json)
+- [`golden-scenario/causal-traces.md`](golden-scenario/causal-traces.md)
+- [`golden-scenario/assumptions.md`](golden-scenario/assumptions.md)
+
+### Tests, review, and handoff — Phase 2T–2V
+
+- [`domain-test-catalogue.md`](domain-test-catalogue.md)
+- [`domain-review-report.md`](domain-review-report.md)
+- [`adversarial-scenarios.md`](adversarial-scenarios.md)
+- [`invariant-catalogue.md`](invariant-catalogue.md)
+- [`phase-2-traceability-matrix.csv`](phase-2-traceability-matrix.csv)
+- [`phase-2-completion-report.md`](phase-2-completion-report.md)
+
 - [`phase-2a-g-completion-report.md`](phase-2a-g-completion-report.md)
 - [`phase-2h-o-completion-report.md`](phase-2h-o-completion-report.md)
 
@@ -65,5 +92,5 @@ generation and physical Db2 design.
 - Historical state uses records valid and known at scenario as-of time.
 - Disruption, inventory, BOM, scheduling, SLA, intervention, and counterfactual
   rules are conceptual and deterministic.
-- H–O is complete; provenance, uncertainty, formulas, golden scenario, and
-  benchmarks remain in Phase 2P–2V.
+- P–V is complete as a specification and manually validated ground-truth
+  package; executable implementation remains in later phases.

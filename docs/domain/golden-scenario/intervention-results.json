@@ -1,0 +1,51 @@
+{
+  "scenario_id": "SC-GOLD-001",
+  "rule_version": "phase-2-v1",
+  "candidates": [
+    {
+      "intervention_id": "INT-DO-NOTHING",
+      "type": "DO_NOTHING",
+      "status": "FEASIBLE",
+      "cost_inr": 0,
+      "breached_customer_orders": 2,
+      "revenue_at_risk_inr": 1600000,
+      "revenue_protected_inr": 0,
+      "quantity_weighted_delay_days": 4600
+    },
+    {
+      "intervention_id": "INT-TRANSFER-400",
+      "type": "WAREHOUSE_TRANSFER",
+      "status": "FEASIBLE",
+      "quantity_mcu": 400,
+      "cost_inr": 60000,
+      "breached_customer_orders": 1,
+      "revenue_at_risk_inr": 800000,
+      "revenue_protected_inr": 800000,
+      "quantity_weighted_delay_days": 1800
+    },
+    {
+      "intervention_id": "INT-ALTERNATE-400",
+      "type": "ALTERNATE_SUPPLIER",
+      "status": "FEASIBLE",
+      "supplier_id": "S-208",
+      "quantity_mcu": 400,
+      "cost_inr": 72000,
+      "breached_customer_orders": 2,
+      "revenue_at_risk_inr": 1600000,
+      "revenue_protected_inr": 0,
+      "quantity_weighted_delay_days": 2000
+    },
+    {
+      "intervention_id": "INT-HYBRID-400",
+      "type": "TRANSFER_PLUS_ALTERNATE",
+      "status": "FEASIBLE",
+      "transfer_quantity_mcu": 400,
+      "alternate_quantity_mcu": 400,
+      "cost_inr": 132000,
+      "breached_customer_orders": 0,
+      "revenue_at_risk_inr": 0,
+      "revenue_protected_inr": 1600000,
+      "quantity_weighted_delay_days": 0
+    }
+  ]
+}

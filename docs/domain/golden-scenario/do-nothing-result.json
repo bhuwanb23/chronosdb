@@ -1,0 +1,32 @@
+{
+  "scenario_id": "SC-GOLD-001",
+  "intervention_id": "INT-DO-NOTHING",
+  "status": "COMPLETED",
+  "rule_version": "phase-2-v1",
+  "affected_components": [
+    "C-MCU-42"
+  ],
+  "affected_production_orders": [
+    "PROD-882",
+    "PROD-889"
+  ],
+  "affected_customer_orders": [
+    "CO-704",
+    "CO-711"
+  ],
+  "production_completion": {
+    "PROD-876": "2026-11-14T02:30:00Z",
+    "PROD-882": "2026-11-29T02:30:00Z",
+    "PROD-889": "2026-12-01T02:30:00Z"
+  },
+  "customer_delivery": {
+    "CO-701": "2026-11-15T02:30:00Z",
+    "CO-704": "2026-11-30T02:30:00Z",
+    "CO-711": "2026-12-02T02:30:00Z"
+  },
+  "breached_customer_orders": 2,
+  "revenue_at_risk_inr": 1600000,
+  "quantity_weighted_delay_days": 4600,
+  "quantity_weighted_delay_hours": 110400,
+  "evidence_status": "COMPLETE"
+}

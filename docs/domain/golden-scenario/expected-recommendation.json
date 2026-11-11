@@ -1,0 +1,21 @@
+{
+  "scenario_id": "SC-GOLD-001",
+  "objective": "MINIMIZE_SLA_BREACHES",
+  "constraints": {
+    "maximum_recovery_cost_inr": 200000,
+    "approved_suppliers_only": true,
+    "minimum_source_safety_stock_enforced": true,
+    "simulation_horizon_days": 30
+  },
+  "recommended_intervention_id": "INT-HYBRID-400",
+  "recommended_intervention_type": "TRANSFER_PLUS_ALTERNATE",
+  "reason": "Only feasible candidate in the locked set that protects both affected customer orders within budget.",
+  "expected_metrics": {
+    "breached_customer_orders": 0,
+    "revenue_at_risk_inr": 0,
+    "revenue_protected_inr": 1600000,
+    "intervention_cost_inr": 132000,
+    "budget_remaining_inr": 68000
+  },
+  "review_status": "PENDING_HUMAN_APPROVAL"
+}

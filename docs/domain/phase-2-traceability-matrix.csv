@@ -1,0 +1,39 @@
+phase1_requirement_id,domain_concept,entity_or_relationship,rule_id,formula_id,invariant_id,domain_test_id,golden_scenario_evidence,future_phase,status,notes
+FR-SCN-001,Structured supplier outage,Scenario and DisruptionEvent,DIS-001,N/A,INV-012,DT-ENT-001,golden-scenario/scenario-definition.md,Phase 4,APPROVED,Input contract
+FR-SCN-002,Scenario identity,Scenario,SCN-001,N/A,INV-013,DT-ENT-001,golden-scenario/scenario-definition.md,Phase 4,APPROVED,Stable ID
+FR-SCN-003,Scenario metadata and rule version,Scenario and SimulationRun,SCN-002,N/A,INV-013,DT-GOLD-006,golden-scenario/expected-recommendation.json,Phase 4,APPROVED,Replay context
+FR-SCN-004,Active supplier validation,Supplier-to-agreement,DIS-003,N/A,INV-012,DT-ENT-002,golden-scenario/input-records.csv,Phase 4,APPROVED,Approval state
+FR-SCN-005,Positive outage duration,DisruptionEvent,DIS-001,N/A,INV-012,DT-TIME-004,golden-scenario/scenario-definition.md,Phase 11,APPROVED,Validation
+FR-SCN-006,Objective and constraint validation,Scenario-to-constraints,OPT-001,N/A,INV-011,DT-INT-002,golden-scenario/expected-recommendation.json,Phase 7,APPROVED,Hard constraints
+FR-SCN-007,Immutable scenario input,Scenario-to-SimulationRun,CF-001,N/A,INV-013,DT-TIME-003,golden-scenario/assumptions.md,Phase 6,APPROVED,State protection
+FR-IMP-001,Affected components,Supplier-to-component,DIS-002,IMP-001,INV-015,DT-CAU-002,golden-scenario/causal-traces.md,Phase 5,APPROVED,Impact set
+FR-IMP-002,Affected replenishments,PurchaseOrder-to-receipt,DIS-002,INV-001,DT-TIME-002,golden-scenario/do-nothing-result.json,Phase 5,APPROVED,Delayed receipt
+FR-IMP-003,Shortage date and quantity,Inventory-to-requirement,INV-003,INV-004,INV-003,DT-INV-001,golden-scenario/manual-calculation.md,Phase 5,APPROVED,Shortage rule
+FR-IMP-004,BOM dependency traversal,Product-to-BOMLine, BOM-001,BOM-002,INV-015,DT-BOM-001,golden-scenario/input-records.csv,Phase 5,APPROVED,Material path
+FR-IMP-005,Production impact,MaterialAllocation-to-ProductionOrder,PROD-001,IMP-002,INV-008,DT-PRD-001,golden-scenario/manual-calculation.md,Phase 5,APPROVED,Projected completion
+FR-IMP-006,Customer impact,ProductionOrder-to-CustomerOrderLine,SLA-001,IMP-003,INV-009,DT-CUS-003,golden-scenario/causal-traces.md,Phase 5,APPROVED,Delivery path
+FR-IMP-007,SLA classification,CustomerOrderLine-to-delivery,SLA-001,SLA-001,INV-010,DT-CUS-001,golden-scenario/do-nothing-result.json,Phase 5,APPROVED,Breach state
+FR-IMP-008,Revenue at risk,CustomerOrderLine-to-revenue,SLA-004,VALUE-001,INV-010,DT-CUS-002,golden-scenario/manual-calculation.md,Phase 5,APPROVED,Late quantity only
+FR-IMP-009,Calculation trace,Derived output-to-evidence,PROV-001,N/A,INV-015,DT-CAU-001,golden-scenario/causal-traces.md,Phase 5,APPROVED,Intermediate values
+FR-INT-001,Core intervention set,Scenario-to-Intervention,INT-001,N/A,INV-011,DT-INT-001,golden-scenario/intervention-results.json,Phase 7,APPROVED,Candidate generation
+FR-INT-003,Infeasible candidate visibility,Intervention-to-feasibility,INT-002,N/A,INV-012,DT-INT-002,golden-scenario/intervention-results.json,Phase 7,APPROVED,Rejection reason
+FR-INT-004,Hard constraint enforcement,Intervention-to-inventory/capacity,INT-003,N/A,INV-003,DT-INV-002,golden-scenario/expected-recommendation.json,Phase 7,APPROVED,Feasibility gate
+FR-INT-005,Intervention cost,Intervention-to-cost,COST-001,COST-001,INV-011,DT-GOLD-003,golden-scenario/manual-calculation.md,Phase 7,APPROVED,No double count
+FR-SIM-001,Common immutable baseline,Scenario-to-SimulationRun,CF-001,N/A,INV-013,DT-INT-005,golden-scenario/intervention-results.json,Phase 6,APPROVED,Comparability
+FR-SIM-002,Baseline immutability,OperationalState-to-overlay,CF-002,N/A,INV-013,DT-TIME-003,golden-scenario/assumptions.md,Phase 6,APPROVED,Isolation
+FR-SIM-003,Run identity,Scenario-to-SimulationRun,CF-003,N/A,INV-015,DT-GOLD-006,golden-scenario/expected-recommendation.json,Phase 6,APPROVED,Execution identity
+FR-SIM-005,Deterministic repeatability,Run inputs-to-outcome,CF-004,N/A,INV-014,DT-PRD-004,golden-scenario/intervention-results.json,Phase 6,APPROVED,Same inputs same outputs
+FR-OPT-001,Feasible-only ranking,Intervention-to-ranking,OPT-001,N/A,INV-011,DT-INT-001,golden-scenario/expected-recommendation.json,Phase 7,APPROVED,Filter before rank
+FR-OPT-002,Objective ranking,Intervention-to-objective,OPT-002,RANK-001,INV-016,DT-GOLD-006,golden-scenario/expected-recommendation.json,Phase 7,APPROVED,Selected objective
+FR-OPT-003,Visible constraints and weights,Objective-to-DecisionResult,OPT-003,RANK-002,INV-016,DT-GOLD-006,golden-scenario/expected-recommendation.json,Phase 7,APPROVED,Transparency
+FR-OPT-005,No feasible result,Intervention-to-status,OPT-004,N/A,INV-011,DT-INT-002,adversarial-scenarios.md,Phase 7,APPROVED,Explicit no-plan state
+FR-OPT-006,Recommendation explanation,DecisionResult-to-candidates,OPT-005,N/A,INV-015,DT-GOLD-006,golden-scenario/expected-recommendation.json,Phase 9,APPROVED,Trade-off
+FR-EVD-001,Claim run linkage,Claim-to-SimulationRun,PROV-001,N/A,INV-015,DT-CAU-001,golden-scenario/causal-traces.md,Phase 8,APPROVED,Provenance
+FR-EVD-002,Source and rule linkage,Claim-to-input-records,PROV-002,N/A,INV-015,DT-GOLD-006,golden-scenario/input-records.csv,Phase 8,APPROVED,Source records
+FR-EVD-004,Evidence classification,Fact-to-derived-to-context,PROV-003,N/A,INV-015,DT-CAU-003,golden-scenario/assumptions.md,Phase 8,APPROVED,Authority levels
+FR-EVD-005,Unavailable evidence behavior,Result-to-evidence,PROV-004,N/A,INV-012,DT-CAU-003,adversarial-scenarios.md,Phase 8,APPROVED,No fabrication
+FR-EXP-001,Explain result and trade-off,DecisionResult-to-causal-trace,EXP-001,N/A,INV-015,DT-CAU-001,golden-scenario/causal-traces.md,Phase 9,APPROVED,Explanation
+FR-EXP-003,Deterministic fallback,VerifiedResult-to-summary,EXP-002,N/A,INV-015,DT-CAU-001,golden-scenario/manual-calculation.md,Phase 9,APPROVED,No LLM required
+FR-AUD-001,Audit events,Scenario-to-DecisionResult,AUD-001,N/A,INV-013,DT-GOLD-006,golden-scenario/expected-recommendation.json,Phase 10,APPROVED,Audit chain
+FR-AUD-002,Decision history,DecisionResult-to-Scenario,AUD-002,N/A,INV-013,DT-TIME-003,golden-scenario/assumptions.md,Phase 10,APPROVED,Replay
+FR-AUD-004,Audit immutability,Audit record-to-permission,AUD-003,N/A,INV-013,DT-TIME-003,golden-scenario/expected-recommendation.json,Phase 10,APPROVED,Protected history
