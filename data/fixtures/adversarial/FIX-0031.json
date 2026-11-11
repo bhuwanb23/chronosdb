@@ -1,0 +1,7 @@
+{
+  "case": "expired_evidence",
+  "expected_error": "EXPIRED_EVIDENCE",
+  "family": "adversarial",
+  "fixture_id": "FIX-0031",
+  "payload": "{}"
+}

@@ -2,5 +2,6 @@
   "case": "arrival_before_order",
   "expected_error": "INVALID_INTERVAL",
   "family": "boundary",
-  "fixture_id": "FIX-0011"
+  "fixture_id": "FIX-0011",
+  "payload": "{}"
 }

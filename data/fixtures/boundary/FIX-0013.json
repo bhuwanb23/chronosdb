@@ -2,5 +2,6 @@
   "case": "promised_before_order",
   "expected_error": "INVALID_INTERVAL",
   "family": "boundary",
-  "fixture_id": "FIX-0013"
+  "fixture_id": "FIX-0013",
+  "payload": "{\"order_time\": \"2026-11-11T00:00:00Z\", \"promised_delivery\": \"2026-11-10T00:00:00Z\"}"
 }

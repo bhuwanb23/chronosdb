@@ -6,6 +6,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0001",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0002",
+    "reference_supplier_id": "SUP-0002",
     "simulation_horizon_days": 30
   },
   {
@@ -15,6 +17,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0002",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0003",
+    "reference_supplier_id": "SUP-0003",
     "simulation_horizon_days": 30
   },
   {
@@ -24,6 +28,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0003",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0004",
+    "reference_supplier_id": "SUP-0004",
     "simulation_horizon_days": 30
   },
   {
@@ -33,6 +39,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0004",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0005",
+    "reference_supplier_id": "SUP-0005",
     "simulation_horizon_days": 30
   },
   {
@@ -42,6 +50,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0005",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0006",
+    "reference_supplier_id": "SUP-0006",
     "simulation_horizon_days": 30
   },
   {
@@ -51,6 +61,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0006",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0007",
+    "reference_supplier_id": "SUP-0007",
     "simulation_horizon_days": 30
   },
   {
@@ -60,6 +72,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0007",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0008",
+    "reference_supplier_id": "SUP-0008",
     "simulation_horizon_days": 30
   },
   {
@@ -69,6 +83,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0008",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0009",
+    "reference_supplier_id": "SUP-0009",
     "simulation_horizon_days": 30
   },
   {
@@ -78,6 +94,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0009",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0010",
+    "reference_supplier_id": "SUP-0010",
     "simulation_horizon_days": 30
   },
   {
@@ -87,6 +105,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0010",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0011",
+    "reference_supplier_id": "SUP-0011",
     "simulation_horizon_days": 30
   },
   {
@@ -96,6 +116,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0011",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0012",
+    "reference_supplier_id": "SUP-0012",
     "simulation_horizon_days": 30
   },
   {
@@ -105,6 +127,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0012",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0013",
+    "reference_supplier_id": "SUP-0013",
     "simulation_horizon_days": 30
   },
   {
@@ -114,6 +138,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0013",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0014",
+    "reference_supplier_id": "SUP-0014",
     "simulation_horizon_days": 30
   },
   {
@@ -123,6 +149,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0014",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0015",
+    "reference_supplier_id": "SUP-0015",
     "simulation_horizon_days": 30
   },
   {
@@ -132,6 +160,8 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0015",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0016",
+    "reference_supplier_id": "SUP-0016",
     "simulation_horizon_days": 30
   },
   {
@@ -141,6 +171,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0016",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0017",
+    "reference_supplier_id": "SUP-0017",
     "simulation_horizon_days": 30
   },
   {
@@ -150,6 +182,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0017",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0018",
+    "reference_supplier_id": "SUP-0018",
     "simulation_horizon_days": 30
   },
   {
@@ -159,6 +193,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0018",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0019",
+    "reference_supplier_id": "SUP-0019",
     "simulation_horizon_days": 30
   },
   {
@@ -168,6 +204,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0019",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0020",
+    "reference_supplier_id": "SUP-0020",
     "simulation_horizon_days": 30
   },
   {
@@ -177,6 +215,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0020",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0021",
+    "reference_supplier_id": "SUP-0021",
     "simulation_horizon_days": 30
   },
   {
@@ -186,6 +226,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0021",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0022",
+    "reference_supplier_id": "SUP-0022",
     "simulation_horizon_days": 30
   },
   {
@@ -195,6 +237,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0022",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0023",
+    "reference_supplier_id": "SUP-0023",
     "simulation_horizon_days": 30
   },
   {
@@ -204,6 +248,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0023",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0024",
+    "reference_supplier_id": "SUP-0024",
     "simulation_horizon_days": 30
   },
   {
@@ -213,6 +259,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0024",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0025",
+    "reference_supplier_id": "SUP-0001",
     "simulation_horizon_days": 30
   },
   {
@@ -222,6 +270,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0025",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0026",
+    "reference_supplier_id": "SUP-0002",
     "simulation_horizon_days": 30
   },
   {
@@ -231,6 +281,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0026",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0027",
+    "reference_supplier_id": "SUP-0003",
     "simulation_horizon_days": 30
   },
   {
@@ -240,6 +292,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0027",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0028",
+    "reference_supplier_id": "SUP-0004",
     "simulation_horizon_days": 30
   },
   {
@@ -249,6 +303,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0028",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0029",
+    "reference_supplier_id": "SUP-0005",
     "simulation_horizon_days": 30
   },
   {
@@ -258,6 +314,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0029",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0030",
+    "reference_supplier_id": "SUP-0006",
     "simulation_horizon_days": 30
   },
   {
@@ -267,6 +325,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0030",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0031",
+    "reference_supplier_id": "SUP-0007",
     "simulation_horizon_days": 30
   },
   {
@@ -276,6 +336,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0031",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0032",
+    "reference_supplier_id": "SUP-0008",
     "simulation_horizon_days": 30
   },
   {
@@ -285,6 +347,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0032",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0033",
+    "reference_supplier_id": "SUP-0009",
     "simulation_horizon_days": 30
   },
   {
@@ -294,6 +358,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0033",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0034",
+    "reference_supplier_id": "SUP-0010",
     "simulation_horizon_days": 30
   },
   {
@@ -303,6 +369,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0034",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0035",
+    "reference_supplier_id": "SUP-0011",
     "simulation_horizon_days": 30
   },
   {
@@ -312,6 +380,8 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0035",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0036",
+    "reference_supplier_id": "SUP-0012",
     "simulation_horizon_days": 30
   },
   {
@@ -321,6 +391,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0036",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0037",
+    "reference_supplier_id": "SUP-0013",
     "simulation_horizon_days": 30
   },
   {
@@ -330,6 +402,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0037",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0038",
+    "reference_supplier_id": "SUP-0014",
     "simulation_horizon_days": 30
   },
   {
@@ -339,6 +413,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0038",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0039",
+    "reference_supplier_id": "SUP-0015",
     "simulation_horizon_days": 30
   },
   {
@@ -348,6 +424,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0039",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0040",
+    "reference_supplier_id": "SUP-0016",
     "simulation_horizon_days": 30
   },
   {
@@ -357,6 +435,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0040",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0041",
+    "reference_supplier_id": "SUP-0017",
     "simulation_horizon_days": 30
   },
   {
@@ -366,6 +446,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0041",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0042",
+    "reference_supplier_id": "SUP-0018",
     "simulation_horizon_days": 30
   },
   {
@@ -375,6 +457,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0042",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0043",
+    "reference_supplier_id": "SUP-0019",
     "simulation_horizon_days": 30
   },
   {
@@ -384,6 +468,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0043",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0044",
+    "reference_supplier_id": "SUP-0020",
     "simulation_horizon_days": 30
   },
   {
@@ -393,6 +479,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0044",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0045",
+    "reference_supplier_id": "SUP-0021",
     "simulation_horizon_days": 30
   },
   {
@@ -402,6 +490,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0045",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0046",
+    "reference_supplier_id": "SUP-0022",
     "simulation_horizon_days": 30
   },
   {
@@ -411,6 +501,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0046",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0047",
+    "reference_supplier_id": "SUP-0023",
     "simulation_horizon_days": 30
   },
   {
@@ -420,6 +512,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0047",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0048",
+    "reference_supplier_id": "SUP-0024",
     "simulation_horizon_days": 30
   },
   {
@@ -429,6 +523,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0048",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0049",
+    "reference_supplier_id": "SUP-0001",
     "simulation_horizon_days": 30
   },
   {
@@ -438,6 +534,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0049",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0050",
+    "reference_supplier_id": "SUP-0002",
     "simulation_horizon_days": 30
   },
   {
@@ -447,6 +545,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0050",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0051",
+    "reference_supplier_id": "SUP-0003",
     "simulation_horizon_days": 30
   },
   {
@@ -456,6 +556,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0051",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0052",
+    "reference_supplier_id": "SUP-0004",
     "simulation_horizon_days": 30
   },
   {
@@ -465,6 +567,8 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0052",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0053",
+    "reference_supplier_id": "SUP-0005",
     "simulation_horizon_days": 30
   },
   {
@@ -474,6 +578,8 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0053",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0054",
+    "reference_supplier_id": "SUP-0006",
     "simulation_horizon_days": 30
   },
   {
@@ -483,6 +589,8 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0054",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0055",
+    "reference_supplier_id": "SUP-0007",
     "simulation_horizon_days": 30
   },
   {
@@ -492,6 +600,8 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0055",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0056",
+    "reference_supplier_id": "SUP-0008",
     "simulation_horizon_days": 30
   },
   {
@@ -501,6 +611,8 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0056",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0057",
+    "reference_supplier_id": "SUP-0009",
     "simulation_horizon_days": 30
   },
   {
@@ -510,6 +622,8 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0057",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0058",
+    "reference_supplier_id": "SUP-0010",
     "simulation_horizon_days": 30
   },
   {
@@ -519,6 +633,8 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0058",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0059",
+    "reference_supplier_id": "SUP-0011",
     "simulation_horizon_days": 30
   },
   {
@@ -528,6 +644,8 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0059",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0060",
+    "reference_supplier_id": "SUP-0012",
     "simulation_horizon_days": 30
   },
   {
@@ -537,6 +655,8 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0060",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
+    "reference_component_id": "CMP-0061",
+    "reference_supplier_id": "SUP-0013",
     "simulation_horizon_days": 30
   }
 ]

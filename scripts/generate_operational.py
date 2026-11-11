@@ -26,17 +26,19 @@ def main() -> None:
     validate_operational(master, operational)
     history = generate_history(config, master, operational)
     generated = []
+    operation_root = args.root / "data" / "generated" / "operational" / args.scale
+    history_root = args.root / "data" / "generated" / "history" / args.scale
     for name, rows in operational.items():
         generated.append(
             write_csv_rows(
-                args.root / "data" / "generated" / "operational" / f"{name}.csv",
+                operation_root / f"{name}.csv",
                 rows,
             )
         )
     for name, rows in history.items():
         generated.append(
             write_csv_rows(
-                args.root / "data" / "generated" / "history" / f"{name}.csv",
+                history_root / f"{name}.csv",
                 rows,
             )
         )
@@ -48,7 +50,7 @@ def main() -> None:
         "files": generated,
         "master_entities": ENTITY_FILES,
     }
-    manifest_path = args.root / "data" / "generated" / "operational" / "manifest.json"
+    manifest_path = operation_root / "manifest.json"
     manifest_path.write_text(
         json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )

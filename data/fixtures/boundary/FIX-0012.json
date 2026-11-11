@@ -2,5 +2,6 @@
   "case": "scenario_before_activation",
   "expected_error": "INVALID_INTERVAL",
   "family": "boundary",
-  "fixture_id": "FIX-0012"
+  "fixture_id": "FIX-0012",
+  "payload": "{}"
 }

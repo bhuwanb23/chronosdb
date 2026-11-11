@@ -2,5 +2,6 @@
   "case": "missing_supplier_approval",
   "expected_error": "INFEASIBLE_INTERVENTION",
   "family": "boundary",
-  "fixture_id": "FIX-0019"
+  "fixture_id": "FIX-0019",
+  "payload": "{\"approval_status\": \"PENDING\"}"
 }

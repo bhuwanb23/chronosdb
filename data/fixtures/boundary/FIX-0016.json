@@ -2,5 +2,6 @@
   "case": "missing_critical_inventory",
   "expected_error": "MISSING_CRITICAL_DATA",
   "family": "boundary",
-  "fixture_id": "FIX-0016"
+  "fixture_id": "FIX-0016",
+  "payload": "{\"inventory_snapshot\": null}"
 }

@@ -26,7 +26,7 @@ def main() -> None:
     master_dir = root / "data" / "generated" / "master" / args.scale
     master = {entity: read_csv_rows(master_dir / f"{entity}.csv") for entity in ENTITY_FILES}
     validate_master(master)
-    operation_dir = root / "data" / "generated" / "operational"
+    operation_dir = root / "data" / "generated" / "operational" / args.scale
     operational_names = (
         "customer_orders",
         "customer_order_lines",
@@ -66,11 +66,25 @@ def main() -> None:
     partitions = _json(root / "data" / "benchmarks" / "partitions.json")
     if len(expected) != 60:
         raise ValueError("benchmark expected-output count mismatch")
-    broad = partitions["development"] + partitions["validation"] + partitions["test"]
+    for outcome in expected:
+        recommendation = outcome["expected_recommendation"]
+        if recommendation is not None and not outcome["expected_candidate_feasibility"].get(
+            recommendation, False
+        ):
+            raise ValueError(f"infeasible benchmark recommendation: {outcome['scenario_id']}")
+    broad = (
+        partitions["development"]
+        + partitions["validation"]
+        + partitions["test"]
+        + partitions["adversarial"]
+        + partitions["review_holdout"]
+    )
     if len(broad) != len(set(broad)):
         raise ValueError("benchmark partition overlap")
+    if set(broad) != {f"SCN-{index:04d}" for index in range(1, 61)}:
+        raise ValueError("benchmark partition coverage mismatch")
     fixtures = _json(root / "data" / "fixtures" / "expected_errors.json")
-    if len(fixtures) != 30:
+    if len(fixtures) < 30:
         raise ValueError("fixture count mismatch")
     print(f"Phase 3H–3O validation passed for {args.scale}")
 

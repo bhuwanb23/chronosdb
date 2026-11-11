@@ -2,72 +2,72 @@
   "dataset_version": "1.0.0",
   "files": [
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/customer_orders.csv",
-      "record_count": 1000,
-      "sha256": "e5209c6ac7f6e756355acb04a895040f16ad8baeaa504cd5ec538332f52bc6c3"
+      "path": "data/generated/operational/customer_orders.csv",
+      "record_count": 50,
+      "sha256": "3cef6043e2763a36a4330e7f6857095c536c9b574b3315a1ca52d2426f38e8e9"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/customer_order_lines.csv",
-      "record_count": 1000,
-      "sha256": "83dcd9ffd5d0ddc61711139c3184b4f7d780333ccb39f1d4e35cdbb8e825df9b"
+      "path": "data/generated/operational/customer_order_lines.csv",
+      "record_count": 50,
+      "sha256": "154c389bd055550a2ae01697ed0b4cae788f369e4ad5e2ab280a1ca1f15f33fe"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/production_orders.csv",
-      "record_count": 400,
-      "sha256": "e09f11482c0e57700ea4c4642ba6cfd76b692dae0a1aa812cd81ef846e8104d3"
+      "path": "data/generated/operational/production_orders.csv",
+      "record_count": 20,
+      "sha256": "32ea9253038c661acfff15aedd1f73638fa920574b8341019244974fd07413b2"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/production_customer_allocations.csv",
-      "record_count": 400,
-      "sha256": "63c26dba02852f76ebbf77b349b51adf77ed9df50d760d28a21d1dbde0888ab0"
+      "path": "data/generated/operational/production_customer_allocations.csv",
+      "record_count": 20,
+      "sha256": "1a46518cb321d9f56c08b1f20769dd79592a32f3ec0a118696d664e2b63ff0fe"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/production_material_requirements.csv",
-      "record_count": 1000,
-      "sha256": "ee02b449a6fbe8e1ac9e49abb2664265ea63c643564135389d8a34ee869f2011"
+      "path": "data/generated/operational/production_material_requirements.csv",
+      "record_count": 47,
+      "sha256": "696dcb34a946b0011a73479015a14761319a489b4cb8737646a59ff7d55ee06d"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/purchase_orders.csv",
-      "record_count": 600,
-      "sha256": "c3136b904e678503f4be18406daed2c553331cd8089e54f8a43ac0e84d72e04d"
+      "path": "data/generated/operational/purchase_orders.csv",
+      "record_count": 30,
+      "sha256": "e0121afc01453fcc333d40612e7b4c5a8c2f6c28347389195e542f0d9d8539a8"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/inventory_transactions.csv",
-      "record_count": 981,
-      "sha256": "0fa4abdaebf0ee543205a4e5283273818ae530fcdb282fbe85ffd92134726092"
+      "path": "data/generated/operational/inventory_transactions.csv",
+      "record_count": 74,
+      "sha256": "b1abe814076a6bfc9e095a2c9d5365e11e31c8009f2c4b8570355a0990f3ad5e"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/inventory_snapshots.csv",
-      "record_count": 43440,
-      "sha256": "dba815309f3b9a514373536b8a96889082ac588f429d6b1deda02fe3352590d9"
+      "path": "data/generated/operational/inventory_snapshots.csv",
+      "record_count": 5430,
+      "sha256": "d51093d3695591895ec1d44288fea7e48532e17e7bfce53fe9369bbfde5a4485"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/history/entity_versions.csv",
-      "record_count": 160,
-      "sha256": "c5578b443a4593e43ae9698bd46ad3c71530b4fadf7262d136b3e0b6a7a7e2fd"
+      "path": "data/generated/history/entity_versions.csv",
+      "record_count": 30,
+      "sha256": "672998b1b89e59c96983af9fef433eec287f943e110c18f51a2c874d93618f3a"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/history/status_events.csv",
-      "record_count": 600,
-      "sha256": "7d1f7e7c4973dd323f3adda32014f8ee79ae4abcff8e94cf90d3d59e0586172e"
+      "path": "data/generated/history/status_events.csv",
+      "record_count": 30,
+      "sha256": "7e6dd65837bb88ca9db596b497657cf31f17728f02edd2623dbbabd39d136103"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/history/daily_inventory_snapshots.csv",
-      "record_count": 43440,
-      "sha256": "dba815309f3b9a514373536b8a96889082ac588f429d6b1deda02fe3352590d9"
+      "path": "data/generated/history/daily_inventory_snapshots.csv",
+      "record_count": 5430,
+      "sha256": "d51093d3695591895ec1d44288fea7e48532e17e7bfce53fe9369bbfde5a4485"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/history/supplier_performance_history.csv",
-      "record_count": 24,
-      "sha256": "465afe1a2cc0386cb9ddaec1eb4b9e21c42cc64c8f51da7c1e19b55dd414d037"
+      "path": "data/generated/history/supplier_performance_history.csv",
+      "record_count": 5,
+      "sha256": "5485ceb5343101583dc0261877d05f9483ac4fe41ccaa1d6c361ecb4c46230fb"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/history/historical_disruptions.csv",
+      "path": "data/generated/history/historical_disruptions.csv",
       "record_count": 0,
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/history/late_arriving_corrections.csv",
+      "path": "data/generated/history/late_arriving_corrections.csv",
       "record_count": 1,
       "sha256": "1471f0d57a33f90e0e52db916a7b43b1b42982d105dfd11fa0e03d126abdadd9"
     }
@@ -87,6 +87,6 @@
     "customers",
     "sla_policies"
   ],
-  "scale": "standard",
+  "scale": "tiny",
   "seed": 260311
 }

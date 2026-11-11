@@ -1,0 +1,6 @@
+phase2_rule_id,domain_entity,generated_file,generator_module,validation_rule,expected_output,oracle_function,status
+INV-003,InventoryTransaction,data/generated/operational/inventory_transactions.csv,operational.py,validate_operational,inventory conservation,build_inventory_timeline,APPROVED
+PROD-003,ProductionOrder,data/generated/operational/production_orders.csv,operational.py,validate_operational,projected completion,schedule_production,APPROVED
+SLA-001,CustomerOrderLine,data/generated/operational/customer_order_lines.csv,operational.py,validate_operational,revenue at risk,calculate_sla,APPROVED
+DIS-001,Disruption,data/generated/scenarios/disruptions.csv,scenarios.py,validate_scenarios,affected receipt,apply_supplier_outage,APPROVED
+CAU-001,CausalTrace,data/golden/expected_causal_traces.json,oracle.py,validate_phase3,causal chain,build_causal_trace,APPROVED

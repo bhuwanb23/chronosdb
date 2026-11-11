@@ -2,5 +2,6 @@
   "case": "inventory_snapshot_disagrees",
   "expected_error": "CONTRADICTORY_STATE",
   "family": "adversarial",
-  "fixture_id": "FIX-0023"
+  "fixture_id": "FIX-0023",
+  "payload": "{}"
 }

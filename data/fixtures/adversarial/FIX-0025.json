@@ -2,5 +2,6 @@
   "case": "receipt_without_dispatch",
   "expected_error": "CONTRADICTORY_STATE",
   "family": "adversarial",
-  "fixture_id": "FIX-0025"
+  "fixture_id": "FIX-0025",
+  "payload": "{}"
 }

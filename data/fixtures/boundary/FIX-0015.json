@@ -2,5 +2,6 @@
   "case": "overlapping_bom_versions",
   "expected_error": "INVALID_INTERVAL",
   "family": "boundary",
-  "fixture_id": "FIX-0015"
+  "fixture_id": "FIX-0015",
+  "payload": "{}"
 }

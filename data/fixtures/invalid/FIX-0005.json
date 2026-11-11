@@ -2,5 +2,6 @@
   "case": "unknown_scenario",
   "expected_error": "UNKNOWN_ENTITY",
   "family": "invalid",
-  "fixture_id": "FIX-0005"
+  "fixture_id": "FIX-0005",
+  "payload": "{}"
 }

@@ -1,0 +1,92 @@
+{
+  "dataset_version": "1.0.0",
+  "files": [
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/standard/customer_orders.csv",
+      "record_count": 1000,
+      "sha256": "e5209c6ac7f6e756355acb04a895040f16ad8baeaa504cd5ec538332f52bc6c3"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/standard/customer_order_lines.csv",
+      "record_count": 1000,
+      "sha256": "83dcd9ffd5d0ddc61711139c3184b4f7d780333ccb39f1d4e35cdbb8e825df9b"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/standard/production_orders.csv",
+      "record_count": 400,
+      "sha256": "e09f11482c0e57700ea4c4642ba6cfd76b692dae0a1aa812cd81ef846e8104d3"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/standard/production_customer_allocations.csv",
+      "record_count": 400,
+      "sha256": "63c26dba02852f76ebbf77b349b51adf77ed9df50d760d28a21d1dbde0888ab0"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/standard/production_material_requirements.csv",
+      "record_count": 1000,
+      "sha256": "ee02b449a6fbe8e1ac9e49abb2664265ea63c643564135389d8a34ee869f2011"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/standard/purchase_orders.csv",
+      "record_count": 600,
+      "sha256": "c3136b904e678503f4be18406daed2c553331cd8089e54f8a43ac0e84d72e04d"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/standard/inventory_transactions.csv",
+      "record_count": 981,
+      "sha256": "0fa4abdaebf0ee543205a4e5283273818ae530fcdb282fbe85ffd92134726092"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/operational/standard/inventory_snapshots.csv",
+      "record_count": 43440,
+      "sha256": "dba815309f3b9a514373536b8a96889082ac588f429d6b1deda02fe3352590d9"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/history/standard/entity_versions.csv",
+      "record_count": 160,
+      "sha256": "c5578b443a4593e43ae9698bd46ad3c71530b4fadf7262d136b3e0b6a7a7e2fd"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/history/standard/status_events.csv",
+      "record_count": 1400,
+      "sha256": "76b825437bf62fe45dad6b6f071198b09d82519b9cdcc8d50ce0d9fca13b0d96"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/history/standard/daily_inventory_snapshots.csv",
+      "record_count": 43440,
+      "sha256": "dba815309f3b9a514373536b8a96889082ac588f429d6b1deda02fe3352590d9"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/history/standard/supplier_performance_history.csv",
+      "record_count": 24,
+      "sha256": "465afe1a2cc0386cb9ddaec1eb4b9e21c42cc64c8f51da7c1e19b55dd414d037"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/history/standard/historical_disruptions.csv",
+      "record_count": 1,
+      "sha256": "35d85448b7535d55d87556da9f779b48bc9a0690609357343c1e1d78a4550534"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/history/standard/late_arriving_corrections.csv",
+      "record_count": 1,
+      "sha256": "99a650f5c62074a1eab4b74192da8b5ed0eb4bfe1e0158e8a41c2d07402c5cff"
+    }
+  ],
+  "layer": "operational_and_history",
+  "master_entities": [
+    "locations",
+    "facilities",
+    "warehouses",
+    "transfer_lanes",
+    "suppliers",
+    "components",
+    "supplier_component_agreements",
+    "products",
+    "bom_versions",
+    "bom_lines",
+    "customers",
+    "sla_policies"
+  ],
+  "scale": "standard",
+  "seed": 260311
+}

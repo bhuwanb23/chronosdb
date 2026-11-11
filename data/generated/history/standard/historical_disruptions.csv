@@ -1,0 +1,2 @@
+end_time,event_type,id,recorded_at,start_time,supplier_id
+2026-07-02T02:30:00Z,SUPPLIER_OUTAGE,HIST-DIS-000001,2026-07-03T02:30:00Z,2026-06-29T02:30:00Z,SUP-0001

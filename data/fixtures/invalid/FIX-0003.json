@@ -2,5 +2,6 @@
   "case": "unknown_warehouse",
   "expected_error": "UNKNOWN_ENTITY",
   "family": "invalid",
-  "fixture_id": "FIX-0003"
+  "fixture_id": "FIX-0003",
+  "payload": "{}"
 }

@@ -2,5 +2,6 @@
   "case": "no_active_bom",
   "expected_error": "MISSING_CRITICAL_DATA",
   "family": "boundary",
-  "fixture_id": "FIX-0017"
+  "fixture_id": "FIX-0017",
+  "payload": "{\"active_bom\": null}"
 }

@@ -2,5 +2,6 @@
   "case": "no_feasible_candidate",
   "expected_error": "NO_FEASIBLE_INTERVENTION",
   "family": "adversarial",
-  "fixture_id": "FIX-0029"
+  "fixture_id": "FIX-0029",
+  "payload": "{}"
 }

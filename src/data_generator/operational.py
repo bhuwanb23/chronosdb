@@ -306,6 +306,27 @@ def generate_history(
                 "recorded_at": order["expected_arrival"],
             }
         )
+    for order in operational["production_orders"]:
+        status_events.extend(
+            [
+                {
+                    "id": f"STATUS-{len(status_events) + 1:06d}",
+                    "entity_type": "PRODUCTION_ORDER",
+                    "entity_id": order["id"],
+                    "status": "PLANNED",
+                    "event_time": order["planned_start"],
+                    "recorded_at": order["planned_start"],
+                },
+                {
+                    "id": f"STATUS-{len(status_events) + 2:06d}",
+                    "entity_type": "PRODUCTION_ORDER",
+                    "entity_id": order["id"],
+                    "status": "COMPLETED",
+                    "event_time": order["planned_completion"],
+                    "recorded_at": order["planned_completion"],
+                },
+            ]
+        )
     performance = [
         {
             "id": f"SUPPERF-{index + 1:06d}",
@@ -321,7 +342,7 @@ def generate_history(
         {
             "id": "CORR-000001",
             "entity_type": "INVENTORY_SNAPSHOT",
-            "entity_id": "SNAP-BITEMPORAL-001",
+            "entity_id": operational["inventory_snapshots"][0]["id"],
             "event_time": _iso(config.reference_time - timedelta(days=3, hours=15)),
             "known_at": _iso(config.reference_time - timedelta(days=2, hours=13, minutes=55)),
             "ingested_at": _iso(config.reference_time - timedelta(days=2, hours=13, minutes=50)),
@@ -329,11 +350,21 @@ def generate_history(
             "original_quantity": 400,
         }
     ]
+    historical_disruptions = [
+        {
+            "id": "HIST-DIS-000001",
+            "event_type": "SUPPLIER_OUTAGE",
+            "supplier_id": master["suppliers"][0]["id"],
+            "start_time": _iso(start + timedelta(days=45)),
+            "end_time": _iso(start + timedelta(days=48)),
+            "recorded_at": _iso(start + timedelta(days=49)),
+        }
+    ]
     return {
         "entity_versions": entity_versions,
         "status_events": status_events,
         "daily_inventory_snapshots": operational["inventory_snapshots"],
         "supplier_performance_history": performance,
-        "historical_disruptions": [],
+        "historical_disruptions": historical_disruptions,
         "late_arriving_corrections": corrections,
     }

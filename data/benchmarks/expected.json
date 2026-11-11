@@ -1,7 +1,7 @@
 [
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0002"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -9,8 +9,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0001-ALTERNATE_SUPPLY": true,
+      "INT-0001-HYBRID": true,
+      "INT-0001-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0001-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0001-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0001-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -18,7 +32,7 @@
     "expected_optimal_set": [
       "SCN-0001-HYBRID"
     ],
-    "expected_recommendation": "SCN-0001-HYBRID",
+    "expected_recommendation": "INT-0001-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -36,7 +50,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0003"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -44,8 +58,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0002-ALTERNATE_SUPPLY": true,
+      "INT-0002-HYBRID": true,
+      "INT-0002-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0002-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0002-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0002-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -53,7 +81,7 @@
     "expected_optimal_set": [
       "SCN-0002-HYBRID"
     ],
-    "expected_recommendation": "SCN-0002-HYBRID",
+    "expected_recommendation": "INT-0002-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -71,7 +99,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0004"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -79,8 +107,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0003-ALTERNATE_SUPPLY": true,
+      "INT-0003-HYBRID": true,
+      "INT-0003-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0003-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0003-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0003-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -88,7 +130,7 @@
     "expected_optimal_set": [
       "SCN-0003-HYBRID"
     ],
-    "expected_recommendation": "SCN-0003-HYBRID",
+    "expected_recommendation": "INT-0003-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -106,7 +148,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0005"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -114,8 +156,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0004-ALTERNATE_SUPPLY": true,
+      "INT-0004-HYBRID": true,
+      "INT-0004-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0004-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0004-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0004-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -123,7 +179,7 @@
     "expected_optimal_set": [
       "SCN-0004-HYBRID"
     ],
-    "expected_recommendation": "SCN-0004-HYBRID",
+    "expected_recommendation": "INT-0004-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -141,7 +197,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0006"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -149,8 +205,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0005-ALTERNATE_SUPPLY": true,
+      "INT-0005-HYBRID": true,
+      "INT-0005-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0005-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0005-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0005-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -158,7 +228,7 @@
     "expected_optimal_set": [
       "SCN-0005-HYBRID"
     ],
-    "expected_recommendation": "SCN-0005-HYBRID",
+    "expected_recommendation": "INT-0005-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -176,7 +246,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0007"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -184,8 +254,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0006-ALTERNATE_SUPPLY": true,
+      "INT-0006-HYBRID": true,
+      "INT-0006-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0006-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0006-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0006-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -193,7 +277,7 @@
     "expected_optimal_set": [
       "SCN-0006-HYBRID"
     ],
-    "expected_recommendation": "SCN-0006-HYBRID",
+    "expected_recommendation": "INT-0006-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -211,7 +295,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0008"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -219,8 +303,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0007-ALTERNATE_SUPPLY": true,
+      "INT-0007-HYBRID": true,
+      "INT-0007-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0007-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0007-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0007-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -228,7 +326,7 @@
     "expected_optimal_set": [
       "SCN-0007-HYBRID"
     ],
-    "expected_recommendation": "SCN-0007-HYBRID",
+    "expected_recommendation": "INT-0007-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -246,7 +344,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0009"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -254,8 +352,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0008-ALTERNATE_SUPPLY": true,
+      "INT-0008-HYBRID": true,
+      "INT-0008-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0008-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0008-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0008-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -263,7 +375,7 @@
     "expected_optimal_set": [
       "SCN-0008-HYBRID"
     ],
-    "expected_recommendation": "SCN-0008-HYBRID",
+    "expected_recommendation": "INT-0008-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -281,7 +393,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0010"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -289,8 +401,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0009-ALTERNATE_SUPPLY": true,
+      "INT-0009-HYBRID": true,
+      "INT-0009-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0009-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0009-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0009-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -298,7 +424,7 @@
     "expected_optimal_set": [
       "SCN-0009-HYBRID"
     ],
-    "expected_recommendation": "SCN-0009-HYBRID",
+    "expected_recommendation": "INT-0009-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -316,7 +442,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0011"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -324,8 +450,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0010-ALTERNATE_SUPPLY": true,
+      "INT-0010-HYBRID": true,
+      "INT-0010-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0010-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0010-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0010-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -333,7 +473,7 @@
     "expected_optimal_set": [
       "SCN-0010-HYBRID"
     ],
-    "expected_recommendation": "SCN-0010-HYBRID",
+    "expected_recommendation": "INT-0010-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -351,7 +491,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0012"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -359,8 +499,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0011-ALTERNATE_SUPPLY": true,
+      "INT-0011-HYBRID": true,
+      "INT-0011-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0011-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0011-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0011-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -368,7 +522,7 @@
     "expected_optimal_set": [
       "SCN-0011-HYBRID"
     ],
-    "expected_recommendation": "SCN-0011-HYBRID",
+    "expected_recommendation": "INT-0011-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -386,7 +540,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0013"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -394,8 +548,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0012-ALTERNATE_SUPPLY": true,
+      "INT-0012-HYBRID": true,
+      "INT-0012-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0012-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0012-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0012-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -403,7 +571,7 @@
     "expected_optimal_set": [
       "SCN-0012-HYBRID"
     ],
-    "expected_recommendation": "SCN-0012-HYBRID",
+    "expected_recommendation": "INT-0012-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -421,7 +589,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0014"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -429,8 +597,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0013-ALTERNATE_SUPPLY": true,
+      "INT-0013-HYBRID": true,
+      "INT-0013-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0013-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0013-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0013-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -438,7 +620,7 @@
     "expected_optimal_set": [
       "SCN-0013-HYBRID"
     ],
-    "expected_recommendation": "SCN-0013-HYBRID",
+    "expected_recommendation": "INT-0013-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -456,7 +638,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0015"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -464,8 +646,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0014-ALTERNATE_SUPPLY": true,
+      "INT-0014-HYBRID": true,
+      "INT-0014-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0014-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0014-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0014-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -473,7 +669,7 @@
     "expected_optimal_set": [
       "SCN-0014-HYBRID"
     ],
-    "expected_recommendation": "SCN-0014-HYBRID",
+    "expected_recommendation": "INT-0014-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -491,7 +687,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0016"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -499,8 +695,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0015-ALTERNATE_SUPPLY": true,
+      "INT-0015-HYBRID": true,
+      "INT-0015-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0015-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0015-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0015-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -508,7 +718,7 @@
     "expected_optimal_set": [
       "SCN-0015-HYBRID"
     ],
-    "expected_recommendation": "SCN-0015-HYBRID",
+    "expected_recommendation": "INT-0015-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -526,7 +736,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0017"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -534,8 +744,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0016-ALTERNATE_SUPPLY": true,
+      "INT-0016-HYBRID": true,
+      "INT-0016-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0016-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0016-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0016-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -543,7 +767,7 @@
     "expected_optimal_set": [
       "SCN-0016-HYBRID"
     ],
-    "expected_recommendation": "SCN-0016-HYBRID",
+    "expected_recommendation": "INT-0016-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -561,7 +785,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0018"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -569,8 +793,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0017-ALTERNATE_SUPPLY": true,
+      "INT-0017-HYBRID": true,
+      "INT-0017-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0017-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0017-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0017-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -578,7 +816,7 @@
     "expected_optimal_set": [
       "SCN-0017-HYBRID"
     ],
-    "expected_recommendation": "SCN-0017-HYBRID",
+    "expected_recommendation": "INT-0017-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -596,7 +834,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0019"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -604,8 +842,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0018-ALTERNATE_SUPPLY": true,
+      "INT-0018-HYBRID": true,
+      "INT-0018-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0018-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0018-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0018-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -613,7 +865,7 @@
     "expected_optimal_set": [
       "SCN-0018-HYBRID"
     ],
-    "expected_recommendation": "SCN-0018-HYBRID",
+    "expected_recommendation": "INT-0018-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -631,7 +883,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0020"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -639,8 +891,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0019-ALTERNATE_SUPPLY": true,
+      "INT-0019-HYBRID": true,
+      "INT-0019-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0019-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0019-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0019-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -648,7 +914,7 @@
     "expected_optimal_set": [
       "SCN-0019-HYBRID"
     ],
-    "expected_recommendation": "SCN-0019-HYBRID",
+    "expected_recommendation": "INT-0019-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -666,7 +932,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0021"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -674,8 +940,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0020-ALTERNATE_SUPPLY": true,
+      "INT-0020-HYBRID": true,
+      "INT-0020-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0020-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0020-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0020-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -683,7 +963,7 @@
     "expected_optimal_set": [
       "SCN-0020-HYBRID"
     ],
-    "expected_recommendation": "SCN-0020-HYBRID",
+    "expected_recommendation": "INT-0020-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -701,7 +981,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0022"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -709,8 +989,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0021-ALTERNATE_SUPPLY": true,
+      "INT-0021-HYBRID": true,
+      "INT-0021-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0021-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0021-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0021-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -718,7 +1012,7 @@
     "expected_optimal_set": [
       "SCN-0021-HYBRID"
     ],
-    "expected_recommendation": "SCN-0021-HYBRID",
+    "expected_recommendation": "INT-0021-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -736,7 +1030,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0023"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -744,8 +1038,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0022-ALTERNATE_SUPPLY": true,
+      "INT-0022-HYBRID": true,
+      "INT-0022-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0022-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0022-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0022-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -753,7 +1061,7 @@
     "expected_optimal_set": [
       "SCN-0022-HYBRID"
     ],
-    "expected_recommendation": "SCN-0022-HYBRID",
+    "expected_recommendation": "INT-0022-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -771,7 +1079,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0024"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -779,8 +1087,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0023-ALTERNATE_SUPPLY": true,
+      "INT-0023-HYBRID": true,
+      "INT-0023-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0023-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0023-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0023-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -788,7 +1110,7 @@
     "expected_optimal_set": [
       "SCN-0023-HYBRID"
     ],
-    "expected_recommendation": "SCN-0023-HYBRID",
+    "expected_recommendation": "INT-0023-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -806,7 +1128,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0025"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -814,8 +1136,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0024-ALTERNATE_SUPPLY": true,
+      "INT-0024-HYBRID": true,
+      "INT-0024-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0024-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0024-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0024-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -823,7 +1159,7 @@
     "expected_optimal_set": [
       "SCN-0024-HYBRID"
     ],
-    "expected_recommendation": "SCN-0024-HYBRID",
+    "expected_recommendation": "INT-0024-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -841,7 +1177,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0026"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -849,8 +1185,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0025-ALTERNATE_SUPPLY": true,
+      "INT-0025-HYBRID": true,
+      "INT-0025-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0025-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0025-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0025-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -858,7 +1208,7 @@
     "expected_optimal_set": [
       "SCN-0025-HYBRID"
     ],
-    "expected_recommendation": "SCN-0025-HYBRID",
+    "expected_recommendation": "INT-0025-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -876,7 +1226,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0027"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -884,8 +1234,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0026-ALTERNATE_SUPPLY": true,
+      "INT-0026-HYBRID": true,
+      "INT-0026-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0026-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0026-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0026-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -893,7 +1257,7 @@
     "expected_optimal_set": [
       "SCN-0026-HYBRID"
     ],
-    "expected_recommendation": "SCN-0026-HYBRID",
+    "expected_recommendation": "INT-0026-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -911,7 +1275,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0028"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -919,8 +1283,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0027-ALTERNATE_SUPPLY": true,
+      "INT-0027-HYBRID": true,
+      "INT-0027-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0027-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0027-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0027-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -928,7 +1306,7 @@
     "expected_optimal_set": [
       "SCN-0027-HYBRID"
     ],
-    "expected_recommendation": "SCN-0027-HYBRID",
+    "expected_recommendation": "INT-0027-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -946,7 +1324,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0029"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -954,8 +1332,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0028-ALTERNATE_SUPPLY": true,
+      "INT-0028-HYBRID": true,
+      "INT-0028-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0028-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0028-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0028-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -963,7 +1355,7 @@
     "expected_optimal_set": [
       "SCN-0028-HYBRID"
     ],
-    "expected_recommendation": "SCN-0028-HYBRID",
+    "expected_recommendation": "INT-0028-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -981,7 +1373,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0030"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -989,8 +1381,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0029-ALTERNATE_SUPPLY": true,
+      "INT-0029-HYBRID": true,
+      "INT-0029-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0029-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0029-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0029-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -998,7 +1404,7 @@
     "expected_optimal_set": [
       "SCN-0029-HYBRID"
     ],
-    "expected_recommendation": "SCN-0029-HYBRID",
+    "expected_recommendation": "INT-0029-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1016,7 +1422,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0031"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1024,8 +1430,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0030-ALTERNATE_SUPPLY": true,
+      "INT-0030-HYBRID": true,
+      "INT-0030-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0030-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0030-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0030-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1033,7 +1453,7 @@
     "expected_optimal_set": [
       "SCN-0030-HYBRID"
     ],
-    "expected_recommendation": "SCN-0030-HYBRID",
+    "expected_recommendation": "INT-0030-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1051,7 +1471,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0032"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1059,8 +1479,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0031-ALTERNATE_SUPPLY": true,
+      "INT-0031-HYBRID": true,
+      "INT-0031-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0031-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0031-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0031-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1068,7 +1502,7 @@
     "expected_optimal_set": [
       "SCN-0031-HYBRID"
     ],
-    "expected_recommendation": "SCN-0031-HYBRID",
+    "expected_recommendation": "INT-0031-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1086,7 +1520,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0033"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1094,8 +1528,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0032-ALTERNATE_SUPPLY": true,
+      "INT-0032-HYBRID": true,
+      "INT-0032-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0032-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0032-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0032-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1103,7 +1551,7 @@
     "expected_optimal_set": [
       "SCN-0032-HYBRID"
     ],
-    "expected_recommendation": "SCN-0032-HYBRID",
+    "expected_recommendation": "INT-0032-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1121,7 +1569,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0034"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1129,8 +1577,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0033-ALTERNATE_SUPPLY": true,
+      "INT-0033-HYBRID": true,
+      "INT-0033-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0033-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0033-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0033-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1138,7 +1600,7 @@
     "expected_optimal_set": [
       "SCN-0033-HYBRID"
     ],
-    "expected_recommendation": "SCN-0033-HYBRID",
+    "expected_recommendation": "INT-0033-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1156,7 +1618,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0035"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1164,8 +1626,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0034-ALTERNATE_SUPPLY": true,
+      "INT-0034-HYBRID": true,
+      "INT-0034-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0034-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0034-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0034-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1173,7 +1649,7 @@
     "expected_optimal_set": [
       "SCN-0034-HYBRID"
     ],
-    "expected_recommendation": "SCN-0034-HYBRID",
+    "expected_recommendation": "INT-0034-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1191,7 +1667,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0036"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1199,8 +1675,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0035-ALTERNATE_SUPPLY": true,
+      "INT-0035-HYBRID": true,
+      "INT-0035-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0035-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0035-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0035-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1208,7 +1698,7 @@
     "expected_optimal_set": [
       "SCN-0035-HYBRID"
     ],
-    "expected_recommendation": "SCN-0035-HYBRID",
+    "expected_recommendation": "INT-0035-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1226,7 +1716,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0037"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1234,8 +1724,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0036-ALTERNATE_SUPPLY": true,
+      "INT-0036-HYBRID": true,
+      "INT-0036-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0036-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0036-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0036-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1243,7 +1747,7 @@
     "expected_optimal_set": [
       "SCN-0036-HYBRID"
     ],
-    "expected_recommendation": "SCN-0036-HYBRID",
+    "expected_recommendation": "INT-0036-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1261,7 +1765,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0038"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1269,8 +1773,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0037-ALTERNATE_SUPPLY": true,
+      "INT-0037-HYBRID": true,
+      "INT-0037-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0037-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0037-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0037-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1278,7 +1796,7 @@
     "expected_optimal_set": [
       "SCN-0037-HYBRID"
     ],
-    "expected_recommendation": "SCN-0037-HYBRID",
+    "expected_recommendation": "INT-0037-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1296,7 +1814,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0039"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1304,8 +1822,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0038-ALTERNATE_SUPPLY": true,
+      "INT-0038-HYBRID": true,
+      "INT-0038-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0038-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0038-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0038-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1313,7 +1845,7 @@
     "expected_optimal_set": [
       "SCN-0038-HYBRID"
     ],
-    "expected_recommendation": "SCN-0038-HYBRID",
+    "expected_recommendation": "INT-0038-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1331,7 +1863,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0040"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1339,8 +1871,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0039-ALTERNATE_SUPPLY": true,
+      "INT-0039-HYBRID": true,
+      "INT-0039-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0039-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0039-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0039-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1348,7 +1894,7 @@
     "expected_optimal_set": [
       "SCN-0039-HYBRID"
     ],
-    "expected_recommendation": "SCN-0039-HYBRID",
+    "expected_recommendation": "INT-0039-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1366,7 +1912,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0041"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1374,8 +1920,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0040-ALTERNATE_SUPPLY": true,
+      "INT-0040-HYBRID": true,
+      "INT-0040-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0040-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0040-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0040-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1383,7 +1943,7 @@
     "expected_optimal_set": [
       "SCN-0040-HYBRID"
     ],
-    "expected_recommendation": "SCN-0040-HYBRID",
+    "expected_recommendation": "INT-0040-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1401,7 +1961,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0042"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1409,8 +1969,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0041-ALTERNATE_SUPPLY": true,
+      "INT-0041-HYBRID": true,
+      "INT-0041-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0041-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0041-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0041-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1418,7 +1992,7 @@
     "expected_optimal_set": [
       "SCN-0041-HYBRID"
     ],
-    "expected_recommendation": "SCN-0041-HYBRID",
+    "expected_recommendation": "INT-0041-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1436,7 +2010,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0043"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1444,8 +2018,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0042-ALTERNATE_SUPPLY": true,
+      "INT-0042-HYBRID": true,
+      "INT-0042-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0042-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0042-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0042-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1453,7 +2041,7 @@
     "expected_optimal_set": [
       "SCN-0042-HYBRID"
     ],
-    "expected_recommendation": "SCN-0042-HYBRID",
+    "expected_recommendation": "INT-0042-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1471,7 +2059,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0044"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1479,8 +2067,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0043-ALTERNATE_SUPPLY": true,
+      "INT-0043-HYBRID": true,
+      "INT-0043-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0043-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0043-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0043-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1488,7 +2090,7 @@
     "expected_optimal_set": [
       "SCN-0043-HYBRID"
     ],
-    "expected_recommendation": "SCN-0043-HYBRID",
+    "expected_recommendation": "INT-0043-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1506,7 +2108,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0045"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1514,8 +2116,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0044-ALTERNATE_SUPPLY": true,
+      "INT-0044-HYBRID": true,
+      "INT-0044-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0044-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0044-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0044-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1523,7 +2139,7 @@
     "expected_optimal_set": [
       "SCN-0044-HYBRID"
     ],
-    "expected_recommendation": "SCN-0044-HYBRID",
+    "expected_recommendation": "INT-0044-HYBRID",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
@@ -1541,7 +2157,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0046"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1549,22 +2165,34 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0045-ALTERNATE_SUPPLY": false,
+      "INT-0045-HYBRID": false,
+      "INT-0045-TRANSFER": false
+    },
+    "expected_candidate_metrics": {
+      "INT-0045-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0045-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0045-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
     "expected_data_quality_state": "COMPLETE",
-    "expected_optimal_set": [
-      "SCN-0045-HYBRID"
-    ],
-    "expected_recommendation": "SCN-0045-HYBRID",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
     ],
     "expected_sla_breaches": 0,
-    "expected_validity": "VALID",
+    "expected_validity": "NO_FEASIBLE_INTERVENTION",
     "provenance": {
       "formula_version": "2.0",
       "oracle_version": "0.1.0",
@@ -1576,7 +2204,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0047"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1584,22 +2212,34 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0046-ALTERNATE_SUPPLY": false,
+      "INT-0046-HYBRID": false,
+      "INT-0046-TRANSFER": false
+    },
+    "expected_candidate_metrics": {
+      "INT-0046-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0046-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0046-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
     "expected_data_quality_state": "COMPLETE",
-    "expected_optimal_set": [
-      "SCN-0046-HYBRID"
-    ],
-    "expected_recommendation": "SCN-0046-HYBRID",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
     ],
     "expected_sla_breaches": 0,
-    "expected_validity": "VALID",
+    "expected_validity": "NO_FEASIBLE_INTERVENTION",
     "provenance": {
       "formula_version": "2.0",
       "oracle_version": "0.1.0",
@@ -1611,7 +2251,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0048"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1619,22 +2259,34 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0047-ALTERNATE_SUPPLY": false,
+      "INT-0047-HYBRID": false,
+      "INT-0047-TRANSFER": false
+    },
+    "expected_candidate_metrics": {
+      "INT-0047-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0047-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0047-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
     "expected_data_quality_state": "COMPLETE",
-    "expected_optimal_set": [
-      "SCN-0047-HYBRID"
-    ],
-    "expected_recommendation": "SCN-0047-HYBRID",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
     ],
     "expected_sla_breaches": 0,
-    "expected_validity": "VALID",
+    "expected_validity": "NO_FEASIBLE_INTERVENTION",
     "provenance": {
       "formula_version": "2.0",
       "oracle_version": "0.1.0",
@@ -1646,7 +2298,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0049"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1654,22 +2306,34 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0048-ALTERNATE_SUPPLY": false,
+      "INT-0048-HYBRID": false,
+      "INT-0048-TRANSFER": false
+    },
+    "expected_candidate_metrics": {
+      "INT-0048-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0048-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0048-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
     "expected_data_quality_state": "COMPLETE",
-    "expected_optimal_set": [
-      "SCN-0048-HYBRID"
-    ],
-    "expected_recommendation": "SCN-0048-HYBRID",
+    "expected_optimal_set": [],
+    "expected_recommendation": null,
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
       "shortage_from_scenario"
     ],
     "expected_sla_breaches": 0,
-    "expected_validity": "VALID",
+    "expected_validity": "NO_FEASIBLE_INTERVENTION",
     "provenance": {
       "formula_version": "2.0",
       "oracle_version": "0.1.0",
@@ -1683,8 +2347,22 @@
     "expected_affected_components": [],
     "expected_affected_customer_orders": [],
     "expected_affected_production_orders": [],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0049-ALTERNATE_SUPPLY": true,
+      "INT-0049-HYBRID": true,
+      "INT-0049-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0049-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0049-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0049-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [],
     "expected_data_quality_state": "COMPLETE",
     "expected_optimal_set": [],
@@ -1706,8 +2384,22 @@
     "expected_affected_components": [],
     "expected_affected_customer_orders": [],
     "expected_affected_production_orders": [],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0050-ALTERNATE_SUPPLY": true,
+      "INT-0050-HYBRID": true,
+      "INT-0050-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0050-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0050-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0050-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [],
     "expected_data_quality_state": "COMPLETE",
     "expected_optimal_set": [],
@@ -1729,8 +2421,22 @@
     "expected_affected_components": [],
     "expected_affected_customer_orders": [],
     "expected_affected_production_orders": [],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0051-ALTERNATE_SUPPLY": true,
+      "INT-0051-HYBRID": true,
+      "INT-0051-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0051-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0051-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0051-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [],
     "expected_data_quality_state": "COMPLETE",
     "expected_optimal_set": [],
@@ -1750,7 +2456,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0053"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1758,8 +2464,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0052-ALTERNATE_SUPPLY": false,
+      "INT-0052-HYBRID": false,
+      "INT-0052-TRANSFER": false
+    },
+    "expected_candidate_metrics": {
+      "INT-0052-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0052-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0052-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1783,7 +2503,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0054"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1791,8 +2511,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0053-ALTERNATE_SUPPLY": false,
+      "INT-0053-HYBRID": false,
+      "INT-0053-TRANSFER": false
+    },
+    "expected_candidate_metrics": {
+      "INT-0053-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0053-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0053-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1816,7 +2550,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0055"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1824,8 +2558,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0054-ALTERNATE_SUPPLY": false,
+      "INT-0054-HYBRID": false,
+      "INT-0054-TRANSFER": false
+    },
+    "expected_candidate_metrics": {
+      "INT-0054-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0054-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0054-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
@@ -1849,7 +2597,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0056"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1857,8 +2605,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0055-ALTERNATE_SUPPLY": false,
+      "INT-0055-HYBRID": false,
+      "INT-0055-TRANSFER": false
+    },
+    "expected_candidate_metrics": {
+      "INT-0055-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0055-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0055-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [],
     "expected_data_quality_state": "PARTIAL_CRITICAL",
     "expected_optimal_set": [],
@@ -1880,7 +2642,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0057"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1888,8 +2650,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0056-ALTERNATE_SUPPLY": false,
+      "INT-0056-HYBRID": false,
+      "INT-0056-TRANSFER": false
+    },
+    "expected_candidate_metrics": {
+      "INT-0056-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0056-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0056-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [],
     "expected_data_quality_state": "PARTIAL_CRITICAL",
     "expected_optimal_set": [],
@@ -1911,7 +2687,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0058"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1919,8 +2695,22 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0057-ALTERNATE_SUPPLY": false,
+      "INT-0057-HYBRID": false,
+      "INT-0057-TRANSFER": false
+    },
+    "expected_candidate_metrics": {
+      "INT-0057-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0057-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0057-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [],
     "expected_data_quality_state": "PARTIAL_CRITICAL",
     "expected_optimal_set": [],
@@ -1942,7 +2732,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0059"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1950,15 +2740,29 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0058-ALTERNATE_SUPPLY": true,
+      "INT-0058-HYBRID": true,
+      "INT-0058-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0058-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0058-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0058-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
     "expected_data_quality_state": "COMPLETE",
     "expected_optimal_set": [
-      "INT-TIE-TRANSFER",
-      "INT-TIE-ALTERNATE"
+      "INT-0058-TRANSFER",
+      "INT-0058-ALTERNATE_SUPPLY"
     ],
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": "0",
@@ -1978,7 +2782,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0060"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -1986,15 +2790,29 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0059-ALTERNATE_SUPPLY": true,
+      "INT-0059-HYBRID": true,
+      "INT-0059-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0059-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0059-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0059-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
     "expected_data_quality_state": "COMPLETE",
     "expected_optimal_set": [
-      "INT-TIE-TRANSFER",
-      "INT-TIE-ALTERNATE"
+      "INT-0059-TRANSFER",
+      "INT-0059-ALTERNATE_SUPPLY"
     ],
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": "0",
@@ -2014,7 +2832,7 @@
   },
   {
     "expected_affected_components": [
-      "component_from_scenario"
+      "CMP-0061"
     ],
     "expected_affected_customer_orders": [
       "customer_from_scenario"
@@ -2022,15 +2840,29 @@
     "expected_affected_production_orders": [
       "production_from_scenario"
     ],
-    "expected_candidate_feasibility": {},
-    "expected_candidate_metrics": {},
+    "expected_candidate_feasibility": {
+      "INT-0060-ALTERNATE_SUPPLY": true,
+      "INT-0060-HYBRID": true,
+      "INT-0060-TRANSFER": true
+    },
+    "expected_candidate_metrics": {
+      "INT-0060-ALTERNATE_SUPPLY": {
+        "intervention_cost_inr": "72000"
+      },
+      "INT-0060-HYBRID": {
+        "intervention_cost_inr": "132000"
+      },
+      "INT-0060-TRANSFER": {
+        "intervention_cost_inr": "60000"
+      }
+    },
     "expected_causal_trace_roots": [
       "DISRUPTION_EVENT"
     ],
     "expected_data_quality_state": "COMPLETE",
     "expected_optimal_set": [
-      "INT-TIE-TRANSFER",
-      "INT-TIE-ALTERNATE"
+      "INT-0060-TRANSFER",
+      "INT-0060-ALTERNATE_SUPPLY"
     ],
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": "0",

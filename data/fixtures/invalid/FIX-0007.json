@@ -2,5 +2,6 @@
   "case": "zero_ordered_quantity",
   "expected_error": "INVALID_QUANTITY",
   "family": "invalid",
-  "fixture_id": "FIX-0007"
+  "fixture_id": "FIX-0007",
+  "payload": "{\"ordered_quantity\": 0}"
 }

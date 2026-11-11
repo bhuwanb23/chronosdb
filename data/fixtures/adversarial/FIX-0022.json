@@ -2,5 +2,6 @@
   "case": "received_with_outstanding_quantity",
   "expected_error": "CONTRADICTORY_STATE",
   "family": "adversarial",
-  "fixture_id": "FIX-0022"
+  "fixture_id": "FIX-0022",
+  "payload": "{}"
 }

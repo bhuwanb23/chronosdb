@@ -41,17 +41,43 @@ def expected_for_scenario(scenario: dict[str, Any]) -> dict[str, Any]:
         risk = Decimal("0")
         optimal = [f"{scenario['id']}-HYBRID"]
         recommendation = optimal[0]
+    number = scenario["id"].split("-")[-1]
+    candidate_ids = [
+        f"INT-{number}-{candidate}"
+        for candidate in ("TRANSFER", "ALTERNATE_SUPPLY", "HYBRID")
+    ]
+    budget = Decimal("50000") if category == "BUDGET_CONSTRAINED_RECOVERY" else Decimal("200000")
+    costs = {
+        candidate_ids[0]: Decimal("60000"),
+        candidate_ids[1]: Decimal("72000"),
+        candidate_ids[2]: Decimal("132000"),
+    }
+    feasibility = {
+        candidate_id: (cost <= budget and not no_feasible and not insufficient)
+        for candidate_id, cost in costs.items()
+    }
+    if category == "BUDGET_CONSTRAINED_RECOVERY":
+        optimal = []
+        recommendation = None
+        validity = "NO_FEASIBLE_INTERVENTION"
+    if category == "TIE_OR_PARETO_EQUIVALENT":
+        optimal = [candidate_ids[0], candidate_ids[1]]
+    if recommendation is not None:
+        recommendation = candidate_ids[2]
     return {
         "scenario_id": scenario["id"],
         "expected_validity": validity,
-        "expected_affected_components": [] if no_impact else ["component_from_scenario"],
+        "expected_affected_components": [] if no_impact else [scenario["reference_component_id"]],
         "expected_shortages": [] if no_impact else ["shortage_from_scenario"],
         "expected_affected_production_orders": [] if no_impact else ["production_from_scenario"],
         "expected_affected_customer_orders": [] if no_impact else ["customer_from_scenario"],
         "expected_sla_breaches": breaches,
         "expected_revenue_at_risk_inr": str(risk) if risk is not None else None,
-        "expected_candidate_feasibility": {},
-        "expected_candidate_metrics": {},
+        "expected_candidate_feasibility": feasibility,
+        "expected_candidate_metrics": {
+            candidate_id: {"intervention_cost_inr": str(costs[candidate_id])}
+            for candidate_id in candidate_ids
+        },
         "expected_optimal_set": optimal,
         "expected_recommendation": recommendation,
         "expected_data_quality_state": quality,

@@ -2,5 +2,6 @@
   "case": "negative_disruption_duration",
   "expected_error": "INVALID_INTERVAL",
   "family": "invalid",
-  "fixture_id": "FIX-0008"
+  "fixture_id": "FIX-0008",
+  "payload": "{\"start_time\": \"2026-11-11T00:00:00Z\", \"end_time\": \"2026-11-10T00:00:00Z\"}"
 }

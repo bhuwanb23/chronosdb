@@ -260,26 +260,37 @@ def validate_operational(
         raise ValidationError("duplicate inventory snapshot")
     if not agreement_ids:
         raise ValidationError("operational data requires supply agreements")
-    latest_snapshot_time = max(row["snapshot_time"] for row in operational["inventory_snapshots"])
-    for snapshot in operational["inventory_snapshots"]:
-        if snapshot["snapshot_time"] != latest_snapshot_time:
-            continue
-        relevant = [
-            transaction
-            for transaction in operational["inventory_transactions"]
-            if transaction["warehouse_id"] == snapshot["warehouse_id"]
-            and transaction["component_id"] == snapshot["component_id"]
-            and transaction["event_time"] <= latest_snapshot_time
-        ]
-        expected = sum(
-            int(transaction["quantity"])
-            * (
-                1
-                if transaction["transaction_type"]
-                in {"OPENING_BALANCE", "PURCHASE_RECEIPT", "PRODUCTION_RETURN"}
-                else -1
-            )
-            for transaction in relevant
+    signs = {
+        "OPENING_BALANCE": 1,
+        "PURCHASE_RECEIPT": 1,
+        "PRODUCTION_RETURN": 1,
+        "TRANSFER_RECEIPT": 1,
+        "RELEASE_FROM_QUARANTINE": 1,
+        "ADJUSTMENT_POSITIVE": 1,
+        "PRODUCTION_ISSUE": -1,
+        "TRANSFER_DISPATCH": -1,
+        "QUARANTINE": -1,
+        "ADJUSTMENT_NEGATIVE": -1,
+    }
+    grouped_transactions: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for transaction in operational["inventory_transactions"]:
+        if transaction["transaction_type"] not in signs:
+            raise ValidationError(f"unknown inventory transaction type: {transaction}")
+        grouped_transactions.setdefault(
+            (transaction["warehouse_id"], transaction["component_id"]), []
+        ).append(transaction)
+    for transactions in grouped_transactions.values():
+        transactions.sort(key=lambda row: row["event_time"])
+    for snapshot in sorted(
+        operational["inventory_snapshots"], key=lambda row: row["snapshot_time"]
+    ):
+        relevant = grouped_transactions.get(
+            (snapshot["warehouse_id"], snapshot["component_id"]), []
         )
-        if int(snapshot["on_hand_quantity"]) != expected:
+        expected = sum(
+            int(transaction["quantity"]) * signs[transaction["transaction_type"]]
+            for transaction in relevant
+            if transaction["event_time"] <= snapshot["snapshot_time"]
+        )
+        if expected < 0 or int(snapshot["on_hand_quantity"]) != expected:
             raise ValidationError(f"inventory conservation failure: {snapshot['id']}")

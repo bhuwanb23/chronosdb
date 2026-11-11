@@ -38,5 +38,5 @@ def test_scenario_distribution_and_document_count() -> None:
 
 def test_fixture_suite_has_expected_error_labels() -> None:
     fixtures = build_fixtures()
-    assert len(fixtures) == 30
+    assert len(fixtures) >= 30
     assert {fixture["expected_error"] for fixture in fixtures}

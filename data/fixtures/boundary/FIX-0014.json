@@ -2,5 +2,6 @@
   "case": "outage_end_before_start",
   "expected_error": "INVALID_INTERVAL",
   "family": "boundary",
-  "fixture_id": "FIX-0014"
+  "fixture_id": "FIX-0014",
+  "payload": "{}"
 }
