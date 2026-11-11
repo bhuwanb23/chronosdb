@@ -1,70 +1,77 @@
 {
-  "dataset_version": "0.1.0",
+  "canonical_timezone": "UTC",
+  "config_sha256": "66ea3eb9dbda53cdea45f62d71861f3f6cd19300f7fc15d47f15682f9c07d8ee",
+  "currency": "INR",
+  "dataset_name": "chronosdb-synthetic-supply-chain",
+  "dataset_version": "1.0.0",
+  "domain_model_version": "2.0",
   "files": [
     {
       "path": "data/generated/master/standard/locations.csv",
       "rows": 3,
-      "sha256": "c9367606e1d2ecc98b7a1cce4f813f9e34b74f47eec1bf9fa60c85efeb0925d1"
+      "sha256": "b54722fb15f1480d9565b7a4080b66cbf473c7ce80a19e908190a7b6540c9000"
     },
     {
       "path": "data/generated/master/standard/facilities.csv",
       "rows": 2,
-      "sha256": "3def02d3ecd0035926911cab47689b01abe8b9c36c8e41aefec2de951044112d"
+      "sha256": "17e4873c5f95a5755ab248ed4e066ec6ba369f7cc5c3b342ff70b24c69e1d40b"
     },
     {
       "path": "data/generated/master/standard/warehouses.csv",
       "rows": 3,
-      "sha256": "ae62119213055bc50e640ece1396a4a2bd95d560cfdf9a6597457e933e1f0af5"
+      "sha256": "aa9c9b7bae00fade2ec74d00e0f3815ff75c72fdf049572662407763dfe7c560"
     },
     {
       "path": "data/generated/master/standard/transfer_lanes.csv",
       "rows": 6,
-      "sha256": "1b05460bb141335db25af716c08a646a923ea7b89becd498be541028f251d8af"
+      "sha256": "8633185fd4d10865bb6a4375f71ce6b8ede6d0dbf4c889d773c1830093ba36ae"
     },
     {
       "path": "data/generated/master/standard/suppliers.csv",
       "rows": 24,
-      "sha256": "5688a2d9891cd961b7685fb4904fa00f30582752fcca5d42f551877439cfd4ac"
+      "sha256": "70fc785454df23a8fc17e67de36c038796ac5d5687ec16c6444c66624e7a1c1e"
     },
     {
       "path": "data/generated/master/standard/components.csv",
       "rows": 80,
-      "sha256": "01a90a2d7821052a69bec6deaffab725a7c97dbb5c7b98b73b82bf51330a3815"
+      "sha256": "c14362f311a7f08a98e6c30e7271284a0f414c28b5514b74e4b0a1dc86c09d13"
     },
     {
       "path": "data/generated/master/standard/supplier_component_agreements.csv",
       "rows": 160,
-      "sha256": "92c1b6db3b3b92ffdb172d134c466d4ffa48e4a53f98a881fb89e81b02a1c7bf"
+      "sha256": "4dd35fbdab45a72e53c2825ac4ac7a457ed446805e5e8c61cc0f6b1a6f7a6676"
     },
     {
       "path": "data/generated/master/standard/products.csv",
       "rows": 16,
-      "sha256": "85535af62423af937a45c5360c2b855d8e52c8adf02f9f130435db343d054db7"
+      "sha256": "3a6daae34382731c8a4819c8f3bf52b81edea75e422746ece78655be89fc0c4e"
     },
     {
       "path": "data/generated/master/standard/bom_versions.csv",
       "rows": 32,
-      "sha256": "491950ac89d3752e325136eac7bab35d4d82c030094f31a0370bdcc48d2084ab"
+      "sha256": "736089bb232c800583ac35e8f781b29b615fd122f9f2ddfc8fcc9b6564ddaac7"
     },
     {
       "path": "data/generated/master/standard/bom_lines.csv",
       "rows": 80,
-      "sha256": "351a44e3b8a3774b3bf6ce729aac7071f01d06b7b5679ec4369c514573115dac"
+      "sha256": "ca96f99440d381c739cd1afa79886341e93d6077bd938e286b7e5fbbfe1bc471"
     },
     {
       "path": "data/generated/master/standard/customers.csv",
       "rows": 80,
-      "sha256": "2a0a4c1749f0ce724c75cca1a9d454772feaf577b00aa977b4959e387c9162bb"
+      "sha256": "6031ff8c524c59855e6313f61709fbbe40cf74424eae5aa7bed50bc5e677488b"
     },
     {
       "path": "data/generated/master/standard/sla_policies.csv",
       "rows": 3,
-      "sha256": "88876ed481f213fb3ba51318271aad0a7d98cae2466dec8b3932033e8aec2b95"
+      "sha256": "16b08e50892506abb873cc3960049ab4bd87cfebe2b60648d0221693c653265d"
     }
   ],
+  "generated_at": "2026-11-11T02:30:00Z",
   "generator_version": "0.1.0",
   "layer": "master",
   "phase": "3G",
+  "random_seed": 260311,
   "reference_time": "2026-11-11T02:30:00Z",
   "scale": "standard",
   "seed": 260311,
@@ -76,5 +83,6 @@
     "inventory": 404,
     "master": 101,
     "supply": 303
-  }
+  },
+  "version": "1.0.0"
 }

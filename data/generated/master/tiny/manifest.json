@@ -1,70 +1,77 @@
 {
-  "dataset_version": "0.1.0",
+  "canonical_timezone": "UTC",
+  "config_sha256": "21555e78ee720c45c83abca043227a1174b82f4a46aa70d22b8345bf87721a9f",
+  "currency": "INR",
+  "dataset_name": "chronosdb-synthetic-supply-chain",
+  "dataset_version": "1.0.0",
+  "domain_model_version": "2.0",
   "files": [
     {
       "path": "data/generated/master/tiny/locations.csv",
       "rows": 2,
-      "sha256": "9fec4222cf34fc5103d3a89f24f871eb35580084437472ce623f58fd3e3ef6b8"
+      "sha256": "11fcd15001ad92e71cb827bc5b0f5dfcc202893917f0d0e87c9dae9a08416eb2"
     },
     {
       "path": "data/generated/master/tiny/facilities.csv",
       "rows": 1,
-      "sha256": "1ca7ff660d6c7593f0fe2a07a7bdd0f851bba07772ef198e51e84c9c2308c17e"
+      "sha256": "960b4ae8ef68c75d918a3f98654e0ecee28e2e5d71940a3a63cfa4cf64da6091"
     },
     {
       "path": "data/generated/master/tiny/warehouses.csv",
       "rows": 2,
-      "sha256": "97d40a8e0e76b404d1304179d2faf132e881755a1aa558562c71ab6e73720360"
+      "sha256": "25ba4f856fa94b366d6ffd4854a4504e8384710c9dc6fea89bba512167ad7475"
     },
     {
       "path": "data/generated/master/tiny/transfer_lanes.csv",
       "rows": 2,
-      "sha256": "aecec4c1c479f6e8fa9c0ff0d002aaf92d15a9e7eaebbeada55c04362a53701c"
+      "sha256": "3ba1c03e10eca5d9ec9ff2031822986ded24634fdf7e30f842923cf6320e968f"
     },
     {
       "path": "data/generated/master/tiny/suppliers.csv",
-      "rows": 4,
-      "sha256": "bb354f2b6aaf37b4e376b0612a54e045dadb93150d0c373673080033608497a2"
+      "rows": 5,
+      "sha256": "f1e1f6644d27f6ea9dd8cfc2e2899ef7762f9053719af86516ba7ea83c52b504"
     },
     {
       "path": "data/generated/master/tiny/components.csv",
-      "rows": 12,
-      "sha256": "09d9f2e6e3c5c2c92c0da735913cab366547549307097387765a6c3ae359799b"
+      "rows": 15,
+      "sha256": "b8f3f93495e5120cb010a83dc5d310dd6b6280a50dec790fad70e28fcb89364a"
     },
     {
       "path": "data/generated/master/tiny/supplier_component_agreements.csv",
-      "rows": 24,
-      "sha256": "88f39eaf96ec526c8a72ab1935cc39a0d5ad8e29ffbff3590cf97b1984044b03"
+      "rows": 30,
+      "sha256": "055d8c25e700c39bb87cadc1bb8fc9bc49f727de73d41e237b0275b605f14373"
     },
     {
       "path": "data/generated/master/tiny/products.csv",
-      "rows": 4,
-      "sha256": "f5bc6fbea772760a0a95ab3e67d00565361d54fd08d8b72c93b994b4bc587ff6"
+      "rows": 3,
+      "sha256": "b6eaebbb658b0ce42af13014fb6a7270353dfa189f3a4c46a112ee027cfd9d9e"
     },
     {
       "path": "data/generated/master/tiny/bom_versions.csv",
       "rows": 6,
-      "sha256": "c9895ff0d224173bf9787f1b14edaad576db5b076f91641afbec1a2174220b74"
+      "sha256": "900a45101b413ff7704d1c9cdd38bdef2828d04b4d5befec5a0e576a7e7ac3b8"
     },
     {
       "path": "data/generated/master/tiny/bom_lines.csv",
       "rows": 13,
-      "sha256": "006c47a244fd1c3475be76dc737f496c7a0ea66d1ad579cafe1be48353cb3e34"
+      "sha256": "e2a9b753c18da6376af260cdbe93990998027a9f2da2ba8b9570109a67b381d3"
     },
     {
       "path": "data/generated/master/tiny/customers.csv",
       "rows": 12,
-      "sha256": "20c56d1f27f22c1d11320477cdd14c2dc48157849a99ccf8fb6687876b740128"
+      "sha256": "93e8a6506186cacba7b301c3ada4e850a7e0dfdb0a5624f0c8128bdc44875b1c"
     },
     {
       "path": "data/generated/master/tiny/sla_policies.csv",
       "rows": 3,
-      "sha256": "88876ed481f213fb3ba51318271aad0a7d98cae2466dec8b3932033e8aec2b95"
+      "sha256": "16b08e50892506abb873cc3960049ab4bd87cfebe2b60648d0221693c653265d"
     }
   ],
+  "generated_at": "2026-11-11T02:30:00Z",
   "generator_version": "0.1.0",
   "layer": "master",
   "phase": "3G",
+  "random_seed": 260311,
   "reference_time": "2026-11-11T02:30:00Z",
   "scale": "tiny",
   "seed": 260311,
@@ -76,5 +83,6 @@
     "inventory": 404,
     "master": 101,
     "supply": 303
-  }
+  },
+  "version": "1.0.0"
 }

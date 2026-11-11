@@ -1,9 +1,17 @@
 {
-  "dataset_version": "0.1.0",
+  "dataset_name": "chronosdb-synthetic-supply-chain",
+  "version": "1.0.0",
+  "dataset_version": "1.0.0",
   "generator_version": "0.1.0",
+  "domain_model_version": "2.0",
   "phase": "3G",
   "layer": "master",
   "status": "specification_only",
+  "random_seed": 260311,
+  "generated_at": "2026-11-11T02:30:00Z",
+  "scale": "standard",
+  "currency": "INR",
+  "canonical_timezone": "UTC",
   "files": [],
   "seed_streams": {
     "master": 101,

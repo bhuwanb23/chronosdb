@@ -1,4 +1,4 @@
-delivery_lead_time_days,id,late_tolerance_hours,name
-1,SLA-000001,0,STANDARD
-0,SLA-000002,0,PRIORITY
-3,SLA-000003,0,EXTENDED
+delivery_lead_time_days,effective_from,effective_to,id,late_tolerance_hours,name
+1,2026-05-15T02:30:00Z,2026-12-11T02:30:00Z,SLA-0001,0,STANDARD
+0,2026-05-15T02:30:00Z,2026-12-11T02:30:00Z,SLA-0002,0,PRIORITY
+3,2026-05-15T02:30:00Z,2026-12-11T02:30:00Z,SLA-0003,0,EXTENDED

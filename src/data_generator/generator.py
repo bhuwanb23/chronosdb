@@ -48,6 +48,10 @@ class GenerationConfig:
     reference_time: datetime
     counts: dict[str, int]
     enterprise: dict[str, Any]
+    money_decimal_places: int
+    quantity_decimal_places: int
+    history_days: int
+    planning_horizon_days: int
 
 
 def _utc(value: str) -> datetime:
@@ -71,11 +75,15 @@ def load_config(root: Path, scale: str, seed: int | None = None) -> GenerationCo
         reference_time=_utc(generation["reference_time"]),
         counts=scale_config["counts"],
         enterprise=enterprise,
+        money_decimal_places=generation["serialization"]["money_decimal_places"],
+        quantity_decimal_places=generation["serialization"]["quantity_decimal_places"],
+        history_days=generation["history_days"],
+        planning_horizon_days=generation["planning_horizon_days"],
     )
 
 
 def _id(prefix: str, number: int) -> str:
-    return f"{prefix}-{number:06d}"
+    return f"{prefix}-{number:04d}"
 
 
 def _rng(config: GenerationConfig, stream: str) -> random.Random:
@@ -96,7 +104,6 @@ def generate_master(config: GenerationConfig) -> dict[str, list[dict[str, Any]]]
     for index in range(location_count):
         if index < len(base_locations):
             row = dict(base_locations[index])
-            row["id"] = f"LOC-{index + 1:06d}"
         else:
             row = {
                 "id": _id("LOC", index + 1),
@@ -105,35 +112,56 @@ def generate_master(config: GenerationConfig) -> dict[str, list[dict[str, Any]]]
             }
         locations.append(row)
 
-    facilities = [
-        {
-            "id": _id("FAC", index + 1),
-            "location_id": locations[index % len(locations)]["id"],
-            "daily_capacity_units": 60 + (index % 5) * 20,
-            "capacity_unit": "EA",
-            "status": "ACTIVE",
-        }
-        for index in range(counts["facilities"])
-    ]
-    warehouses = [
-        {
-            "id": _id("WH", index + 1),
-            "location_id": locations[index % len(locations)]["id"],
-            "status": "ACTIVE",
-        }
-        for index in range(counts["warehouses"])
-    ]
-    transfer_lanes = [
-        {
-            "id": _id("LANE", index + 1),
-            "source_warehouse_id": warehouses[index % len(warehouses)]["id"],
-            "destination_warehouse_id": warehouses[(index + 1) % len(warehouses)]["id"],
-            "lead_time_days": 1 + index % 3,
-            "fixed_cost_inr": 20_000 + index * 1_000,
-            "variable_cost_per_unit_inr": 25 + index % 6,
-        }
-        for index in range(max(1, len(warehouses) * (len(warehouses) - 1)))
-    ]
+    configured_facilities = config.enterprise["facilities"]
+    facilities = []
+    for index in range(counts["facilities"]):
+        if index < len(configured_facilities):
+            row = dict(configured_facilities[index])
+            row["capacity_unit"] = "EA"
+            row["status"] = "ACTIVE"
+        else:
+            row = {
+                "id": _id("FAC", index + 1),
+                "location_id": locations[index % len(locations)]["id"],
+                "daily_capacity_units": 60 + (index % 5) * 20,
+                "capacity_unit": "EA",
+                "status": "ACTIVE",
+            }
+        facilities.append(row)
+    configured_warehouses = config.enterprise["warehouses"]
+    warehouses = []
+    for index in range(counts["warehouses"]):
+        if index < len(configured_warehouses):
+            row = dict(configured_warehouses[index])
+            row["status"] = "ACTIVE"
+        else:
+            row = {
+                "id": _id("WH", index + 1),
+                "location_id": locations[index % len(locations)]["id"],
+                "status": "ACTIVE",
+            }
+        warehouses.append(row)
+    start = config.reference_time - timedelta(days=config.history_days)
+    end = config.reference_time + timedelta(days=config.planning_horizon_days)
+    transfer_lanes: list[dict[str, Any]] = []
+    for source in warehouses:
+        for destination in warehouses:
+            if source["id"] == destination["id"]:
+                continue
+            index = len(transfer_lanes)
+            transfer_lanes.append(
+                {
+                    "id": _id("LANE", index + 1),
+                    "source_warehouse": source["id"],
+                    "destination_warehouse": destination["id"],
+                    "lead_time_hours": 24 + (index % 3) * 24,
+                    "fixed_cost": 20_000 + index * 1_000,
+                    "variable_cost_per_unit": 25 + index % 6,
+                    "currency": "INR",
+                    "active_from": _date(start),
+                    "active_to": _date(end),
+                }
+            )
     suppliers = [
         {
             "id": _id("SUP", index + 1),
@@ -141,6 +169,9 @@ def generate_master(config: GenerationConfig) -> dict[str, list[dict[str, Any]]]
             "approval_status": "APPROVED" if index % 10 else "APPROVED",
             "status": "ACTIVE",
             "country": "IN",
+            "region": ("WEST", "SOUTH", "NORTH", "EAST")[index % 4],
+            "effective_from": _date(start),
+            "effective_to": _date(end),
         }
         for index in range(counts["suppliers"])
     ]
@@ -150,12 +181,13 @@ def generate_master(config: GenerationConfig) -> dict[str, list[dict[str, Any]]]
             "name": f"Component-{index + 1:03d}",
             "unit": "EA",
             "component_type": "ELECTRONIC",
+            "criticality": ("CRITICAL", "HIGH", "MEDIUM", "LOW")[index % 4],
+            "safety_stock_units": 10 + (index % 10) * 5,
+            "standard_unit_cost_inr": float(25 + (index % 20) * 125),
             "status": "ACTIVE",
         }
         for index in range(counts["components"])
     ]
-    start = config.reference_time - timedelta(days=365)
-    end = config.reference_time + timedelta(days=365)
     agreements: list[dict[str, Any]] = []
     for index, component in enumerate(components):
         supplier_id = suppliers[index % len(suppliers)]["id"]
@@ -209,20 +241,25 @@ def generate_master(config: GenerationConfig) -> dict[str, list[dict[str, Any]]]
         version_for_product = sum(
             row["product_id"] == product["id"] for row in bom_versions
         ) + 1
-        effective_from = (
-            start
-            if version_for_product == 1
-            else config.reference_time - timedelta(days=180)
-        )
         has_newer_version = versions_per_product[index % len(products)] > version_for_product
+        version_count = versions_per_product[index % len(products)]
+        bom_start = config.reference_time - timedelta(
+            days=min(30, max(1, config.history_days // 2))
+        )
+        if version_for_product == 1:
+            effective_from = start
+        else:
+            effective_from = start + (bom_start - start) * (
+                version_for_product - 1
+            ) / (version_count - 1)
         effective_to = (
-            config.reference_time - timedelta(days=180)
+            start + (bom_start - start) * version_for_product / (version_count - 1)
             if has_newer_version
-            else config.reference_time + timedelta(days=365)
+            else end
         )
         bom_versions.append(
             {
-                "id": _id("BOM", index + 1),
+                "id": f"BOM-{index + 1:04d}-V{version_for_product:02d}",
                 "product_id": product["id"],
                 "version": version_for_product,
                 "status": "ACTIVE"
@@ -252,7 +289,11 @@ def generate_master(config: GenerationConfig) -> dict[str, list[dict[str, Any]]]
             "name": f"Asterion Customer {index + 1:04d}",
             "priority": ("HIGH", "MEDIUM", "LOW")[index % 3],
             "status": "ACTIVE",
+            "customer_class": ("INDUSTRIAL", "DISTRIBUTOR", "OEM")[index % 3],
+            "sla_class": ("STANDARD", "PRIORITY", "EXTENDED")[index % 3],
             "default_sla_policy_id": _id("SLA", (index % 3) + 1),
+            "effective_from": _date(start),
+            "effective_to": _date(end),
         }
         for index in range(counts["customers"])
     ]
@@ -262,6 +303,8 @@ def generate_master(config: GenerationConfig) -> dict[str, list[dict[str, Any]]]
             "name": name,
             "delivery_lead_time_days": lead,
             "late_tolerance_hours": 0,
+            "effective_from": _date(start),
+            "effective_to": _date(end),
         }
         for index, (name, lead) in enumerate(
             (("STANDARD", 1), ("PRIORITY", 0), ("EXTENDED", 3))
@@ -297,7 +340,34 @@ def write_master(
         with path.open("w", encoding="utf-8", newline="") as stream:
             writer = csv.DictWriter(stream, fieldnames=fieldnames, extrasaction="ignore")
             writer.writeheader()
-            writer.writerows(rows)
+            for row in rows:
+                writer.writerow(
+                    {
+                        key: (
+                            ""
+                            if value is None
+                            else str(value).lower()
+                            if isinstance(value, bool)
+                            else f"{value:.{config.money_decimal_places}f}"
+                            if isinstance(value, (int, float))
+                            and any(token in key for token in ("cost", "price"))
+                            else f"{value:.{config.quantity_decimal_places}f}"
+                            if isinstance(value, (int, float))
+                            and any(
+                                token in key
+                                for token in (
+                                    "quantity",
+                                    "capacity",
+                                    "stock",
+                                    "minimum_order",
+                                    "per_unit",
+                                )
+                            )
+                            else value
+                        )
+                        for key, value in row.items()
+                    }
+                )
         files.append(
             {
                 "path": path.relative_to(config.root).as_posix(),
@@ -305,14 +375,34 @@ def write_master(
                 "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
             }
         )
+    config_paths = (
+        Path("config/enterprise.yaml"),
+        Path("config/generation.yaml"),
+        Path(f"config/scales/{config.scale}.yaml"),
+    )
+    if all((config.root / relative).exists() for relative in config_paths):
+        config_bytes = b"".join((config.root / relative).read_bytes() for relative in config_paths)
+    else:
+        config_bytes = json.dumps(
+            {"scale": config.scale, "counts": config.counts, "enterprise": config.enterprise},
+            sort_keys=True,
+        ).encode()
     manifest = {
+        "dataset_name": "chronosdb-synthetic-supply-chain",
+        "version": config.dataset_version,
         "dataset_version": config.dataset_version,
         "generator_version": config.generator_version,
+        "domain_model_version": "2.0",
         "phase": "3G",
         "layer": "master",
         "scale": config.scale,
         "seed": config.seed,
+        "random_seed": config.seed,
         "reference_time": _date(config.reference_time),
+        "generated_at": _date(config.reference_time),
+        "currency": "INR",
+        "canonical_timezone": "UTC",
+        "config_sha256": hashlib.sha256(config_bytes).hexdigest(),
         "files": files,
         "seed_streams": STREAMS,
     }

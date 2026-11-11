@@ -1,0 +1,88 @@
+{
+  "canonical_timezone": "UTC",
+  "config_sha256": "471e1d604e4100b5e4c56a62348f970a88f17ba0b72bacce44b630f7efd55077",
+  "currency": "INR",
+  "dataset_name": "chronosdb-synthetic-supply-chain",
+  "dataset_version": "1.0.0",
+  "domain_model_version": "2.0",
+  "files": [
+    {
+      "path": "data/generated/master/stress/locations.csv",
+      "rows": 12,
+      "sha256": "3cca271dc9aadc7f69a1427e30ed40e11079ec907f4dc62e52704047a9460daf"
+    },
+    {
+      "path": "data/generated/master/stress/facilities.csv",
+      "rows": 8,
+      "sha256": "de32d1f3e1cebfd59505457667b6c70e829961d39587bb5e65ee223f3924c48f"
+    },
+    {
+      "path": "data/generated/master/stress/warehouses.csv",
+      "rows": 12,
+      "sha256": "0d32a17f7582492e45e8a37eb7c5045a54708fe9c2d558c179f27e5b04c80e0c"
+    },
+    {
+      "path": "data/generated/master/stress/transfer_lanes.csv",
+      "rows": 132,
+      "sha256": "505b25cd56954b36ce1a7bff08dc6781460d0420f54766825cc217d18a03cae5"
+    },
+    {
+      "path": "data/generated/master/stress/suppliers.csv",
+      "rows": 120,
+      "sha256": "1d931ff6b65ffdd62c4af8a69e99d15535271dbc3e21d9dbb5d922a6220f19eb"
+    },
+    {
+      "path": "data/generated/master/stress/components.csv",
+      "rows": 500,
+      "sha256": "7fe40ee0c017ccd03f04d1a6a061e28527e029953c865c6314f1d09a1e6ea1ac"
+    },
+    {
+      "path": "data/generated/master/stress/supplier_component_agreements.csv",
+      "rows": 1000,
+      "sha256": "09d8717d7b0cc45b6d5eadfb125ed7b7d8a6839878c7d8098f390298a46577bd"
+    },
+    {
+      "path": "data/generated/master/stress/products.csv",
+      "rows": 100,
+      "sha256": "d114aaf1ccee15a5c2bc5ccdbf3cb226f4cd2358cc7b06379bc3108a0572bfe9"
+    },
+    {
+      "path": "data/generated/master/stress/bom_versions.csv",
+      "rows": 240,
+      "sha256": "6782550bd1c869f710afc6a0528104b93b9ee781a620bcac707a383f83fdd2bd"
+    },
+    {
+      "path": "data/generated/master/stress/bom_lines.csv",
+      "rows": 600,
+      "sha256": "c28251c74cfd52f0d7a5059c465f2320cd92ebbafde6af4df28ff9eea9ea9b10"
+    },
+    {
+      "path": "data/generated/master/stress/customers.csv",
+      "rows": 1000,
+      "sha256": "4194cbaeb6d61f0faf730f4c519166d7c21b7910ecfa88bf794c4b7ca12b1808"
+    },
+    {
+      "path": "data/generated/master/stress/sla_policies.csv",
+      "rows": 3,
+      "sha256": "16b08e50892506abb873cc3960049ab4bd87cfebe2b60648d0221693c653265d"
+    }
+  ],
+  "generated_at": "2026-11-11T02:30:00Z",
+  "generator_version": "0.1.0",
+  "layer": "master",
+  "phase": "3G",
+  "random_seed": 260311,
+  "reference_time": "2026-11-11T02:30:00Z",
+  "scale": "stress",
+  "seed": 260311,
+  "seed_streams": {
+    "benchmark": 707,
+    "demand": 202,
+    "disruption": 505,
+    "document": 606,
+    "inventory": 404,
+    "master": 101,
+    "supply": 303
+  },
+  "version": "1.0.0"
+}

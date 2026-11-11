@@ -1,8 +1,8 @@
 name: tiny
 counts:
-  suppliers: 4
-  components: 12
-  products: 4
+  suppliers: 5
+  components: 15
+  products: 3
   bom_versions: 6
   warehouses: 2
   facilities: 1
