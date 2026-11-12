@@ -101,7 +101,7 @@ def main() -> None:
         "candidate_parameters": read_csv_rows(scenario_dir / "candidate_parameters.csv"),
         "intervention_costs": read_csv_rows(scenario_dir / "intervention_costs.csv"),
     }
-    validate_scenarios(scenarios, master)
+    validate_scenarios(scenarios, master, operational["purchase_orders"])
     documents = [
         json.loads(line)
         for line in (

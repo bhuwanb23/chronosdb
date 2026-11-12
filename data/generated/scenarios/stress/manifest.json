@@ -2,7 +2,7 @@
   "dataset_version": "1.0.0",
   "files": [
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/scenarios/stress/scenario_definitions.json",
+      "path": "data/generated/scenarios/stress/scenario_definitions.json",
       "record_count": 60,
       "sha256": "2d8847d2001041f501220a143881f71809a12d22d3cb2939232c588bddbc300f"
     },
@@ -12,14 +12,14 @@
       "sha256": "2d24846374f39289e187926c61a520e743c6625ee831ab23dc2fe9914ac3431c"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/scenarios/stress/scenario_constraints.json",
+      "path": "data/generated/scenarios/stress/scenario_constraints.json",
       "record_count": 60,
       "sha256": "f72e3d9bdae84b3c19425858c660c8c09aab018a1eed8f6d1508d2259acaa9d5"
     },
     {
       "path": "data/generated/scenarios/stress/candidate_parameters.csv",
       "record_count": 180,
-      "sha256": "24799d205b62349112b2fd2f32fbb9548d70cc7e3eabb5143bcc9ec267c5b498"
+      "sha256": "9490f68648734d8d4aa6c8bdbec3475ef675d19ec49adebaa766a3daf7249cdb"
     },
     {
       "path": "data/generated/scenarios/stress/intervention_costs.csv",
@@ -27,17 +27,17 @@
       "sha256": "4af13caf0248ac16f63dd3ff97100ac3687d8c6fb7fb54a909c290658c8eb451"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/documents/stress/document_metadata.jsonl",
+      "path": "data/generated/documents/stress/document_metadata.jsonl",
       "record_count": 175,
       "sha256": "3cd1b824f7f42b3fd44d50586820009d399a7b57cd9ad37f116d5ab8a20a4442"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/documents/stress/documents.jsonl",
+      "path": "data/generated/documents/stress/documents.jsonl",
       "record_count": 175,
       "sha256": "47c3433bdcbc8381a63d656000d312f488941246430935d762ce6050f248bdbb"
     },
     {
-      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/documents/stress/retrieval_relevance.json",
+      "path": "data/generated/documents/stress/retrieval_relevance.json",
       "record_count": 175,
       "sha256": "d4806a9d2b3dce4c636299f20a056421f0558322957bcfabc14262d6e379cf55"
     }

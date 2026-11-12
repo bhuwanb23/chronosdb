@@ -14,7 +14,7 @@
     {
       "path": "data/generated/operational/standard/production_orders.csv",
       "record_count": 400,
-      "sha256": "d242acecc5a4243b5acf027d597e9ab78512a23f1203b42fd46f272c16934843"
+      "sha256": "112bbc7cf2479a3aca046237d0c1c2f4a82477abe88437d9dc0fe0a2475aa174"
     },
     {
       "path": "data/generated/operational/standard/production_customer_allocations.csv",
@@ -48,8 +48,8 @@
     },
     {
       "path": "data/generated/history/standard/status_events.csv",
-      "record_count": 1400,
-      "sha256": "8b3a2fd69aa98c38f6e0a94373486e2e3a8b55b92ebbcb201ea9f2644f99df5d"
+      "record_count": 1024,
+      "sha256": "80d5de83976eb95cc86596183ed765dc95d4b7c1fa6a09e3fcc307215fe1b6c4"
     },
     {
       "path": "data/generated/history/standard/daily_inventory_snapshots.csv",
@@ -78,8 +78,8 @@
     },
     {
       "path": "data/generated/history/standard/production_history.csv",
-      "record_count": 400,
-      "sha256": "4a548b4cadd59cc3e30668344926286aaba3a7e9e67434ad82904bd0cdabd421"
+      "record_count": 24,
+      "sha256": "ff4d27823ecf9277d305d367883d35241b1d59c9cf21ac6d35fb44adda8aadd0"
     },
     {
       "path": "data/generated/history/standard/historical_disruptions.csv",

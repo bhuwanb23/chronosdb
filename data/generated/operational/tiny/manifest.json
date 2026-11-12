@@ -14,7 +14,7 @@
     {
       "path": "data/generated/operational/tiny/production_orders.csv",
       "record_count": 20,
-      "sha256": "7b2e8ab37f98534d9226c85d4b1afb18c3656f325e730adf7034904bf8b7181f"
+      "sha256": "abd0df92e94c20b01f686fe2b2a40adfc1d3e275233c796e5b434d18c4426fd8"
     },
     {
       "path": "data/generated/operational/tiny/production_customer_allocations.csv",
@@ -48,8 +48,8 @@
     },
     {
       "path": "data/generated/history/tiny/status_events.csv",
-      "record_count": 70,
-      "sha256": "6b85cb946984d3302ab12a1718ad235f08e1e22b6e6b3b5ee7bbaad679da9b46"
+      "record_count": 55,
+      "sha256": "e9ca72cdc0548127b3c5e29a1c80bd00b8688936e490a1ffad441368d5d224a7"
     },
     {
       "path": "data/generated/history/tiny/daily_inventory_snapshots.csv",
@@ -78,8 +78,8 @@
     },
     {
       "path": "data/generated/history/tiny/production_history.csv",
-      "record_count": 20,
-      "sha256": "cb77636886558413f43819132d66f43f6710c54bb6fc2aebf2af81f676bdbc64"
+      "record_count": 5,
+      "sha256": "3a16f869dbeb2c4db67f7e67b66e06e2dcc0f432f6b435e0c394ef28a7e47795"
     },
     {
       "path": "data/generated/history/tiny/historical_disruptions.csv",

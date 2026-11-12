@@ -128,6 +128,15 @@ def generate_scenarios(
                     "allow_partial_delivery": True,
                 }
             )
+            alternate_agreement = next(
+                (
+                    row
+                    for row in agreements
+                    if row["component_id"] == component["id"]
+                    and row["supplier_id"] != supplier["id"]
+                ),
+                agreement,
+            )
             for candidate_type in ("TRANSFER", "ALTERNATE_SUPPLY", "HYBRID"):
                 candidate_id = f"INT-{scenario_number:04d}-{candidate_type}"
                 candidate = {
@@ -136,7 +145,11 @@ def generate_scenarios(
                     "candidate_type": candidate_type,
                     "source_warehouse_id": warehouses[0]["id"],
                     "destination_warehouse_id": warehouses[-1]["id"],
-                    "supplier_id": suppliers[(scenario_number + 1) % len(suppliers)]["id"],
+                    "supplier_id": (
+                        supplier["id"]
+                        if candidate_type == "TRANSFER"
+                        else alternate_agreement["supplier_id"]
+                    ),
                     "component_id": component["id"],
                     "quantity": 100 + (scenario_number % 4) * 100,
                     "approval_status": (
@@ -293,7 +306,9 @@ def validate_documents(documents: list[dict[str, Any]]) -> None:
 
 
 def validate_scenarios(
-    payload: dict[str, Any], master: dict[str, list[dict[str, Any]]] | None = None
+    payload: dict[str, Any],
+    master: dict[str, list[dict[str, Any]]] | None = None,
+    purchase_orders: list[dict[str, Any]] | None = None,
 ) -> None:
     """Validate scenario inputs before any oracle calculation."""
     definitions = payload["scenario_definitions"]
@@ -346,3 +361,38 @@ def validate_scenarios(
                 raise ValueError(
                     f"purchase order reference mismatch: {scenario['id']}"
                 )
+        valid_supplier_components = {
+            (row["supplier_id"], row["component_id"]) for row in agreements
+        }
+        scenarios_by_id = {row["id"]: row for row in definitions}
+        for candidate in payload["candidate_parameters"]:
+            scenario = scenarios_by_id[candidate["scenario_id"]]
+            if candidate["component_id"] != scenario["reference_component_id"]:
+                raise ValueError(f"candidate component mismatch: {candidate['id']}")
+            if (
+                candidate["supplier_id"],
+                candidate["component_id"],
+            ) not in valid_supplier_components:
+                raise ValueError(f"alternate supplier reference mismatch: {candidate['id']}")
+            if (
+                candidate["candidate_type"] == "TRANSFER"
+                and candidate["supplier_id"] != scenario["reference_supplier_id"]
+            ):
+                raise ValueError(f"transfer supplier mismatch: {candidate['id']}")
+        if purchase_orders is not None:
+            purchase_orders_by_id = {row["id"]: row for row in purchase_orders}
+            for scenario in definitions:
+                purchase_order = purchase_orders_by_id.get(
+                    scenario["reference_purchase_order_id"]
+                )
+                if purchase_order is None:
+                    raise ValueError(
+                        f"unknown purchase order reference: {scenario['id']}"
+                    )
+                if (
+                    purchase_order["supplier_id"] != scenario["reference_supplier_id"]
+                    or purchase_order["component_id"] != scenario["reference_component_id"]
+                ):
+                    raise ValueError(
+                        f"purchase order record mismatch: {scenario['id']}"
+                    )

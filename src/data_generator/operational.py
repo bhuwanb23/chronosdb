@@ -248,6 +248,27 @@ def generate_operational(
                 }
             )
 
+    required_by_order: dict[str, int] = {}
+    issued_by_order: dict[str, int] = {}
+    for requirement in production_requirements:
+        required_by_order[requirement["production_order_id"]] = (
+            required_by_order.get(requirement["production_order_id"], 0)
+            + int(requirement["required_quantity"])
+        )
+    for transaction in inventory_transactions:
+        if transaction["transaction_type"] == "PRODUCTION_ISSUE" and transaction["reference_id"]:
+            issued_by_order[transaction["reference_id"]] = (
+                issued_by_order.get(transaction["reference_id"], 0)
+                + int(transaction["quantity"])
+            )
+    for order in production_orders:
+        order["status"] = (
+            "COMPLETED"
+            if _dt(order["planned_completion"]) <= reference
+            and issued_by_order.get(order["id"], 0) >= required_by_order.get(order["id"], 0)
+            else "PLANNED"
+        )
+
     inventory_snapshots: list[dict[str, Any]] = []
     signs = {
         "OPENING_BALANCE": 1,
@@ -350,16 +371,18 @@ def generate_history(
             }
         )
     for order in operational["production_orders"]:
-        status_events.extend(
-            [
-                {
-                    "id": f"STATUS-{len(status_events) + 1:06d}",
-                    "entity_type": "PRODUCTION_ORDER",
-                    "entity_id": order["id"],
-                    "status": "PLANNED",
-                    "event_time": order["planned_start"],
-                    "recorded_at": order["planned_start"],
-                },
+        events = [
+            {
+                "id": f"STATUS-{len(status_events) + 1:06d}",
+                "entity_type": "PRODUCTION_ORDER",
+                "entity_id": order["id"],
+                "status": "PLANNED",
+                "event_time": order["planned_start"],
+                "recorded_at": order["planned_start"],
+            }
+        ]
+        if order["status"] == "COMPLETED":
+            events.append(
                 {
                     "id": f"STATUS-{len(status_events) + 2:06d}",
                     "entity_type": "PRODUCTION_ORDER",
@@ -367,9 +390,9 @@ def generate_history(
                     "status": "COMPLETED",
                     "event_time": order["planned_completion"],
                     "recorded_at": order["planned_completion"],
-                },
-            ]
-        )
+                }
+            )
+        status_events.extend(events)
     performance = [
         {
             "id": f"SUPPERF-{index + 1:06d}",
@@ -430,6 +453,7 @@ def generate_history(
             "recorded_at": order["planned_completion"],
         }
         for index, order in enumerate(operational["production_orders"])
+        if order["status"] == "COMPLETED"
     ]
     correction_target = next(
         snapshot

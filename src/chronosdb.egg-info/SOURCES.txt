@@ -12,6 +12,16 @@ src/chronosdb.egg-info/requires.txt
 src/chronosdb.egg-info/top_level.txt
 src/chronosdb/sql/001_system_health.sql
 src/chronosdb/sql/__init__.py
+src/data_generator/__init__.py
+src/data_generator/export.py
+src/data_generator/fixtures.py
+src/data_generator/generator.py
+src/data_generator/operational.py
+src/data_generator/scenarios.py
+src/data_generator/validation.py
+src/ground_truth/__init__.py
+src/ground_truth/benchmarks.py
+src/ground_truth/oracle.py
 tests/test_api.py
 tests/test_config.py
 tests/test_db2_integration.py
