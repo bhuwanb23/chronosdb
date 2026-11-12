@@ -1,0 +1,13 @@
+version: "1.0.0"
+profile: tiny
+source_scale: tiny
+seed: 260311
+purpose: unit_testing
+snapshot_scope: active_pairs
+snapshot_days: 7
+history_days: 180
+planning_horizon_days: 30
+currency: INR
+storage_timezone: UTC
+display_timezone: Asia/Kolkata
+golden_scenario_id: SCN-GOLD-001

@@ -1,0 +1,13 @@
+version: "1.0.0"
+profile: standard
+source_scale: standard
+seed: 260311
+purpose: full_development_and_benchmarking
+snapshot_scope: active_pairs
+snapshot_days: 60
+history_days: 180
+planning_horizon_days: 30
+currency: INR
+storage_timezone: UTC
+display_timezone: Asia/Kolkata
+golden_scenario_id: SCN-GOLD-001

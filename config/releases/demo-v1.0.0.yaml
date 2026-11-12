@@ -1,0 +1,16 @@
+version: "1.0.0"
+profile: demo
+source_scale: standard
+seed: 260311
+purpose: judge_facing_demonstration
+snapshot_scope: active_pairs
+snapshot_days: 31
+history_days: 180
+planning_horizon_days: 30
+currency: INR
+storage_timezone: UTC
+display_timezone: Asia/Kolkata
+golden_scenario_id: SCN-GOLD-001
+golden_supplier_id: SUP-0104
+golden_component_id: CMP-MCU-42
+golden_purchase_order_id: PO-2208

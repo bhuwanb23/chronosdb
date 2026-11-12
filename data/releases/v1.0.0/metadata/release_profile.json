@@ -1,0 +1,18 @@
+{
+  "currency": "INR",
+  "display_timezone": "Asia/Kolkata",
+  "golden_component_id": "CMP-MCU-42",
+  "golden_purchase_order_id": "PO-2208",
+  "golden_scenario_id": "SCN-GOLD-001",
+  "golden_supplier_id": "SUP-0104",
+  "history_days": 180,
+  "planning_horizon_days": 30,
+  "profile": "demo",
+  "purpose": "judge_facing_demonstration",
+  "seed": 260311,
+  "snapshot_days": 31,
+  "snapshot_scope": "active_pairs",
+  "source_scale": "standard",
+  "storage_timezone": "UTC",
+  "version": "1.0.0"
+}
