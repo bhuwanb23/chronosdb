@@ -45,7 +45,6 @@ def validate_master_release(
     facility_ids = _ids(master["facilities"])
     supplier_ids = _ids(master["suppliers"])
     component_ids = _ids(master["components"])
-    product_ids = _ids(master["products"])
     bom_ids = _ids(master["bom_versions"])
     sla_ids = _ids(master["sla_policies"])
     if require_full_network and not {
@@ -57,7 +56,7 @@ def validate_master_release(
     if require_full_network and not {"FAC-PUNE", "FAC-CHENNAI"}.issubset(facility_ids):
         raise Phase4ValidationError("required Phase 4 facilities are missing")
     for row in master["facilities"]:
-        if not row.get("source_warehouse_id") in warehouse_ids:
+        if row.get("source_warehouse_id") not in warehouse_ids:
             raise Phase4ValidationError(f"facility has unknown source warehouse: {row['id']}")
     for row in master["warehouse_facility_links"]:
         if row["warehouse_id"] not in warehouse_ids or row["facility_id"] not in facility_ids:

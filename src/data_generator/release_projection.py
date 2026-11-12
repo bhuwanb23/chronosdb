@@ -48,7 +48,9 @@ def _map_row(row: dict[str, Any], aliases: dict[str, str]) -> dict[str, Any]:
     return mapped
 
 
-def project_master(profile: ReleaseProfile) -> tuple[dict[str, list[dict[str, Any]]], dict[str, str]]:
+def project_master(
+    profile: ReleaseProfile,
+) -> tuple[dict[str, list[dict[str, Any]]], dict[str, str]]:
     source = profile.root / "data" / "generated" / "master" / profile.source_scale
     source_rows = {
         name: _read_csv(source / f"{name}.csv") for name in MASTER_FILES

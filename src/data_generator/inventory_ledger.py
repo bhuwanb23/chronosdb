@@ -59,7 +59,7 @@ def build_inventory(
     aliases: dict[str, str],
     procurement: dict[str, list[dict[str, Any]]],
     production_batches: list[dict[str, Any]] | None = None,
-) -> dict[str, list[dict[str, Any]]]:
+) -> dict[str, Any]:
     master_root = profile.root / "data" / "generated" / "master" / profile.source_scale
     source_root = profile.root / "data" / "generated" / "operational" / profile.source_scale
     source_opening = _read_csv(source_root / "inventory_transactions.csv")
@@ -67,12 +67,16 @@ def build_inventory(
     source_master_warehouses = _read_csv(master_root / "warehouses.csv")
     component_ids = [_map(row["id"], aliases) for row in source_master_components]
     warehouse_ids = [_map(row["id"], aliases) for row in source_master_warehouses]
-    opening_by_key: dict[tuple[str, str], Decimal] = {}
+    opening_by_key: dict[tuple[str, str], Decimal] = defaultdict(lambda: Decimal("0"))
+    reference_time = "2026-11-11T02:30:00Z"
     for row in source_opening:
-        if row["transaction_type"] != "OPENING_BALANCE":
+        if row["event_time"] > reference_time:
             continue
         key = (_map(row["warehouse_id"], aliases), _map(row["component_id"], aliases))
-        opening_by_key[key] = Decimal(row["quantity"])
+        sign = SIGNS.get(row["transaction_type"])
+        if sign is None:
+            raise ValueError(f"unknown source inventory event: {row['transaction_type']}")
+        opening_by_key[key] += Decimal(row["quantity"]) * sign
     opening_by_key[("WH-PUNE", "CMP-MCU-42")] = Decimal("400")
     opening_by_key[("WH-CHENNAI", "CMP-MCU-42")] = Decimal("700")
     opening = [
@@ -83,7 +87,13 @@ def build_inventory(
             "on_hand_quantity": str(opening_by_key.get((warehouse_id, component_id), 0)),
             "reserved_quantity": "0",
             "quarantined_quantity": "0",
-            "safety_stock_quantity": "120" if component_id == "CMP-MCU-42" and warehouse_id == "WH-CHENNAI" else "100" if component_id == "CMP-MCU-42" else "10",
+            "safety_stock_quantity": (
+                "120"
+                if component_id == "CMP-MCU-42" and warehouse_id == "WH-CHENNAI"
+                else "100"
+                if component_id == "CMP-MCU-42"
+                else "10"
+            ),
             "snapshot_time": "2026-11-11T02:30:00Z",
         }
         for index, (warehouse_id, component_id) in enumerate(
@@ -152,6 +162,12 @@ def build_inventory(
             }
         )
     for receipt in procurement["receipts"]:
+        if (
+            receipt["warehouse_id"] == "WH-CHENNAI"
+            and receipt["component_id"] == "CMP-MCU-42"
+            and receipt["receipt_time"] <= "2026-11-11T02:30:00Z"
+        ):
+            continue
         transactions.append(
             {
                 "id": f"INV-{receipt['id']}",

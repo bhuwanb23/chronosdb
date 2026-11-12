@@ -6,11 +6,10 @@ import argparse
 import json
 from pathlib import Path
 
-from data_generator.release_validation import build_validation_report
 from data_generator.privacy import scan_documents
 from data_generator.release_profile import load_release_profile
+from data_generator.release_validation import build_validation_report
 from ground_truth.oracle import calculate_golden
-
 
 REQUIRED_PATHS = (
     "config/enterprise.yaml",
@@ -77,7 +76,11 @@ def main() -> None:
         "# Phase 4A Phase 3 Release-Candidate Intake\n\n"
         f"Status: **{report['status']}**\n\n"
         + "\n".join(f"- {key}: {value}" for key, value in report["checks"].items())
-        + ("\n\nNo intake findings were detected.\n" if not findings else f"\n\nFindings: {findings}\n"),
+        + (
+            "\n\nNo intake findings were detected.\n"
+            if not findings
+            else f"\n\nFindings: {findings}\n"
+        ),
         encoding="utf-8",
     )
     if findings:

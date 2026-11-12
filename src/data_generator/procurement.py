@@ -24,13 +24,17 @@ def _map(value: str, aliases: dict[str, str]) -> str:
 def build_procurement(
     profile: ReleaseProfile,
     aliases: dict[str, str],
+    master: dict[str, list[dict[str, Any]]] | None = None,
 ) -> dict[str, list[dict[str, Any]]]:
     source_root = profile.root / "data" / "generated" / "operational" / profile.source_scale
     source = _read_csv(source_root / "purchase_orders.csv")
     purchase_orders: list[dict[str, Any]] = []
     status_history: list[dict[str, Any]] = []
     receipts: list[dict[str, Any]] = []
-    totals: dict[tuple[str, str], Decimal] = defaultdict(lambda: Decimal("0"))
+    capacity_by_key: dict[tuple[str, str], Decimal] = defaultdict(lambda: Decimal("0"))
+    for agreement in (master or {}).get("supplier_component_agreements", []):
+        key = (agreement["supplier_id"], agreement["component_id"])
+        capacity_by_key[key] += Decimal(str(agreement["daily_capacity_units"])) * 100
     for index, row in enumerate(source, start=1):
         golden = index == 1
         order_id = "PO-2208" if golden else f"PO-P4-{index:06d}"
@@ -40,7 +44,13 @@ def build_procurement(
         received = Decimal("0") if golden else Decimal(row["received_quantity"])
         expected = "2026-11-13T00:00:00Z" if golden else row["expected_arrival"]
         actual = "" if golden or received == 0 else expected
-        status = "CONFIRMED" if golden else "RECEIVED" if received == ordered else "PARTIALLY_RECEIVED" if received else "CONFIRMED"
+        status = (
+            "CONFIRMED"
+            if golden or not received
+            else "RECEIVED"
+            if received == ordered
+            else "PARTIALLY_RECEIVED"
+        )
         purchase_orders.append(
             {
                 "id": order_id,
@@ -67,7 +77,6 @@ def build_procurement(
                 "source_phase3_id": row["id"],
             }
         )
-        totals[(supplier_id, component_id)] += ordered + Decimal("1000")
         status_history.append(
             {
                 "id": f"POSTATUS-{index:06d}-01",
@@ -109,7 +118,7 @@ def build_procurement(
             "currency": "INR",
         }
         for index, ((supplier_id, component_id), quantity) in enumerate(
-            sorted(totals.items()), start=1
+            sorted(capacity_by_key.items()), start=1
         )
     ]
     output = release_root(profile) / "operations"
