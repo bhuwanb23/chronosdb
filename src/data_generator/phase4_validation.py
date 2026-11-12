@@ -17,6 +17,12 @@ def _ids(rows: list[dict[str, Any]]) -> set[str]:
     return {str(row["id"]) for row in rows if row.get("id")}
 
 
+def _delay_hours(promised: str, projected: str) -> int:
+    promised_time = datetime.fromisoformat(promised.replace("Z", "+00:00"))
+    projected_time = datetime.fromisoformat(projected.replace("Z", "+00:00"))
+    return max(0, int((projected_time - promised_time).total_seconds() // 3600))
+
+
 def validate_master_release(
     master: dict[str, list[dict[str, Any]]],
     require_full_network: bool = True,
@@ -393,3 +399,123 @@ def validate_nonnegative(rows: list[dict[str, Any]], fields: tuple[str, ...]) ->
         for field in fields:
             if field in row and not math.isfinite(float(row[field])):
                 raise Phase4ValidationError(f"non-finite value: {row.get('id', field)}")
+
+
+def validate_demand_release(
+    demand: dict[str, list[dict[str, Any]]],
+    master: dict[str, list[dict[str, Any]]],
+    production_orders: list[dict[str, Any]],
+) -> None:
+    """Validate customer joins, allocation precedence outputs, SLA, and revenue."""
+    orders = demand["orders"]
+    lines = demand["lines"]
+    allocations = demand["allocations"]
+    sla_assignments = demand["sla_assignments"]
+    order_ids = {row["customer_order_id"] for row in orders}
+    line_by_id = {row["customer_order_line_id"]: row for row in lines}
+    product_ids = _ids(master["products"])
+    production_ids = _ids(production_orders)
+    if len(order_ids) != len(orders) or len(line_by_id) != len(lines):
+        raise Phase4ValidationError("duplicate customer demand identifiers")
+    for order in orders:
+        if order["customer_id"] not in _ids(master["customers"]):
+            raise Phase4ValidationError(f"unknown demand customer: {order['customer_order_id']}")
+    for line in lines:
+        if line["customer_order_id"] not in order_ids:
+            raise Phase4ValidationError(f"unknown demand order: {line['customer_order_line_id']}")
+        if line["product_id"] not in product_ids:
+            raise Phase4ValidationError(f"unknown demand product: {line['customer_order_line_id']}")
+        if line["assigned_production_order_id"] not in production_ids:
+            raise Phase4ValidationError(
+                f"unknown demand production: {line['customer_order_line_id']}"
+            )
+        ordered = Decimal(str(line["ordered_quantity"]))
+        unit_revenue = Decimal(str(line["unit_revenue"]))
+        if ordered <= 0 or unit_revenue <= 0:
+            raise Phase4ValidationError(
+                f"invalid demand quantity or revenue: {line['customer_order_line_id']}"
+            )
+        if Decimal(str(line["line_revenue"])) != ordered * unit_revenue:
+            raise Phase4ValidationError(
+                f"demand revenue mismatch: {line['customer_order_line_id']}"
+            )
+    allocated_lines = {row["customer_order_line_id"] for row in allocations}
+    if allocated_lines != set(line_by_id):
+        raise Phase4ValidationError("customer demand allocation coverage mismatch")
+    for allocation in allocations:
+        line = line_by_id.get(allocation["customer_order_line_id"])
+        if (
+            line is None
+            or allocation["production_order_id"] != line["assigned_production_order_id"]
+        ):
+            raise Phase4ValidationError(f"demand allocation join mismatch: {allocation['id']}")
+        if Decimal(str(allocation["allocated_quantity"])) != Decimal(str(line["ordered_quantity"])):
+            raise Phase4ValidationError(f"demand allocation quantity mismatch: {allocation['id']}")
+    sla_by_line = {row["customer_order_line_id"]: row for row in sla_assignments}
+    if set(sla_by_line) != set(line_by_id):
+        raise Phase4ValidationError("SLA assignment coverage mismatch")
+    for assignment in sla_assignments:
+        line = line_by_id[assignment["customer_order_line_id"]]
+        ordered = Decimal(str(line["ordered_quantity"]))
+        on_time = Decimal(str(assignment["projected_on_time_quantity"]))
+        late = Decimal(str(assignment["projected_late_quantity"]))
+        expected_delay = _delay_hours(
+            assignment["promised_delivery_time"],
+            assignment["projected_delivery_time"],
+        )
+        if on_time + late != ordered or int(assignment["delay_hours"]) != expected_delay:
+            raise Phase4ValidationError(f"SLA quantity or delay mismatch: {assignment['id']}")
+        expected_risk = late * Decimal(str(line["unit_revenue"]))
+        if Decimal(str(assignment["revenue_at_risk"])) != expected_risk:
+            raise Phase4ValidationError(f"SLA revenue risk mismatch: {assignment['id']}")
+    golden = {
+        row["customer_order_line_id"]: row
+        for row in sla_assignments
+        if row["customer_order_line_id"] in {"COL-CO-0701-01", "COL-CO-0704-01", "COL-CO-0711-01"}
+    }
+    if len(golden) != 3 or sum(
+        Decimal(str(row["revenue_at_risk"])) for row in golden.values()
+    ) != Decimal("1600000"):
+        raise Phase4ValidationError("golden customer demand outcome mismatch")
+
+
+def validate_history_release(
+    history: dict[str, Any],
+    inventory: dict[str, list[dict[str, Any]]],
+) -> None:
+    """Validate temporal intervals, late-arriving semantics, and ledger checkpoints."""
+    for version in history["entity_versions"]:
+        start = datetime.fromisoformat(version["effective_from"].replace("Z", "+00:00"))
+        end = datetime.fromisoformat(version["effective_to"].replace("Z", "+00:00"))
+        if start >= end:
+            raise Phase4ValidationError(f"invalid temporal interval: {version['id']}")
+    late_records = history["late_arriving_records"]
+    if not late_records:
+        raise Phase4ValidationError("history has no late-arriving record")
+    for record in late_records:
+        if record["visible_before_ingested"] != "false" or record["visible_after_ingested"] != "true":
+            raise Phase4ValidationError(f"invalid late-arrival visibility: {record['id']}")
+        if record["completed_scenario_immutable"] != "true":
+            raise Phase4ValidationError(f"completed scenario is mutable: {record['id']}")
+    checkpoints = history["historical_inventory_checkpoints"]
+    if len(checkpoints) < 10:
+        raise Phase4ValidationError("history requires at least ten checkpoints")
+    for checkpoint in checkpoints:
+        cutoff = datetime.fromisoformat(checkpoint["checkpoint_time"].replace("Z", "+00:00"))
+        expected = Decimal("0")
+        for transaction in inventory["transactions"]:
+            if (
+                transaction["warehouse_id"] == checkpoint["warehouse_id"]
+                and transaction["component_id"] == checkpoint["component_id"]
+                and datetime.fromisoformat(transaction["event_time"].replace("Z", "+00:00"))
+                <= cutoff
+            ):
+                expected += Decimal(str(transaction["quantity"])) * {
+                    "OPENING_BALANCE": Decimal("1"),
+                    "PURCHASE_RECEIPT": Decimal("1"),
+                    "PRODUCTION_ISSUE": Decimal("-1"),
+                    "TRANSFER_DISPATCH": Decimal("-1"),
+                    "TRANSFER_RECEIPT": Decimal("1"),
+                }[transaction["transaction_type"]]
+        if Decimal(str(checkpoint["expected_on_hand_quantity"])) != expected:
+            raise Phase4ValidationError(f"history checkpoint mismatch: {checkpoint['id']}")

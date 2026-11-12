@@ -2,6 +2,36 @@
   "dataset": "chronosdb-demo-dataset",
   "files": [
     {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/demand/customer_order_lines.csv",
+      "record_count": 1000,
+      "sha256": "2a38a23f3eb49e63ac6a83b8806c0c670c4655c22b96f1d3d4199353f3831824"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/demand/customer_order_status_history.csv",
+      "record_count": 1000,
+      "sha256": "1e5918bd0c14e737bf60727fd8903bf12fe6c6dbb59f62067256aeb288bcdfc7"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/demand/customer_orders.csv",
+      "record_count": 1000,
+      "sha256": "42864e0558c0356214a092475bac6b003e0e88671f59e9d76b03adba152f6e57"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/demand/customer_sla_assignments.csv",
+      "record_count": 1000,
+      "sha256": "b5d84bc8dc0bd47ff8ba2662aba29dd8957044cc13dd00e2783131b84604ba63"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/demand/production_customer_allocations.csv",
+      "record_count": 1000,
+      "sha256": "cd1e8249b48bfc85227572e072a0eb379942be8189aea769f7a37d6347899515"
+    },
+    {
       "load_order": 3,
       "path": "data/releases/v1.0.0/inventory/inventory_opening_balances.csv",
       "record_count": 240,
@@ -118,8 +148,8 @@
     {
       "load_order": 5,
       "path": "data/releases/v1.0.0/metadata/build_summary.json",
-      "record_count": 6,
-      "sha256": "dff5fe079170b09d2f150fb047582fb1d4d34b21f62ed2030fcc6f4fed9015a8"
+      "record_count": 7,
+      "sha256": "4ff05c2261a960f3976685583d0e6501486d8f0df8d76f28b7108a5bd3e26654"
     },
     {
       "load_order": 5,
@@ -227,6 +257,6 @@
     "version": "1.0.0"
   },
   "seed": 260311,
-  "source_revision": "8ea99c4",
+  "source_revision": "6525ed0",
   "version": "1.0.0"
 }

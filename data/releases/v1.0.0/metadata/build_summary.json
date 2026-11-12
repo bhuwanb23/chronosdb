@@ -1,4 +1,11 @@
 {
+  "demand_rows": {
+    "allocations": 1000,
+    "lines": 1000,
+    "orders": 1000,
+    "sla_assignments": 1000,
+    "statuses": 1000
+  },
   "inventory_rows": {
     "benchmark_snapshots": 10,
     "component_ids": 80,

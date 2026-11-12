@@ -12,6 +12,7 @@ from typing import Any
 from data_generator.phase4_validation import (
     Phase4ValidationError,
     validate_capacity,
+    validate_demand_release,
     validate_inventory_release,
     validate_manufacturing_release,
     validate_master_release,
@@ -108,6 +109,26 @@ def _load_release(root: Path, profile_name: str) -> dict[str, Any]:
         ),
         "capacity": _csv(output / "production" / "facility_capacity_calendar.csv"),
     }
+    demand = {
+        "orders": _csv(output / "demand" / "customer_orders.csv"),
+        "lines": _csv(output / "demand" / "customer_order_lines.csv"),
+        "statuses": _csv(output / "demand" / "customer_order_status_history.csv"),
+        "allocations": _csv(output / "demand" / "production_customer_allocations.csv"),
+        "sla_assignments": _csv(output / "demand" / "customer_sla_assignments.csv"),
+    }
+    history = {
+        "entity_versions": _csv(output / "history" / "entity_versions.csv"),
+        "business_events": _csv(output / "history" / "business_events.csv"),
+        "late_arriving_records": _csv(output / "history" / "late_arriving_records.csv"),
+        "historical_inventory_checkpoints": _csv(
+            output / "history" / "historical_inventory_checkpoints.csv"
+        ),
+        "replay_expectations": json.loads(
+            (output / "history" / "replay_expectations.json").read_text(
+                encoding="utf-8"
+            )
+        ),
+    }
     return {
         "profile": profile,
         "output": output,
@@ -115,6 +136,8 @@ def _load_release(root: Path, profile_name: str) -> dict[str, Any]:
         "operations": operations,
         "inventory": inventory,
         "manufacturing": manufacturing,
+        "demand": demand,
+        "history": history,
     }
 
 
@@ -144,6 +167,12 @@ def validate_profile(root: Path, profile_name: str) -> dict[str, Any]:
         release["manufacturing"]["batches"],
         release["manufacturing"]["capacity"],
     )
+    validate_demand_release(
+        release["demand"],
+        release["master"],
+        release["manufacturing"]["production_orders"],
+    )
+    validate_history_release(release["history"], release["inventory"])
     return {
         "profile": profile.profile,
         "version": profile.version,
@@ -153,6 +182,7 @@ def validate_profile(root: Path, profile_name: str) -> dict[str, Any]:
             "purchase_orders": len(release["operations"]["purchase_orders"]),
             "inventory_snapshots": len(release["inventory"]["snapshots"]),
             "production_orders": len(release["manufacturing"]["production_orders"]),
+            "customer_orders": len(release["demand"]["orders"]),
         },
     }
 

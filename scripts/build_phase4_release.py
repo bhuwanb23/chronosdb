@@ -5,10 +5,14 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from data_generator.demand import build_demand
+from data_generator.history import build_history
 from data_generator.inventory_ledger import build_inventory
 from data_generator.manufacturing import build_manufacturing
 from data_generator.phase4_validation import (
     validate_capacity,
+    validate_demand_release,
+    validate_history_release,
     validate_inventory_release,
     validate_manufacturing_release,
     validate_master_release,
@@ -52,6 +56,14 @@ def main() -> None:
         manufacturing["allocations"],
         master,
     )
+    demand = build_demand(profile, aliases, master, manufacturing)
+    validate_demand_release(
+        demand,
+        master,
+        manufacturing["production_orders"],
+    )
+    history = build_history(profile, master, procurement, inventory, demand)
+    validate_history_release(history, inventory)
     output = release_root(profile)
     write_release_json(output / "metadata" / "release_profile.json", profile_payload(profile))
     write_release_json(
@@ -70,6 +82,14 @@ def main() -> None:
             },
             "manufacturing_rows": {
                 key: len(value) for key, value in manufacturing.items()
+            },
+            "demand_rows": {
+                key: len(value) for key, value in demand.items()
+            },
+            "history_rows": {
+                key: len(value)
+                for key, value in history.items()
+                if isinstance(value, list)
             },
         },
     )
