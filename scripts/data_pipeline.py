@@ -56,6 +56,8 @@ def main() -> None:
     _run(root, "generate_checksums.py")
     _run(root, "finalize_release.py")
     _run(root, "generate_checksums.py")
+    _run(root, "score_dataset.py")
+    _run(root, "generate_checksums.py")
     print("Phase 3P–3V data pipeline completed")
 
 

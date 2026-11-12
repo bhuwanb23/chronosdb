@@ -10,6 +10,16 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+SOURCE_PATHS = (
+    Path("src"),
+    Path("scripts"),
+    Path("config"),
+    Path("schemas"),
+    Path("validation"),
+    Path("Makefile"),
+    Path("pyproject.toml"),
+)
+
 
 def _source_revision(root: Path) -> str:
     try:
@@ -32,6 +42,23 @@ def _working_tree_status(root: Path) -> str:
     except (OSError, subprocess.CalledProcessError):
         return "unavailable"
     return "clean" if not changes else "working_tree_changes_present"
+
+
+def _source_tree_hash(root: Path) -> str:
+    digest = hashlib.sha256()
+    paths = [
+        path
+        for relative in SOURCE_PATHS
+        for path in (
+            [root / relative] if (root / relative).is_file() else (root / relative).rglob("*")
+        )
+        if path.is_file() and "__pycache__" not in path.parts and path.suffix != ".pyc"
+    ]
+    for path in sorted(paths):
+        digest.update(path.relative_to(root).as_posix().encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(hashlib.sha256(path.read_bytes()).digest())
+    return digest.hexdigest()
 
 
 def _json(path: Path) -> Any:
@@ -57,6 +84,7 @@ def main() -> None:
         "seed": 260311,
         "source_revision": _source_revision(root),
         "source_tree_status": _working_tree_status(root),
+        "source_tree_hash": _source_tree_hash(root),
         "frozen_at": "2026-11-11T02:30:00Z",
         "validation_status": validation["summary"]["status"],
         "quality_score": score["score"],

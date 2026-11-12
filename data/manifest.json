@@ -70,9 +70,9 @@
       "generator_stage": "reports",
       "path": "artifacts/phase-3-release-manifest.json",
       "random_seed": 260311,
-      "record_count": 14,
+      "record_count": 15,
       "schema_version": "1.0.0",
-      "sha256": "e397e2c270e14a68555287d2d7b4905d52d661216d365854815f67044ae75946"
+      "sha256": "fffd84afbf42950b247ee5db38dc8e8c490f9fc0ed49e6f4311a4c9a0939f874"
     },
     {
       "configuration": "config/generation.yaml",
@@ -1869,7 +1869,7 @@
   "phase": "3",
   "random_seed": 260311,
   "reference_time": "2026-11-11T02:30:00Z",
-  "source_revision": "2aee381",
+  "source_revision": "78bf408",
   "status": "release_candidate",
   "version": "1.0.0"
 }
