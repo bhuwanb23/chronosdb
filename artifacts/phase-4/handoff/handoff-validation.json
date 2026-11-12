@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "checksums": true,
+    "dependency_order": false,
+    "foreign_keys": true,
+    "paths": true,
+    "row_counts": true,
+    "schemas": true
+  },
+  "files_checked": 765,
+  "issues": [
+    "dependency order: EVIDENCE_DOCUMENT_METADATA before EVIDENCE_DOCUMENTS",
+    "dependency order: EVIDENCE_ACCESS_CONTROL_LABELS before EVIDENCE_DOCUMENTS",
+    "dependency order: EVIDENCE_DOCUMENT_METADATA before EVIDENCE_DOCUMENTS",
+    "dependency order: EVIDENCE_ACCESS_CONTROL_LABELS before EVIDENCE_DOCUMENTS"
+  ],
+  "status": "FAIL"
+}

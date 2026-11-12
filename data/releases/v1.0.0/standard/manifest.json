@@ -2823,11 +2823,12 @@
     "version": "1.0.0"
   },
   "seed": 260311,
-  "source_revision": "7d3238b44e06a64ad018615c652738666ee3b279",
+  "source_revision": "72284539d477a5c24ed9be25be5ce2251f4dc7f8",
   "source_state": {
+    "source_input_sha256": "dde881d7235083debcb4475ecfcbce0a1619048f61966949257d24d1e0e74369",
     "working_tree_clean": false,
-    "working_tree_diff_sha256": "384196d52096b52cda9eddced08822990fcb492314eeed49f779a771cc903f12",
-    "working_tree_status_sha256": "bcd68dce47e1c99dbfe753d1fd073c6d9f61d7910265485992a13c94a24057bc"
+    "working_tree_diff_sha256": "5d58570c8d2ba7a19d5c40e412ed586d87d934e0a64421a45929ef7bbcf56e84",
+    "working_tree_status_sha256": "22199b4c727a50773f17d1cb3446720831194fc8e7eaf47f5cad96ad7dd43e99"
   },
   "validation": {
     "command": "python scripts/validate_phase4.py --profile standard --scope 4A-4V",

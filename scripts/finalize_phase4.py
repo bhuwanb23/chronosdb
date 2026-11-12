@@ -1121,6 +1121,7 @@ def _write_readiness(root: Path) -> None:
     run_results: list[dict[str, Any]] = []
     oracle_code = (
         "import sys; from pathlib import Path; "
+        "sys.path.insert(0, str(Path(sys.argv[1]) / 'scripts')); "
         "from scripts.finalize_phase4 import _generate_ground_truth; "
         "_generate_ground_truth(Path(sys.argv[1]))"
     )
@@ -1272,7 +1273,11 @@ TABLE_ALIASES = {
 def _target_table(relative_path: Path) -> str:
     namespace = relative_path.parts[0].upper() if relative_path.parts else "RELEASE"
     stem = re.sub(r"[^A-Za-z0-9_]", "_", relative_path.stem).upper()
-    if relative_path.suffix == ".json" and namespace == "EVIDENCE":
+    if (
+        relative_path.suffix == ".json"
+        and namespace == "EVIDENCE"
+        and "documents" in relative_path.parts
+    ):
         return "EVIDENCE_DOCUMENTS"
     if namespace == "BENCHMARKS" and "scenarios" in relative_path.parts:
         return "BENCHMARKS_SCENARIOS"
@@ -1319,6 +1324,11 @@ def _load_rank(relative_path: Path) -> int:
         "EVIDENCE_DOCUMENTS": 900,
         "EXPECTED_RECOMMENDATION": 1000,
         "SCENARIOS": 1100,
+        "DOCUMENT_METADATA": 890,
+        "DOCUMENTS": 900,
+        "ACCESS_CONTROL_LABELS": 910,
+        "RETRIEVAL_QUERIES": 920,
+        "RELEVANCE_LABELS": 930,
     }
     return ordered.get(stem, 1200)
 
@@ -1518,7 +1528,10 @@ def _validate_handoff(root: Path) -> bool:
             parent = foreign_key["referenced_table"].split(".", 1)[-1]
             if parent not in known_tables:
                 issues.append(f"unknown FK target: {entry['target_table']}->{parent}")
-            elif order_index[parent] >= order_index[entry["target_table"]]:
+            elif (
+                parent != entry["target_table"]
+                and order_index[parent] >= order_index[entry["target_table"]]
+            ):
                 issues.append(
                     f"dependency order: {entry['target_table']} before {parent}"
                 )

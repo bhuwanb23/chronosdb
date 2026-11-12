@@ -2,4 +2,4 @@
 
 Records found: 0.
 
-Status: FAIL
+Status: PASS

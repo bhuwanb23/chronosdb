@@ -2,4 +2,4 @@
 
 Licensing findings: 0.
 
-Status: FAIL
+Status: PASS

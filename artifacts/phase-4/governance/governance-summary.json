@@ -3,40 +3,7 @@
   "external_corpus_copied": false,
   "files_scanned": 1545,
   "findings": {
-    "leakage": [
-      {
-        "code": "ANSWER_LEAKAGE",
-        "file": "evidence/relevance_labels.json"
-      },
-      {
-        "code": "ANSWER_LEAKAGE",
-        "file": "evidence/retrieval_queries.json"
-      },
-      {
-        "code": "ANSWER_LEAKAGE",
-        "file": "evidence/relevance_labels.json"
-      },
-      {
-        "code": "ANSWER_LEAKAGE",
-        "file": "evidence/retrieval_queries.json"
-      },
-      {
-        "code": "ANSWER_LEAKAGE",
-        "file": "evidence/relevance_labels.json"
-      },
-      {
-        "code": "ANSWER_LEAKAGE",
-        "file": "evidence/retrieval_queries.json"
-      },
-      {
-        "code": "ANSWER_LEAKAGE",
-        "file": "evidence/relevance_labels.json"
-      },
-      {
-        "code": "ANSWER_LEAKAGE",
-        "file": "evidence/retrieval_queries.json"
-      }
-    ],
+    "leakage": [],
     "licensing": [],
     "privacy": [],
     "secrets": [],
@@ -46,7 +13,7 @@
   "private_or_personal_records": 0,
   "secrets": 0,
   "split_similarity_findings": 0,
-  "status": "FAIL",
+  "status": "PASS",
   "synthetic_origin": true,
-  "test_answer_leakage": 8
+  "test_answer_leakage": 0
 }
