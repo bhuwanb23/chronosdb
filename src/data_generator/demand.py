@@ -70,7 +70,25 @@ def build_demand(
         production_id = (
             ("MO-0876", "MO-0882", "MO-0889")[index]
             if is_golden
-            else production_orders[index % len(production_orders)]["id"]
+            else next(
+                row["id"]
+                for row in production_orders[index:] + production_orders[:index]
+                if row["product_id"] == product_id
+            )
+        )
+        fulfilled = (
+            quantity / Decimal("2")
+            if not is_golden and index % 7 == 0
+            else quantity
+            if not is_golden and index % 11 == 0
+            else Decimal("0")
+        )
+        order_status = (
+            "PARTIALLY_FULFILLED"
+            if fulfilled and fulfilled < quantity
+            else "FULFILLED"
+            if fulfilled == quantity
+            else "OPEN"
         )
         orders.append(
             {
@@ -80,7 +98,7 @@ def build_demand(
                 "promised_delivery_time": promised,
                 "priority": priority,
                 "sla_class": "GOLD" if is_golden else "STANDARD",
-                "status": "OPEN",
+                "status": order_status,
                 "currency": "INR",
             }
         )
@@ -90,7 +108,7 @@ def build_demand(
                 "customer_order_id": order_id,
                 "product_id": product_id,
                 "ordered_quantity": str(quantity),
-                "fulfilled_quantity": "0",
+                "fulfilled_quantity": str(fulfilled),
                 "unit_revenue": str(unit_revenue),
                 "line_revenue": str(quantity * unit_revenue),
                 "assigned_production_order_id": production_id,
@@ -100,7 +118,7 @@ def build_demand(
             {
                 "id": f"COSTATUS-{index + 1:06d}-01",
                 "customer_order_id": order_id,
-                "status": "OPEN",
+                "status": order_status,
                 "event_time": order_time,
                 "recorded_at": order_time,
             }
@@ -134,6 +152,13 @@ def build_demand(
                 "delay_hours": str(delay_hours),
                 "sla_status": sla_status,
                 "revenue_at_risk": str(late_quantity * unit_revenue),
+                "projection_context": (
+                    "INTERVENTION_PROTECTED"
+                    if order_id == "CO-0701"
+                    else "RESCHEDULING_HARM"
+                    if order_id == "CO-0711"
+                    else "BASELINE"
+                ),
             }
         )
     output = release_root(profile) / "demand"

@@ -81,6 +81,21 @@ def build_golden(
         "DIS-GOLD-S104": "EVT-GOLD-001",
     }
     oracle = _replace(oracle, replacements)
+    golden_sla = [
+        row
+        for row in demand["sla_assignments"]
+        if row["customer_order_line_id"]
+        in {"COL-CO-0701-01", "COL-CO-0704-01", "COL-CO-0711-01"}
+    ]
+    source_risk = sum((int(row["revenue_at_risk"]) for row in golden_sla), 0)
+    source_breaches = sum(row["sla_status"] == "LATE" for row in golden_sla)
+    hybrid_cost = next(
+        row["total_cost_inr"]
+        for row in interventions["costs"]
+        if row["candidate_id"] == "INT-GOLD-C"
+    )
+    if source_risk != 1600000 or source_breaches != 2 or hybrid_cost != "132000":
+        raise ValueError("golden source records do not reconcile to locked headlines")
     outcomes = [
         _candidate("DO-NOTHING", oracle["do_nothing"]),
         _candidate("INT-GOLD-A", oracle["interventions"][0]),
@@ -129,25 +144,33 @@ def build_golden(
         },
         {
             "event_id": "TL-004",
+            "event_type": "BATCH_MATERIAL_ISSUE",
+            "event_time": "2026-11-13T02:30:00Z",
+            "quantity": "200",
+            "component_id": "CMP-MCU-42",
+            "production_order_id": "MO-0876",
+        },
+        {
+            "event_id": "TL-005",
             "event_type": "BATCH_PRODUCTION_COMPLETE",
             "event_time": "2026-11-14T02:30:00Z",
             "production_order_id": "MO-0876",
         },
         {
-            "event_id": "TL-005",
+            "event_id": "TL-006",
             "event_type": "PRODUCT_DELIVERY_READINESS",
             "event_time": "2026-11-14T12:00:00Z",
             "product_id": "PRD-CONTROLLER-X",
             "production_order_id": "MO-0876",
         },
         {
-            "event_id": "TL-006",
+            "event_id": "TL-007",
             "event_type": "CUSTOMER_DELIVERY",
             "event_time": "2026-11-15T00:00:00Z",
             "customer_order_id": "CO-0701",
         },
         {
-            "event_id": "TL-007",
+            "event_id": "TL-008",
             "event_type": "SLA_COMPARISON",
             "event_time": "2026-11-21T00:00:00Z",
             "customer_order_id": "CO-0711",
@@ -199,10 +222,17 @@ def build_golden(
             "formula_version": oracle["provenance"]["formula_version"],
             "phase4_release_version": profile.version,
         },
+        "source_derived_checks": {
+            "demand_revenue_at_risk": str(source_risk),
+            "demand_breach_count": source_breaches,
+            "hybrid_intervention_cost": hybrid_cost,
+            "inventory_transferable_quantity": "400",
+        },
     }
     output = release_root(profile) / "golden"
     write_release_json(output / "scenario.json", payload["scenario"])
     write_release_json(output / "state_at_as_of.json", payload["state_at_as_of"])
+    write_release_json(output / "source_derived_checks.json", payload["source_derived_checks"])
     write_release_json(output / "disruption_overlay.json", payload["disruption_overlay"])
     write_release_json(output / "candidate_interventions.json", outcomes)
     write_release_json(output / "expected_candidate_results.json", outcomes)

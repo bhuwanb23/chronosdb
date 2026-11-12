@@ -126,13 +126,38 @@ def build_history(
             "completed_scenario_immutable": "true",
         }
     ]
-    transactions = inventory["transactions"]
+    replay_inputs = [
+        {
+            "id": "REPLAY-OPENING-CHENNAI-MCU",
+            "warehouse_id": "WH-CHENNAI",
+            "component_id": "CMP-MCU-42",
+            "event_time": "2026-11-11T02:30:00Z",
+            "transaction_type": "OPENING_BALANCE",
+            "quantity": "700",
+        },
+        {
+            "id": "REPLAY-DISPATCH-CHENNAI-MCU",
+            "warehouse_id": "WH-CHENNAI",
+            "component_id": "CMP-MCU-42",
+            "event_time": "2026-11-12T02:30:00Z",
+            "transaction_type": "TRANSFER_DISPATCH",
+            "quantity": "400",
+        },
+        {
+            "id": "REPLAY-RECEIPT-PUNE-MCU",
+            "warehouse_id": "WH-PUNE",
+            "component_id": "CMP-MCU-42",
+            "event_time": "2026-11-14T02:30:00Z",
+            "transaction_type": "TRANSFER_RECEIPT",
+            "quantity": "400",
+        },
+    ]
     checkpoints: list[dict[str, Any]] = []
     golden_key = ("WH-CHENNAI", "CMP-MCU-42")
     for index in range(10):
         checkpoint_time = REFERENCE_TIME + timedelta(days=index)
         quantity = Decimal("0")
-        for transaction in transactions:
+        for transaction in replay_inputs:
             if (
                 transaction["warehouse_id"],
                 transaction["component_id"],
@@ -181,12 +206,14 @@ def build_history(
     write_release_csv(output / "entity_versions.csv", versions)
     write_release_csv(output / "business_events.csv", business_events)
     write_release_csv(output / "late_arriving_records.csv", late_records)
+    write_release_csv(output / "replay_input_events.csv", replay_inputs)
     write_release_csv(output / "historical_inventory_checkpoints.csv", checkpoints)
     write_release_json(output / "replay_expectations.json", expectations)
     return {
         "entity_versions": versions,
         "business_events": business_events,
         "late_arriving_records": late_records,
+        "replay_input_events": replay_inputs,
         "historical_inventory_checkpoints": checkpoints,
         "replay_expectations": expectations,
     }

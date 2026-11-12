@@ -56,6 +56,15 @@ def build_supporting_demos(profile: ReleaseProfile) -> dict[str, list[dict[str, 
             "description": description,
             "status": "FROZEN",
             "test_specific_branch": "false",
+            "source_record_ids": [
+                "PO-2208",
+                "CMP-MCU-42",
+                "MO-0876",
+                "CO-0701",
+            ],
+            "candidate_ids": ["INT-GOLD-A", "INT-GOLD-B", "INT-GOLD-C"],
+            "evidence_query_id": "RET-GOLD-TRANSFER",
+            "audit_requirement": "CAUSAL_TRACE_REQUIRED",
         }
         for scenario_id, scenario_type, expected, description in DEMO_CASES
     ]
@@ -77,6 +86,10 @@ def build_supporting_demos(profile: ReleaseProfile) -> dict[str, list[dict[str, 
                 "expected": {
                     "outcome": scenario["expected_outcome"],
                     "auditability": "REQUIRED",
+                    "source_record_ids": scenario["source_record_ids"],
+                    "candidate_ids": scenario["candidate_ids"],
+                    "evidence_query_id": scenario["evidence_query_id"],
+                    "audit_requirement": scenario["audit_requirement"],
                 },
             },
         )

@@ -71,7 +71,9 @@ def build_evidence(
             "effective_to": source_row["effective_to"],
             "status": source_row["status"],
             "access_class": (
-                "UNAUTHORIZED"
+                "DEMO_INTERNAL"
+                if is_special
+                else "UNAUTHORIZED"
                 if source_row["confidentiality_class"] == "UNAUTHORIZED"
                 else "DEMO_INTERNAL"
             ),

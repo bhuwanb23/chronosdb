@@ -17,6 +17,7 @@ def test_phase4_golden_headlines_and_timeline_are_frozen() -> None:
     golden = {
         "scenario": _json("scenario.json"),
         "state_at_as_of": _json("state_at_as_of.json"),
+        "source_derived_checks": _json("source_derived_checks.json"),
         "expected_candidate_results": _json("expected_candidate_results.json"),
         "expected_recommendation": _json("expected_recommendation.json"),
         "expected_timeline": _json("expected_timeline.json"),

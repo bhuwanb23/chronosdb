@@ -415,6 +415,7 @@ def validate_demand_release(
     line_by_id = {row["customer_order_line_id"]: row for row in lines}
     product_ids = _ids(master["products"])
     production_ids = _ids(production_orders)
+    production_by_id = {row["id"]: row for row in production_orders}
     if len(order_ids) != len(orders) or len(line_by_id) != len(lines):
         raise Phase4ValidationError("duplicate customer demand identifiers")
     for order in orders:
@@ -429,9 +430,17 @@ def validate_demand_release(
             raise Phase4ValidationError(
                 f"unknown demand production: {line['customer_order_line_id']}"
             )
+        if (
+            production_by_id[line["assigned_production_order_id"]]["product_id"]
+            != line["product_id"]
+        ):
+            raise Phase4ValidationError(
+                f"demand product allocation mismatch: {line['customer_order_line_id']}"
+            )
         ordered = Decimal(str(line["ordered_quantity"]))
+        fulfilled = Decimal(str(line["fulfilled_quantity"]))
         unit_revenue = Decimal(str(line["unit_revenue"]))
-        if ordered <= 0 or unit_revenue <= 0:
+        if ordered <= 0 or fulfilled < 0 or fulfilled > ordered or unit_revenue <= 0:
             raise Phase4ValidationError(
                 f"invalid demand quantity or revenue: {line['customer_order_line_id']}"
             )
@@ -480,6 +489,16 @@ def validate_demand_release(
         Decimal(str(row["revenue_at_risk"])) for row in golden.values()
     ) != Decimal("1600000"):
         raise Phase4ValidationError("golden customer demand outcome mismatch")
+    if not any(row["status"] == "PARTIALLY_FULFILLED" for row in orders):
+        raise Phase4ValidationError("demand lacks partial fulfilment coverage")
+    if not any(
+        row["projection_context"] == "INTERVENTION_PROTECTED"
+        for row in sla_assignments
+    ) or not any(
+        row["projection_context"] == "RESCHEDULING_HARM"
+        for row in sla_assignments
+    ):
+        raise Phase4ValidationError("demand lacks intervention impact examples")
 
 
 def validate_history_release(
@@ -506,10 +525,11 @@ def validate_history_release(
     checkpoints = history["historical_inventory_checkpoints"]
     if len(checkpoints) < 10:
         raise Phase4ValidationError("history requires at least ten checkpoints")
+    replay_inputs = history["replay_input_events"]
     for checkpoint in checkpoints:
         cutoff = datetime.fromisoformat(checkpoint["checkpoint_time"].replace("Z", "+00:00"))
         expected = Decimal("0")
-        for transaction in inventory["transactions"]:
+        for transaction in replay_inputs:
             if (
                 transaction["warehouse_id"] == checkpoint["warehouse_id"]
                 and transaction["component_id"] == checkpoint["component_id"]
@@ -525,6 +545,8 @@ def validate_history_release(
                 }[transaction["transaction_type"]]
         if Decimal(str(checkpoint["expected_on_hand_quantity"])) != expected:
             raise Phase4ValidationError(f"history checkpoint mismatch: {checkpoint['id']}")
+    if not inventory["transactions"]:
+        raise Phase4ValidationError("history validation requires release ledger context")
 
 
 def validate_disruptions_release(
@@ -708,6 +730,13 @@ def validate_golden_release(golden: dict[str, Any]) -> None:
         raise Phase4ValidationError("golden timeline is incomplete")
     if golden["state_at_as_of"]["transferable_quantity"] != "400":
         raise Phase4ValidationError("golden state transfer quantity mismatch")
+    checks = golden.get("source_derived_checks", {})
+    if checks.get("demand_revenue_at_risk") != "1600000":
+        raise Phase4ValidationError("golden demand source check mismatch")
+    if checks.get("demand_breach_count") != 2:
+        raise Phase4ValidationError("golden demand breach source check mismatch")
+    if checks.get("hybrid_intervention_cost") != "132000":
+        raise Phase4ValidationError("golden intervention source check mismatch")
 
 
 def validate_supporting_demos_release(demos: dict[str, list[dict[str, Any]]]) -> None:
@@ -730,6 +759,11 @@ def validate_supporting_demos_release(demos: dict[str, list[dict[str, Any]]]) ->
         raise Phase4ValidationError("insufficient-data demo outcome mismatch")
     if any(row["test_specific_branch"] != "false" for row in demos["scenarios"]):
         raise Phase4ValidationError("supporting demo contains test-specific branching")
+    if any(
+        not row["source_record_ids"] or not row["candidate_ids"]
+        for row in demos["scenarios"]
+    ):
+        raise Phase4ValidationError("supporting demo lacks cross-layer references")
 
 
 def validate_benchmark_release(benchmarks: dict[str, Any]) -> None:
@@ -762,6 +796,15 @@ def validate_benchmark_release(benchmarks: dict[str, Any]) -> None:
     category_counts: dict[str, int] = defaultdict(int)
     for scenario in scenarios:
         category_counts[scenario["category"]] += 1
+        for field in (
+            "reference_supplier_id",
+            "reference_component_id",
+            "reference_purchase_order_id",
+            "reference_customer_order_id",
+            "evidence_query_id",
+        ):
+            if not scenario.get(field):
+                raise Phase4ValidationError(f"benchmark reference missing: {scenario['scenario_id']}")
     expected_counts = {
         "FULL_SUPPLIER_OUTAGE": 18,
         "PARTIAL_SUPPLIER_OUTAGE": 8,
@@ -798,3 +841,14 @@ def validate_benchmark_release(benchmarks: dict[str, Any]) -> None:
         if row["scenario_id"] in test_ids
     ) < 3:
         raise Phase4ValidationError("benchmark test set lacks no-feasible cases")
+    test_scenarios = [
+        row for row in scenarios if row["scenario_id"] in test_ids
+    ]
+    if sum(row["partial_fulfillment"] for row in test_scenarios) < 5:
+        raise Phase4ValidationError("benchmark test set lacks partial fulfilment")
+    if sum(
+        row["requires_temporal_reconstruction"] for row in test_scenarios
+    ) < 5:
+        raise Phase4ValidationError("benchmark test set lacks temporal reconstruction")
+    if sum(row["has_misleading_evidence"] for row in test_scenarios) < 5:
+        raise Phase4ValidationError("benchmark test set lacks misleading evidence")

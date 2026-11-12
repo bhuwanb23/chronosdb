@@ -183,6 +183,11 @@ def _load_release(root: Path, profile_name: str) -> dict[str, Any]:
         "state_at_as_of": json.loads(
             (output / "golden" / "state_at_as_of.json").read_text(encoding="utf-8")
         ),
+        "source_derived_checks": json.loads(
+            (output / "golden" / "source_derived_checks.json").read_text(
+                encoding="utf-8"
+            )
+        ),
         "expected_candidate_results": json.loads(
             (output / "golden" / "expected_candidate_results.json").read_text(
                 encoding="utf-8"
@@ -230,6 +235,9 @@ def _load_release(root: Path, profile_name: str) -> dict[str, Any]:
         "entity_versions": _csv(output / "history" / "entity_versions.csv"),
         "business_events": _csv(output / "history" / "business_events.csv"),
         "late_arriving_records": _csv(output / "history" / "late_arriving_records.csv"),
+        "replay_input_events": _csv(
+            output / "history" / "replay_input_events.csv"
+        ),
         "historical_inventory_checkpoints": _csv(
             output / "history" / "historical_inventory_checkpoints.csv"
         ),

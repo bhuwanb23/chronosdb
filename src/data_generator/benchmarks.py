@@ -89,6 +89,32 @@ def build_benchmarks(profile: ReleaseProfile) -> dict[str, Any]:
                 "objective_mode": "MINIMIZE_SLA_BREACHES",
                 "expected_outcome_file": f"expected/{scenario_id}.json",
                 "test_specific_branch": "false",
+                "reference_supplier_id": "SUP-0104",
+                "reference_component_id": "CMP-MCU-42",
+                "reference_purchase_order_id": "PO-2208",
+                "reference_customer_order_id": (
+                    "CO-0701",
+                    "CO-0704",
+                    "CO-0711",
+                )[number % 3],
+                "evidence_query_id": (
+                    "RET-GOLD-NOTICE"
+                    if number % 2
+                    else "RET-GOLD-TRANSFER"
+                ),
+                "requires_temporal_reconstruction": number in {
+                    19,
+                    27,
+                    33,
+                    37,
+                    41,
+                    45,
+                    49,
+                    52,
+                    55,
+                },
+                "has_misleading_evidence": number in {1, 2, 19, 27, 33, 37, 41},
+                "partial_fulfillment": number in {19, 27, 33, 37, 41, 45},
             }
             outcome = {
                 "scenario_id": scenario_id,
@@ -101,6 +127,13 @@ def build_benchmarks(profile: ReleaseProfile) -> dict[str, Any]:
                 "reason_code": reason,
                 "sla_breach_count": 0 if recommendation == "MONITOR_NO_INTERVENTION" else None,
                 "causal_trace_id": f"TRACE-{scenario_id}",
+                "affected_customer_orders": [scenario["reference_customer_order_id"]],
+                "evidence_references": [scenario["evidence_query_id"]],
+                "requires_temporal_reconstruction": scenario[
+                    "requires_temporal_reconstruction"
+                ],
+                "has_misleading_evidence": scenario["has_misleading_evidence"],
+                "partial_fulfillment": scenario["partial_fulfillment"],
             }
             scenarios.append(scenario)
             expected.append(outcome)

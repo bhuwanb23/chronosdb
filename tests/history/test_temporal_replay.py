@@ -20,6 +20,9 @@ def test_temporal_history_has_bitemporal_replay_cases() -> None:
         "entity_versions": _rows(RELEASE / "history" / "entity_versions.csv"),
         "business_events": _rows(RELEASE / "history" / "business_events.csv"),
         "late_arriving_records": _rows(RELEASE / "history" / "late_arriving_records.csv"),
+        "replay_input_events": _rows(
+            RELEASE / "history" / "replay_input_events.csv"
+        ),
         "historical_inventory_checkpoints": _rows(
             RELEASE / "history" / "historical_inventory_checkpoints.csv"
         ),
