@@ -1,0 +1,226 @@
+{
+  "dataset": "chronosdb-demo-dataset",
+  "files": [
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/standard/inventory/inventory_opening_balances.csv",
+      "record_count": 240,
+      "sha256": "19c314f21e675fadbc8f626bbf073a4687d7145086598bb95f40a8f992953cec"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/standard/inventory/inventory_reservations.csv",
+      "record_count": 1,
+      "sha256": "d6b69720fdf782af57200b8e1ab38ba9c926e95246231af0dc3a9caabf03216f"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/standard/inventory/inventory_snapshots_benchmark.csv",
+      "record_count": 10,
+      "sha256": "9839fff30efa096b24a7b6f3f8d8fefa09476ca86f6e624bdbd6beb253342fe8"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/standard/inventory/inventory_snapshots_daily.csv",
+      "record_count": 14400,
+      "sha256": "e70280a7c6748d02cb1318e6932f0aeb431274723f8f2ae310946acb319513cb"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/standard/inventory/inventory_transactions.csv",
+      "record_count": 820,
+      "sha256": "c18aff22d2ee1c8e1f85d81c31d2f83b7e80919bd9db10537009543af70d09ee"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/standard/inventory/transfer_transactions.csv",
+      "record_count": 2,
+      "sha256": "7e8f6de5dc7dbf49c175f53af2e98dee4e7d10b7994403866ac738eaa7c80085"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/bom_lines.csv",
+      "record_count": 92,
+      "sha256": "c8e4b63b13119b55e01802ba443cde1a2efc037bc691564065cd07c599ae503b"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/bom_versions.csv",
+      "record_count": 32,
+      "sha256": "19307371e4ba335028dd84ab569b54ad33b4435faa842701dcf4083f30f0ede4"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/components.csv",
+      "record_count": 80,
+      "sha256": "fb4783b55b694c71490e525c4590e784c7dbdbbcb85d4358df3371ac1581faf7"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/customers.csv",
+      "record_count": 80,
+      "sha256": "6031ff8c524c59855e6313f61709fbbe40cf74424eae5aa7bed50bc5e677488b"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/facilities.csv",
+      "record_count": 2,
+      "sha256": "17133643607ece61d3266b18111dda6656f9577b072da1d8dc2ef32ab01ca341"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/facility_product_capabilities.csv",
+      "record_count": 2,
+      "sha256": "7dd1305949f179788556f2e53368ffe57e4e55b9e45225688ec062dd28bc7c5a"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/products.csv",
+      "record_count": 16,
+      "sha256": "07f1c5312c6b62bfa5e48d1e68ab91701b9daf20d3b88c4b92a0162343820f12"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/sla_policies.csv",
+      "record_count": 3,
+      "sha256": "16b08e50892506abb873cc3960049ab4bd87cfebe2b60648d0221693c653265d"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/supplier_component_agreements.csv",
+      "record_count": 150,
+      "sha256": "3c8687faf7ca1808715a027feefadda9886646a534103df1eaf17fa309b3fde5"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/suppliers.csv",
+      "record_count": 24,
+      "sha256": "e3f2b23d874371a415b5544de2dd27326d2f1d4c7bf0cc0869e501b3ee566388"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/transfer_lanes.csv",
+      "record_count": 6,
+      "sha256": "a19dfac6af7c2b3344bf66d66abab7499683b1bd9348a6af0cffd96ca3268c20"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/warehouse_facility_links.csv",
+      "record_count": 2,
+      "sha256": "0e0b35fe9786ad65559cbf9fbbbb83742b3a58a12186c23e0a8840ba31284e07"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/standard/master/warehouses.csv",
+      "record_count": 3,
+      "sha256": "22065786046c56004da37ae57ce453862ec94cf3e62b2b902fc17772b4379f47"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/metadata/build_summary.json",
+      "record_count": 6,
+      "sha256": "fc7310addf1ae84201813de82e0b316bbb550934b72e28b0f5e76c87ef0495d4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/metadata/id_aliases.json",
+      "record_count": 123,
+      "sha256": "ac6dfeab338c1cddc78dc1648fe2dbd3500fda407c89159e041b79983f734372"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/metadata/release_profile.json",
+      "record_count": 16,
+      "sha256": "17a9fec7c178685988920917a49f7641e5db1563e34c5c6aa0da01c75345b63b"
+    },
+    {
+      "load_order": 2,
+      "path": "data/releases/v1.0.0/standard/operations/purchase_order_receipts.csv",
+      "record_count": 574,
+      "sha256": "a20c5334d39309b96968cd1c2f214c8b157360c8be3003473ccead80b3495efb"
+    },
+    {
+      "load_order": 2,
+      "path": "data/releases/v1.0.0/standard/operations/purchase_order_status_history.csv",
+      "record_count": 1174,
+      "sha256": "db5f591221f8e8f840bd4b98ad5ee6900afb05f8ca46255d773b3a024135cc3e"
+    },
+    {
+      "load_order": 2,
+      "path": "data/releases/v1.0.0/standard/operations/purchase_orders.csv",
+      "record_count": 600,
+      "sha256": "e3e09d6f2f472adc7d6e6f6b0c7ee88348719ea1e953b1101ac54d7378616933"
+    },
+    {
+      "load_order": 2,
+      "path": "data/releases/v1.0.0/standard/operations/supplier_capacity_calendar.csv",
+      "record_count": 80,
+      "sha256": "de3b047303dd2510cb1133374f08f27be83d33208026dd18fb09f014a5b2b3d6"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/standard/production/facility_capacity_calendar.csv",
+      "record_count": 120,
+      "sha256": "feca1796731d49d81f2b812641fd0b41e6819706036de6f3e9fe4003f2d7cbbb"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/standard/production/production_batches.csv",
+      "record_count": 6,
+      "sha256": "5b5c37cb557bed93659c8c88c2d734a5348d02481fff76d2438aa71ee7f4efc0"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/standard/production/production_material_allocations.csv",
+      "record_count": 3,
+      "sha256": "86856f686228d884ac5f9511de696044d9d1bc8f0601b5eef431ebb15e4d942c"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/standard/production/production_material_requirements.csv",
+      "record_count": 400,
+      "sha256": "8f1dd1f73181f05e3192d3f809fd6e69e139c1d6b844f7256fb67151116a3ab7"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/standard/production/production_order_status_history.csv",
+      "record_count": 400,
+      "sha256": "a447359c43bf5381c48fab1062513f50b77dd558bcc2614891a5f579c55e4c64"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/standard/production/production_orders.csv",
+      "record_count": 400,
+      "sha256": "38d51b0d59ad6f454108722d96b81b2cd756f71a71875b29cb089aa073c3ddac"
+    }
+  ],
+  "load_order": [
+    "MASTER",
+    "OPERATIONS",
+    "INVENTORY",
+    "PRODUCTION",
+    "REPORTS"
+  ],
+  "profile": "standard",
+  "profile_contract": {
+    "currency": "INR",
+    "display_timezone": "Asia/Kolkata",
+    "golden_component_id": null,
+    "golden_purchase_order_id": null,
+    "golden_scenario_id": "SCN-GOLD-001",
+    "golden_supplier_id": null,
+    "history_days": 180,
+    "planning_horizon_days": 30,
+    "profile": "standard",
+    "purpose": "full_development_and_benchmarking",
+    "seed": 260311,
+    "snapshot_days": 60,
+    "snapshot_scope": "active_pairs",
+    "source_scale": "standard",
+    "storage_timezone": "UTC",
+    "version": "1.0.0"
+  },
+  "seed": 260311,
+  "source_revision": "7947827",
+  "version": "1.0.0"
+}

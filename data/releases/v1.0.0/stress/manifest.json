@@ -1,0 +1,226 @@
+{
+  "dataset": "chronosdb-demo-dataset",
+  "files": [
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/stress/inventory/inventory_opening_balances.csv",
+      "record_count": 6000,
+      "sha256": "ce2f38e35b81e745ded09700da76a2a917bb8c14d5f036f80de80099dca4d735"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/stress/inventory/inventory_reservations.csv",
+      "record_count": 1,
+      "sha256": "d6b69720fdf782af57200b8e1ab38ba9c926e95246231af0dc3a9caabf03216f"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/stress/inventory/inventory_snapshots_benchmark.csv",
+      "record_count": 10,
+      "sha256": "89d6b29841ea044b5d5fe708a9ee8bca91665ce1d42fb6f5018b8c850d41dad4"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/stress/inventory/inventory_snapshots_daily.csv",
+      "record_count": 72000,
+      "sha256": "3c7fee9f7bc13bf49a9bf5fe93e6ec23c185d81963b45118e6d2e994cad7e4b5"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/stress/inventory/inventory_transactions.csv",
+      "record_count": 17589,
+      "sha256": "2fd78d48d19171d19bc5588ce2397e17b2d4a7b8b3cbc09ab515d20c38a3d8fc"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/stress/inventory/transfer_transactions.csv",
+      "record_count": 2,
+      "sha256": "7e8f6de5dc7dbf49c175f53af2e98dee4e7d10b7994403866ac738eaa7c80085"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/bom_lines.csv",
+      "record_count": 675,
+      "sha256": "44112ef0f66abee33472fb7d25d574ee27be0363bff2757c09185722547bb954"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/bom_versions.csv",
+      "record_count": 240,
+      "sha256": "14d1c388ac513b372966b3e7159e5f1f66fbb178a4cd672278bbf0586a9c2d2b"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/components.csv",
+      "record_count": 500,
+      "sha256": "4244539361b90fd268e52417faeb271b7e2ed355fea252bd992ac1ef6a1bb060"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/customers.csv",
+      "record_count": 1000,
+      "sha256": "4194cbaeb6d61f0faf730f4c519166d7c21b7910ecfa88bf794c4b7ca12b1808"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/facilities.csv",
+      "record_count": 8,
+      "sha256": "d6abda33e420ade492f8201cf8447281e06aa158d29649245e0481c7891f5fee"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/facility_product_capabilities.csv",
+      "record_count": 8,
+      "sha256": "68bce794c0548c80a61191539a76e5d7a687899ae14b1f5261ccf31f8dc5939d"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/products.csv",
+      "record_count": 100,
+      "sha256": "927b37f6fdf3220a4b0dd57654cf0a4cd37b27a0307af80d6b518299256747e8"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/sla_policies.csv",
+      "record_count": 3,
+      "sha256": "16b08e50892506abb873cc3960049ab4bd87cfebe2b60648d0221693c653265d"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/supplier_component_agreements.csv",
+      "record_count": 150,
+      "sha256": "f7893d8395a55cc08b03f8702f6b33dc28218a5a71d13dbab271ddad43981c15"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/suppliers.csv",
+      "record_count": 120,
+      "sha256": "0a869b63405844ca1a767965ad4b696ed17d6a7d6d6867b8f12358a309701908"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/transfer_lanes.csv",
+      "record_count": 132,
+      "sha256": "77ef038976a0bff4361c9581f96198ce81c9aa14286da17861d6f43cda756260"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/warehouse_facility_links.csv",
+      "record_count": 8,
+      "sha256": "eebd4cf1c28a2e268b131088f6ba9b704cc37f425d56cb6984e58e4087b6f92b"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/stress/master/warehouses.csv",
+      "record_count": 12,
+      "sha256": "6fb5f18ab1872be5c7c5131317e282c9f40ded13f8c41ed24d8f679d6bc360ae"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/stress/metadata/build_summary.json",
+      "record_count": 6,
+      "sha256": "2b88665cae858538e29e180d8314335ad863efc968def8712d2f99d45dbfa03c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/stress/metadata/id_aliases.json",
+      "record_count": 732,
+      "sha256": "4cc07620648eaa4dff860f13bc1f99ff703dd51de13464eee76019de71285c1b"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/stress/metadata/release_profile.json",
+      "record_count": 16,
+      "sha256": "49065fd8895bd9c6bd5f4a6861756279ed8fe91e4c60e09ee40454e87406fa9e"
+    },
+    {
+      "load_order": 2,
+      "path": "data/releases/v1.0.0/stress/operations/purchase_order_receipts.csv",
+      "record_count": 11583,
+      "sha256": "e04d33238f0f4dcfc8fd529c9c9d393aad50cd6178aa57e76439b4beaa2736fa"
+    },
+    {
+      "load_order": 2,
+      "path": "data/releases/v1.0.0/stress/operations/purchase_order_status_history.csv",
+      "record_count": 23583,
+      "sha256": "fdde416c36dcbf63380d01e4893794faefba9185b05f6255a13e9a198b3df545"
+    },
+    {
+      "load_order": 2,
+      "path": "data/releases/v1.0.0/stress/operations/purchase_orders.csv",
+      "record_count": 12000,
+      "sha256": "dba824f6e41083e92f98176d82f81727f2a6dba4b7c4fce0d980c32642c4bd8f"
+    },
+    {
+      "load_order": 2,
+      "path": "data/releases/v1.0.0/stress/operations/supplier_capacity_calendar.csv",
+      "record_count": 500,
+      "sha256": "1a20dc2e723747c50580f5e6c3c16317776008437b804a915bf925e061ef1246"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/stress/production/facility_capacity_calendar.csv",
+      "record_count": 120,
+      "sha256": "feca1796731d49d81f2b812641fd0b41e6819706036de6f3e9fe4003f2d7cbbb"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/stress/production/production_batches.csv",
+      "record_count": 6,
+      "sha256": "5b5c37cb557bed93659c8c88c2d734a5348d02481fff76d2438aa71ee7f4efc0"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/stress/production/production_material_allocations.csv",
+      "record_count": 3,
+      "sha256": "86856f686228d884ac5f9511de696044d9d1bc8f0601b5eef431ebb15e4d942c"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/stress/production/production_material_requirements.csv",
+      "record_count": 8000,
+      "sha256": "b4024be01e60184749d0607137f97ad04f1757b1b475ef58c61643539f49af40"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/stress/production/production_order_status_history.csv",
+      "record_count": 8000,
+      "sha256": "b6b8332b9fb4107b55d1fbcde2c5e9f1330b82b29a7fc790c7ee3128d86b4e88"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/stress/production/production_orders.csv",
+      "record_count": 8000,
+      "sha256": "75e3ac79352582cb0e284afeaa864c26b268c40fb76290560013b3e627a3e8a5"
+    }
+  ],
+  "load_order": [
+    "MASTER",
+    "OPERATIONS",
+    "INVENTORY",
+    "PRODUCTION",
+    "REPORTS"
+  ],
+  "profile": "stress",
+  "profile_contract": {
+    "currency": "INR",
+    "display_timezone": "Asia/Kolkata",
+    "golden_component_id": null,
+    "golden_purchase_order_id": null,
+    "golden_scenario_id": "SCN-GOLD-001",
+    "golden_supplier_id": null,
+    "history_days": 180,
+    "planning_horizon_days": 30,
+    "profile": "stress",
+    "purpose": "performance_workload",
+    "seed": 260311,
+    "snapshot_days": 60,
+    "snapshot_scope": "active_pairs",
+    "source_scale": "stress",
+    "storage_timezone": "UTC",
+    "version": "1.0.0"
+  },
+  "seed": 260311,
+  "source_revision": "7947827",
+  "version": "1.0.0"
+}

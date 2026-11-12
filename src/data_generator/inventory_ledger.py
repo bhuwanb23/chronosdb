@@ -180,18 +180,31 @@ def build_inventory(
     transaction_balances = replay_ledger(opening, transactions)
     snapshots: list[dict[str, Any]] = []
     start = datetime(2026, 11, 11, 2, 30, tzinfo=UTC)
+    transactions_by_key: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for transaction in transactions:
+        transactions_by_key[
+            (transaction["warehouse_id"], transaction["component_id"])
+        ].append(transaction)
+    for rows in transactions_by_key.values():
+        rows.sort(key=lambda row: (row["event_time"], row["id"]))
+    snapshot_keys = sorted(opening_by_key)
+    if profile.profile == "stress":
+        active_components = set(component_ids[:100])
+        snapshot_keys = [
+            key for key in snapshot_keys if key[1] in active_components
+        ]
     for day in range(profile.snapshot_days):
         timestamp = start + timedelta(days=day)
-        for warehouse_id, component_id in sorted(opening_by_key):
-            relevant = [
-                row for row in transactions if row["warehouse_id"] == warehouse_id
-                and row["component_id"] == component_id
-                and row["event_time"] <= timestamp.isoformat().replace("+00:00", "Z")
-            ]
-            on_hand = sum(
-                Decimal(str(row["quantity"])) * SIGNS[row["transaction_type"]]
-                for row in relevant
-            )
+        for warehouse_id, component_id in snapshot_keys:
+            key = (warehouse_id, component_id)
+            cutoff = timestamp.isoformat().replace("+00:00", "Z")
+            on_hand = Decimal("0")
+            for transaction in transactions_by_key[key]:
+                if transaction["event_time"] > cutoff:
+                    break
+                on_hand += Decimal(str(transaction["quantity"])) * SIGNS[
+                    transaction["transaction_type"]
+                ]
             reserved = Decimal("180") if (
                 warehouse_id == "WH-CHENNAI" and component_id == "CMP-MCU-42"
             ) else Decimal("0")

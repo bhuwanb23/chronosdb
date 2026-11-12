@@ -1,0 +1,11 @@
+{
+  "counts": {
+    "inventory_snapshots": 14400,
+    "master_files": 13,
+    "production_orders": 400,
+    "purchase_orders": 600
+  },
+  "profile": "standard",
+  "status": "PASS",
+  "version": "1.0.0"
+}

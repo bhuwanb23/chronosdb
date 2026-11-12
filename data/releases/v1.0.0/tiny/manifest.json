@@ -1,0 +1,226 @@
+{
+  "dataset": "chronosdb-demo-dataset",
+  "files": [
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/tiny/inventory/inventory_opening_balances.csv",
+      "record_count": 30,
+      "sha256": "0467ded5a2c0be25263d046b7af37dc4f1b2071275f9e1503d982a65f7873f9a"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/tiny/inventory/inventory_reservations.csv",
+      "record_count": 1,
+      "sha256": "d6b69720fdf782af57200b8e1ab38ba9c926e95246231af0dc3a9caabf03216f"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/tiny/inventory/inventory_snapshots_benchmark.csv",
+      "record_count": 10,
+      "sha256": "3cfea009d873ebb39ddcd06f87a29e599f142b1494245cc2b230fb5c5bf7b8e8"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/tiny/inventory/inventory_snapshots_daily.csv",
+      "record_count": 210,
+      "sha256": "31485a21d0035e8cdf92249f008b1e1dd8c8fc83f8172e2a12f97f1e11b1b2f8"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/tiny/inventory/inventory_transactions.csv",
+      "record_count": 65,
+      "sha256": "5319b679ebf4f5e58cc8f16dcc1f3324280a6fbcf0dc567daf5d1c5385c18e7d"
+    },
+    {
+      "load_order": 3,
+      "path": "data/releases/v1.0.0/tiny/inventory/transfer_transactions.csv",
+      "record_count": 2,
+      "sha256": "7e8f6de5dc7dbf49c175f53af2e98dee4e7d10b7994403866ac738eaa7c80085"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/bom_lines.csv",
+      "record_count": 16,
+      "sha256": "a049b58e2241fabc005698ff4cf5865d058806f326963a6fb93d7d3356548eb3"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/bom_versions.csv",
+      "record_count": 6,
+      "sha256": "e88160c49a41f2fc584081cf7735731a1b5a0dcdb945b754619283e9a20b0a3a"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/components.csv",
+      "record_count": 15,
+      "sha256": "b573dbfe261ae7985a34d76837dc91f04d9dc693203db1716303b628d7e866bc"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/customers.csv",
+      "record_count": 12,
+      "sha256": "93e8a6506186cacba7b301c3ada4e850a7e0dfdb0a5624f0c8128bdc44875b1c"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/facilities.csv",
+      "record_count": 1,
+      "sha256": "b56045683c01f7283fa2f663aa1d67b511d4a6e113ee932b1bbcac0b8b929eea"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/facility_product_capabilities.csv",
+      "record_count": 1,
+      "sha256": "88b7b264edd504f3f9e9533f85d85f652c00dbafbc9238f989f52754ef423eb1"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/products.csv",
+      "record_count": 3,
+      "sha256": "fb3bc17bab1ab505d802d9a3d133069cc99da98d64eca3df0689924ee2b93dce"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/sla_policies.csv",
+      "record_count": 3,
+      "sha256": "16b08e50892506abb873cc3960049ab4bd87cfebe2b60648d0221693c653265d"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/supplier_component_agreements.csv",
+      "record_count": 30,
+      "sha256": "78fc091513dcc72c3ccd01d46bafabd5874fc9a235ee0613460ca876b78fabe8"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/suppliers.csv",
+      "record_count": 5,
+      "sha256": "5188eb606173185947e48492a7733820f604bb43fc9de1d70d7ed0aeb32b25fd"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/transfer_lanes.csv",
+      "record_count": 2,
+      "sha256": "3ba1c03e10eca5d9ec9ff2031822986ded24634fdf7e30f842923cf6320e968f"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/warehouse_facility_links.csv",
+      "record_count": 1,
+      "sha256": "3ecce65e368d09f514a8c162cbc927729c1184a2086f7b1924c72f175b5036ca"
+    },
+    {
+      "load_order": 1,
+      "path": "data/releases/v1.0.0/tiny/master/warehouses.csv",
+      "record_count": 3,
+      "sha256": "c05e46482d702c05bae2e1d3e30b8cd8c880efbfc5512d5cdc400935bc1ade12"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/tiny/metadata/build_summary.json",
+      "record_count": 6,
+      "sha256": "cd7df9de58f1845e21ace9a8b2fb9bd66b662a6115364a900a3a0f63a56ba058"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/tiny/metadata/id_aliases.json",
+      "record_count": 26,
+      "sha256": "84f763454eb1ea15eb25e869969b82b6db34e1a3e44c72ab181551f6d173e4e0"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/tiny/metadata/release_profile.json",
+      "record_count": 16,
+      "sha256": "2c866d30b57bade6cab371ce9e439a6cc5e3b82608d18f61bfbc7b7abbb506bf"
+    },
+    {
+      "load_order": 2,
+      "path": "data/releases/v1.0.0/tiny/operations/purchase_order_receipts.csv",
+      "record_count": 29,
+      "sha256": "25ea07815ea9cec1c93ef91c39364ab8a0e28a93ab140e39368bccef5b034c5f"
+    },
+    {
+      "load_order": 2,
+      "path": "data/releases/v1.0.0/tiny/operations/purchase_order_status_history.csv",
+      "record_count": 59,
+      "sha256": "ef81550ad0435fcf255748b03d1bbab89e491e2dc96ef92bf68fe16ea5dd2d48"
+    },
+    {
+      "load_order": 2,
+      "path": "data/releases/v1.0.0/tiny/operations/purchase_orders.csv",
+      "record_count": 30,
+      "sha256": "736bd97ed773d2b436a94b6522fd85a66cdf96db5383f456052896eb93832c65"
+    },
+    {
+      "load_order": 2,
+      "path": "data/releases/v1.0.0/tiny/operations/supplier_capacity_calendar.csv",
+      "record_count": 15,
+      "sha256": "978aca6065a297d461f7d0e26c96b87fdbc4e87a46a7ea95e3070f2ad31924d3"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/tiny/production/facility_capacity_calendar.csv",
+      "record_count": 28,
+      "sha256": "1a1d20c8d164bb51881da5cba50901056f258727f7a45f4ffdc9ea7f10d93348"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/tiny/production/production_batches.csv",
+      "record_count": 6,
+      "sha256": "5b5c37cb557bed93659c8c88c2d734a5348d02481fff76d2438aa71ee7f4efc0"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/tiny/production/production_material_allocations.csv",
+      "record_count": 3,
+      "sha256": "86856f686228d884ac5f9511de696044d9d1bc8f0601b5eef431ebb15e4d942c"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/tiny/production/production_material_requirements.csv",
+      "record_count": 20,
+      "sha256": "90d3727841beffc8c46e21135456e983ed22e275ca422b99ba3717d3b4b7ce6e"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/tiny/production/production_order_status_history.csv",
+      "record_count": 20,
+      "sha256": "08069e306f9c01f558edf3bf0a3d046baa2e301e91ca43aea5cc3eb307b9f1a1"
+    },
+    {
+      "load_order": 4,
+      "path": "data/releases/v1.0.0/tiny/production/production_orders.csv",
+      "record_count": 20,
+      "sha256": "faa347cc8e91cd15dddbc94e3614ef2bb3ffb51e63fe6e4184eff58c5c5732a8"
+    }
+  ],
+  "load_order": [
+    "MASTER",
+    "OPERATIONS",
+    "INVENTORY",
+    "PRODUCTION",
+    "REPORTS"
+  ],
+  "profile": "tiny",
+  "profile_contract": {
+    "currency": "INR",
+    "display_timezone": "Asia/Kolkata",
+    "golden_component_id": null,
+    "golden_purchase_order_id": null,
+    "golden_scenario_id": "SCN-GOLD-001",
+    "golden_supplier_id": null,
+    "history_days": 180,
+    "planning_horizon_days": 30,
+    "profile": "tiny",
+    "purpose": "unit_testing",
+    "seed": 260311,
+    "snapshot_days": 7,
+    "snapshot_scope": "active_pairs",
+    "source_scale": "tiny",
+    "storage_timezone": "UTC",
+    "version": "1.0.0"
+  },
+  "seed": 260311,
+  "source_revision": "7947827",
+  "version": "1.0.0"
+}
