@@ -1,0 +1,26 @@
+{
+  "artifact_hashes": {
+    "artifacts/data-validation-report.json": "e76370c11e82683174f90da364edb62268791ae4c1bc4ce2de3b650d7328fba6",
+    "artifacts/data-validation-report.md": "be6d5f2c79e2c23c18871593513ae6ebe42636ea3c225d3e9a71a957b930eebd",
+    "artifacts/dataset-statistics.json": "cda61b9358324af9278f81c0d4931bf3e8861af10ad2ecce8a957245cd802375",
+    "artifacts/dataset-statistics.md": "6e67e6dfc2a7fbbd0f4b852bfc331750506d6e8b9e05cd8a36f4c9633b3826b3",
+    "artifacts/distribution-checks.json": "900f04277904a456025f71a1069c45e0f9ee4e53e4621c26d1bd961da75bbcd5",
+    "artifacts/privacy-review.json": "a94b568f861b5772ebbaa5db067aa052e8b493980769664482b0c51c036ff0f2"
+  },
+  "automatic_failures": [],
+  "checksums_file": "data/checksums.sha256",
+  "dataset": "chronosdb-synthetic-supply-chain",
+  "freeze_rules": [
+    "Do not regenerate frozen benchmark or golden inputs with another seed.",
+    "Do not manually edit generated records.",
+    "Any release change requires a new dataset version and review."
+  ],
+  "frozen_at": "2026-11-11T02:30:00Z",
+  "quality_score": 100,
+  "quality_status": "PASS",
+  "release_label": "phase-3-dataset-v1.0.0",
+  "seed": 260311,
+  "source_revision": "ffd89dc",
+  "validation_status": "PASS",
+  "version": "1.0.0"
+}

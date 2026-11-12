@@ -53,11 +53,13 @@ def test_manual_workbook_matches_oracle() -> None:
             (GOLDEN_DIR / "manual_workbook.csv").read_text(encoding="utf-8").splitlines()
         )
     }
-    assert int(by_case["do_nothing"]["breached_customer_orders"]) == result["do_nothing"][
-        "breached_customer_orders"
-    ]
-    assert by_case["do_nothing"]["revenue_at_risk_inr"] == result["do_nothing"]["revenue_at_risk_inr"]
-    hybrid = next(row for row in result["interventions"] if row["candidate_id"] == "INT-GOLD-C")
-    workbook_hybrid = by_case["INT-GOLD-C"]
-    assert int(workbook_hybrid["breached_customer_orders"]) == hybrid["breached_customer_orders"]
-    assert workbook_hybrid["cost_inr"] == hybrid["intervention_cost_inr"]
+    oracle_rows = {
+        "baseline": result["baseline"],
+        "do_nothing": result["do_nothing"],
+        **{row["candidate_id"]: row for row in result["interventions"]},
+    }
+    for case, oracle in oracle_rows.items():
+        workbook = by_case[case]
+        assert int(workbook["breached_customer_orders"]) == oracle["breached_customer_orders"]
+        assert workbook["revenue_at_risk_inr"] == oracle["revenue_at_risk_inr"]
+        assert workbook["cost_inr"] == oracle["intervention_cost_inr"]

@@ -1,0 +1,19 @@
+{
+  "counts": {
+    "documents": 175,
+    "expired": 10,
+    "project_authored": 175,
+    "prompt_injection": 5,
+    "unauthorized": 10
+  },
+  "findings": [],
+  "license": {
+    "corpus_origin": "PROJECT_AUTHORED",
+    "external_corpus_copied": false,
+    "repository_license_applies": true
+  },
+  "phase": "3R",
+  "report_version": "1.0.0",
+  "scale": "standard",
+  "status": "PASS"
+}

@@ -14,7 +14,7 @@
     {
       "path": "data/generated/operational/stress/production_orders.csv",
       "record_count": 8000,
-      "sha256": "85796ffe63babfeb81b18f2c19b1d8ac94cd31eb194a81af9ee841a6ed2d7b24"
+      "sha256": "0d22c1f4d6de58876e573afdfe066599eda3d723b8c1c56ce4828a475af387b7"
     },
     {
       "path": "data/generated/operational/stress/production_customer_allocations.csv",
@@ -33,13 +33,13 @@
     },
     {
       "path": "data/generated/operational/stress/inventory_transactions.csv",
-      "record_count": 23154,
-      "sha256": "e7da8bccc4652b75de403f6eee0d7f2e39ffbfbf192640cdbcef0cb125e85bd7"
+      "record_count": 23719,
+      "sha256": "299fcb802c204e5e9d1d43ca0051f698e952c53af80f22157acfe5a116ad4f60"
     },
     {
       "path": "data/generated/operational/stress/inventory_snapshots.csv",
       "record_count": 1086000,
-      "sha256": "109c56a3869253af0789d40fc661d9f55e8c6b241d73cd3ad28d876b64ba6f82"
+      "sha256": "58866409a5dde44bee95af1875ed2b930a090c4dc8afe58821ba5aca52506065"
     },
     {
       "path": "data/generated/history/stress/entity_versions.csv",
@@ -48,13 +48,13 @@
     },
     {
       "path": "data/generated/history/stress/status_events.csv",
-      "record_count": 28000,
-      "sha256": "239188f9d02575ad2a8b25b7490a43458cf689518e331fb749e410fafa58d6bc"
+      "record_count": 21116,
+      "sha256": "74dbbfffde23b5e4b9f2b280761856ab78f013714d06bc230dec0d5c11c1bd36"
     },
     {
       "path": "data/generated/history/stress/daily_inventory_snapshots.csv",
       "record_count": 1086000,
-      "sha256": "109c56a3869253af0789d40fc661d9f55e8c6b241d73cd3ad28d876b64ba6f82"
+      "sha256": "58866409a5dde44bee95af1875ed2b930a090c4dc8afe58821ba5aca52506065"
     },
     {
       "path": "data/generated/history/stress/supplier_performance_history.csv",
@@ -78,8 +78,8 @@
     },
     {
       "path": "data/generated/history/stress/production_history.csv",
-      "record_count": 8000,
-      "sha256": "f37ffda58230cfc63f058fb34b7c4f9fc9324ccd8c9e1cec4043433fda63f3d6"
+      "record_count": 1116,
+      "sha256": "961eaaba4f4c502509c5586aabeff6ad01d9fa6cfcf6bb4fe7023e676922ca81"
     },
     {
       "path": "data/generated/history/stress/historical_disruptions.csv",
@@ -89,7 +89,7 @@
     {
       "path": "data/generated/history/stress/late_arriving_corrections.csv",
       "record_count": 1,
-      "sha256": "64900dec85aa342a76e8541a04ffc0ec5ccbb642e21c8507fa4df19a908a651a"
+      "sha256": "d36de43c7b18d1a9d626d92199c9bae470a9d06b8b159f56c9387db345c08a26"
     }
   ],
   "layer": "operational_and_history",
