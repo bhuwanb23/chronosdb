@@ -156,11 +156,6 @@ def validate_inventory_release(inventory: dict[str, list[dict[str, Any]]]) -> No
     }
     if not opening_keys:
         raise Phase4ValidationError("inventory has no opening balances")
-    transfer_ids: dict[str, set[str]] = defaultdict(set)
-    for row in inventory["transfer_transactions"]:
-        transfer_ids[row["transfer_id"]].add(row["transaction_type"])
-    if any(states != {"TRANSFER_DISPATCH", "TRANSFER_RECEIPT"} for states in transfer_ids.values()):
-        raise Phase4ValidationError("transfer dispatch/receipt pairing is incomplete")
     signs = {
         "OPENING_BALANCE": 1,
         "PURCHASE_RECEIPT": 1,
@@ -168,22 +163,65 @@ def validate_inventory_release(inventory: dict[str, list[dict[str, Any]]]) -> No
         "TRANSFER_DISPATCH": -1,
         "TRANSFER_RECEIPT": 1,
     }
-    for row in snapshots:
+    unknown_types = {
+        row["transaction_type"] for row in transactions
+    } - set(signs)
+    if unknown_types:
+        raise Phase4ValidationError(f"unknown inventory transaction type: {sorted(unknown_types)}")
+    if any(Decimal(str(row["quantity"])) < 0 for row in transactions):
+        raise Phase4ValidationError("inventory transaction quantity must be non-negative")
+    transfer_ids: dict[str, set[str]] = defaultdict(set)
+    for row in inventory["transfer_transactions"]:
+        transfer_ids[row["transfer_id"]].add(row["transaction_type"])
+    if any(states != {"TRANSFER_DISPATCH", "TRANSFER_RECEIPT"} for states in transfer_ids.values()):
+        raise Phase4ValidationError("transfer dispatch/receipt pairing is incomplete")
+    transactions_by_key: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for transaction in transactions:
+        key = (transaction["warehouse_id"], transaction["component_id"])
+        if key not in opening_keys:
+            raise Phase4ValidationError(f"transaction has no opening balance: {transaction['id']}")
+        transactions_by_key[key].append(transaction)
+    for rows in transactions_by_key.values():
+        rows.sort(key=lambda row: (row["event_time"], row["id"]))
+    reservation_by_key: dict[tuple[str, str], Decimal] = defaultdict(lambda: Decimal("0"))
+    for reservation in inventory["reservations"]:
+        key = (reservation["warehouse_id"], reservation["component_id"])
+        if key not in opening_keys:
+            raise Phase4ValidationError(f"reservation has no opening balance: {reservation['id']}")
+        quantity = Decimal(str(reservation["reserved_quantity"]))
+        if quantity < 0:
+            raise Phase4ValidationError(f"negative reservation: {reservation['id']}")
+        reservation_by_key[key] += quantity
+    for transfer in inventory["transfer_transactions"]:
+        quantity = Decimal(str(transfer["quantity"]))
+        if quantity <= 0:
+            raise Phase4ValidationError(f"invalid transfer quantity: {transfer['id']}")
+        source_key = (transfer["source_warehouse_id"], transfer["component_id"])
+        if source_key not in opening_keys:
+            raise Phase4ValidationError(f"transfer has no source opening balance: {transfer['id']}")
+        if transfer["transaction_type"] == "TRANSFER_DISPATCH":
+            event_time = datetime.fromisoformat(transfer["event_time"].replace("Z", "+00:00"))
+            on_hand = Decimal("0")
+            for transaction in transactions_by_key[source_key]:
+                if datetime.fromisoformat(transaction["event_time"].replace("Z", "+00:00")) >= event_time:
+                    break
+                on_hand += Decimal(str(transaction["quantity"])) * signs[transaction["transaction_type"]]
+            if quantity > on_hand - reservation_by_key[source_key]:
+                raise Phase4ValidationError(f"transfer exceeds available quantity: {transfer['id']}")
+    golden_snapshot = None
+    for row in sorted(
+        snapshots,
+        key=lambda item: (item["warehouse_id"], item["component_id"], item["snapshot_time"]),
+    ):
         key = (row["warehouse_id"], row["component_id"])
         if key not in opening_keys:
             raise Phase4ValidationError(f"snapshot has no opening balance: {row['id']}")
         snapshot_time = datetime.fromisoformat(row["snapshot_time"].replace("Z", "+00:00"))
-        expected = sum(
-            Decimal(str(transaction["quantity"])) * signs[transaction["transaction_type"]]
-            for transaction in transactions
-            if (
-                transaction["warehouse_id"],
-                transaction["component_id"],
-            ) == key
-            and datetime.fromisoformat(transaction["event_time"].replace("Z", "+00:00"))
-            <= snapshot_time
-            and transaction["transaction_type"] in signs
-        )
+        expected = Decimal("0")
+        for transaction in transactions_by_key[key]:
+            if datetime.fromisoformat(transaction["event_time"].replace("Z", "+00:00")) > snapshot_time:
+                break
+            expected += Decimal(str(transaction["quantity"])) * signs[transaction["transaction_type"]]
         if Decimal(str(row["on_hand_quantity"])) != expected:
             raise Phase4ValidationError(f"snapshot replay mismatch: {row['id']}")
         available = max(
@@ -200,6 +238,14 @@ def validate_inventory_release(inventory: dict[str, list[dict[str, Any]]]) -> No
         )
         if Decimal(str(row["transferable_quantity"])) != transferable:
             raise Phase4ValidationError(f"transferable quantity mismatch: {row['id']}")
+        if (
+            row["warehouse_id"],
+            row["component_id"],
+            row["snapshot_time"],
+        ) == ("WH-CHENNAI", "CMP-MCU-42", "2026-11-11T02:30:00Z"):
+            golden_snapshot = row
+    if golden_snapshot is None or Decimal(str(golden_snapshot["transferable_quantity"])) != Decimal("400"):
+        raise Phase4ValidationError("golden transferable quantity must remain 400")
 
 
 def validate_manufacturing_release(
@@ -207,16 +253,57 @@ def validate_manufacturing_release(
     requirements: list[dict[str, Any]],
     batches: list[dict[str, Any]],
     allocations: list[dict[str, Any]],
+    master: dict[str, list[dict[str, Any]]] | None = None,
 ) -> None:
     order_ids = _ids(production_orders)
+    orders_by_id = {row["id"]: row for row in production_orders}
+    active_boms = {
+        row["product_id"]: row
+        for row in (master or {}).get("bom_versions", [])
+        if row["status"] == "ACTIVE"
+    }
+    bom_lines = (master or {}).get("bom_lines", [])
+    expected_requirement_keys: set[tuple[str, str]] = set()
     for order in production_orders:
         planned = Decimal(str(order["planned_quantity"]))
         completed = Decimal(str(order["completed_quantity"]))
         if completed < 0 or completed > planned:
             raise Phase4ValidationError(f"production quantity bounds: {order['id']}")
+        if master is not None:
+            if order["product_id"] not in _ids(master["products"]):
+                raise Phase4ValidationError(f"unknown production product: {order['id']}")
+            if order["facility_id"] not in _ids(master["facilities"]):
+                raise Phase4ValidationError(f"unknown production facility: {order['id']}")
+            bom = active_boms.get(order["product_id"])
+            if bom is None:
+                raise Phase4ValidationError(f"production order has no active BOM: {order['id']}")
+            expected_requirement_keys.update(
+                (order["id"], line["id"])
+                for line in bom_lines
+                if line["bom_version_id"] == bom["id"]
+            )
+    actual_requirement_keys: set[tuple[str, str]] = set()
     for requirement in requirements:
         if requirement["production_order_id"] not in order_ids:
             raise Phase4ValidationError(f"unknown material requirement: {requirement['id']}")
+        order = orders_by_id[requirement["production_order_id"]]
+        if master is not None:
+            key = (requirement["production_order_id"], requirement["bom_line_id"])
+            actual_requirement_keys.add(key)
+            if requirement["product_id"] != order["product_id"]:
+                raise Phase4ValidationError(f"material product mismatch: {requirement['id']}")
+            bom = active_boms.get(order["product_id"])
+            line = next(
+                (
+                    candidate
+                    for candidate in bom_lines
+                    if candidate["id"] == requirement["bom_line_id"]
+                    and candidate["bom_version_id"] == bom["id"]
+                ),
+                None,
+            )
+            if line is None or line["component_id"] != requirement["component_id"]:
+                raise Phase4ValidationError(f"material component is outside active BOM: {requirement['id']}")
         remaining = Decimal(str(requirement["remaining_quantity"]))
         bom_quantity = Decimal(str(requirement["bom_quantity"]))
         scrap = Decimal(str(requirement["scrap_factor"]))
@@ -225,13 +312,46 @@ def validate_manufacturing_release(
             raise Phase4ValidationError(
                 f"material requirement formula mismatch: {requirement['id']}"
             )
+    if master is not None and actual_requirement_keys != expected_requirement_keys:
+        raise Phase4ValidationError("material requirements do not match active BOM lines")
     for batch in batches:
-        expected = Decimal(str(batch["quantity"])) * Decimal("2")
+        if batch["production_order_id"] not in order_ids:
+            raise Phase4ValidationError(f"unknown production batch: {batch['id']}")
+        if master is not None:
+            order = orders_by_id[batch["production_order_id"]]
+            if batch["product_id"] != order["product_id"]:
+                raise Phase4ValidationError(f"batch product mismatch: {batch['id']}")
+            if batch["facility_id"] != order["facility_id"]:
+                raise Phase4ValidationError(f"batch facility mismatch: {batch['id']}")
+            matching = [
+                requirement for requirement in requirements
+                if requirement["production_order_id"] == batch["production_order_id"]
+                and requirement["component_id"] == batch["component_id"]
+            ]
+            if not matching:
+                raise Phase4ValidationError(f"batch component is outside active BOM: {batch['id']}")
+            if batch["component_id"] not in _ids(master["components"]):
+                raise Phase4ValidationError(f"unknown batch component: {batch['id']}")
+        bom_quantity = Decimal(str(batch.get("bom_quantity", "2")))
+        scrap_factor = Decimal(str(batch.get("scrap_factor", "0")))
+        expected = Decimal(str(batch["quantity"])) * bom_quantity * (Decimal("1") + scrap_factor)
         if batch["status"] == "RELEASED" and Decimal(str(batch["material_quantity"])) != expected:
             raise Phase4ValidationError(f"batch material mismatch: {batch['id']}")
     for allocation in allocations:
         if allocation["production_order_id"] not in order_ids:
             raise Phase4ValidationError(f"unknown production allocation: {allocation['id']}")
+        if Decimal(str(allocation["allocated_quantity"])) < 0:
+            raise Phase4ValidationError(f"negative production allocation: {allocation['id']}")
+        if master is not None:
+            order = orders_by_id[allocation["production_order_id"]]
+            if allocation["product_id"] != order["product_id"]:
+                raise Phase4ValidationError(f"allocation product mismatch: {allocation['id']}")
+            if not any(
+                requirement["production_order_id"] == allocation["production_order_id"]
+                and requirement["component_id"] == allocation["component_id"]
+                for requirement in requirements
+            ):
+                raise Phase4ValidationError(f"allocation component is outside active BOM: {allocation['id']}")
 
 
 def validate_nonnegative(rows: list[dict[str, Any]], fields: tuple[str, ...]) -> None:

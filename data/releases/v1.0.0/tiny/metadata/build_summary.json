@@ -15,11 +15,11 @@
     "batches": 6,
     "capacity": 28,
     "production_orders": 20,
-    "requirements": 20,
+    "requirements": 78,
     "statuses": 20
   },
   "master_rows": {
-    "bom_lines": 16,
+    "bom_lines": 17,
     "bom_versions": 6,
     "components": 15,
     "customers": 12,
@@ -34,7 +34,7 @@
     "warehouses": 3
   },
   "procurement_rows": {
-    "capacity": 15,
+    "capacity": 30,
     "purchase_orders": 30,
     "receipts": 29,
     "status_history": 59

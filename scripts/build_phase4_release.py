@@ -36,7 +36,7 @@ def main() -> None:
         procurement["receipts"],
         procurement["capacity"],
     )
-    manufacturing = build_manufacturing(profile, aliases)
+    manufacturing = build_manufacturing(profile, aliases, master)
     validate_capacity(manufacturing["batches"], manufacturing["capacity"])
     inventory = build_inventory(
         profile,
@@ -50,6 +50,7 @@ def main() -> None:
         manufacturing["requirements"],
         manufacturing["batches"],
         manufacturing["allocations"],
+        master,
     )
     output = release_root(profile)
     write_release_json(output / "metadata" / "release_profile.json", profile_payload(profile))

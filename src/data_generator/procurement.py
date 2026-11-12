@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 from collections import defaultdict
+from datetime import date
 from decimal import Decimal
 from pathlib import Path
 from typing import Any
@@ -34,7 +35,11 @@ def build_procurement(
     capacity_by_key: dict[tuple[str, str], Decimal] = defaultdict(lambda: Decimal("0"))
     for agreement in (master or {}).get("supplier_component_agreements", []):
         key = (agreement["supplier_id"], agreement["component_id"])
-        capacity_by_key[key] += Decimal(str(agreement["daily_capacity_units"])) * 100
+        valid_days = (
+            date.fromisoformat(agreement["effective_to"][:10])
+            - date.fromisoformat(agreement["effective_from"][:10])
+        ).days + 1
+        capacity_by_key[key] += Decimal(str(agreement["daily_capacity_units"])) * valid_days
     for index, row in enumerate(source, start=1):
         golden = index == 1
         order_id = "PO-2208" if golden else f"PO-P4-{index:06d}"

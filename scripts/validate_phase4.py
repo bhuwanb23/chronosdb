@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -22,6 +23,40 @@ from data_generator.release_profile import load_release_profile, release_root
 def _csv(path: Path) -> list[dict[str, str]]:
     with path.open(encoding="utf-8", newline="") as stream:
         return list(csv.DictReader(stream))
+
+
+def _validate_manifest(root: Path, output: Path) -> None:
+    manifest_path = output / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    nested_profiles = {"tiny", "demo", "standard", "stress"}
+    actual: dict[str, str] = {}
+    for path in output.rglob("*"):
+        relative_to_output = path.relative_to(output)
+        if (
+            path.is_file()
+            and path.name != "manifest.json"
+            and not (
+                manifest.get("profile") == "demo"
+                and relative_to_output.parts[0] in nested_profiles
+            )
+        ):
+            actual[path.relative_to(root).as_posix()] = hashlib.sha256(
+                path.read_bytes()
+            ).hexdigest()
+    declared = {
+        item["path"]: item["sha256"]
+        for item in manifest.get("files", [])
+    }
+    if declared != actual:
+        missing = sorted(set(actual) - set(declared))
+        extra = sorted(set(declared) - set(actual))
+        changed = sorted(
+            path for path in set(actual) & set(declared)
+            if actual[path] != declared[path]
+        )
+        raise Phase4ValidationError(
+            f"manifest hash mismatch (missing={missing}, extra={extra}, changed={changed})"
+        )
 
 
 def _load_release(root: Path, profile_name: str) -> dict[str, Any]:
@@ -86,6 +121,7 @@ def _load_release(root: Path, profile_name: str) -> dict[str, Any]:
 def validate_profile(root: Path, profile_name: str) -> dict[str, Any]:
     release = _load_release(root, profile_name)
     profile = release["profile"]
+    _validate_manifest(root, release["output"])
     validate_master_release(
         release["master"],
         require_full_network=profile.profile != "tiny",
@@ -102,6 +138,7 @@ def validate_profile(root: Path, profile_name: str) -> dict[str, Any]:
         release["manufacturing"]["requirements"],
         release["manufacturing"]["batches"],
         release["manufacturing"]["allocations"],
+        release["master"],
     )
     validate_capacity(
         release["manufacturing"]["batches"],

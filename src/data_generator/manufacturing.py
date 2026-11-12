@@ -25,6 +25,7 @@ def _map(value: str, aliases: dict[str, str]) -> str:
 def build_manufacturing(
     profile: ReleaseProfile,
     aliases: dict[str, str],
+    master: dict[str, list[dict[str, Any]]] | None = None,
 ) -> dict[str, list[dict[str, Any]]]:
     source_root = profile.root / "data" / "generated" / "operational" / profile.source_scale
     source_orders = _read_csv(source_root / "production_orders.csv")
@@ -33,6 +34,12 @@ def build_manufacturing(
     batches: list[dict[str, Any]] = []
     requirements: list[dict[str, Any]] = []
     allocations: list[dict[str, Any]] = []
+    active_boms = {
+        row["product_id"]: row
+        for row in (master or {}).get("bom_versions", [])
+        if row["status"] == "ACTIVE"
+    }
+    bom_lines = (master or {}).get("bom_lines", [])
     golden_ids = ("MO-0876", "MO-0882", "MO-0889")
     golden_starts = (
         "2026-11-12T02:30:00Z",
@@ -83,21 +90,38 @@ def build_manufacturing(
                 "recorded_at": start,
             }
         )
-        component_id = "CMP-MCU-42" if is_golden else _map("CMP-0002", aliases)
-        required = quantity * Decimal("2")
-        requirements.append(
-            {
-                "id": f"PMR-P4-{index:06d}",
-                "production_order_id": order_id,
-                "component_id": component_id,
-                "remaining_quantity": str(quantity),
-                "bom_quantity": "2",
-                "scrap_factor": "0",
-                "required_quantity": str(Decimal(math.ceil(required))),
-                "consumption_convention": "BATCH_START",
-            }
+        bom = active_boms.get(product_id)
+        if bom is None:
+            raise ValueError(f"no active BOM for production product {product_id}")
+        product_lines = [
+            line for line in bom_lines if line["bom_version_id"] == bom["id"]
+        ]
+        for line_index, line in enumerate(product_lines, start=1):
+            bom_quantity = Decimal(str(line["quantity_per"]))
+            scrap_factor = Decimal(str(line["scrap_factor"]))
+            required = quantity * bom_quantity * (Decimal("1") + scrap_factor)
+            requirements.append(
+                {
+                    "id": f"PMR-P4-{index:06d}-{line_index:02d}",
+                    "production_order_id": order_id,
+                    "product_id": product_id,
+                    "bom_version_id": bom["id"],
+                    "bom_line_id": line["id"],
+                    "component_id": line["component_id"],
+                    "remaining_quantity": str(quantity),
+                    "bom_quantity": str(bom_quantity),
+                    "scrap_factor": str(scrap_factor),
+                    "required_quantity": str(Decimal(math.ceil(required))),
+                    "consumption_convention": "BATCH_START",
+                }
+            )
+        golden_material_line = next(
+            (line for line in product_lines if line["component_id"] == "CMP-MCU-42"),
+            None,
         )
         if is_golden:
+            if golden_material_line is None:
+                raise ValueError("golden product BOM is missing CMP-MCU-42")
             for batch_index in range(2):
                 batch_start = (
                     datetime.fromisoformat(start.replace("Z", "+00:00"))
@@ -108,9 +132,12 @@ def build_manufacturing(
                     {
                         "id": f"BATCH-{order_id}-{batch_index + 1:02d}",
                         "production_order_id": order_id,
+                        "product_id": product_id,
                         "facility_id": "FAC-PUNE",
                         "warehouse_id": "WH-PUNE",
                         "component_id": "CMP-MCU-42",
+                        "bom_quantity": golden_material_line["quantity_per"],
+                        "scrap_factor": golden_material_line["scrap_factor"],
                         "batch_date": batch_start[:10],
                         "batch_start_time": batch_start,
                         "quantity": "100",
@@ -123,6 +150,7 @@ def build_manufacturing(
                 {
                     "id": f"PMA-{order_id}",
                     "production_order_id": order_id,
+                    "product_id": product_id,
                     "component_id": "CMP-MCU-42",
                     "allocated_quantity": "400" if index <= 2 else "0",
                     "allocation_status": "ALLOCATED" if index <= 2 else "BLOCKED",

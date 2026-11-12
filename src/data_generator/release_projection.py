@@ -136,8 +136,9 @@ def project_master(
                 "effective_to": "2026-12-11T02:30:00Z",
             }
         )
-    agreements = projected["supplier_component_agreements"][:150]
-    projected["supplier_component_agreements"] = agreements
+    projected["supplier_component_agreements"] = projected[
+        "supplier_component_agreements"
+    ]
     active_boms = {
         row["id"] for row in projected["bom_versions"] if row["status"] == "ACTIVE"
     }
@@ -146,7 +147,7 @@ def project_master(
     for row in projected["bom_lines"]:
         lines_by_bom.setdefault(row["bom_version_id"], []).append(row)
     next_line = len(projected["bom_lines"]) + 1
-    for bom_id in active_boms:
+    for bom_id in sorted(active_boms):
         existing = lines_by_bom.setdefault(bom_id, [])
         used = {row["component_id"] for row in existing}
         for component_id in component_ids:
@@ -169,6 +170,33 @@ def project_master(
     projected["bom_lines"] = [
         line for lines in lines_by_bom.values() for line in lines
     ]
+    controller_bom = next(
+        row
+        for row in projected["bom_versions"]
+        if row["product_id"] == "PRD-CONTROLLER-X" and row["status"] == "ACTIVE"
+    )
+    controller_lines = [
+        line
+        for line in projected["bom_lines"]
+        if line["bom_version_id"] == controller_bom["id"]
+    ]
+    controller_mcu_line = next(
+        (line for line in controller_lines if line["component_id"] == "CMP-MCU-42"),
+        None,
+    )
+    if controller_mcu_line is not None:
+        controller_mcu_line["quantity_per"] = "2"
+    else:
+        projected["bom_lines"].append(
+            {
+                "id": f"BOMLINE-P4-{next_line:06d}",
+                "bom_version_id": controller_bom["id"],
+                "component_id": "CMP-MCU-42",
+                "quantity_per": "2",
+                "scrap_factor": "0.0",
+                "mandatory": "true",
+            }
+        )
     return projected, aliases
 
 

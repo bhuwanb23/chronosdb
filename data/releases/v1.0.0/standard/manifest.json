@@ -5,7 +5,7 @@
       "load_order": 3,
       "path": "data/releases/v1.0.0/standard/inventory/inventory_opening_balances.csv",
       "record_count": 240,
-      "sha256": "19c314f21e675fadbc8f626bbf073a4687d7145086598bb95f40a8f992953cec"
+      "sha256": "4dae7ecc0234859b1f70d4538314434b8ec5ad6e3a8c1785890269d5239186ae"
     },
     {
       "load_order": 3,
@@ -17,19 +17,19 @@
       "load_order": 3,
       "path": "data/releases/v1.0.0/standard/inventory/inventory_snapshots_benchmark.csv",
       "record_count": 10,
-      "sha256": "9839fff30efa096b24a7b6f3f8d8fefa09476ca86f6e624bdbd6beb253342fe8"
+      "sha256": "89d6b29841ea044b5d5fe708a9ee8bca91665ce1d42fb6f5018b8c850d41dad4"
     },
     {
       "load_order": 3,
       "path": "data/releases/v1.0.0/standard/inventory/inventory_snapshots_daily.csv",
       "record_count": 14400,
-      "sha256": "e70280a7c6748d02cb1318e6932f0aeb431274723f8f2ae310946acb319513cb"
+      "sha256": "f827843294b803972e6edca5a797d84965ab5e9c4088e40350e2ff425661dbd1"
     },
     {
       "load_order": 3,
       "path": "data/releases/v1.0.0/standard/inventory/inventory_transactions.csv",
-      "record_count": 820,
-      "sha256": "c18aff22d2ee1c8e1f85d81c31d2f83b7e80919bd9db10537009543af70d09ee"
+      "record_count": 818,
+      "sha256": "8cd5ad7b177af3027a63d72483be3efc252ce476f26acb153d842d4946adc651"
     },
     {
       "load_order": 3,
@@ -41,7 +41,7 @@
       "load_order": 1,
       "path": "data/releases/v1.0.0/standard/master/bom_lines.csv",
       "record_count": 92,
-      "sha256": "c8e4b63b13119b55e01802ba443cde1a2efc037bc691564065cd07c599ae503b"
+      "sha256": "f2989a88718dea0f8879ddb8b55ecb97fc3e53cdab9ce42ed5bf7bdbf26d65de"
     },
     {
       "load_order": 1,
@@ -88,8 +88,8 @@
     {
       "load_order": 1,
       "path": "data/releases/v1.0.0/standard/master/supplier_component_agreements.csv",
-      "record_count": 150,
-      "sha256": "3c8687faf7ca1808715a027feefadda9886646a534103df1eaf17fa309b3fde5"
+      "record_count": 160,
+      "sha256": "2297085f2667fe647e318ca102e7854015c72b82f39ad908e903b58412f534ec"
     },
     {
       "load_order": 1,
@@ -119,7 +119,7 @@
       "load_order": 5,
       "path": "data/releases/v1.0.0/standard/metadata/build_summary.json",
       "record_count": 6,
-      "sha256": "fc7310addf1ae84201813de82e0b316bbb550934b72e28b0f5e76c87ef0495d4"
+      "sha256": "cbde3b11e19468f7e17c3b2f4d359134453ea06d0515dcc9fd27f7e82046feb1"
     },
     {
       "load_order": 5,
@@ -154,8 +154,8 @@
     {
       "load_order": 2,
       "path": "data/releases/v1.0.0/standard/operations/supplier_capacity_calendar.csv",
-      "record_count": 80,
-      "sha256": "de3b047303dd2510cb1133374f08f27be83d33208026dd18fb09f014a5b2b3d6"
+      "record_count": 160,
+      "sha256": "bb1f9d3e3ff27518be64fe5fba2ee64cea53797b6244896fe59b9d8e884bed7b"
     },
     {
       "load_order": 4,
@@ -167,19 +167,19 @@
       "load_order": 4,
       "path": "data/releases/v1.0.0/standard/production/production_batches.csv",
       "record_count": 6,
-      "sha256": "5b5c37cb557bed93659c8c88c2d734a5348d02481fff76d2438aa71ee7f4efc0"
+      "sha256": "0a18d9dbbd919b2e348b304c24935ffec7681f6f76369a19b3a8dc76a69e55cd"
     },
     {
       "load_order": 4,
       "path": "data/releases/v1.0.0/standard/production/production_material_allocations.csv",
       "record_count": 3,
-      "sha256": "86856f686228d884ac5f9511de696044d9d1bc8f0601b5eef431ebb15e4d942c"
+      "sha256": "63a1a2ec703dd259dc001027a15e241da45c3e04b5764368778758d0fd5c1823"
     },
     {
       "load_order": 4,
       "path": "data/releases/v1.0.0/standard/production/production_material_requirements.csv",
-      "record_count": 400,
-      "sha256": "8f1dd1f73181f05e3192d3f809fd6e69e139c1d6b844f7256fb67151116a3ab7"
+      "record_count": 1300,
+      "sha256": "3604702794cfeb68351ee4cc9a0620049adc0194ff1d8a8dd6b93fd21b2baa68"
     },
     {
       "load_order": 4,
@@ -221,6 +221,6 @@
     "version": "1.0.0"
   },
   "seed": 260311,
-  "source_revision": "7947827",
+  "source_revision": "b6ccb3e",
   "version": "1.0.0"
 }

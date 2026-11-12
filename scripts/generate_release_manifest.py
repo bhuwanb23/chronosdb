@@ -45,9 +45,13 @@ def main() -> None:
     args = parser.parse_args()
     profile = load_release_profile(args.root, args.profile)
     output = release_root(profile)
+    nested_profiles = {"tiny", "demo", "standard", "stress"}
     files: list[dict[str, Any]] = []
     for path in sorted(output.rglob("*")):
         if not path.is_file() or path.name == "manifest.json":
+            continue
+        relative_to_output = path.relative_to(output)
+        if profile.profile == "demo" and relative_to_output.parts[0] in nested_profiles:
             continue
         files.append(
             {

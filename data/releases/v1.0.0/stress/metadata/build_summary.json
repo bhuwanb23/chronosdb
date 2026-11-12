@@ -15,7 +15,7 @@
     "batches": 6,
     "capacity": 120,
     "production_orders": 8000,
-    "requirements": 8000,
+    "requirements": 26000,
     "statuses": 8000
   },
   "master_rows": {
@@ -27,14 +27,14 @@
     "facility_product_capabilities": 8,
     "products": 100,
     "sla_policies": 3,
-    "supplier_component_agreements": 150,
+    "supplier_component_agreements": 1000,
     "suppliers": 120,
     "transfer_lanes": 132,
     "warehouse_facility_links": 8,
     "warehouses": 12
   },
   "procurement_rows": {
-    "capacity": 500,
+    "capacity": 1000,
     "purchase_orders": 12000,
     "receipts": 11583,
     "status_history": 23583

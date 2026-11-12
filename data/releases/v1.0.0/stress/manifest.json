@@ -5,7 +5,7 @@
       "load_order": 3,
       "path": "data/releases/v1.0.0/stress/inventory/inventory_opening_balances.csv",
       "record_count": 6000,
-      "sha256": "ce2f38e35b81e745ded09700da76a2a917bb8c14d5f036f80de80099dca4d735"
+      "sha256": "aac640bbdca18dcbed06a74286524006db674a56c7b99b1fb2ef151642447cf8"
     },
     {
       "load_order": 3,
@@ -23,13 +23,13 @@
       "load_order": 3,
       "path": "data/releases/v1.0.0/stress/inventory/inventory_snapshots_daily.csv",
       "record_count": 72000,
-      "sha256": "3c7fee9f7bc13bf49a9bf5fe93e6ec23c185d81963b45118e6d2e994cad7e4b5"
+      "sha256": "46ae078eb8dd48e56d4c2311578f876a5efb716dcd1a325f0a36449f4b7f1c41"
     },
     {
       "load_order": 3,
       "path": "data/releases/v1.0.0/stress/inventory/inventory_transactions.csv",
       "record_count": 17589,
-      "sha256": "2fd78d48d19171d19bc5588ce2397e17b2d4a7b8b3cbc09ab515d20c38a3d8fc"
+      "sha256": "3b17006f1ca1d8781f28eda515d84dcd7731c47e505d64b08bdf7954fd617ffa"
     },
     {
       "load_order": 3,
@@ -41,7 +41,7 @@
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/bom_lines.csv",
       "record_count": 675,
-      "sha256": "44112ef0f66abee33472fb7d25d574ee27be0363bff2757c09185722547bb954"
+      "sha256": "e5a3b76090c6b4074b4f331d22b0148b645bc38f580dafb38c6914d3f2743609"
     },
     {
       "load_order": 1,
@@ -88,8 +88,8 @@
     {
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/supplier_component_agreements.csv",
-      "record_count": 150,
-      "sha256": "f7893d8395a55cc08b03f8702f6b33dc28218a5a71d13dbab271ddad43981c15"
+      "record_count": 1000,
+      "sha256": "782e32b4389c8e3070765ed80affa23d38efae8b09a2adf20a833b668011e529"
     },
     {
       "load_order": 1,
@@ -119,7 +119,7 @@
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/metadata/build_summary.json",
       "record_count": 6,
-      "sha256": "2b88665cae858538e29e180d8314335ad863efc968def8712d2f99d45dbfa03c"
+      "sha256": "3bb19ea97fd7bca950b20c81e3e3317618b267992a8f463f15f593a6edc9dffe"
     },
     {
       "load_order": 5,
@@ -154,8 +154,8 @@
     {
       "load_order": 2,
       "path": "data/releases/v1.0.0/stress/operations/supplier_capacity_calendar.csv",
-      "record_count": 500,
-      "sha256": "1a20dc2e723747c50580f5e6c3c16317776008437b804a915bf925e061ef1246"
+      "record_count": 1000,
+      "sha256": "b90efb9ae3471d794be0cdc4ae8bfe2f45aa970b677019e4289f9319bc20e0b8"
     },
     {
       "load_order": 4,
@@ -167,19 +167,19 @@
       "load_order": 4,
       "path": "data/releases/v1.0.0/stress/production/production_batches.csv",
       "record_count": 6,
-      "sha256": "5b5c37cb557bed93659c8c88c2d734a5348d02481fff76d2438aa71ee7f4efc0"
+      "sha256": "0a18d9dbbd919b2e348b304c24935ffec7681f6f76369a19b3a8dc76a69e55cd"
     },
     {
       "load_order": 4,
       "path": "data/releases/v1.0.0/stress/production/production_material_allocations.csv",
       "record_count": 3,
-      "sha256": "86856f686228d884ac5f9511de696044d9d1bc8f0601b5eef431ebb15e4d942c"
+      "sha256": "63a1a2ec703dd259dc001027a15e241da45c3e04b5764368778758d0fd5c1823"
     },
     {
       "load_order": 4,
       "path": "data/releases/v1.0.0/stress/production/production_material_requirements.csv",
-      "record_count": 8000,
-      "sha256": "b4024be01e60184749d0607137f97ad04f1757b1b475ef58c61643539f49af40"
+      "record_count": 26000,
+      "sha256": "81ca4dd8bf584cf7c63b37351726c786d87891941cff21f6f42b84c2ff56555e"
     },
     {
       "load_order": 4,
@@ -221,6 +221,6 @@
     "version": "1.0.0"
   },
   "seed": 260311,
-  "source_revision": "7947827",
+  "source_revision": "b6ccb3e",
   "version": "1.0.0"
 }

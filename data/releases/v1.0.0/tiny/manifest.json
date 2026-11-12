@@ -5,7 +5,7 @@
       "load_order": 3,
       "path": "data/releases/v1.0.0/tiny/inventory/inventory_opening_balances.csv",
       "record_count": 30,
-      "sha256": "0467ded5a2c0be25263d046b7af37dc4f1b2071275f9e1503d982a65f7873f9a"
+      "sha256": "bee41480d1728f97dbfbcde8d656252d79bfb7e4ff2b7da9137dd0ff681862fb"
     },
     {
       "load_order": 3,
@@ -17,19 +17,19 @@
       "load_order": 3,
       "path": "data/releases/v1.0.0/tiny/inventory/inventory_snapshots_benchmark.csv",
       "record_count": 10,
-      "sha256": "3cfea009d873ebb39ddcd06f87a29e599f142b1494245cc2b230fb5c5bf7b8e8"
+      "sha256": "448d9886af19ce3676eb040f468eb37b9aa553d10b92309ff3817b6483d1f81e"
     },
     {
       "load_order": 3,
       "path": "data/releases/v1.0.0/tiny/inventory/inventory_snapshots_daily.csv",
       "record_count": 210,
-      "sha256": "31485a21d0035e8cdf92249f008b1e1dd8c8fc83f8172e2a12f97f1e11b1b2f8"
+      "sha256": "19631159021e50010a712dc4cdea90e6b6ca4b047378ba5e7e5ea82cc63e2ea3"
     },
     {
       "load_order": 3,
       "path": "data/releases/v1.0.0/tiny/inventory/inventory_transactions.csv",
-      "record_count": 65,
-      "sha256": "5319b679ebf4f5e58cc8f16dcc1f3324280a6fbcf0dc567daf5d1c5385c18e7d"
+      "record_count": 64,
+      "sha256": "8a58d85c2b20f561cfa31694adcbd7c78caadbd65623fc945ffda9be9a4a0681"
     },
     {
       "load_order": 3,
@@ -40,8 +40,8 @@
     {
       "load_order": 1,
       "path": "data/releases/v1.0.0/tiny/master/bom_lines.csv",
-      "record_count": 16,
-      "sha256": "a049b58e2241fabc005698ff4cf5865d058806f326963a6fb93d7d3356548eb3"
+      "record_count": 17,
+      "sha256": "dd723445d7428034a216c385b43727bb416d72e7378c798877dbd51953f5ac4d"
     },
     {
       "load_order": 1,
@@ -119,7 +119,7 @@
       "load_order": 5,
       "path": "data/releases/v1.0.0/tiny/metadata/build_summary.json",
       "record_count": 6,
-      "sha256": "cd7df9de58f1845e21ace9a8b2fb9bd66b662a6115364a900a3a0f63a56ba058"
+      "sha256": "5cc360b659e0787fdb466f6e55db406e3ffdda07a649d3a7760a060c088b421b"
     },
     {
       "load_order": 5,
@@ -154,8 +154,8 @@
     {
       "load_order": 2,
       "path": "data/releases/v1.0.0/tiny/operations/supplier_capacity_calendar.csv",
-      "record_count": 15,
-      "sha256": "978aca6065a297d461f7d0e26c96b87fdbc4e87a46a7ea95e3070f2ad31924d3"
+      "record_count": 30,
+      "sha256": "b73c925b162cb1bd6cac398c73edc2c9dca74f0ed21f28bfa146e2da20b25569"
     },
     {
       "load_order": 4,
@@ -167,19 +167,19 @@
       "load_order": 4,
       "path": "data/releases/v1.0.0/tiny/production/production_batches.csv",
       "record_count": 6,
-      "sha256": "5b5c37cb557bed93659c8c88c2d734a5348d02481fff76d2438aa71ee7f4efc0"
+      "sha256": "0a18d9dbbd919b2e348b304c24935ffec7681f6f76369a19b3a8dc76a69e55cd"
     },
     {
       "load_order": 4,
       "path": "data/releases/v1.0.0/tiny/production/production_material_allocations.csv",
       "record_count": 3,
-      "sha256": "86856f686228d884ac5f9511de696044d9d1bc8f0601b5eef431ebb15e4d942c"
+      "sha256": "63a1a2ec703dd259dc001027a15e241da45c3e04b5764368778758d0fd5c1823"
     },
     {
       "load_order": 4,
       "path": "data/releases/v1.0.0/tiny/production/production_material_requirements.csv",
-      "record_count": 20,
-      "sha256": "90d3727841beffc8c46e21135456e983ed22e275ca422b99ba3717d3b4b7ce6e"
+      "record_count": 78,
+      "sha256": "1c40cde197fe8935fbe16f1396b55e801404324361ca9a26873c8b57fb35e413"
     },
     {
       "load_order": 4,
@@ -221,6 +221,6 @@
     "version": "1.0.0"
   },
   "seed": 260311,
-  "source_revision": "7947827",
+  "source_revision": "b6ccb3e",
   "version": "1.0.0"
 }
