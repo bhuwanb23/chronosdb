@@ -32,6 +32,12 @@ def _packaging_status(root: Path) -> dict[str, Any]:
         for path in directory.rglob("*")
         if path.is_file() and path.name != "checksums.sha256"
     }
+    manifest_path = root / "data" / "manifest.json"
+    manifest_paths = (
+        {row["path"] for row in _json(manifest_path).get("files", [])} | {"data/manifest.json"}
+        if manifest_path.exists()
+        else set()
+    )
     listed_paths: set[str] = set()
     mismatches: list[str] = []
     for line in checksum_path.read_text(encoding="utf-8").splitlines():
@@ -45,6 +51,8 @@ def _packaging_status(root: Path) -> dict[str, Any]:
             mismatches.append(relative)
     mismatches.extend(sorted(expected_paths - listed_paths))
     mismatches.extend(sorted(listed_paths - expected_paths))
+    mismatches.extend(sorted(manifest_paths - listed_paths))
+    mismatches.extend(sorted(listed_paths - manifest_paths))
     reproducibility_path = root / "artifacts" / "reproducibility.json"
     nondeterministic = (
         _json(reproducibility_path).get("nondeterministic_files", [])

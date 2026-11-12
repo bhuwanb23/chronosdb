@@ -70,9 +70,9 @@
       "generator_stage": "reports",
       "path": "artifacts/phase-3-release-manifest.json",
       "random_seed": 260311,
-      "record_count": 13,
+      "record_count": 14,
       "schema_version": "1.0.0",
-      "sha256": "cc28aac37300e43e368002efc5835c995133d70c8cebdcac55e5ef9db41224ba"
+      "sha256": "e397e2c270e14a68555287d2d7b4905d52d661216d365854815f67044ae75946"
     },
     {
       "configuration": "config/generation.yaml",
@@ -878,6 +878,15 @@
     {
       "configuration": "config/generation.yaml",
       "generator_stage": "master",
+      "path": "data/generated/master/standard/manifest.json",
+      "random_seed": 260311,
+      "record_count": 17,
+      "schema_version": "1.0.0",
+      "sha256": "5c483cf4a42b94478d9560522460a1e1070bad60422b210eec21dffc68bf2b96"
+    },
+    {
+      "configuration": "config/generation.yaml",
+      "generator_stage": "master",
       "path": "data/generated/master/standard/products.csv",
       "random_seed": 260311,
       "record_count": 16,
@@ -982,6 +991,15 @@
       "record_count": 12,
       "schema_version": "1.0.0",
       "sha256": "3cca271dc9aadc7f69a1427e30ed40e11079ec907f4dc62e52704047a9460daf"
+    },
+    {
+      "configuration": "config/generation.yaml",
+      "generator_stage": "master",
+      "path": "data/generated/master/stress/manifest.json",
+      "random_seed": 260311,
+      "record_count": 17,
+      "schema_version": "1.0.0",
+      "sha256": "a0eabde33685662aa9d673d7db6716753e1dfa4e0374fa4b1bee59c2e459467d"
     },
     {
       "configuration": "config/generation.yaml",
@@ -1094,6 +1112,15 @@
     {
       "configuration": "config/generation.yaml",
       "generator_stage": "master",
+      "path": "data/generated/master/tiny/manifest.json",
+      "random_seed": 260311,
+      "record_count": 17,
+      "schema_version": "1.0.0",
+      "sha256": "72e5c3ffb9874fe23b2496aae43205c55866540ea02e95e289e69c754e6d27ae"
+    },
+    {
+      "configuration": "config/generation.yaml",
+      "generator_stage": "master",
       "path": "data/generated/master/tiny/products.csv",
       "random_seed": 260311,
       "record_count": 3,
@@ -1184,6 +1211,15 @@
     {
       "configuration": "config/generation.yaml",
       "generator_stage": "operational",
+      "path": "data/generated/operational/standard/manifest.json",
+      "random_seed": 260311,
+      "record_count": 6,
+      "schema_version": "1.0.0",
+      "sha256": "d45ca5a0a134bb131f7a941b334627c4d2aea9a174e31e2093f356207d06fe42"
+    },
+    {
+      "configuration": "config/generation.yaml",
+      "generator_stage": "operational",
       "path": "data/generated/operational/standard/production_customer_allocations.csv",
       "random_seed": 260311,
       "record_count": 400,
@@ -1252,6 +1288,15 @@
       "record_count": 23719,
       "schema_version": "1.0.0",
       "sha256": "299fcb802c204e5e9d1d43ca0051f698e952c53af80f22157acfe5a116ad4f60"
+    },
+    {
+      "configuration": "config/generation.yaml",
+      "generator_stage": "operational",
+      "path": "data/generated/operational/stress/manifest.json",
+      "random_seed": 260311,
+      "record_count": 6,
+      "schema_version": "1.0.0",
+      "sha256": "975d5c755ad50839e77a837ac3dd0b603a935cf8e603fe2861768d9bf0e26db5"
     },
     {
       "configuration": "config/generation.yaml",
@@ -1328,6 +1373,15 @@
     {
       "configuration": "config/generation.yaml",
       "generator_stage": "operational",
+      "path": "data/generated/operational/tiny/manifest.json",
+      "random_seed": 260311,
+      "record_count": 6,
+      "schema_version": "1.0.0",
+      "sha256": "532b7d3934f2213b4c58de2fa3add7c5c8e2f738b81c1e3bbb44e6367767ab23"
+    },
+    {
+      "configuration": "config/generation.yaml",
+      "generator_stage": "operational",
       "path": "data/generated/operational/tiny/production_customer_allocations.csv",
       "random_seed": 260311,
       "record_count": 20,
@@ -1391,6 +1445,15 @@
     {
       "configuration": "config/generation.yaml",
       "generator_stage": "scenarios",
+      "path": "data/generated/scenarios/standard/manifest.json",
+      "random_seed": 260311,
+      "record_count": 4,
+      "schema_version": "1.0.0",
+      "sha256": "c47504cd9c739f02582ee5e19d643148b8cc4e4185c78b31074864c2f89a40da"
+    },
+    {
+      "configuration": "config/generation.yaml",
+      "generator_stage": "scenarios",
       "path": "data/generated/scenarios/standard/scenario_constraints.json",
       "random_seed": 260311,
       "record_count": 60,
@@ -1436,6 +1499,15 @@
     {
       "configuration": "config/generation.yaml",
       "generator_stage": "scenarios",
+      "path": "data/generated/scenarios/stress/manifest.json",
+      "random_seed": 260311,
+      "record_count": 4,
+      "schema_version": "1.0.0",
+      "sha256": "00c55f485df0d0c966a10efbc6d21b94a6d02ae2f03d9e07e171da1354ce0d49"
+    },
+    {
+      "configuration": "config/generation.yaml",
+      "generator_stage": "scenarios",
       "path": "data/generated/scenarios/stress/scenario_constraints.json",
       "random_seed": 260311,
       "record_count": 60,
@@ -1477,6 +1549,15 @@
       "record_count": 180,
       "schema_version": "1.0.0",
       "sha256": "4af13caf0248ac16f63dd3ff97100ac3687d8c6fb7fb54a909c290658c8eb451"
+    },
+    {
+      "configuration": "config/generation.yaml",
+      "generator_stage": "scenarios",
+      "path": "data/generated/scenarios/tiny/manifest.json",
+      "random_seed": 260311,
+      "record_count": 4,
+      "schema_version": "1.0.0",
+      "sha256": "a7ced56e2ae6af0723beeef1adaf13ff793459d10c1879e35970dfc6ef5470ce"
     },
     {
       "configuration": "config/generation.yaml",
@@ -1549,6 +1630,15 @@
       "record_count": 3,
       "schema_version": "1.0.0",
       "sha256": "14b0ac8f2b1c43b74c0dbc7c05e9a6195e2c7534bb4e5fb82c2a381b36a5c906"
+    },
+    {
+      "configuration": "config/generation.yaml",
+      "generator_stage": "golden",
+      "path": "data/golden/manifest.json",
+      "random_seed": 260311,
+      "record_count": 2,
+      "schema_version": "1.0.0",
+      "sha256": "4c8f4d42e1702fbc61982f6ad2f914bc819a2751850acca31ba8c0c055c91e15"
     },
     {
       "configuration": "config/generation.yaml",
@@ -1779,7 +1869,7 @@
   "phase": "3",
   "random_seed": 260311,
   "reference_time": "2026-11-11T02:30:00Z",
-  "source_revision": "d75cc82",
+  "source_revision": "2aee381",
   "status": "release_candidate",
   "version": "1.0.0"
 }

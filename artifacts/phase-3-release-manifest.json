@@ -23,7 +23,8 @@
   "quality_status": "PASS",
   "release_label": "phase-3-dataset-v1.0.0",
   "seed": 260311,
-  "source_revision": "d75cc82",
+  "source_revision": "2aee381",
+  "source_tree_status": "working_tree_changes_present",
   "validation_status": "PASS",
   "version": "1.0.0"
 }

@@ -23,7 +23,7 @@ PACKAGE_FILES = (
     Path("data/phase4_load_contract.json"),
     Path("data/frozen_inputs.sha256"),
 )
-EXCLUDED_NAMES = {"checksums.sha256", "manifest.json"}
+EXCLUDED_NAMES = {"checksums.sha256"}
 
 
 def _record_count(path: Path) -> int:
@@ -69,7 +69,9 @@ def _files(root: Path) -> list[Path]:
             paths.extend(
                 path
                 for path in directory.rglob("*")
-                if path.is_file() and path.name not in EXCLUDED_NAMES
+                if path.is_file()
+                and path.name not in EXCLUDED_NAMES
+                and path != root / "data" / "manifest.json"
             )
     return sorted(set(paths))
 

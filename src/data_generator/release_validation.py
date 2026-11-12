@@ -5,7 +5,8 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
-from datetime import datetime
+import math
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -85,9 +86,8 @@ def _check_timestamps(
             value = row.get(key, "")
             if not value:
                 continue
-            try:
-                parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
-            except ValueError:
+            parsed = _parse_timestamp(value)
+            if parsed is None:
                 _issue(
                     issues,
                     "ERROR",
@@ -96,14 +96,16 @@ def _check_timestamps(
                     f"{path}:{row_number}",
                 )
                 continue
-            if parsed.tzinfo is None:
-                _issue(
-                    issues,
-                    "ERROR",
-                    "SCHEMA_TIMEZONE",
-                    f"Timestamp {key} is missing an explicit timezone",
-                    f"{path}:{row_number}",
-                )
+
+
+def _parse_timestamp(value: str) -> datetime | None:
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        return None
+    return parsed.astimezone(UTC)
 
 
 def _check_rows(
@@ -137,7 +139,7 @@ def _check_rows(
             rules = _SCHEMA_PROPERTIES.get(key, {})
             if rules.get("type") == "number":
                 try:
-                    float(value)
+                    numeric = float(value)
                 except (TypeError, ValueError):
                     _issue(
                         issues,
@@ -146,6 +148,25 @@ def _check_rows(
                         f"Field {key} is not numeric",
                         f"{path}:{row_number}",
                     )
+                else:
+                    if not math.isfinite(numeric):
+                        _issue(
+                            issues,
+                            "ERROR",
+                            "SCHEMA_FINITE",
+                            f"Field {key} must be finite",
+                            f"{path}:{row_number}",
+                        )
+                    if ("minimum" in rules and numeric < rules["minimum"]) or (
+                        "exclusiveMinimum" in rules and numeric <= rules["exclusiveMinimum"]
+                    ):
+                        _issue(
+                            issues,
+                            "ERROR",
+                            "SCHEMA_MINIMUM",
+                            f"Field {key} violates its minimum constraint",
+                            f"{path}:{row_number}",
+                        )
             if "const" in rules and value != rules["const"]:
                 _issue(
                     issues,
@@ -216,11 +237,8 @@ def _validate_history(root: Path, scale: str, issues: list[dict[str, str]]) -> N
             continue
         known_at: datetime | None = None
         event_time: datetime | None = None
-        try:
-            known_at = datetime.fromisoformat(correction["known_at"].replace("Z", "+00:00"))
-            event_time = datetime.fromisoformat(correction["event_time"].replace("Z", "+00:00"))
-        except (KeyError, ValueError):
-            pass
+        known_at = _parse_timestamp(correction.get("known_at", ""))
+        event_time = _parse_timestamp(correction.get("event_time", ""))
         if known_at is None or event_time is None or known_at <= event_time:
             _issue(
                 issues,
@@ -231,13 +249,8 @@ def _validate_history(root: Path, scale: str, issues: list[dict[str, str]]) -> N
             )
         correction_time: datetime | None = None
         snapshot_time: datetime | None = None
-        try:
-            correction_time = datetime.fromisoformat(
-                correction["event_time"].replace("Z", "+00:00")
-            )
-            snapshot_time = datetime.fromisoformat(snapshot["snapshot_time"].replace("Z", "+00:00"))
-        except (KeyError, ValueError):
-            pass
+        correction_time = _parse_timestamp(correction.get("event_time", ""))
+        snapshot_time = _parse_timestamp(snapshot.get("snapshot_time", ""))
         if correction_time != snapshot_time:
             _issue(
                 issues,

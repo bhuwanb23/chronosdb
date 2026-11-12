@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import subprocess
 from datetime import UTC, datetime
@@ -21,6 +22,18 @@ def _source_revision(root: Path) -> str:
         return "unavailable"
 
 
+def _working_tree_status(root: Path) -> str:
+    try:
+        changes = subprocess.check_output(
+            ["git", "status", "--porcelain"],
+            cwd=root,
+            text=True,
+        ).strip()
+    except (OSError, subprocess.CalledProcessError):
+        return "unavailable"
+    return "clean" if not changes else "working_tree_changes_present"
+
+
 def _json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -32,13 +45,10 @@ def main() -> None:
     root = args.root
     score = _json(root / "artifacts" / "phase-3-quality-score.json")
     validation = _json(root / "artifacts" / "data-validation-report.json")
-    manifest_path = root / "data" / "manifest.json"
-    manifest = _json(manifest_path) if manifest_path.exists() else {"files": []}
     artifact_hashes = {
-        row["path"]: row["sha256"]
-        for row in manifest.get("files", [])
-        if row["path"].startswith("artifacts/")
-        and row["path"] != "artifacts/phase-3-release-manifest.json"
+        path.relative_to(root).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in sorted((root / "artifacts").glob("*"))
+        if path.is_file() and path.name != "phase-3-release-manifest.json"
     }
     release_manifest = {
         "dataset": "chronosdb-synthetic-supply-chain",
@@ -46,6 +56,7 @@ def main() -> None:
         "release_label": "phase-3-dataset-v1.0.0",
         "seed": 260311,
         "source_revision": _source_revision(root),
+        "source_tree_status": _working_tree_status(root),
         "frozen_at": "2026-11-11T02:30:00Z",
         "validation_status": validation["summary"]["status"],
         "quality_score": score["score"],
