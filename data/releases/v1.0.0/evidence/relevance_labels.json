@@ -1,0 +1,28 @@
+[
+  {
+    "filtered_document_ids": [
+      "DOC-GOLD-SUPPLIER_NOTICES",
+      "DOC-0019",
+      "DOC-0038"
+    ],
+    "query_id": "RET-GOLD-NOTICE",
+    "relevant_document_ids": [
+      "DOC-GOLD-SUPPLIER_NOTICES",
+      "DOC-0002",
+      "DOC-0003"
+    ]
+  },
+  {
+    "filtered_document_ids": [
+      "DOC-GOLD-SUPPLIER_NOTICES",
+      "DOC-0019",
+      "DOC-0038"
+    ],
+    "query_id": "RET-GOLD-TRANSFER",
+    "relevant_document_ids": [
+      "DOC-GOLD-PROCEDURES",
+      "DOC-0122",
+      "DOC-0123"
+    ]
+  }
+]

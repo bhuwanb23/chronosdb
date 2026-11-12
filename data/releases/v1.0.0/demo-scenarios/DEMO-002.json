@@ -1,0 +1,14 @@
+{
+  "expected": {
+    "auditability": "REQUIRED",
+    "outcome": "MONITOR_NO_INTERVENTION"
+  },
+  "scenario": {
+    "description": "Supply disruption detected; projected inventory covers all demand.",
+    "expected_outcome": "MONITOR_NO_INTERVENTION",
+    "scenario_id": "DEMO-002",
+    "scenario_type": "NO_IMPACT_OUTAGE",
+    "status": "FROZEN",
+    "test_specific_branch": "false"
+  }
+}

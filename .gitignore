@@ -15,3 +15,6 @@ htmlcov/
 node_modules/
 dist/
 build/
+data/releases/v1.0.0/evidence/documents/*
+data/releases/v1.0.0/benchmarks/expected/*
+data/releases/v1.0.0/benchmarks/scenarios/*

@@ -1,0 +1,14 @@
+{
+  "expected": {
+    "auditability": "REQUIRED",
+    "outcome": "NO_FEASIBLE_INTERVENTION"
+  },
+  "scenario": {
+    "description": "No transferable stock, alternate supplier, or expedition path.",
+    "expected_outcome": "NO_FEASIBLE_INTERVENTION",
+    "scenario_id": "DEMO-003",
+    "scenario_type": "NO_FEASIBLE_RECOVERY",
+    "status": "FROZEN",
+    "test_specific_branch": "false"
+  }
+}

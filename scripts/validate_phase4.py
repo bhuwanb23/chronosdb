@@ -11,12 +11,19 @@ from typing import Any
 
 from data_generator.phase4_validation import (
     Phase4ValidationError,
+    validate_benchmark_release,
     validate_capacity,
     validate_demand_release,
+    validate_disruptions_release,
+    validate_evidence_release,
+    validate_golden_release,
+    validate_history_release,
+    validate_interventions_release,
     validate_inventory_release,
     validate_manufacturing_release,
     validate_master_release,
     validate_procurement,
+    validate_supporting_demos_release,
 )
 from data_generator.release_profile import load_release_profile, release_root
 
@@ -116,6 +123,109 @@ def _load_release(root: Path, profile_name: str) -> dict[str, Any]:
         "allocations": _csv(output / "demand" / "production_customer_allocations.csv"),
         "sla_assignments": _csv(output / "demand" / "customer_sla_assignments.csv"),
     }
+    disruptions = {
+        "events": _csv(output / "disruptions" / "disruption_events.csv"),
+        "scope_components": _csv(
+            output / "disruptions" / "disruption_scope_components.csv"
+        ),
+        "scope_purchase_orders": _csv(
+            output / "disruptions" / "disruption_scope_purchase_orders.csv"
+        ),
+        "status_history": _csv(
+            output / "disruptions" / "disruption_status_history.csv"
+        ),
+    }
+    interventions = {
+        "transfers": _csv(
+            output / "interventions" / "transfer_capabilities.csv"
+        ),
+        "expedites": _csv(
+            output / "interventions" / "expedite_capabilities.csv"
+        ),
+        "alternates": _csv(
+            output / "interventions" / "alternate_supply_capabilities.csv"
+        ),
+        "rescheduling": _csv(
+            output / "interventions" / "rescheduling_constraints.csv"
+        ),
+        "costs": _csv(
+            output / "interventions" / "intervention_cost_parameters.csv"
+        ),
+    }
+    evidence = {
+        "documents": [
+            json.loads(path.read_text(encoding="utf-8"))
+            for path in sorted((output / "evidence" / "documents").glob("*.json"))
+        ],
+        "metadata": [
+            json.loads(line)
+            for line in (
+                output / "evidence" / "document_metadata.jsonl"
+            ).read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ],
+        "access_labels": _csv(output / "evidence" / "access_control_labels.csv"),
+        "queries": json.loads(
+            (output / "evidence" / "retrieval_queries.json").read_text(
+                encoding="utf-8"
+            )
+        ),
+        "relevance": json.loads(
+            (output / "evidence" / "relevance_labels.json").read_text(
+                encoding="utf-8"
+            )
+        ),
+    }
+    golden = {
+        "scenario": json.loads(
+            (output / "golden" / "scenario.json").read_text(encoding="utf-8")
+        ),
+        "state_at_as_of": json.loads(
+            (output / "golden" / "state_at_as_of.json").read_text(encoding="utf-8")
+        ),
+        "expected_candidate_results": json.loads(
+            (output / "golden" / "expected_candidate_results.json").read_text(
+                encoding="utf-8"
+            )
+        ),
+        "expected_recommendation": json.loads(
+            (output / "golden" / "expected_recommendation.json").read_text(
+                encoding="utf-8"
+            )
+        ),
+        "expected_timeline": json.loads(
+            (output / "golden" / "expected_timeline.json").read_text(
+                encoding="utf-8"
+            )
+        ),
+    }
+    demos = {
+        "scenarios": [
+            json.loads(path.read_text(encoding="utf-8"))["scenario"]
+            for path in sorted((output / "demo-scenarios").glob("DEMO-*.json"))
+        ],
+        "catalogue": _csv(
+            output / "demo-scenarios" / "scenario_catalogue.csv"
+        ),
+    }
+    benchmarks = {
+        "scenarios": [
+            json.loads(path.read_text(encoding="utf-8"))
+            for path in sorted((output / "benchmarks" / "scenarios").glob("*.json"))
+        ],
+        "expected": [
+            json.loads(path.read_text(encoding="utf-8"))
+            for path in sorted((output / "benchmarks" / "expected").glob("*.json"))
+        ],
+        "difficulty_labels": _csv(
+            output / "benchmarks" / "difficulty_labels.csv"
+        ),
+        "partition_manifest": json.loads(
+            (output / "benchmarks" / "partition_manifest.json").read_text(
+                encoding="utf-8"
+            )
+        ),
+    }
     history = {
         "entity_versions": _csv(output / "history" / "entity_versions.csv"),
         "business_events": _csv(output / "history" / "business_events.csv"),
@@ -138,6 +248,12 @@ def _load_release(root: Path, profile_name: str) -> dict[str, Any]:
         "manufacturing": manufacturing,
         "demand": demand,
         "history": history,
+        "disruptions": disruptions,
+        "interventions": interventions,
+        "evidence": evidence,
+        "golden": golden,
+        "demos": demos,
+        "benchmarks": benchmarks,
     }
 
 
@@ -173,6 +289,15 @@ def validate_profile(root: Path, profile_name: str) -> dict[str, Any]:
         release["manufacturing"]["production_orders"],
     )
     validate_history_release(release["history"], release["inventory"])
+    validate_disruptions_release(
+        release["disruptions"],
+        release["operations"]["purchase_orders"],
+    )
+    validate_interventions_release(release["interventions"])
+    validate_evidence_release(release["evidence"])
+    validate_golden_release(release["golden"])
+    validate_supporting_demos_release(release["demos"])
+    validate_benchmark_release(release["benchmarks"])
     return {
         "profile": profile.profile,
         "version": profile.version,

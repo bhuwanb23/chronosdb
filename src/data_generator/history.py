@@ -9,7 +9,6 @@ from typing import Any
 from .release_export import write_release_csv, write_release_json
 from .release_profile import ReleaseProfile, release_root
 
-
 REFERENCE_TIME = datetime(2026, 11, 11, 2, 30, tzinfo=UTC)
 SIGNS = {
     "OPENING_BALANCE": Decimal("1"),

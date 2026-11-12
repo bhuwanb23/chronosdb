@@ -1,0 +1,14 @@
+{
+  "expected": {
+    "auditability": "REQUIRED",
+    "outcome": "INSUFFICIENT_DATA"
+  },
+  "scenario": {
+    "description": "Missing inventory snapshot must not be inferred as zero.",
+    "expected_outcome": "INSUFFICIENT_DATA",
+    "scenario_id": "DEMO-006",
+    "scenario_type": "INSUFFICIENT_DATA",
+    "status": "FROZEN",
+    "test_specific_branch": "false"
+  }
+}

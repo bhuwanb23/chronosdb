@@ -1,0 +1,14 @@
+{
+  "expected": {
+    "auditability": "REQUIRED",
+    "outcome": "TRANSFER_ONLY_BUDGET_COMPLIANT"
+  },
+  "scenario": {
+    "description": "Hybrid prevents all breaches but exceeds budget.",
+    "expected_outcome": "TRANSFER_ONLY_BUDGET_COMPLIANT",
+    "scenario_id": "DEMO-004",
+    "scenario_type": "BUDGET_TRADE_OFF",
+    "status": "FROZEN",
+    "test_specific_branch": "false"
+  }
+}

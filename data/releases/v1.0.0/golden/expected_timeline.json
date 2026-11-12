@@ -1,0 +1,50 @@
+[
+  {
+    "component_id": "CMP-MCU-42",
+    "event_id": "TL-001",
+    "event_time": "2026-11-11T02:30:00Z",
+    "event_type": "INVENTORY_AVAILABLE",
+    "quantity": "400",
+    "warehouse_id": "WH-PUNE"
+  },
+  {
+    "component_id": "CMP-MCU-42",
+    "event_id": "TL-002",
+    "event_time": "2026-11-12T02:30:00Z",
+    "event_type": "BATCH_MATERIAL_ISSUE",
+    "production_order_id": "MO-0876",
+    "quantity": "200"
+  },
+  {
+    "event_id": "TL-003",
+    "event_time": "2026-11-12T02:30:00Z",
+    "event_type": "BATCH_PRODUCTION_START",
+    "production_order_id": "MO-0876"
+  },
+  {
+    "event_id": "TL-004",
+    "event_time": "2026-11-14T02:30:00Z",
+    "event_type": "BATCH_PRODUCTION_COMPLETE",
+    "production_order_id": "MO-0876"
+  },
+  {
+    "event_id": "TL-005",
+    "event_time": "2026-11-14T12:00:00Z",
+    "event_type": "PRODUCT_DELIVERY_READINESS",
+    "product_id": "PRD-CONTROLLER-X",
+    "production_order_id": "MO-0876"
+  },
+  {
+    "customer_order_id": "CO-0701",
+    "event_id": "TL-006",
+    "event_time": "2026-11-15T00:00:00Z",
+    "event_type": "CUSTOMER_DELIVERY"
+  },
+  {
+    "customer_order_id": "CO-0711",
+    "event_id": "TL-007",
+    "event_time": "2026-11-21T00:00:00Z",
+    "event_type": "SLA_COMPARISON",
+    "result": "HYBRID_ON_TIME_DO_NOTHING_LATE"
+  }
+]

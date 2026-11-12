@@ -493,7 +493,10 @@ def validate_history_release(
     if not late_records:
         raise Phase4ValidationError("history has no late-arriving record")
     for record in late_records:
-        if record["visible_before_ingested"] != "false" or record["visible_after_ingested"] != "true":
+        if (
+            record["visible_before_ingested"] != "false"
+            or record["visible_after_ingested"] != "true"
+        ):
             raise Phase4ValidationError(f"invalid late-arrival visibility: {record['id']}")
         if record["completed_scenario_immutable"] != "true":
             raise Phase4ValidationError(f"completed scenario is mutable: {record['id']}")
@@ -519,3 +522,276 @@ def validate_history_release(
                 }[transaction["transaction_type"]]
         if Decimal(str(checkpoint["expected_on_hand_quantity"])) != expected:
             raise Phase4ValidationError(f"history checkpoint mismatch: {checkpoint['id']}")
+
+
+def validate_disruptions_release(
+    disruptions: dict[str, list[dict[str, Any]]],
+    purchase_orders: list[dict[str, Any]],
+) -> None:
+    """Validate event intervals and supplier/component/PO scope joins."""
+    events = disruptions["events"]
+    event_ids = _ids(
+        [{"id": row["disruption_event_id"]} for row in events]
+    )
+    allowed_types = {
+        "SUPPLIER_OUTAGE",
+        "PARTIAL_SUPPLY_INTERRUPTION",
+        "SHIPMENT_DELAY",
+        "QUALITY_HOLD",
+    }
+    if len(event_ids) != len(events) or not events:
+        raise Phase4ValidationError("disruption event identifiers are invalid")
+    po_by_id = {row["id"]: row for row in purchase_orders}
+    for event in events:
+        if event["event_type"] not in allowed_types:
+            raise Phase4ValidationError(f"unknown disruption type: {event['disruption_event_id']}")
+        start = datetime.fromisoformat(event["start_time"].replace("Z", "+00:00"))
+        end = datetime.fromisoformat(event["expected_end_time"].replace("Z", "+00:00"))
+        if start >= end or int(event["recovery_lag_hours"]) < 0:
+            raise Phase4ValidationError(
+                f"invalid disruption interval: {event['disruption_event_id']}"
+            )
+    for scope in disruptions["scope_purchase_orders"]:
+        order = po_by_id.get(scope["purchase_order_id"])
+        if order is None:
+            raise Phase4ValidationError(f"unknown disrupted PO: {scope['id']}")
+        event = next(
+            row
+            for row in events
+            if row["disruption_event_id"] == scope["disruption_event_id"]
+        )
+        if order["supplier_id"] != event["supplier_id"]:
+            raise Phase4ValidationError(f"disruption supplier scope mismatch: {scope['id']}")
+    golden = next(
+        (row for row in events if row["disruption_event_id"] == "EVT-GOLD-001"),
+        None,
+    )
+    if golden is None or golden["supplier_id"] != "SUP-0104":
+        raise Phase4ValidationError("golden disruption is missing")
+    if golden["expected_end_time"] != "2026-11-25T02:30:00Z":
+        raise Phase4ValidationError("golden disruption end time mismatch")
+    if golden["projected_arrival_time"] != "2026-11-27T02:30:00Z":
+        raise Phase4ValidationError("golden disruption recovery mismatch")
+    if not any(
+        row["disruption_event_id"] == "EVT-GOLD-001"
+        and row["purchase_order_id"] == "PO-2208"
+        for row in disruptions["scope_purchase_orders"]
+    ):
+        raise Phase4ValidationError("golden disruption PO scope is missing")
+
+
+def validate_interventions_release(
+    interventions: dict[str, list[dict[str, Any]]],
+) -> None:
+    """Validate feasibility boundaries and golden intervention arithmetic."""
+    transfers = {row["id"]: row for row in interventions["transfers"]}
+    golden_transfer = transfers.get("INT-GOLD-A")
+    if golden_transfer is None or golden_transfer["feasibility_status"] != "FEASIBLE":
+        raise Phase4ValidationError("golden transfer capability is missing")
+    if (
+        golden_transfer["source_warehouse_id"],
+        golden_transfer["destination_warehouse_id"],
+        golden_transfer["component_id"],
+        golden_transfer["requested_quantity"],
+    ) != ("WH-CHENNAI", "WH-PUNE", "CMP-MCU-42", "400"):
+        raise Phase4ValidationError("golden transfer coordinates mismatch")
+    constrained_transfer = transfers.get("INT-GOLD-TRANSFER-500")
+    if (
+        constrained_transfer is None
+        or constrained_transfer["feasibility_status"] != "INFEASIBLE"
+        or constrained_transfer["rejection_reason"] != "SOURCE_SAFETY_STOCK_VIOLATION"
+    ):
+        raise Phase4ValidationError("infeasible transfer guard is missing")
+    alternate = next(
+        (row for row in interventions["alternates"] if row["id"] == "INT-GOLD-B"),
+        None,
+    )
+    if alternate is None or alternate["incremental_premium_inr"] != "72000":
+        raise Phase4ValidationError("golden alternate supply mismatch")
+    expedite = next(
+        (row for row in interventions["expedites"] if row["id"] == "INT-GOLD-EXPEDITE"),
+        None,
+    )
+    if expedite is None or expedite["eligible"] != "false":
+        raise Phase4ValidationError("outage-incompatible expedite was not rejected")
+    costs = {row["candidate_id"]: row for row in interventions["costs"]}
+    if costs.get("INT-GOLD-C", {}).get("total_cost_inr") != "132000":
+        raise Phase4ValidationError("golden hybrid cost mismatch")
+    for row in interventions["costs"]:
+        expected = (
+            Decimal(str(row["fixed_cost_inr"]))
+            + Decimal(str(row["variable_cost_inr"]))
+        )
+        if Decimal(str(row["total_cost_inr"])) != expected:
+            raise Phase4ValidationError(f"intervention cost mismatch: {row['id']}")
+
+
+def validate_evidence_release(evidence: dict[str, Any]) -> None:
+    """Validate evidence counts, metadata completeness, and answer isolation."""
+    documents = evidence["documents"]
+    expected_counts = {
+        "supplier_notices": 60,
+        "incident_reports": 60,
+        "procedures": 15,
+        "policies": 10,
+        "recovery_summaries": 30,
+    }
+    counts: dict[str, int] = defaultdict(int)
+    ids: set[str] = set()
+    forbidden = (
+        "expected_recommendation",
+        "revenue_at_risk",
+        "ground_truth",
+        "SCN-GOLD-001",
+        "INT-GOLD",
+    )
+    for document in documents:
+        document_id = document["document_id"]
+        if document_id in ids:
+            raise Phase4ValidationError(f"duplicate evidence document: {document_id}")
+        ids.add(document_id)
+        counts[document["document_type"]] += 1
+        if document["synthetic_origin"] != "true":
+            raise Phase4ValidationError(f"evidence is not marked synthetic: {document_id}")
+        if any(token.lower() in document["text"].lower() for token in forbidden):
+            raise Phase4ValidationError(f"evidence answer leakage: {document_id}")
+    if counts != expected_counts:
+        raise Phase4ValidationError(f"evidence class counts mismatch: {dict(counts)}")
+    metadata_ids = {row["document_id"] for row in evidence["metadata"]}
+    if metadata_ids != ids:
+        raise Phase4ValidationError("evidence metadata coverage mismatch")
+    if sum(row["status"] == "EXPIRED" for row in documents) < 10:
+        raise Phase4ValidationError("evidence lacks expired coverage")
+    if sum(row["access_class"] == "UNAUTHORIZED" for row in documents) < 10:
+        raise Phase4ValidationError("evidence lacks unauthorized coverage")
+    if sum(
+        "ignore previous instructions" in row["text"].lower() for row in documents
+    ) < 5:
+        raise Phase4ValidationError("evidence lacks prompt-injection coverage")
+
+
+def validate_golden_release(golden: dict[str, Any]) -> None:
+    """Validate the independently frozen golden headline and timeline."""
+    candidates = {
+        row["candidate_id"]: row for row in golden["expected_candidate_results"]
+    }
+    required = {
+        "DO-NOTHING",
+        "INT-GOLD-A",
+        "INT-GOLD-B",
+        "INT-GOLD-C",
+        "INT-GOLD-EXPEDITE",
+        "INT-GOLD-RESCHEDULE",
+        "INT-GOLD-TRANSFER-500",
+    }
+    if set(candidates) != required:
+        raise Phase4ValidationError("golden candidate set mismatch")
+    do_nothing = candidates["DO-NOTHING"]
+    hybrid = candidates["INT-GOLD-C"]
+    if (
+        do_nothing["sla_breach_count"] != 2
+        or do_nothing["revenue_at_risk"] != "1600000.00"
+        or hybrid["intervention_cost"] != "132000"
+        or hybrid["sla_breach_count"] != 0
+        or hybrid["revenue_at_risk"] != "0.00"
+        or hybrid["revenue_protected"] != "1600000.00"
+    ):
+        raise Phase4ValidationError("golden headline result mismatch")
+    if golden["expected_recommendation"]["recommended_intervention"] != "INT-GOLD-C":
+        raise Phase4ValidationError("golden recommendation mismatch")
+    if len(golden["expected_timeline"]) < 7 or any(
+        not row.get("event_time") for row in golden["expected_timeline"]
+    ):
+        raise Phase4ValidationError("golden timeline is incomplete")
+    if golden["state_at_as_of"]["transferable_quantity"] != "400":
+        raise Phase4ValidationError("golden state transfer quantity mismatch")
+
+
+def validate_supporting_demos_release(demos: dict[str, list[dict[str, Any]]]) -> None:
+    """Validate the frozen supporting demonstration catalogue."""
+    expected = {
+        "DEMO-002",
+        "DEMO-003",
+        "DEMO-004",
+        "DEMO-005",
+        "DEMO-006",
+        "DEMO-007",
+    }
+    actual = {row["scenario_id"] for row in demos["scenarios"]}
+    if actual != expected:
+        raise Phase4ValidationError("supporting demo scenario set mismatch")
+    by_id = {row["scenario_id"]: row for row in demos["scenarios"]}
+    if by_id["DEMO-003"]["expected_outcome"] != "NO_FEASIBLE_INTERVENTION":
+        raise Phase4ValidationError("no-feasible demo outcome mismatch")
+    if by_id["DEMO-006"]["expected_outcome"] != "INSUFFICIENT_DATA":
+        raise Phase4ValidationError("insufficient-data demo outcome mismatch")
+    if any(row["test_specific_branch"] != "false" for row in demos["scenarios"]):
+        raise Phase4ValidationError("supporting demo contains test-specific branching")
+
+
+def validate_benchmark_release(benchmarks: dict[str, Any]) -> None:
+    """Validate the frozen 60-case catalogue, partitions, and balance rules."""
+    scenarios = benchmarks["scenarios"]
+    expected = benchmarks["expected"]
+    if len(scenarios) != 60 or len(expected) != 60:
+        raise Phase4ValidationError("benchmark must contain exactly 60 scenarios")
+    scenario_ids = {row["scenario_id"] for row in scenarios}
+    if len(scenario_ids) != 60 or {
+        row["scenario_id"] for row in expected
+    } != scenario_ids:
+        raise Phase4ValidationError("benchmark scenario identifier mismatch")
+    partitions = {
+        name: rows
+        for name, rows in benchmarks["partition_manifest"][
+            "exclusive_partitions"
+        ].items()
+    }
+    if {name: len(rows) for name, rows in partitions.items()} != {
+        "development": 24,
+        "validation": 12,
+        "test": 18,
+        "golden": 3,
+        "adversarial-only": 3,
+    }:
+        raise Phase4ValidationError("benchmark partition counts mismatch")
+    if len(set().union(*partitions.values())) != 60:
+        raise Phase4ValidationError("benchmark partitions overlap")
+    category_counts: dict[str, int] = defaultdict(int)
+    for scenario in scenarios:
+        category_counts[scenario["category"]] += 1
+    expected_counts = {
+        "FULL_SUPPLIER_OUTAGE": 18,
+        "PARTIAL_SUPPLIER_OUTAGE": 8,
+        "SELECTED_COMPONENT_OUTAGE": 6,
+        "PURCHASE_ORDER_DISRUPTION": 4,
+        "INVENTORY_TRANSFER_CONSTRAINT": 4,
+        "ALTERNATE_SUPPLIER_CONSTRAINT": 4,
+        "BUDGET_CONSTRAINED_RECOVERY": 4,
+        "NO_OPERATIONAL_IMPACT": 3,
+        "NO_FEASIBLE_INTERVENTION": 3,
+        "INSUFFICIENT_CRITICAL_DATA": 3,
+        "TIE_OR_PARETO_EQUIVALENT": 3,
+    }
+    if dict(category_counts) != expected_counts:
+        raise Phase4ValidationError("benchmark category distribution mismatch")
+    test_ids = set(partitions["test"])
+    test_recommendations = {
+        row["recommended_intervention"]
+        for row in expected
+        if row["scenario_id"] in test_ids
+    }
+    required_interventions = {
+        "HYBRID",
+        "RESCHEDULE",
+        "EXPEDITE",
+        "TRANSFER",
+        "ALTERNATE_SUPPLY",
+    }
+    if not required_interventions <= test_recommendations:
+        raise Phase4ValidationError("benchmark test set lacks intervention diversity")
+    if sum(
+        row["recommended_intervention"] == "NO_FEASIBLE_INTERVENTION"
+        for row in expected
+        if row["scenario_id"] in test_ids
+    ) < 3:
+        raise Phase4ValidationError("benchmark test set lacks no-feasible cases")

@@ -1,0 +1,14 @@
+{
+  "expected": {
+    "auditability": "REQUIRED",
+    "outcome": "HISTORICAL_REPLAY_DIFFERENCE_VISIBLE"
+  },
+  "scenario": {
+    "description": "Late correction changes only the later scenario state.",
+    "expected_outcome": "HISTORICAL_REPLAY_DIFFERENCE_VISIBLE",
+    "scenario_id": "DEMO-007",
+    "scenario_type": "HISTORICAL_REPLAY",
+    "status": "FROZEN",
+    "test_specific_branch": "false"
+  }
+}

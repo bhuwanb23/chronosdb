@@ -1,0 +1,110 @@
+[
+  {
+    "result": {
+      "evidence_status": "complete",
+      "reference_case": "DO-NOTHING",
+      "unit": "hours",
+      "value": 288
+    },
+    "rule_version": "2.0",
+    "scenario_id": "SCN-GOLD-001",
+    "simulation_run_id": "SIM-GOLD-DO-NOTHING",
+    "state_version": "STATE-GOLD-001",
+    "steps": [
+      {
+        "edge_id": "CE-001",
+        "output": "affected_purchase_order",
+        "rule_id": "DIS-001",
+        "source_id": "EVT-GOLD-001",
+        "source_type": "disruption_event"
+      },
+      {
+        "edge_id": "CE-002",
+        "output": "delayed_receipt",
+        "rule_id": "DIS-002",
+        "source_id": "PO-2208",
+        "source_type": "purchase_order"
+      },
+      {
+        "edge_id": "CE-004",
+        "output": "shortage",
+        "rule_id": "INV-003",
+        "source_id": "CMP-MCU-42",
+        "source_type": "inventory_and_requirement"
+      },
+      {
+        "edge_id": "CE-006",
+        "output": "projected_completion",
+        "rule_id": "PROD-003",
+        "source_id": "MO-0882",
+        "source_type": "production_order"
+      },
+      {
+        "edge_id": "CE-008",
+        "output": "projected_delivery",
+        "rule_id": "SLA-001",
+        "source_id": "COL-CO-0704-01",
+        "source_type": "customer_order_line"
+      }
+    ],
+    "target": {
+      "customer_order_line_id": "COL-CO-0704-01",
+      "metric": "projected_delay_hours"
+    },
+    "trace_id": "CT-GOLD-CO-0704"
+  },
+  {
+    "result": {
+      "evidence_status": "complete",
+      "reference_case": "DO-NOTHING",
+      "unit": "hours",
+      "value": 264
+    },
+    "rule_version": "2.0",
+    "scenario_id": "SCN-GOLD-001",
+    "simulation_run_id": "SIM-GOLD-DO-NOTHING",
+    "state_version": "STATE-GOLD-001",
+    "steps": [
+      {
+        "edge_id": "CE-001",
+        "output": "affected_purchase_order",
+        "rule_id": "DIS-001",
+        "source_id": "EVT-GOLD-001",
+        "source_type": "disruption_event"
+      },
+      {
+        "edge_id": "CE-002",
+        "output": "delayed_receipt",
+        "rule_id": "DIS-002",
+        "source_id": "PO-2208",
+        "source_type": "purchase_order"
+      },
+      {
+        "edge_id": "CE-004",
+        "output": "shortage",
+        "rule_id": "INV-003",
+        "source_id": "CMP-MCU-42",
+        "source_type": "inventory_and_requirement"
+      },
+      {
+        "edge_id": "CE-006",
+        "output": "projected_completion",
+        "rule_id": "PROD-003",
+        "source_id": "MO-0889",
+        "source_type": "production_order"
+      },
+      {
+        "edge_id": "CE-008",
+        "output": "projected_delivery",
+        "rule_id": "SLA-001",
+        "source_id": "COL-CO-0711-01",
+        "source_type": "customer_order_line"
+      }
+    ],
+    "target": {
+      "customer_order_line_id": "COL-CO-0711-01",
+      "metric": "projected_delay_hours"
+    },
+    "trace_id": "CT-GOLD-CO-0711"
+  }
+]

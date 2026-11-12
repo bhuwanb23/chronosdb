@@ -1,0 +1,14 @@
+{
+  "expected": {
+    "auditability": "REQUIRED",
+    "outcome": "PRIORITY_EXTERNALITY_VISIBLE"
+  },
+  "scenario": {
+    "description": "Rescheduling protects one order while delaying a strategic customer.",
+    "expected_outcome": "PRIORITY_EXTERNALITY_VISIBLE",
+    "scenario_id": "DEMO-005",
+    "scenario_type": "PRIORITY_CONFLICT",
+    "status": "FROZEN",
+    "test_specific_branch": "false"
+  }
+}
