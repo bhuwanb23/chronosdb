@@ -968,8 +968,9 @@ def _write_governance(root: Path) -> None:
         key for key, count in Counter(similarity_keys).items() if count > 1
     ]
     synthetic_origin = all(
-        document.get("source_type") == "PROJECT_AUTHORED"
-        and bool(document.get("synthetic_origin", True))
+        document.get("source_type", document.get("source_classification"))
+        in {"PROJECT_AUTHORED", "PROJECT_AUTHORED_SYNTHETIC"}
+        and str(document.get("synthetic_origin", "true")).lower() == "true"
         for document in documents
     )
     licensing_findings: list[str] = []

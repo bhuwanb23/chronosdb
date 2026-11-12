@@ -1,56 +1,21 @@
 {
-  "checksum_mismatches": 0,
-  "errors": 0,
-  "golden_mismatches": 0,
-  "profiles": {
-    "demo": {
-      "counts": {
-        "customer_orders": 1000,
-        "inventory_snapshots": 7440,
-        "master_files": 13,
-        "production_orders": 400,
-        "purchase_orders": 600
-      },
-      "profile": "demo",
-      "status": "PASS",
-      "version": "1.0.0"
+  "checks": [
+    {
+      "name": "all release files exist and are UTF-8 readable",
+      "status": "PASS"
     },
-    "standard": {
-      "counts": {
-        "customer_orders": 1000,
-        "inventory_snapshots": 14400,
-        "master_files": 13,
-        "production_orders": 400,
-        "purchase_orders": 600
-      },
-      "profile": "standard",
-      "status": "PASS",
-      "version": "1.0.0"
-    },
-    "stress": {
-      "counts": {
-        "customer_orders": 25000,
-        "inventory_snapshots": 72000,
-        "master_files": 13,
-        "production_orders": 8000,
-        "purchase_orders": 12000
-      },
-      "profile": "stress",
-      "status": "PASS",
-      "version": "1.0.0"
-    },
-    "tiny": {
-      "counts": {
-        "customer_orders": 50,
-        "inventory_snapshots": 210,
-        "master_files": 13,
-        "production_orders": 20,
-        "purchase_orders": 30
-      },
-      "profile": "tiny",
-      "status": "PASS",
-      "version": "1.0.0"
+    {
+      "name": "manifest paths, row counts, and checksums match",
+      "status": "PASS"
     }
+  ],
+  "errors": 0,
+  "layer": "file-validation",
+  "profiles": {
+    "demo": true,
+    "standard": true,
+    "stress": true,
+    "tiny": true
   },
   "status": "PASS",
   "warnings": 0

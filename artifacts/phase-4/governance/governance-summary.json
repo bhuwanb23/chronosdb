@@ -1,5 +1,15 @@
 {
+  "documents_scanned": 700,
   "external_corpus_copied": false,
+  "files_scanned": 1545,
+  "findings": {
+    "leakage": [],
+    "licensing": [],
+    "privacy": [],
+    "secrets": [],
+    "split_similarity": []
+  },
+  "licensing_findings": 0,
   "private_or_personal_records": 0,
   "secrets": 0,
   "split_similarity_findings": 0,

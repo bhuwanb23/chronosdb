@@ -1,5 +1,5 @@
 # Phase 4S Governance Review
 
-No test-answer leakage detected.
+Leakage findings: 0.
 
 Status: PASS

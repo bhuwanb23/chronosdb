@@ -1,2330 +1,2803 @@
 {
+  "canonical_timezone": "UTC",
+  "currency": "INR",
   "dataset": "chronosdb-demo-dataset",
+  "display_timezone": "Asia/Kolkata",
+  "domain_model_version": "phase4-domain-model-1.0.0",
   "files": [
     {
+      "format": "markdown",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/benchmark_release_notes.md",
       "record_count": 1,
       "sha256": "cf2b79767eac2ee3eae7e4362fda61f4f486168e2fc58b1299388fb2b620531e"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/difficulty_labels.csv",
       "record_count": 60,
       "sha256": "f0546ea69eeb1759ca4ab52ec1f182cb9d21d4fec7ccb45988313a5d7fedb00c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0001.json",
-      "record_count": 11,
-      "sha256": "2899559ada8bff0d70b61411755c79df155bf97b1452905302da462f304437e3"
+      "record_count": 1,
+      "sha256": "69912e8a879e7f36363480341e5a40be839e9af05faac2c9e97355727a7cc4e1"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0002.json",
-      "record_count": 11,
-      "sha256": "0cf81c75b2c255c11d3cc9634f9d575db99495edbca654d64e4ead451b00f123"
+      "record_count": 1,
+      "sha256": "6282262ed5c43bc785a230a0dcfac2b5f99601836fd2a781063ea45e19ff15db"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0003.json",
-      "record_count": 11,
-      "sha256": "cf52ff459f2b6b5c3bf41cf843f23b7b62a9efa5f59df9360d4c4717a34c3818"
+      "record_count": 1,
+      "sha256": "bb77101b43d3f3a393cd0628a1e7f9625835a59bf1d09cb25e1ada592a4cf933"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0004.json",
-      "record_count": 11,
-      "sha256": "5ab6bc315949d99072d8db5369a18ac96b7af463f5110afca22a28e9bdd1921a"
+      "record_count": 1,
+      "sha256": "dab242913cdef5301adc8888b7f6e0797762c5d3b824f62569a80a4b2403219a"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0005.json",
-      "record_count": 11,
-      "sha256": "fa9eaa20f44ed33fb6920f18bb7da98e0a674fc842eeae465daccb57bfc0a3b5"
+      "record_count": 1,
+      "sha256": "10e84419169997dda9f49d71daa516dd115033a27a319c7eb3a1dabd9e0bb76b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0006.json",
-      "record_count": 11,
-      "sha256": "3d7081b1e80f3b377a81492a457556559963206c759e493f86dbb21ee0ab9e4d"
+      "record_count": 1,
+      "sha256": "597dfa5b82ba4e6519449dfb2dcb2d62af82f0cfbb64473e39bd3713a952032c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0007.json",
-      "record_count": 11,
-      "sha256": "5a30d008b00a1a8b267fcaf74a398a6a91c142b979a37a91a6157c1962e456d8"
+      "record_count": 1,
+      "sha256": "9f164e7d156f0f001bb3a0961ac5132d9ff1d34fefa0a8af1229fe12ca238b5b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0008.json",
-      "record_count": 11,
-      "sha256": "927766bca9efe43785ffe95ba7063043715210fd7f8a02b464cd46293f507290"
+      "record_count": 1,
+      "sha256": "e0c29c5480ab0f9b107234dcafb18b4af9bbdc22a6810cfa0a9f8bfa1c0d1850"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0009.json",
-      "record_count": 11,
-      "sha256": "4d7bd30ea9d0c8893d2e265f6e4ead154c4ad2a3875dadf7c664fd2e49864b3b"
+      "record_count": 1,
+      "sha256": "dba1dd56a6f5d894ad9df74086429d0428363c9e64f7fc036957e66d601244e1"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0010.json",
-      "record_count": 11,
-      "sha256": "8350895247167cf27a8d595a64005918aec3cdb6013941453df9f24acd8a93b6"
+      "record_count": 1,
+      "sha256": "9e873c12ee42cedfdb29a0fccc447e7ed7a24b5f52a44b6115e7a2db0cb3ece3"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0011.json",
-      "record_count": 11,
-      "sha256": "008e5f0a96bdb5d04f12dba6dd5a4d72d9456a2de41be856f1f0329ba2a73c92"
+      "record_count": 1,
+      "sha256": "83330b68429ed006aa2a19352a8079ba69f61ff24f2bce5e919178a14ebb9a17"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0012.json",
-      "record_count": 11,
-      "sha256": "fc8747d59580a2fbec97cfe244ea82e30d53a0abc9b245bb0932ee1ddaf5b2df"
+      "record_count": 1,
+      "sha256": "fe14afd5236e8914657a723cea34156419ba1ca1786d768d589ff7efc250847a"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0013.json",
-      "record_count": 11,
-      "sha256": "3b5ed87d28c294853a0bd7eefa82607f29f6240d3c325413b6a19953a6d9f09d"
+      "record_count": 1,
+      "sha256": "bdc02b999ca3b3a7348edcc1ecd278787b14ffc1a3fc04d82fcdcf6034febfc2"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0014.json",
-      "record_count": 11,
-      "sha256": "518d5dde420a4e0bd9427448cd18c59ae383005c929706ebb624f83b9f466cc9"
+      "record_count": 1,
+      "sha256": "6b972964d0d906ac7c3fd7796176550cbceaefcf7d01fd58aba96cc3fb2899fb"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0015.json",
-      "record_count": 11,
-      "sha256": "9f13a71db095e5c8e00699f934240326a50fdd3fd114cdf356334df8a8983e11"
+      "record_count": 1,
+      "sha256": "649b111903d6ede7241f336f87349f124ddc544cd0070fb86006622d41254880"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0016.json",
-      "record_count": 11,
-      "sha256": "f1aa00b5809648653ec3cfa4c45f3d669b03e801843f87ae4fbbb0c446756c2e"
+      "record_count": 1,
+      "sha256": "555789bf1101a4d25b28b29a596d85ba5c042553b7598f5c27bcee1094e7d244"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0017.json",
-      "record_count": 11,
-      "sha256": "632a0eb851d7ac2ac73241932a66650f724acf39545eff9a9b3fee7595d62d4a"
+      "record_count": 1,
+      "sha256": "a2c297af7a8f2cc4696eac83fa744f8975377c55d7fc68c1ed39dd52e1682565"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0018.json",
-      "record_count": 11,
-      "sha256": "bfe642a9a4adfce36db74a01965626b36ec3def2b2499ec1e1f33cc588edf826"
+      "record_count": 1,
+      "sha256": "b3ae630c7cdae2690eb76bf4f4803cb3bfceb0b7d560f4cb3567c7238a888c83"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0019.json",
-      "record_count": 11,
-      "sha256": "97e7713fdaa0d67f9acdc35642996c5c9f882ae11d0b9d2c2f27408178c82d42"
+      "record_count": 1,
+      "sha256": "5340e43e31d2121dc9e1dfb9590c61ea84f772b5cecb4faeaf23b4a7348095c9"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0020.json",
-      "record_count": 11,
-      "sha256": "136855bc0c452e257a0db3d40c635f190f856fe75b89a0ca9f25b45a8df7b41d"
+      "record_count": 1,
+      "sha256": "cccb529cdf89c1c6828adf5e011d344af342736d9bc24f28965ba2a701ba85b8"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0021.json",
-      "record_count": 11,
-      "sha256": "a7b1c45eabb02bcaf77f39457ff9a001e99c54044dedc779b410eec7271e118a"
+      "record_count": 1,
+      "sha256": "0ebfde9f77d6f82ff13cec1b7fdcba83cae6f1fd1ab4de27489158f8b7782407"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0022.json",
-      "record_count": 11,
-      "sha256": "5f7c60f879ac7bb3a47b9149954157fda9d9bf98948cb5f357735f8840bbc451"
+      "record_count": 1,
+      "sha256": "f1bfd1cce38bbd7b6629f0d0d9f7db54beffffc745400488eaad3b1cbc878c79"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0023.json",
-      "record_count": 11,
-      "sha256": "ab2949d5b30147d95155b94c2faa0f6a99be58d5913b0f99c59f16d53e74b156"
+      "record_count": 1,
+      "sha256": "42a47a2621d47b2e98a7ef385da8a7bd78dc5c2a92ed47839b96cbd286199493"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0024.json",
-      "record_count": 11,
-      "sha256": "5a8fdbc0b753bb9a3d113165ccc251a4bbfd373beb357cb73e534d239ee0ea62"
+      "record_count": 1,
+      "sha256": "7a4906679a2ca5598513a388f1f39b16932cdb9d4b1f883b37b66214ae97760b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0025.json",
-      "record_count": 11,
-      "sha256": "1c5a8a2ce006ca7138bd4d85b7dde37e400338d8f932428c6d9db8b2bd69c0c2"
+      "record_count": 1,
+      "sha256": "8264c8d317df5ba9251215d56ed7caec9ca55c8703f2f23e2ab3cb7897dcbc78"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0026.json",
-      "record_count": 11,
-      "sha256": "10669f9d5416f48439eaf2010996ae945cb43f4f6d72225b78dfc43c27a971df"
+      "record_count": 1,
+      "sha256": "9ccaa1d7da88300e3e09de82419ef2420cb9da4f0b4f932885a3d39f91733daf"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0027.json",
-      "record_count": 11,
-      "sha256": "5c6c874698a8ca58c0bf77b20bdc10570a292d265b5f03c24bbb0ac4ff0669eb"
+      "record_count": 1,
+      "sha256": "91e26194b2ed21c8dd1490ebe8103ed4688e082f99f88cb6781a2cb141a149e2"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0028.json",
-      "record_count": 11,
-      "sha256": "9b44c467ca530a33bc9f61c636927ef0b2e4bf665f2d3e7a625815e6c7b70f5c"
+      "record_count": 1,
+      "sha256": "43219d911c8cf149d1d6c9500e73d82f2a374173fedf36cbb7ce0e2525c52e6d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0029.json",
-      "record_count": 11,
-      "sha256": "a34f5f9c7973eb47cecc4dbb381e7c9b512c2722827d510043926b6b061a5778"
+      "record_count": 1,
+      "sha256": "a3eeb40a8cfa9e560c13206417bc28a41d1d027143bee043915ddece597d2d57"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0030.json",
-      "record_count": 11,
-      "sha256": "05ac38548fedf1728fbab0d573a6efe3ab2e0b5eb0bf5b7376cee355d67e02f0"
+      "record_count": 1,
+      "sha256": "be24096396d1afd6c8cc4dfad1df0c6f7c70167c0ecfe65957b0d6f244913412"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0031.json",
-      "record_count": 11,
-      "sha256": "ed6ba564a8857c4199c1c88500341a601d28305ea16ac4ef5b8acfbb9dba2601"
+      "record_count": 1,
+      "sha256": "dc405871cc5facd98ddec292d6880e93945b0111085b4058ace3aee356da1828"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0032.json",
-      "record_count": 11,
-      "sha256": "d9baf5ff15a65f90e8f47acfde6cbced38eee78771ec66a58b0a036db1fceb71"
+      "record_count": 1,
+      "sha256": "2c8f9d7c7d50583d975746f6234f5a75b568cdd5d93c9c81104cbe9a3e06bc77"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0033.json",
-      "record_count": 11,
-      "sha256": "6b619b6fe85213f1eddd7ef3ac803ef2ed00a432161cef461f56594575b0410b"
+      "record_count": 1,
+      "sha256": "7441a947a4c33d23b05b0e613fbce9cdde04e791e54f5e5333544238580a46ab"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0034.json",
-      "record_count": 11,
-      "sha256": "cead2a78fac7655f85e19cf1b8e6c58971ff718b791e4690792bb062369a35f4"
+      "record_count": 1,
+      "sha256": "b999b341a017190b65ed52a42d23b478d649186f2ef4d6664e047fe491211d3a"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0035.json",
-      "record_count": 11,
-      "sha256": "a0eadf63d98291eca38178532e1c405968ecc209885def5c606047793de61db7"
+      "record_count": 1,
+      "sha256": "dfdac65cf8ab945d3a4e17ea38be4ce18d5f19fca009b5d5ef9360e055f716ef"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0036.json",
-      "record_count": 11,
-      "sha256": "04294c65b1411bc88f27a81c4a6d779a5a49e6844b826356fa12ab3f70568e39"
+      "record_count": 1,
+      "sha256": "ebe367adc83ca9c87fa4eedde07a7ac85644ec6ada8b1b7b8a5a462ecf7e906b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0037.json",
-      "record_count": 11,
-      "sha256": "62ec4d639d1b109dbaad802fa93f3f8bf21e06c8e48cc7455edbd25d7e38932a"
+      "record_count": 1,
+      "sha256": "77b02a353914f55f5225a1ce88e629889f3f00413fe1406938bce0ec82c0be8d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0038.json",
-      "record_count": 11,
-      "sha256": "5b55ee4fb4a3df7a26f822122701400a87ec378cbfea59d3170215d8742d3899"
+      "record_count": 1,
+      "sha256": "894ec5119245a8b59747497b876e92da0b36fc02cb524886e1a9425635963298"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0039.json",
-      "record_count": 11,
-      "sha256": "97dc8408dbf11b1b0147055e3493953648afa1a756c92fb983da38f028dcb2be"
+      "record_count": 1,
+      "sha256": "086e59a785641487af21959b96496c70e249bf6fe55e6396207de43112f4c4f5"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0040.json",
-      "record_count": 11,
-      "sha256": "7da17d1aa8b88b7f0bb801ab8c944aed4cef49f55af4effaa16a6d95ff31708b"
+      "record_count": 1,
+      "sha256": "96d65d10a93af9e4a79cbcfed78bb4a51a91245833f10c165608c42904f5d563"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0041.json",
-      "record_count": 11,
-      "sha256": "6fa99d03955c6e85905e4ac0de9c0c6e1523273adc07736df9e727f016ec3cb6"
+      "record_count": 1,
+      "sha256": "897dafd2b47204a67c2751107154a776cc03cf743f891ebbed4dc45d179968c1"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0042.json",
-      "record_count": 11,
-      "sha256": "b3a0af05a25c3db3a2a89ea9dcd8e4b217baca51f76f21c3fc62c36c7491eda8"
+      "record_count": 1,
+      "sha256": "34d5392b752f1f3dd450bfb0358902eb4bd59ad270a45c6f21033d167ae0b7dc"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0043.json",
-      "record_count": 11,
-      "sha256": "566c4feefab88a5541b8e9e1753a4e8831e7b43a9445bb1a63a932fbfc272f8e"
+      "record_count": 1,
+      "sha256": "d2765b42cb2dabb977f581ac3f79884ee08d27381d3257ab62d2f109222013b5"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0044.json",
-      "record_count": 11,
-      "sha256": "dda45dd0a954350db9c2441033ab405c24b1c1b8091de0775ce6bd1cfe7ce6aa"
+      "record_count": 1,
+      "sha256": "ed3456fa3ec6330c06e1cc0e55bec49789bfae39513c934ef2a6ad1e13952cb7"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0045.json",
-      "record_count": 11,
-      "sha256": "48520382cb60fcc312fa73a759439b9902f0f9fba2b500fceaf7a51e7198be1b"
+      "record_count": 1,
+      "sha256": "fade46de0f087c0eb9941e99a9a4a03b04d3b9d1d29d42b73596c84be17e9639"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0046.json",
-      "record_count": 11,
-      "sha256": "175d13e7b8c6c1aea3389cab530b72cba9b459a3c47c6514b1850517a7d16acb"
+      "record_count": 1,
+      "sha256": "bf245dc455e5ae0d33646549b74936e4e3573171fb2247003f2e30a1a4bb88f7"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0047.json",
-      "record_count": 11,
-      "sha256": "cc033dccc32b5dc2d8032a539655cc2334bb14a1825b8433d406d027836e0a0b"
+      "record_count": 1,
+      "sha256": "df512b86533065c137613ba7291278a857b928620ae2c6ebefefd31defefd196"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0048.json",
-      "record_count": 11,
-      "sha256": "dcae40986ed220830ac9cc45e7bf7e537ba9834ca3c1e3aaa20fe9c135d27ef2"
+      "record_count": 1,
+      "sha256": "d031a2831ee9f14f3d2c989032dbd2b3d585f56c68d4b21c6a4451d447f05944"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0049.json",
-      "record_count": 11,
-      "sha256": "71ffe14c9a85fe51cec37a95164638ed114ff484e68840d17728af00bd80ed41"
+      "record_count": 1,
+      "sha256": "deabe4672e754090bd5514d43c5d60901eb450b197fc087c25769f2bb350bb36"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0050.json",
-      "record_count": 11,
-      "sha256": "939c12216b4a9d9b78ad8e92a8d5035db5cd33b304ae33b9ea355cee3e17ed07"
+      "record_count": 1,
+      "sha256": "98f024238d308d07760f13d0d1dbc4da5ac36b6464113ef54e3e16414d83ec10"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0051.json",
-      "record_count": 11,
-      "sha256": "67fa887e52326163daff554b7c15636580658b3873392b95113864242ef523bb"
+      "record_count": 1,
+      "sha256": "7b10cf71c63a96f95fc77dac63139fc0afcea8008233e7cfe2acf2ca7172ad2b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0052.json",
-      "record_count": 11,
-      "sha256": "bef8b71e4047e48192bcc45434379b8e58367f30414794c9842f1a2a8f114947"
+      "record_count": 1,
+      "sha256": "5a49853389fd080ad5f13b56eaa14788a04b3ba0f397c5739c158abbe1266eab"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0053.json",
-      "record_count": 11,
-      "sha256": "7fc0a9d0a82c56b6a00af05724ffa701e8adf3dd9f69b3d61264b8a34cb9901d"
+      "record_count": 1,
+      "sha256": "4cdb53789fb74e10fe6f3cd6f0ca5c6aef30fa388b58999488b65928b09bf0ee"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0054.json",
-      "record_count": 11,
-      "sha256": "df0385731234ef9e88b67215e7590e8e3713528518e7daa65cc86153bbb5c507"
+      "record_count": 1,
+      "sha256": "c43c63c603b97cee94c9e9ce9edf9ffbbc8103a1f239494d81ba0b9d4bbf3109"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0055.json",
-      "record_count": 11,
-      "sha256": "db53b42d6163295715451987ed944bc0d3b8fd7a2a483a121272dd61b4225cc3"
+      "record_count": 1,
+      "sha256": "ab455273c34dd7c1da857a539ae590586bc02572402c4d2670b7959e8514651a"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0056.json",
-      "record_count": 11,
-      "sha256": "c20257450391b7d6a5357b5d5ba31d51d7fedbd892af1937f3f7a7a2a9d4dafb"
+      "record_count": 1,
+      "sha256": "a333fb7043888a84999ee9a0209999287e5cccf879a8bc19b94aa559773e09d8"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0057.json",
-      "record_count": 11,
-      "sha256": "04247a919d1d05bd5e03d941f552a60789e2c35c399bee3c31d1e316d3f71856"
+      "record_count": 1,
+      "sha256": "00b62276d519ee335584953f8add44627ad2813059638c132eba0f4e6920f5a6"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0058.json",
-      "record_count": 11,
-      "sha256": "4b75cb7eb6dffc671b12d7d6e8f89370741b1cd6e77322484fcdbb4957813fa1"
+      "record_count": 1,
+      "sha256": "d541c7cab777d808184820feafccfdafa61346451ea74e37463c72e8d4fb607c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0059.json",
-      "record_count": 11,
-      "sha256": "60c2fc7fbe0598dad66c28f58006412c7142a147ebcd76809519672d9f2a6183"
+      "record_count": 1,
+      "sha256": "f4508ecfe8e6ed4399be6609a474e70187f9e66a0805dfb56905641c465b23da"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/expected/SCN-BENCH-0060.json",
-      "record_count": 11,
-      "sha256": "935b1b95fccfce1be98bff075413182abe2f3ad95ea846fd99796f9b3c919b0b"
+      "record_count": 1,
+      "sha256": "c125f161e18096220125578c069df08f1347f4afaa2ed0f53f2b05c23fa8a554"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/partition_manifest.json",
-      "record_count": 3,
+      "record_count": 1,
       "sha256": "6c1272d242fe58e0f51f9cbd00e90c856319293ec9b45b00f33a10566d7d58fa"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenario_catalogue.csv",
       "record_count": 60,
       "sha256": "a0fc98a5249548b72de0eb978dc69f885dda06d0ab5926020d683261872153f7"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0001.json",
-      "record_count": 18,
-      "sha256": "804f7a9a2729ed4477cdfd403d354a33cb08b91265594144f4cc5d6a9a6d2a84"
+      "record_count": 1,
+      "sha256": "05f1d0e0e7bb8250820c838969577a1b3ee70a183177e242d1f8e0eeb23abf42"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0002.json",
-      "record_count": 18,
-      "sha256": "c215d1e1bca1a3afaae551e3018e1e5ade24975e34c46843a30088288c955503"
+      "record_count": 1,
+      "sha256": "bd5d0abdf59d725820a6b2f48137aad9dc55dffa53241add42a3b25f71b7f743"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0003.json",
-      "record_count": 18,
-      "sha256": "1efb06ce7ea3c264820d348e7c8ef7a8778687fae22d5d2785d897a66271da69"
+      "record_count": 1,
+      "sha256": "093684baf2069e9e9bce6f4d1a46702f2d4fcfc085ba135a9c2ff0665cb66d39"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0004.json",
-      "record_count": 18,
-      "sha256": "131fba8678e71a6d14c698306d1e64392f9e2a1544e88cfb9a2fd0274652d572"
+      "record_count": 1,
+      "sha256": "d4ae3eb7daf340940bd90bc38f6e01dd6c155ad7f72ec47ddad5051d016a863a"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0005.json",
-      "record_count": 18,
-      "sha256": "4f5b61a8e17286e00b1d3a0aa312a8bcd30306e29334d2b2bc6a165daa426169"
+      "record_count": 1,
+      "sha256": "bc7821cb261dd9ecc2add21b378908aa53a9fa6456fbde74f3559a9e9e733c24"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0006.json",
-      "record_count": 18,
-      "sha256": "5a103908c16774e66ad73b775fa04bcff65603bbba0583f32b421bb93d9d220c"
+      "record_count": 1,
+      "sha256": "47b06a599ca9cfd2b55b6294eff160ba6d29f3dc528c26f4b26ad6f5b871b2dd"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0007.json",
-      "record_count": 18,
-      "sha256": "5db6884b7f254f921c2fc0e7b7cfc1a985d003f294a59a30c5c8fec47d449f0f"
+      "record_count": 1,
+      "sha256": "9ac52767090f4750162dcb0077a2b05d9b4c34a0a409a7adc0778474b20bdc8c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0008.json",
-      "record_count": 18,
-      "sha256": "7e4df31a3e2a075383851b41401b90dbf3bac1d30be0fa37428c29bdc825e6df"
+      "record_count": 1,
+      "sha256": "7ace1867ed805279fb9b70d52c54a13230c76b464186678b2e014dbbe030e198"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0009.json",
-      "record_count": 18,
-      "sha256": "8572d09c6438c4098f0938b0a665df6e22eae4b0677181c2a84a50ee56cc86c9"
+      "record_count": 1,
+      "sha256": "89d79eae2399c7c860349e99d78afd16edb10931088bdb4ae4e46df92c3fe580"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0010.json",
-      "record_count": 18,
-      "sha256": "eac9b1cd15e9eaeca8f8cf5d4acff9717cac4d1a47368000f085a6b9da8838bd"
+      "record_count": 1,
+      "sha256": "e4199694ecbf638948225cee5d57ec4904257a676ab9eda2aec6b6e7536d2753"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0011.json",
-      "record_count": 18,
-      "sha256": "2279b37edfeb13fcb53fd7d53449a6093c6af6eecf2e1f381a9b0f391e71f6d2"
+      "record_count": 1,
+      "sha256": "01e7384f8daf0587271889c39726ef196384b3701e35b4ee036129715668a488"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0012.json",
-      "record_count": 18,
-      "sha256": "a90f415528728f9485470ef7276c6baa3e89392a98d42f1ed0a93001b1501e9a"
+      "record_count": 1,
+      "sha256": "8c27604618a04cd43eec53ce8c6e3ab89f917c0cc18702ab099c80e04388c89f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0013.json",
-      "record_count": 18,
-      "sha256": "6348fd55fc25a55579a4db00ad5fd5fbb853d3790e8a4023710ef2dd61e2878e"
+      "record_count": 1,
+      "sha256": "763b152668cdb9c9cdd67e4ad059cf7f1fd17a20ca20bf2ccf830219ed1f2556"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0014.json",
-      "record_count": 18,
-      "sha256": "6ce0190ddcb797efc964fd25330a8e047481f9533dd5b4e0ea097eca304bb74e"
+      "record_count": 1,
+      "sha256": "27a7cb318dccd273b1f5b7fad2fa9f77f4509ccbc9e273138cf77eabb42449e5"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0015.json",
-      "record_count": 18,
-      "sha256": "8b05b8f894f1929d564d7a260300669f2fa01e1d3d694be98202ca792e685612"
+      "record_count": 1,
+      "sha256": "dd8396cb947421e843b0b7dc515cdf4871b0b20f73bf6cdbc534e6ffc02c5155"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0016.json",
-      "record_count": 18,
-      "sha256": "4a7c7da628c05f84122f1bad6e0fe9ff0e6f24692582bd2fce484af1dcfc7558"
+      "record_count": 1,
+      "sha256": "49aab1955bc76fb4c5f8a4d480d8439ff1435dc0f2da20bd56b8d719e1a9582f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0017.json",
-      "record_count": 18,
-      "sha256": "32789a33fa44cbf077a38a5df3ad0e8a4738913ffa3e15a59d1ae18d9f99f780"
+      "record_count": 1,
+      "sha256": "df606eed56443b68b86af123ef46727ecbb53a392b91fe26cfa4e4f127178d1b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0018.json",
-      "record_count": 18,
-      "sha256": "98d3d858bbac84969ea2eda0250ed92d99980cbe75282881aaff7f39a53a7180"
+      "record_count": 1,
+      "sha256": "33f9f8e1e74f29c01504f1ebd91845cdc4505b343ee009f5f5f8a21cff45ba26"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0019.json",
-      "record_count": 18,
-      "sha256": "e0c2b06bf12cee7b9fbc3a582886fa469a52e95b84200e1f04f0cfc0878132ec"
+      "record_count": 1,
+      "sha256": "8f608fbb8d3cfd2c8e5558d4bd71e99d306d249a930bdb85f21fa849724df980"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0020.json",
-      "record_count": 18,
-      "sha256": "026eb20700f821c141b3288d0f9d6e8c5d918651f627dc8bc42043e9d8810227"
+      "record_count": 1,
+      "sha256": "768097581cae534ec61f43594949279dbe721d068fe63b26c358818880b27f63"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0021.json",
-      "record_count": 18,
-      "sha256": "6715d283c8161a0c2792b195a0a623d9087029c68f0c376367d1483f6ba912c0"
+      "record_count": 1,
+      "sha256": "6c6aaba54f8a8e286d9dbd979a21acf6efa547540bb26973131c2564796a3345"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0022.json",
-      "record_count": 18,
-      "sha256": "1731f786699c4291ee01fff2e43a3cd250a33e19be72d0a126943961d825fc19"
+      "record_count": 1,
+      "sha256": "77b80595509e17272c86bae27420320c45181263a94aa20052383cb6d7e23f4d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0023.json",
-      "record_count": 18,
-      "sha256": "ad9442f2f486703c645bbeda97704a5a157d897ae43e16b6c7998f094d31afbe"
+      "record_count": 1,
+      "sha256": "b4af03c250f85da71ce9d76110c55443cdfabafe774b0984bb761d3770725c1e"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0024.json",
-      "record_count": 18,
-      "sha256": "799a9e69f2f840a1bc3b5679b6960be5a3308a2eb794ea587704573fa2638b70"
+      "record_count": 1,
+      "sha256": "535d9b755fbd3811352ad4eee920442069cb30c8cf8c448c2b647ac1c68c0e7d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0025.json",
-      "record_count": 18,
-      "sha256": "231decae50f1102e81e9d0ecf7ef6b040d06808909ccc7fa870f9dfd54426b0c"
+      "record_count": 1,
+      "sha256": "f2dffeeb706c1de38ea774c38806f2c32eb508562e6d02e8290ad966516689d7"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0026.json",
-      "record_count": 18,
-      "sha256": "da8a0922f297e87a21e20141037f841941e505f197646c8d9c5ca3aa21248f6a"
+      "record_count": 1,
+      "sha256": "70da3264a7d1d28161df25adc1a7b9f4a563b222e985c182784c016070c51ba3"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0027.json",
-      "record_count": 18,
-      "sha256": "0e3db5e40b7a7c5ab899bbe1ed7068dfe95c878910fd196adb8e56bc437a53e1"
+      "record_count": 1,
+      "sha256": "0ad9e29dccaf5d7ff794b0d7a54c65722d50c1c9ab0548638b2c6178d85adf83"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0028.json",
-      "record_count": 18,
-      "sha256": "8851acdbe3a58ac17c821bcbb1bd0177d1ad2d2ab32e780a85f5e5fd43867e9b"
+      "record_count": 1,
+      "sha256": "2699d7f8bbcccc1e1a8476810d451352c88c7df7029bc56e1acda9bc380c4d1a"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0029.json",
-      "record_count": 18,
-      "sha256": "7b374fb5d94729b09c92a60252455c11518914880d546fc5f530554b6367ef46"
+      "record_count": 1,
+      "sha256": "55f5ed2a4640d4b37d04dbea574e0da0d8a3e9d0f694a7e2790548991a3c7028"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0030.json",
-      "record_count": 18,
-      "sha256": "6601d3780407b1931a5e2784a0318c4f79d3a67b08c950e138515edb9cd42edf"
+      "record_count": 1,
+      "sha256": "5f571c0fc7e77d7bf3cf01676ab30ae5ada3bfd91b3ae3d6abeaa84121b1de44"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0031.json",
-      "record_count": 18,
-      "sha256": "fb2017bd336050fd342fd91f2380c39b3dff1665a710a6027270c302444d5c7c"
+      "record_count": 1,
+      "sha256": "c5c6e314b8fcd60512d59edc40f5d10702853fb2777a4d0593c88257bc5d44ad"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0032.json",
-      "record_count": 18,
-      "sha256": "d2a9868f4e35273c862abd1a4fb06cb0f23995ba94298535031a706c66260936"
+      "record_count": 1,
+      "sha256": "e7e4e05ad97c7aebd7c1da25821a7a2ac344c7a432201fe878197d41b8bceedb"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0033.json",
-      "record_count": 18,
-      "sha256": "d003e4b1c924f44b3de294abc9ac3065cf1cd2f438dcaf7f81342cf0f7644564"
+      "record_count": 1,
+      "sha256": "1df500d0a57370d26ce3a3dbde963effd9bfebeda5f1d714e7e04e6a21dd4f1c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0034.json",
-      "record_count": 18,
-      "sha256": "72495ae7059d022f34e6a9c2e1f8141238cc82bab8714535a0cb533ffe8f41fb"
+      "record_count": 1,
+      "sha256": "ea3d94426657ce40a5641ad99da640ae2c211eec63ac75287bee826d8b5d7c5f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0035.json",
-      "record_count": 18,
-      "sha256": "655fe1ebeaadc5140b2953e4e8f61ba85fc034476468d89c4c1d0c69079d38c6"
+      "record_count": 1,
+      "sha256": "85c64315227033e5846d4b383bb4ecf589fabf186b3caaa9e90247c6dda82736"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0036.json",
-      "record_count": 18,
-      "sha256": "8500251f5af6157fb8701208b0f0373cfec58ae566b2aa380ddde0bb6fb1d513"
+      "record_count": 1,
+      "sha256": "01fdab9ae1d949e29fb87a27ae52fa651e6aacc1aabe2e6f78b8e78eb28f2c47"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0037.json",
-      "record_count": 18,
-      "sha256": "6fb045bf9cd243be51fa54a0e1ca5929e1ca467649b785a3c65f94ae553e6443"
+      "record_count": 1,
+      "sha256": "88280e193f538909f387421fa82994f37417c987f7f30ab75cdb4795419ab162"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0038.json",
-      "record_count": 18,
-      "sha256": "e0de557820ba804a8e147b148b80172f8e2bbd2de909c420c90c3bf67e99aeb9"
+      "record_count": 1,
+      "sha256": "591781f93cf494999844e3a185f5175f341e591f34232ebc64c4d66f300e1a4a"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0039.json",
-      "record_count": 18,
-      "sha256": "7cbc65edbbbce104b0c9f3fb222306ec4c94c80db14a6bfc726f2c76224b9a45"
+      "record_count": 1,
+      "sha256": "ccddc7f6fd35d49f3089c949d97d294105901eed1766b98bea07817d1d53e92b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0040.json",
-      "record_count": 18,
-      "sha256": "e7611ddb6e98bb0e96ba1bebd3b8114f2a03b9da989e2c5e8bed600ff72e9819"
+      "record_count": 1,
+      "sha256": "48b584e9acc6c9024d204b81dec68a8241b322d21da907779b7612293c605a7f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0041.json",
-      "record_count": 18,
-      "sha256": "9cab21e7a55e6d13073c71380ba1008eda939a237d8d8dbca9a1ddf6c0055fa4"
+      "record_count": 1,
+      "sha256": "b8e5449e6db6843f1393b0338c59a0795ce034255e213f1312b151de027617d3"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0042.json",
-      "record_count": 18,
-      "sha256": "eda5cd739c47f61fc37b937621702af2c2322f63c106e0302f0d68028a1d5ce4"
+      "record_count": 1,
+      "sha256": "8f7a899690ba7d1aa23e2b24e6e4d123cd4f1fc5ce1cb7818363a05b206273b1"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0043.json",
-      "record_count": 18,
-      "sha256": "dc2326ae0681cfd90e19d2db40fb0728e91f54f6142c6c1f32f0c9bb762a6ea8"
+      "record_count": 1,
+      "sha256": "6ba83ee1ff102bd28265fb7c7d2a4a6390d559c4ed0bdde766f78d074d642bed"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0044.json",
-      "record_count": 18,
-      "sha256": "79cd3be3466efa01599361aeaf74543b7e54cad1795a255a9634b05861c288d9"
+      "record_count": 1,
+      "sha256": "305f197de8aa611f93a5d4afd3b8af51d9b7ef211f00776f74c4407af2abadb2"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0045.json",
-      "record_count": 18,
-      "sha256": "1b33c430307aa84954b0040e84aa32b93b2ef83f5c4902f53665687a404518f0"
+      "record_count": 1,
+      "sha256": "bdcf704fc77549895d507f62f976876749d78b600d60985ed6ff55dba4c9bede"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0046.json",
-      "record_count": 18,
-      "sha256": "42e0750a8d4231d864e4693addc133e1d26ae2a77e5525b36b04cf4a1f3a7b3a"
+      "record_count": 1,
+      "sha256": "8b1ee7c5ee01a131b46a83b3165024157019247b7cdfb03d1c892fe9d96e4731"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0047.json",
-      "record_count": 18,
-      "sha256": "590891d6282534afe25c903706f9ab24f357315711e28b341eed5d1b0afa8674"
+      "record_count": 1,
+      "sha256": "f7d06e88c7f0e3f29841206bacdfc85206e4ed34f48e80e5e1843bd156533541"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0048.json",
-      "record_count": 18,
-      "sha256": "17635dca65e6a3855f31bda40136da4df7f4aeeb9586e2826add17bef2442db2"
+      "record_count": 1,
+      "sha256": "38b066e1554a5f1e51c359d82ec91750c0a4e3b0937293fe740d1625be138001"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0049.json",
-      "record_count": 18,
-      "sha256": "7d4ba7390b7d9e2bfa47e798960c054bf2ddb4b69f5fabf6beb4f61641dd4e04"
+      "record_count": 1,
+      "sha256": "b54c7f4fff5a74fa22c7fc2b05da6f8e862bd1e3b6d6250a26bddfb48ff5bf05"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0050.json",
-      "record_count": 18,
-      "sha256": "bc1415b2617b229d491798ec56b432d475a879a93536a23e5c2de0988cc1dd1a"
+      "record_count": 1,
+      "sha256": "29296431f3c4da3760e6b02fb084b914c8a0681e886d008eb2909c98b66bfb51"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0051.json",
-      "record_count": 18,
-      "sha256": "6697152352cf8479efd232da65fcd87430d0ff42e80efeacd99b9a86b055493e"
+      "record_count": 1,
+      "sha256": "462f1ae1b3180a3319047d9e5e28c76a574b803a453e0bccdea2af681f4c966c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0052.json",
-      "record_count": 18,
-      "sha256": "751bc8be0eae50f1127ed1fb674f5258cac5b89830d3cb04162abbf69d0dd0af"
+      "record_count": 1,
+      "sha256": "00debc14ac6afb83198fd49d5124d484b58398bd27aa16fab293f8aaae292bdb"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0053.json",
-      "record_count": 18,
-      "sha256": "5892306661f83cffdc490c1c0d337db1d2dcefc26afed881834b8e639411e138"
+      "record_count": 1,
+      "sha256": "48b28d01d21a10c7d806cb13cb283f298bcad482e89b7bc847636fd9aa6a8a04"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0054.json",
-      "record_count": 18,
-      "sha256": "27ab2f0a4cb8fccc4ef425d5926f9bf6f96cb9b53b146b1951670e1a444e18a9"
+      "record_count": 1,
+      "sha256": "2a41f981f6e0cdf94350c8659625a8ea899481301fd97eff151443e9e806b467"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0055.json",
-      "record_count": 18,
-      "sha256": "39f474e483f84e63330a92071f5f9bf7c88b2cc748c0fa87f63f5db2864cf1a6"
+      "record_count": 1,
+      "sha256": "52239bf73e47c24599da97e5c97ea4ba548960d338393e12e8f687aa0c3e974f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0056.json",
-      "record_count": 18,
-      "sha256": "757a3ef2316bfcbfee5181acb2616f4d3a0188d86d72eaec61a906b8f0fb7c06"
+      "record_count": 1,
+      "sha256": "58a280a938e031ab22e996ba89f34857be82130f3bc2c6c48ee402b3236aba20"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0057.json",
-      "record_count": 18,
-      "sha256": "b53e8940782785e303241172ddbf9e28bcfe7ab9a65ea60c8d4ce7f2fdb84dfd"
+      "record_count": 1,
+      "sha256": "fd6a64168e62ce40bd0136fbb548b911c527ddc26bda5e639b6c1bb34b1acfb5"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0058.json",
-      "record_count": 18,
-      "sha256": "b132d49a12ed8016ff5212492d1ce96a85dedc164afd14fd14f72d82ffeef559"
+      "record_count": 1,
+      "sha256": "ae222d580eff6e33191fbdf18b27028023ea0d0dbb1a74f4cfb6d7fa7641780b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0059.json",
-      "record_count": 18,
-      "sha256": "ae7e88a131f71f0a77b90fa7141ba9728805931dc00bc2bcb85b7446a51039bd"
+      "record_count": 1,
+      "sha256": "d73aef9b0a910bac0472025d22bd98a3273cb5f0a7520a811ab41c6c3f10c0c1"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/benchmarks/scenarios/SCN-BENCH-0060.json",
-      "record_count": 18,
-      "sha256": "95baffc935e1d4e2e774c25ba407c7c879bef96b1b34f7503c6a31729ce71d18"
+      "record_count": 1,
+      "sha256": "e44dc9b70232f2b13122b210f81810b0c0c1c3c86e559cedc7894008200596b3"
     },
     {
+      "format": "markdown",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/DATASET_CARD.md",
       "record_count": 1,
-      "sha256": "c9440472fe963504bb5ae537deeb2064f53e5b05a1f0022a050d84a6ad310513"
+      "sha256": "58d0636a4061f1e30becbf66c6b2e4f6cf39acba1c5d01ac4e72480a1ee06789"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/demand/customer_order_lines.csv",
       "record_count": 25000,
       "sha256": "c5ad5a2bd39873b1a2562068de233c63491d871219f9e960acbebdc1c36061d8"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/demand/customer_order_status_history.csv",
       "record_count": 25000,
       "sha256": "461e9039e5d431e3ed970f5fd0c55514ec8b8b9e1c58cb19b24f10c1037498af"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/demand/customer_orders.csv",
       "record_count": 25000,
       "sha256": "3fc85c129afadeb2898dc30761ef8a1bd157e099e6c5001a9be33bacdfc0f4c7"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/demand/customer_sla_assignments.csv",
       "record_count": 25000,
       "sha256": "30b79e44e7e25d5449b1270bcae1557a159d21f9e7c32b223be07a831f8ddde5"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/demand/production_customer_allocations.csv",
       "record_count": 25000,
       "sha256": "04f39c46830e8fa8825252d4a44359b002650c6057d4cac66bf7a8985b3952bd"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/demo-scenarios/DEMO-002.json",
-      "record_count": 2,
+      "record_count": 1,
       "sha256": "8b050cb5cc8e1046db4aa964d861c838fadab92ac50ed45b03b4807334f7b4f5"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/demo-scenarios/DEMO-003.json",
-      "record_count": 2,
+      "record_count": 1,
       "sha256": "565ea7ca98d9fa85062fc0832b083efb170fa74755a4932c86c40aade63e982e"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/demo-scenarios/DEMO-004.json",
-      "record_count": 2,
+      "record_count": 1,
       "sha256": "dab5d1324b5e6e9165722238bed0e262a387e0145a65217bd088ba8c59bd783f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/demo-scenarios/DEMO-005.json",
-      "record_count": 2,
+      "record_count": 1,
       "sha256": "3541352d8d670c701467f85ba09638e7a0afb5865a9d13059709f76a67e617fc"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/demo-scenarios/DEMO-006.json",
-      "record_count": 2,
+      "record_count": 1,
       "sha256": "cf4a17c8075498b4ac0936de237c94acf9fa94aeaa3d9c8d8e761cae8b8bd36b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/demo-scenarios/DEMO-007.json",
-      "record_count": 2,
+      "record_count": 1,
       "sha256": "643aed40c11fda0c57287f76f77ac0b049e6f9fad0c7eaf2a514f48543364755"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/demo-scenarios/scenario_catalogue.csv",
       "record_count": 6,
       "sha256": "cd5c5ae5af7a0cb6908d89d21d6b721d4d05c469cdfa49cef4afe492608bdc37"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/disruptions/disruption_events.csv",
       "record_count": 4,
       "sha256": "61a58bcfbecee3eed4284c226d2675b9a2508bfde2c9354926337eb0d93cdd35"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/disruptions/disruption_scope_components.csv",
       "record_count": 3,
       "sha256": "3bbe8b2da4363719b7d486e69dff09c5ac05cde95a81318fc62345175b771871"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/disruptions/disruption_scope_purchase_orders.csv",
       "record_count": 2,
       "sha256": "74cdf5a1c9355a56c42bc885fb76f5776e37e2c70e98414a1ca0e90efac6477e"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/disruptions/disruption_status_history.csv",
       "record_count": 8,
       "sha256": "b54fb84f8ff29c0cab74e4b46dbdf0b5706af242f9b7a220ae64c750191269e1"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/access_control_labels.csv",
       "record_count": 175,
       "sha256": "bfa227b5dda7211486e66ed0a428704a8aaf5d0536d9fcd2418964979fb2fe8b"
     },
     {
+      "format": "jsonl",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/document_metadata.jsonl",
       "record_count": 175,
       "sha256": "b37e6fbd18e1218fa1ed43a6c2941a8c977dd7e1ef029815994b731dc5b93fe9"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0002.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "2dcd3804f9afa4a5cbebf5301f467439549f3c699edbe0b9709b47273e4c2268"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0003.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "bc308c66b1c11ba2b911864a20fb237d4e6f009617a226df173fc888ed4cc944"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0004.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "762e8f64418718897f601161ed20fbefc2ae58ae444d8f17e7aaa67dedb2baf7"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0005.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "40ab386bebb4260aedd2a8d7fc6ae2cffd1707e6e93a14ca42031e8b21ab773d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0006.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "62a12fb2538eae25ccc69792732955884276276a2a7566f1937f9566efb9da51"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0007.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "2d506d2dce8837908dab2b5208e6241a8db8db43fdb9dbfc5763619483250632"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0008.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "6963f9b5c416d40e73dbdfc84f5ce84f4967804ddc9f6e1ddf027a610a95f9c6"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0009.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "b1ef101746008fb88c89c35975fca148573add2fea5b8a372a59bd88b2503310"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0010.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "16d7410581b9229aee0372dc82f3e302eb4f35fb1ce01ee049b591a37dff2187"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0011.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "09ab4e95b9d1bc47eac4e6cd0f6665aefe232c329ba5f1db379ac7744b398c74"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0012.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "03af39919d0d7240bf5a92fd2021b95ac12d15880b4af5c8db150261219d5246"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0013.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "8993b0703df8d6c70157ea655a7210586202b1a78be8cc1e27aacb01a9bbb569"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0014.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "888a13f495f4c89c40178cd5c2228e7f707bb59724376f08b67f040f4d04cfd4"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0015.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "e8d84fcbfa195e84650735ec135238485c7756124f32d5436da2a63c46e714dc"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0016.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "f7d715a97ee0ec705a296722b3a2e9d90cd421d3a741d027e125ec762ead466e"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0017.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "a3d94fd95f7b0e89a1dc65e9f0babcf0213f9097a76c2137dfdbc8ecaef01f09"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0018.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "6c1bb6109c9aa9463a0a90a3706ea7fc934f36e0700c76fce28cdcc427e171c5"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0019.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "746120d69d0d0b441fadaa97612e4af2363d99644bb369a0e0b8770666bf4775"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0020.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "b8e99c2aacda41068fdb977e55859a1fc3c6bd7dedf6001c4e38a795b63f213c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0021.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "d82209a91e6a37fdd4556af54d392d3d630c639e776bbe2e8f62d2fcfbbfe22a"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0022.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "22e53c659a5314198f5d01c88e926b6109fe92358ce04e4017f8a8765c9ca188"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0023.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "7125e46432d05eaa69f19a78c33731c5890edcf15f641256c8169c1767ad6d99"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0024.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "99f51accac2dbeaa6913a0945408227ed3e3a0066f02dab08938a658497fc2eb"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0025.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "ff49de78968ec61c7777e331c25822d24421dc1b319204313e14e8d34d154266"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0026.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "83bfb4ff55ec5a4ef7cbb9918aa5ff38ceb8db9ca888bc1fda37c82f081089ea"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0027.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "6b1f9efad1f8dd96452e758c45deee6c38eabf9c9bdb7e8b15314d9c6c3142f9"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0028.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "56f0b5f5627190397d43692cce93d954e69ec4769bc0261e5ae20b0cd226dbe4"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0029.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "7d766e4f9e5100b30f9842cf7f1bd51bba36d0beca314b9148b39b0d702c6fce"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0030.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "1cf65ddbc2407f1ee6a42d3e3a596fb18a04fa974f2960db8040e293166aebd7"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0031.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "9749b6ca6172d9b3ec65d590f15d0c97513a628ff2c1b71dddc9215b36bcda8f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0032.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "2e3ab8528581981193082d7ab830695eda0fcf60f59168502f848e4facd485f0"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0033.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "1fa5900919882dda1c114b9591300fe07f4022499379403d653eb1ac3ecea28d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0034.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "650289200c77268196175efc80ce9de144f64a6eb5d1e22ba6b661f4f762870f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0035.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "fa73b3a7213c4340a60cecc667c0534d8943749d6eb6d26285b364dab1508111"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0036.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "1ca1da6228eec8a1de09e86a99b249b5133fe7a631260c9a65c579e4169c2fb4"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0037.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "a2c5d7a99da0967cb9175c50a49dedab7252fe2193da035e6a86bbee1b94970e"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0038.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "edec03414b66e2ed28ac3af6401affbed26e324583144bc5a73f980f340717f6"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0039.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "4d1b2f12fe1bd937e864629b7039f5f0861f87542294b00848f2763598689dc4"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0040.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "d2dc10fafae4584d63e7aa1255c95e4fd03df8dae6b202f79799409b11239d84"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0041.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "40a087b086566de21663c7e2116f3441523f487c4b183f97f8b2e14fd83229fa"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0042.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "58e40e68efb8ebb04d4e68ec4560f3f7fafdc9e3f35b4201f3c9c43b981db0df"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0043.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "9180bc2fd7db54c28a2677494d7b85b1d6f574c404ffac2d25e637333fa13249"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0044.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "84bbec3a0964b59256b77a3518742e761a8d3ec6b41c981906d1118c382c8718"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0045.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "0efcbfaef33fe9da36826a495da2c81b8a37d3518e0282af107503fdf26512b6"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0046.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "a4e16ebe54a83dc95adc351eeed388adca28a1d6f63e191f214c9b03c6c7912c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0047.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "43085964ee7cce2f576676d96ac49352d696a60be5425c264b074905f7690933"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0048.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "cc3b201463a630a8c8b315cab64498817fea9ca870782ab64903e18e72ac898e"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0049.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "9d03153dfb0ae1fd8079cdc20ab3f694ff326ca2864268d84a4f581e3f764ca8"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0050.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "fc87867de73deccf4a37fa00dc2585029f9c2cad5edd435f90ac5d4dc3f45214"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0051.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "1c652361cb41df87cb5dcab1d478726c67241c9b9aa1499fd2fd93e8cf2aeb0b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0052.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "3c062e992b03f44b6ff48b566e9624ce8b154d5b87be8ae9718825488ac7e837"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0053.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "691ef591e39ac31fbebed6378c245f0ea040fb195ea4cd9a06c47be4086c6433"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0054.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "6fa9533c7389debbae0eaa48189e56522d8c1dd73f81b6d8cc728f52789be731"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0055.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "ae73c5b722b28587c039161dc8b370dca6050b10c24b08d8c44a979564ae2d87"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0056.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "eaf47742cd9f31d3f9eb8439ab94c8915fdcaea89d727dac29b4df7ea078bb50"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0057.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "9df743f3739544da1f6cf73b4f247fde6ecc619d6f52920325b1aff936ad6021"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0058.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "86b3ba828378b4f6899fecd311cd12f3b67da2b1b1231a63c5c575d69b50fe1b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0059.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "eb4606068c4c69391ed3f95a2d896309b492b0543905f3e5f52d93a205f73bcd"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0060.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "394c02f6033d8c6a210ae1083c9792754336384d26783aff40542ac17ea71dc5"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0062.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "532b19b643d4f84aec035d09d2c779c7cb3638db7721b2dca3bb0398dd399c64"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0063.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "f0f2d9a3a40cf8d05d797b046348ca2aa659b6b7752a780d487718481606cf17"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0064.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "32b856c73700e2bfaa49a0669b5fdb4a00a7471f99b9c23ff96f7dd91a8b5dd3"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0065.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "aafc69e24476a0d2f3879b793f0254b2cee462dbf0900e8c2b39bde6e7cafe21"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0066.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "bae9c9a90c729dc36a3aab70f811c9c651e463a65e8abbc71ea12d3d9a72378f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0067.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "6844cdf27571f2e890a9c51596c723f740f1edb3ae9d33636713d11a37364de8"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0068.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "b54de5699e240cb080b62a24219d261e402ef4d0d64d6f7262caaf0ba7d477eb"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0069.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "4c982e5a3e099284cf01b156f4cfa779b4891f663c4d6795536453f06184a200"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0070.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "15e746e4d6d714dd3b1bce2abf66b3474ff9bc9af1691b6df01363ca36c1c9e7"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0071.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "95e2653abc9e9fe63eb8f03ceef4d6c3af68c9575c3b3a18c090010de092c4e2"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0072.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "a2c80d0b3e7c6eac6798db34a9b33c54dacf45123fa7e69fe9ec256badb981e1"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0073.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "23b6c0ffffc7707a496f770929353164a1081dfe25b2e61082c43d1c2b6601a6"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0074.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "00d6f2b12ec5aa6d0991b45bb16355566f52cc81ed5b82137006b1199f921d47"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0075.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "8871e94fae044ba5a2621d963d66bbe4a0f258fd6252465feed3a4270111af58"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0076.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "dad060f4211884bef596734deb060326abf3df22d700a1e8d03c398320d57268"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0077.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "6dc3b63736be3e354ef863f50c6af91da369ff9883ff5d365617f8667225e37c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0078.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "f5b57a0c87df48c0725ddd1b98c5775be262454bbaeb6e2faffb488f047cceee"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0079.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "c33da44355a365edf5910079953b5a8ef65a66ff5f9d23bed318d57e28486360"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0080.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "ddb71b9e1a767156b09dcd8223fee16bec7dda16a24ffdd26cb7ea5f9bc80046"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0081.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "9a69bc98ca3affd5b7ab46d7036683771d5b52b46b04f0b8acc3d32f04fdd5fd"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0082.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "1d8c58c80eb2205125b5eab4fb8546df63264ecf09178acbbe7238b607eeef96"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0083.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "20fbf12177fe0de12d1b7849cb683b2e71cb164aa02f1cd2a42e99ba48a7d9ed"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0084.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "0e38b844fcd5c3781eed15bfd57344d7e02e470823ed5ff62788b67f6b8930bb"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0085.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "7be4d06d9719f4aaf77038426331a4d04176e8f188d8c326164309d3c01df6cf"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0086.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "83ccd383a1112334176e024465cb48993b7bb12ed3200a06913f8d97515f7173"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0087.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "c7076ebf575c75ec49e4e16c55097dc983573a9aca934c81f66209145a69c615"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0088.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "1549496944edcb072461e3c5203141e63cab03cc6ec01f2053b72922ff951198"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0089.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "aa0df6a608d2dac6fe6ad76dde4df88232202d4dbd82ea64f0a19da747a60791"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0090.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "9c09c29b2e86a6842f4a03a96bafa46c395979bd14e8de3c29664bfe1801003d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0091.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "9b1115338f9d04ac6208a434c62f678ef446320aa0cf100c7224c14b0aff4408"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0092.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "6c1559574463a949322179bb6e301a075b6839553d0b4b22001edcb0f59bd3b0"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0093.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "2efd10dff6fc36c84db48c0367f23e69b4695efda37bf5e2e79c1c1653793875"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0094.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "b29848bb2faa8d226788d418fb96c3cdf7e818a09724386eccc99013109f4641"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0095.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "84c30d319d16d89d8e20f4c8e72501bfea79dabb8dccbde30179663065aaa7e7"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0096.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "e85018f1dce5f654342f0da856b3db9e1fac8212cf14679be9aa777cc8e4d530"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0097.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "18dedd43f824bf4126b7b45e90309fa45560634f97f59e0a3bed281d7b8598ed"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0098.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "403e660d1fcefca5355b15aa070073da758c44c6028f336fb1752d4933ca787f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0099.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "86fa5065364467b01826cb3b77ac781942fb690d7c5d6a572af30a77445727ec"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0100.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "cff2c33ae6b5adb8391073be052bd4c99b053152a89cfe73427bb6045f3ebb3f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0101.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "a9f36c8e0993e523c362859a5de92d603cb9d023161f3bf93265170199976601"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0102.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "0210480a9ad9a6407ae24d79f5157f18e8869e3a85199316f920b376198f3148"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0103.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "60d1f18f8067669a4926ba56c3c7e82d58ef675942480abc4a76a5532ce46849"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0104.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "e9801e5926e0ce22e2b0d8ca32cb2a9b8625e9c4e1247d44202a6bcf935e8f4a"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0105.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "f7c27ca7313795f6dd14b9d768766fdaeac6323e32fd1c083c1a3036c65b53fa"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0106.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "a703a1eec10bf6577507f3fb229a5f263f2c42c18161fd77525ff803beb2bc5e"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0107.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "a17a07f4e77b92aa0fcceeb68fc92b51727fef69b1170d818330fc1b4b8c6929"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0108.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "c47c750dac47d526a05b4ef386b422964e27623067fe49bfa8710da95e1ffe7d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0109.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "5e842cf5ae3e97468bb56c089bd3bc10d1fe8ef6971df95f17fe4b7adc92d4bb"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0110.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "e4ba1a145103436e50a38d1365e40a76e2f8cf93a59f33589d96878403fcfa4f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0111.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "e507e598621cc1c1150db0163eb8e403931770865b2abf2a7bc91a151c54198e"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0112.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "b48f4aa48dc3531254abd8392d0809208ff9a0d31649b5edf16f2e5fbbbc66cb"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0113.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "9e489bca80d770a1f31fec2b03aca825f00316c9053eafb61c7e39fa4bb0d2a8"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0114.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "a6cd004bfac80095fed5a4ab6b14e7f4b782608d0f5b575f1b5e56b4f6778a7d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0115.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "1f6bac85822b0021fdc54f9387f6ef0551a3043025af882d76dd1232c171889c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0116.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "43634a23f7c8016947d180a67903cb59709f24a893ed5233d3dec9b7dfd23ba6"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0117.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "e6f824a5fa044057d5a24ebf8a2bfb65ba05fd64f1b77584ef439d5bfb039292"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0118.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "a48ec20ac2fe064c672e86867b0ab6d08a970ff0855765bd3ff0f45f777f1793"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0119.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "2f9931fba86ebb58265dad16869b82799d1b00a9571d00ee12a88305a84e4a45"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0120.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "1376e3b5aeb2a568dfeb0b437a09d90bf05d3e6e67ee000df8dd52a9ed109674"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0122.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "20d3177802745b66b9b239d4e6bccd7c2519c99eced0275b9e9866a31f7d9c8d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0123.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "a9bde8dd110c9b822869af544fffc0f69d731799475d23a985b4bf63d9ed36c1"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0124.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "8750174423a2d2f2b17be26e694041a8c4cbbc5c6e5be4618d61d540bd9d0d4c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0125.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "2663452f860c8b8837249ccc71df76a3d6fbf3cf8803421c6a870293af723e1c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0126.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "0c7cdf2f5bbb2c777888b6e7f83cfd240e00b2e4d540c2d28041549ff3f5d151"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0127.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "84c1c19911a8047b69ff6f3260e94d6f2b728c5467e3bb8ff89a338f3af132a0"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0128.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "2c9f7d47672d907eca46e4c0357aeca6710be513c37f302156d97d0dfb5db732"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0129.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "6a83a0da855e6edf82e5c9f8b72d025b5ca47868990a51be661eff022c377c5a"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0130.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "5de5a47e47e4263cb9805bf0f8034c9670a90bee09b541d5b1d1fecfed5d1bea"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0131.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "74cba46850e33a91eb3eb32809400f037ae16f67acae5e196b6b8bc1a27d8ae0"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0132.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "6e8c652b5009db58df46d2a439f3a41de65d2bff3fee212724e65d123aa25cac"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0133.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "4915a01eded7ebede7bfa2d5fdd3c785ff55a5e9dbbf7208e6091e44665f88d1"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0134.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "2d885b64c54bd9fccd583944455aadb481925bbe26067b526d26a2c21fb15680"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0135.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "c33fe529b46452361e6bd0285a217a3ca41dc07714c4b0695370c728b3fb93fc"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0136.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "302036246e56ebd5bb478b8107720b69274f35cbacf8225611ad43e22f75c34d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0137.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "ca15ba8079231bb9be3bb28f1483134f4b1818abf1b3b69b0270043d3f59ff53"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0138.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "44054dc2a6775a30ec139e36461f254a795c7a0b9df10794de80a5f7da512027"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0139.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "53a6c13e8271a6f33107ea9e823a779bd070268ef5ebad76fc164577ac02568c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0140.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "9b0fa933a1ae2197bf6f34b387efcb0583deefe766f42501e2483046c4ec8f6f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0141.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "170023fd449a1c8f6ec9d98b924193bd8ccd712247af5f18adc9126e694ee35d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0142.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "6d6dd1a44196efdac1e080205f647df8bdba87c997495969a489b22258ac3403"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0143.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "330a327f978d4976ecf19533b9c20019eacc22cbd18c0ea6a1cabdedb8d0d3ea"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0144.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "b00b937d74a0f1aac12b7b82492bdbc2598d2b8934124c93f9b1f6732aa67d1d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0145.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "9b67e26329d2199957c3684f23b5341fa1746696bc5df544a7ccef38148f5aa4"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0146.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "950796eb9f6e1cd2b532525535cb988283aff969a1bbe731a69fe384a10f3f57"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0147.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "8e198a2214eeb407814a976bb94bea4dd65eab8b43fc42799eaafb2ce6fed13f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0148.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "d67305db4e98381568d8969ca7eab499a7a864021520d66dbc4a96a28611bf76"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0149.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "68ba269d820a08a2f5dfbd92c764001f5a91cac267b633d66f4b4b8212b248e1"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0150.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "f5d968562f8e19fa841197bcfc73b9021182d6756ca7db0617f0c7b3be2dc65e"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0151.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "bfcb6ffbc5aaa93bf5280749eef371a52ba76d34e2aa8313e1e1c7ec299166da"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0152.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "92c6f767e4955c75691a13eda1156f3b09bff7b36139d138a0cc3987bb211400"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0153.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "a3d580e596f263755c27206af43082f465ba62613f72e337cbd8d5626964a85f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0154.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "5f43b34eee9ac7a24aeb83f63a8dca32e3930ef7d3d8bbab6b8deeb5e91b704b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0155.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "15c2293b05a9d390a693585af11782c06d31a00571d30a37a03500ba3d4acda9"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0156.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "e0328a2ede7ccc63688f67df081c6eaa1dac8183c2ddacd42dd88c361703f658"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0157.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "b067d562a0536eefc402099e142715cf3a8a777e6d756088acd1a05f90001967"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0158.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "7fe92c2bb60fa299ecd5b3180ea06730de6143d348fb2b0d524314a7eb4f8680"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0159.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "d37b88689d268d996b2cc7bd3d8c81292221a79daada2bc47cd79eae23b2d9bb"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0160.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "d81264513cb0039d02f8bef30e277ea325a658cd63f90bb4851348ce1e5eb7e2"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0161.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "3460c750813d99a415c23f8f58e90744e3cfd41283aeac67b8161a1a74292a1f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0162.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "e4d27823e1647361111d26ad3673b31fb0e87402609135821ed5c4b95af99738"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0163.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "d84c4458f7c7368c3b33d1b917b72f48343308df44991f0e033cb1a7314ee535"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0164.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "7308a27567ba792e7193381c0d6dc2e9e8c4b8ac2b849984d3f8ff1d3a0704fe"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0165.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "e6dc8c7bbe011847e375590a1d89e0eaee263f96a77877a410f144278f1c8feb"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0166.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "304c9813bf2e2b44b710cefdf4406145b71d6a029461382de03487c94fba6b38"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0167.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "09a1940dda886bc6e94ed051a7a59a8db16f1cf0afe1acb7c106af114af054e2"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0168.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "e91df314454f7510cdf00654f5f7bd2397307094b83d7614f24f309e73057c32"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0169.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "4a2a005ba3838de17daaab405cfbdb27fbc03eb7df544be0dd87b7aa5a3fe4ea"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0170.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "e60d71870d80669afd5c05a47a5ea901755cddd618ad38b6c7d8434cdaf2fb29"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0171.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "5f8eef24eb2c3e66f67919b9f66d5efd137084162411673bf5050a7326537cd3"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0172.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "772ac1f830b4d401c1cf0db42e152ae94c57b62fea93d9ad901b4d89521cce6f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0173.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "5ee308f04cf516233695205ce3dac04c5fc82fbc444630efd7be1d84702bf7e1"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0174.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "a1f2eabd5cd3f3f1d6834341efda62a7dd095dbc8a627d159910515c75df13b1"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-0175.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "6c48387848505fd6d6473d4438f9cd7e373129743553d8ac7858d2372a0fd7ca"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-GOLD-INCIDENT_REPORTS.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "444792a3d9656c7dc1ced3167337e33167ec5fa8e641b7a2ddd755f25dd63901"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-GOLD-PROCEDURES.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "bcd3f61e39efc8aa5a77427a417a7d84fc9facb381759da3afa164e8279868e7"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/documents/DOC-GOLD-SUPPLIER_NOTICES.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "b027c2bc0160d1eaf83283e0f91bc1a28b81ad6391008cee72351b05794fad5b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/relevance_labels.json",
       "record_count": 2,
       "sha256": "66b12a1c135cc633ee7e1df3710e09658992a0c564017a5c0244cb1554ccd9e6"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/evidence/retrieval_queries.json",
       "record_count": 2,
       "sha256": "9b9c4b99c14d611f96aaca80bf0b5bc152badf30aa916c1f863e4a0a03f69358"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/candidate_interventions.json",
       "record_count": 7,
       "sha256": "0bbaab639e9f858839d8a121f33a86f764c9c07f4bae2faa0a69973bfc70f77d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/disruption_overlay.json",
-      "record_count": 11,
+      "record_count": 1,
       "sha256": "dbf66f70a384ad449bd779495a43c04b1c4864e90f851055b1f671bc615d4903"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/expected_candidate_results.json",
       "record_count": 7,
       "sha256": "0bbaab639e9f858839d8a121f33a86f764c9c07f4bae2faa0a69973bfc70f77d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/expected_causal_traces.json",
       "record_count": 2,
       "sha256": "e6a9847937859bb9d3f7d3fd1d02967c307f4058d0e740f4698243adaec40139"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/expected_recommendation.json",
-      "record_count": 4,
+      "record_count": 1,
       "sha256": "397889828f2e86f1a6ea943dc7e6c070ac04b22175c66d09764f5126f4d762ff"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/expected_timeline.json",
       "record_count": 8,
       "sha256": "3d2a402781b05463580ebd79a8d50f3c602f17124a09ae5ff307a64552f0cd1b"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/manual_calculation.csv",
       "record_count": 2,
       "sha256": "0dd5bd93ef26b356ea573b1d9776cb8d0a4d072bfd46b99629d80a45304967b1"
     },
     {
+      "format": "markdown",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/review_signoff.md",
       "record_count": 1,
       "sha256": "761666bf57eaad223762624edbcd5fd1646017a43f61eb39c0e40a98a14b41f1"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/scenario.json",
-      "record_count": 24,
+      "record_count": 1,
       "sha256": "a6644c2a9e7ae862e9d6c696b8c2cd9314406439435330ef273b3de7f8353584"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/source_derived_checks.json",
-      "record_count": 4,
+      "record_count": 1,
       "sha256": "58b2f0231617a4219d048f954315ec8f457dc52755c608313a0abe8ec4be7cf8"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/source_records/demand.json",
-      "record_count": 5,
+      "record_count": 1,
       "sha256": "4625a6c12bf6a7bd9701f5d60b8549175ca3c36b76f5b0d741eede7786b6cae6"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/source_records/evidence.json",
-      "record_count": 5,
+      "record_count": 1,
       "sha256": "0d9122100480c485bc2ec003fa35d2e83f8c2dbe4ea328a7a952ec9017d7e3e3"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/source_records/history.json",
-      "record_count": 6,
+      "record_count": 1,
       "sha256": "e923a62c5c5c5817659d49d6c0a9f2e77b1d74e5ade929ee2f952fd0a6a1870f"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/source_records/interventions.json",
-      "record_count": 5,
+      "record_count": 1,
       "sha256": "d19345aded617d2a161dcad7cd4649f489670bdaa1b40a2b9a812c2ddbb907e6"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/source_records/inventory.json",
-      "record_count": 9,
+      "record_count": 1,
       "sha256": "ecccce83508024c1453358ad71d4815855e801815e41cbb7f69bb2354abd29bd"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/source_records/master.json",
-      "record_count": 13,
+      "record_count": 1,
       "sha256": "aa4c642a1614db7aa0e8ff730cd33ea4ae34adb9faf582d8db826c94106940d9"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/source_records/operations.json",
-      "record_count": 4,
+      "record_count": 1,
       "sha256": "86d899212fc972a31d26dad9a60b9be7814b966106843895f99deeb1ecb97f4b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/source_records/production.json",
-      "record_count": 6,
+      "record_count": 1,
       "sha256": "310d22cc8e20da435daa3c9ed46b55fb9329a33107614d1fabd86b9f49e76d3e"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/golden/state_at_as_of.json",
-      "record_count": 5,
+      "record_count": 1,
       "sha256": "1a88eabac7d2da798b9c20e067240bea8cfab410b57d4abc6c694aa0f98e6f05"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/history/business_events.csv",
       "record_count": 3,
       "sha256": "8d86b665ccee18d190c99194cb1139368457d26749a96cc3b9b3ea62568b57cb"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/history/entity_versions.csv",
       "record_count": 32,
       "sha256": "4fb53180a1386282ff5b4a371a0de4efb8da6adda788e655b4f7e958ccad3a91"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/history/historical_inventory_checkpoints.csv",
       "record_count": 10,
       "sha256": "1ab05c6e50061af363dc478ab3498e7bd621a1b64edfddb8916f2a0c0aad4996"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/history/late_arriving_records.csv",
       "record_count": 1,
       "sha256": "a38dc05159421445ce4abc9c939a29236490895ff4c5c137c72d90aad8cd74c3"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/history/replay_expectations.json",
-      "record_count": 5,
+      "record_count": 1,
       "sha256": "6f342b0a1c820f7c05cb2d0b8e401b217709c12208c7dbe547ca5aa2fb683fe2"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/history/replay_input_events.csv",
       "record_count": 3,
       "sha256": "75a8b0fcefc7eef0d5cd7f3316b1c081d234dd248b4cc4e60df5054b86a2eddc"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/interventions/alternate_supply_capabilities.csv",
       "record_count": 1,
       "sha256": "fffd4e882ca9b1805bd93328af59fb0b488c87bf9b89d3d862bd4069f10041ae"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/interventions/expedite_capabilities.csv",
       "record_count": 1,
       "sha256": "b1777e8bbd232170a0035fd585adc32ec25297c588b6ca3e9c02fe6ca7f0816d"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/interventions/intervention_cost_parameters.csv",
       "record_count": 4,
       "sha256": "99cc04ad1d0b29bc4363abba5b55a81c21c11c2f2960af736b11cf49f99b00d7"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/interventions/rescheduling_constraints.csv",
       "record_count": 3,
       "sha256": "973835ab29d1b915e235af82c44665dac3936ef30b6b951fc26340b61f3ab3ca"
     },
     {
+      "format": "csv",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/interventions/transfer_capabilities.csv",
       "record_count": 2,
       "sha256": "e975bc9ed20d7e9392bc6c2127e348eabed45801bf7a6f78f3bd9ee58be960b4"
     },
     {
+      "format": "csv",
       "load_order": 3,
       "path": "data/releases/v1.0.0/stress/inventory/inventory_opening_balances.csv",
       "record_count": 6000,
       "sha256": "aac640bbdca18dcbed06a74286524006db674a56c7b99b1fb2ef151642447cf8"
     },
     {
+      "format": "csv",
       "load_order": 3,
       "path": "data/releases/v1.0.0/stress/inventory/inventory_reservations.csv",
       "record_count": 1,
       "sha256": "d6b69720fdf782af57200b8e1ab38ba9c926e95246231af0dc3a9caabf03216f"
     },
     {
+      "format": "csv",
       "load_order": 3,
       "path": "data/releases/v1.0.0/stress/inventory/inventory_snapshots_benchmark.csv",
       "record_count": 10,
       "sha256": "89d6b29841ea044b5d5fe708a9ee8bca91665ce1d42fb6f5018b8c850d41dad4"
     },
     {
+      "format": "csv",
       "load_order": 3,
       "path": "data/releases/v1.0.0/stress/inventory/inventory_snapshots_daily.csv",
       "record_count": 72000,
       "sha256": "c08705ec915cbc77ffee627e69edaaafbc2b4d57b6256ca649a0c64a02655618"
     },
     {
+      "format": "csv",
       "load_order": 3,
       "path": "data/releases/v1.0.0/stress/inventory/inventory_transactions.csv",
       "record_count": 6006,
       "sha256": "ce2bce3f03d7adb689493bd2dba865b4024108400840d95a9451fcc613fe1b23"
     },
     {
+      "format": "csv",
       "load_order": 3,
       "path": "data/releases/v1.0.0/stress/inventory/transfer_transactions.csv",
       "record_count": 2,
       "sha256": "7e8f6de5dc7dbf49c175f53af2e98dee4e7d10b7994403866ac738eaa7c80085"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/license.json",
-      "record_count": 3,
-      "sha256": "152d86bb2ba8c45e580b8fa44faaeef58de62f1711d9f8627b7a4d0b95864174"
+      "record_count": 1,
+      "sha256": "4bf56d3b269968eb4cdc53fcafa3afa36621aae4d7db81e93fe7797dd24a167d"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/load-order.json",
-      "record_count": 2,
-      "sha256": "c2022fe229280552652d7ddf143b289bb64a26e686b3f086b6d9cca172184b4f"
+      "record_count": 1,
+      "sha256": "a30f894c80e5ce0f3f88f4687b1ad837d32166ff2cb592e9162899ee9ec3d56d"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/bom_lines.csv",
       "record_count": 675,
       "sha256": "4063a9ea65280107fe21c59cede39f37104cfbd351523dcb24eb4f65b2138d81"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/bom_versions.csv",
       "record_count": 240,
       "sha256": "14d1c388ac513b372966b3e7159e5f1f66fbb178a4cd672278bbf0586a9c2d2b"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/components.csv",
       "record_count": 500,
       "sha256": "4244539361b90fd268e52417faeb271b7e2ed355fea252bd992ac1ef6a1bb060"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/customers.csv",
       "record_count": 1000,
       "sha256": "4194cbaeb6d61f0faf730f4c519166d7c21b7910ecfa88bf794c4b7ca12b1808"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/facilities.csv",
       "record_count": 8,
       "sha256": "d6abda33e420ade492f8201cf8447281e06aa158d29649245e0481c7891f5fee"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/facility_product_capabilities.csv",
       "record_count": 8,
       "sha256": "68bce794c0548c80a61191539a76e5d7a687899ae14b1f5261ccf31f8dc5939d"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/products.csv",
       "record_count": 100,
       "sha256": "927b37f6fdf3220a4b0dd57654cf0a4cd37b27a0307af80d6b518299256747e8"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/sla_policies.csv",
       "record_count": 3,
       "sha256": "16b08e50892506abb873cc3960049ab4bd87cfebe2b60648d0221693c653265d"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/supplier_component_agreements.csv",
       "record_count": 1000,
       "sha256": "782e32b4389c8e3070765ed80affa23d38efae8b09a2adf20a833b668011e529"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/suppliers.csv",
       "record_count": 120,
       "sha256": "0a869b63405844ca1a767965ad4b696ed17d6a7d6d6867b8f12358a309701908"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/transfer_lanes.csv",
       "record_count": 132,
       "sha256": "77ef038976a0bff4361c9581f96198ce81c9aa14286da17861d6f43cda756260"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/warehouse_facility_links.csv",
       "record_count": 8,
       "sha256": "eebd4cf1c28a2e268b131088f6ba9b704cc37f425d56cb6984e58e4087b6f92b"
     },
     {
+      "format": "csv",
       "load_order": 1,
       "path": "data/releases/v1.0.0/stress/master/warehouses.csv",
       "record_count": 12,
       "sha256": "6fb5f18ab1872be5c7c5131317e282c9f40ded13f8c41ed24d8f679d6bc360ae"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/metadata/build_summary.json",
-      "record_count": 14,
+      "record_count": 1,
       "sha256": "9578182a886b2d64e33fa6e248cfad8dabeefd507a4a332a89107a52bc88763c"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/metadata/id_aliases.json",
-      "record_count": 732,
+      "record_count": 1,
       "sha256": "4cc07620648eaa4dff860f13bc1f99ff703dd51de13464eee76019de71285c1b"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/metadata/release_profile.json",
-      "record_count": 16,
+      "record_count": 1,
       "sha256": "49065fd8895bd9c6bd5f4a6861756279ed8fe91e4c60e09ee40454e87406fa9e"
     },
     {
+      "format": "csv",
       "load_order": 2,
       "path": "data/releases/v1.0.0/stress/operations/purchase_order_receipts.csv",
       "record_count": 11583,
       "sha256": "e04d33238f0f4dcfc8fd529c9c9d393aad50cd6178aa57e76439b4beaa2736fa"
     },
     {
+      "format": "csv",
       "load_order": 2,
       "path": "data/releases/v1.0.0/stress/operations/purchase_order_status_history.csv",
       "record_count": 23583,
       "sha256": "fdde416c36dcbf63380d01e4893794faefba9185b05f6255a13e9a198b3df545"
     },
     {
+      "format": "csv",
       "load_order": 2,
       "path": "data/releases/v1.0.0/stress/operations/purchase_orders.csv",
       "record_count": 12000,
       "sha256": "dba824f6e41083e92f98176d82f81727f2a6dba4b7c4fce0d980c32642c4bd8f"
     },
     {
+      "format": "csv",
       "load_order": 2,
       "path": "data/releases/v1.0.0/stress/operations/supplier_capacity_calendar.csv",
       "record_count": 1000,
       "sha256": "b90efb9ae3471d794be0cdc4ae8bfe2f45aa970b677019e4289f9319bc20e0b8"
     },
     {
+      "format": "csv",
       "load_order": 4,
       "path": "data/releases/v1.0.0/stress/production/facility_capacity_calendar.csv",
       "record_count": 120,
       "sha256": "feca1796731d49d81f2b812641fd0b41e6819706036de6f3e9fe4003f2d7cbbb"
     },
     {
+      "format": "csv",
       "load_order": 4,
       "path": "data/releases/v1.0.0/stress/production/production_batches.csv",
       "record_count": 6,
       "sha256": "0a18d9dbbd919b2e348b304c24935ffec7681f6f76369a19b3a8dc76a69e55cd"
     },
     {
+      "format": "csv",
       "load_order": 4,
       "path": "data/releases/v1.0.0/stress/production/production_material_allocations.csv",
       "record_count": 3,
       "sha256": "63a1a2ec703dd259dc001027a15e241da45c3e04b5764368778758d0fd5c1823"
     },
     {
+      "format": "csv",
       "load_order": 4,
       "path": "data/releases/v1.0.0/stress/production/production_material_requirements.csv",
       "record_count": 26000,
       "sha256": "40e071d32568bf90de5e3da5f120e92dfb82c4e7bf5ea2601b217bd707a9f67d"
     },
     {
+      "format": "csv",
       "load_order": 4,
       "path": "data/releases/v1.0.0/stress/production/production_order_status_history.csv",
       "record_count": 8000,
       "sha256": "b6b8332b9fb4107b55d1fbcde2c5e9f1330b82b29a7fc790c7ee3128d86b4e88"
     },
     {
+      "format": "csv",
       "load_order": 4,
       "path": "data/releases/v1.0.0/stress/production/production_orders.csv",
       "record_count": 8000,
       "sha256": "75e3ac79352582cb0e284afeaa864c26b268c40fb76290560013b3e627a3e8a5"
     },
     {
+      "format": "markdown",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/README.md",
       "record_count": 1,
       "sha256": "108649f8b5731cb08d5d71e6fa9d27392eaf63d4616636e09083066b2b9b75a6"
     },
     {
+      "format": "json",
       "load_order": 5,
       "path": "data/releases/v1.0.0/stress/reports/phase4-finalization-summary.json",
-      "record_count": 6,
+      "record_count": 1,
       "sha256": "0c0f8212c116acf2e7da68abba306b8f12516e58e0d4b27ab1b0dc86538e1db0"
     }
   ],
+  "generation_config_hash": "b2d84c59c350eaf4adbb5ef2c4bdb70d497ab8e2400d87061dad2e01d7f503b9",
+  "generation_time_utc": "2026-11-11T02:30:00Z",
+  "generator_version": "chronosdb-data-generator-0.1.0",
+  "license": "LicenseRef-ChronosDB-Synthetic-Data-1.0",
   "load_order": [
-    "MASTER",
-    "OPERATIONS",
-    "INVENTORY",
-    "PRODUCTION",
-    "REPORTS"
+    "master",
+    "operations",
+    "inventory",
+    "production",
+    "demand",
+    "history",
+    "disruptions",
+    "interventions",
+    "evidence",
+    "golden",
+    "benchmarks",
+    "reports"
   ],
+  "partitions": {
+    "adversarial-only": [
+      "SCN-BENCH-0006",
+      "SCN-BENCH-0007",
+      "SCN-BENCH-0008"
+    ],
+    "development": [
+      "SCN-BENCH-0009",
+      "SCN-BENCH-0010",
+      "SCN-BENCH-0011",
+      "SCN-BENCH-0012",
+      "SCN-BENCH-0013",
+      "SCN-BENCH-0014",
+      "SCN-BENCH-0015",
+      "SCN-BENCH-0016",
+      "SCN-BENCH-0017",
+      "SCN-BENCH-0018",
+      "SCN-BENCH-0020",
+      "SCN-BENCH-0021",
+      "SCN-BENCH-0022",
+      "SCN-BENCH-0023",
+      "SCN-BENCH-0024",
+      "SCN-BENCH-0025",
+      "SCN-BENCH-0026",
+      "SCN-BENCH-0028",
+      "SCN-BENCH-0029",
+      "SCN-BENCH-0030",
+      "SCN-BENCH-0031",
+      "SCN-BENCH-0032",
+      "SCN-BENCH-0034",
+      "SCN-BENCH-0035"
+    ],
+    "golden": [
+      "SCN-BENCH-0003",
+      "SCN-BENCH-0004",
+      "SCN-BENCH-0005"
+    ],
+    "test": [
+      "SCN-BENCH-0001",
+      "SCN-BENCH-0002",
+      "SCN-BENCH-0019",
+      "SCN-BENCH-0027",
+      "SCN-BENCH-0033",
+      "SCN-BENCH-0037",
+      "SCN-BENCH-0041",
+      "SCN-BENCH-0045",
+      "SCN-BENCH-0049",
+      "SCN-BENCH-0052",
+      "SCN-BENCH-0053",
+      "SCN-BENCH-0054",
+      "SCN-BENCH-0055",
+      "SCN-BENCH-0056",
+      "SCN-BENCH-0057",
+      "SCN-BENCH-0058",
+      "SCN-BENCH-0059",
+      "SCN-BENCH-0060"
+    ],
+    "validation": [
+      "SCN-BENCH-0036",
+      "SCN-BENCH-0038",
+      "SCN-BENCH-0039",
+      "SCN-BENCH-0040",
+      "SCN-BENCH-0042",
+      "SCN-BENCH-0043",
+      "SCN-BENCH-0044",
+      "SCN-BENCH-0046",
+      "SCN-BENCH-0047",
+      "SCN-BENCH-0048",
+      "SCN-BENCH-0050",
+      "SCN-BENCH-0051"
+    ]
+  },
   "profile": "stress",
   "profile_contract": {
     "currency": "INR",
@@ -2345,6 +2818,15 @@
     "version": "1.0.0"
   },
   "seed": 260311,
-  "source_revision": "ff33fa8",
+  "source_revision": "7d3238b44e06a64ad018615c652738666ee3b279",
+  "source_state": {
+    "working_tree_clean": false,
+    "working_tree_diff_sha256": "b8f88967f8e0b47eda5639f56f4d49cbb8e14bd7ac63b724633777119638983b",
+    "working_tree_status_sha256": "e0ff9669ef82172283e0635916d3b0bfc55e6ce89dcc33a2bc62ecfe0498f628"
+  },
+  "validation": {
+    "command": "python scripts/validate_phase4.py --profile stress --scope 4A-4V",
+    "status": "PENDING_FINALIZATION"
+  },
   "version": "1.0.0"
 }

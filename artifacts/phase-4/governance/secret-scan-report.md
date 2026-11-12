@@ -1,5 +1,5 @@
 # Phase 4S Governance Review
 
-No secrets or credentials detected.
+Secrets found: 0.
 
 Status: PASS

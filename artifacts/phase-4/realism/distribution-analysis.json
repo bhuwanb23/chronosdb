@@ -1,7 +1,13 @@
 {
+  "all_targets_pass": true,
+  "bom_shape_varies": true,
   "five_intervention_types": true,
   "minimum_category_shares": true,
   "multi_product_target": true,
+  "no_action_is_represented": true,
+  "not_every_intervention_is_feasible": true,
+  "order_quantities_vary": true,
   "partial_fulfillment_target": true,
+  "supplier_lead_time_varies": true,
   "temporal_target": true
 }

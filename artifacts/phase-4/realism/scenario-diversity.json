@@ -1,4 +1,11 @@
 {
+  "anti_pattern_checks": {
+    "bom_shape_varies": true,
+    "no_action_is_represented": true,
+    "not_every_intervention_is_feasible": true,
+    "order_quantities_vary": true,
+    "supplier_lead_time_varies": true
+  },
   "categories": {
     "ALTERNATE_SUPPLIER_CONSTRAINT": 4,
     "BUDGET_CONSTRAINED_RECOVERY": 4,
