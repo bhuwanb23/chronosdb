@@ -28,7 +28,7 @@ def main() -> None:
     args = parser.parse_args()
     profile = load_release_profile(args.root, args.profile, args.version)
     master, aliases = write_master_release(profile)
-    validate_master_release(master)
+    validate_master_release(master, require_full_network=profile.profile != "tiny")
     procurement = build_procurement(profile, aliases)
     validate_procurement(
         procurement["purchase_orders"],

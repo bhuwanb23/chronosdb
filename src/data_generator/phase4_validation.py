@@ -17,7 +17,10 @@ def _ids(rows: list[dict[str, Any]]) -> set[str]:
     return {str(row["id"]) for row in rows if row.get("id")}
 
 
-def validate_master_release(master: dict[str, list[dict[str, Any]]]) -> None:
+def validate_master_release(
+    master: dict[str, list[dict[str, Any]]],
+    require_full_network: bool = True,
+) -> None:
     required = {
         "warehouses",
         "facilities",
@@ -45,9 +48,13 @@ def validate_master_release(master: dict[str, list[dict[str, Any]]]) -> None:
     product_ids = _ids(master["products"])
     bom_ids = _ids(master["bom_versions"])
     sla_ids = _ids(master["sla_policies"])
-    if not {"WH-PUNE", "WH-CHENNAI", "WH-GURUGRAM"}.issubset(warehouse_ids):
+    if require_full_network and not {
+        "WH-PUNE",
+        "WH-CHENNAI",
+        "WH-GURUGRAM",
+    }.issubset(warehouse_ids):
         raise Phase4ValidationError("required Phase 4 warehouses are missing")
-    if not {"FAC-PUNE", "FAC-CHENNAI"}.issubset(facility_ids):
+    if require_full_network and not {"FAC-PUNE", "FAC-CHENNAI"}.issubset(facility_ids):
         raise Phase4ValidationError("required Phase 4 facilities are missing")
     for row in master["facilities"]:
         if not row.get("source_warehouse_id") in warehouse_ids:

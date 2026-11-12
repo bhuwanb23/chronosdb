@@ -72,6 +72,8 @@ def project_master(profile: ReleaseProfile) -> tuple[dict[str, list[dict[str, An
     aliases["PRD-0001"] = "PRD-CONTROLLER-X"
     for index, row in enumerate(source_rows["warehouses"], start=1):
         aliases.setdefault(row["id"], f"WH-P4-{index:04d}")
+    aliases["WH-PUNE"] = "WH-PUNE"
+    aliases["WH-CHENNAI"] = "WH-CHENNAI"
     aliases["WH-BENGALURU"] = "WH-GURUGRAM"
     projected = {
         name: [_map_row(row, aliases) for row in source_rows[name]]

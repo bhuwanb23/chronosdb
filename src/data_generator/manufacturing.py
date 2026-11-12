@@ -83,7 +83,7 @@ def build_manufacturing(
                 "recorded_at": start,
             }
         )
-        component_id = "CMP-MCU-42" if is_golden else "CMP-0002"
+        component_id = "CMP-MCU-42" if is_golden else _map("CMP-0002", aliases)
         required = quantity * Decimal("2")
         requirements.append(
             {
