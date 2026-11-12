@@ -1,0 +1,6 @@
+{
+  "frozen_expected_recommendation_mismatches": [],
+  "independent_source_record_oracle": true,
+  "scenarios": 60,
+  "status": "PASS"
+}

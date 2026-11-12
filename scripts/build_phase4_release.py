@@ -104,7 +104,13 @@ def main() -> None:
     validate_golden_release(golden, evidence)
     demos = build_supporting_demos(profile)
     validate_supporting_demos_release(demos)
-    benchmarks = build_benchmarks(profile)
+    benchmarks = build_benchmarks(
+        profile,
+        master=master,
+        procurement=procurement,
+        demand=demand,
+        evidence=evidence,
+    )
     validate_benchmark_release(
         benchmarks,
         master,

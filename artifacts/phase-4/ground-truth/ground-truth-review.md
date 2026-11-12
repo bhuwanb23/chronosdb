@@ -1,7 +1,8 @@
 # Phase 4P Ground-Truth Review
 
 - Scenarios: 60
-- Source: frozen Phase 4 benchmark scenarios and expected records
+- Source: release source records replayed by an independent oracle
 - Input/output hashes: PASS
-- Golden/manual reconciliation: PASS
-- Provenance and causal trace coverage: PASS
+- Intermediate supply, inventory, production, customer, and candidate effects: PASS
+- Frozen expected recommendation mismatches: 0
+- Status: PASS

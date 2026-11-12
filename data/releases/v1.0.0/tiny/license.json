@@ -1,5 +1,9 @@
 {
+  "attribution": "ChronosDB project authors",
   "external_corpus_copied": false,
-  "license": "repository-compatible",
-  "synthetic_origin": true
+  "license_name": "ChronosDB Synthetic Data License",
+  "spdx_license_identifier": "LicenseRef-ChronosDB-Synthetic-Data-1.0",
+  "synthetic_origin": true,
+  "terms": "Fictional synthetic records may be used for ChronosDB development, demonstration, testing, and benchmark evaluation. They are not commercial forecasts or real customer/supplier records.",
+  "version": "1.0"
 }

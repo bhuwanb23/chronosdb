@@ -66,11 +66,38 @@ def _expected(category: str) -> tuple[str, str]:
     return "HYBRID", "MINIMIZE_SLA_BREACHES"
 
 
-def build_benchmarks(profile: ReleaseProfile) -> dict[str, Any]:
+def build_benchmarks(
+    profile: ReleaseProfile,
+    master: dict[str, list[dict[str, Any]]] | None = None,
+    procurement: dict[str, list[dict[str, Any]]] | None = None,
+    demand: dict[str, list[dict[str, Any]]] | None = None,
+    evidence: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     """Create the exact 60-case catalogue and immutable expected outcomes."""
     scenarios: list[dict[str, Any]] = []
     expected: list[dict[str, Any]] = []
     difficulty_labels: list[dict[str, Any]] = []
+    suppliers = (master or {}).get("suppliers", [])
+    purchase_orders = (procurement or {}).get("purchase_orders", [])
+    customers = (demand or {}).get("orders", [])
+    evidence_queries = (evidence or {}).get("queries", [])
+    if purchase_orders:
+        reference_records = purchase_orders
+    else:
+        reference_records = [
+            {
+                "supplier_id": "SUP-0104",
+                "component_id": "CMP-MCU-42",
+                "id": "PO-2208",
+            }
+        ]
+    if not customers:
+        customers = [{"customer_order_id": "CO-0701"}]
+    if not evidence_queries:
+        evidence_queries = [
+            {"query_id": "RET-GOLD-NOTICE"},
+            {"query_id": "RET-GOLD-TRANSFER"},
+        ]
     number = 0
     for category, count in SCENARIO_CATEGORIES:
         for _ in range(count):
@@ -79,6 +106,9 @@ def build_benchmarks(profile: ReleaseProfile) -> dict[str, Any]:
             partition = _partition(number)
             difficulty = _difficulty(number)
             recommendation, reason = _expected(category)
+            source_record = reference_records[(number - 1) % len(reference_records)]
+            customer = customers[(number - 1) % len(customers)]
+            query = evidence_queries[(number - 1) % len(evidence_queries)]
             scenario = {
                 "scenario_id": scenario_id,
                 "category": category,
@@ -89,18 +119,23 @@ def build_benchmarks(profile: ReleaseProfile) -> dict[str, Any]:
                 "objective_mode": "MINIMIZE_SLA_BREACHES",
                 "expected_outcome_file": f"expected/{scenario_id}.json",
                 "test_specific_branch": "false",
-                "reference_supplier_id": "SUP-0104",
-                "reference_component_id": "CMP-MCU-42",
-                "reference_purchase_order_id": "PO-2208",
-                "reference_customer_order_id": (
-                    "CO-0701",
-                    "CO-0704",
-                    "CO-0711",
-                )[number % 3],
-                "evidence_query_id": (
-                    "RET-GOLD-NOTICE"
-                    if number % 2
-                    else "RET-GOLD-TRANSFER"
+                "reference_supplier_id": source_record["supplier_id"],
+                "reference_component_id": source_record["component_id"],
+                "reference_purchase_order_id": source_record.get(
+                    "id", source_record["purchase_order_id"]
+                ),
+                "reference_customer_order_id": customer.get(
+                    "customer_order_id", customer.get("id", "CO-0701")
+                ),
+                "evidence_query_id": query.get("query_id", query.get("id", "RET-GOLD-NOTICE")),
+                "disruption_duration_days": 7 + (number % 21),
+                "source_supplier_class": next(
+                    (
+                        row.get("supplier_class", "")
+                        for row in suppliers
+                        if row.get("id") == source_record["supplier_id"]
+                    ),
+                    "",
                 ),
                 "requires_temporal_reconstruction": number in {
                     19,
@@ -131,6 +166,19 @@ def build_benchmarks(profile: ReleaseProfile) -> dict[str, Any]:
                 "causal_trace_id": f"TRACE-{scenario_id}",
                 "affected_customer_orders": [scenario["reference_customer_order_id"]],
                 "evidence_references": [scenario["evidence_query_id"]],
+                "candidate_set": [
+                    "HYBRID",
+                    "RESCHEDULE",
+                    "EXPEDITE",
+                    "TRANSFER",
+                    "ALTERNATE_SUPPLY",
+                ],
+                "source_record_ids": [
+                    scenario["reference_supplier_id"],
+                    scenario["reference_component_id"],
+                    scenario["reference_purchase_order_id"],
+                    scenario["reference_customer_order_id"],
+                ],
                 "requires_temporal_reconstruction": scenario[
                     "requires_temporal_reconstruction"
                 ],

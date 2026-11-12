@@ -125,14 +125,53 @@ def validate_procurement(
     known_states = {row["status"] for row in status_history}
     if not known_states.issubset(allowed_states):
         raise Phase4ValidationError("status history contains an invalid state")
-    capacity_by_key: dict[tuple[str, str], Decimal] = defaultdict(lambda: Decimal("0"))
+    capacity_by_window: dict[tuple[str, str, str], Decimal] = defaultdict(
+        lambda: Decimal("0")
+    )
     for row in capacity:
-        capacity_by_key[(row["supplier_id"], row["component_id"])] += Decimal(
-            str(row["available_capacity"])
+        available = Decimal(str(row["effective_capacity"])) - Decimal(
+            str(row.get("reserved_capacity", "0"))
         )
-    for order in purchase_orders:
+        if available < 0:
+            raise Phase4ValidationError(
+                f"supplier capacity reservation exceeds window: {row['id']}"
+            )
+        capacity_window = row.get("capacity_date") or row.get("effective_from")
+        capacity_by_window[
+            (row["supplier_id"], row["component_id"], str(capacity_window)[:10])
+        ] += available
+    allocated_by_window: dict[tuple[str, str, str], Decimal] = defaultdict(
+        lambda: Decimal("0")
+    )
+    for order in sorted(purchase_orders, key=lambda row: row["id"]):
         key = (order["supplier_id"], order["component_id"])
-        if Decimal(str(order["ordered_quantity"])) > capacity_by_key[key]:
+        expected_date = str(order["expected_arrival_time"])[:10]
+        windows = sorted(
+            window
+            for supplier, component, window in capacity_by_window
+            if supplier == key[0] and component == key[1] and window <= expected_date
+        )
+        if not windows:
+            all_windows = [
+                window
+                for supplier, component, window in capacity_by_window
+                if supplier == key[0] and component == key[1]
+            ]
+            if all_windows and expected_date < min(all_windows):
+                continue
+            raise Phase4ValidationError(
+                f"supplier capacity window missing: {order['id']}"
+            )
+        remaining = Decimal(str(order["ordered_quantity"]))
+        for window in windows:
+            window_key = (key[0], key[1], window)
+            available = capacity_by_window[window_key] - allocated_by_window[window_key]
+            allocation = min(remaining, available)
+            allocated_by_window[window_key] += allocation
+            remaining -= allocation
+            if remaining <= 0:
+                break
+        if remaining > 0:
             raise Phase4ValidationError(f"supplier capacity exceeded: {order['id']}")
 
 
