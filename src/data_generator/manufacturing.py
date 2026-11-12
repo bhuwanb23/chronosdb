@@ -130,7 +130,7 @@ def build_manufacturing(
             )
     capacity: list[dict[str, Any]] = []
     start_date = datetime(2026, 11, 11, tzinfo=UTC)
-    for day in range(profile.snapshot_days):
+    for day in range(max(profile.snapshot_days, 14)):
         current = start_date + timedelta(days=day)
         date_value = current.date().isoformat()
         for facility_id, capacity_value in (("FAC-PUNE", "100"), ("FAC-CHENNAI", "80")):

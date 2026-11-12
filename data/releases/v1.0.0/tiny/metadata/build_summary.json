@@ -1,0 +1,44 @@
+{
+  "inventory_rows": {
+    "benchmark_snapshots": 10,
+    "component_ids": 15,
+    "ending_balances": 30,
+    "opening": 30,
+    "reservations": 1,
+    "snapshots": 210,
+    "transactions": 65,
+    "transfer_transactions": 2,
+    "warehouse_ids": 2
+  },
+  "manufacturing_rows": {
+    "allocations": 3,
+    "batches": 6,
+    "capacity": 28,
+    "production_orders": 20,
+    "requirements": 20,
+    "statuses": 20
+  },
+  "master_rows": {
+    "bom_lines": 16,
+    "bom_versions": 6,
+    "components": 15,
+    "customers": 12,
+    "facilities": 1,
+    "facility_product_capabilities": 1,
+    "products": 3,
+    "sla_policies": 3,
+    "supplier_component_agreements": 30,
+    "suppliers": 5,
+    "transfer_lanes": 2,
+    "warehouse_facility_links": 1,
+    "warehouses": 3
+  },
+  "procurement_rows": {
+    "capacity": 15,
+    "purchase_orders": 30,
+    "receipts": 29,
+    "status_history": 59
+  },
+  "profile": "tiny",
+  "version": "1.0.0"
+}

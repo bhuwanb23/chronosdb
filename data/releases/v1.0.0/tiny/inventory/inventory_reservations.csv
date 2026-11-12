@@ -1,0 +1,2 @@
+component_id,effective_time,id,reason,reserved_quantity,warehouse_id
+CMP-MCU-42,2026-11-11T02:30:00Z,RES-GOLD-CHENNAI,COMMITTED_LOCAL_DEMAND,180,WH-CHENNAI
