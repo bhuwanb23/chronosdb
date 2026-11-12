@@ -1,0 +1,47 @@
+{
+  "dataset_version": "1.0.0",
+  "files": [
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/scenarios/standard/scenario_definitions.json",
+      "record_count": 60,
+      "sha256": "3b32c19b7b33cb2f36f10b5c959b1d6ceaaabc81a70ba7cb79c05ea9e6613b48"
+    },
+    {
+      "path": "data/generated/scenarios/standard/disruptions.csv",
+      "record_count": 60,
+      "sha256": "c34be57d839a09e35079f25319a9caee92f6691af705664871cc84bdc611f1d7"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/scenarios/standard/scenario_constraints.json",
+      "record_count": 60,
+      "sha256": "f72e3d9bdae84b3c19425858c660c8c09aab018a1eed8f6d1508d2259acaa9d5"
+    },
+    {
+      "path": "data/generated/scenarios/standard/candidate_parameters.csv",
+      "record_count": 180,
+      "sha256": "67af31def9be1f449834a8514f29069559f5349eb0ccf2603b03f0490e269ce0"
+    },
+    {
+      "path": "data/generated/scenarios/standard/intervention_costs.csv",
+      "record_count": 180,
+      "sha256": "4af13caf0248ac16f63dd3ff97100ac3687d8c6fb7fb54a909c290658c8eb451"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/documents/standard/document_metadata.jsonl",
+      "record_count": 175,
+      "sha256": "09048f40e406cb9c3536d6cbfab221099d4968ca49da7688dbb7114b7817cf2f"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/documents/standard/documents.jsonl",
+      "record_count": 175,
+      "sha256": "606ea1a11cf6504c99c2a11506d0d5fcfc48e84f700c95455ce5d4e9692b7d69"
+    },
+    {
+      "path": "C:/Users/bhuwan.bhawarlal/Desktop/projects/chronosDB/data/generated/documents/standard/retrieval_relevance.json",
+      "record_count": 175,
+      "sha256": "d4806a9d2b3dce4c636299f20a056421f0558322957bcfabc14262d6e379cf55"
+    }
+  ],
+  "layer": "scenarios_and_documents",
+  "scale": "standard"
+}

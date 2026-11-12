@@ -29,6 +29,10 @@ def _validate_manifest(root: Path, manifest_path: Path) -> None:
             raise ValueError(f"manifest hash mismatch: {path}")
         if path.suffix == ".csv" and len(read_csv_rows(path)) != entry["record_count"]:
             raise ValueError(f"manifest record count mismatch: {path}")
+        if path.suffix == ".jsonl" and len(path.read_text(encoding="utf-8").splitlines()) != entry[
+            "record_count"
+        ]:
+            raise ValueError(f"manifest record count mismatch: {path}")
 
 
 def main() -> None:
@@ -97,7 +101,7 @@ def main() -> None:
         "candidate_parameters": read_csv_rows(scenario_dir / "candidate_parameters.csv"),
         "intervention_costs": read_csv_rows(scenario_dir / "intervention_costs.csv"),
     }
-    validate_scenarios(scenarios)
+    validate_scenarios(scenarios, master)
     documents = [
         json.loads(line)
         for line in (
@@ -128,6 +132,7 @@ def main() -> None:
     document_ids = {row["document_id"] for row in documents}
     if {row["document_id"] for row in metadata} != document_ids or len(relevance) != len(documents):
         raise ValueError("evidence metadata/relevance join mismatch")
+    _validate_manifest(root, scenario_dir / "manifest.json")
     for label in relevance:
         groups = [
             set(label["relevant_document_ids"]),

@@ -1,7 +1,7 @@
 [
   {
     "expected_affected_components": [
-      "CMP-0002"
+      "CMP-0001"
     ],
     "expected_affected_customer_orders": [
       "CO-000001"
@@ -35,7 +35,7 @@
     "expected_recommendation": "INT-0001-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0002"
+      "CMP-0001"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -50,7 +50,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0003"
+      "CMP-0002"
     ],
     "expected_affected_customer_orders": [
       "CO-000002"
@@ -84,7 +84,7 @@
     "expected_recommendation": "INT-0002-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0003"
+      "CMP-0002"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -99,7 +99,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0004"
+      "CMP-0003"
     ],
     "expected_affected_customer_orders": [
       "CO-000003"
@@ -133,7 +133,7 @@
     "expected_recommendation": "INT-0003-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0004"
+      "CMP-0003"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -148,7 +148,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0005"
+      "CMP-0004"
     ],
     "expected_affected_customer_orders": [
       "CO-000004"
@@ -182,7 +182,7 @@
     "expected_recommendation": "INT-0004-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0005"
+      "CMP-0004"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -197,7 +197,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0006"
+      "CMP-0005"
     ],
     "expected_affected_customer_orders": [
       "CO-000005"
@@ -231,7 +231,7 @@
     "expected_recommendation": "INT-0005-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0006"
+      "CMP-0005"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -246,7 +246,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0007"
+      "CMP-0006"
     ],
     "expected_affected_customer_orders": [
       "CO-000006"
@@ -280,7 +280,7 @@
     "expected_recommendation": "INT-0006-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0007"
+      "CMP-0006"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -295,7 +295,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0008"
+      "CMP-0007"
     ],
     "expected_affected_customer_orders": [
       "CO-000007"
@@ -329,7 +329,7 @@
     "expected_recommendation": "INT-0007-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0008"
+      "CMP-0007"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -344,7 +344,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0009"
+      "CMP-0008"
     ],
     "expected_affected_customer_orders": [
       "CO-000008"
@@ -378,7 +378,7 @@
     "expected_recommendation": "INT-0008-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0009"
+      "CMP-0008"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -393,7 +393,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0010"
+      "CMP-0009"
     ],
     "expected_affected_customer_orders": [
       "CO-000009"
@@ -427,7 +427,7 @@
     "expected_recommendation": "INT-0009-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0010"
+      "CMP-0009"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -442,7 +442,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0011"
+      "CMP-0010"
     ],
     "expected_affected_customer_orders": [
       "CO-000010"
@@ -476,7 +476,7 @@
     "expected_recommendation": "INT-0010-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0011"
+      "CMP-0010"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -491,7 +491,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0012"
+      "CMP-0011"
     ],
     "expected_affected_customer_orders": [
       "CO-000011"
@@ -525,7 +525,7 @@
     "expected_recommendation": "INT-0011-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0012"
+      "CMP-0011"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -540,7 +540,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0013"
+      "CMP-0012"
     ],
     "expected_affected_customer_orders": [
       "CO-000012"
@@ -574,7 +574,7 @@
     "expected_recommendation": "INT-0012-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0013"
+      "CMP-0012"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -589,7 +589,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0014"
+      "CMP-0013"
     ],
     "expected_affected_customer_orders": [
       "CO-000013"
@@ -623,7 +623,7 @@
     "expected_recommendation": "INT-0013-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0014"
+      "CMP-0013"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -638,7 +638,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0015"
+      "CMP-0014"
     ],
     "expected_affected_customer_orders": [
       "CO-000014"
@@ -672,7 +672,7 @@
     "expected_recommendation": "INT-0014-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0015"
+      "CMP-0014"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -687,7 +687,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0016"
+      "CMP-0015"
     ],
     "expected_affected_customer_orders": [
       "CO-000015"
@@ -721,7 +721,7 @@
     "expected_recommendation": "INT-0015-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0016"
+      "CMP-0015"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -736,7 +736,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0017"
+      "CMP-0016"
     ],
     "expected_affected_customer_orders": [
       "CO-000016"
@@ -770,7 +770,7 @@
     "expected_recommendation": "INT-0016-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0017"
+      "CMP-0016"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -785,7 +785,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0018"
+      "CMP-0017"
     ],
     "expected_affected_customer_orders": [
       "CO-000017"
@@ -819,7 +819,7 @@
     "expected_recommendation": "INT-0017-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0018"
+      "CMP-0017"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -834,7 +834,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0019"
+      "CMP-0018"
     ],
     "expected_affected_customer_orders": [
       "CO-000018"
@@ -868,7 +868,7 @@
     "expected_recommendation": "INT-0018-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0019"
+      "CMP-0018"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -883,7 +883,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0020"
+      "CMP-0019"
     ],
     "expected_affected_customer_orders": [
       "CO-000019"
@@ -917,7 +917,7 @@
     "expected_recommendation": "INT-0019-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0020"
+      "CMP-0019"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -932,7 +932,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0021"
+      "CMP-0020"
     ],
     "expected_affected_customer_orders": [
       "CO-000020"
@@ -966,7 +966,7 @@
     "expected_recommendation": "INT-0020-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0021"
+      "CMP-0020"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -981,7 +981,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0022"
+      "CMP-0021"
     ],
     "expected_affected_customer_orders": [
       "CO-000021"
@@ -1015,7 +1015,7 @@
     "expected_recommendation": "INT-0021-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0022"
+      "CMP-0021"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1030,7 +1030,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0023"
+      "CMP-0022"
     ],
     "expected_affected_customer_orders": [
       "CO-000022"
@@ -1064,7 +1064,7 @@
     "expected_recommendation": "INT-0022-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0023"
+      "CMP-0022"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1079,7 +1079,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0024"
+      "CMP-0023"
     ],
     "expected_affected_customer_orders": [
       "CO-000023"
@@ -1113,7 +1113,7 @@
     "expected_recommendation": "INT-0023-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0024"
+      "CMP-0023"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1128,7 +1128,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0025"
+      "CMP-0024"
     ],
     "expected_affected_customer_orders": [
       "CO-000024"
@@ -1162,7 +1162,7 @@
     "expected_recommendation": "INT-0024-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0025"
+      "CMP-0024"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1177,7 +1177,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0026"
+      "CMP-0025"
     ],
     "expected_affected_customer_orders": [
       "CO-000025"
@@ -1211,7 +1211,7 @@
     "expected_recommendation": "INT-0025-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0026"
+      "CMP-0025"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1226,7 +1226,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0027"
+      "CMP-0026"
     ],
     "expected_affected_customer_orders": [
       "CO-000026"
@@ -1260,7 +1260,7 @@
     "expected_recommendation": "INT-0026-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0027"
+      "CMP-0026"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1275,7 +1275,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0028"
+      "CMP-0027"
     ],
     "expected_affected_customer_orders": [
       "CO-000027"
@@ -1309,7 +1309,7 @@
     "expected_recommendation": "INT-0027-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0028"
+      "CMP-0027"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1324,7 +1324,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0029"
+      "CMP-0028"
     ],
     "expected_affected_customer_orders": [
       "CO-000028"
@@ -1358,7 +1358,7 @@
     "expected_recommendation": "INT-0028-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0029"
+      "CMP-0028"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1373,7 +1373,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0030"
+      "CMP-0029"
     ],
     "expected_affected_customer_orders": [
       "CO-000029"
@@ -1407,7 +1407,7 @@
     "expected_recommendation": "INT-0029-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0030"
+      "CMP-0029"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1422,7 +1422,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0031"
+      "CMP-0030"
     ],
     "expected_affected_customer_orders": [
       "CO-000030"
@@ -1456,7 +1456,7 @@
     "expected_recommendation": "INT-0030-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0031"
+      "CMP-0030"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1471,7 +1471,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0032"
+      "CMP-0031"
     ],
     "expected_affected_customer_orders": [
       "CO-000031"
@@ -1505,7 +1505,7 @@
     "expected_recommendation": "INT-0031-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0032"
+      "CMP-0031"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1520,7 +1520,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0033"
+      "CMP-0032"
     ],
     "expected_affected_customer_orders": [
       "CO-000032"
@@ -1554,7 +1554,7 @@
     "expected_recommendation": "INT-0032-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0033"
+      "CMP-0032"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1569,7 +1569,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0034"
+      "CMP-0033"
     ],
     "expected_affected_customer_orders": [
       "CO-000033"
@@ -1603,7 +1603,7 @@
     "expected_recommendation": "INT-0033-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0034"
+      "CMP-0033"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1618,7 +1618,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0035"
+      "CMP-0034"
     ],
     "expected_affected_customer_orders": [
       "CO-000034"
@@ -1652,7 +1652,7 @@
     "expected_recommendation": "INT-0034-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0035"
+      "CMP-0034"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1667,7 +1667,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0036"
+      "CMP-0035"
     ],
     "expected_affected_customer_orders": [
       "CO-000035"
@@ -1701,7 +1701,7 @@
     "expected_recommendation": "INT-0035-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0036"
+      "CMP-0035"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1716,7 +1716,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0037"
+      "CMP-0036"
     ],
     "expected_affected_customer_orders": [
       "CO-000036"
@@ -1750,7 +1750,7 @@
     "expected_recommendation": "INT-0036-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0037"
+      "CMP-0036"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1765,7 +1765,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0038"
+      "CMP-0037"
     ],
     "expected_affected_customer_orders": [
       "CO-000037"
@@ -1799,7 +1799,7 @@
     "expected_recommendation": "INT-0037-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0038"
+      "CMP-0037"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1814,7 +1814,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0039"
+      "CMP-0038"
     ],
     "expected_affected_customer_orders": [
       "CO-000038"
@@ -1848,7 +1848,7 @@
     "expected_recommendation": "INT-0038-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0039"
+      "CMP-0038"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1863,7 +1863,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0040"
+      "CMP-0039"
     ],
     "expected_affected_customer_orders": [
       "CO-000039"
@@ -1897,7 +1897,7 @@
     "expected_recommendation": "INT-0039-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0040"
+      "CMP-0039"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1912,7 +1912,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0041"
+      "CMP-0040"
     ],
     "expected_affected_customer_orders": [
       "CO-000040"
@@ -1946,7 +1946,7 @@
     "expected_recommendation": "INT-0040-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0041"
+      "CMP-0040"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -1961,7 +1961,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0042"
+      "CMP-0041"
     ],
     "expected_affected_customer_orders": [
       "CO-000041"
@@ -1995,7 +1995,7 @@
     "expected_recommendation": "INT-0041-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0042"
+      "CMP-0041"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -2010,7 +2010,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0043"
+      "CMP-0042"
     ],
     "expected_affected_customer_orders": [
       "CO-000042"
@@ -2044,7 +2044,7 @@
     "expected_recommendation": "INT-0042-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0043"
+      "CMP-0042"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -2059,7 +2059,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0044"
+      "CMP-0043"
     ],
     "expected_affected_customer_orders": [
       "CO-000043"
@@ -2093,7 +2093,7 @@
     "expected_recommendation": "INT-0043-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0044"
+      "CMP-0043"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -2108,7 +2108,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0045"
+      "CMP-0044"
     ],
     "expected_affected_customer_orders": [
       "CO-000044"
@@ -2142,7 +2142,7 @@
     "expected_recommendation": "INT-0044-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0045"
+      "CMP-0044"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -2157,7 +2157,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0046"
+      "CMP-0045"
     ],
     "expected_affected_customer_orders": [
       "CO-000045"
@@ -2191,7 +2191,7 @@
     "expected_recommendation": "INT-0045-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0046"
+      "CMP-0045"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -2206,7 +2206,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0047"
+      "CMP-0046"
     ],
     "expected_affected_customer_orders": [
       "CO-000046"
@@ -2238,7 +2238,7 @@
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": null,
     "expected_shortages": [
-      "CMP-0047"
+      "CMP-0046"
     ],
     "expected_sla_breaches": null,
     "expected_validity": "VALID",
@@ -2253,7 +2253,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0048"
+      "CMP-0047"
     ],
     "expected_affected_customer_orders": [
       "CO-000047"
@@ -2285,7 +2285,7 @@
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": null,
     "expected_shortages": [
-      "CMP-0048"
+      "CMP-0047"
     ],
     "expected_sla_breaches": null,
     "expected_validity": "VALID",
@@ -2300,7 +2300,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0049"
+      "CMP-0048"
     ],
     "expected_affected_customer_orders": [
       "CO-000048"
@@ -2334,7 +2334,7 @@
     "expected_recommendation": "INT-0048-TRANSFER",
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0049"
+      "CMP-0048"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -2460,7 +2460,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0053"
+      "CMP-0052"
     ],
     "expected_affected_customer_orders": [
       "CO-000052"
@@ -2492,7 +2492,7 @@
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": null,
     "expected_shortages": [
-      "CMP-0053"
+      "CMP-0052"
     ],
     "expected_sla_breaches": null,
     "expected_validity": "NO_FEASIBLE_INTERVENTION",
@@ -2507,7 +2507,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0054"
+      "CMP-0053"
     ],
     "expected_affected_customer_orders": [
       "CO-000053"
@@ -2539,7 +2539,7 @@
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": null,
     "expected_shortages": [
-      "CMP-0054"
+      "CMP-0053"
     ],
     "expected_sla_breaches": null,
     "expected_validity": "NO_FEASIBLE_INTERVENTION",
@@ -2554,7 +2554,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0055"
+      "CMP-0054"
     ],
     "expected_affected_customer_orders": [
       "CO-000054"
@@ -2586,7 +2586,7 @@
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": null,
     "expected_shortages": [
-      "CMP-0055"
+      "CMP-0054"
     ],
     "expected_sla_breaches": null,
     "expected_validity": "NO_FEASIBLE_INTERVENTION",
@@ -2601,7 +2601,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0056"
+      "CMP-0055"
     ],
     "expected_affected_customer_orders": [
       "CO-000055"
@@ -2631,7 +2631,7 @@
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": null,
     "expected_shortages": [
-      "CMP-0056"
+      "CMP-0055"
     ],
     "expected_sla_breaches": null,
     "expected_validity": "INSUFFICIENT_DATA",
@@ -2646,7 +2646,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0057"
+      "CMP-0056"
     ],
     "expected_affected_customer_orders": [
       "CO-000056"
@@ -2676,7 +2676,7 @@
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": null,
     "expected_shortages": [
-      "CMP-0057"
+      "CMP-0056"
     ],
     "expected_sla_breaches": null,
     "expected_validity": "INSUFFICIENT_DATA",
@@ -2691,7 +2691,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0058"
+      "CMP-0057"
     ],
     "expected_affected_customer_orders": [
       "CO-000057"
@@ -2721,7 +2721,7 @@
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": null,
     "expected_shortages": [
-      "CMP-0058"
+      "CMP-0057"
     ],
     "expected_sla_breaches": null,
     "expected_validity": "INSUFFICIENT_DATA",
@@ -2736,7 +2736,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0059"
+      "CMP-0058"
     ],
     "expected_affected_customer_orders": [
       "CO-000058"
@@ -2772,7 +2772,7 @@
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0059"
+      "CMP-0058"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -2787,7 +2787,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0060"
+      "CMP-0059"
     ],
     "expected_affected_customer_orders": [
       "CO-000059"
@@ -2823,7 +2823,7 @@
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0060"
+      "CMP-0059"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",
@@ -2838,7 +2838,7 @@
   },
   {
     "expected_affected_components": [
-      "CMP-0061"
+      "CMP-0060"
     ],
     "expected_affected_customer_orders": [
       "CO-000060"
@@ -2874,7 +2874,7 @@
     "expected_recommendation": null,
     "expected_revenue_at_risk_inr": "0",
     "expected_shortages": [
-      "CMP-0061"
+      "CMP-0060"
     ],
     "expected_sla_breaches": 0,
     "expected_validity": "VALID",

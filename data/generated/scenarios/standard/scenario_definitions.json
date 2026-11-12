@@ -6,11 +6,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0001",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0002",
+    "reference_component_id": "CMP-0001",
     "reference_customer_order_id": "CO-000001",
     "reference_production_order_id": "MO-000001",
     "reference_purchase_order_id": "PO-000001",
-    "reference_supplier_id": "SUP-0002",
+    "reference_supplier_id": "SUP-0001",
     "simulation_horizon_days": 30
   },
   {
@@ -20,11 +20,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0002",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0003",
+    "reference_component_id": "CMP-0002",
     "reference_customer_order_id": "CO-000002",
     "reference_production_order_id": "MO-000002",
     "reference_purchase_order_id": "PO-000002",
-    "reference_supplier_id": "SUP-0003",
+    "reference_supplier_id": "SUP-0002",
     "simulation_horizon_days": 30
   },
   {
@@ -34,11 +34,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0003",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0004",
+    "reference_component_id": "CMP-0003",
     "reference_customer_order_id": "CO-000003",
     "reference_production_order_id": "MO-000003",
     "reference_purchase_order_id": "PO-000003",
-    "reference_supplier_id": "SUP-0004",
+    "reference_supplier_id": "SUP-0003",
     "simulation_horizon_days": 30
   },
   {
@@ -48,11 +48,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0004",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0005",
+    "reference_component_id": "CMP-0004",
     "reference_customer_order_id": "CO-000004",
     "reference_production_order_id": "MO-000004",
     "reference_purchase_order_id": "PO-000004",
-    "reference_supplier_id": "SUP-0005",
+    "reference_supplier_id": "SUP-0004",
     "simulation_horizon_days": 30
   },
   {
@@ -62,11 +62,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0005",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0006",
+    "reference_component_id": "CMP-0005",
     "reference_customer_order_id": "CO-000005",
     "reference_production_order_id": "MO-000005",
     "reference_purchase_order_id": "PO-000005",
-    "reference_supplier_id": "SUP-0006",
+    "reference_supplier_id": "SUP-0005",
     "simulation_horizon_days": 30
   },
   {
@@ -76,11 +76,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0006",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0007",
+    "reference_component_id": "CMP-0006",
     "reference_customer_order_id": "CO-000006",
     "reference_production_order_id": "MO-000006",
     "reference_purchase_order_id": "PO-000006",
-    "reference_supplier_id": "SUP-0007",
+    "reference_supplier_id": "SUP-0006",
     "simulation_horizon_days": 30
   },
   {
@@ -90,11 +90,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0007",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0008",
+    "reference_component_id": "CMP-0007",
     "reference_customer_order_id": "CO-000007",
     "reference_production_order_id": "MO-000007",
     "reference_purchase_order_id": "PO-000007",
-    "reference_supplier_id": "SUP-0008",
+    "reference_supplier_id": "SUP-0007",
     "simulation_horizon_days": 30
   },
   {
@@ -104,11 +104,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0008",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0009",
+    "reference_component_id": "CMP-0008",
     "reference_customer_order_id": "CO-000008",
     "reference_production_order_id": "MO-000008",
     "reference_purchase_order_id": "PO-000008",
-    "reference_supplier_id": "SUP-0009",
+    "reference_supplier_id": "SUP-0008",
     "simulation_horizon_days": 30
   },
   {
@@ -118,11 +118,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0009",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0010",
+    "reference_component_id": "CMP-0009",
     "reference_customer_order_id": "CO-000009",
     "reference_production_order_id": "MO-000009",
     "reference_purchase_order_id": "PO-000009",
-    "reference_supplier_id": "SUP-0010",
+    "reference_supplier_id": "SUP-0009",
     "simulation_horizon_days": 30
   },
   {
@@ -132,11 +132,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0010",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0011",
+    "reference_component_id": "CMP-0010",
     "reference_customer_order_id": "CO-000010",
     "reference_production_order_id": "MO-000010",
     "reference_purchase_order_id": "PO-000010",
-    "reference_supplier_id": "SUP-0011",
+    "reference_supplier_id": "SUP-0010",
     "simulation_horizon_days": 30
   },
   {
@@ -146,11 +146,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0011",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0012",
+    "reference_component_id": "CMP-0011",
     "reference_customer_order_id": "CO-000011",
     "reference_production_order_id": "MO-000011",
     "reference_purchase_order_id": "PO-000011",
-    "reference_supplier_id": "SUP-0012",
+    "reference_supplier_id": "SUP-0011",
     "simulation_horizon_days": 30
   },
   {
@@ -160,11 +160,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0012",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0013",
+    "reference_component_id": "CMP-0012",
     "reference_customer_order_id": "CO-000012",
     "reference_production_order_id": "MO-000012",
     "reference_purchase_order_id": "PO-000012",
-    "reference_supplier_id": "SUP-0013",
+    "reference_supplier_id": "SUP-0012",
     "simulation_horizon_days": 30
   },
   {
@@ -174,11 +174,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0013",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0014",
+    "reference_component_id": "CMP-0013",
     "reference_customer_order_id": "CO-000013",
     "reference_production_order_id": "MO-000013",
     "reference_purchase_order_id": "PO-000013",
-    "reference_supplier_id": "SUP-0014",
+    "reference_supplier_id": "SUP-0013",
     "simulation_horizon_days": 30
   },
   {
@@ -188,11 +188,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0014",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0015",
+    "reference_component_id": "CMP-0014",
     "reference_customer_order_id": "CO-000014",
     "reference_production_order_id": "MO-000014",
     "reference_purchase_order_id": "PO-000014",
-    "reference_supplier_id": "SUP-0015",
+    "reference_supplier_id": "SUP-0014",
     "simulation_horizon_days": 30
   },
   {
@@ -202,11 +202,11 @@
     "difficulty": "LEVEL_1",
     "id": "SCN-0015",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0016",
+    "reference_component_id": "CMP-0015",
     "reference_customer_order_id": "CO-000015",
     "reference_production_order_id": "MO-000015",
     "reference_purchase_order_id": "PO-000015",
-    "reference_supplier_id": "SUP-0016",
+    "reference_supplier_id": "SUP-0015",
     "simulation_horizon_days": 30
   },
   {
@@ -216,11 +216,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0016",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0017",
+    "reference_component_id": "CMP-0016",
     "reference_customer_order_id": "CO-000016",
     "reference_production_order_id": "MO-000016",
     "reference_purchase_order_id": "PO-000016",
-    "reference_supplier_id": "SUP-0017",
+    "reference_supplier_id": "SUP-0016",
     "simulation_horizon_days": 30
   },
   {
@@ -230,11 +230,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0017",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0018",
+    "reference_component_id": "CMP-0017",
     "reference_customer_order_id": "CO-000017",
     "reference_production_order_id": "MO-000017",
     "reference_purchase_order_id": "PO-000017",
-    "reference_supplier_id": "SUP-0018",
+    "reference_supplier_id": "SUP-0017",
     "simulation_horizon_days": 30
   },
   {
@@ -244,11 +244,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0018",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0019",
+    "reference_component_id": "CMP-0018",
     "reference_customer_order_id": "CO-000018",
     "reference_production_order_id": "MO-000018",
     "reference_purchase_order_id": "PO-000018",
-    "reference_supplier_id": "SUP-0019",
+    "reference_supplier_id": "SUP-0018",
     "simulation_horizon_days": 30
   },
   {
@@ -258,11 +258,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0019",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0020",
+    "reference_component_id": "CMP-0019",
     "reference_customer_order_id": "CO-000019",
     "reference_production_order_id": "MO-000019",
     "reference_purchase_order_id": "PO-000019",
-    "reference_supplier_id": "SUP-0020",
+    "reference_supplier_id": "SUP-0019",
     "simulation_horizon_days": 30
   },
   {
@@ -272,11 +272,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0020",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0021",
+    "reference_component_id": "CMP-0020",
     "reference_customer_order_id": "CO-000020",
     "reference_production_order_id": "MO-000020",
     "reference_purchase_order_id": "PO-000020",
-    "reference_supplier_id": "SUP-0021",
+    "reference_supplier_id": "SUP-0020",
     "simulation_horizon_days": 30
   },
   {
@@ -286,11 +286,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0021",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0022",
+    "reference_component_id": "CMP-0021",
     "reference_customer_order_id": "CO-000021",
     "reference_production_order_id": "MO-000021",
     "reference_purchase_order_id": "PO-000021",
-    "reference_supplier_id": "SUP-0022",
+    "reference_supplier_id": "SUP-0021",
     "simulation_horizon_days": 30
   },
   {
@@ -300,11 +300,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0022",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0023",
+    "reference_component_id": "CMP-0022",
     "reference_customer_order_id": "CO-000022",
     "reference_production_order_id": "MO-000022",
     "reference_purchase_order_id": "PO-000022",
-    "reference_supplier_id": "SUP-0023",
+    "reference_supplier_id": "SUP-0022",
     "simulation_horizon_days": 30
   },
   {
@@ -314,11 +314,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0023",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0024",
+    "reference_component_id": "CMP-0023",
     "reference_customer_order_id": "CO-000023",
     "reference_production_order_id": "MO-000023",
     "reference_purchase_order_id": "PO-000023",
-    "reference_supplier_id": "SUP-0024",
+    "reference_supplier_id": "SUP-0023",
     "simulation_horizon_days": 30
   },
   {
@@ -328,11 +328,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0024",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0025",
+    "reference_component_id": "CMP-0024",
     "reference_customer_order_id": "CO-000024",
     "reference_production_order_id": "MO-000024",
     "reference_purchase_order_id": "PO-000024",
-    "reference_supplier_id": "SUP-0001",
+    "reference_supplier_id": "SUP-0024",
     "simulation_horizon_days": 30
   },
   {
@@ -342,11 +342,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0025",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0026",
+    "reference_component_id": "CMP-0025",
     "reference_customer_order_id": "CO-000025",
     "reference_production_order_id": "MO-000025",
     "reference_purchase_order_id": "PO-000025",
-    "reference_supplier_id": "SUP-0002",
+    "reference_supplier_id": "SUP-0001",
     "simulation_horizon_days": 30
   },
   {
@@ -356,11 +356,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0026",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0027",
+    "reference_component_id": "CMP-0026",
     "reference_customer_order_id": "CO-000026",
     "reference_production_order_id": "MO-000026",
     "reference_purchase_order_id": "PO-000026",
-    "reference_supplier_id": "SUP-0003",
+    "reference_supplier_id": "SUP-0002",
     "simulation_horizon_days": 30
   },
   {
@@ -370,11 +370,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0027",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0028",
+    "reference_component_id": "CMP-0027",
     "reference_customer_order_id": "CO-000027",
     "reference_production_order_id": "MO-000027",
     "reference_purchase_order_id": "PO-000027",
-    "reference_supplier_id": "SUP-0004",
+    "reference_supplier_id": "SUP-0003",
     "simulation_horizon_days": 30
   },
   {
@@ -384,11 +384,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0028",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0029",
+    "reference_component_id": "CMP-0028",
     "reference_customer_order_id": "CO-000028",
     "reference_production_order_id": "MO-000028",
     "reference_purchase_order_id": "PO-000028",
-    "reference_supplier_id": "SUP-0005",
+    "reference_supplier_id": "SUP-0004",
     "simulation_horizon_days": 30
   },
   {
@@ -398,11 +398,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0029",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0030",
+    "reference_component_id": "CMP-0029",
     "reference_customer_order_id": "CO-000029",
     "reference_production_order_id": "MO-000029",
     "reference_purchase_order_id": "PO-000029",
-    "reference_supplier_id": "SUP-0006",
+    "reference_supplier_id": "SUP-0005",
     "simulation_horizon_days": 30
   },
   {
@@ -412,11 +412,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0030",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0031",
+    "reference_component_id": "CMP-0030",
     "reference_customer_order_id": "CO-000030",
     "reference_production_order_id": "MO-000030",
     "reference_purchase_order_id": "PO-000030",
-    "reference_supplier_id": "SUP-0007",
+    "reference_supplier_id": "SUP-0006",
     "simulation_horizon_days": 30
   },
   {
@@ -426,11 +426,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0031",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0032",
+    "reference_component_id": "CMP-0031",
     "reference_customer_order_id": "CO-000031",
     "reference_production_order_id": "MO-000031",
     "reference_purchase_order_id": "PO-000031",
-    "reference_supplier_id": "SUP-0008",
+    "reference_supplier_id": "SUP-0007",
     "simulation_horizon_days": 30
   },
   {
@@ -440,11 +440,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0032",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0033",
+    "reference_component_id": "CMP-0032",
     "reference_customer_order_id": "CO-000032",
     "reference_production_order_id": "MO-000032",
     "reference_purchase_order_id": "PO-000032",
-    "reference_supplier_id": "SUP-0009",
+    "reference_supplier_id": "SUP-0008",
     "simulation_horizon_days": 30
   },
   {
@@ -454,11 +454,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0033",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0034",
+    "reference_component_id": "CMP-0033",
     "reference_customer_order_id": "CO-000033",
     "reference_production_order_id": "MO-000033",
     "reference_purchase_order_id": "PO-000033",
-    "reference_supplier_id": "SUP-0010",
+    "reference_supplier_id": "SUP-0009",
     "simulation_horizon_days": 30
   },
   {
@@ -468,11 +468,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0034",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0035",
+    "reference_component_id": "CMP-0034",
     "reference_customer_order_id": "CO-000034",
     "reference_production_order_id": "MO-000034",
     "reference_purchase_order_id": "PO-000034",
-    "reference_supplier_id": "SUP-0011",
+    "reference_supplier_id": "SUP-0010",
     "simulation_horizon_days": 30
   },
   {
@@ -482,11 +482,11 @@
     "difficulty": "LEVEL_2",
     "id": "SCN-0035",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0036",
+    "reference_component_id": "CMP-0035",
     "reference_customer_order_id": "CO-000035",
     "reference_production_order_id": "MO-000035",
     "reference_purchase_order_id": "PO-000035",
-    "reference_supplier_id": "SUP-0012",
+    "reference_supplier_id": "SUP-0011",
     "simulation_horizon_days": 30
   },
   {
@@ -496,11 +496,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0036",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0037",
+    "reference_component_id": "CMP-0036",
     "reference_customer_order_id": "CO-000036",
     "reference_production_order_id": "MO-000036",
     "reference_purchase_order_id": "PO-000036",
-    "reference_supplier_id": "SUP-0013",
+    "reference_supplier_id": "SUP-0012",
     "simulation_horizon_days": 30
   },
   {
@@ -510,11 +510,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0037",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0038",
+    "reference_component_id": "CMP-0037",
     "reference_customer_order_id": "CO-000037",
     "reference_production_order_id": "MO-000037",
     "reference_purchase_order_id": "PO-000037",
-    "reference_supplier_id": "SUP-0014",
+    "reference_supplier_id": "SUP-0013",
     "simulation_horizon_days": 30
   },
   {
@@ -524,11 +524,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0038",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0039",
+    "reference_component_id": "CMP-0038",
     "reference_customer_order_id": "CO-000038",
     "reference_production_order_id": "MO-000038",
     "reference_purchase_order_id": "PO-000038",
-    "reference_supplier_id": "SUP-0015",
+    "reference_supplier_id": "SUP-0014",
     "simulation_horizon_days": 30
   },
   {
@@ -538,11 +538,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0039",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0040",
+    "reference_component_id": "CMP-0039",
     "reference_customer_order_id": "CO-000039",
     "reference_production_order_id": "MO-000039",
     "reference_purchase_order_id": "PO-000039",
-    "reference_supplier_id": "SUP-0016",
+    "reference_supplier_id": "SUP-0015",
     "simulation_horizon_days": 30
   },
   {
@@ -552,11 +552,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0040",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0041",
+    "reference_component_id": "CMP-0040",
     "reference_customer_order_id": "CO-000040",
     "reference_production_order_id": "MO-000040",
     "reference_purchase_order_id": "PO-000040",
-    "reference_supplier_id": "SUP-0017",
+    "reference_supplier_id": "SUP-0016",
     "simulation_horizon_days": 30
   },
   {
@@ -566,11 +566,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0041",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0042",
+    "reference_component_id": "CMP-0041",
     "reference_customer_order_id": "CO-000041",
     "reference_production_order_id": "MO-000041",
     "reference_purchase_order_id": "PO-000041",
-    "reference_supplier_id": "SUP-0018",
+    "reference_supplier_id": "SUP-0017",
     "simulation_horizon_days": 30
   },
   {
@@ -580,11 +580,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0042",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0043",
+    "reference_component_id": "CMP-0042",
     "reference_customer_order_id": "CO-000042",
     "reference_production_order_id": "MO-000042",
     "reference_purchase_order_id": "PO-000042",
-    "reference_supplier_id": "SUP-0019",
+    "reference_supplier_id": "SUP-0018",
     "simulation_horizon_days": 30
   },
   {
@@ -594,11 +594,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0043",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0044",
+    "reference_component_id": "CMP-0043",
     "reference_customer_order_id": "CO-000043",
     "reference_production_order_id": "MO-000043",
     "reference_purchase_order_id": "PO-000043",
-    "reference_supplier_id": "SUP-0020",
+    "reference_supplier_id": "SUP-0019",
     "simulation_horizon_days": 30
   },
   {
@@ -608,11 +608,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0044",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0045",
+    "reference_component_id": "CMP-0044",
     "reference_customer_order_id": "CO-000044",
     "reference_production_order_id": "MO-000044",
     "reference_purchase_order_id": "PO-000044",
-    "reference_supplier_id": "SUP-0021",
+    "reference_supplier_id": "SUP-0020",
     "simulation_horizon_days": 30
   },
   {
@@ -622,11 +622,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0045",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0046",
+    "reference_component_id": "CMP-0045",
     "reference_customer_order_id": "CO-000045",
     "reference_production_order_id": "MO-000045",
     "reference_purchase_order_id": "PO-000045",
-    "reference_supplier_id": "SUP-0022",
+    "reference_supplier_id": "SUP-0021",
     "simulation_horizon_days": 30
   },
   {
@@ -636,11 +636,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0046",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0047",
+    "reference_component_id": "CMP-0046",
     "reference_customer_order_id": "CO-000046",
     "reference_production_order_id": "MO-000046",
     "reference_purchase_order_id": "PO-000046",
-    "reference_supplier_id": "SUP-0023",
+    "reference_supplier_id": "SUP-0022",
     "simulation_horizon_days": 30
   },
   {
@@ -650,11 +650,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0047",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0048",
+    "reference_component_id": "CMP-0047",
     "reference_customer_order_id": "CO-000047",
     "reference_production_order_id": "MO-000047",
     "reference_purchase_order_id": "PO-000047",
-    "reference_supplier_id": "SUP-0024",
+    "reference_supplier_id": "SUP-0023",
     "simulation_horizon_days": 30
   },
   {
@@ -664,11 +664,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0048",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0049",
+    "reference_component_id": "CMP-0048",
     "reference_customer_order_id": "CO-000048",
     "reference_production_order_id": "MO-000048",
     "reference_purchase_order_id": "PO-000048",
-    "reference_supplier_id": "SUP-0001",
+    "reference_supplier_id": "SUP-0024",
     "simulation_horizon_days": 30
   },
   {
@@ -678,11 +678,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0049",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0050",
+    "reference_component_id": "CMP-0049",
     "reference_customer_order_id": "CO-000049",
     "reference_production_order_id": "MO-000049",
     "reference_purchase_order_id": "PO-000049",
-    "reference_supplier_id": "SUP-0002",
+    "reference_supplier_id": "SUP-0001",
     "simulation_horizon_days": 30
   },
   {
@@ -692,11 +692,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0050",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0051",
+    "reference_component_id": "CMP-0050",
     "reference_customer_order_id": "CO-000050",
     "reference_production_order_id": "MO-000050",
     "reference_purchase_order_id": "PO-000050",
-    "reference_supplier_id": "SUP-0003",
+    "reference_supplier_id": "SUP-0002",
     "simulation_horizon_days": 30
   },
   {
@@ -706,11 +706,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0051",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0052",
+    "reference_component_id": "CMP-0051",
     "reference_customer_order_id": "CO-000051",
     "reference_production_order_id": "MO-000051",
     "reference_purchase_order_id": "PO-000051",
-    "reference_supplier_id": "SUP-0004",
+    "reference_supplier_id": "SUP-0003",
     "simulation_horizon_days": 30
   },
   {
@@ -720,11 +720,11 @@
     "difficulty": "LEVEL_3",
     "id": "SCN-0052",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0053",
+    "reference_component_id": "CMP-0052",
     "reference_customer_order_id": "CO-000052",
     "reference_production_order_id": "MO-000052",
     "reference_purchase_order_id": "PO-000052",
-    "reference_supplier_id": "SUP-0005",
+    "reference_supplier_id": "SUP-0004",
     "simulation_horizon_days": 30
   },
   {
@@ -734,11 +734,11 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0053",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0054",
+    "reference_component_id": "CMP-0053",
     "reference_customer_order_id": "CO-000053",
     "reference_production_order_id": "MO-000053",
     "reference_purchase_order_id": "PO-000053",
-    "reference_supplier_id": "SUP-0006",
+    "reference_supplier_id": "SUP-0005",
     "simulation_horizon_days": 30
   },
   {
@@ -748,11 +748,11 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0054",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0055",
+    "reference_component_id": "CMP-0054",
     "reference_customer_order_id": "CO-000054",
     "reference_production_order_id": "MO-000054",
     "reference_purchase_order_id": "PO-000054",
-    "reference_supplier_id": "SUP-0007",
+    "reference_supplier_id": "SUP-0006",
     "simulation_horizon_days": 30
   },
   {
@@ -762,11 +762,11 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0055",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0056",
+    "reference_component_id": "CMP-0055",
     "reference_customer_order_id": "CO-000055",
     "reference_production_order_id": "MO-000055",
     "reference_purchase_order_id": "PO-000055",
-    "reference_supplier_id": "SUP-0008",
+    "reference_supplier_id": "SUP-0007",
     "simulation_horizon_days": 30
   },
   {
@@ -776,11 +776,11 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0056",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0057",
+    "reference_component_id": "CMP-0056",
     "reference_customer_order_id": "CO-000056",
     "reference_production_order_id": "MO-000056",
     "reference_purchase_order_id": "PO-000056",
-    "reference_supplier_id": "SUP-0009",
+    "reference_supplier_id": "SUP-0008",
     "simulation_horizon_days": 30
   },
   {
@@ -790,11 +790,11 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0057",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0058",
+    "reference_component_id": "CMP-0057",
     "reference_customer_order_id": "CO-000057",
     "reference_production_order_id": "MO-000057",
     "reference_purchase_order_id": "PO-000057",
-    "reference_supplier_id": "SUP-0010",
+    "reference_supplier_id": "SUP-0009",
     "simulation_horizon_days": 30
   },
   {
@@ -804,11 +804,11 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0058",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0059",
+    "reference_component_id": "CMP-0058",
     "reference_customer_order_id": "CO-000058",
     "reference_production_order_id": "MO-000058",
     "reference_purchase_order_id": "PO-000058",
-    "reference_supplier_id": "SUP-0011",
+    "reference_supplier_id": "SUP-0010",
     "simulation_horizon_days": 30
   },
   {
@@ -818,11 +818,11 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0059",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0060",
+    "reference_component_id": "CMP-0059",
     "reference_customer_order_id": "CO-000059",
     "reference_production_order_id": "MO-000059",
     "reference_purchase_order_id": "PO-000059",
-    "reference_supplier_id": "SUP-0012",
+    "reference_supplier_id": "SUP-0011",
     "simulation_horizon_days": 30
   },
   {
@@ -832,11 +832,11 @@
     "difficulty": "LEVEL_4",
     "id": "SCN-0060",
     "objective_mode": "MINIMIZE_SLA_BREACHES",
-    "reference_component_id": "CMP-0061",
+    "reference_component_id": "CMP-0060",
     "reference_customer_order_id": "CO-000060",
     "reference_production_order_id": "MO-000060",
     "reference_purchase_order_id": "PO-000060",
-    "reference_supplier_id": "SUP-0013",
+    "reference_supplier_id": "SUP-0012",
     "simulation_horizon_days": 30
   }
 ]

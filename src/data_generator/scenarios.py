@@ -38,6 +38,8 @@ def generate_scenarios(
     rng = random.Random(config.seed * 1_000_003 + STREAMS["disruption"])
     suppliers = master["suppliers"]
     components = master["components"]
+    suppliers_by_id = {row["id"]: row for row in suppliers}
+    agreements = master["supplier_component_agreements"]
     warehouses = master["warehouses"]
     scenarios: list[dict[str, Any]] = []
     disruptions: list[dict[str, Any]] = []
@@ -49,8 +51,16 @@ def generate_scenarios(
         for _ in range(count):
             scenario_number += 1
             scenario_id = f"SCN-{scenario_number:04d}"
-            supplier = suppliers[scenario_number % len(suppliers)]
-            component = components[scenario_number % len(components)]
+            purchase_order_number = (
+                (scenario_number - 1) % config.counts["purchase_orders"] + 1
+            )
+            component = components[(purchase_order_number - 1) % len(components)]
+            agreement = next(
+                row
+                for row in agreements
+                if row["component_id"] == component["id"]
+            )
+            supplier = suppliers_by_id[agreement["supplier_id"]]
             start = config.reference_time + timedelta(days=scenario_number % 10)
             difficulty = (
                 "LEVEL_1"
@@ -72,7 +82,7 @@ def generate_scenarios(
                     "reference_supplier_id": supplier["id"],
                     "reference_component_id": component["id"],
                     "reference_purchase_order_id": (
-                        f"PO-{(scenario_number - 1) % config.counts['purchase_orders'] + 1:06d}"
+                        f"PO-{purchase_order_number:06d}"
                     ),
                     "reference_production_order_id": (
                         f"MO-{(scenario_number - 1) % config.counts['production_orders'] + 1:06d}"
@@ -282,7 +292,9 @@ def validate_documents(documents: list[dict[str, Any]]) -> None:
         raise ValueError("evidence corpus lacks prompt-injection coverage")
 
 
-def validate_scenarios(payload: dict[str, Any]) -> None:
+def validate_scenarios(
+    payload: dict[str, Any], master: dict[str, list[dict[str, Any]]] | None = None
+) -> None:
     """Validate scenario inputs before any oracle calculation."""
     definitions = payload["scenario_definitions"]
     scenario_ids = [row["id"] for row in definitions]
@@ -306,3 +318,31 @@ def validate_scenarios(payload: dict[str, Any]) -> None:
     for disruption in payload["disruptions"]:
         if disruption["end_time"] <= disruption["start_time"]:
             raise ValueError(f"invalid disruption interval: {disruption['id']}")
+    disruptions_by_scenario = {
+        row["scenario_id"]: row for row in payload["disruptions"]
+    }
+    for scenario in definitions:
+        disruption = disruptions_by_scenario[scenario["id"]]
+        if (
+            scenario["reference_supplier_id"] != disruption["supplier_id"]
+            or scenario["reference_component_id"] != disruption["component_id"]
+        ):
+            raise ValueError(f"scenario disruption reference mismatch: {scenario['id']}")
+    if master is not None:
+        components = master["components"]
+        agreements = master["supplier_component_agreements"]
+        for scenario in definitions:
+            purchase_number = int(scenario["reference_purchase_order_id"].split("-")[-1])
+            component = components[(purchase_number - 1) % len(components)]
+            agreement = next(
+                row
+                for row in agreements
+                if row["component_id"] == component["id"]
+            )
+            if (
+                scenario["reference_component_id"] != component["id"]
+                or scenario["reference_supplier_id"] != agreement["supplier_id"]
+            ):
+                raise ValueError(
+                    f"purchase order reference mismatch: {scenario['id']}"
+                )
