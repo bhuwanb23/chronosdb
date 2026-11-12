@@ -17,19 +17,19 @@
       "load_order": 3,
       "path": "data/releases/v1.0.0/tiny/inventory/inventory_snapshots_benchmark.csv",
       "record_count": 10,
-      "sha256": "448d9886af19ce3676eb040f468eb37b9aa553d10b92309ff3817b6483d1f81e"
+      "sha256": "df469c858711634f205292e3bc7507e48ee8b4b6e21fdf17d78f39e662dfe91f"
     },
     {
       "load_order": 3,
       "path": "data/releases/v1.0.0/tiny/inventory/inventory_snapshots_daily.csv",
       "record_count": 210,
-      "sha256": "19631159021e50010a712dc4cdea90e6b6ca4b047378ba5e7e5ea82cc63e2ea3"
+      "sha256": "18ed0da8fa221556249f101185a4dfe07b985b33bc33a6790374e95751c04fac"
     },
     {
       "load_order": 3,
       "path": "data/releases/v1.0.0/tiny/inventory/inventory_transactions.csv",
-      "record_count": 64,
-      "sha256": "8a58d85c2b20f561cfa31694adcbd7c78caadbd65623fc945ffda9be9a4a0681"
+      "record_count": 36,
+      "sha256": "f389b5980362621fce468118c2b4b225682e13d2cc298c0cbd1c0ced6774ef5c"
     },
     {
       "load_order": 3,
@@ -41,7 +41,7 @@
       "load_order": 1,
       "path": "data/releases/v1.0.0/tiny/master/bom_lines.csv",
       "record_count": 17,
-      "sha256": "dd723445d7428034a216c385b43727bb416d72e7378c798877dbd51953f5ac4d"
+      "sha256": "6d17f5475aaaacf8553860e2a6401437de4672da8878c6c2caff271a49e00f96"
     },
     {
       "load_order": 1,
@@ -119,7 +119,7 @@
       "load_order": 5,
       "path": "data/releases/v1.0.0/tiny/metadata/build_summary.json",
       "record_count": 6,
-      "sha256": "5cc360b659e0787fdb466f6e55db406e3ffdda07a649d3a7760a060c088b421b"
+      "sha256": "105c592bafa7a0166bfc300878cc79f110900afd544394673a96dd2d393d0e36"
     },
     {
       "load_order": 5,
@@ -179,7 +179,7 @@
       "load_order": 4,
       "path": "data/releases/v1.0.0/tiny/production/production_material_requirements.csv",
       "record_count": 78,
-      "sha256": "1c40cde197fe8935fbe16f1396b55e801404324361ca9a26873c8b57fb35e413"
+      "sha256": "38415ba62cedd5dc116805643877b608dbe0a29777a03a6faee0750ee24a71f0"
     },
     {
       "load_order": 4,
@@ -221,6 +221,6 @@
     "version": "1.0.0"
   },
   "seed": 260311,
-  "source_revision": "b6ccb3e",
+  "source_revision": "8ea99c4",
   "version": "1.0.0"
 }

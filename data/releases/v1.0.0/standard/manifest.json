@@ -23,13 +23,13 @@
       "load_order": 3,
       "path": "data/releases/v1.0.0/standard/inventory/inventory_snapshots_daily.csv",
       "record_count": 14400,
-      "sha256": "f827843294b803972e6edca5a797d84965ab5e9c4088e40350e2ff425661dbd1"
+      "sha256": "7b02fcf78deeda451ac37f6d3ebb86b83928f9377a7919f5c470ff2ede312c3c"
     },
     {
       "load_order": 3,
       "path": "data/releases/v1.0.0/standard/inventory/inventory_transactions.csv",
-      "record_count": 818,
-      "sha256": "8cd5ad7b177af3027a63d72483be3efc252ce476f26acb153d842d4946adc651"
+      "record_count": 246,
+      "sha256": "4776bbe2cf4c3458bb951346029e45db1cade1ff57dee719668ffd7989a08711"
     },
     {
       "load_order": 3,
@@ -41,7 +41,7 @@
       "load_order": 1,
       "path": "data/releases/v1.0.0/standard/master/bom_lines.csv",
       "record_count": 92,
-      "sha256": "f2989a88718dea0f8879ddb8b55ecb97fc3e53cdab9ce42ed5bf7bdbf26d65de"
+      "sha256": "89f97e12748e218da84b0a0f549b595eac1b571d2c8584a95168b34630dce217"
     },
     {
       "load_order": 1,
@@ -119,7 +119,7 @@
       "load_order": 5,
       "path": "data/releases/v1.0.0/standard/metadata/build_summary.json",
       "record_count": 6,
-      "sha256": "cbde3b11e19468f7e17c3b2f4d359134453ea06d0515dcc9fd27f7e82046feb1"
+      "sha256": "8bf3ea339c0febaca851498d7f753f02e3cfe496adaf0906edc065e9faf69439"
     },
     {
       "load_order": 5,
@@ -179,7 +179,7 @@
       "load_order": 4,
       "path": "data/releases/v1.0.0/standard/production/production_material_requirements.csv",
       "record_count": 1300,
-      "sha256": "3604702794cfeb68351ee4cc9a0620049adc0194ff1d8a8dd6b93fd21b2baa68"
+      "sha256": "5a87f1823550d9b6a84fcd4bd57f372117e6ddc73a28a3e98edf8a352bb519ec"
     },
     {
       "load_order": 4,
@@ -221,6 +221,6 @@
     "version": "1.0.0"
   },
   "seed": 260311,
-  "source_revision": "b6ccb3e",
+  "source_revision": "8ea99c4",
   "version": "1.0.0"
 }

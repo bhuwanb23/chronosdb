@@ -154,6 +154,10 @@ def validate_inventory_release(inventory: dict[str, list[dict[str, Any]]]) -> No
     opening_keys = {
         (row["warehouse_id"], row["component_id"]) for row in opening
     }
+    opening_quantities = {
+        (row["warehouse_id"], row["component_id"]): Decimal(str(row["on_hand_quantity"]))
+        for row in opening
+    }
     if not opening_keys:
         raise Phase4ValidationError("inventory has no opening balances")
     signs = {
@@ -203,11 +207,19 @@ def validate_inventory_release(inventory: dict[str, list[dict[str, Any]]]) -> No
             event_time = datetime.fromisoformat(transfer["event_time"].replace("Z", "+00:00"))
             on_hand = Decimal("0")
             for transaction in transactions_by_key[source_key]:
-                if datetime.fromisoformat(transaction["event_time"].replace("Z", "+00:00")) >= event_time:
+                transaction_time = datetime.fromisoformat(
+                    transaction["event_time"].replace("Z", "+00:00")
+                )
+                if transaction_time >= event_time:
                     break
-                on_hand += Decimal(str(transaction["quantity"])) * signs[transaction["transaction_type"]]
+                on_hand += (
+                    Decimal(str(transaction["quantity"]))
+                    * signs[transaction["transaction_type"]]
+                )
             if quantity > on_hand - reservation_by_key[source_key]:
-                raise Phase4ValidationError(f"transfer exceeds available quantity: {transfer['id']}")
+                raise Phase4ValidationError(
+                    f"transfer exceeds available quantity: {transfer['id']}"
+                )
     golden_snapshot = None
     for row in sorted(
         snapshots,
@@ -219,11 +231,22 @@ def validate_inventory_release(inventory: dict[str, list[dict[str, Any]]]) -> No
         snapshot_time = datetime.fromisoformat(row["snapshot_time"].replace("Z", "+00:00"))
         expected = Decimal("0")
         for transaction in transactions_by_key[key]:
-            if datetime.fromisoformat(transaction["event_time"].replace("Z", "+00:00")) > snapshot_time:
+            transaction_time = datetime.fromisoformat(
+                transaction["event_time"].replace("Z", "+00:00")
+            )
+            if transaction_time > snapshot_time:
                 break
-            expected += Decimal(str(transaction["quantity"])) * signs[transaction["transaction_type"]]
+            expected += (
+                Decimal(str(transaction["quantity"]))
+                * signs[transaction["transaction_type"]]
+            )
         if Decimal(str(row["on_hand_quantity"])) != expected:
             raise Phase4ValidationError(f"snapshot replay mismatch: {row['id']}")
+        if (
+            row["snapshot_time"] == "2026-11-11T02:30:00Z"
+            and Decimal(str(row["on_hand_quantity"])) != opening_quantities[key]
+        ):
+            raise Phase4ValidationError(f"opening balance boundary mismatch: {row['id']}")
         available = max(
             Decimal("0"),
             expected
@@ -244,7 +267,10 @@ def validate_inventory_release(inventory: dict[str, list[dict[str, Any]]]) -> No
             row["snapshot_time"],
         ) == ("WH-CHENNAI", "CMP-MCU-42", "2026-11-11T02:30:00Z"):
             golden_snapshot = row
-    if golden_snapshot is None or Decimal(str(golden_snapshot["transferable_quantity"])) != Decimal("400"):
+    if (
+        golden_snapshot is None
+        or Decimal(str(golden_snapshot["transferable_quantity"])) != Decimal("400")
+    ):
         raise Phase4ValidationError("golden transferable quantity must remain 400")
 
 
@@ -293,6 +319,10 @@ def validate_manufacturing_release(
             if requirement["product_id"] != order["product_id"]:
                 raise Phase4ValidationError(f"material product mismatch: {requirement['id']}")
             bom = active_boms.get(order["product_id"])
+            if bom is None:
+                raise Phase4ValidationError(
+                    f"material requirement has no active BOM: {requirement['id']}"
+                )
             line = next(
                 (
                     candidate
@@ -303,7 +333,9 @@ def validate_manufacturing_release(
                 None,
             )
             if line is None or line["component_id"] != requirement["component_id"]:
-                raise Phase4ValidationError(f"material component is outside active BOM: {requirement['id']}")
+                raise Phase4ValidationError(
+                    f"material component is outside active BOM: {requirement['id']}"
+                )
         remaining = Decimal(str(requirement["remaining_quantity"]))
         bom_quantity = Decimal(str(requirement["bom_quantity"]))
         scrap = Decimal(str(requirement["scrap_factor"]))
@@ -351,7 +383,9 @@ def validate_manufacturing_release(
                 and requirement["component_id"] == allocation["component_id"]
                 for requirement in requirements
             ):
-                raise Phase4ValidationError(f"allocation component is outside active BOM: {allocation['id']}")
+                raise Phase4ValidationError(
+                    f"allocation component is outside active BOM: {allocation['id']}"
+                )
 
 
 def validate_nonnegative(rows: list[dict[str, Any]], fields: tuple[str, ...]) -> None:

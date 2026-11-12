@@ -162,11 +162,7 @@ def build_inventory(
             }
         )
     for receipt in procurement["receipts"]:
-        if (
-            receipt["warehouse_id"] == "WH-CHENNAI"
-            and receipt["component_id"] == "CMP-MCU-42"
-            and receipt["receipt_time"] <= "2026-11-11T02:30:00Z"
-        ):
+        if receipt["receipt_time"] <= reference_time:
             continue
         transactions.append(
             {
