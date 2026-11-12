@@ -1,0 +1,34 @@
+{
+  "category_counts": {
+    "ALTERNATE_SUPPLIER_CONSTRAINT": 4,
+    "BUDGET_CONSTRAINED_RECOVERY": 4,
+    "FULL_SUPPLIER_OUTAGE": 18,
+    "INSUFFICIENT_CRITICAL_DATA": 3,
+    "INVENTORY_TRANSFER_CONSTRAINT": 4,
+    "NO_FEASIBLE_INTERVENTION": 3,
+    "NO_OPERATIONAL_IMPACT": 3,
+    "PARTIAL_SUPPLIER_OUTAGE": 8,
+    "PURCHASE_ORDER_DISRUPTION": 4,
+    "SELECTED_COMPONENT_OUTAGE": 6,
+    "TIE_OR_PARETO_EQUIVALENT": 3
+  },
+  "insufficient_data_share": 0.05,
+  "intervention_types": {
+    "ALTERNATE_SUPPLY": 4,
+    "EXPEDITE": 10,
+    "HYBRID": 18,
+    "INSUFFICIENT_DATA": 3,
+    "MONITOR_NO_INTERVENTION": 3,
+    "NO_FEASIBLE_INTERVENTION": 3,
+    "PARETO_SET": 3,
+    "RESCHEDULE": 8,
+    "TRANSFER": 8
+  },
+  "multi_product_impact_count": 26,
+  "multiple_optimum_share": 0.05,
+  "no_feasible_share": 0.05,
+  "no_impact_share": 0.05,
+  "partial_fulfillment_count": 6,
+  "scenario_count": 60,
+  "temporal_reconstruction_count": 9
+}

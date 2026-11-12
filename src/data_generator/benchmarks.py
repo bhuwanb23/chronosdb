@@ -115,6 +115,8 @@ def build_benchmarks(profile: ReleaseProfile) -> dict[str, Any]:
                 },
                 "has_misleading_evidence": number in {1, 2, 19, 27, 33, 37, 41},
                 "partial_fulfillment": number in {19, 27, 33, 37, 41, 45},
+                "multi_product_impact": category
+                in {"FULL_SUPPLIER_OUTAGE", "PARTIAL_SUPPLIER_OUTAGE"},
             }
             outcome = {
                 "scenario_id": scenario_id,

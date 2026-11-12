@@ -1,0 +1,9 @@
+{
+  "external_corpus_copied": false,
+  "private_or_personal_records": 0,
+  "secrets": 0,
+  "split_similarity_findings": 0,
+  "status": "PASS",
+  "synthetic_origin": true,
+  "test_answer_leakage": 0
+}

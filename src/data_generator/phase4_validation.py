@@ -879,6 +879,8 @@ def validate_benchmark_release(
         raise Phase4ValidationError("benchmark test set lacks temporal reconstruction")
     if sum(row["has_misleading_evidence"] for row in test_scenarios) < 5:
         raise Phase4ValidationError("benchmark test set lacks misleading evidence")
+    if sum(row["multi_product_impact"] for row in scenarios) < 12:
+        raise Phase4ValidationError("benchmark lacks multi-product impact coverage")
     if sum(
         row["category"] == "INSUFFICIENT_CRITICAL_DATA" for row in test_scenarios
     ) < 3 or sum(

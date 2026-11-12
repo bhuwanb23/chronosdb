@@ -42,7 +42,7 @@ def _validate_manifest(root: Path, output: Path) -> None:
         relative_to_output = path.relative_to(output)
         if (
             path.is_file()
-            and path.name != "manifest.json"
+            and path.name not in {"manifest.json", "checksums.sha256"}
             and not (
                 manifest.get("profile") == "demo"
                 and relative_to_output.parts[0] in nested_profiles

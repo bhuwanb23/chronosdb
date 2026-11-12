@@ -1,6 +1,7 @@
 .PHONY: install run lint typecheck test test-db2 db-bootstrap db-health doctor \
 	data-clean data-generate data-validate ground-truth data-report data-checksums data-all \
-	phase4-intake phase4-build phase4-validate phase4-manifest phase4-repro
+	phase4-intake phase4-build phase4-validate phase4-manifest phase4-repro \
+	phase4-finalize
 
 install:
 	python -m pip install --upgrade pip
@@ -68,3 +69,6 @@ phase4-manifest:
 
 phase4-repro:
 	python scripts/verify_phase4_reproducibility.py --profile demo
+
+phase4-finalize:
+	python scripts/finalize_phase4.py

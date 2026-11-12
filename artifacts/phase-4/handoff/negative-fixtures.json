@@ -1,0 +1,7 @@
+{
+  "fixtures": [
+    "500-unit transfer violates source safety stock",
+    "expired evidence document excluded by access/effective-date filter",
+    "incomplete inventory snapshot returns INSUFFICIENT_DATA"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "financial_precision": "DECIMAL(18,2)",
+  "foreign_key_strategy": "canonical_id_columns",
+  "profile_count": 2,
+  "quantity_precision": "DECIMAL(18,3)",
+  "temporal_strategy": "half_open_effective_intervals"
+}

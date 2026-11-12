@@ -1,0 +1,24 @@
+{
+  "load_order": [
+    "master/warehouses",
+    "master/facilities",
+    "master/suppliers",
+    "master/components",
+    "master/supplier_component_agreements",
+    "master/products",
+    "master/bom_versions",
+    "master/bom_lines",
+    "master/customers",
+    "master/sla_policies",
+    "operations/purchase_orders",
+    "production/production_orders",
+    "demand/customer_orders",
+    "demand/customer_order_lines",
+    "inventory/inventory_transactions",
+    "inventory/inventory_snapshots_daily",
+    "disruptions/disruption_events",
+    "evidence/documents",
+    "benchmarks/scenarios"
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,7 @@
+{
+  "five_intervention_types": true,
+  "minimum_category_shares": true,
+  "multi_product_target": true,
+  "partial_fulfillment_target": true,
+  "temporal_target": true
+}

@@ -1,0 +1,17 @@
+{
+  "dataset_name": "chronosdb-demo-dataset",
+  "governance_status": "PASS",
+  "ground_truth_status": "PASS",
+  "handoff_status": "PASS",
+  "profiles": [
+    "demo",
+    "tiny",
+    "standard",
+    "stress"
+  ],
+  "readiness_status": "PASS",
+  "realism_status": "PASS",
+  "seed": 260311,
+  "validation_status": "PASS",
+  "version": "1.0.0"
+}
