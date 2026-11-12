@@ -50,6 +50,9 @@ def _map_row(row: dict[str, Any], aliases: dict[str, str]) -> dict[str, Any]:
 
 def project_master(profile: ReleaseProfile) -> tuple[dict[str, list[dict[str, Any]]], dict[str, str]]:
     source = profile.root / "data" / "generated" / "master" / profile.source_scale
+    source_rows = {
+        name: _read_csv(source / f"{name}.csv") for name in MASTER_FILES
+    }
     aliases: dict[str, str] = {
         "SUP-0001": "SUP-0104",
         "SUP-0002": "SUP-0208",
@@ -57,12 +60,33 @@ def project_master(profile: ReleaseProfile) -> tuple[dict[str, list[dict[str, An
         "PRD-0001": "PRD-CONTROLLER-X",
         "WH-BENGALURU": "WH-GURUGRAM",
     }
+    for index, row in enumerate(source_rows["suppliers"], start=1):
+        aliases.setdefault(row["id"], f"SUP-P4-{index:04d}")
+    aliases["SUP-0001"] = "SUP-0104"
+    aliases["SUP-0002"] = "SUP-0208"
+    for index, row in enumerate(source_rows["components"], start=1):
+        aliases.setdefault(row["id"], f"CMP-P4-{index:04d}")
+    aliases["CMP-0001"] = "CMP-MCU-42"
+    for index, row in enumerate(source_rows["products"], start=1):
+        aliases.setdefault(row["id"], f"PRD-P4-{index:04d}")
+    aliases["PRD-0001"] = "PRD-CONTROLLER-X"
+    for index, row in enumerate(source_rows["warehouses"], start=1):
+        aliases.setdefault(row["id"], f"WH-P4-{index:04d}")
+    aliases["WH-BENGALURU"] = "WH-GURUGRAM"
     projected = {
-        name: [_map_row(row, aliases) for row in _read_csv(source / f"{name}.csv")]
+        name: [_map_row(row, aliases) for row in source_rows[name]]
         for name in MASTER_FILES
     }
+    if not any(row["id"] == "WH-GURUGRAM" for row in projected["warehouses"]):
+        projected["warehouses"].append(
+            {
+                "id": "WH-GURUGRAM",
+                "location_id": "LOC-GURUGRAM",
+                "status": "ACTIVE",
+            }
+        )
     for row in projected["suppliers"]:
-        if row["id"] == "SUP-0024":
+        if row["id"].endswith("0024"):
             row["status"] = "INACTIVE"
             row["supplier_class"] = "INACTIVE_HISTORICAL"
         else:

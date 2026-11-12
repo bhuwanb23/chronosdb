@@ -1,0 +1,2 @@
+capacity_unit,daily_capacity_units,effective_from,effective_to,id,location_id,operating_calendar,source_warehouse_id,status,supported_product_families
+EA,100.000,2026-05-15T02:30:00Z,2026-12-11T02:30:00Z,FAC-PUNE,LOC-PUNE,CAL-WEEKDAY-UTC,WH-PUNE,ACTIVE,CONTROLLER

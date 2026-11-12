@@ -213,6 +213,7 @@ def build_inventory(
                     "quarantined_quantity": str(quarantined),
                     "available_quantity": str(available),
                     "safety_stock_quantity": str(safety),
+                    "transferable_quantity": str(max(Decimal("0"), available - safety)),
                 }
             )
     benchmark_snapshots = snapshots[:: max(1, len(snapshots) // 10)][:10]

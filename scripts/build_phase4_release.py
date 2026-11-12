@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import argparse
-import json
 from pathlib import Path
 
 from data_generator.inventory_ledger import build_inventory
 from data_generator.manufacturing import build_manufacturing
 from data_generator.phase4_validation import (
     validate_capacity,
+    validate_inventory_release,
+    validate_manufacturing_release,
     validate_master_release,
     validate_procurement,
 )
@@ -42,6 +43,13 @@ def main() -> None:
         aliases,
         procurement,
         manufacturing["batches"],
+    )
+    validate_inventory_release(inventory)
+    validate_manufacturing_release(
+        manufacturing["production_orders"],
+        manufacturing["requirements"],
+        manufacturing["batches"],
+        manufacturing["allocations"],
     )
     output = release_root(profile)
     write_release_json(output / "metadata" / "release_profile.json", profile_payload(profile))

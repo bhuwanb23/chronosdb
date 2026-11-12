@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import math
 from collections import defaultdict
+from datetime import datetime
 from decimal import Decimal
 from typing import Any
 
@@ -138,6 +139,93 @@ def validate_capacity(
     for key, quantity in allocated.items():
         if quantity > effective.get(key, Decimal("0")):
             raise Phase4ValidationError(f"facility capacity exceeded: {key}")
+
+
+def validate_inventory_release(inventory: dict[str, list[dict[str, Any]]]) -> None:
+    opening = inventory["opening"]
+    transactions = inventory["transactions"]
+    snapshots = inventory["snapshots"]
+    opening_keys = {
+        (row["warehouse_id"], row["component_id"]) for row in opening
+    }
+    if not opening_keys:
+        raise Phase4ValidationError("inventory has no opening balances")
+    transfer_ids: dict[str, set[str]] = defaultdict(set)
+    for row in inventory["transfer_transactions"]:
+        transfer_ids[row["transfer_id"]].add(row["transaction_type"])
+    if any(states != {"TRANSFER_DISPATCH", "TRANSFER_RECEIPT"} for states in transfer_ids.values()):
+        raise Phase4ValidationError("transfer dispatch/receipt pairing is incomplete")
+    signs = {
+        "OPENING_BALANCE": 1,
+        "PURCHASE_RECEIPT": 1,
+        "PRODUCTION_ISSUE": -1,
+        "TRANSFER_DISPATCH": -1,
+        "TRANSFER_RECEIPT": 1,
+    }
+    for row in snapshots:
+        key = (row["warehouse_id"], row["component_id"])
+        if key not in opening_keys:
+            raise Phase4ValidationError(f"snapshot has no opening balance: {row['id']}")
+        snapshot_time = datetime.fromisoformat(row["snapshot_time"].replace("Z", "+00:00"))
+        expected = sum(
+            Decimal(str(transaction["quantity"])) * signs[transaction["transaction_type"]]
+            for transaction in transactions
+            if (
+                transaction["warehouse_id"],
+                transaction["component_id"],
+            ) == key
+            and datetime.fromisoformat(transaction["event_time"].replace("Z", "+00:00"))
+            <= snapshot_time
+            and transaction["transaction_type"] in signs
+        )
+        if Decimal(str(row["on_hand_quantity"])) != expected:
+            raise Phase4ValidationError(f"snapshot replay mismatch: {row['id']}")
+        available = max(
+            Decimal("0"),
+            expected
+            - Decimal(str(row["reserved_quantity"]))
+            - Decimal(str(row["quarantined_quantity"])),
+        )
+        if Decimal(str(row["available_quantity"])) != available:
+            raise Phase4ValidationError(f"available quantity mismatch: {row['id']}")
+        transferable = max(
+            Decimal("0"),
+            available - Decimal(str(row["safety_stock_quantity"])),
+        )
+        if Decimal(str(row["transferable_quantity"])) != transferable:
+            raise Phase4ValidationError(f"transferable quantity mismatch: {row['id']}")
+
+
+def validate_manufacturing_release(
+    production_orders: list[dict[str, Any]],
+    requirements: list[dict[str, Any]],
+    batches: list[dict[str, Any]],
+    allocations: list[dict[str, Any]],
+) -> None:
+    order_ids = _ids(production_orders)
+    for order in production_orders:
+        planned = Decimal(str(order["planned_quantity"]))
+        completed = Decimal(str(order["completed_quantity"]))
+        if completed < 0 or completed > planned:
+            raise Phase4ValidationError(f"production quantity bounds: {order['id']}")
+    for requirement in requirements:
+        if requirement["production_order_id"] not in order_ids:
+            raise Phase4ValidationError(f"unknown material requirement: {requirement['id']}")
+        remaining = Decimal(str(requirement["remaining_quantity"]))
+        bom_quantity = Decimal(str(requirement["bom_quantity"]))
+        scrap = Decimal(str(requirement["scrap_factor"]))
+        expected = Decimal(str(math.ceil(remaining * bom_quantity * (1 + scrap))))
+        if Decimal(str(requirement["required_quantity"])) != expected:
+            raise Phase4ValidationError(
+                f"material requirement formula mismatch: {requirement['id']}"
+            )
+    for batch in batches:
+        expected = Decimal(str(batch["quantity"])) * Decimal("2")
+        if batch["status"] == "RELEASED" and Decimal(str(batch["material_quantity"])) != expected:
+            raise Phase4ValidationError(f"batch material mismatch: {batch['id']}")
+    for allocation in allocations:
+        if allocation["production_order_id"] not in order_ids:
+            raise Phase4ValidationError(f"unknown production allocation: {allocation['id']}")
 
 
 def validate_nonnegative(rows: list[dict[str, Any]], fields: tuple[str, ...]) -> None:

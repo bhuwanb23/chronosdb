@@ -1,0 +1,3 @@
+component_storage_eligible,effective_from,effective_to,id,location_id,region,status,timezone,transfer_eligible
+true,2026-05-15T02:30:00Z,2026-12-11T02:30:00Z,WH-CHENNAI,LOC-CHENNAI,SOUTH,ACTIVE,Asia/Kolkata,true
+true,2026-05-15T02:30:00Z,2026-12-11T02:30:00Z,WH-PUNE,LOC-PUNE,WEST,ACTIVE,Asia/Kolkata,true
