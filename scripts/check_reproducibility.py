@@ -43,9 +43,7 @@ def main() -> None:
             )
     after = _hashes(root)
     changed = sorted(
-        path
-        for path in set(before) | set(after)
-        if before.get(path) != after.get(path)
+        path for path in set(before) | set(after) if before.get(path) != after.get(path)
     )
     report: dict[str, Any] = {
         "report_version": "1.0.0",

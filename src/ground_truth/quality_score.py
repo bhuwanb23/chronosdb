@@ -58,7 +58,7 @@ def calculate_quality_score(
         "golden_scenario_correctness": benchmark.get("golden_match", False),
         "benchmark_breadth": benchmark.get("complete", False),
         "ground_truth_quality": benchmark.get("provenance_complete", False),
-        "evidence_corpus_quality": privacy["counts"]["documents"] == 175,
+        "evidence_corpus_quality": privacy["counts"]["documents"] >= 525,
         "privacy_and_licensing": privacy["status"] == "PASS",
         "packaging_and_reproducibility": not packaging.get("checksum_mismatches"),
     }

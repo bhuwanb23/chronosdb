@@ -213,12 +213,8 @@ def _validate_history(root: Path, scale: str, issues: list[dict[str, str]]) -> N
             )
             continue
         try:
-            known_at = datetime.fromisoformat(
-                correction["known_at"].replace("Z", "+00:00")
-            )
-            event_time = datetime.fromisoformat(
-                correction["event_time"].replace("Z", "+00:00")
-            )
+            known_at = datetime.fromisoformat(correction["known_at"].replace("Z", "+00:00"))
+            event_time = datetime.fromisoformat(correction["event_time"].replace("Z", "+00:00"))
         except (KeyError, ValueError):
             known_at = event_time = None
         if known_at is None or event_time is None or known_at <= event_time:
@@ -233,9 +229,7 @@ def _validate_history(root: Path, scale: str, issues: list[dict[str, str]]) -> N
             correction_time = datetime.fromisoformat(
                 correction["event_time"].replace("Z", "+00:00")
             )
-            snapshot_time = datetime.fromisoformat(
-                snapshot["snapshot_time"].replace("Z", "+00:00")
-            )
+            snapshot_time = datetime.fromisoformat(snapshot["snapshot_time"].replace("Z", "+00:00"))
         except (KeyError, ValueError):
             correction_time = snapshot_time = None
         if correction_time != snapshot_time:
@@ -424,13 +418,25 @@ def build_validation_report(root: Path, scales: tuple[str, ...] = SCALES) -> dic
     issues: list[dict[str, str]] = []
     schema_path = root / "schemas" / "validation" / "phase3.json"
     if not schema_path.exists():
-        _issue(issues, "ERROR", "SCHEMA_FILE", "Missing serialized schema contract", schema_path.as_posix())
+        _issue(
+            issues,
+            "ERROR",
+            "SCHEMA_FILE",
+            "Missing serialized schema contract",
+            schema_path.as_posix(),
+        )
         _SCHEMA_PROPERTIES = {}
     else:
         schema = _read_json(schema_path)
         _SCHEMA_PROPERTIES = schema.get("properties", {})
         if schema.get("type") != "object" or not schema.get("properties"):
-            _issue(issues, "ERROR", "SCHEMA_DEFINITION", "Invalid serialized schema contract", schema_path.as_posix())
+            _issue(
+                issues,
+                "ERROR",
+                "SCHEMA_DEFINITION",
+                "Invalid serialized schema contract",
+                schema_path.as_posix(),
+            )
     for scale in scales:
         _validate_scale(root, scale, issues)
     _validate_benchmarks(root, issues)

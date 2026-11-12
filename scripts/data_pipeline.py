@@ -46,6 +46,7 @@ def main() -> None:
     for scale in ("tiny", "standard", "stress"):
         _run(root, "generate_operational.py", "--scale", scale)
         _run(root, "generate_scenarios.py", "--scale", scale)
+    _run(root, "check_frozen_inputs.py")
     _run(root, "check_reproducibility.py")
     _run(root, "validate_release.py")
     _run(root, "report_dataset.py")
