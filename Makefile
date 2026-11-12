@@ -64,6 +64,9 @@ phase4-build:
 phase4-validate:
 	python scripts/validate_phase4.py --profile demo --scope 4A-4G
 
+phase4-validate-full:
+	python scripts/finalize_phase4.py
+
 phase4-manifest:
 	python scripts/generate_release_manifest.py --profile demo
 

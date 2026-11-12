@@ -8,8 +8,9 @@ import json
 import re
 import subprocess
 import sys
+import time
 from collections import Counter
-from datetime import datetime
+from datetime import datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 from typing import Any
@@ -268,6 +269,24 @@ def _oracle_candidate(
     feasible = False
     rejection = "CAPABILITY_NOT_FOUND"
     references: list[str] = []
+    affected_order_ids = {
+        row["assigned_production_order_id"]
+        for row in source["customer_lines"]
+        if row["customer_order_id"] == scenario["reference_customer_order_id"]
+    }
+    if not affected_order_ids:
+        affected_order_ids = {
+        row["production_order_id"]
+        for row in source["requirements"]
+        if row["component_id"] == scenario["reference_component_id"]
+        }
+    planned_starts = [
+        _date(row["planned_start_time"])
+        for row in source["production_orders"]
+        if row["id"] in affected_order_ids and row.get("planned_start_time")
+    ]
+    planned_start = min(planned_starts, default=_date(po["expected_arrival_time"]))
+    ready_time = _date(po["expected_arrival_time"])
     if candidate_type == "TRANSFER" and transfer:
         cost = Decimal(str(transfer["fixed_cost_inr"])) + quantity * Decimal(
             str(transfer["variable_cost_per_unit_inr"])
@@ -275,6 +294,9 @@ def _oracle_candidate(
         feasible = transfer["feasibility_status"] == "FEASIBLE"
         rejection = transfer.get("rejection_reason") or ""
         references = [transfer["id"]]
+        ready_time = _date(transfer["dispatch_time"]) + timedelta(
+            days=int(transfer["lead_time_days"])
+        )
     elif candidate_type == "TRANSFER":
         cost = Decimal(str(po["unit_cost_inr"])) * Decimal("0.05")
         feasible = scenario["category"] in {
@@ -288,6 +310,9 @@ def _oracle_candidate(
         feasible = alternate["feasibility_status"] == "FEASIBLE"
         rejection = "" if feasible else "ALTERNATE_CAPACITY_UNAVAILABLE"
         references = [alternate["id"]]
+        ready_time = _date(alternate["effective_from"]) + timedelta(
+            days=int(alternate["lead_time_days"])
+        )
     elif candidate_type == "ALTERNATE_SUPPLY":
         cost = Decimal(str(po["unit_cost_inr"])) * Decimal("0.18")
         feasible = scenario["category"] in {
@@ -303,6 +328,8 @@ def _oracle_candidate(
         feasible = expedite["eligible"] == "true" and expedite["outage_compatible"] == "true"
         rejection = "" if feasible else expedite.get("rejection_reason", "EXPEDITE_UNAVAILABLE")
         references = [expedite["id"], po["id"]]
+        if expedite.get("earliest_achievable_arrival"):
+            ready_time = _date(expedite["earliest_achievable_arrival"])
     elif candidate_type == "EXPEDITE":
         cost = Decimal(str(po["unit_cost_inr"])) * Decimal("0.10")
         feasible = scenario["category"] in {
@@ -316,11 +343,13 @@ def _oracle_candidate(
         feasible = reschedule["feasibility_status"] == "FEASIBLE"
         rejection = "" if feasible else "RESCHEDULE_LOCKED"
         references = [reschedule["id"], reschedule["production_order_id"]]
+        ready_time = planned_start
     elif candidate_type == "RESCHEDULE":
         cost = Decimal("10000")
         feasible = scenario["category"] == "PARTIAL_SUPPLIER_OUTAGE"
         rejection = "" if feasible else "RESCHEDULE_CAPABILITY_UNAVAILABLE"
         references = [scenario["reference_purchase_order_id"]]
+        ready_time = planned_start
     elif candidate_type == "HYBRID":
         transfer_cost = _oracle_candidate("TRANSFER", scenario, source, baseline_breaches)
         alternate_cost = _oracle_candidate(
@@ -332,22 +361,26 @@ def _oracle_candidate(
         ) or scenario["category"] == "FULL_SUPPLIER_OUTAGE"
         rejection = "" if feasible else "HYBRID_COMPONENT_NOT_FEASIBLE"
         references = transfer_cost["source_record_ids"] + alternate_cost["source_record_ids"]
+        ready_time = max(
+            _date(transfer_cost["material_ready_time"]),
+            _date(alternate_cost["material_ready_time"]),
+        )
     if candidate_type == "MONITOR_NO_INTERVENTION":
         feasible = True
         rejection = ""
     if candidate_type == "PARETO_SET":
         feasible = True
         rejection = ""
+    delay_hours = max(0, int((ready_time - planned_start).total_seconds() // 3600))
     breaches = None if baseline_breaches is None else baseline_breaches
     if feasible and baseline_breaches is not None:
-        reduction = (
-            2
-            if candidate_type == "HYBRID"
-            else 1
-            if candidate_type != "MONITOR_NO_INTERVENTION"
+        breaches = (
+            baseline_breaches
+            if candidate_type == "MONITOR_NO_INTERVENTION"
             else 0
+            if delay_hours == 0
+            else min(baseline_breaches, max(1, (delay_hours + 23) // 24))
         )
-        breaches = max(0, baseline_breaches - reduction)
     return {
         "candidate_id": f"ORACLE-{candidate_type}-{scenario['scenario_id']}",
         "candidate_type": candidate_type,
@@ -356,6 +389,8 @@ def _oracle_candidate(
         "rejection_code": rejection or None,
         "cost_inr": f"{cost:.2f}",
         "sla_breach_count": breaches,
+        "material_ready_time": ready_time.isoformat().replace("+00:00", "Z"),
+        "projected_delay_hours": delay_hours,
         "delta_from_do_nothing": (
             None
             if breaches is None or baseline_breaches is None
@@ -403,6 +438,9 @@ def _calculate_benchmark_oracle(
         if row["customer_order_id"] == scenario["reference_customer_order_id"]
     ]
     order_ids = sorted({row["assigned_production_order_id"] for row in affected_lines})
+    affected_orders = [
+        row for row in source["production_orders"] if row["id"] in order_ids
+    ]
     shortage = max(Decimal("0"), requirement_quantity - opening)
     partial = scenario["partial_fulfillment"]
     baseline_breaches: int | None
@@ -418,6 +456,22 @@ def _calculate_benchmark_oracle(
         "ordered_quantity": "0",
         "unit_revenue": "0",
     }
+    promised_delivery = next(
+        (
+            row["promised_delivery_time"]
+            for row in source["customer_orders"]
+            if row["customer_order_id"] == line["customer_order_id"]
+        ),
+        "2026-11-30T00:00:00Z",
+    )
+    planned_completion = max(
+        (
+            row["planned_completion_time"]
+            for row in affected_orders
+            if row.get("planned_completion_time")
+        ),
+        default=po["expected_arrival_time"],
+    )
     late_quantity = Decimal(line["ordered_quantity"]) if baseline_breaches else Decimal("0")
     do_nothing = {
         "candidate_id": "DO-NOTHING",
@@ -541,8 +595,12 @@ def _calculate_benchmark_oracle(
             "affected_production_order_ids": order_ids,
             "material_ready_time": po["expected_arrival_time"],
             "capacity_ready_time": po["expected_arrival_time"],
-            "projected_start": None if not order_ids else "2026-11-12T02:30:00Z",
-            "projected_completion": None if not order_ids else "2026-11-20T02:30:00Z",
+            "projected_start": (
+                None
+                if not affected_orders
+                else min(row["planned_start_time"] for row in affected_orders)
+            ),
+            "projected_completion": None if not affected_orders else planned_completion,
             "delay_hours": baseline_breaches * 24 if baseline_breaches is not None else None,
         },
         "customer_effect": {
@@ -551,7 +609,13 @@ def _calculate_benchmark_oracle(
                 Decimal(line["ordered_quantity"]) - late_quantity
             ),
             "late_quantity": str(late_quantity),
-            "projected_delivery": None if baseline_breaches is None else "2026-11-30T00:00:00Z",
+            "projected_delivery": (
+                None
+                if baseline_breaches is None
+                else (
+                    _date(promised_delivery) + timedelta(days=baseline_breaches)
+                ).isoformat().replace("+00:00", "Z")
+            ),
             "delay_hours": baseline_breaches * 24 if baseline_breaches is not None else None,
             "sla_status": "UNKNOWN" if baseline_breaches is None else (
                 "BREACHED" if baseline_breaches else "ON_TIME"
@@ -920,6 +984,24 @@ def _write_governance(root: Path) -> None:
         r"ground[_ -]?truth|optimal[_ -]?set|test[_ -]?set",
         re.IGNORECASE,
     )
+    known_answer_ids: set[str] = {"SCN-GOLD-001"}
+    demo_output = outputs[0]
+    known_answer_ids.update(
+        _json(path)["scenario_id"]
+        for path in (demo_output / "benchmarks" / "scenarios").glob("*.json")
+    )
+    known_answer_ids.update(
+        recommendation
+        for path in (demo_output / "benchmarks" / "expected").glob("*.json")
+        for recommendation in [_json(path)["recommended_intervention"]]
+        if recommendation.startswith("INT-")
+    )
+    known_answer_ids.update(
+        {"INT-GOLD-A", "INT-GOLD-B", "INT-GOLD-C", "TRACE-SCN-GOLD-001"}
+    )
+    known_answer_pattern = re.compile(
+        "|".join(re.escape(value) for value in sorted(known_answer_ids, key=len, reverse=True))
+    )
     for output in outputs:
         for path in _release_files(output):
             text = path.read_text(encoding="utf-8", errors="strict")
@@ -938,14 +1020,17 @@ def _write_governance(root: Path) -> None:
                 secret_findings.append(
                     {"file": path.relative_to(output).as_posix(), "code": "SECRET"}
                 )
-        for path in sorted((output / "evidence" / "documents").glob("*.json")):
-            document = _json(path)
-            documents.append(document)
-            text = str(document.get("text", ""))
-            if leakage_pattern.search(text) or re.search(r"\bSCN-\d{4}\b|\bINT-[A-Z0-9-]+\b", text):
+        for path in sorted((output / "evidence").rglob("*")):
+            if not path.is_file() or path.suffix not in {".json", ".jsonl", ".csv", ".md"}:
+                continue
+            text = path.read_text(encoding="utf-8", errors="strict")
+            if leakage_pattern.search(text) or known_answer_pattern.search(text):
                 leakage_findings.append(
                     {"file": path.relative_to(output).as_posix(), "code": "ANSWER_LEAKAGE"}
                 )
+        for path in sorted((output / "evidence" / "documents").glob("*.json")):
+            document = _json(path)
+            documents.append(document)
     release_scenarios = [
         _json(path)
         for path in sorted((outputs[0] / "benchmarks" / "scenarios").glob("*.json"))
@@ -1032,13 +1117,38 @@ def _write_readiness(root: Path) -> None:
     output = release_root(load_release_profile(root, "demo"))
     golden = _json(output / "golden" / "expected_recommendation.json")
     source_checks = _json(output / "golden" / "source_derived_checks.json")
-    ground_truth = (
-        root / "artifacts" / "phase-4" / "ground-truth" / "expected-results.jsonl"
-    ).read_bytes()
-    result_hashes = [
-        hashlib.sha256(ground_truth).hexdigest()
-        for _ in range(10)
-    ]
+    result_hashes: list[str] = []
+    run_results: list[dict[str, Any]] = []
+    oracle_code = (
+        "import sys; from pathlib import Path; "
+        "from scripts.finalize_phase4 import _generate_ground_truth; "
+        "_generate_ground_truth(Path(sys.argv[1]))"
+    )
+    for run_number in range(1, 11):
+        started = time.perf_counter()
+        completed = subprocess.run(
+            [sys.executable, "-c", oracle_code, str(root)],
+            cwd=root,
+            capture_output=True,
+            text=True,
+        )
+        elapsed_ms = round((time.perf_counter() - started) * 1000, 3)
+        run_hash = hashlib.sha256(
+            (
+                root / "artifacts" / "phase-4" / "ground-truth" / "expected-results.jsonl"
+            ).read_bytes()
+        ).hexdigest()
+        result_hashes.append(run_hash)
+        run_results.append(
+            {
+                "run": run_number,
+                "return_code": completed.returncode,
+                "runtime_ms": elapsed_ms,
+                "result_hash": run_hash,
+            }
+        )
+        if completed.returncode != 0:
+            raise RuntimeError(completed.stderr or "ground-truth stability run failed")
     required_golden_facts = {
         "supplier": "SUP-0104",
         "component": "CMP-MCU-42",
@@ -1070,6 +1180,7 @@ def _write_readiness(root: Path) -> None:
             "runtime_failures": 0,
             "result_hash": result_hashes[0],
             "run_hashes": result_hashes,
+            "run_results": run_results,
             "source": "independent ground-truth assembly output",
         },
     )
@@ -1102,30 +1213,140 @@ def _write_readiness(root: Path) -> None:
 
 def _db2_type(column: str) -> str:
     name = column.lower()
-    if name.endswith("_time") or name.endswith("_timestamp") or name.endswith("_at"):
+    if (
+        name.endswith("_time")
+        or name.endswith("_timestamp")
+        or name.endswith("_at")
+        or name.startswith(("effective_", "valid_", "created_", "updated_"))
+    ):
         return "TIMESTAMP"
     if name.endswith("_date") or name in {"date", "capacity_date"}:
         return "DATE"
+    if "scrap" in name or "factor" in name:
+        return "DECIMAL(8,4)"
     if any(
         token in name
-        for token in ("quantity", "amount", "cost", "price", "revenue", "rate", "fee", "premium")
+        for token in (
+            "quantity",
+            "amount",
+            "cost",
+            "price",
+            "revenue",
+            "rate",
+            "fee",
+            "premium",
+        )
     ):
-        return "DECIMAL(18,3)"
+        return (
+            "DECIMAL(18,3)"
+            if "quantity" in name or "rate" in name
+            else "DECIMAL(18,2)"
+        )
     if name.startswith("is_") or name.startswith("has_") or name in {"eligible", "mandatory"}:
         return "BOOLEAN"
     return "VARCHAR(256)"
 
 
+TABLE_ALIASES = {
+    "BOM_VERSION": "MASTER_BOM_VERSIONS",
+    "COMPONENT": "MASTER_COMPONENTS",
+    "CUSTOMER": "MASTER_CUSTOMERS",
+    "CUSTOMER_ORDER": "DEMAND_CUSTOMER_ORDERS",
+    "CUSTOMER_ORDER_LINE": "DEMAND_CUSTOMER_ORDER_LINES",
+    "DISRUPTION": "DISRUPTIONS_DISRUPTION_EVENTS",
+    "EVIDENCE_QUERY": "EVIDENCE_RETRIEVAL_QUERIES",
+    "FACILITY": "MASTER_FACILITIES",
+    "INTERVENTION": "INTERVENTIONS_INTERVENTION_COST_PARAMETERS",
+    "PRODUCT": "MASTER_PRODUCTS",
+    "PRODUCTION_ORDER": "PRODUCTION_PRODUCTION_ORDERS",
+    "PURCHASE_ORDER": "OPERATIONS_PURCHASE_ORDERS",
+    "SCENARIO": "BENCHMARKS_SCENARIOS",
+    "SUPPLIER": "MASTER_SUPPLIERS",
+    "SLA_POLICY": "MASTER_SLA_POLICIES",
+    "DOCUMENT": "EVIDENCE_DOCUMENTS",
+    "TRANSFER": "INVENTORY_TRANSFER_TRANSACTIONS",
+    "WAREHOUSE": "MASTER_WAREHOUSES",
+}
+
+
+def _target_table(relative_path: Path) -> str:
+    namespace = relative_path.parts[0].upper() if relative_path.parts else "RELEASE"
+    stem = re.sub(r"[^A-Za-z0-9_]", "_", relative_path.stem).upper()
+    if relative_path.suffix == ".json" and namespace == "EVIDENCE":
+        return "EVIDENCE_DOCUMENTS"
+    if namespace == "BENCHMARKS" and "scenarios" in relative_path.parts:
+        return "BENCHMARKS_SCENARIOS"
+    if namespace == "BENCHMARKS" and "expected" in relative_path.parts:
+        return "BENCHMARKS_EXPECTED_OUTCOMES"
+    if relative_path.suffix in {".json", ".jsonl", ".md"}:
+        return f"{namespace}_{stem}"
+    return f"{namespace}_{stem}"
+
+
+def _load_rank(relative_path: Path) -> int:
+    if "scenarios" in relative_path.parts:
+        return 1100
+    if "expected" in relative_path.parts:
+        return 1110
+    stem = relative_path.stem.upper()
+    ordered = {
+        "WAREHOUSES": 10,
+        "FACILITIES": 20,
+        "SUPPLIERS": 30,
+        "COMPONENTS": 40,
+        "SUPPLIER_COMPONENT_AGREEMENTS": 50,
+        "PRODUCTS": 60,
+        "BOM_VERSIONS": 70,
+        "BOM_LINES": 80,
+        "CUSTOMERS": 90,
+        "SLA_POLICIES": 100,
+        "TRANSFER_LANES": 110,
+        "FACILITY_PRODUCT_CAPABILITIES": 120,
+        "WAREHOUSE_FACILITY_LINKS": 130,
+        "PURCHASE_ORDERS": 200,
+        "PURCHASE_ORDER_RECEIPTS": 210,
+        "PRODUCTION_ORDERS": 300,
+        "CUSTOMER_ORDERS": 400,
+        "CUSTOMER_ORDER_LINES": 410,
+        "INVENTORY_OPENING_BALANCES": 500,
+        "INVENTORY_TRANSACTIONS": 510,
+        "INVENTORY_RESERVATIONS": 520,
+        "TRANSFER_TRANSACTIONS": 530,
+        "INVENTORY_SNAPSHOTS_DAILY": 540,
+        "REPLAY_INPUT_EVENTS": 600,
+        "DISRUPTION_EVENTS": 700,
+        "TRANSFER_CAPABILITIES": 800,
+        "EVIDENCE_DOCUMENTS": 900,
+        "EXPECTED_RECOMMENDATION": 1000,
+        "SCENARIOS": 1100,
+    }
+    return ordered.get(stem, 1200)
+
+
 def _handoff_entry(profile_name: str, output: Path, path: Path) -> dict[str, Any]:
     relative_path = path.relative_to(output)
-    parts = relative_path.parts
-    namespace = parts[0].upper() if parts else "RELEASE"
-    table_stem = re.sub(r"[^A-Za-z0-9_]", "_", path.stem).upper()
-    target_table = f"{namespace}_{table_stem}"
+    target_table = _target_table(relative_path)
     columns: list[str] = []
     if path.suffix == ".csv":
         with path.open(encoding="utf-8", newline="") as stream:
             columns = next(csv.reader(stream), [])
+    elif path.suffix == ".json":
+        payload = _json(path)
+        if isinstance(payload, dict):
+            columns = list(payload)
+        else:
+            columns = ["payload"]
+    elif path.suffix == ".jsonl":
+        first_line = next(
+            (
+                line
+                for line in path.read_text(encoding="utf-8").splitlines()
+                if line.strip()
+            ),
+            "{}",
+        )
+        payload = json.loads(first_line)
+        columns = list(payload) if isinstance(payload, dict) else ["payload"]
     column_mapping = {
         column: {
             "source_column": column,
@@ -1135,43 +1356,41 @@ def _handoff_entry(profile_name: str, output: Path, path: Path) -> dict[str, Any
         }
         for column in columns
     }
-    foreign_keys = [
-        {
-            "column": column.upper(),
-            "referenced_table": f"CHRONOSDB.{column[:-3].upper()}",
-            "referenced_column": "ID",
-        }
-        for column in columns
-        if column.endswith("_id") and column not in {"id", "scenario_id"}
-    ]
-    rank = {
-        "MASTER": 10,
-        "OPERATIONS": 20,
-        "PRODUCTION": 30,
-        "DEMAND": 40,
-        "INVENTORY": 50,
-        "HISTORY": 60,
-        "DISRUPTIONS": 70,
-        "INTERVENTIONS": 80,
-        "EVIDENCE": 90,
-        "GOLDEN": 100,
-        "BENCHMARKS": 110,
-        "METADATA": 120,
-        "REPORTS": 130,
-    }.get(namespace, 200)
+    foreign_keys = []
+    for column in columns:
+        if not column.endswith("_id") or column in {"id", "scenario_id"}:
+            continue
+        base = column[:-3].upper()
+        if base not in TABLE_ALIASES:
+            continue
+        foreign_keys.append(
+            {
+                "column": column.upper(),
+                "referenced_table": f"CHRONOSDB.{TABLE_ALIASES[base]}",
+                "referenced_column": "ID",
+            }
+        )
     return {
         "profile": profile_name,
         "source_file": relative_path.as_posix(),
         "target_schema": "CHRONOSDB",
         "target_table": target_table,
         "column_mapping": column_mapping,
-        "primary_key": ["ID"] if "id" in columns else [],
+        "primary_key": (
+            ["ID"]
+            if "id" in columns
+            else ["DOCUMENT_ID"]
+            if "document_id" in columns
+            else ["SCENARIO_ID"]
+            if "scenario_id" in columns
+            else [],
+        ),
         "foreign_keys": foreign_keys,
         "unique_constraints": [["SCENARIO_ID"]] if "scenario_id" in columns else [],
         "check_constraints": (
             ["QUANTITY >= 0"] if any("quantity" in column for column in columns) else []
         ),
-        "load_order": rank,
+        "load_order": _load_rank(relative_path),
         "expected_row_count": _logical_count(path),
         "checksum": _sha(path),
         "post_load_validation_query": (
@@ -1183,15 +1402,24 @@ def _handoff_entry(profile_name: str, output: Path, path: Path) -> dict[str, Any
 def _write_handoff(root: Path) -> None:
     handoff_root = root / "artifacts" / "phase-4" / "handoff"
     entries: list[dict[str, Any]] = []
+    auxiliary_assets: list[dict[str, Any]] = []
     for profile_name in ("demo", "standard"):
         profile = load_release_profile(root, profile_name)
         output = release_root(profile)
-        entries.extend(
-            _handoff_entry(profile_name, output, path)
-            for path in _release_files(output)
-        )
+        for path in _release_files(output):
+            if path.suffix == ".md":
+                auxiliary_assets.append(
+                    {
+                        "profile": profile_name,
+                        "source_file": path.relative_to(output).as_posix(),
+                        "asset_type": "documentation",
+                        "checksum": _sha(path),
+                    }
+                )
+            else:
+                entries.append(_handoff_entry(profile_name, output, path))
     entries.sort(key=lambda entry: (entry["profile"], entry["load_order"], entry["source_file"]))
-    load_order = [
+    load_phases = [
         "MASTER",
         "OPERATIONS",
         "PRODUCTION",
@@ -1205,6 +1433,10 @@ def _write_handoff(root: Path) -> None:
         "BENCHMARKS",
         "REPORTS",
     ]
+    table_load_order: list[str] = []
+    for entry in entries:
+        if entry["target_table"] not in table_load_order:
+            table_load_order.append(entry["target_table"])
     _write_json(
         handoff_root / "phase5-load-contract.json",
         {
@@ -1213,8 +1445,10 @@ def _write_handoff(root: Path) -> None:
             "dataset_version": "1.0.0",
             "target_schema": "CHRONOSDB",
             "profiles": ["demo", "standard"],
-            "load_order": load_order,
+            "load_order": table_load_order,
+            "load_phases": load_phases,
             "reset_strategy": "DROP SCHEMA CHRONOSDB CASCADE; recreate migrations; reload in order",
+            "auxiliary_assets": auxiliary_assets,
             "files": entries,
         },
     )
@@ -1257,6 +1491,55 @@ def _write_handoff(root: Path) -> None:
         "source-state hashes.\n",
         encoding="utf-8",
     )
+
+
+def _validate_handoff(root: Path) -> bool:
+    contract_path = root / "artifacts" / "phase-4" / "handoff" / "phase5-load-contract.json"
+    contract = _json(contract_path)
+    entries = contract["files"]
+    known_tables = {entry["target_table"] for entry in entries}
+    order_index = {
+        table: index for index, table in enumerate(contract["load_order"])
+    }
+    issues: list[str] = []
+    for entry in entries:
+        profile = load_release_profile(root, entry["profile"])
+        output = release_root(profile)
+        path = output / entry["source_file"]
+        if not path.exists() or _sha(path) != entry["checksum"]:
+            issues.append(f"checksum/path: {entry['profile']}:{entry['source_file']}")
+        if path.exists() and _logical_count(path) != entry["expected_row_count"]:
+            issues.append(f"row-count: {entry['profile']}:{entry['source_file']}")
+        if not entry["column_mapping"]:
+            issues.append(f"empty schema: {entry['source_file']}")
+        if entry["target_table"] not in order_index:
+            issues.append(f"missing load order: {entry['target_table']}")
+        for foreign_key in entry["foreign_keys"]:
+            parent = foreign_key["referenced_table"].split(".", 1)[-1]
+            if parent not in known_tables:
+                issues.append(f"unknown FK target: {entry['target_table']}->{parent}")
+            elif order_index[parent] >= order_index[entry["target_table"]]:
+                issues.append(
+                    f"dependency order: {entry['target_table']} before {parent}"
+                )
+    report = {
+        "status": "PASS" if not issues else "FAIL",
+        "files_checked": len(entries),
+        "issues": issues,
+        "checks": {
+            "paths": not any(issue.startswith("checksum/path") for issue in issues),
+            "checksums": not any(issue.startswith("checksum/path") for issue in issues),
+            "row_counts": not any(issue.startswith("row-count") for issue in issues),
+            "schemas": not any(issue.startswith("empty schema") for issue in issues),
+            "foreign_keys": not any(issue.startswith("unknown FK") for issue in issues),
+            "dependency_order": not any(issue.startswith("dependency order") for issue in issues),
+        },
+    }
+    _write_json(
+        root / "artifacts" / "phase-4" / "handoff" / "handoff-validation.json",
+        report,
+    )
+    return report["status"] == "PASS"
 
 
 def _update_release_manifests(
@@ -1336,6 +1619,7 @@ def main() -> None:
     _write_release_checksums(root)
     validation = _run_validation_reports(root)
     _write_handoff(root)
+    handoff_ok = _validate_handoff(root)
     ground_truth = _json(
         root / "artifacts" / "phase-4" / "ground-truth" / "oracle-reconciliation.json"
     )
@@ -1354,7 +1638,7 @@ def main() -> None:
         "realism": realism["all_targets_pass"],
         "governance": governance["status"] == "PASS",
         "readiness": readiness["identical_runs"] and readiness["runtime_failures"] == 0,
-        "handoff": True,
+        "handoff": handoff_ok,
     }
     score = round(100 * sum(gates.values()) / len(gates))
     _update_release_manifests(
@@ -1365,6 +1649,21 @@ def main() -> None:
         "PASS" if gates["readiness"] else "FAIL",
     )
     report_root = root / "artifacts" / "phase-4"
+    profile_manifests = [
+        _json(release_root(load_release_profile(root, profile_name)) / "manifest.json")
+        for profile_name in PROFILES
+    ]
+    aggregate_files = [
+        {
+            "profile": manifest["profile"],
+            "path": item["path"],
+            "record_count": item["record_count"],
+            "sha256": item["sha256"],
+        }
+        for manifest in profile_manifests
+        for item in manifest["files"]
+    ]
+    demo_manifest = profile_manifests[0]
     _write_json(
         report_root / "scorecard.json",
         {
@@ -1380,8 +1679,31 @@ def main() -> None:
         {
             "dataset_name": "chronosdb-demo-dataset",
             "version": "1.0.0",
+            "generator_version": demo_manifest["generator_version"],
+            "domain_model_version": demo_manifest["domain_model_version"],
             "seed": 260311,
             "profiles": list(PROFILES),
+            "release_scales": {
+                manifest["profile"]: manifest["profile_contract"]["source_scale"]
+                for manifest in profile_manifests
+            },
+            "generation_config_hash": demo_manifest["generation_config_hash"],
+            "source_revision": demo_manifest["source_revision"],
+            "source_state": demo_manifest["source_state"],
+            "generation_time_utc": demo_manifest["generation_time_utc"],
+            "currency": demo_manifest["currency"],
+            "canonical_timezone": demo_manifest["canonical_timezone"],
+            "display_timezone": demo_manifest["display_timezone"],
+            "license": demo_manifest["license"],
+            "files": aggregate_files,
+            "partitions": demo_manifest["partitions"],
+            "profile_manifests": [
+                (
+                    "data/releases/v1.0.0/"
+                    f"{'' if profile_name == 'demo' else profile_name + '/'}manifest.json"
+                )
+                for profile_name in PROFILES
+            ],
             "validation_status": "PASS" if gates["validation"] else "FAIL",
             "ground_truth_status": "PASS" if gates["ground_truth"] else "FAIL",
             "realism_status": "PASS" if gates["realism"] else "FAIL",

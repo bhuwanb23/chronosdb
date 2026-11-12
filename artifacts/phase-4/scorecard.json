@@ -1,11 +1,25 @@
 {
   "automatic_failures": [],
+  "gates": {
+    "governance": true,
+    "ground_truth": true,
+    "handoff": true,
+    "readiness": true,
+    "realism": true,
+    "validation": true
+  },
   "score": 100,
   "status": "PASS",
   "validation": {
     "checksum_mismatches": 0,
     "errors": 0,
     "golden_mismatches": 0,
+    "profile_status": {
+      "demo": true,
+      "standard": true,
+      "stress": true,
+      "tiny": true
+    },
     "profiles": {
       "demo": {
         "counts": {

@@ -2,4 +2,4 @@
 
 Secrets found: 0.
 
-Status: PASS
+Status: FAIL

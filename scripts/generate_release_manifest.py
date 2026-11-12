@@ -27,27 +27,64 @@ def _revision(root: Path) -> str:
 
 def _source_state(root: Path) -> dict[str, str | bool]:
     """Record enough source state to reproduce a dirty working-tree release."""
+    source_roots = ("src", "scripts", "config", "schemas", "tests")
+    source_files = [
+        path
+        for source_root in source_roots
+        for path in (root / source_root).rglob("*")
+        if path.is_file()
+    ]
+    source_files.extend(
+        path
+        for path in (root / "Makefile", root / "pyproject.toml")
+        if path.is_file()
+    )
+    source_digest = hashlib.sha256()
+    for path in sorted(source_files):
+        source_digest.update(path.relative_to(root).as_posix().encode("utf-8"))
+        source_digest.update(path.read_bytes())
     try:
         diff = subprocess.check_output(
-            ["git", "diff", "HEAD", "--", "."],
+            [
+                "git",
+                "diff",
+                "HEAD",
+                "--",
+                "src",
+                "scripts",
+                "config",
+                "schemas",
+                "tests",
+                "Makefile",
+                "pyproject.toml",
+            ],
             cwd=root,
             text=False,
         )
-        status = subprocess.check_output(
+        raw_status = subprocess.check_output(
             ["git", "status", "--porcelain"],
             cwd=root,
             text=True,
+        )
+        status = "\n".join(
+            line
+            for line in raw_status.splitlines()
+            if not line[3:].replace("\\", "/").startswith(
+                ("data/", "artifacts/", "docs/dataset-release/")
+            )
         )
     except (OSError, subprocess.CalledProcessError):
         return {
             "working_tree_clean": False,
             "working_tree_diff_sha256": "unavailable",
             "working_tree_status_sha256": "unavailable",
+            "source_input_sha256": source_digest.hexdigest(),
         }
     return {
         "working_tree_clean": not status.strip(),
         "working_tree_diff_sha256": hashlib.sha256(diff).hexdigest(),
         "working_tree_status_sha256": hashlib.sha256(status.encode("utf-8")).hexdigest(),
+        "source_input_sha256": source_digest.hexdigest(),
     }
 
 
