@@ -6,10 +6,10 @@ All evidence documents are project-authored synthetic records. No personal data,
 
 ## Counts
 
-- documents: 175
-- expired: 10
-- unauthorized: 10
-- prompt_injection: 5
-- project_authored: 175
+- documents: 525
+- expired: 30
+- unauthorized: 30
+- prompt_injection: 15
+- project_authored: 525
 
 No privacy or contamination findings were detected.

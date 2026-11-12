@@ -1,4 +1,4 @@
-"""Validate Phase 3H–3O generated artifacts and frozen outputs."""
+"""Validate Phase 3H–3O artifacts or the complete Phase 3 release package."""
 
 from __future__ import annotations
 
@@ -9,6 +9,10 @@ from pathlib import Path
 
 from data_generator.export import read_csv_rows
 from data_generator.generator import ENTITY_FILES
+from data_generator.release_validation import (
+    build_validation_report,
+    render_validation_markdown,
+)
 from data_generator.scenarios import validate_documents, validate_scenarios
 from data_generator.validation import validate_master, validate_operational
 from ground_truth.oracle import calculate_golden
@@ -39,8 +43,25 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--scale", choices=("tiny", "standard", "stress"), default="tiny")
+    parser.add_argument("--final", action="store_true")
     args = parser.parse_args()
     root = args.root
+    if args.final:
+        report = build_validation_report(root)
+        artifacts = root / "artifacts"
+        artifacts.mkdir(parents=True, exist_ok=True)
+        (artifacts / "data-validation-report.json").write_text(
+            json.dumps(report, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+        (artifacts / "data-validation-report.md").write_text(
+            render_validation_markdown(report),
+            encoding="utf-8",
+        )
+        if report["summary"]["validation_errors"] or report["summary"]["warnings"]:
+            raise SystemExit("Phase 3 final validation failed")
+        print("Phase 3P–3V validation passed")
+        return
     master_dir = root / "data" / "generated" / "master" / args.scale
     master = {entity: read_csv_rows(master_dir / f"{entity}.csv") for entity in ENTITY_FILES}
     validate_master(master)

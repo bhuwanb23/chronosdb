@@ -1,0 +1,44 @@
+{
+  "automatic_failures": [],
+  "category_scores": {
+    "benchmark_breadth": 10,
+    "domain_model_conformity": 15,
+    "evidence_corpus_quality": 5,
+    "generator_determinism": 12,
+    "golden_scenario_correctness": 15,
+    "ground_truth_quality": 10,
+    "operational_realism": 10,
+    "packaging_and_reproducibility": 4,
+    "privacy_and_licensing": 4,
+    "referential_and_temporal_integrity": 15
+  },
+  "checks": {
+    "benchmark_breadth": true,
+    "domain_model_conformity": true,
+    "evidence_corpus_quality": true,
+    "generator_determinism": true,
+    "golden_scenario_correctness": true,
+    "ground_truth_quality": true,
+    "operational_realism": true,
+    "packaging_and_reproducibility": true,
+    "privacy_and_licensing": true,
+    "referential_and_temporal_integrity": true
+  },
+  "phase": "3T",
+  "score": 100,
+  "score_version": "1.0.0",
+  "status": "PASS",
+  "threshold": 95,
+  "weights": {
+    "benchmark_breadth": 10,
+    "domain_model_conformity": 15,
+    "evidence_corpus_quality": 5,
+    "generator_determinism": 12,
+    "golden_scenario_correctness": 15,
+    "ground_truth_quality": 10,
+    "operational_realism": 10,
+    "packaging_and_reproducibility": 4,
+    "privacy_and_licensing": 4,
+    "referential_and_temporal_integrity": 15
+  }
+}

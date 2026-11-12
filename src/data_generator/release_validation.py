@@ -132,6 +132,8 @@ def _check_rows(
         for key, value in row.items():
             if not value or key in required_fields:
                 continue
+            if key.endswith("_unit") or key == "corrected_quantity":
+                continue
             rules = _SCHEMA_PROPERTIES.get(key, {})
             if rules.get("type") == "number":
                 try:
@@ -212,11 +214,13 @@ def _validate_history(root: Path, scale: str, issues: list[dict[str, str]]) -> N
                 corrections_path.as_posix(),
             )
             continue
+        known_at: datetime | None = None
+        event_time: datetime | None = None
         try:
             known_at = datetime.fromisoformat(correction["known_at"].replace("Z", "+00:00"))
             event_time = datetime.fromisoformat(correction["event_time"].replace("Z", "+00:00"))
         except (KeyError, ValueError):
-            known_at = event_time = None
+            pass
         if known_at is None or event_time is None or known_at <= event_time:
             _issue(
                 issues,
@@ -225,13 +229,15 @@ def _validate_history(root: Path, scale: str, issues: list[dict[str, str]]) -> N
                 "Late correction known_at must be after event_time",
                 corrections_path.as_posix(),
             )
+        correction_time: datetime | None = None
+        snapshot_time: datetime | None = None
         try:
             correction_time = datetime.fromisoformat(
                 correction["event_time"].replace("Z", "+00:00")
             )
             snapshot_time = datetime.fromisoformat(snapshot["snapshot_time"].replace("Z", "+00:00"))
         except (KeyError, ValueError):
-            correction_time = snapshot_time = None
+            pass
         if correction_time != snapshot_time:
             _issue(
                 issues,

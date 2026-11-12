@@ -38,6 +38,7 @@ def main() -> None:
         row["path"]: row["sha256"]
         for row in manifest.get("files", [])
         if row["path"].startswith("artifacts/")
+        and row["path"] != "artifacts/phase-3-release-manifest.json"
     }
     release_manifest = {
         "dataset": "chronosdb-synthetic-supply-chain",
