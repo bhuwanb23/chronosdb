@@ -1,0 +1,7 @@
+{
+  "as_of_time": "2026-11-11T02:30:00Z",
+  "committed_quantity": "180",
+  "inventory_reconciliation": "700 - 180 - 120 = 400",
+  "safety_stock_quantity": "120",
+  "transferable_quantity": "400"
+}

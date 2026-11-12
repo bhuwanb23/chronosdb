@@ -1,0 +1,80 @@
+{
+  "exclusive_partitions": {
+    "adversarial-only": [
+      "SCN-BENCH-0006",
+      "SCN-BENCH-0007",
+      "SCN-BENCH-0008"
+    ],
+    "development": [
+      "SCN-BENCH-0009",
+      "SCN-BENCH-0010",
+      "SCN-BENCH-0011",
+      "SCN-BENCH-0012",
+      "SCN-BENCH-0013",
+      "SCN-BENCH-0014",
+      "SCN-BENCH-0015",
+      "SCN-BENCH-0016",
+      "SCN-BENCH-0017",
+      "SCN-BENCH-0018",
+      "SCN-BENCH-0020",
+      "SCN-BENCH-0021",
+      "SCN-BENCH-0022",
+      "SCN-BENCH-0023",
+      "SCN-BENCH-0024",
+      "SCN-BENCH-0025",
+      "SCN-BENCH-0026",
+      "SCN-BENCH-0028",
+      "SCN-BENCH-0029",
+      "SCN-BENCH-0030",
+      "SCN-BENCH-0031",
+      "SCN-BENCH-0032",
+      "SCN-BENCH-0034",
+      "SCN-BENCH-0035"
+    ],
+    "golden": [
+      "SCN-BENCH-0003",
+      "SCN-BENCH-0004",
+      "SCN-BENCH-0005"
+    ],
+    "test": [
+      "SCN-BENCH-0001",
+      "SCN-BENCH-0002",
+      "SCN-BENCH-0019",
+      "SCN-BENCH-0027",
+      "SCN-BENCH-0033",
+      "SCN-BENCH-0037",
+      "SCN-BENCH-0041",
+      "SCN-BENCH-0045",
+      "SCN-BENCH-0049",
+      "SCN-BENCH-0052",
+      "SCN-BENCH-0053",
+      "SCN-BENCH-0054",
+      "SCN-BENCH-0055",
+      "SCN-BENCH-0056",
+      "SCN-BENCH-0057",
+      "SCN-BENCH-0058",
+      "SCN-BENCH-0059",
+      "SCN-BENCH-0060"
+    ],
+    "validation": [
+      "SCN-BENCH-0036",
+      "SCN-BENCH-0038",
+      "SCN-BENCH-0039",
+      "SCN-BENCH-0040",
+      "SCN-BENCH-0042",
+      "SCN-BENCH-0043",
+      "SCN-BENCH-0044",
+      "SCN-BENCH-0046",
+      "SCN-BENCH-0047",
+      "SCN-BENCH-0048",
+      "SCN-BENCH-0050",
+      "SCN-BENCH-0051"
+    ]
+  },
+  "relationships": {
+    "adversarial-only": "exclusive benchmark partition",
+    "golden": "exclusive benchmark partition",
+    "no_partition_overlap": true
+  },
+  "version": "1.0.0"
+}

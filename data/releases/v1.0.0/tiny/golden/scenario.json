@@ -1,0 +1,68 @@
+{
+  "as_of_time": "2026-11-11T02:30:00Z",
+  "bom_quantity_per_product": 2,
+  "budget_inr": "200000.00",
+  "chennai_committed_demand": 180,
+  "chennai_inventory": 700,
+  "chennai_safety_stock": 120,
+  "component_id": "CMP-MCU-42",
+  "customer_order_lines": [
+    {
+      "customer_order_id": "CO-0701",
+      "id": "COL-CO-0701-01",
+      "quantity": 200
+    },
+    {
+      "customer_order_id": "CO-0704",
+      "id": "COL-CO-0704-01",
+      "quantity": 200
+    },
+    {
+      "customer_order_id": "CO-0711",
+      "id": "COL-CO-0711-01",
+      "quantity": 200
+    }
+  ],
+  "delivery_lead_time_days": 1,
+  "disrupted_arrival": "2026-11-27T00:00:00Z",
+  "disruption": {
+    "end_time": "2026-11-25T02:30:00Z",
+    "event_type": "SUPPLIER_OUTAGE",
+    "id": "EVT-GOLD-001",
+    "recovery_lag_days": 2,
+    "start_time": "2026-11-11T02:30:00Z",
+    "supplier_id": "SUP-0104"
+  },
+  "event_id": "EVT-GOLD-001",
+  "objective_mode": "MINIMIZE_SLA_BREACHES",
+  "orders": [
+    {
+      "customer_order_id": "CO-0701",
+      "production_order_id": "MO-0876",
+      "promised_delivery": "2026-11-15T00:00:00Z",
+      "quantity": 200
+    },
+    {
+      "customer_order_id": "CO-0704",
+      "production_order_id": "MO-0882",
+      "promised_delivery": "2026-11-18T00:00:00Z",
+      "quantity": 200
+    },
+    {
+      "customer_order_id": "CO-0711",
+      "production_order_id": "MO-0889",
+      "promised_delivery": "2026-11-21T00:00:00Z",
+      "quantity": 200
+    }
+  ],
+  "product_id": "PRD-CONTROLLER-X",
+  "production_capacity_per_day": 100,
+  "pune_inventory": 400,
+  "pune_safety_stock": 100,
+  "purchase_order_id": "PO-2208",
+  "purchase_order_quantity": 800,
+  "scenario_id": "SCN-GOLD-001",
+  "supplier_id": "SUP-0104",
+  "transferable_quantity": 400,
+  "unit_revenue_inr": "4000.00"
+}

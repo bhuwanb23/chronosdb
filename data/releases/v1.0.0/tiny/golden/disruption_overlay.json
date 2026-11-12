@@ -1,0 +1,13 @@
+{
+  "disruption_event_id": "EVT-GOLD-001",
+  "event_type": "SUPPLIER_OUTAGE",
+  "expected_end_time": "2026-11-25T02:30:00Z",
+  "projected_arrival_time": "2026-11-27T02:30:00Z",
+  "recovery_lag_hours": "48",
+  "reported_time": "2026-11-11T03:00:00Z",
+  "scope_type": "ALL_SUPPLY",
+  "severity": "CRITICAL",
+  "start_time": "2026-11-11T02:30:00Z",
+  "status": "ACTIVE",
+  "supplier_id": "SUP-0104"
+}

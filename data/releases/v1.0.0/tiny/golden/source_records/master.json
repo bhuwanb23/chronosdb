@@ -1,0 +1,1052 @@
+{
+  "bom_lines": [
+    {
+      "bom_version_id": "BOM-0001-V01",
+      "component_id": "CMP-MCU-42",
+      "id": "BOMLINE-0001",
+      "mandatory": "true",
+      "quantity_per": "1.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0002-V01",
+      "component_id": "CMP-P4-0002",
+      "id": "BOMLINE-0002",
+      "mandatory": "true",
+      "quantity_per": "1.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0002-V01",
+      "component_id": "CMP-P4-0003",
+      "id": "BOMLINE-0003",
+      "mandatory": "true",
+      "quantity_per": "2.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0003-V01",
+      "component_id": "CMP-P4-0003",
+      "id": "BOMLINE-0004",
+      "mandatory": "true",
+      "quantity_per": "1.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0003-V01",
+      "component_id": "CMP-P4-0004",
+      "id": "BOMLINE-0005",
+      "mandatory": "true",
+      "quantity_per": "2.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0003-V01",
+      "component_id": "CMP-P4-0005",
+      "id": "BOMLINE-0006",
+      "mandatory": "true",
+      "quantity_per": "3.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0004-V02",
+      "component_id": "CMP-P4-0004",
+      "id": "BOMLINE-0007",
+      "mandatory": "true",
+      "quantity_per": "1.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0004-V02",
+      "component_id": "CMP-P4-0005",
+      "id": "BOMLINE-0008",
+      "mandatory": "true",
+      "quantity_per": "2.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0004-V02",
+      "component_id": "CMP-P4-0006",
+      "id": "BOMLINE-0009",
+      "mandatory": "true",
+      "quantity_per": "3.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0004-V02",
+      "component_id": "CMP-P4-0007",
+      "id": "BOMLINE-0010",
+      "mandatory": "true",
+      "quantity_per": "1.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0005-V02",
+      "component_id": "CMP-P4-0005",
+      "id": "BOMLINE-0011",
+      "mandatory": "true",
+      "quantity_per": "1.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0005-V02",
+      "component_id": "CMP-MCU-42",
+      "id": "BOMLINE-P4-000014",
+      "mandatory": "true",
+      "quantity_per": "1",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0005-V02",
+      "component_id": "CMP-P4-0002",
+      "id": "BOMLINE-P4-000015",
+      "mandatory": "true",
+      "quantity_per": "1",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0006-V02",
+      "component_id": "CMP-P4-0006",
+      "id": "BOMLINE-0012",
+      "mandatory": "true",
+      "quantity_per": "1.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0006-V02",
+      "component_id": "CMP-P4-0007",
+      "id": "BOMLINE-0013",
+      "mandatory": "true",
+      "quantity_per": "2.000",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0006-V02",
+      "component_id": "CMP-MCU-42",
+      "id": "BOMLINE-P4-000016",
+      "mandatory": "true",
+      "quantity_per": "1",
+      "scrap_factor": "0.0"
+    },
+    {
+      "bom_version_id": "BOM-0004-V02",
+      "component_id": "CMP-MCU-42",
+      "id": "BOMLINE-P4-000017",
+      "mandatory": "true",
+      "quantity_per": "2",
+      "scrap_factor": "0.0"
+    }
+  ],
+  "bom_versions": [
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-10-12T02:30:00Z",
+      "id": "BOM-0001-V01",
+      "product_id": "PRD-CONTROLLER-X",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-10-12T02:30:00Z",
+      "id": "BOM-0002-V01",
+      "product_id": "PRD-P4-0002",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-10-12T02:30:00Z",
+      "id": "BOM-0003-V01",
+      "product_id": "PRD-P4-0003",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-10-12T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "BOM-0004-V02",
+      "product_id": "PRD-CONTROLLER-X",
+      "status": "ACTIVE",
+      "version": "2"
+    },
+    {
+      "effective_from": "2026-10-12T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "BOM-0005-V02",
+      "product_id": "PRD-P4-0002",
+      "status": "ACTIVE",
+      "version": "2"
+    },
+    {
+      "effective_from": "2026-10-12T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "BOM-0006-V02",
+      "product_id": "PRD-P4-0003",
+      "status": "ACTIVE",
+      "version": "2"
+    }
+  ],
+  "components": [
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "CRITICAL",
+      "id": "CMP-MCU-42",
+      "name": "Component-001",
+      "safety_stock_units": "10.000",
+      "source_class": "SINGLE_SOURCE",
+      "standard_unit_cost_inr": "25.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "HIGH",
+      "id": "CMP-P4-0002",
+      "name": "Component-002",
+      "safety_stock_units": "15.000",
+      "source_class": "MULTI_SOURCE",
+      "standard_unit_cost_inr": "150.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "MEDIUM",
+      "id": "CMP-P4-0003",
+      "name": "Component-003",
+      "safety_stock_units": "20.000",
+      "source_class": "DUAL_SOURCE",
+      "standard_unit_cost_inr": "275.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "LOW",
+      "id": "CMP-P4-0004",
+      "name": "Component-004",
+      "safety_stock_units": "25.000",
+      "source_class": "MULTI_SOURCE",
+      "standard_unit_cost_inr": "400.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "CRITICAL",
+      "id": "CMP-P4-0005",
+      "name": "Component-005",
+      "safety_stock_units": "30.000",
+      "source_class": "MULTI_SOURCE",
+      "standard_unit_cost_inr": "525.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "HIGH",
+      "id": "CMP-P4-0006",
+      "name": "Component-006",
+      "safety_stock_units": "35.000",
+      "source_class": "DUAL_SOURCE",
+      "standard_unit_cost_inr": "650.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "MEDIUM",
+      "id": "CMP-P4-0007",
+      "name": "Component-007",
+      "safety_stock_units": "40.000",
+      "source_class": "MULTI_SOURCE",
+      "standard_unit_cost_inr": "775.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "LOW",
+      "id": "CMP-P4-0008",
+      "name": "Component-008",
+      "safety_stock_units": "45.000",
+      "source_class": "MULTI_SOURCE",
+      "standard_unit_cost_inr": "900.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "CRITICAL",
+      "id": "CMP-P4-0009",
+      "name": "Component-009",
+      "safety_stock_units": "50.000",
+      "source_class": "DUAL_SOURCE",
+      "standard_unit_cost_inr": "1025.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "HIGH",
+      "id": "CMP-P4-0010",
+      "name": "Component-010",
+      "safety_stock_units": "55.000",
+      "source_class": "MULTI_SOURCE",
+      "standard_unit_cost_inr": "1150.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "MEDIUM",
+      "id": "CMP-P4-0011",
+      "name": "Component-011",
+      "safety_stock_units": "10.000",
+      "source_class": "MULTI_SOURCE",
+      "standard_unit_cost_inr": "1275.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "LOW",
+      "id": "CMP-P4-0012",
+      "name": "Component-012",
+      "safety_stock_units": "15.000",
+      "source_class": "DUAL_SOURCE",
+      "standard_unit_cost_inr": "1400.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "CRITICAL",
+      "id": "CMP-P4-0013",
+      "name": "Component-013",
+      "safety_stock_units": "20.000",
+      "source_class": "MULTI_SOURCE",
+      "standard_unit_cost_inr": "1525.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "HIGH",
+      "id": "CMP-P4-0014",
+      "name": "Component-014",
+      "safety_stock_units": "25.000",
+      "source_class": "MULTI_SOURCE",
+      "standard_unit_cost_inr": "1650.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "component_type": "ELECTRONIC",
+      "criticality": "MEDIUM",
+      "id": "CMP-P4-0015",
+      "name": "Component-015",
+      "safety_stock_units": "30.000",
+      "source_class": "DUAL_SOURCE",
+      "standard_unit_cost_inr": "1775.00",
+      "status": "ACTIVE",
+      "unit": "EA"
+    }
+  ],
+  "customers": [
+    {
+      "customer_class": "INDUSTRIAL",
+      "default_sla_policy_id": "SLA-0001",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "CUS-0001",
+      "name": "Asterion Customer 0001",
+      "priority": "HIGH",
+      "sla_class": "STANDARD",
+      "status": "ACTIVE"
+    },
+    {
+      "customer_class": "DISTRIBUTOR",
+      "default_sla_policy_id": "SLA-0002",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "CUS-0002",
+      "name": "Asterion Customer 0002",
+      "priority": "MEDIUM",
+      "sla_class": "PRIORITY",
+      "status": "ACTIVE"
+    },
+    {
+      "customer_class": "OEM",
+      "default_sla_policy_id": "SLA-0003",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "CUS-0003",
+      "name": "Asterion Customer 0003",
+      "priority": "LOW",
+      "sla_class": "EXTENDED",
+      "status": "ACTIVE"
+    },
+    {
+      "customer_class": "INDUSTRIAL",
+      "default_sla_policy_id": "SLA-0001",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "CUS-0004",
+      "name": "Asterion Customer 0004",
+      "priority": "HIGH",
+      "sla_class": "STANDARD",
+      "status": "ACTIVE"
+    },
+    {
+      "customer_class": "DISTRIBUTOR",
+      "default_sla_policy_id": "SLA-0002",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "CUS-0005",
+      "name": "Asterion Customer 0005",
+      "priority": "MEDIUM",
+      "sla_class": "PRIORITY",
+      "status": "ACTIVE"
+    },
+    {
+      "customer_class": "OEM",
+      "default_sla_policy_id": "SLA-0003",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "CUS-0006",
+      "name": "Asterion Customer 0006",
+      "priority": "LOW",
+      "sla_class": "EXTENDED",
+      "status": "ACTIVE"
+    },
+    {
+      "customer_class": "INDUSTRIAL",
+      "default_sla_policy_id": "SLA-0001",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "CUS-0007",
+      "name": "Asterion Customer 0007",
+      "priority": "HIGH",
+      "sla_class": "STANDARD",
+      "status": "ACTIVE"
+    },
+    {
+      "customer_class": "DISTRIBUTOR",
+      "default_sla_policy_id": "SLA-0002",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "CUS-0008",
+      "name": "Asterion Customer 0008",
+      "priority": "MEDIUM",
+      "sla_class": "PRIORITY",
+      "status": "ACTIVE"
+    },
+    {
+      "customer_class": "OEM",
+      "default_sla_policy_id": "SLA-0003",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "CUS-0009",
+      "name": "Asterion Customer 0009",
+      "priority": "LOW",
+      "sla_class": "EXTENDED",
+      "status": "ACTIVE"
+    },
+    {
+      "customer_class": "INDUSTRIAL",
+      "default_sla_policy_id": "SLA-0001",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "CUS-0010",
+      "name": "Asterion Customer 0010",
+      "priority": "HIGH",
+      "sla_class": "STANDARD",
+      "status": "ACTIVE"
+    },
+    {
+      "customer_class": "DISTRIBUTOR",
+      "default_sla_policy_id": "SLA-0002",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "CUS-0011",
+      "name": "Asterion Customer 0011",
+      "priority": "MEDIUM",
+      "sla_class": "PRIORITY",
+      "status": "ACTIVE"
+    },
+    {
+      "customer_class": "OEM",
+      "default_sla_policy_id": "SLA-0003",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "CUS-0012",
+      "name": "Asterion Customer 0012",
+      "priority": "LOW",
+      "sla_class": "EXTENDED",
+      "status": "ACTIVE"
+    }
+  ],
+  "facilities": [
+    {
+      "capacity_unit": "EA",
+      "daily_capacity_units": "100.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "FAC-PUNE",
+      "location_id": "LOC-PUNE",
+      "operating_calendar": "CAL-WEEKDAY-UTC",
+      "source_warehouse_id": "WH-PUNE",
+      "status": "ACTIVE",
+      "supported_product_families": "CONTROLLER"
+    }
+  ],
+  "facility_product_capabilities": [
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "facility_id": "FAC-PUNE",
+      "id": "CAP-0001",
+      "product_family": "CONTROLLER",
+      "status": "ACTIVE"
+    }
+  ],
+  "products": [
+    {
+      "facility_id": "FAC-PUNE",
+      "id": "PRD-CONTROLLER-X",
+      "name": "Controller-001",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "facility_id": "FAC-PUNE",
+      "id": "PRD-P4-0002",
+      "name": "Controller-002",
+      "status": "ACTIVE",
+      "unit": "EA"
+    },
+    {
+      "facility_id": "FAC-PUNE",
+      "id": "PRD-P4-0003",
+      "name": "Controller-003",
+      "status": "ACTIVE",
+      "unit": "EA"
+    }
+  ],
+  "sla_policies": [
+    {
+      "delivery_lead_time_days": "1",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "SLA-0001",
+      "late_tolerance_hours": "0",
+      "name": "STANDARD"
+    },
+    {
+      "delivery_lead_time_days": "0",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "SLA-0002",
+      "late_tolerance_hours": "0",
+      "name": "PRIORITY"
+    },
+    {
+      "delivery_lead_time_days": "3",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "SLA-0003",
+      "late_tolerance_hours": "0",
+      "name": "EXTENDED"
+    }
+  ],
+  "supplier_component_agreements": [
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-MCU-42",
+      "daily_capacity_units": "100.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0001",
+      "lead_time_days": "3",
+      "minimum_order_quantity": "10.000",
+      "supplier_id": "SUP-0104",
+      "unit_price_inr": "275.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-MCU-42",
+      "daily_capacity_units": "100.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0002",
+      "lead_time_days": "12",
+      "minimum_order_quantity": "20.000",
+      "supplier_id": "SUP-0208",
+      "unit_price_inr": "2710.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0002",
+      "daily_capacity_units": "150.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0003",
+      "lead_time_days": "10",
+      "minimum_order_quantity": "20.000",
+      "supplier_id": "SUP-0208",
+      "unit_price_inr": "2025.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0002",
+      "daily_capacity_units": "150.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0004",
+      "lead_time_days": "9",
+      "minimum_order_quantity": "30.000",
+      "supplier_id": "SUP-P4-0003",
+      "unit_price_inr": "190.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0003",
+      "daily_capacity_units": "200.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0005",
+      "lead_time_days": "3",
+      "minimum_order_quantity": "30.000",
+      "supplier_id": "SUP-P4-0003",
+      "unit_price_inr": "1900.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0003",
+      "daily_capacity_units": "200.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0006",
+      "lead_time_days": "11",
+      "minimum_order_quantity": "40.000",
+      "supplier_id": "SUP-P4-0004",
+      "unit_price_inr": "890.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0004",
+      "daily_capacity_units": "250.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0007",
+      "lead_time_days": "9",
+      "minimum_order_quantity": "40.000",
+      "supplier_id": "SUP-P4-0004",
+      "unit_price_inr": "275.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0004",
+      "daily_capacity_units": "250.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0008",
+      "lead_time_days": "8",
+      "minimum_order_quantity": "50.000",
+      "supplier_id": "SUP-P4-0005",
+      "unit_price_inr": "2430.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0005",
+      "daily_capacity_units": "300.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0009",
+      "lead_time_days": "8",
+      "minimum_order_quantity": "50.000",
+      "supplier_id": "SUP-P4-0005",
+      "unit_price_inr": "775.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0005",
+      "daily_capacity_units": "300.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0010",
+      "lead_time_days": "6",
+      "minimum_order_quantity": "60.000",
+      "supplier_id": "SUP-0104",
+      "unit_price_inr": "610.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0006",
+      "daily_capacity_units": "350.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0011",
+      "lead_time_days": "6",
+      "minimum_order_quantity": "60.000",
+      "supplier_id": "SUP-0104",
+      "unit_price_inr": "275.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0006",
+      "daily_capacity_units": "100.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0012",
+      "lead_time_days": "9",
+      "minimum_order_quantity": "70.000",
+      "supplier_id": "SUP-0208",
+      "unit_price_inr": "1870.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0007",
+      "daily_capacity_units": "400.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0013",
+      "lead_time_days": "11",
+      "minimum_order_quantity": "70.000",
+      "supplier_id": "SUP-0208",
+      "unit_price_inr": "2150.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0007",
+      "daily_capacity_units": "150.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0014",
+      "lead_time_days": "14",
+      "minimum_order_quantity": "80.000",
+      "supplier_id": "SUP-P4-0003",
+      "unit_price_inr": "2010.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0008",
+      "daily_capacity_units": "450.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0015",
+      "lead_time_days": "14",
+      "minimum_order_quantity": "80.000",
+      "supplier_id": "SUP-P4-0003",
+      "unit_price_inr": "1775.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0008",
+      "daily_capacity_units": "200.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0016",
+      "lead_time_days": "9",
+      "minimum_order_quantity": "90.000",
+      "supplier_id": "SUP-P4-0004",
+      "unit_price_inr": "470.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0009",
+      "daily_capacity_units": "100.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0017",
+      "lead_time_days": "4",
+      "minimum_order_quantity": "90.000",
+      "supplier_id": "SUP-P4-0004",
+      "unit_price_inr": "1775.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0009",
+      "daily_capacity_units": "250.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0018",
+      "lead_time_days": "10",
+      "minimum_order_quantity": "20.000",
+      "supplier_id": "SUP-P4-0005",
+      "unit_price_inr": "610.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0010",
+      "daily_capacity_units": "150.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0019",
+      "lead_time_days": "12",
+      "minimum_order_quantity": "100.000",
+      "supplier_id": "SUP-P4-0005",
+      "unit_price_inr": "650.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0010",
+      "daily_capacity_units": "300.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0020",
+      "lead_time_days": "10",
+      "minimum_order_quantity": "30.000",
+      "supplier_id": "SUP-0104",
+      "unit_price_inr": "1310.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0011",
+      "daily_capacity_units": "200.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0021",
+      "lead_time_days": "5",
+      "minimum_order_quantity": "10.000",
+      "supplier_id": "SUP-0104",
+      "unit_price_inr": "775.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0011",
+      "daily_capacity_units": "100.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0022",
+      "lead_time_days": "6",
+      "minimum_order_quantity": "40.000",
+      "supplier_id": "SUP-0208",
+      "unit_price_inr": "2150.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0012",
+      "daily_capacity_units": "250.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0023",
+      "lead_time_days": "14",
+      "minimum_order_quantity": "20.000",
+      "supplier_id": "SUP-0208",
+      "unit_price_inr": "1650.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0012",
+      "daily_capacity_units": "150.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0024",
+      "lead_time_days": "13",
+      "minimum_order_quantity": "50.000",
+      "supplier_id": "SUP-P4-0003",
+      "unit_price_inr": "1030.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0013",
+      "daily_capacity_units": "300.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0025",
+      "lead_time_days": "12",
+      "minimum_order_quantity": "30.000",
+      "supplier_id": "SUP-P4-0003",
+      "unit_price_inr": "2025.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0013",
+      "daily_capacity_units": "200.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0026",
+      "lead_time_days": "8",
+      "minimum_order_quantity": "60.000",
+      "supplier_id": "SUP-P4-0004",
+      "unit_price_inr": "2150.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0014",
+      "daily_capacity_units": "350.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0027",
+      "lead_time_days": "3",
+      "minimum_order_quantity": "40.000",
+      "supplier_id": "SUP-P4-0004",
+      "unit_price_inr": "2025.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0014",
+      "daily_capacity_units": "250.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0028",
+      "lead_time_days": "8",
+      "minimum_order_quantity": "70.000",
+      "supplier_id": "SUP-P4-0005",
+      "unit_price_inr": "2710.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0015",
+      "daily_capacity_units": "400.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0029",
+      "lead_time_days": "6",
+      "minimum_order_quantity": "50.000",
+      "supplier_id": "SUP-P4-0005",
+      "unit_price_inr": "1775.00"
+    },
+    {
+      "approval_status": "APPROVED",
+      "component_id": "CMP-P4-0015",
+      "daily_capacity_units": "300.000",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "AGR-0030",
+      "lead_time_days": "6",
+      "minimum_order_quantity": "80.000",
+      "supplier_id": "SUP-0104",
+      "unit_price_inr": "2570.00"
+    }
+  ],
+  "suppliers": [
+    {
+      "approval_status": "APPROVED",
+      "country": "IN",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "SUP-0104",
+      "name": "Asterion Supplier 001",
+      "region": "WEST",
+      "status": "ACTIVE",
+      "supplier_class": "DOMESTIC_NATIONAL"
+    },
+    {
+      "approval_status": "APPROVED",
+      "country": "IN",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "SUP-0208",
+      "name": "Asterion Supplier 002",
+      "region": "SOUTH",
+      "status": "ACTIVE",
+      "supplier_class": "DOMESTIC_NATIONAL"
+    },
+    {
+      "approval_status": "APPROVED",
+      "country": "IN",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "SUP-P4-0003",
+      "name": "Asterion Supplier 003",
+      "region": "NORTH",
+      "status": "ACTIVE",
+      "supplier_class": "DOMESTIC_REGIONAL"
+    },
+    {
+      "approval_status": "APPROVED",
+      "country": "IN",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "SUP-P4-0004",
+      "name": "Asterion Supplier 004",
+      "region": "EAST",
+      "status": "ACTIVE",
+      "supplier_class": "DOMESTIC_NATIONAL"
+    },
+    {
+      "approval_status": "APPROVED",
+      "country": "IN",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "SUP-P4-0005",
+      "name": "Asterion Supplier 005",
+      "region": "WEST",
+      "status": "ACTIVE",
+      "supplier_class": "DOMESTIC_NATIONAL"
+    }
+  ],
+  "transfer_lanes": [
+    {
+      "active_from": "2026-05-15T02:30:00Z",
+      "active_to": "2026-12-11T02:30:00Z",
+      "currency": "INR",
+      "destination_warehouse": "WH-CHENNAI",
+      "fixed_cost": "20000.00",
+      "id": "LANE-0001",
+      "lead_time_hours": "24",
+      "source_warehouse": "WH-PUNE",
+      "variable_cost_per_unit": "25.00"
+    },
+    {
+      "active_from": "2026-05-15T02:30:00Z",
+      "active_to": "2026-12-11T02:30:00Z",
+      "currency": "INR",
+      "destination_warehouse": "WH-PUNE",
+      "fixed_cost": "21000.00",
+      "id": "LANE-0002",
+      "lead_time_hours": "48",
+      "source_warehouse": "WH-CHENNAI",
+      "variable_cost_per_unit": "26.00"
+    }
+  ],
+  "warehouse_facility_links": [
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "facility_id": "FAC-PUNE",
+      "id": "WFL-0001",
+      "status": "ACTIVE",
+      "warehouse_id": "WH-PUNE"
+    }
+  ],
+  "warehouses": [
+    {
+      "component_storage_eligible": "true",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "WH-CHENNAI",
+      "location_id": "LOC-CHENNAI",
+      "region": "SOUTH",
+      "status": "ACTIVE",
+      "timezone": "Asia/Kolkata",
+      "transfer_eligible": "true"
+    },
+    {
+      "component_storage_eligible": "true",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "WH-PUNE",
+      "location_id": "LOC-PUNE",
+      "region": "WEST",
+      "status": "ACTIVE",
+      "timezone": "Asia/Kolkata",
+      "transfer_eligible": "true"
+    },
+    {
+      "component_storage_eligible": "true",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "id": "WH-GURUGRAM",
+      "location_id": "LOC-GURUGRAM",
+      "region": "NORTH",
+      "status": "ACTIVE",
+      "timezone": "Asia/Kolkata",
+      "transfer_eligible": "true"
+    }
+  ]
+}

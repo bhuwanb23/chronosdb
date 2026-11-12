@@ -1,0 +1,2 @@
+completed_scenario_immutable,effective_time,id,ingested_time,reported_time,source_event_id,visible_after_ingested,visible_before_ingested
+true,2026-11-08T11:30:00Z,LATE-INV-CORRECTION-001,2026-11-09T04:35:00Z,2026-11-09T04:30:00Z,BE-INVENTORY-CORRECTION-001,true,false

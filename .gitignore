@@ -18,3 +18,13 @@ build/
 data/releases/v1.0.0/evidence/documents/*
 data/releases/v1.0.0/benchmarks/expected/*
 data/releases/v1.0.0/benchmarks/scenarios/*
+*expected*
+*scenarios*
+*observed*
+*recommended*
+*feasibility*
+*reason*
+*recommended_intervention*
+*sla_breach_count*
+*sla_breach_count*
+*documents*

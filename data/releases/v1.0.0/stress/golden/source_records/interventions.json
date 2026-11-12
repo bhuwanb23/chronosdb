@@ -1,0 +1,144 @@
+{
+  "alternates": [
+    {
+      "approval_status": "APPROVED",
+      "available_capacity": "400",
+      "baseline_unit_price_inr": "1000",
+      "candidate_type": "ALTERNATE_SUPPLY",
+      "component_compatible": "true",
+      "component_id": "CMP-MCU-42",
+      "currency": "INR",
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "feasibility_status": "FEASIBLE",
+      "id": "INT-GOLD-B",
+      "incremental_premium_inr": "72000",
+      "lead_time_days": "5",
+      "minimum_order_quantity": "100",
+      "quantity": "400",
+      "supplier_id": "SUP-0208",
+      "unit_price_inr": "1180"
+    }
+  ],
+  "costs": [
+    {
+      "candidate_id": "INT-GOLD-A",
+      "currency": "INR",
+      "fixed_cost_inr": "40000",
+      "id": "COST-INT-GOLD-A",
+      "total_cost_inr": "60000",
+      "variable_cost_inr": "20000"
+    },
+    {
+      "candidate_id": "INT-GOLD-B",
+      "currency": "INR",
+      "fixed_cost_inr": "0",
+      "id": "COST-INT-GOLD-B",
+      "total_cost_inr": "72000",
+      "variable_cost_inr": "72000"
+    },
+    {
+      "candidate_id": "INT-GOLD-C",
+      "currency": "INR",
+      "fixed_cost_inr": "40000",
+      "id": "COST-INT-GOLD-C",
+      "total_cost_inr": "132000",
+      "variable_cost_inr": "92000"
+    },
+    {
+      "candidate_id": "INT-GOLD-TRANSFER-500",
+      "currency": "INR",
+      "fixed_cost_inr": "40000",
+      "id": "COST-INT-GOLD-TRANSFER-500",
+      "total_cost_inr": "65000",
+      "variable_cost_inr": "25000"
+    }
+  ],
+  "expedites": [
+    {
+      "candidate_type": "EXPEDITE",
+      "component_id": "CMP-MCU-42",
+      "earliest_achievable_arrival": "2026-11-27T02:30:00Z",
+      "eligible": "false",
+      "fixed_fee_inr": "15000",
+      "id": "INT-GOLD-EXPEDITE",
+      "outage_compatible": "false",
+      "purchase_order_id": "PO-2208",
+      "rejection_reason": "COMPLETE_SUPPLIER_OUTAGE",
+      "supplier_id": "SUP-0104",
+      "variable_fee_inr": "0"
+    }
+  ],
+  "rescheduling": [
+    {
+      "candidate_type": "RESCHEDULE",
+      "downstream_customer_impact": "PROTECTS_SLA",
+      "facility_capacity_available": "100",
+      "feasibility_status": "FEASIBLE",
+      "id": "INT-GOLD-RESCHEDULE-1",
+      "lock_status": "UNLOCKED",
+      "order_status": "PLANNED",
+      "priority": "HIGH",
+      "production_order_id": "MO-0876",
+      "reschedule_penalty_inr": "10000"
+    },
+    {
+      "candidate_type": "RESCHEDULE",
+      "downstream_customer_impact": "PROTECTS_SLA",
+      "facility_capacity_available": "100",
+      "feasibility_status": "FEASIBLE",
+      "id": "INT-GOLD-RESCHEDULE-2",
+      "lock_status": "UNLOCKED",
+      "order_status": "PLANNED",
+      "priority": "HIGH",
+      "production_order_id": "MO-0882",
+      "reschedule_penalty_inr": "10000"
+    },
+    {
+      "candidate_type": "RESCHEDULE",
+      "downstream_customer_impact": "PROTECTS_SLA",
+      "facility_capacity_available": "100",
+      "feasibility_status": "FEASIBLE",
+      "id": "INT-GOLD-RESCHEDULE-3",
+      "lock_status": "UNLOCKED",
+      "order_status": "PLANNED",
+      "priority": "HIGH",
+      "production_order_id": "MO-0889",
+      "reschedule_penalty_inr": "10000"
+    }
+  ],
+  "transfers": [
+    {
+      "available_quantity": "400",
+      "candidate_type": "TRANSFER",
+      "component_id": "CMP-MCU-42",
+      "destination_warehouse_id": "WH-PUNE",
+      "dispatch_time": "2026-11-11T02:30:00Z",
+      "feasibility_status": "FEASIBLE",
+      "fixed_cost_inr": "40000",
+      "id": "INT-GOLD-A",
+      "lead_time_days": "2",
+      "rejection_reason": "",
+      "requested_quantity": "400",
+      "safety_stock_protected": "true",
+      "source_warehouse_id": "WH-CHENNAI",
+      "variable_cost_per_unit_inr": "50"
+    },
+    {
+      "available_quantity": "400",
+      "candidate_type": "TRANSFER",
+      "component_id": "CMP-MCU-42",
+      "destination_warehouse_id": "WH-PUNE",
+      "dispatch_time": "2026-11-11T02:30:00Z",
+      "feasibility_status": "INFEASIBLE",
+      "fixed_cost_inr": "40000",
+      "id": "INT-GOLD-TRANSFER-500",
+      "lead_time_days": "2",
+      "rejection_reason": "SOURCE_SAFETY_STOCK_VIOLATION",
+      "requested_quantity": "500",
+      "safety_stock_protected": "false",
+      "source_warehouse_id": "WH-CHENNAI",
+      "variable_cost_per_unit_inr": "50"
+    }
+  ]
+}

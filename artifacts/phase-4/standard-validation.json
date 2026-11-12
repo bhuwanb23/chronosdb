@@ -1,5 +1,6 @@
 {
   "counts": {
+    "customer_orders": 1000,
     "inventory_snapshots": 14400,
     "master_files": 13,
     "production_orders": 400,

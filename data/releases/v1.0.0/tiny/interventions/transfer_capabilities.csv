@@ -1,0 +1,3 @@
+available_quantity,candidate_type,component_id,destination_warehouse_id,dispatch_time,feasibility_status,fixed_cost_inr,id,lead_time_days,rejection_reason,requested_quantity,safety_stock_protected,source_warehouse_id,variable_cost_per_unit_inr
+400,TRANSFER,CMP-MCU-42,WH-PUNE,2026-11-11T02:30:00Z,FEASIBLE,40000,INT-GOLD-A,2,,400,true,WH-CHENNAI,50
+400,TRANSFER,CMP-MCU-42,WH-PUNE,2026-11-11T02:30:00Z,INFEASIBLE,40000,INT-GOLD-TRANSFER-500,2,SOURCE_SAFETY_STOCK_VIOLATION,500,false,WH-CHENNAI,50

@@ -1,0 +1,477 @@
+{
+  "business_events": [
+    {
+      "entity_id": "PO-2208",
+      "entity_type": "PURCHASE_ORDER",
+      "event_time": "2026-11-11T02:30:00Z",
+      "event_type": "PURCHASE_ORDER_DELAY",
+      "id": "BE-PO-DELAY-2208",
+      "ingested_time": "2026-11-11T05:05:00Z",
+      "recorded_at": "2026-11-11T05:05:00Z",
+      "reported_time": "2026-11-11T05:00:00Z"
+    },
+    {
+      "entity_id": "WH-CHENNAI-CMP-MCU-42",
+      "entity_type": "INVENTORY_BALANCE",
+      "event_time": "2026-11-08T11:30:00Z",
+      "event_type": "INVENTORY_CORRECTION",
+      "id": "BE-INVENTORY-CORRECTION-001",
+      "ingested_time": "2026-11-09T04:35:00Z",
+      "recorded_at": "2026-11-09T04:35:00Z",
+      "reported_time": "2026-11-09T04:30:00Z"
+    },
+    {
+      "entity_id": "SUP-0104",
+      "entity_type": "SUPPLIER",
+      "event_time": "2026-11-11T02:30:00Z",
+      "event_type": "DISRUPTION_REPORTED",
+      "id": "BE-DISRUPTION-REPORT-001",
+      "ingested_time": "2026-11-11T03:05:00Z",
+      "recorded_at": "2026-11-11T03:05:00Z",
+      "reported_time": "2026-11-11T03:00:00Z"
+    }
+  ],
+  "entity_versions": [
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0001",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0001",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0002",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0002",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0003",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0003",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0004",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0004",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0005",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0005",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0006",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0006",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0007",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0007",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0008",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0008",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0009",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0009",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0010",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0010",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0011",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0011",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0012",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0012",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0013",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0013",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0014",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0014",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0015",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0015",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0016",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0016",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0017",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0017",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0018",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0018",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0019",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0019",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "AGR-0020",
+      "entity_type": "SUPPLIER_COMPONENT_AGREEMENT",
+      "id": "EV-AGR-0020",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "ACTIVE",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-07-29T02:30:00Z",
+      "entity_id": "BOM-0001-V01",
+      "entity_type": "BOM_VERSION",
+      "id": "EV-BOM-0001",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-07-29T02:30:00Z",
+      "entity_id": "BOM-0002-V01",
+      "entity_type": "BOM_VERSION",
+      "id": "EV-BOM-0002",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-07-29T02:30:00Z",
+      "entity_id": "BOM-0003-V01",
+      "entity_type": "BOM_VERSION",
+      "id": "EV-BOM-0003",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-07-29T02:30:00Z",
+      "entity_id": "BOM-0004-V01",
+      "entity_type": "BOM_VERSION",
+      "id": "EV-BOM-0004",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-07-29T02:30:00Z",
+      "entity_id": "BOM-0005-V01",
+      "entity_type": "BOM_VERSION",
+      "id": "EV-BOM-0005",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-07-29T02:30:00Z",
+      "entity_id": "BOM-0006-V01",
+      "entity_type": "BOM_VERSION",
+      "id": "EV-BOM-0006",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-07-29T02:30:00Z",
+      "entity_id": "BOM-0007-V01",
+      "entity_type": "BOM_VERSION",
+      "id": "EV-BOM-0007",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-07-29T02:30:00Z",
+      "entity_id": "BOM-0008-V01",
+      "entity_type": "BOM_VERSION",
+      "id": "EV-BOM-0008",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-07-29T02:30:00Z",
+      "entity_id": "BOM-0009-V01",
+      "entity_type": "BOM_VERSION",
+      "id": "EV-BOM-0009",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-07-29T02:30:00Z",
+      "entity_id": "BOM-0010-V01",
+      "entity_type": "BOM_VERSION",
+      "id": "EV-BOM-0010",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-05-15T02:30:00Z",
+      "effective_to": "2026-11-09T04:35:00Z",
+      "entity_id": "WH-CHENNAI-CMP-MCU-42",
+      "entity_type": "SAFETY_STOCK_POLICY",
+      "id": "EV-SAFETY-MCU-01",
+      "recorded_at": "2026-05-15T02:30:00Z",
+      "status": "SUPERSEDED",
+      "version": "1"
+    },
+    {
+      "effective_from": "2026-11-09T04:35:00Z",
+      "effective_to": "2026-12-11T02:30:00Z",
+      "entity_id": "WH-CHENNAI-CMP-MCU-42",
+      "entity_type": "SAFETY_STOCK_POLICY",
+      "id": "EV-SAFETY-MCU-02",
+      "recorded_at": "2026-11-09T04:35:00Z",
+      "status": "ACTIVE",
+      "version": "2"
+    }
+  ],
+  "historical_inventory_checkpoints": [
+    {
+      "checkpoint_time": "2026-11-11T02:30:00Z",
+      "component_id": "CMP-MCU-42",
+      "expected_on_hand_quantity": "700",
+      "id": "HIST-CHK-0001",
+      "reconstruction_method": "EVENT_LEDGER_REPLAY",
+      "warehouse_id": "WH-CHENNAI"
+    },
+    {
+      "checkpoint_time": "2026-11-12T02:30:00Z",
+      "component_id": "CMP-MCU-42",
+      "expected_on_hand_quantity": "300",
+      "id": "HIST-CHK-0002",
+      "reconstruction_method": "EVENT_LEDGER_REPLAY",
+      "warehouse_id": "WH-CHENNAI"
+    },
+    {
+      "checkpoint_time": "2026-11-13T02:30:00Z",
+      "component_id": "CMP-MCU-42",
+      "expected_on_hand_quantity": "300",
+      "id": "HIST-CHK-0003",
+      "reconstruction_method": "EVENT_LEDGER_REPLAY",
+      "warehouse_id": "WH-CHENNAI"
+    },
+    {
+      "checkpoint_time": "2026-11-14T02:30:00Z",
+      "component_id": "CMP-MCU-42",
+      "expected_on_hand_quantity": "300",
+      "id": "HIST-CHK-0004",
+      "reconstruction_method": "EVENT_LEDGER_REPLAY",
+      "warehouse_id": "WH-CHENNAI"
+    },
+    {
+      "checkpoint_time": "2026-11-15T02:30:00Z",
+      "component_id": "CMP-MCU-42",
+      "expected_on_hand_quantity": "300",
+      "id": "HIST-CHK-0005",
+      "reconstruction_method": "EVENT_LEDGER_REPLAY",
+      "warehouse_id": "WH-CHENNAI"
+    },
+    {
+      "checkpoint_time": "2026-11-16T02:30:00Z",
+      "component_id": "CMP-MCU-42",
+      "expected_on_hand_quantity": "300",
+      "id": "HIST-CHK-0006",
+      "reconstruction_method": "EVENT_LEDGER_REPLAY",
+      "warehouse_id": "WH-CHENNAI"
+    },
+    {
+      "checkpoint_time": "2026-11-17T02:30:00Z",
+      "component_id": "CMP-MCU-42",
+      "expected_on_hand_quantity": "300",
+      "id": "HIST-CHK-0007",
+      "reconstruction_method": "EVENT_LEDGER_REPLAY",
+      "warehouse_id": "WH-CHENNAI"
+    },
+    {
+      "checkpoint_time": "2026-11-18T02:30:00Z",
+      "component_id": "CMP-MCU-42",
+      "expected_on_hand_quantity": "300",
+      "id": "HIST-CHK-0008",
+      "reconstruction_method": "EVENT_LEDGER_REPLAY",
+      "warehouse_id": "WH-CHENNAI"
+    },
+    {
+      "checkpoint_time": "2026-11-19T02:30:00Z",
+      "component_id": "CMP-MCU-42",
+      "expected_on_hand_quantity": "300",
+      "id": "HIST-CHK-0009",
+      "reconstruction_method": "EVENT_LEDGER_REPLAY",
+      "warehouse_id": "WH-CHENNAI"
+    },
+    {
+      "checkpoint_time": "2026-11-20T02:30:00Z",
+      "component_id": "CMP-MCU-42",
+      "expected_on_hand_quantity": "300",
+      "id": "HIST-CHK-0010",
+      "reconstruction_method": "EVENT_LEDGER_REPLAY",
+      "warehouse_id": "WH-CHENNAI"
+    }
+  ],
+  "late_arriving_records": [
+    {
+      "completed_scenario_immutable": "true",
+      "effective_time": "2026-11-08T11:30:00Z",
+      "id": "LATE-INV-CORRECTION-001",
+      "ingested_time": "2026-11-09T04:35:00Z",
+      "reported_time": "2026-11-09T04:30:00Z",
+      "source_event_id": "BE-INVENTORY-CORRECTION-001",
+      "visible_after_ingested": "true",
+      "visible_before_ingested": "false"
+    }
+  ],
+  "replay_expectations": {
+    "checkpoint_count": 10,
+    "half_open_interval": "[effective_from,effective_to)",
+    "late_arrival_cases": [
+      {
+        "freeze_time": "2026-11-09T04:34:59Z",
+        "scenario_id": "SCN-HIST-BEFORE-INGEST",
+        "uses_correction": false
+      },
+      {
+        "freeze_time": "2026-11-09T04:35:00Z",
+        "scenario_id": "SCN-HIST-AFTER-INGEST",
+        "uses_correction": true
+      },
+      {
+        "freeze_time": "2026-11-10T10:00:00Z",
+        "reason": "completed scenario state is immutable",
+        "scenario_id": "SCN-HIST-COMPLETED",
+        "uses_correction": false
+      }
+    ],
+    "reference_time": "2026-11-11T02:30:00Z",
+    "source_counts": {
+      "customer_orders": 25000,
+      "purchase_orders": 12000
+    }
+  }
+}

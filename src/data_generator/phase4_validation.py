@@ -443,13 +443,16 @@ def validate_demand_release(
     if allocated_lines != set(line_by_id):
         raise Phase4ValidationError("customer demand allocation coverage mismatch")
     for allocation in allocations:
-        line = line_by_id.get(allocation["customer_order_line_id"])
+        allocation_line = line_by_id.get(allocation["customer_order_line_id"])
         if (
-            line is None
-            or allocation["production_order_id"] != line["assigned_production_order_id"]
+            allocation_line is None
+            or allocation["production_order_id"]
+            != allocation_line["assigned_production_order_id"]
         ):
             raise Phase4ValidationError(f"demand allocation join mismatch: {allocation['id']}")
-        if Decimal(str(allocation["allocated_quantity"])) != Decimal(str(line["ordered_quantity"])):
+        if Decimal(str(allocation["allocated_quantity"])) != Decimal(
+            str(allocation_line["ordered_quantity"])
+        ):
             raise Phase4ValidationError(f"demand allocation quantity mismatch: {allocation['id']}")
     sla_by_line = {row["customer_order_line_id"]: row for row in sla_assignments}
     if set(sla_by_line) != set(line_by_id):

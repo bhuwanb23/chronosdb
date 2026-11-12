@@ -1,0 +1,2 @@
+approval_status,available_capacity,baseline_unit_price_inr,candidate_type,component_compatible,component_id,currency,effective_from,effective_to,feasibility_status,id,incremental_premium_inr,lead_time_days,minimum_order_quantity,quantity,supplier_id,unit_price_inr
+APPROVED,400,1000,ALTERNATE_SUPPLY,true,CMP-MCU-42,INR,2026-05-15T02:30:00Z,2026-12-11T02:30:00Z,FEASIBLE,INT-GOLD-B,72000,5,100,400,SUP-0208,1180

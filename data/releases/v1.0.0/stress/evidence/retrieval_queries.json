@@ -1,0 +1,18 @@
+[
+  {
+    "query": "supplier production interruption and recovery uncertainty",
+    "query_id": "RET-GOLD-NOTICE",
+    "required_filters": [
+      "ACTIVE",
+      "DEMO_INTERNAL"
+    ]
+  },
+  {
+    "query": "emergency component transfer safety stock approval",
+    "query_id": "RET-GOLD-TRANSFER",
+    "required_filters": [
+      "ACTIVE",
+      "DEMO_INTERNAL"
+    ]
+  }
+]

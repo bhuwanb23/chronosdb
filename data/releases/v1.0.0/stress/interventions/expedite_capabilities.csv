@@ -1,0 +1,2 @@
+candidate_type,component_id,earliest_achievable_arrival,eligible,fixed_fee_inr,id,outage_compatible,purchase_order_id,rejection_reason,supplier_id,variable_fee_inr
+EXPEDITE,CMP-MCU-42,2026-11-27T02:30:00Z,false,15000,INT-GOLD-EXPEDITE,false,PO-2208,COMPLETE_SUPPLIER_OUTAGE,SUP-0104,0

@@ -1,0 +1,27 @@
+{
+  "checkpoint_count": 10,
+  "half_open_interval": "[effective_from,effective_to)",
+  "late_arrival_cases": [
+    {
+      "freeze_time": "2026-11-09T04:34:59Z",
+      "scenario_id": "SCN-HIST-BEFORE-INGEST",
+      "uses_correction": false
+    },
+    {
+      "freeze_time": "2026-11-09T04:35:00Z",
+      "scenario_id": "SCN-HIST-AFTER-INGEST",
+      "uses_correction": true
+    },
+    {
+      "freeze_time": "2026-11-10T10:00:00Z",
+      "reason": "completed scenario state is immutable",
+      "scenario_id": "SCN-HIST-COMPLETED",
+      "uses_correction": false
+    }
+  ],
+  "reference_time": "2026-11-11T02:30:00Z",
+  "source_counts": {
+    "customer_orders": 50,
+    "purchase_orders": 30
+  }
+}

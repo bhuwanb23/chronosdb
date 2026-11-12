@@ -2,6 +2,2088 @@
   "dataset": "chronosdb-demo-dataset",
   "files": [
     {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/benchmark_release_notes.md",
+      "record_count": 1,
+      "sha256": "cf2b79767eac2ee3eae7e4362fda61f4f486168e2fc58b1299388fb2b620531e"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/difficulty_labels.csv",
+      "record_count": 60,
+      "sha256": "f0546ea69eeb1759ca4ab52ec1f182cb9d21d4fec7ccb45988313a5d7fedb00c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0001.json",
+      "record_count": 6,
+      "sha256": "15e306bde2ed59a569445deeeb23d6ecb53e31022a23a8a92ac4be37b5d480ef"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0002.json",
+      "record_count": 6,
+      "sha256": "00f3884906b06df6d081ce712e9f0b96d3e000073e9d63147862b5dda78e8bec"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0003.json",
+      "record_count": 6,
+      "sha256": "a3bdd17977352202f913dc5647ec5e29e25cce0cf3e2f37377ffc82fd68de8e8"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0004.json",
+      "record_count": 6,
+      "sha256": "1644895c56054746763c2b5855d2b9397cca2d3399e2391a7b54d0b90ab123a3"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0005.json",
+      "record_count": 6,
+      "sha256": "72d6b89ed99ba5b09b8a3d800d844045bb54131830dff0cc3302ae2730faeda9"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0006.json",
+      "record_count": 6,
+      "sha256": "120ce8f2d7406510aeef5eda323b797f801df78eb7d752d813c937dd2bdc6846"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0007.json",
+      "record_count": 6,
+      "sha256": "0a8875badbcc8aca413fd6e42e373f301e446f7b6ad1966dd0e9ac031da401b8"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0008.json",
+      "record_count": 6,
+      "sha256": "6ecd81a2b2eb8600d3756044c3d1eb53ed038aafba3cc02a4a086d7e3185f5e2"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0009.json",
+      "record_count": 6,
+      "sha256": "74b646162888e1f6f1e0fac29b25b6416503cb9e6ef4c2d6c5dd086d0eda95e9"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0010.json",
+      "record_count": 6,
+      "sha256": "a5852e75007be09e26e89d8d98578ae253898e9ff27d04aeb7adadac3343510f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0011.json",
+      "record_count": 6,
+      "sha256": "b1808e4e3395936514d3c4af411437b366d2a38b8d863b232ec45eb98d90337d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0012.json",
+      "record_count": 6,
+      "sha256": "3f61949e28d5840c7c38c19fea69984f6903a8738fb59d2e5f30d8fe136af5e4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0013.json",
+      "record_count": 6,
+      "sha256": "60d2bb2be8f3cc6cfdc154eecee392f0d8b29b72dad9d788ab48aca696b4271e"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0014.json",
+      "record_count": 6,
+      "sha256": "6603c742319c2683e61e00f2164d3a88975b05fbe66abb2cdd4ba067f66b85a4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0015.json",
+      "record_count": 6,
+      "sha256": "edb4eb93ce7ec619a84b63de90f6ec666df3fa017f4d9adebb82f8f4c2bf4173"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0016.json",
+      "record_count": 6,
+      "sha256": "30512aaccc17e2a5beb992df9d49b5956cb9a130ea29d5d8c82268a9ccf0a9f4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0017.json",
+      "record_count": 6,
+      "sha256": "34404a3e310d9d5839ebc7933a8e6c8302036228b35973cc0dfbc1a58a83f350"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0018.json",
+      "record_count": 6,
+      "sha256": "60daeb61d3d4724e43b62744f927197310559edc540c66ec1c3a0ac3951ba39e"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0019.json",
+      "record_count": 6,
+      "sha256": "c32ba4414ed923773c80b942f4d91c0e6e1d33d9393d92deb25579cf93b08fac"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0020.json",
+      "record_count": 6,
+      "sha256": "ddbcd3133ccf18a8a0ea45fe86d829d976f19a150d6b4ef468a78410db455137"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0021.json",
+      "record_count": 6,
+      "sha256": "0428a23c0bfa5e5679a6296f79079c15b44ccd81c7a96b85a99f5ebdeeb57920"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0022.json",
+      "record_count": 6,
+      "sha256": "ea0e1faecab3ff3c69aaf914b9ff509479f1d77e9c2bba860c8849d45a92da43"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0023.json",
+      "record_count": 6,
+      "sha256": "49325e721de86e92fc9fd1795888408351520a824d7bd568182358ca4f4ce63d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0024.json",
+      "record_count": 6,
+      "sha256": "5c3b6fcb2dfed60f64fd37f498ef367279a4c3d7139fc6fef59ab642d2e93498"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0025.json",
+      "record_count": 6,
+      "sha256": "94f3514b47fcefd2ae335e9e9b0b927b96e489751c296cfdec76319b4956d1a8"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0026.json",
+      "record_count": 6,
+      "sha256": "8c2ae6190504ff7dca0fa7dfc3e66327029f983bfc6f8fd58386e977904c8b36"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0027.json",
+      "record_count": 6,
+      "sha256": "9b5455a78deb3e2f417ab3c4c8c761a2788a0bb8e96b13e7b76d818180d18be3"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0028.json",
+      "record_count": 6,
+      "sha256": "6ccbbbee4c0db9c97cad6887486a72fea4503c7975fc9a0d4e3c0681d3d98cac"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0029.json",
+      "record_count": 6,
+      "sha256": "0108146391958527ceeb16bb6ac7683b5074abb875c69d3306d2f226664c2fca"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0030.json",
+      "record_count": 6,
+      "sha256": "142d032434258fe0582e6fbe5d5f6b0d3c86d7fcef91920529f83bfd0b2ad4dd"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0031.json",
+      "record_count": 6,
+      "sha256": "7b107a6b53e487d763ef6bd6906d21d42ca9a7aeaea0bf245eb45efd2b38d5d0"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0032.json",
+      "record_count": 6,
+      "sha256": "a42f735242b506df807923cc44e0da2a7e2754064063fa9f2ff5463208ec2059"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0033.json",
+      "record_count": 6,
+      "sha256": "56caf74d6ec2b806260eafcf0480de8a2b1b6c4e705aab83725b4a00c59599df"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0034.json",
+      "record_count": 6,
+      "sha256": "48b87625356b14dc2f5a0dbcbc13ae5421db7c45da936fe594d23bfd24bcc8e8"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0035.json",
+      "record_count": 6,
+      "sha256": "a01730a918e1a56ce1ea73c4a703aa007d888651c4878fa8113abf5b87a31e33"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0036.json",
+      "record_count": 6,
+      "sha256": "2c3e2e4c04ba650a3ae78d69d70d029d94cd60c85d6f5a9902049dad64cfa6c7"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0037.json",
+      "record_count": 6,
+      "sha256": "757b5f23c2adc26a1bea0723079038a21656143de88d6aa4048956339f113697"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0038.json",
+      "record_count": 6,
+      "sha256": "b457bf15f057275e81b4f6230ba6a3ea39fcaa65d6a49c8588129c12d8e37557"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0039.json",
+      "record_count": 6,
+      "sha256": "787b3bd0a8e4d1f8723281cdf92653b3e37bf0dd2b4da45884a5320b17b6974f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0040.json",
+      "record_count": 6,
+      "sha256": "417358d6acfa6fcaf694ab6671e86a7c783a070019c44359d20931da65ce8e4f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0041.json",
+      "record_count": 6,
+      "sha256": "470eb6b30d30e7aef1f6ca908ef5e44f988c87211c3d6d70ee224b6d8dd7b994"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0042.json",
+      "record_count": 6,
+      "sha256": "685c62373a73aa4fa9ca66e6698d1baf07369e187376b072c31d5976618bfac3"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0043.json",
+      "record_count": 6,
+      "sha256": "8dce64070313594a6503a29d651e5565a61da9b3e90971bcd97012e2bc5a57c5"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0044.json",
+      "record_count": 6,
+      "sha256": "fdae1210a3f2207ecc252c04e3de1747b33b676e63351179a0a6bfc849758cc6"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0045.json",
+      "record_count": 6,
+      "sha256": "200ea67fb510d81825498f3c9863d59e92e7269df8410b239e4afa22d222ef7d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0046.json",
+      "record_count": 6,
+      "sha256": "8e08d95c974f8e4583d913685226aed729dc855861bf53e8c68c4c9910f2ea18"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0047.json",
+      "record_count": 6,
+      "sha256": "e08001c718e828928da6ebfdf4f816c31bd9b632f6cf0a7743c606e45ac6a180"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0048.json",
+      "record_count": 6,
+      "sha256": "cefceeaf7227d0ac01c5ed1b429765c0789b02a412fffcc05fcffcaa77300f61"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0049.json",
+      "record_count": 6,
+      "sha256": "0421d2ea0691684dba95f14f2d6968fbbf7925d8096cd2b31511f933e7e725e3"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0050.json",
+      "record_count": 6,
+      "sha256": "82296c5d423992bd34b571ca78e0ad362b0fed5ac4130d3c1e7fb57ddb0fab65"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0051.json",
+      "record_count": 6,
+      "sha256": "57ae57a81acbb22712273e4a2da8b7e8c8866baea51f8c2e301af382630614c6"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0052.json",
+      "record_count": 6,
+      "sha256": "3caa285a0f47bf929e4b10d2c2848fc0b1248f18f8ad7fff8911a5c63e6d9787"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0053.json",
+      "record_count": 6,
+      "sha256": "e4b303684924e354525397da9917a4af6a33eba93993cfd1d5f85536ae344f7e"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0054.json",
+      "record_count": 6,
+      "sha256": "231cc58bd91ca801012ff1d81e16c91853401c7214078960ac8dadab6adaeaa0"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0055.json",
+      "record_count": 6,
+      "sha256": "df5912378472298c8ab9a74f71625b5a6f3c516dc2acf2664a78e069108f5fda"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0056.json",
+      "record_count": 6,
+      "sha256": "8a5d08e7ff582ff5c9f78784ad62b082d211752c66a3acfb15fe5ac68469aec4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0057.json",
+      "record_count": 6,
+      "sha256": "82b04b10c421dcab7206555168c2f3216feceecb66871b9d12217864f15eaa78"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0058.json",
+      "record_count": 6,
+      "sha256": "ac8a9bfef42741b2063d29cb16bf382b3fea0c781b652759046c7411e3c30246"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0059.json",
+      "record_count": 6,
+      "sha256": "454d31107c18ecc1da3c219866f6c0cb2d26b2b2e32f45e19a3cbc02214d0eda"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/expected/SCN-BENCH-0060.json",
+      "record_count": 6,
+      "sha256": "69a5e5fcc963a783f635016318ffe9fe75bfbe06378ee95f205bea541be2be3f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/partition_manifest.json",
+      "record_count": 3,
+      "sha256": "6c1272d242fe58e0f51f9cbd00e90c856319293ec9b45b00f33a10566d7d58fa"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenario_catalogue.csv",
+      "record_count": 60,
+      "sha256": "a0fc98a5249548b72de0eb978dc69f885dda06d0ab5926020d683261872153f7"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0001.json",
+      "record_count": 9,
+      "sha256": "7a6764dcf431ba1a8a9a4d8004bf73387ad550bb3697467db94b3b2dfe5f47a1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0002.json",
+      "record_count": 9,
+      "sha256": "04a40620de985687fa1e93d78c373470011387b06eba781d9ef7868369a254b1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0003.json",
+      "record_count": 9,
+      "sha256": "e0d99f29f28a5ad50fb9458cba2be3a8477b337c814a91d5583d4c9238c5c21b"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0004.json",
+      "record_count": 9,
+      "sha256": "5bc6bc2ded3a0c060064aba532acb05992fc37d95edec2a56a9c80b8404f7208"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0005.json",
+      "record_count": 9,
+      "sha256": "1c9e60b80ac869693afc4f851704fdfff2ff8a1135f672a4c1a5b75a6a7f0ff6"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0006.json",
+      "record_count": 9,
+      "sha256": "179242748cf87c35a1b184912b44fd583ff8b080a7f859410a109cc9f986ee64"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0007.json",
+      "record_count": 9,
+      "sha256": "7d1d4d8f1ad1060590f2a4f4486e2c76d0037b2ac49a94d2f9ac8c0b87f3c70c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0008.json",
+      "record_count": 9,
+      "sha256": "8252aac5baf83468d85e159163d468da5b3a9272e73cab4efca8b8e1d50d16e0"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0009.json",
+      "record_count": 9,
+      "sha256": "d3d941d48ffb4931fc883c923afbde558ad8c64f00187c390de29e95322c3659"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0010.json",
+      "record_count": 9,
+      "sha256": "da7683ab2399ae0f7163849c9b0b64d1f783e6170d5475e7819414388b4e0fce"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0011.json",
+      "record_count": 9,
+      "sha256": "c02d745de59941f96979119689b4075cff88d9e680b66b1451cda86e70ef7aa5"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0012.json",
+      "record_count": 9,
+      "sha256": "70f7d6c759bae33346c52de185d67a060ba672367a2980ae119658c246aeb58f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0013.json",
+      "record_count": 9,
+      "sha256": "3e709f18cdf6210b00c55fcc55fabc782324180737d494a73db0d03c65e3022e"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0014.json",
+      "record_count": 9,
+      "sha256": "172d94950138bf0d55628b7fac85249d0f78f952c4a09a41772452bf4fedb724"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0015.json",
+      "record_count": 9,
+      "sha256": "a658b14f1d313c4f3756123968de98c8a3b1840e24630cf97a79647497e85ac4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0016.json",
+      "record_count": 9,
+      "sha256": "24da7c7bfda57864fca3fb858cedf739670fcefb0d03012e453877da4f1bd375"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0017.json",
+      "record_count": 9,
+      "sha256": "0ee8e3de32952aeaf71cf8c9b37f93a0b7d661a3e9b8fd295a27f881dad8457b"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0018.json",
+      "record_count": 9,
+      "sha256": "0ee876db0bca56aa3276950f8b8c006cf8fd7ffae9816aaaf916609ddfc99323"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0019.json",
+      "record_count": 9,
+      "sha256": "8fdc25c63fb3e9106043e83cbf256e42ff3af6abf05989bcac85b33f86eebf27"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0020.json",
+      "record_count": 9,
+      "sha256": "f7db158f8fe3f45e8d55a91e16ec74bb9fc347697ed0980c0a46eb86f3780ff0"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0021.json",
+      "record_count": 9,
+      "sha256": "78045a55cea7eb0a7ffe840aca2a6aa3caeccd194a6ee8be474a85ac96e0fef4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0022.json",
+      "record_count": 9,
+      "sha256": "b6aff1c53733333797deb542fa7b9e8d77bbdf64c87904ec9de94955a3a55d53"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0023.json",
+      "record_count": 9,
+      "sha256": "5c664c8704a9223164fe01a21e068a58169927685d52304278975c08036f8e50"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0024.json",
+      "record_count": 9,
+      "sha256": "ee41e63e66b70e2eecb404349937c5326d533a6e21841aece9e68cd81fc6f41a"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0025.json",
+      "record_count": 9,
+      "sha256": "e4c98009b7fd888404d949271ba6161cbb0fd81ab7b2a92a255185f3fd8c2081"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0026.json",
+      "record_count": 9,
+      "sha256": "6d503d452e3e4652d889004e0507050d3831bf1f1d966743f9b61ab5fd595f5f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0027.json",
+      "record_count": 9,
+      "sha256": "fe16dfeecf1eb6def33f4a8eb612465818c2468c0252b62558c5dd1b6c7f8c19"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0028.json",
+      "record_count": 9,
+      "sha256": "669e08b700f8fcc8834ebc3e962b4533b31250af1a30d044c5f49119a2913abf"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0029.json",
+      "record_count": 9,
+      "sha256": "d77853df2d230e352a18156f224af2f644d154b80699268d702fa64d1eb5a9cd"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0030.json",
+      "record_count": 9,
+      "sha256": "69d9d1dab91da49aacf05e5aa4be8d55809ca9fc068aa1bb464a363bc1739233"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0031.json",
+      "record_count": 9,
+      "sha256": "6559f11144be238342a758b0748427ed283e879ad38308483b454fbac06a1ff9"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0032.json",
+      "record_count": 9,
+      "sha256": "d75739aa1ee1d62abca2af0deb91b9ca798779e89d4abc0af9c2f2a3f277156e"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0033.json",
+      "record_count": 9,
+      "sha256": "4f87a35e91f8ac54d6495c709b08b529698ed5adb516d162a07f564278cc0a50"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0034.json",
+      "record_count": 9,
+      "sha256": "492914f609e121171134143070c814c15dd90548cc8a738787f01405e6d9cab6"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0035.json",
+      "record_count": 9,
+      "sha256": "05ed87b034a5328b883da9fa6f99db473f6d671b217d97e43242298cbc4e568d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0036.json",
+      "record_count": 9,
+      "sha256": "6352d1f895acd57e525c188111a6bc8ff2f879008281bf5821c4f8111109b401"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0037.json",
+      "record_count": 9,
+      "sha256": "f4732dc5149af0a5af0c75ca8267bf274a92d6f86772e42636c00010598284d6"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0038.json",
+      "record_count": 9,
+      "sha256": "16c89408c06e8d79c8ae9f141f1acf4bf75879910fde5735830597f6d100d6e6"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0039.json",
+      "record_count": 9,
+      "sha256": "5d9bc6726ea42c9a0d634f7b73e3472857d6a72fe2a4ad86767cb767de01782d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0040.json",
+      "record_count": 9,
+      "sha256": "f779d5dc4c093326c49306bcfc3a78f0d1a9fe0ba296c9e3feea7fe6f0ab6f4c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0041.json",
+      "record_count": 9,
+      "sha256": "4eb823b02f51e02debf5716091c50fe0428805e1fb7754500cdd1636c94e4d8f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0042.json",
+      "record_count": 9,
+      "sha256": "71efcc21396f781aeb159077861511958c98ea8c493dab6a166bf363e00c5418"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0043.json",
+      "record_count": 9,
+      "sha256": "27eb3af8eab2f8c0f8cab0567174ac1aa9f927e9c06ed31f821d3756d549dc87"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0044.json",
+      "record_count": 9,
+      "sha256": "e503c0339eefe4b4cdb39009ba5585069a5544efad66c05266fc240ee13d476b"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0045.json",
+      "record_count": 9,
+      "sha256": "8af548cb5dfe1ec289ae1fbaf2842e46bda218be1a84b18465eb2498ce4955a4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0046.json",
+      "record_count": 9,
+      "sha256": "8fa9ac403e2896c47b745ab47de3e6c2d509e4354fb48bbb8cb531dc56909bc0"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0047.json",
+      "record_count": 9,
+      "sha256": "35b99751845bece2dc7c2ed663afbc979c5aa8f41145723918a5b391443a5929"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0048.json",
+      "record_count": 9,
+      "sha256": "d73e523f6e5eb35554c1fdae4bae1d3f6dd0da46be9ee58de5d8268601e182c8"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0049.json",
+      "record_count": 9,
+      "sha256": "dbefae9a8a4df545418c484adaa57e2afd9a0d5b504e002fc1594ef8292002d4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0050.json",
+      "record_count": 9,
+      "sha256": "7d975abb23b03e95588debf371826fa46baad6d1f391aec9a55faa8f7bfe03f1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0051.json",
+      "record_count": 9,
+      "sha256": "f5b9640c8d38dfb9d3c34c6a1da1c63ccabef35077410c1b022018a098c59e67"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0052.json",
+      "record_count": 9,
+      "sha256": "c466341405e4b12698ae341d089e3c2ea3c0adfe514fe98d20735e5dc92e5ae1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0053.json",
+      "record_count": 9,
+      "sha256": "0bb784fd4ee23a32602d7399b558191164150962c5ef0358e99c3cfc9faa0793"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0054.json",
+      "record_count": 9,
+      "sha256": "cc47a37200b06a7259d41fb2b2f7f3a427ab47dba4a9aefc0ea410eaf28276bb"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0055.json",
+      "record_count": 9,
+      "sha256": "b64eb7337ec485965ed705b45d166f23438872843e1a995053f0a711f96723c7"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0056.json",
+      "record_count": 9,
+      "sha256": "cf707cb6f7094108c30ff84f8c6c64f50e7985cf0acbcc4a1b009f2a82713878"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0057.json",
+      "record_count": 9,
+      "sha256": "147e404077367267bcfdeb7b297958366362f5abf224e4e4e41eda6f113748d5"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0058.json",
+      "record_count": 9,
+      "sha256": "d56817b5490636f74460027fcf44831207801860acd83e6636ee378c7a78b726"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0059.json",
+      "record_count": 9,
+      "sha256": "b40e97f050a01cf7e9c86633eb0bf1f155d1cff560ae8eb702616938f399b5ce"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/benchmarks/scenarios/SCN-BENCH-0060.json",
+      "record_count": 9,
+      "sha256": "695c72779208ac16710ffed7115db298d0e028e64924659442c1c663f0a60553"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/demand/customer_order_lines.csv",
+      "record_count": 1000,
+      "sha256": "2a38a23f3eb49e63ac6a83b8806c0c670c4655c22b96f1d3d4199353f3831824"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/demand/customer_order_status_history.csv",
+      "record_count": 1000,
+      "sha256": "1e5918bd0c14e737bf60727fd8903bf12fe6c6dbb59f62067256aeb288bcdfc7"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/demand/customer_orders.csv",
+      "record_count": 1000,
+      "sha256": "42864e0558c0356214a092475bac6b003e0e88671f59e9d76b03adba152f6e57"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/demand/customer_sla_assignments.csv",
+      "record_count": 1000,
+      "sha256": "b5d84bc8dc0bd47ff8ba2662aba29dd8957044cc13dd00e2783131b84604ba63"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/demand/production_customer_allocations.csv",
+      "record_count": 1000,
+      "sha256": "cd1e8249b48bfc85227572e072a0eb379942be8189aea769f7a37d6347899515"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/demo-scenarios/DEMO-002.json",
+      "record_count": 2,
+      "sha256": "27773da1e4a3bad24b2a6ec1abdf30cf1ee859281f0d477cfbb5a8bcc75f6d4b"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/demo-scenarios/DEMO-003.json",
+      "record_count": 2,
+      "sha256": "c36f922b9631cc4863b99df2fc1ae0b11ae5cd888298c7af06a52d25b5e1fdd4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/demo-scenarios/DEMO-004.json",
+      "record_count": 2,
+      "sha256": "a21bdb6581762033a80e6bbbdd61887c7eb0d5b7b7db776a5c2a868d920a7b90"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/demo-scenarios/DEMO-005.json",
+      "record_count": 2,
+      "sha256": "e1880d1665d228a4387e634bf23e7881a0504deefee943874c2b224eae3f629d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/demo-scenarios/DEMO-006.json",
+      "record_count": 2,
+      "sha256": "099e7c9851037c8ef71982a49128edbd1c1f5f547a42aee31b8a0c00cb4312be"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/demo-scenarios/DEMO-007.json",
+      "record_count": 2,
+      "sha256": "57d0e88777ff05b5ecc451fbe8d6fc82aa8b869f3fd580175dd744dc76f70359"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/demo-scenarios/scenario_catalogue.csv",
+      "record_count": 6,
+      "sha256": "cd5c5ae5af7a0cb6908d89d21d6b721d4d05c469cdfa49cef4afe492608bdc37"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/disruptions/disruption_events.csv",
+      "record_count": 4,
+      "sha256": "61a58bcfbecee3eed4284c226d2675b9a2508bfde2c9354926337eb0d93cdd35"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/disruptions/disruption_scope_components.csv",
+      "record_count": 3,
+      "sha256": "3bbe8b2da4363719b7d486e69dff09c5ac05cde95a81318fc62345175b771871"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/disruptions/disruption_scope_purchase_orders.csv",
+      "record_count": 2,
+      "sha256": "74cdf5a1c9355a56c42bc885fb76f5776e37e2c70e98414a1ca0e90efac6477e"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/disruptions/disruption_status_history.csv",
+      "record_count": 8,
+      "sha256": "b54fb84f8ff29c0cab74e4b46dbdf0b5706af242f9b7a220ae64c750191269e1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/access_control_labels.csv",
+      "record_count": 175,
+      "sha256": "59be6e287e09c559e165bf26913094fc83f71d68284d576545f784441975364e"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/document_metadata.jsonl",
+      "record_count": 175,
+      "sha256": "7523e27a0a6aed546314dcb0d4a4c6ed7e70d651ea2a0c3d8c335b911c9c2cf8"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0002.json",
+      "record_count": 13,
+      "sha256": "c00d37beb1fcfedf7c5589ae3218d5e335c456410f0984d938de07434bb961bb"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0003.json",
+      "record_count": 13,
+      "sha256": "bc308c66b1c11ba2b911864a20fb237d4e6f009617a226df173fc888ed4cc944"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0004.json",
+      "record_count": 13,
+      "sha256": "762e8f64418718897f601161ed20fbefc2ae58ae444d8f17e7aaa67dedb2baf7"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0005.json",
+      "record_count": 13,
+      "sha256": "40ab386bebb4260aedd2a8d7fc6ae2cffd1707e6e93a14ca42031e8b21ab773d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0006.json",
+      "record_count": 13,
+      "sha256": "62a12fb2538eae25ccc69792732955884276276a2a7566f1937f9566efb9da51"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0007.json",
+      "record_count": 13,
+      "sha256": "2d506d2dce8837908dab2b5208e6241a8db8db43fdb9dbfc5763619483250632"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0008.json",
+      "record_count": 13,
+      "sha256": "6963f9b5c416d40e73dbdfc84f5ce84f4967804ddc9f6e1ddf027a610a95f9c6"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0009.json",
+      "record_count": 13,
+      "sha256": "b1ef101746008fb88c89c35975fca148573add2fea5b8a372a59bd88b2503310"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0010.json",
+      "record_count": 13,
+      "sha256": "16d7410581b9229aee0372dc82f3e302eb4f35fb1ce01ee049b591a37dff2187"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0011.json",
+      "record_count": 13,
+      "sha256": "09ab4e95b9d1bc47eac4e6cd0f6665aefe232c329ba5f1db379ac7744b398c74"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0012.json",
+      "record_count": 13,
+      "sha256": "03af39919d0d7240bf5a92fd2021b95ac12d15880b4af5c8db150261219d5246"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0013.json",
+      "record_count": 13,
+      "sha256": "8993b0703df8d6c70157ea655a7210586202b1a78be8cc1e27aacb01a9bbb569"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0014.json",
+      "record_count": 13,
+      "sha256": "888a13f495f4c89c40178cd5c2228e7f707bb59724376f08b67f040f4d04cfd4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0015.json",
+      "record_count": 13,
+      "sha256": "e8d84fcbfa195e84650735ec135238485c7756124f32d5436da2a63c46e714dc"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0016.json",
+      "record_count": 13,
+      "sha256": "f7d715a97ee0ec705a296722b3a2e9d90cd421d3a741d027e125ec762ead466e"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0017.json",
+      "record_count": 13,
+      "sha256": "a3d94fd95f7b0e89a1dc65e9f0babcf0213f9097a76c2137dfdbc8ecaef01f09"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0018.json",
+      "record_count": 13,
+      "sha256": "6c1bb6109c9aa9463a0a90a3706ea7fc934f36e0700c76fce28cdcc427e171c5"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0019.json",
+      "record_count": 13,
+      "sha256": "746120d69d0d0b441fadaa97612e4af2363d99644bb369a0e0b8770666bf4775"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0020.json",
+      "record_count": 13,
+      "sha256": "b8e99c2aacda41068fdb977e55859a1fc3c6bd7dedf6001c4e38a795b63f213c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0021.json",
+      "record_count": 13,
+      "sha256": "d82209a91e6a37fdd4556af54d392d3d630c639e776bbe2e8f62d2fcfbbfe22a"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0022.json",
+      "record_count": 13,
+      "sha256": "22e53c659a5314198f5d01c88e926b6109fe92358ce04e4017f8a8765c9ca188"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0023.json",
+      "record_count": 13,
+      "sha256": "7125e46432d05eaa69f19a78c33731c5890edcf15f641256c8169c1767ad6d99"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0024.json",
+      "record_count": 13,
+      "sha256": "99f51accac2dbeaa6913a0945408227ed3e3a0066f02dab08938a658497fc2eb"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0025.json",
+      "record_count": 13,
+      "sha256": "a2f8e570b872e586a79755bffd7cf10c651c76b730cc285f212808ea41e2ff2c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0026.json",
+      "record_count": 13,
+      "sha256": "6963a18d62a409922f08182bec1dafc801d033735f12abe5d462148b4479ef9e"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0027.json",
+      "record_count": 13,
+      "sha256": "d8ba2a823b09853bcfb9f546a1aaa0c9b34ca3fbc9e3292fbaae06e2f4ca7f67"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0028.json",
+      "record_count": 13,
+      "sha256": "463a8e24e61475953ee36fe10d4c15a4a74118ff72a2a01c9eb3ca1c9403d5f1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0029.json",
+      "record_count": 13,
+      "sha256": "8bfbcb0dc246413f98bb73c92e29f7f44be10850466b06d1110ae22d58bc17b1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0030.json",
+      "record_count": 13,
+      "sha256": "0c3fff9a1facbfed6f1e0c255df9f2c4cc2578350c3d60702d85193e0ab8fb00"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0031.json",
+      "record_count": 13,
+      "sha256": "157e052f11f1fefd59249d8092a2f2b656adc2ee2efbdd6dc6d93fdb8699e74b"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0032.json",
+      "record_count": 13,
+      "sha256": "737fe5c33f6a6e290f07dfd5672e6e1dc95cbce3c63b41337e5d04ea8e4385c5"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0033.json",
+      "record_count": 13,
+      "sha256": "3916b484cdc31e683d33fb57cd251dae0bf087360d1ad7ffc79bb41013a24b57"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0034.json",
+      "record_count": 13,
+      "sha256": "614bf53484605c2e5b3e353a1324e26ba120d98c96bb006dc288c8423333a432"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0035.json",
+      "record_count": 13,
+      "sha256": "70d28540a28dc3192be7a5e5b0493c9531409ad70b33b59de5b9425feeb7b924"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0036.json",
+      "record_count": 13,
+      "sha256": "fe76bba8827755f592ac0a1fa91f7f529663d61d709e20a5c3410fe49afb3441"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0037.json",
+      "record_count": 13,
+      "sha256": "3514e86061213eb37c5a9eba5181dda6e9970000a780d56dd8cf4381a165ca4c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0038.json",
+      "record_count": 13,
+      "sha256": "e2c3dc74f83acb513ed8bf1f71d6547bf58175b927c77c44b4490088fbe7fc5d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0039.json",
+      "record_count": 13,
+      "sha256": "8fa99915ffea50c26ed31c8549e2c33e5ded5355935bef9ed206ebc55d5c5c4a"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0040.json",
+      "record_count": 13,
+      "sha256": "f136e9dafe0081d8b0d41255638f53816674fac6f8d2f5b8000e49fbf3973ce2"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0041.json",
+      "record_count": 13,
+      "sha256": "0c8ad4c1cbbf9c68f318acbdd81bdbd2fec7f1a395efdcad97e09d8971243999"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0042.json",
+      "record_count": 13,
+      "sha256": "ab0dfc13cf6f6cb5d8983f100af7b6dc095d9e4a9ca616c1da927d841cc36495"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0043.json",
+      "record_count": 13,
+      "sha256": "125f7c3744b2ffc0a65220a96628d1e2e8ed62d8535217e82a0e0d2cf4ec4a3d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0044.json",
+      "record_count": 13,
+      "sha256": "531653fef52493eca841969f8a22b44c5b3d30f2f83ac655f384653a82ae1f48"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0045.json",
+      "record_count": 13,
+      "sha256": "8f11a595c964fc3c0c45c74c480207ac24232880bfbd821115b48636d7984c30"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0046.json",
+      "record_count": 13,
+      "sha256": "040aca38a6e2c5d89efa7cc577a19a77367edd134fbbb48913af9ab968696f76"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0047.json",
+      "record_count": 13,
+      "sha256": "9669258dc98c8a49347a3a2c0975a3f73015eb7470a6df8e2658c27215727582"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0048.json",
+      "record_count": 13,
+      "sha256": "d08d82f3b1664fda488ddf5a103db4037a883c25a6cc698a7c883fb7711c6aac"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0049.json",
+      "record_count": 13,
+      "sha256": "5a25d98d6ac85a99ab421107e6d7696f2ff55b51a41e61df3f0f27750e26d9f2"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0050.json",
+      "record_count": 13,
+      "sha256": "97240a3771e28f50cb55145b6c6a571814937e5301c9817afe3b6f090c944f63"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0051.json",
+      "record_count": 13,
+      "sha256": "6af134718d42458b837f680d5d31272c4052cebd0d83937d8fc02186f3983930"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0052.json",
+      "record_count": 13,
+      "sha256": "e8ba52d98a2972c721f4e903bd4825402609ade5f701e62ed28370a3890001ba"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0053.json",
+      "record_count": 13,
+      "sha256": "048864b639aaad5a139e1dba3146184ba5e6ddff31ab8f14a5866754631f63f5"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0054.json",
+      "record_count": 13,
+      "sha256": "40bc33fee172a5151509b9fec4ed0a22e84cc21502c6d519919d665d309a0c1a"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0055.json",
+      "record_count": 13,
+      "sha256": "4b42515eb1a2dafb89c10a3be01747a32bfdaa5cd4fcfa9af8185f838a2ac3e5"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0056.json",
+      "record_count": 13,
+      "sha256": "b3db2cedf0bbc68bc4273424bf0a2a6617c53a7a53121c499a9534cfe0d829cb"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0057.json",
+      "record_count": 13,
+      "sha256": "765258eda8e7dfdec2c9a70abc0c880c8baef94deb1ac0f07d7ee4ee9ba88e8f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0058.json",
+      "record_count": 13,
+      "sha256": "20f1325d56478d227b545b21fc976ebd2c402eb8c80dcdcd09cee233b0481b47"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0059.json",
+      "record_count": 13,
+      "sha256": "cd0bffff65d056b8f8bf4a6d73b0a2b86da455d7375046136e9b1e6d2a14ae2b"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0060.json",
+      "record_count": 13,
+      "sha256": "d42f9e48a0126ac5a9f6295fba535443c3d5a8734ec08c9a0b5a8909b022ee19"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0062.json",
+      "record_count": 13,
+      "sha256": "532b19b643d4f84aec035d09d2c779c7cb3638db7721b2dca3bb0398dd399c64"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0063.json",
+      "record_count": 13,
+      "sha256": "f0f2d9a3a40cf8d05d797b046348ca2aa659b6b7752a780d487718481606cf17"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0064.json",
+      "record_count": 13,
+      "sha256": "32b856c73700e2bfaa49a0669b5fdb4a00a7471f99b9c23ff96f7dd91a8b5dd3"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0065.json",
+      "record_count": 13,
+      "sha256": "aafc69e24476a0d2f3879b793f0254b2cee462dbf0900e8c2b39bde6e7cafe21"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0066.json",
+      "record_count": 13,
+      "sha256": "bae9c9a90c729dc36a3aab70f811c9c651e463a65e8abbc71ea12d3d9a72378f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0067.json",
+      "record_count": 13,
+      "sha256": "6844cdf27571f2e890a9c51596c723f740f1edb3ae9d33636713d11a37364de8"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0068.json",
+      "record_count": 13,
+      "sha256": "b54de5699e240cb080b62a24219d261e402ef4d0d64d6f7262caaf0ba7d477eb"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0069.json",
+      "record_count": 13,
+      "sha256": "4c982e5a3e099284cf01b156f4cfa779b4891f663c4d6795536453f06184a200"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0070.json",
+      "record_count": 13,
+      "sha256": "15e746e4d6d714dd3b1bce2abf66b3474ff9bc9af1691b6df01363ca36c1c9e7"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0071.json",
+      "record_count": 13,
+      "sha256": "95e2653abc9e9fe63eb8f03ceef4d6c3af68c9575c3b3a18c090010de092c4e2"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0072.json",
+      "record_count": 13,
+      "sha256": "a2c80d0b3e7c6eac6798db34a9b33c54dacf45123fa7e69fe9ec256badb981e1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0073.json",
+      "record_count": 13,
+      "sha256": "23b6c0ffffc7707a496f770929353164a1081dfe25b2e61082c43d1c2b6601a6"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0074.json",
+      "record_count": 13,
+      "sha256": "00d6f2b12ec5aa6d0991b45bb16355566f52cc81ed5b82137006b1199f921d47"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0075.json",
+      "record_count": 13,
+      "sha256": "8871e94fae044ba5a2621d963d66bbe4a0f258fd6252465feed3a4270111af58"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0076.json",
+      "record_count": 13,
+      "sha256": "dad060f4211884bef596734deb060326abf3df22d700a1e8d03c398320d57268"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0077.json",
+      "record_count": 13,
+      "sha256": "6dc3b63736be3e354ef863f50c6af91da369ff9883ff5d365617f8667225e37c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0078.json",
+      "record_count": 13,
+      "sha256": "f5b57a0c87df48c0725ddd1b98c5775be262454bbaeb6e2faffb488f047cceee"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0079.json",
+      "record_count": 13,
+      "sha256": "c33da44355a365edf5910079953b5a8ef65a66ff5f9d23bed318d57e28486360"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0080.json",
+      "record_count": 13,
+      "sha256": "ddb71b9e1a767156b09dcd8223fee16bec7dda16a24ffdd26cb7ea5f9bc80046"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0081.json",
+      "record_count": 13,
+      "sha256": "9a69bc98ca3affd5b7ab46d7036683771d5b52b46b04f0b8acc3d32f04fdd5fd"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0082.json",
+      "record_count": 13,
+      "sha256": "1d8c58c80eb2205125b5eab4fb8546df63264ecf09178acbbe7238b607eeef96"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0083.json",
+      "record_count": 13,
+      "sha256": "20fbf12177fe0de12d1b7849cb683b2e71cb164aa02f1cd2a42e99ba48a7d9ed"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0084.json",
+      "record_count": 13,
+      "sha256": "0e38b844fcd5c3781eed15bfd57344d7e02e470823ed5ff62788b67f6b8930bb"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0085.json",
+      "record_count": 13,
+      "sha256": "513d7c7db15fb125c96d3e841888a8fcda6c99bf25ee59a47cde9a92e3390ec2"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0086.json",
+      "record_count": 13,
+      "sha256": "186d1a4ea2c37c8a30d5e408fe6d552bef606d55ec0cb67c82569464606ce272"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0087.json",
+      "record_count": 13,
+      "sha256": "b6991cf95bd7787785d712b49ff3d483cc57b13aa8cbcc1e78c8fa52c0d3cce9"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0088.json",
+      "record_count": 13,
+      "sha256": "886a93c67c2dcf03bca6f4939d1d9bb6da2a22f28fe75e64f081ee2ba50e083c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0089.json",
+      "record_count": 13,
+      "sha256": "75783b56ac29972cdcca53a1366d54491cd23a79d0c5bcd8dd75c0d30f706022"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0090.json",
+      "record_count": 13,
+      "sha256": "d1010f938d88c0dde54722eaae9c686fea90e51ddcc8e1b5b8b844815a92e79c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0091.json",
+      "record_count": 13,
+      "sha256": "9b17f44cd07d3856826dc7d0f13a3a1b4515ad5f1dddf63b4883d17e759d6434"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0092.json",
+      "record_count": 13,
+      "sha256": "c1133002a0c11a916b0c3eed53b250e393261cd4f7ba50a6cab6636bebc52b20"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0093.json",
+      "record_count": 13,
+      "sha256": "ca65b8e74801bca0ccdfb89c6a713911c2b65a9331708e848b4af5a9bdc551ad"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0094.json",
+      "record_count": 13,
+      "sha256": "395483e6b98f49685577f86a88ae7236c7e776aad62537cd65e38011ca656233"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0095.json",
+      "record_count": 13,
+      "sha256": "dd9a51384631c7c2ac62586ca24dcd370c06df762315c3c2f54b4ab7729e5638"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0096.json",
+      "record_count": 13,
+      "sha256": "a72454f53375898998db27153bb6cc4d5160c2f81caa4bd324d8a327d443835a"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0097.json",
+      "record_count": 13,
+      "sha256": "ea22f75e64e5fa87b1f485259e33bd0ef907efd684b5f1a777629626343b51b2"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0098.json",
+      "record_count": 13,
+      "sha256": "4e63f1bf6b4da1b862aeb17724413cb2b83a4c905a3abff22a0cbc30af85b90b"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0099.json",
+      "record_count": 13,
+      "sha256": "eaabd6e0277375b52596a4f2e842567201637f39a12bf6df54a2a1c0685408aa"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0100.json",
+      "record_count": 13,
+      "sha256": "420f53f017fcfb13dabf3858b6aa498239251ed425002353d9970029becb41c9"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0101.json",
+      "record_count": 13,
+      "sha256": "ddb3b69873275925076c96e9a78f233dfc97b3fe58bcf6acb87fd7d73d60bed1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0102.json",
+      "record_count": 13,
+      "sha256": "81a453d09cffa8f6ba80b2d9e89278d743f2be24b7a2a9bc5846fba2a45de152"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0103.json",
+      "record_count": 13,
+      "sha256": "9f919f38e00ee9aedf5fb763e8da221ae8e599856dedd196925fad54e4adc9c4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0104.json",
+      "record_count": 13,
+      "sha256": "dc3c35bedc3c2b9040d5fce7e1b911dc74228d5893fb9ac43d10970859f09b60"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0105.json",
+      "record_count": 13,
+      "sha256": "d6493cd359c0998232bdd28ebc351f0f8017c4a95ecfd14044884c38866c8ce9"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0106.json",
+      "record_count": 13,
+      "sha256": "5c0943b44f2455b1a8bd14970f2777c98544a2468b703484d710d15f8a47de4a"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0107.json",
+      "record_count": 13,
+      "sha256": "3681f7be552e0406700a43f9d63b1ec3d884c010ab184165b02e279a520b18e5"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0108.json",
+      "record_count": 13,
+      "sha256": "6324b3a6376ca203f5b236f1d23ec30492975b950d5e7cb3d26703dd1b88b070"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0109.json",
+      "record_count": 13,
+      "sha256": "8b6d24c7ecf34acb7c926288eb5b03892011d12b5b2d8e01a45fd3dd7d65168b"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0110.json",
+      "record_count": 13,
+      "sha256": "a2335dacf379334b5bbaa7d0d78441aa1a8137106e2e849783c29f5f5312eea6"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0111.json",
+      "record_count": 13,
+      "sha256": "7bda2c485df16d0db776ca0f6e3d7606f7c24584dca0b7d5cdb07a62fbcf6cad"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0112.json",
+      "record_count": 13,
+      "sha256": "f76f26299c04aa626d426c05226b1b1900e17756b42701de3c12a01a8dc30df4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0113.json",
+      "record_count": 13,
+      "sha256": "2d72dfb93064c28e696260b30de0fcef34754f9c7d775c10526725988f473910"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0114.json",
+      "record_count": 13,
+      "sha256": "eedfd855a2b88e8f8899baddfeac58778e2a9d48c8b0054eaccb48bd46859e32"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0115.json",
+      "record_count": 13,
+      "sha256": "aaa1b6778a2c07f1ba13ec926b30e994da2ffd150b05f7b3d9bb7b4e9e8bb1b2"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0116.json",
+      "record_count": 13,
+      "sha256": "453ca9f146890a1c7498a968a5d0fa96a37c08ae93b5c553ec3a905663e822ae"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0117.json",
+      "record_count": 13,
+      "sha256": "919962f71eb24cb12cbc5511242fef26f4a72a03cfb817ef11f17ee4038cd19a"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0118.json",
+      "record_count": 13,
+      "sha256": "cff03e560a59b3ac56836506aad028be85f8c1338a0ac803c6c8244e6092747b"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0119.json",
+      "record_count": 13,
+      "sha256": "b885d2c022e3075337b996c438d934b3b9efb91f268fac9c6da1988c768bc62f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0120.json",
+      "record_count": 13,
+      "sha256": "528e33fc648856d7b5dede24f0f211c22703822c1d7b4d27a12e8d8ef30430cc"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0122.json",
+      "record_count": 13,
+      "sha256": "20d3177802745b66b9b239d4e6bccd7c2519c99eced0275b9e9866a31f7d9c8d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0123.json",
+      "record_count": 13,
+      "sha256": "a9bde8dd110c9b822869af544fffc0f69d731799475d23a985b4bf63d9ed36c1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0124.json",
+      "record_count": 13,
+      "sha256": "8750174423a2d2f2b17be26e694041a8c4cbbc5c6e5be4618d61d540bd9d0d4c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0125.json",
+      "record_count": 13,
+      "sha256": "2663452f860c8b8837249ccc71df76a3d6fbf3cf8803421c6a870293af723e1c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0126.json",
+      "record_count": 13,
+      "sha256": "0c7cdf2f5bbb2c777888b6e7f83cfd240e00b2e4d540c2d28041549ff3f5d151"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0127.json",
+      "record_count": 13,
+      "sha256": "84c1c19911a8047b69ff6f3260e94d6f2b728c5467e3bb8ff89a338f3af132a0"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0128.json",
+      "record_count": 13,
+      "sha256": "2c9f7d47672d907eca46e4c0357aeca6710be513c37f302156d97d0dfb5db732"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0129.json",
+      "record_count": 13,
+      "sha256": "6a83a0da855e6edf82e5c9f8b72d025b5ca47868990a51be661eff022c377c5a"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0130.json",
+      "record_count": 13,
+      "sha256": "5de5a47e47e4263cb9805bf0f8034c9670a90bee09b541d5b1d1fecfed5d1bea"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0131.json",
+      "record_count": 13,
+      "sha256": "74cba46850e33a91eb3eb32809400f037ae16f67acae5e196b6b8bc1a27d8ae0"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0132.json",
+      "record_count": 13,
+      "sha256": "6e8c652b5009db58df46d2a439f3a41de65d2bff3fee212724e65d123aa25cac"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0133.json",
+      "record_count": 13,
+      "sha256": "4915a01eded7ebede7bfa2d5fdd3c785ff55a5e9dbbf7208e6091e44665f88d1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0134.json",
+      "record_count": 13,
+      "sha256": "2d885b64c54bd9fccd583944455aadb481925bbe26067b526d26a2c21fb15680"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0135.json",
+      "record_count": 13,
+      "sha256": "c33fe529b46452361e6bd0285a217a3ca41dc07714c4b0695370c728b3fb93fc"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0136.json",
+      "record_count": 13,
+      "sha256": "302036246e56ebd5bb478b8107720b69274f35cbacf8225611ad43e22f75c34d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0137.json",
+      "record_count": 13,
+      "sha256": "ca15ba8079231bb9be3bb28f1483134f4b1818abf1b3b69b0270043d3f59ff53"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0138.json",
+      "record_count": 13,
+      "sha256": "44054dc2a6775a30ec139e36461f254a795c7a0b9df10794de80a5f7da512027"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0139.json",
+      "record_count": 13,
+      "sha256": "53a6c13e8271a6f33107ea9e823a779bd070268ef5ebad76fc164577ac02568c"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0140.json",
+      "record_count": 13,
+      "sha256": "9b0fa933a1ae2197bf6f34b387efcb0583deefe766f42501e2483046c4ec8f6f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0141.json",
+      "record_count": 13,
+      "sha256": "170023fd449a1c8f6ec9d98b924193bd8ccd712247af5f18adc9126e694ee35d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0142.json",
+      "record_count": 13,
+      "sha256": "6d6dd1a44196efdac1e080205f647df8bdba87c997495969a489b22258ac3403"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0143.json",
+      "record_count": 13,
+      "sha256": "330a327f978d4976ecf19533b9c20019eacc22cbd18c0ea6a1cabdedb8d0d3ea"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0144.json",
+      "record_count": 13,
+      "sha256": "b00b937d74a0f1aac12b7b82492bdbc2598d2b8934124c93f9b1f6732aa67d1d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0145.json",
+      "record_count": 13,
+      "sha256": "9b67e26329d2199957c3684f23b5341fa1746696bc5df544a7ccef38148f5aa4"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0146.json",
+      "record_count": 13,
+      "sha256": "950796eb9f6e1cd2b532525535cb988283aff969a1bbe731a69fe384a10f3f57"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0147.json",
+      "record_count": 13,
+      "sha256": "8e198a2214eeb407814a976bb94bea4dd65eab8b43fc42799eaafb2ce6fed13f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0148.json",
+      "record_count": 13,
+      "sha256": "d67305db4e98381568d8969ca7eab499a7a864021520d66dbc4a96a28611bf76"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0149.json",
+      "record_count": 13,
+      "sha256": "68ba269d820a08a2f5dfbd92c764001f5a91cac267b633d66f4b4b8212b248e1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0150.json",
+      "record_count": 13,
+      "sha256": "f5d968562f8e19fa841197bcfc73b9021182d6756ca7db0617f0c7b3be2dc65e"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0151.json",
+      "record_count": 13,
+      "sha256": "bfcb6ffbc5aaa93bf5280749eef371a52ba76d34e2aa8313e1e1c7ec299166da"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0152.json",
+      "record_count": 13,
+      "sha256": "92c6f767e4955c75691a13eda1156f3b09bff7b36139d138a0cc3987bb211400"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0153.json",
+      "record_count": 13,
+      "sha256": "a3d580e596f263755c27206af43082f465ba62613f72e337cbd8d5626964a85f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0154.json",
+      "record_count": 13,
+      "sha256": "5f43b34eee9ac7a24aeb83f63a8dca32e3930ef7d3d8bbab6b8deeb5e91b704b"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0155.json",
+      "record_count": 13,
+      "sha256": "15c2293b05a9d390a693585af11782c06d31a00571d30a37a03500ba3d4acda9"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0156.json",
+      "record_count": 13,
+      "sha256": "e0328a2ede7ccc63688f67df081c6eaa1dac8183c2ddacd42dd88c361703f658"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0157.json",
+      "record_count": 13,
+      "sha256": "b067d562a0536eefc402099e142715cf3a8a777e6d756088acd1a05f90001967"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0158.json",
+      "record_count": 13,
+      "sha256": "7fe92c2bb60fa299ecd5b3180ea06730de6143d348fb2b0d524314a7eb4f8680"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0159.json",
+      "record_count": 13,
+      "sha256": "d37b88689d268d996b2cc7bd3d8c81292221a79daada2bc47cd79eae23b2d9bb"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0160.json",
+      "record_count": 13,
+      "sha256": "d81264513cb0039d02f8bef30e277ea325a658cd63f90bb4851348ce1e5eb7e2"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0161.json",
+      "record_count": 13,
+      "sha256": "3460c750813d99a415c23f8f58e90744e3cfd41283aeac67b8161a1a74292a1f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0162.json",
+      "record_count": 13,
+      "sha256": "e4d27823e1647361111d26ad3673b31fb0e87402609135821ed5c4b95af99738"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0163.json",
+      "record_count": 13,
+      "sha256": "d84c4458f7c7368c3b33d1b917b72f48343308df44991f0e033cb1a7314ee535"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0164.json",
+      "record_count": 13,
+      "sha256": "7308a27567ba792e7193381c0d6dc2e9e8c4b8ac2b849984d3f8ff1d3a0704fe"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0165.json",
+      "record_count": 13,
+      "sha256": "e6dc8c7bbe011847e375590a1d89e0eaee263f96a77877a410f144278f1c8feb"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0166.json",
+      "record_count": 13,
+      "sha256": "304c9813bf2e2b44b710cefdf4406145b71d6a029461382de03487c94fba6b38"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0167.json",
+      "record_count": 13,
+      "sha256": "09a1940dda886bc6e94ed051a7a59a8db16f1cf0afe1acb7c106af114af054e2"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0168.json",
+      "record_count": 13,
+      "sha256": "e91df314454f7510cdf00654f5f7bd2397307094b83d7614f24f309e73057c32"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0169.json",
+      "record_count": 13,
+      "sha256": "4a2a005ba3838de17daaab405cfbdb27fbc03eb7df544be0dd87b7aa5a3fe4ea"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0170.json",
+      "record_count": 13,
+      "sha256": "66259d98aab7b61e1a66607a9bec127f3d79123e4b49c09fea5710fd21f5ef26"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0171.json",
+      "record_count": 13,
+      "sha256": "2014e2799c2ac70cd27c09dc3152d9a908637f6aae15fb08414a4c77662d607d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0172.json",
+      "record_count": 13,
+      "sha256": "0d39cb103350863ca58c2e7118f9f23daf50629973ce23f655ffdd3143dfc61a"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0173.json",
+      "record_count": 13,
+      "sha256": "0ca8ff2c8e6468b563d8bb81e061a992338b12c088b8458d4f6ca8f939a1084a"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0174.json",
+      "record_count": 13,
+      "sha256": "0da65a2154cddb059100931f3d8149477997d3c4e67a6c862d841e05a5fbfa13"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-0175.json",
+      "record_count": 13,
+      "sha256": "e59a5a6bf130173753f2460c8b5532d2c7fc7a15d8406a8fcff11a4196901c2f"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-GOLD-INCIDENT_REPORTS.json",
+      "record_count": 13,
+      "sha256": "444792a3d9656c7dc1ced3167337e33167ec5fa8e641b7a2ddd755f25dd63901"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-GOLD-PROCEDURES.json",
+      "record_count": 13,
+      "sha256": "bcd3f61e39efc8aa5a77427a417a7d84fc9facb381759da3afa164e8279868e7"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/documents/DOC-GOLD-SUPPLIER_NOTICES.json",
+      "record_count": 13,
+      "sha256": "ec7c37cf466049bc448fd3aeb91847b76329e89c500b231b75126ce81218d059"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/relevance_labels.json",
+      "record_count": 2,
+      "sha256": "0fa21f6d864d88ba3980ef66cbbd95fe8faa90247129212fdb8feb72057a3852"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/evidence/retrieval_queries.json",
+      "record_count": 2,
+      "sha256": "9b9c4b99c14d611f96aaca80bf0b5bc152badf30aa916c1f863e4a0a03f69358"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/candidate_interventions.json",
+      "record_count": 7,
+      "sha256": "0bbaab639e9f858839d8a121f33a86f764c9c07f4bae2faa0a69973bfc70f77d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/disruption_overlay.json",
+      "record_count": 11,
+      "sha256": "dbf66f70a384ad449bd779495a43c04b1c4864e90f851055b1f671bc615d4903"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/expected_candidate_results.json",
+      "record_count": 7,
+      "sha256": "0bbaab639e9f858839d8a121f33a86f764c9c07f4bae2faa0a69973bfc70f77d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/expected_causal_traces.json",
+      "record_count": 2,
+      "sha256": "e6a9847937859bb9d3f7d3fd1d02967c307f4058d0e740f4698243adaec40139"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/expected_recommendation.json",
+      "record_count": 4,
+      "sha256": "397889828f2e86f1a6ea943dc7e6c070ac04b22175c66d09764f5126f4d762ff"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/expected_timeline.json",
+      "record_count": 7,
+      "sha256": "a0720f385d240cb5a52347250e34dc32c4df0927dfd5da63a93e5f040d4f7368"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/manual_calculation.csv",
+      "record_count": 2,
+      "sha256": "0dd5bd93ef26b356ea573b1d9776cb8d0a4d072bfd46b99629d80a45304967b1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/review_signoff.md",
+      "record_count": 1,
+      "sha256": "761666bf57eaad223762624edbcd5fd1646017a43f61eb39c0e40a98a14b41f1"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/scenario.json",
+      "record_count": 24,
+      "sha256": "a6644c2a9e7ae862e9d6c696b8c2cd9314406439435330ef273b3de7f8353584"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/source_records/demand.json",
+      "record_count": 5,
+      "sha256": "8c650d80632142f6b0a97048dc7daa94e658692e21714a242552d6218b6d4baa"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/source_records/evidence.json",
+      "record_count": 5,
+      "sha256": "3c8d071d9fdfef291cd346d8bbc11e1d05d01e66d1ce02a5ff66f3a1a4da76ec"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/source_records/history.json",
+      "record_count": 5,
+      "sha256": "d46ad49910458c084a3b40e1782a513285533abfb5e91b28a590eb74b2a65eae"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/source_records/interventions.json",
+      "record_count": 5,
+      "sha256": "d19345aded617d2a161dcad7cd4649f489670bdaa1b40a2b9a812c2ddbb907e6"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/source_records/inventory.json",
+      "record_count": 9,
+      "sha256": "50944d81b1d43a8728bcbab406202c9f5b0421b33a6d931ea06d98090dc77e05"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/source_records/master.json",
+      "record_count": 13,
+      "sha256": "12676a7b8ceb5489bedcd620fa147f80ed68bfe1eaf24b1b65a0fb8cff5fa5ab"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/source_records/operations.json",
+      "record_count": 4,
+      "sha256": "ceb9ad9663a9c8815855ad79482a4f380e2ed3b958311b2330254201e0cd929a"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/source_records/production.json",
+      "record_count": 6,
+      "sha256": "291449578dd80b8736cad8d23d55dae3308c62db3d12627ec5e97c8b21207ec7"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/golden/state_at_as_of.json",
+      "record_count": 5,
+      "sha256": "1a88eabac7d2da798b9c20e067240bea8cfab410b57d4abc6c694aa0f98e6f05"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/history/business_events.csv",
+      "record_count": 3,
+      "sha256": "8d86b665ccee18d190c99194cb1139368457d26749a96cc3b9b3ea62568b57cb"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/history/entity_versions.csv",
+      "record_count": 32,
+      "sha256": "f196d3a0e6a2dd041979e1dcb81dc95ed6682f944ac460fdabc537472d4f4515"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/history/historical_inventory_checkpoints.csv",
+      "record_count": 10,
+      "sha256": "1ab05c6e50061af363dc478ab3498e7bd621a1b64edfddb8916f2a0c0aad4996"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/history/late_arriving_records.csv",
+      "record_count": 1,
+      "sha256": "a38dc05159421445ce4abc9c939a29236490895ff4c5c137c72d90aad8cd74c3"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/history/replay_expectations.json",
+      "record_count": 5,
+      "sha256": "b0321788cebe96da2e35d329ae9c32ff367fb0a2e9d9a01d77257df80cdbdbf2"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/interventions/alternate_supply_capabilities.csv",
+      "record_count": 1,
+      "sha256": "fffd4e882ca9b1805bd93328af59fb0b488c87bf9b89d3d862bd4069f10041ae"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/interventions/expedite_capabilities.csv",
+      "record_count": 1,
+      "sha256": "b1777e8bbd232170a0035fd585adc32ec25297c588b6ca3e9c02fe6ca7f0816d"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/interventions/intervention_cost_parameters.csv",
+      "record_count": 4,
+      "sha256": "99cc04ad1d0b29bc4363abba5b55a81c21c11c2f2960af736b11cf49f99b00d7"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/interventions/rescheduling_constraints.csv",
+      "record_count": 3,
+      "sha256": "973835ab29d1b915e235af82c44665dac3936ef30b6b951fc26340b61f3ab3ca"
+    },
+    {
+      "load_order": 5,
+      "path": "data/releases/v1.0.0/standard/interventions/transfer_capabilities.csv",
+      "record_count": 2,
+      "sha256": "e975bc9ed20d7e9392bc6c2127e348eabed45801bf7a6f78f3bd9ee58be960b4"
+    },
+    {
       "load_order": 3,
       "path": "data/releases/v1.0.0/standard/inventory/inventory_opening_balances.csv",
       "record_count": 240,
@@ -118,8 +2200,8 @@
     {
       "load_order": 5,
       "path": "data/releases/v1.0.0/standard/metadata/build_summary.json",
-      "record_count": 6,
-      "sha256": "8bf3ea339c0febaca851498d7f753f02e3cfe496adaf0906edc065e9faf69439"
+      "record_count": 14,
+      "sha256": "8cd8d84f7e362fd522f38b6aa2e70681631f61a04ac51c0d905e631ecc4bdf99"
     },
     {
       "load_order": 5,
@@ -221,6 +2303,6 @@
     "version": "1.0.0"
   },
   "seed": 260311,
-  "source_revision": "8ea99c4",
+  "source_revision": "f744252",
   "version": "1.0.0"
 }

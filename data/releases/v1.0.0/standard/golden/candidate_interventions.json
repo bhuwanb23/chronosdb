@@ -1,0 +1,386 @@
+[
+  {
+    "affected_customer_orders": [
+      "CO-0704",
+      "CO-0711"
+    ],
+    "affected_production_orders": [
+      "MO-0882",
+      "MO-0889"
+    ],
+    "candidate_id": "DO-NOTHING",
+    "causal_trace": [
+      "CT-GOLD-CO-0704",
+      "CT-GOLD-CO-0711"
+    ],
+    "customer_lines": [
+      {
+        "customer_order_id": "CO-0701",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0876",
+        "projected_delivery": "2026-11-15T00:00:00Z",
+        "promised_delivery": "2026-11-15T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0704",
+        "delay_hours": 288,
+        "late_quantity": 200,
+        "production_order_id": "MO-0882",
+        "projected_delivery": "2026-11-30T00:00:00Z",
+        "promised_delivery": "2026-11-18T00:00:00Z",
+        "revenue_at_risk_inr": "800000.00"
+      },
+      {
+        "customer_order_id": "CO-0711",
+        "delay_hours": 264,
+        "late_quantity": 200,
+        "production_order_id": "MO-0889",
+        "projected_delivery": "2026-12-02T00:00:00Z",
+        "promised_delivery": "2026-11-21T00:00:00Z",
+        "revenue_at_risk_inr": "800000.00"
+      }
+    ],
+    "evidence_references": [
+      "DOC-GOLD-SUPPLIER_NOTICES",
+      "DOC-GOLD-PROCEDURES",
+      "DOC-GOLD-INCIDENT_REPORTS"
+    ],
+    "feasibility_status": "FEASIBLE",
+    "intervention_cost": "0",
+    "maximum_delay": 288,
+    "rejection_reason": "",
+    "revenue_at_risk": "1600000.00",
+    "revenue_protected": "0",
+    "sla_breach_count": 2,
+    "total_delay": 110400
+  },
+  {
+    "affected_customer_orders": [
+      "CO-0711"
+    ],
+    "affected_production_orders": [
+      "MO-0889"
+    ],
+    "candidate_id": "INT-GOLD-A",
+    "causal_trace": [
+      "CT-GOLD-CO-0711"
+    ],
+    "customer_lines": [
+      {
+        "customer_order_id": "CO-0701",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0876",
+        "projected_delivery": "2026-11-15T00:00:00Z",
+        "promised_delivery": "2026-11-15T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0704",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0882",
+        "projected_delivery": "2026-11-18T00:00:00Z",
+        "promised_delivery": "2026-11-18T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0711",
+        "delay_hours": 264,
+        "late_quantity": 200,
+        "production_order_id": "MO-0889",
+        "projected_delivery": "2026-12-02T00:00:00Z",
+        "promised_delivery": "2026-11-21T00:00:00Z",
+        "revenue_at_risk_inr": "800000.00"
+      }
+    ],
+    "evidence_references": [
+      "DOC-GOLD-SUPPLIER_NOTICES",
+      "DOC-GOLD-PROCEDURES",
+      "DOC-GOLD-INCIDENT_REPORTS"
+    ],
+    "feasibility_status": "FEASIBLE",
+    "intervention_cost": "60000",
+    "maximum_delay": 264,
+    "rejection_reason": "",
+    "revenue_at_risk": "800000.00",
+    "revenue_protected": "800000.00",
+    "sla_breach_count": 1,
+    "total_delay": 52800
+  },
+  {
+    "affected_customer_orders": [
+      "CO-0704",
+      "CO-0711"
+    ],
+    "affected_production_orders": [
+      "MO-0882",
+      "MO-0889"
+    ],
+    "candidate_id": "INT-GOLD-B",
+    "causal_trace": [
+      "CT-GOLD-CO-0704",
+      "CT-GOLD-CO-0711"
+    ],
+    "customer_lines": [
+      {
+        "customer_order_id": "CO-0701",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0876",
+        "projected_delivery": "2026-11-15T00:00:00Z",
+        "promised_delivery": "2026-11-15T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0704",
+        "delay_hours": 24,
+        "late_quantity": 200,
+        "production_order_id": "MO-0882",
+        "projected_delivery": "2026-11-19T00:00:00Z",
+        "promised_delivery": "2026-11-18T00:00:00Z",
+        "revenue_at_risk_inr": "800000.00"
+      },
+      {
+        "customer_order_id": "CO-0711",
+        "delay_hours": 264,
+        "late_quantity": 200,
+        "production_order_id": "MO-0889",
+        "projected_delivery": "2026-12-02T00:00:00Z",
+        "promised_delivery": "2026-11-21T00:00:00Z",
+        "revenue_at_risk_inr": "800000.00"
+      }
+    ],
+    "evidence_references": [
+      "DOC-GOLD-SUPPLIER_NOTICES",
+      "DOC-GOLD-PROCEDURES",
+      "DOC-GOLD-INCIDENT_REPORTS"
+    ],
+    "feasibility_status": "FEASIBLE",
+    "intervention_cost": "72000",
+    "maximum_delay": 264,
+    "rejection_reason": "",
+    "revenue_at_risk": "1600000.00",
+    "revenue_protected": "0",
+    "sla_breach_count": 2,
+    "total_delay": 57600
+  },
+  {
+    "affected_customer_orders": [],
+    "affected_production_orders": [],
+    "candidate_id": "INT-GOLD-C",
+    "causal_trace": [],
+    "customer_lines": [
+      {
+        "customer_order_id": "CO-0701",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0876",
+        "projected_delivery": "2026-11-15T00:00:00Z",
+        "promised_delivery": "2026-11-15T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0704",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0882",
+        "projected_delivery": "2026-11-18T00:00:00Z",
+        "promised_delivery": "2026-11-18T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0711",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0889",
+        "projected_delivery": "2026-11-21T00:00:00Z",
+        "promised_delivery": "2026-11-21T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      }
+    ],
+    "evidence_references": [
+      "DOC-GOLD-SUPPLIER_NOTICES",
+      "DOC-GOLD-PROCEDURES",
+      "DOC-GOLD-INCIDENT_REPORTS"
+    ],
+    "feasibility_status": "FEASIBLE",
+    "intervention_cost": "132000",
+    "maximum_delay": 0,
+    "rejection_reason": "",
+    "revenue_at_risk": "0.00",
+    "revenue_protected": "1600000.00",
+    "sla_breach_count": 0,
+    "total_delay": 0
+  },
+  {
+    "affected_customer_orders": [
+      "CO-0704",
+      "CO-0711"
+    ],
+    "affected_production_orders": [
+      "MO-0882",
+      "MO-0889"
+    ],
+    "candidate_id": "INT-GOLD-EXPEDITE",
+    "causal_trace": [
+      "CT-GOLD-CO-0704",
+      "CT-GOLD-CO-0711"
+    ],
+    "customer_lines": [
+      {
+        "customer_order_id": "CO-0701",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0876",
+        "projected_delivery": "2026-11-15T00:00:00Z",
+        "promised_delivery": "2026-11-15T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0704",
+        "delay_hours": 288,
+        "late_quantity": 200,
+        "production_order_id": "MO-0882",
+        "projected_delivery": "2026-11-30T00:00:00Z",
+        "promised_delivery": "2026-11-18T00:00:00Z",
+        "revenue_at_risk_inr": "800000.00"
+      },
+      {
+        "customer_order_id": "CO-0711",
+        "delay_hours": 264,
+        "late_quantity": 200,
+        "production_order_id": "MO-0889",
+        "projected_delivery": "2026-12-02T00:00:00Z",
+        "promised_delivery": "2026-11-21T00:00:00Z",
+        "revenue_at_risk_inr": "800000.00"
+      }
+    ],
+    "evidence_references": [
+      "DOC-GOLD-SUPPLIER_NOTICES",
+      "DOC-GOLD-PROCEDURES",
+      "DOC-GOLD-INCIDENT_REPORTS"
+    ],
+    "feasibility_status": "INFEASIBLE",
+    "intervention_cost": "0",
+    "maximum_delay": 288,
+    "rejection_reason": "COMPLETE_SUPPLIER_OUTAGE",
+    "revenue_at_risk": "1600000.00",
+    "revenue_protected": "0",
+    "sla_breach_count": 2,
+    "total_delay": 110400
+  },
+  {
+    "affected_customer_orders": [
+      "CO-0711"
+    ],
+    "affected_production_orders": [
+      "MO-0889"
+    ],
+    "candidate_id": "INT-GOLD-RESCHEDULE",
+    "causal_trace": [
+      "CT-GOLD-CO-0711"
+    ],
+    "customer_lines": [
+      {
+        "customer_order_id": "CO-0701",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0876",
+        "projected_delivery": "2026-11-15T00:00:00Z",
+        "promised_delivery": "2026-11-15T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0704",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0882",
+        "projected_delivery": "2026-11-18T00:00:00Z",
+        "promised_delivery": "2026-11-18T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0711",
+        "delay_hours": 264,
+        "late_quantity": 200,
+        "production_order_id": "MO-0889",
+        "projected_delivery": "2026-12-02T00:00:00Z",
+        "promised_delivery": "2026-11-21T00:00:00Z",
+        "revenue_at_risk_inr": "800000.00"
+      }
+    ],
+    "evidence_references": [
+      "DOC-GOLD-SUPPLIER_NOTICES",
+      "DOC-GOLD-PROCEDURES",
+      "DOC-GOLD-INCIDENT_REPORTS"
+    ],
+    "feasibility_status": "FEASIBLE",
+    "intervention_cost": "60000",
+    "maximum_delay": 264,
+    "rejection_reason": "",
+    "revenue_at_risk": "800000.00",
+    "revenue_protected": "800000.00",
+    "sla_breach_count": 1,
+    "total_delay": 52800
+  },
+  {
+    "affected_customer_orders": [
+      "CO-0704",
+      "CO-0711"
+    ],
+    "affected_production_orders": [
+      "MO-0882",
+      "MO-0889"
+    ],
+    "candidate_id": "INT-GOLD-TRANSFER-500",
+    "causal_trace": [
+      "CT-GOLD-CO-0704",
+      "CT-GOLD-CO-0711"
+    ],
+    "customer_lines": [
+      {
+        "customer_order_id": "CO-0701",
+        "delay_hours": 0,
+        "late_quantity": 0,
+        "production_order_id": "MO-0876",
+        "projected_delivery": "2026-11-15T00:00:00Z",
+        "promised_delivery": "2026-11-15T00:00:00Z",
+        "revenue_at_risk_inr": "0.00"
+      },
+      {
+        "customer_order_id": "CO-0704",
+        "delay_hours": 288,
+        "late_quantity": 200,
+        "production_order_id": "MO-0882",
+        "projected_delivery": "2026-11-30T00:00:00Z",
+        "promised_delivery": "2026-11-18T00:00:00Z",
+        "revenue_at_risk_inr": "800000.00"
+      },
+      {
+        "customer_order_id": "CO-0711",
+        "delay_hours": 264,
+        "late_quantity": 200,
+        "production_order_id": "MO-0889",
+        "projected_delivery": "2026-12-02T00:00:00Z",
+        "promised_delivery": "2026-11-21T00:00:00Z",
+        "revenue_at_risk_inr": "800000.00"
+      }
+    ],
+    "evidence_references": [
+      "DOC-GOLD-SUPPLIER_NOTICES",
+      "DOC-GOLD-PROCEDURES",
+      "DOC-GOLD-INCIDENT_REPORTS"
+    ],
+    "feasibility_status": "INFEASIBLE",
+    "intervention_cost": "0",
+    "maximum_delay": 288,
+    "rejection_reason": "SOURCE_SAFETY_STOCK_VIOLATION",
+    "revenue_at_risk": "1600000.00",
+    "revenue_protected": "0",
+    "sla_breach_count": 2,
+    "total_delay": 110400
+  }
+]

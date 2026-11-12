@@ -1,4 +1,49 @@
 {
+  "benchmark_rows": {
+    "difficulty_labels": 60,
+    "expected": 60,
+    "scenarios": 60
+  },
+  "demand_rows": {
+    "allocations": 1000,
+    "lines": 1000,
+    "orders": 1000,
+    "sla_assignments": 1000,
+    "statuses": 1000
+  },
+  "disruption_rows": {
+    "events": 4,
+    "scope_components": 3,
+    "scope_purchase_orders": 2,
+    "status_history": 8
+  },
+  "evidence_rows": {
+    "access_labels": 175,
+    "documents": 175,
+    "metadata": 175,
+    "queries": 2,
+    "relevance": 2
+  },
+  "golden_rows": {
+    "candidate_interventions": 7,
+    "expected_candidate_results": 7,
+    "expected_causal_traces": 2,
+    "expected_timeline": 7,
+    "manual_calculation": 2
+  },
+  "history_rows": {
+    "business_events": 3,
+    "entity_versions": 32,
+    "historical_inventory_checkpoints": 10,
+    "late_arriving_records": 1
+  },
+  "intervention_rows": {
+    "alternates": 1,
+    "costs": 4,
+    "expedites": 1,
+    "rescheduling": 3,
+    "transfers": 2
+  },
   "inventory_rows": {
     "benchmark_snapshots": 10,
     "component_ids": 80,
@@ -40,5 +85,9 @@
     "status_history": 1174
   },
   "profile": "standard",
+  "supporting_demo_rows": {
+    "catalogue": 6,
+    "scenarios": 6
+  },
   "version": "1.0.0"
 }
