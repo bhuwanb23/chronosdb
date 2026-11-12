@@ -145,210 +145,210 @@
       "allocation_rank": "21",
       "customer_order_line_id": "COL-CO-000021-01",
       "id": "PCA-P4-000021",
-      "production_order_id": "MO-0876"
+      "production_order_id": "MO-P4-000006"
     },
     {
       "allocated_quantity": "175",
       "allocation_rank": "22",
       "customer_order_line_id": "COL-CO-000022-01",
       "id": "PCA-P4-000022",
-      "production_order_id": "MO-0882"
+      "production_order_id": "MO-0876"
     },
     {
       "allocated_quantity": "200",
       "allocation_rank": "23",
       "customer_order_line_id": "COL-CO-000023-01",
       "id": "PCA-P4-000023",
-      "production_order_id": "MO-0889"
+      "production_order_id": "MO-P4-000005"
     },
     {
       "allocated_quantity": "225",
       "allocation_rank": "24",
       "customer_order_line_id": "COL-CO-000024-01",
       "id": "PCA-P4-000024",
-      "production_order_id": "MO-P4-000004"
+      "production_order_id": "MO-P4-000006"
     },
     {
       "allocated_quantity": "50",
       "allocation_rank": "25",
       "customer_order_line_id": "COL-CO-000025-01",
       "id": "PCA-P4-000025",
-      "production_order_id": "MO-P4-000005"
+      "production_order_id": "MO-0876"
     },
     {
       "allocated_quantity": "75",
       "allocation_rank": "26",
       "customer_order_line_id": "COL-CO-000026-01",
       "id": "PCA-P4-000026",
-      "production_order_id": "MO-P4-000006"
+      "production_order_id": "MO-P4-000005"
     },
     {
       "allocated_quantity": "100",
       "allocation_rank": "27",
       "customer_order_line_id": "COL-CO-000027-01",
       "id": "PCA-P4-000027",
-      "production_order_id": "MO-P4-000007"
+      "production_order_id": "MO-P4-000006"
     },
     {
       "allocated_quantity": "125",
       "allocation_rank": "28",
       "customer_order_line_id": "COL-CO-000028-01",
       "id": "PCA-P4-000028",
-      "production_order_id": "MO-P4-000008"
+      "production_order_id": "MO-0876"
     },
     {
       "allocated_quantity": "150",
       "allocation_rank": "29",
       "customer_order_line_id": "COL-CO-000029-01",
       "id": "PCA-P4-000029",
-      "production_order_id": "MO-P4-000009"
+      "production_order_id": "MO-P4-000005"
     },
     {
       "allocated_quantity": "175",
       "allocation_rank": "30",
       "customer_order_line_id": "COL-CO-000030-01",
       "id": "PCA-P4-000030",
-      "production_order_id": "MO-P4-000010"
+      "production_order_id": "MO-P4-000006"
     },
     {
       "allocated_quantity": "200",
       "allocation_rank": "31",
       "customer_order_line_id": "COL-CO-000031-01",
       "id": "PCA-P4-000031",
-      "production_order_id": "MO-P4-000011"
+      "production_order_id": "MO-0876"
     },
     {
       "allocated_quantity": "225",
       "allocation_rank": "32",
       "customer_order_line_id": "COL-CO-000032-01",
       "id": "PCA-P4-000032",
-      "production_order_id": "MO-P4-000012"
+      "production_order_id": "MO-P4-000005"
     },
     {
       "allocated_quantity": "50",
       "allocation_rank": "33",
       "customer_order_line_id": "COL-CO-000033-01",
       "id": "PCA-P4-000033",
-      "production_order_id": "MO-P4-000013"
+      "production_order_id": "MO-P4-000006"
     },
     {
       "allocated_quantity": "75",
       "allocation_rank": "34",
       "customer_order_line_id": "COL-CO-000034-01",
       "id": "PCA-P4-000034",
-      "production_order_id": "MO-P4-000014"
+      "production_order_id": "MO-0876"
     },
     {
       "allocated_quantity": "100",
       "allocation_rank": "35",
       "customer_order_line_id": "COL-CO-000035-01",
       "id": "PCA-P4-000035",
-      "production_order_id": "MO-P4-000015"
+      "production_order_id": "MO-P4-000005"
     },
     {
       "allocated_quantity": "125",
       "allocation_rank": "36",
       "customer_order_line_id": "COL-CO-000036-01",
       "id": "PCA-P4-000036",
-      "production_order_id": "MO-P4-000016"
+      "production_order_id": "MO-P4-000006"
     },
     {
       "allocated_quantity": "150",
       "allocation_rank": "37",
       "customer_order_line_id": "COL-CO-000037-01",
       "id": "PCA-P4-000037",
-      "production_order_id": "MO-P4-000017"
+      "production_order_id": "MO-0876"
     },
     {
       "allocated_quantity": "175",
       "allocation_rank": "38",
       "customer_order_line_id": "COL-CO-000038-01",
       "id": "PCA-P4-000038",
-      "production_order_id": "MO-P4-000018"
+      "production_order_id": "MO-P4-000005"
     },
     {
       "allocated_quantity": "200",
       "allocation_rank": "39",
       "customer_order_line_id": "COL-CO-000039-01",
       "id": "PCA-P4-000039",
-      "production_order_id": "MO-P4-000019"
+      "production_order_id": "MO-P4-000006"
     },
     {
       "allocated_quantity": "225",
       "allocation_rank": "40",
       "customer_order_line_id": "COL-CO-000040-01",
       "id": "PCA-P4-000040",
-      "production_order_id": "MO-P4-000020"
+      "production_order_id": "MO-0876"
     },
     {
       "allocated_quantity": "50",
       "allocation_rank": "41",
       "customer_order_line_id": "COL-CO-000041-01",
       "id": "PCA-P4-000041",
-      "production_order_id": "MO-0876"
+      "production_order_id": "MO-P4-000005"
     },
     {
       "allocated_quantity": "75",
       "allocation_rank": "42",
       "customer_order_line_id": "COL-CO-000042-01",
       "id": "PCA-P4-000042",
-      "production_order_id": "MO-0882"
+      "production_order_id": "MO-P4-000006"
     },
     {
       "allocated_quantity": "100",
       "allocation_rank": "43",
       "customer_order_line_id": "COL-CO-000043-01",
       "id": "PCA-P4-000043",
-      "production_order_id": "MO-0889"
+      "production_order_id": "MO-0876"
     },
     {
       "allocated_quantity": "125",
       "allocation_rank": "44",
       "customer_order_line_id": "COL-CO-000044-01",
       "id": "PCA-P4-000044",
-      "production_order_id": "MO-P4-000004"
+      "production_order_id": "MO-P4-000005"
     },
     {
       "allocated_quantity": "150",
       "allocation_rank": "45",
       "customer_order_line_id": "COL-CO-000045-01",
       "id": "PCA-P4-000045",
-      "production_order_id": "MO-P4-000005"
+      "production_order_id": "MO-P4-000006"
     },
     {
       "allocated_quantity": "175",
       "allocation_rank": "46",
       "customer_order_line_id": "COL-CO-000046-01",
       "id": "PCA-P4-000046",
-      "production_order_id": "MO-P4-000006"
+      "production_order_id": "MO-0876"
     },
     {
       "allocated_quantity": "200",
       "allocation_rank": "47",
       "customer_order_line_id": "COL-CO-000047-01",
       "id": "PCA-P4-000047",
-      "production_order_id": "MO-P4-000007"
+      "production_order_id": "MO-P4-000005"
     },
     {
       "allocated_quantity": "225",
       "allocation_rank": "48",
       "customer_order_line_id": "COL-CO-000048-01",
       "id": "PCA-P4-000048",
-      "production_order_id": "MO-P4-000008"
+      "production_order_id": "MO-P4-000006"
     },
     {
       "allocated_quantity": "50",
       "allocation_rank": "49",
       "customer_order_line_id": "COL-CO-000049-01",
       "id": "PCA-P4-000049",
-      "production_order_id": "MO-P4-000009"
+      "production_order_id": "MO-0876"
     },
     {
       "allocated_quantity": "75",
       "allocation_rank": "50",
       "customer_order_line_id": "COL-CO-000050-01",
       "id": "PCA-P4-000050",
-      "production_order_id": "MO-P4-000010"
+      "production_order_id": "MO-P4-000005"
     }
   ],
   "lines": [
@@ -426,7 +426,7 @@
       "assigned_production_order_id": "MO-P4-000008",
       "customer_order_id": "CO-000008",
       "customer_order_line_id": "COL-CO-000008-01",
-      "fulfilled_quantity": "0",
+      "fulfilled_quantity": "112.5",
       "line_revenue": "1012500",
       "ordered_quantity": "225",
       "product_id": "PRD-P4-0002",
@@ -466,7 +466,7 @@
       "assigned_production_order_id": "MO-P4-000012",
       "customer_order_id": "CO-000012",
       "customer_order_line_id": "COL-CO-000012-01",
-      "fulfilled_quantity": "0",
+      "fulfilled_quantity": "125",
       "line_revenue": "531250",
       "ordered_quantity": "125",
       "product_id": "PRD-P4-0003",
@@ -496,7 +496,7 @@
       "assigned_production_order_id": "MO-P4-000015",
       "customer_order_id": "CO-000015",
       "customer_order_line_id": "COL-CO-000015-01",
-      "fulfilled_quantity": "0",
+      "fulfilled_quantity": "100",
       "line_revenue": "1000000",
       "ordered_quantity": "200",
       "product_id": "PRD-P4-0003",
@@ -553,7 +553,7 @@
       "unit_revenue": "5000"
     },
     {
-      "assigned_production_order_id": "MO-0876",
+      "assigned_production_order_id": "MO-P4-000006",
       "customer_order_id": "CO-000021",
       "customer_order_line_id": "COL-CO-000021-01",
       "fulfilled_quantity": "0",
@@ -563,27 +563,27 @@
       "unit_revenue": "4000"
     },
     {
-      "assigned_production_order_id": "MO-0882",
+      "assigned_production_order_id": "MO-0876",
       "customer_order_id": "CO-000022",
       "customer_order_line_id": "COL-CO-000022-01",
-      "fulfilled_quantity": "0",
+      "fulfilled_quantity": "87.5",
       "line_revenue": "743750",
       "ordered_quantity": "175",
       "product_id": "PRD-CONTROLLER-X",
       "unit_revenue": "4250"
     },
     {
-      "assigned_production_order_id": "MO-0889",
+      "assigned_production_order_id": "MO-P4-000005",
       "customer_order_id": "CO-000023",
       "customer_order_line_id": "COL-CO-000023-01",
-      "fulfilled_quantity": "0",
+      "fulfilled_quantity": "200",
       "line_revenue": "900000",
       "ordered_quantity": "200",
       "product_id": "PRD-P4-0002",
       "unit_revenue": "4500"
     },
     {
-      "assigned_production_order_id": "MO-P4-000004",
+      "assigned_production_order_id": "MO-P4-000006",
       "customer_order_id": "CO-000024",
       "customer_order_line_id": "COL-CO-000024-01",
       "fulfilled_quantity": "0",
@@ -593,7 +593,7 @@
       "unit_revenue": "4750"
     },
     {
-      "assigned_production_order_id": "MO-P4-000005",
+      "assigned_production_order_id": "MO-0876",
       "customer_order_id": "CO-000025",
       "customer_order_line_id": "COL-CO-000025-01",
       "fulfilled_quantity": "0",
@@ -603,7 +603,7 @@
       "unit_revenue": "5000"
     },
     {
-      "assigned_production_order_id": "MO-P4-000006",
+      "assigned_production_order_id": "MO-P4-000005",
       "customer_order_id": "CO-000026",
       "customer_order_line_id": "COL-CO-000026-01",
       "fulfilled_quantity": "0",
@@ -613,7 +613,7 @@
       "unit_revenue": "4000"
     },
     {
-      "assigned_production_order_id": "MO-P4-000007",
+      "assigned_production_order_id": "MO-P4-000006",
       "customer_order_id": "CO-000027",
       "customer_order_line_id": "COL-CO-000027-01",
       "fulfilled_quantity": "0",
@@ -623,7 +623,7 @@
       "unit_revenue": "4250"
     },
     {
-      "assigned_production_order_id": "MO-P4-000008",
+      "assigned_production_order_id": "MO-0876",
       "customer_order_id": "CO-000028",
       "customer_order_line_id": "COL-CO-000028-01",
       "fulfilled_quantity": "0",
@@ -633,17 +633,17 @@
       "unit_revenue": "4500"
     },
     {
-      "assigned_production_order_id": "MO-P4-000009",
+      "assigned_production_order_id": "MO-P4-000005",
       "customer_order_id": "CO-000029",
       "customer_order_line_id": "COL-CO-000029-01",
-      "fulfilled_quantity": "0",
+      "fulfilled_quantity": "75",
       "line_revenue": "712500",
       "ordered_quantity": "150",
       "product_id": "PRD-P4-0002",
       "unit_revenue": "4750"
     },
     {
-      "assigned_production_order_id": "MO-P4-000010",
+      "assigned_production_order_id": "MO-P4-000006",
       "customer_order_id": "CO-000030",
       "customer_order_line_id": "COL-CO-000030-01",
       "fulfilled_quantity": "0",
@@ -653,7 +653,7 @@
       "unit_revenue": "5000"
     },
     {
-      "assigned_production_order_id": "MO-P4-000011",
+      "assigned_production_order_id": "MO-0876",
       "customer_order_id": "CO-000031",
       "customer_order_line_id": "COL-CO-000031-01",
       "fulfilled_quantity": "0",
@@ -663,7 +663,7 @@
       "unit_revenue": "4000"
     },
     {
-      "assigned_production_order_id": "MO-P4-000012",
+      "assigned_production_order_id": "MO-P4-000005",
       "customer_order_id": "CO-000032",
       "customer_order_line_id": "COL-CO-000032-01",
       "fulfilled_quantity": "0",
@@ -673,7 +673,7 @@
       "unit_revenue": "4250"
     },
     {
-      "assigned_production_order_id": "MO-P4-000013",
+      "assigned_production_order_id": "MO-P4-000006",
       "customer_order_id": "CO-000033",
       "customer_order_line_id": "COL-CO-000033-01",
       "fulfilled_quantity": "0",
@@ -683,17 +683,17 @@
       "unit_revenue": "4500"
     },
     {
-      "assigned_production_order_id": "MO-P4-000014",
+      "assigned_production_order_id": "MO-0876",
       "customer_order_id": "CO-000034",
       "customer_order_line_id": "COL-CO-000034-01",
-      "fulfilled_quantity": "0",
+      "fulfilled_quantity": "75",
       "line_revenue": "356250",
       "ordered_quantity": "75",
       "product_id": "PRD-CONTROLLER-X",
       "unit_revenue": "4750"
     },
     {
-      "assigned_production_order_id": "MO-P4-000015",
+      "assigned_production_order_id": "MO-P4-000005",
       "customer_order_id": "CO-000035",
       "customer_order_line_id": "COL-CO-000035-01",
       "fulfilled_quantity": "0",
@@ -703,17 +703,17 @@
       "unit_revenue": "5000"
     },
     {
-      "assigned_production_order_id": "MO-P4-000016",
+      "assigned_production_order_id": "MO-P4-000006",
       "customer_order_id": "CO-000036",
       "customer_order_line_id": "COL-CO-000036-01",
-      "fulfilled_quantity": "0",
+      "fulfilled_quantity": "62.5",
       "line_revenue": "500000",
       "ordered_quantity": "125",
       "product_id": "PRD-P4-0003",
       "unit_revenue": "4000"
     },
     {
-      "assigned_production_order_id": "MO-P4-000017",
+      "assigned_production_order_id": "MO-0876",
       "customer_order_id": "CO-000037",
       "customer_order_line_id": "COL-CO-000037-01",
       "fulfilled_quantity": "0",
@@ -723,7 +723,7 @@
       "unit_revenue": "4250"
     },
     {
-      "assigned_production_order_id": "MO-P4-000018",
+      "assigned_production_order_id": "MO-P4-000005",
       "customer_order_id": "CO-000038",
       "customer_order_line_id": "COL-CO-000038-01",
       "fulfilled_quantity": "0",
@@ -733,7 +733,7 @@
       "unit_revenue": "4500"
     },
     {
-      "assigned_production_order_id": "MO-P4-000019",
+      "assigned_production_order_id": "MO-P4-000006",
       "customer_order_id": "CO-000039",
       "customer_order_line_id": "COL-CO-000039-01",
       "fulfilled_quantity": "0",
@@ -743,7 +743,7 @@
       "unit_revenue": "4750"
     },
     {
-      "assigned_production_order_id": "MO-P4-000020",
+      "assigned_production_order_id": "MO-0876",
       "customer_order_id": "CO-000040",
       "customer_order_line_id": "COL-CO-000040-01",
       "fulfilled_quantity": "0",
@@ -753,7 +753,7 @@
       "unit_revenue": "5000"
     },
     {
-      "assigned_production_order_id": "MO-0876",
+      "assigned_production_order_id": "MO-P4-000005",
       "customer_order_id": "CO-000041",
       "customer_order_line_id": "COL-CO-000041-01",
       "fulfilled_quantity": "0",
@@ -763,7 +763,7 @@
       "unit_revenue": "4000"
     },
     {
-      "assigned_production_order_id": "MO-0882",
+      "assigned_production_order_id": "MO-P4-000006",
       "customer_order_id": "CO-000042",
       "customer_order_line_id": "COL-CO-000042-01",
       "fulfilled_quantity": "0",
@@ -773,17 +773,17 @@
       "unit_revenue": "4250"
     },
     {
-      "assigned_production_order_id": "MO-0889",
+      "assigned_production_order_id": "MO-0876",
       "customer_order_id": "CO-000043",
       "customer_order_line_id": "COL-CO-000043-01",
-      "fulfilled_quantity": "0",
+      "fulfilled_quantity": "50",
       "line_revenue": "450000",
       "ordered_quantity": "100",
       "product_id": "PRD-CONTROLLER-X",
       "unit_revenue": "4500"
     },
     {
-      "assigned_production_order_id": "MO-P4-000004",
+      "assigned_production_order_id": "MO-P4-000005",
       "customer_order_id": "CO-000044",
       "customer_order_line_id": "COL-CO-000044-01",
       "fulfilled_quantity": "0",
@@ -793,17 +793,17 @@
       "unit_revenue": "4750"
     },
     {
-      "assigned_production_order_id": "MO-P4-000005",
+      "assigned_production_order_id": "MO-P4-000006",
       "customer_order_id": "CO-000045",
       "customer_order_line_id": "COL-CO-000045-01",
-      "fulfilled_quantity": "0",
+      "fulfilled_quantity": "150",
       "line_revenue": "750000",
       "ordered_quantity": "150",
       "product_id": "PRD-P4-0003",
       "unit_revenue": "5000"
     },
     {
-      "assigned_production_order_id": "MO-P4-000006",
+      "assigned_production_order_id": "MO-0876",
       "customer_order_id": "CO-000046",
       "customer_order_line_id": "COL-CO-000046-01",
       "fulfilled_quantity": "0",
@@ -813,7 +813,7 @@
       "unit_revenue": "4000"
     },
     {
-      "assigned_production_order_id": "MO-P4-000007",
+      "assigned_production_order_id": "MO-P4-000005",
       "customer_order_id": "CO-000047",
       "customer_order_line_id": "COL-CO-000047-01",
       "fulfilled_quantity": "0",
@@ -823,7 +823,7 @@
       "unit_revenue": "4250"
     },
     {
-      "assigned_production_order_id": "MO-P4-000008",
+      "assigned_production_order_id": "MO-P4-000006",
       "customer_order_id": "CO-000048",
       "customer_order_line_id": "COL-CO-000048-01",
       "fulfilled_quantity": "0",
@@ -833,7 +833,7 @@
       "unit_revenue": "4500"
     },
     {
-      "assigned_production_order_id": "MO-P4-000009",
+      "assigned_production_order_id": "MO-0876",
       "customer_order_id": "CO-000049",
       "customer_order_line_id": "COL-CO-000049-01",
       "fulfilled_quantity": "0",
@@ -843,10 +843,10 @@
       "unit_revenue": "4750"
     },
     {
-      "assigned_production_order_id": "MO-P4-000010",
+      "assigned_production_order_id": "MO-P4-000005",
       "customer_order_id": "CO-000050",
       "customer_order_line_id": "COL-CO-000050-01",
-      "fulfilled_quantity": "0",
+      "fulfilled_quantity": "37.5",
       "line_revenue": "375000",
       "ordered_quantity": "75",
       "product_id": "PRD-P4-0002",
@@ -932,7 +932,7 @@
       "priority": "MEDIUM",
       "promised_delivery_time": "2026-07-17T02:30:00Z",
       "sla_class": "STANDARD",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     },
     {
       "currency": "INR",
@@ -972,7 +972,7 @@
       "priority": "LOW",
       "promised_delivery_time": "2026-08-18T02:30:00Z",
       "sla_class": "STANDARD",
-      "status": "OPEN"
+      "status": "FULFILLED"
     },
     {
       "currency": "INR",
@@ -1002,7 +1002,7 @@
       "priority": "LOW",
       "promised_delivery_time": "2026-08-28T02:30:00Z",
       "sla_class": "STANDARD",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     },
     {
       "currency": "INR",
@@ -1072,7 +1072,7 @@
       "priority": "HIGH",
       "promised_delivery_time": "2026-10-23T02:30:00Z",
       "sla_class": "STANDARD",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     },
     {
       "currency": "INR",
@@ -1082,7 +1082,7 @@
       "priority": "MEDIUM",
       "promised_delivery_time": "2026-10-31T02:30:00Z",
       "sla_class": "STANDARD",
-      "status": "OPEN"
+      "status": "FULFILLED"
     },
     {
       "currency": "INR",
@@ -1142,7 +1142,7 @@
       "priority": "MEDIUM",
       "promised_delivery_time": "2026-06-07T02:30:00Z",
       "sla_class": "STANDARD",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     },
     {
       "currency": "INR",
@@ -1192,7 +1192,7 @@
       "priority": "HIGH",
       "promised_delivery_time": "2026-07-17T02:30:00Z",
       "sla_class": "STANDARD",
-      "status": "OPEN"
+      "status": "FULFILLED"
     },
     {
       "currency": "INR",
@@ -1212,7 +1212,7 @@
       "priority": "LOW",
       "promised_delivery_time": "2026-08-02T02:30:00Z",
       "sla_class": "STANDARD",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     },
     {
       "currency": "INR",
@@ -1282,7 +1282,7 @@
       "priority": "HIGH",
       "promised_delivery_time": "2026-09-13T02:30:00Z",
       "sla_class": "STANDARD",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     },
     {
       "currency": "INR",
@@ -1302,7 +1302,7 @@
       "priority": "LOW",
       "promised_delivery_time": "2026-09-29T02:30:00Z",
       "sla_class": "STANDARD",
-      "status": "OPEN"
+      "status": "FULFILLED"
     },
     {
       "currency": "INR",
@@ -1352,7 +1352,7 @@
       "priority": "MEDIUM",
       "promised_delivery_time": "2026-11-08T02:30:00Z",
       "sla_class": "STANDARD",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     }
   ],
   "sla_assignments": [
@@ -1363,6 +1363,7 @@
       "projected_delivery_time": "2026-11-15T00:00:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "200",
+      "projection_context": "INTERVENTION_PROTECTED",
       "promised_delivery_time": "2026-11-15T00:00:00Z",
       "revenue_at_risk": "0",
       "sla_class": "GOLD",
@@ -1375,6 +1376,7 @@
       "projected_delivery_time": "2026-11-30T00:00:00Z",
       "projected_late_quantity": "200",
       "projected_on_time_quantity": "0",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-11-18T00:00:00Z",
       "revenue_at_risk": "800000",
       "sla_class": "GOLD",
@@ -1387,6 +1389,7 @@
       "projected_delivery_time": "2026-12-02T00:00:00Z",
       "projected_late_quantity": "200",
       "projected_on_time_quantity": "0",
+      "projection_context": "RESCHEDULING_HARM",
       "promised_delivery_time": "2026-11-21T00:00:00Z",
       "revenue_at_risk": "800000",
       "sla_class": "GOLD",
@@ -1399,6 +1402,7 @@
       "projected_delivery_time": "2026-06-15T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "125",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-06-15T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1411,6 +1415,7 @@
       "projected_delivery_time": "2026-06-23T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "150",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-06-23T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1423,6 +1428,7 @@
       "projected_delivery_time": "2026-07-01T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "175",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-07-01T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1435,6 +1441,7 @@
       "projected_delivery_time": "2026-07-09T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "200",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-07-09T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1447,6 +1454,7 @@
       "projected_delivery_time": "2026-07-17T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "225",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-07-17T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1459,6 +1467,7 @@
       "projected_delivery_time": "2026-07-25T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "50",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-07-25T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1471,6 +1480,7 @@
       "projected_delivery_time": "2026-08-02T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "75",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-08-02T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1483,6 +1493,7 @@
       "projected_delivery_time": "2026-08-10T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "100",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-08-10T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1495,6 +1506,7 @@
       "projected_delivery_time": "2026-08-18T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "125",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-08-18T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1507,6 +1519,7 @@
       "projected_delivery_time": "2026-08-26T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "150",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-08-26T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1519,6 +1532,7 @@
       "projected_delivery_time": "2026-09-03T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "175",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-09-03T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1531,6 +1545,7 @@
       "projected_delivery_time": "2026-08-28T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "200",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-08-28T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1543,6 +1558,7 @@
       "projected_delivery_time": "2026-09-05T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "225",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-09-05T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1555,6 +1571,7 @@
       "projected_delivery_time": "2026-09-13T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "50",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-09-13T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1567,6 +1584,7 @@
       "projected_delivery_time": "2026-09-21T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "75",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-09-21T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1579,6 +1597,7 @@
       "projected_delivery_time": "2026-09-29T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "100",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-09-29T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1591,6 +1610,7 @@
       "projected_delivery_time": "2026-10-07T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "125",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-10-07T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1603,6 +1623,7 @@
       "projected_delivery_time": "2026-10-15T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "150",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-10-15T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1615,6 +1636,7 @@
       "projected_delivery_time": "2026-10-23T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "175",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-10-23T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1627,6 +1649,7 @@
       "projected_delivery_time": "2026-10-31T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "200",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-10-31T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1639,6 +1662,7 @@
       "projected_delivery_time": "2026-11-08T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "225",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-11-08T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1651,6 +1675,7 @@
       "projected_delivery_time": "2026-11-16T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "50",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-11-16T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1663,6 +1688,7 @@
       "projected_delivery_time": "2026-11-24T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "75",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-11-24T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1675,6 +1701,7 @@
       "projected_delivery_time": "2026-06-05T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "100",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-06-05T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1687,6 +1714,7 @@
       "projected_delivery_time": "2026-06-13T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "125",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-06-13T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1699,6 +1727,7 @@
       "projected_delivery_time": "2026-06-07T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "150",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-06-07T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1711,6 +1740,7 @@
       "projected_delivery_time": "2026-06-15T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "175",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-06-15T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1723,6 +1753,7 @@
       "projected_delivery_time": "2026-06-23T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "200",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-06-23T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1735,6 +1766,7 @@
       "projected_delivery_time": "2026-07-01T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "225",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-07-01T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1747,6 +1779,7 @@
       "projected_delivery_time": "2026-07-09T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "50",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-07-09T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1759,6 +1792,7 @@
       "projected_delivery_time": "2026-07-17T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "75",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-07-17T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1771,6 +1805,7 @@
       "projected_delivery_time": "2026-07-25T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "100",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-07-25T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1783,6 +1818,7 @@
       "projected_delivery_time": "2026-08-02T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "125",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-08-02T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1795,6 +1831,7 @@
       "projected_delivery_time": "2026-08-10T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "150",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-08-10T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1807,6 +1844,7 @@
       "projected_delivery_time": "2026-08-18T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "175",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-08-18T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1819,6 +1857,7 @@
       "projected_delivery_time": "2026-08-26T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "200",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-08-26T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1831,6 +1870,7 @@
       "projected_delivery_time": "2026-09-03T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "225",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-09-03T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1843,6 +1883,7 @@
       "projected_delivery_time": "2026-09-11T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "50",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-09-11T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1855,6 +1896,7 @@
       "projected_delivery_time": "2026-09-19T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "75",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-09-19T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1867,6 +1909,7 @@
       "projected_delivery_time": "2026-09-13T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "100",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-09-13T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1879,6 +1922,7 @@
       "projected_delivery_time": "2026-09-21T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "125",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-09-21T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1891,6 +1935,7 @@
       "projected_delivery_time": "2026-09-29T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "150",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-09-29T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1903,6 +1948,7 @@
       "projected_delivery_time": "2026-10-07T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "175",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-10-07T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1915,6 +1961,7 @@
       "projected_delivery_time": "2026-10-15T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "200",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-10-15T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1927,6 +1974,7 @@
       "projected_delivery_time": "2026-10-23T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "225",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-10-23T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1939,6 +1987,7 @@
       "projected_delivery_time": "2026-10-31T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "50",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-10-31T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -1951,6 +2000,7 @@
       "projected_delivery_time": "2026-11-08T02:30:00Z",
       "projected_late_quantity": "0",
       "projected_on_time_quantity": "75",
+      "projection_context": "BASELINE",
       "promised_delivery_time": "2026-11-08T02:30:00Z",
       "revenue_at_risk": "0",
       "sla_class": "STANDARD",
@@ -2012,7 +2062,7 @@
       "event_time": "2026-07-03T02:30:00Z",
       "id": "COSTATUS-000008-01",
       "recorded_at": "2026-07-03T02:30:00Z",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     },
     {
       "customer_order_id": "CO-000009",
@@ -2040,7 +2090,7 @@
       "event_time": "2026-07-31T02:30:00Z",
       "id": "COSTATUS-000012-01",
       "recorded_at": "2026-07-31T02:30:00Z",
-      "status": "OPEN"
+      "status": "FULFILLED"
     },
     {
       "customer_order_id": "CO-000013",
@@ -2061,7 +2111,7 @@
       "event_time": "2026-08-21T02:30:00Z",
       "id": "COSTATUS-000015-01",
       "recorded_at": "2026-08-21T02:30:00Z",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     },
     {
       "customer_order_id": "CO-000016",
@@ -2110,14 +2160,14 @@
       "event_time": "2026-10-09T02:30:00Z",
       "id": "COSTATUS-000022-01",
       "recorded_at": "2026-10-09T02:30:00Z",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     },
     {
       "customer_order_id": "CO-000023",
       "event_time": "2026-10-16T02:30:00Z",
       "id": "COSTATUS-000023-01",
       "recorded_at": "2026-10-16T02:30:00Z",
-      "status": "OPEN"
+      "status": "FULFILLED"
     },
     {
       "customer_order_id": "CO-000024",
@@ -2159,7 +2209,7 @@
       "event_time": "2026-05-31T02:30:00Z",
       "id": "COSTATUS-000029-01",
       "recorded_at": "2026-05-31T02:30:00Z",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     },
     {
       "customer_order_id": "CO-000030",
@@ -2194,7 +2244,7 @@
       "event_time": "2026-07-05T02:30:00Z",
       "id": "COSTATUS-000034-01",
       "recorded_at": "2026-07-05T02:30:00Z",
-      "status": "OPEN"
+      "status": "FULFILLED"
     },
     {
       "customer_order_id": "CO-000035",
@@ -2208,7 +2258,7 @@
       "event_time": "2026-07-19T02:30:00Z",
       "id": "COSTATUS-000036-01",
       "recorded_at": "2026-07-19T02:30:00Z",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     },
     {
       "customer_order_id": "CO-000037",
@@ -2257,7 +2307,7 @@
       "event_time": "2026-09-06T02:30:00Z",
       "id": "COSTATUS-000043-01",
       "recorded_at": "2026-09-06T02:30:00Z",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     },
     {
       "customer_order_id": "CO-000044",
@@ -2271,7 +2321,7 @@
       "event_time": "2026-09-20T02:30:00Z",
       "id": "COSTATUS-000045-01",
       "recorded_at": "2026-09-20T02:30:00Z",
-      "status": "OPEN"
+      "status": "FULFILLED"
     },
     {
       "customer_order_id": "CO-000046",
@@ -2306,7 +2356,7 @@
       "event_time": "2026-10-25T02:30:00Z",
       "id": "COSTATUS-000050-01",
       "recorded_at": "2026-10-25T02:30:00Z",
-      "status": "OPEN"
+      "status": "PARTIALLY_FULFILLED"
     }
   ]
 }

@@ -1,13 +1,39 @@
 {
   "expected": {
+    "audit_requirement": "CAUSAL_TRACE_REQUIRED",
     "auditability": "REQUIRED",
-    "outcome": "TRANSFER_ONLY_BUDGET_COMPLIANT"
+    "candidate_ids": [
+      "INT-GOLD-A",
+      "INT-GOLD-B",
+      "INT-GOLD-C"
+    ],
+    "evidence_query_id": "RET-GOLD-TRANSFER",
+    "outcome": "TRANSFER_ONLY_BUDGET_COMPLIANT",
+    "source_record_ids": [
+      "PO-2208",
+      "CMP-MCU-42",
+      "MO-0876",
+      "CO-0701"
+    ]
   },
   "scenario": {
+    "audit_requirement": "CAUSAL_TRACE_REQUIRED",
+    "candidate_ids": [
+      "INT-GOLD-A",
+      "INT-GOLD-B",
+      "INT-GOLD-C"
+    ],
     "description": "Hybrid prevents all breaches but exceeds budget.",
+    "evidence_query_id": "RET-GOLD-TRANSFER",
     "expected_outcome": "TRANSFER_ONLY_BUDGET_COMPLIANT",
     "scenario_id": "DEMO-004",
     "scenario_type": "BUDGET_TRADE_OFF",
+    "source_record_ids": [
+      "PO-2208",
+      "CMP-MCU-42",
+      "MO-0876",
+      "CO-0701"
+    ],
     "status": "FROZEN",
     "test_specific_branch": "false"
   }

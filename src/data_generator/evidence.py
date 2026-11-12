@@ -74,7 +74,10 @@ def build_evidence(
                 "DEMO_INTERNAL"
                 if is_special
                 else "UNAUTHORIZED"
-                if source_row["confidentiality_class"] == "UNAUTHORIZED"
+                if (
+                    source_row["confidentiality_class"] == "UNAUTHORIZED"
+                    or index == 1
+                )
                 else "DEMO_INTERNAL"
             ),
             "supplier_id": supplier_id,

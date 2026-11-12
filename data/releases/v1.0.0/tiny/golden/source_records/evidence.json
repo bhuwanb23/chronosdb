@@ -1,14 +1,14 @@
 {
   "access_labels": [
     {
-      "access_class": "UNAUTHORIZED",
+      "access_class": "DEMO_INTERNAL",
       "document_id": "DOC-GOLD-SUPPLIER_NOTICES",
-      "normal_demo_user_allowed": false
+      "normal_demo_user_allowed": true
     },
     {
-      "access_class": "DEMO_INTERNAL",
+      "access_class": "UNAUTHORIZED",
       "document_id": "DOC-0002",
-      "normal_demo_user_allowed": true
+      "normal_demo_user_allowed": false
     },
     {
       "access_class": "DEMO_INTERNAL",
@@ -878,7 +878,7 @@
   ],
   "documents": [
     {
-      "access_class": "UNAUTHORIZED",
+      "access_class": "DEMO_INTERNAL",
       "component_ids": "CMP-MCU-42",
       "document_id": "DOC-GOLD-SUPPLIER_NOTICES",
       "document_type": "supplier_notices",
@@ -893,7 +893,7 @@
       "version": "1.0"
     },
     {
-      "access_class": "DEMO_INTERNAL",
+      "access_class": "UNAUTHORIZED",
       "component_ids": "CMP-P4-0002",
       "document_id": "DOC-0002",
       "document_type": "supplier_notices",
@@ -3505,7 +3505,7 @@
   ],
   "metadata": [
     {
-      "access_class": "UNAUTHORIZED",
+      "access_class": "DEMO_INTERNAL",
       "component_ids": "CMP-MCU-42",
       "document_id": "DOC-GOLD-SUPPLIER_NOTICES",
       "document_type": "supplier_notices",
@@ -3518,7 +3518,7 @@
       "version": "1.0"
     },
     {
-      "access_class": "DEMO_INTERNAL",
+      "access_class": "UNAUTHORIZED",
       "component_ids": "CMP-P4-0002",
       "document_id": "DOC-0002",
       "document_type": "supplier_notices",
@@ -5801,7 +5801,7 @@
   "relevance": [
     {
       "filtered_document_ids": [
-        "DOC-GOLD-SUPPLIER_NOTICES",
+        "DOC-0002",
         "DOC-0019",
         "DOC-0038"
       ],
@@ -5814,7 +5814,7 @@
     },
     {
       "filtered_document_ids": [
-        "DOC-GOLD-SUPPLIER_NOTICES",
+        "DOC-0002",
         "DOC-0019",
         "DOC-0038"
       ],

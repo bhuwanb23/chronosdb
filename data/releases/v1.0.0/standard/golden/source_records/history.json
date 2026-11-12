@@ -473,5 +473,31 @@
       "customer_orders": 1000,
       "purchase_orders": 600
     }
-  }
+  },
+  "replay_input_events": [
+    {
+      "component_id": "CMP-MCU-42",
+      "event_time": "2026-11-11T02:30:00Z",
+      "id": "REPLAY-OPENING-CHENNAI-MCU",
+      "quantity": "700",
+      "transaction_type": "OPENING_BALANCE",
+      "warehouse_id": "WH-CHENNAI"
+    },
+    {
+      "component_id": "CMP-MCU-42",
+      "event_time": "2026-11-12T02:30:00Z",
+      "id": "REPLAY-DISPATCH-CHENNAI-MCU",
+      "quantity": "400",
+      "transaction_type": "TRANSFER_DISPATCH",
+      "warehouse_id": "WH-CHENNAI"
+    },
+    {
+      "component_id": "CMP-MCU-42",
+      "event_time": "2026-11-14T02:30:00Z",
+      "id": "REPLAY-RECEIPT-PUNE-MCU",
+      "quantity": "400",
+      "transaction_type": "TRANSFER_RECEIPT",
+      "warehouse_id": "WH-PUNE"
+    }
+  ]
 }

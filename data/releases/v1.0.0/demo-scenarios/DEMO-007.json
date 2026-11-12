@@ -1,13 +1,39 @@
 {
   "expected": {
+    "audit_requirement": "CAUSAL_TRACE_REQUIRED",
     "auditability": "REQUIRED",
-    "outcome": "HISTORICAL_REPLAY_DIFFERENCE_VISIBLE"
+    "candidate_ids": [
+      "INT-GOLD-A",
+      "INT-GOLD-B",
+      "INT-GOLD-C"
+    ],
+    "evidence_query_id": "RET-GOLD-TRANSFER",
+    "outcome": "HISTORICAL_REPLAY_DIFFERENCE_VISIBLE",
+    "source_record_ids": [
+      "PO-2208",
+      "CMP-MCU-42",
+      "MO-0876",
+      "CO-0701"
+    ]
   },
   "scenario": {
+    "audit_requirement": "CAUSAL_TRACE_REQUIRED",
+    "candidate_ids": [
+      "INT-GOLD-A",
+      "INT-GOLD-B",
+      "INT-GOLD-C"
+    ],
     "description": "Late correction changes only the later scenario state.",
+    "evidence_query_id": "RET-GOLD-TRANSFER",
     "expected_outcome": "HISTORICAL_REPLAY_DIFFERENCE_VISIBLE",
     "scenario_id": "DEMO-007",
     "scenario_type": "HISTORICAL_REPLAY",
+    "source_record_ids": [
+      "PO-2208",
+      "CMP-MCU-42",
+      "MO-0876",
+      "CO-0701"
+    ],
     "status": "FROZEN",
     "test_specific_branch": "false"
   }

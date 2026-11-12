@@ -1,13 +1,39 @@
 {
   "expected": {
+    "audit_requirement": "CAUSAL_TRACE_REQUIRED",
     "auditability": "REQUIRED",
-    "outcome": "NO_FEASIBLE_INTERVENTION"
+    "candidate_ids": [
+      "INT-GOLD-A",
+      "INT-GOLD-B",
+      "INT-GOLD-C"
+    ],
+    "evidence_query_id": "RET-GOLD-TRANSFER",
+    "outcome": "NO_FEASIBLE_INTERVENTION",
+    "source_record_ids": [
+      "PO-2208",
+      "CMP-MCU-42",
+      "MO-0876",
+      "CO-0701"
+    ]
   },
   "scenario": {
+    "audit_requirement": "CAUSAL_TRACE_REQUIRED",
+    "candidate_ids": [
+      "INT-GOLD-A",
+      "INT-GOLD-B",
+      "INT-GOLD-C"
+    ],
     "description": "No transferable stock, alternate supplier, or expedition path.",
+    "evidence_query_id": "RET-GOLD-TRANSFER",
     "expected_outcome": "NO_FEASIBLE_INTERVENTION",
     "scenario_id": "DEMO-003",
     "scenario_type": "NO_FEASIBLE_RECOVERY",
+    "source_record_ids": [
+      "PO-2208",
+      "CMP-MCU-42",
+      "MO-0876",
+      "CO-0701"
+    ],
     "status": "FROZEN",
     "test_specific_branch": "false"
   }

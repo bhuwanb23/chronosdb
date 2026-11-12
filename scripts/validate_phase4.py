@@ -303,9 +303,16 @@ def validate_profile(root: Path, profile_name: str) -> dict[str, Any]:
     )
     validate_interventions_release(release["interventions"])
     validate_evidence_release(release["evidence"])
-    validate_golden_release(release["golden"])
+    validate_golden_release(release["golden"], release["evidence"])
     validate_supporting_demos_release(release["demos"])
-    validate_benchmark_release(release["benchmarks"])
+    validate_benchmark_release(
+        release["benchmarks"],
+        release["master"],
+        release["operations"]["purchase_orders"],
+        release["demand"],
+        release["history"],
+        release["evidence"],
+    )
     return {
         "profile": profile.profile,
         "version": profile.version,

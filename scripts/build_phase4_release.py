@@ -101,11 +101,18 @@ def main() -> None:
         interventions,
         evidence,
     )
-    validate_golden_release(golden)
+    validate_golden_release(golden, evidence)
     demos = build_supporting_demos(profile)
     validate_supporting_demos_release(demos)
     benchmarks = build_benchmarks(profile)
-    validate_benchmark_release(benchmarks)
+    validate_benchmark_release(
+        benchmarks,
+        master,
+        procurement["purchase_orders"],
+        demand,
+        history,
+        evidence,
+    )
     output = release_root(profile)
     write_release_json(output / "metadata" / "release_profile.json", profile_payload(profile))
     write_release_json(

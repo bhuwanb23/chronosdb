@@ -1,13 +1,39 @@
 {
   "expected": {
+    "audit_requirement": "CAUSAL_TRACE_REQUIRED",
     "auditability": "REQUIRED",
-    "outcome": "MONITOR_NO_INTERVENTION"
+    "candidate_ids": [
+      "INT-GOLD-A",
+      "INT-GOLD-B",
+      "INT-GOLD-C"
+    ],
+    "evidence_query_id": "RET-GOLD-TRANSFER",
+    "outcome": "MONITOR_NO_INTERVENTION",
+    "source_record_ids": [
+      "PO-2208",
+      "CMP-MCU-42",
+      "MO-0876",
+      "CO-0701"
+    ]
   },
   "scenario": {
+    "audit_requirement": "CAUSAL_TRACE_REQUIRED",
+    "candidate_ids": [
+      "INT-GOLD-A",
+      "INT-GOLD-B",
+      "INT-GOLD-C"
+    ],
     "description": "Supply disruption detected; projected inventory covers all demand.",
+    "evidence_query_id": "RET-GOLD-TRANSFER",
     "expected_outcome": "MONITOR_NO_INTERVENTION",
     "scenario_id": "DEMO-002",
     "scenario_type": "NO_IMPACT_OUTAGE",
+    "source_record_ids": [
+      "PO-2208",
+      "CMP-MCU-42",
+      "MO-0876",
+      "CO-0701"
+    ],
     "status": "FROZEN",
     "test_specific_branch": "false"
   }

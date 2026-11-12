@@ -695,7 +695,10 @@ def validate_evidence_release(evidence: dict[str, Any]) -> None:
         raise Phase4ValidationError("evidence lacks prompt-injection coverage")
 
 
-def validate_golden_release(golden: dict[str, Any]) -> None:
+def validate_golden_release(
+    golden: dict[str, Any],
+    evidence: dict[str, Any] | None = None,
+) -> None:
     """Validate the independently frozen golden headline and timeline."""
     candidates = {
         row["candidate_id"]: row for row in golden["expected_candidate_results"]
@@ -728,6 +731,14 @@ def validate_golden_release(golden: dict[str, Any]) -> None:
         not row.get("event_time") for row in golden["expected_timeline"]
     ):
         raise Phase4ValidationError("golden timeline is incomplete")
+    issued = sum(
+        Decimal(str(row["quantity"]))
+        for row in golden["expected_timeline"]
+        if row["event_type"] == "BATCH_MATERIAL_ISSUE"
+        and row.get("production_order_id") == "MO-0876"
+    )
+    if issued != Decimal("400"):
+        raise Phase4ValidationError("golden material issue total mismatch")
     if golden["state_at_as_of"]["transferable_quantity"] != "400":
         raise Phase4ValidationError("golden state transfer quantity mismatch")
     checks = golden.get("source_derived_checks", {})
@@ -737,6 +748,13 @@ def validate_golden_release(golden: dict[str, Any]) -> None:
         raise Phase4ValidationError("golden demand breach source check mismatch")
     if checks.get("hybrid_intervention_cost") != "132000":
         raise Phase4ValidationError("golden intervention source check mismatch")
+    if evidence is not None:
+        evidence_ids = {row["document_id"] for row in evidence["documents"]}
+        for candidate in golden["expected_candidate_results"]:
+            if not set(candidate["evidence_references"]) <= evidence_ids:
+                raise Phase4ValidationError(
+                    f"golden evidence reference mismatch: {candidate['candidate_id']}"
+                )
 
 
 def validate_supporting_demos_release(demos: dict[str, list[dict[str, Any]]]) -> None:
@@ -766,7 +784,14 @@ def validate_supporting_demos_release(demos: dict[str, list[dict[str, Any]]]) ->
         raise Phase4ValidationError("supporting demo lacks cross-layer references")
 
 
-def validate_benchmark_release(benchmarks: dict[str, Any]) -> None:
+def validate_benchmark_release(
+    benchmarks: dict[str, Any],
+    master: dict[str, list[dict[str, Any]]] | None = None,
+    purchase_orders: list[dict[str, Any]] | None = None,
+    demand: dict[str, list[dict[str, Any]]] | None = None,
+    history: dict[str, Any] | None = None,
+    evidence: dict[str, Any] | None = None,
+) -> None:
     """Validate the frozen 60-case catalogue, partitions, and balance rules."""
     scenarios = benchmarks["scenarios"]
     expected = benchmarks["expected"]
@@ -804,7 +829,9 @@ def validate_benchmark_release(benchmarks: dict[str, Any]) -> None:
             "evidence_query_id",
         ):
             if not scenario.get(field):
-                raise Phase4ValidationError(f"benchmark reference missing: {scenario['scenario_id']}")
+                raise Phase4ValidationError(
+                    f"benchmark reference missing: {scenario['scenario_id']}"
+                )
     expected_counts = {
         "FULL_SUPPLIER_OUTAGE": 18,
         "PARTIAL_SUPPLIER_OUTAGE": 8,
@@ -852,3 +879,34 @@ def validate_benchmark_release(benchmarks: dict[str, Any]) -> None:
         raise Phase4ValidationError("benchmark test set lacks temporal reconstruction")
     if sum(row["has_misleading_evidence"] for row in test_scenarios) < 5:
         raise Phase4ValidationError("benchmark test set lacks misleading evidence")
+    if sum(
+        row["category"] == "INSUFFICIENT_CRITICAL_DATA" for row in test_scenarios
+    ) < 3 or sum(
+        row["category"] == "TIE_OR_PARETO_EQUIVALENT" for row in test_scenarios
+    ) < 3:
+        raise Phase4ValidationError("benchmark test set lacks adversarial balance")
+    if any(value is None for value in (master, purchase_orders, demand, history, evidence)):
+        return
+    assert master is not None
+    assert purchase_orders is not None
+    assert demand is not None
+    assert history is not None
+    assert evidence is not None
+    supplier_ids = _ids(master["suppliers"])
+    component_ids = _ids(master["components"])
+    purchase_order_ids = _ids(purchase_orders)
+    customer_order_ids = {row["customer_order_id"] for row in demand["orders"]}
+    evidence_query_ids = {row["query_id"] for row in evidence["queries"]}
+    for scenario in scenarios:
+        if (
+            scenario["reference_supplier_id"] not in supplier_ids
+            or scenario["reference_component_id"] not in component_ids
+            or scenario["reference_purchase_order_id"] not in purchase_order_ids
+            or scenario["reference_customer_order_id"] not in customer_order_ids
+            or scenario["evidence_query_id"] not in evidence_query_ids
+        ):
+            raise Phase4ValidationError(
+                f"benchmark cross-layer reference mismatch: {scenario['scenario_id']}"
+            )
+    if not history["replay_input_events"]:
+        raise Phase4ValidationError("benchmark history references are unavailable")
