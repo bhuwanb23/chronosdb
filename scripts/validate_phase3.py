@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -15,6 +16,19 @@ from ground_truth.oracle import calculate_golden
 
 def _json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _validate_manifest(root: Path, manifest_path: Path) -> None:
+    manifest = _json(manifest_path)
+    for entry in manifest["files"]:
+        path = root / Path(entry["path"])
+        if not path.exists():
+            raise ValueError(f"manifest file missing: {path}")
+        actual_hash = hashlib.sha256(path.read_bytes()).hexdigest()
+        if actual_hash != entry["sha256"]:
+            raise ValueError(f"manifest hash mismatch: {path}")
+        if path.suffix == ".csv" and len(read_csv_rows(path)) != entry["record_count"]:
+            raise ValueError(f"manifest record count mismatch: {path}")
 
 
 def main() -> None:
@@ -41,6 +55,7 @@ def main() -> None:
         name: read_csv_rows(operation_dir / f"{name}.csv") for name in operational_names
     }
     validate_operational(master, operational)
+    _validate_manifest(root, operation_dir / "manifest.json")
     history_dir = root / "data" / "generated" / "history" / args.scale
     history_names = (
         "entity_versions",
@@ -74,7 +89,7 @@ def main() -> None:
     for delay in history["supplier_delay_history"]:
         if delay["event_time"] < order_times[delay["purchase_order_id"]]:
             raise ValueError(f"supplier delay precedes purchase order: {delay['id']}")
-    scenario_dir = root / "data" / "generated" / "scenarios"
+    scenario_dir = root / "data" / "generated" / "scenarios" / args.scale
     scenarios = {
         "scenario_definitions": _json(scenario_dir / "scenario_definitions.json"),
         "scenario_constraints": _json(scenario_dir / "scenario_constraints.json"),
@@ -85,7 +100,9 @@ def main() -> None:
     validate_scenarios(scenarios)
     documents = [
         json.loads(line)
-        for line in (root / "data" / "generated" / "documents" / "documents.jsonl").read_text(
+        for line in (
+            root / "data" / "generated" / "documents" / args.scale / "documents.jsonl"
+        ).read_text(
             encoding="utf-8"
         ).splitlines()
     ]
@@ -93,10 +110,21 @@ def main() -> None:
     metadata = [
         json.loads(line)
         for line in (
-            root / "data" / "generated" / "documents" / "document_metadata.jsonl"
+            root / "data"
+            / "generated"
+            / "documents"
+            / args.scale
+            / "document_metadata.jsonl"
         ).read_text(encoding="utf-8").splitlines()
     ]
-    relevance = _json(root / "data" / "generated" / "documents" / "retrieval_relevance.json")
+    relevance = _json(
+        root
+        / "data"
+        / "generated"
+        / "documents"
+        / args.scale
+        / "retrieval_relevance.json"
+    )
     document_ids = {row["document_id"] for row in documents}
     if {row["document_id"] for row in metadata} != document_ids or len(relevance) != len(documents):
         raise ValueError("evidence metadata/relevance join mismatch")

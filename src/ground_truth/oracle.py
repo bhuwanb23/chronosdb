@@ -66,9 +66,13 @@ def golden_scenario() -> dict[str, Any]:
 
 
 def _line_result(
-    order: dict[str, Any], delivery: str, late_quantity: int, delay_days: int
+    order: dict[str, Any],
+    delivery: str,
+    late_quantity: int,
+    delay_days: int,
+    unit_revenue_inr: str,
 ) -> dict[str, Any]:
-    revenue = Decimal("800000.00") if late_quantity else Decimal("0.00")
+    revenue = Decimal(str(late_quantity)) * Decimal(unit_revenue_inr)
     return {
         "customer_order_id": order["customer_order_id"],
         "production_order_id": order["production_order_id"],
@@ -132,24 +136,24 @@ def calculate_golden() -> dict[str, Any]:
     intermediate = _validate_golden_state(scenario)
     orders = scenario["orders"]
     baseline_lines = [
-        _line_result(order, promised, 0, 0)
+        _line_result(order, promised, 0, 0, scenario["unit_revenue_inr"])
         for order in orders
         for promised in [order["promised_delivery"]]
     ]
     do_nothing_lines = [
-        _line_result(orders[0], "2026-11-15T00:00:00Z", 0, 0),
-        _line_result(orders[1], "2026-11-30T00:00:00Z", 200, 12),
-        _line_result(orders[2], "2026-12-02T00:00:00Z", 200, 11),
+        _line_result(orders[0], "2026-11-15T00:00:00Z", 0, 0, scenario["unit_revenue_inr"]),
+        _line_result(orders[1], "2026-11-30T00:00:00Z", 200, 12, scenario["unit_revenue_inr"]),
+        _line_result(orders[2], "2026-12-02T00:00:00Z", 200, 11, scenario["unit_revenue_inr"]),
     ]
     one_order_late = [
-        _line_result(orders[0], "2026-11-15T00:00:00Z", 0, 0),
-        _line_result(orders[1], "2026-11-18T00:00:00Z", 0, 0),
-        _line_result(orders[2], "2026-12-02T00:00:00Z", 200, 11),
+        _line_result(orders[0], "2026-11-15T00:00:00Z", 0, 0, scenario["unit_revenue_inr"]),
+        _line_result(orders[1], "2026-11-18T00:00:00Z", 0, 0, scenario["unit_revenue_inr"]),
+        _line_result(orders[2], "2026-12-02T00:00:00Z", 200, 11, scenario["unit_revenue_inr"]),
     ]
     alternate_lines = [
-        _line_result(orders[0], "2026-11-15T00:00:00Z", 0, 0),
-        _line_result(orders[1], "2026-11-19T00:00:00Z", 200, 1),
-        _line_result(orders[2], "2026-12-02T00:00:00Z", 200, 11),
+        _line_result(orders[0], "2026-11-15T00:00:00Z", 0, 0, scenario["unit_revenue_inr"]),
+        _line_result(orders[1], "2026-11-19T00:00:00Z", 200, 1, scenario["unit_revenue_inr"]),
+        _line_result(orders[2], "2026-12-02T00:00:00Z", 200, 11, scenario["unit_revenue_inr"]),
     ]
     do_nothing_reference = sum(
         (Decimal(line["revenue_at_risk_inr"]) for line in do_nothing_lines),
@@ -167,9 +171,9 @@ def calculate_golden() -> dict[str, Any]:
         "INT-GOLD-C": _outcome(
             "INT-GOLD-C",
             [
-                _line_result(orders[0], "2026-11-15T00:00:00Z", 0, 0),
-                _line_result(orders[1], "2026-11-18T00:00:00Z", 0, 0),
-                _line_result(orders[2], "2026-11-21T00:00:00Z", 0, 0),
+                _line_result(orders[0], "2026-11-15T00:00:00Z", 0, 0, scenario["unit_revenue_inr"]),
+                _line_result(orders[1], "2026-11-18T00:00:00Z", 0, 0, scenario["unit_revenue_inr"]),
+                _line_result(orders[2], "2026-11-21T00:00:00Z", 0, 0, scenario["unit_revenue_inr"]),
             ],
             Decimal("132000"),
             do_nothing_reference,

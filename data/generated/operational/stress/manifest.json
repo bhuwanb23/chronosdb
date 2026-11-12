@@ -29,12 +29,12 @@
     {
       "path": "data/generated/operational/stress/purchase_orders.csv",
       "record_count": 12000,
-      "sha256": "7f718dd2278fefd6197e49eb478d255927df28d928f50054e9e43805ff5eba45"
+      "sha256": "332f209e71a654288c6e69ccd666787bd99ba09dfd474bc468fccdcf015b53d8"
     },
     {
       "path": "data/generated/operational/stress/inventory_transactions.csv",
-      "record_count": 23570,
-      "sha256": "3c1c141537ac38ec880168fe62b6f06bbc5e21973210b7e29fad9284f54348cd"
+      "record_count": 23154,
+      "sha256": "e7da8bccc4652b75de403f6eee0d7f2e39ffbfbf192640cdbcef0cb125e85bd7"
     },
     {
       "path": "data/generated/operational/stress/inventory_snapshots.csv",
@@ -49,7 +49,7 @@
     {
       "path": "data/generated/history/stress/status_events.csv",
       "record_count": 28000,
-      "sha256": "dfec011bc8a8a9000a75bd9912bb83ff9f8c85de34b02894eaf57e55a29f8845"
+      "sha256": "239188f9d02575ad2a8b25b7490a43458cf689518e331fb749e410fafa58d6bc"
     },
     {
       "path": "data/generated/history/stress/daily_inventory_snapshots.csv",

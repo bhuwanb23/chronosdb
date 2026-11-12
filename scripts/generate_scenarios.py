@@ -28,7 +28,7 @@ def main() -> None:
     validate_master(master)
     scenarios = generate_scenarios(config, master)
     validate_scenarios(scenarios)
-    scenario_dir = args.root / "data" / "generated" / "scenarios"
+    scenario_dir = args.root / "data" / "generated" / "scenarios" / args.scale
     for name, rows in scenarios.items():
         if name in {"scenario_definitions", "scenario_constraints"}:
             write_json(scenario_dir / f"{name}.json", rows)
@@ -36,7 +36,7 @@ def main() -> None:
             write_csv_rows(scenario_dir / f"{name}.csv", rows)
     documents, relevance = generate_documents(config, master)
     validate_documents(documents)
-    document_dir = args.root / "data" / "generated" / "documents"
+    document_dir = args.root / "data" / "generated" / "documents" / args.scale
     document_dir.mkdir(parents=True, exist_ok=True)
     metadata = [{key: value for key, value in row.items() if key != "text"} for row in documents]
     (document_dir / "document_metadata.jsonl").write_text(

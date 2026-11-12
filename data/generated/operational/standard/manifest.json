@@ -33,13 +33,13 @@
     },
     {
       "path": "data/generated/operational/standard/inventory_transactions.csv",
-      "record_count": 1072,
-      "sha256": "43c3cba765cc4fe06e16334517fd48fff74d4285ab31652678656fed20144322"
+      "record_count": 1057,
+      "sha256": "9c89f8e78d2b5e248fcb5944fc3f4088a575f875d76f519560a9670b5fde017c"
     },
     {
       "path": "data/generated/operational/standard/inventory_snapshots.csv",
       "record_count": 43440,
-      "sha256": "bf9eb7f69d46f27fde082a94a35ebf1876bf842fb479517508781f47ffcba0b6"
+      "sha256": "5e4b64ee1f99d74e2e3aac3143cfbe6ebde0d2f643092840610398a56eece177"
     },
     {
       "path": "data/generated/history/standard/entity_versions.csv",
@@ -54,7 +54,7 @@
     {
       "path": "data/generated/history/standard/daily_inventory_snapshots.csv",
       "record_count": 43440,
-      "sha256": "bf9eb7f69d46f27fde082a94a35ebf1876bf842fb479517508781f47ffcba0b6"
+      "sha256": "5e4b64ee1f99d74e2e3aac3143cfbe6ebde0d2f643092840610398a56eece177"
     },
     {
       "path": "data/generated/history/standard/supplier_performance_history.csv",
@@ -89,7 +89,7 @@
     {
       "path": "data/generated/history/standard/late_arriving_corrections.csv",
       "record_count": 1,
-      "sha256": "877fe152c02b188b7b805ab2d95f0134bb58d178609d4a0570b3a460845374b2"
+      "sha256": "d36de43c7b18d1a9d626d92199c9bae470a9d06b8b159f56c9387db345c08a26"
     }
   ],
   "layer": "operational_and_history",

@@ -199,7 +199,15 @@ def generate_operational(
                 "reference_id": purchase_order["id"],
             }
         )
-    for requirement in production_requirements:
+    production_by_id = {order["id"]: order for order in production_orders}
+    for requirement in sorted(
+        production_requirements,
+        key=lambda row: (
+            production_by_id[row["production_order_id"]]["planned_start"],
+            row["production_order_id"],
+            row["id"],
+        ),
+    ):
         facility_id = next(
             order["facility_id"]
             for order in production_orders
@@ -210,11 +218,7 @@ def generate_operational(
         )
         warehouse_id = warehouses[facility_index % len(warehouses)]["id"]
         key = (warehouse_id, requirement["component_id"])
-        production = next(
-            order
-            for order in production_orders
-            if order["id"] == requirement["production_order_id"]
-        )
+        production = production_by_id[requirement["production_order_id"]]
         issue_time = _dt(production["planned_start"])
         available_at_issue = sum(
             int(transaction["quantity"])
@@ -231,7 +235,7 @@ def generate_operational(
         )
         issue = max(0, min(available_at_issue, int(requirement["required_quantity"])))
         balances[key] -= issue
-        if issue and production["planned_start"] >= _iso(reference):
+        if issue:
             inventory_transactions.append(
                 {
                     "id": f"INVTX-{len(inventory_transactions) + 1:06d}",
