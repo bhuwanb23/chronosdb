@@ -73,6 +73,13 @@ def run(root: Path = ROOT) -> dict[str, Any]:
     )
     if any(not path.exists() for path in required_artifacts):
         raise RuntimeError("required Phase 5 evidence artifact is missing")
+    benchmark = _read(root / "artifacts" / "phase-5" / "impact-benchmark-results.json")
+    if not benchmark["golden"]["targets_met"]:
+        raise RuntimeError("benchmark release gate is not satisfied")
+    if benchmark["golden"]["result_hash"] != first["result_hash"]:
+        raise RuntimeError("benchmark result does not match current golden result")
+    if first != _read(root / "artifacts" / "phase-5" / "golden-impact-result.json"):
+        raise RuntimeError("stale golden artifact does not match current result")
 
     output_dir = root / "artifacts" / "phase-5-handoff"
     output_dir.mkdir(parents=True, exist_ok=True)

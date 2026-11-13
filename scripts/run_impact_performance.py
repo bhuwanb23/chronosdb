@@ -151,16 +151,10 @@ def _sample(
             )
         )
         measurements["causal_trace_build_ms"].append(causal_ms)
-        impact_result, total_ms = _measure(
-            partial(
-                calculate_impact,
-                state,
-                disruption,
-                horizon,
-                rules,
-                scenario_id="SCN-GOLD-001",
-            )
+        impact_result, _ = _measure(
+            partial(calculate_impact, state, disruption, horizon, rules, scenario_id="SCN-GOLD-001")
         )
+        _, total_ms = _measure(partial(_run_end_to_end, root))
         measurements["total_ms"].append(total_ms)
         ledger = ExecutionLedger()
         _, persistence_ms = _measure(
@@ -172,6 +166,18 @@ def _sample(
         )
         measurements["persistence_ms"].append(persistence_ms)
     return {stage: sum(values) / workload for stage, values in measurements.items()}
+
+
+def _run_end_to_end(root: Path) -> Any:
+    state, disruption, horizon, rules, _, _ = _scenario_inputs(root)
+    return calculate_impact(
+        state,
+        disruption,
+        horizon,
+        rules,
+        scenario_id="SCN-GOLD-001",
+        ledger=ExecutionLedger(),
+    )
 
 
 def _persist_result(ledger: ExecutionLedger, result: Any) -> None:
@@ -268,8 +274,9 @@ def main() -> None:
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--repetitions", type=int, default=3)
     args = parser.parse_args()
-    tracemalloc.start()
     result = run(args.root, max(1, args.repetitions))
+    tracemalloc.start()
+    _run_end_to_end(args.root)
     _, peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()
     (args.root / "artifacts" / "phase-5" / "performance" / "memory.json").write_text(

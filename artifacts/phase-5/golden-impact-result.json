@@ -533,6 +533,119 @@
       "CT-COL-CO-0704-01",
       "CT-COL-CO-0711-01"
     ],
+    "customer_line_results": [
+      {
+        "attribution": "UNRELATED",
+        "customer_order_id": "CO-0701",
+        "customer_order_line_id": "COL-CO-0701-01",
+        "delay_hours": 0,
+        "late_quantity": "0",
+        "on_time_quantity": "200",
+        "open_quantity": "200",
+        "production_order_id": "MO-0876",
+        "projected_delivery": "2026-11-15T00:00:00Z",
+        "promised_delivery": "2026-11-15T00:00:00Z",
+        "revenue_at_risk": "0",
+        "segments": [
+          {
+            "availability_time": "2026-11-13T02:30:00Z",
+            "delay_hours": 0,
+            "facility_id": "FAC-PUNE",
+            "order_line_id": "COL-CO-0701-01",
+            "production_batch_id": "MO-0876-B01",
+            "projected_delivery": "2026-11-14T00:00:00Z",
+            "quantity": "100",
+            "status": "ON_TIME"
+          },
+          {
+            "availability_time": "2026-11-14T02:30:00Z",
+            "delay_hours": 0,
+            "facility_id": "FAC-PUNE",
+            "order_line_id": "COL-CO-0701-01",
+            "production_batch_id": "MO-0876-B02",
+            "projected_delivery": "2026-11-15T00:00:00Z",
+            "quantity": "100",
+            "status": "ON_TIME"
+          }
+        ],
+        "status": "ON_TIME",
+        "unit_revenue": "4000"
+      },
+      {
+        "attribution": "DISRUPTION_CAUSED",
+        "customer_order_id": "CO-0704",
+        "customer_order_line_id": "COL-CO-0704-01",
+        "delay_hours": 288,
+        "late_quantity": "200",
+        "on_time_quantity": "0",
+        "open_quantity": "200",
+        "production_order_id": "MO-0882",
+        "projected_delivery": "2026-11-30T00:00:00Z",
+        "promised_delivery": "2026-11-18T00:00:00Z",
+        "revenue_at_risk": "800000",
+        "segments": [
+          {
+            "availability_time": "2026-11-28T02:30:00Z",
+            "delay_hours": 264,
+            "facility_id": "FAC-PUNE",
+            "order_line_id": "COL-CO-0704-01",
+            "production_batch_id": "MO-0882-B01",
+            "projected_delivery": "2026-11-29T00:00:00Z",
+            "quantity": "100",
+            "status": "BREACHED"
+          },
+          {
+            "availability_time": "2026-11-29T02:30:00Z",
+            "delay_hours": 288,
+            "facility_id": "FAC-PUNE",
+            "order_line_id": "COL-CO-0704-01",
+            "production_batch_id": "MO-0882-B02",
+            "projected_delivery": "2026-11-30T00:00:00Z",
+            "quantity": "100",
+            "status": "BREACHED"
+          }
+        ],
+        "status": "BREACHED",
+        "unit_revenue": "4000"
+      },
+      {
+        "attribution": "DISRUPTION_CAUSED",
+        "customer_order_id": "CO-0711",
+        "customer_order_line_id": "COL-CO-0711-01",
+        "delay_hours": 264,
+        "late_quantity": "200",
+        "on_time_quantity": "0",
+        "open_quantity": "200",
+        "production_order_id": "MO-0889",
+        "projected_delivery": "2026-12-02T00:00:00Z",
+        "promised_delivery": "2026-11-21T00:00:00Z",
+        "revenue_at_risk": "800000",
+        "segments": [
+          {
+            "availability_time": "2026-11-30T02:30:00Z",
+            "delay_hours": 240,
+            "facility_id": "FAC-PUNE",
+            "order_line_id": "COL-CO-0711-01",
+            "production_batch_id": "MO-0889-B01",
+            "projected_delivery": "2026-12-01T00:00:00Z",
+            "quantity": "100",
+            "status": "BREACHED"
+          },
+          {
+            "availability_time": "2026-12-01T02:30:00Z",
+            "delay_hours": 264,
+            "facility_id": "FAC-PUNE",
+            "order_line_id": "COL-CO-0711-01",
+            "production_batch_id": "MO-0889-B02",
+            "projected_delivery": "2026-12-02T00:00:00Z",
+            "quantity": "100",
+            "status": "BREACHED"
+          }
+        ],
+        "status": "BREACHED",
+        "unit_revenue": "4000"
+      }
+    ],
     "input_state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
     "material_allocations": [
       {
@@ -1423,7 +1536,7 @@
     ],
     "state_version": "STATE-47E178713708"
   },
-  "result_hash": "3f63cf014ec38ec48898b06eacf9fa9fc18dc3f61595d4d10ccaf84218021eeb",
+  "result_hash": "1459e495b540dce3e5bc971ad38da0b983e391effcc11f011f3bab95559d0d18",
   "rule_set_version": "impact-rules-v1.0.0",
   "scenario_id": "SCN-GOLD-001",
   "shortages": [

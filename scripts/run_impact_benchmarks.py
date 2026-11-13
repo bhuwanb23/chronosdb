@@ -203,6 +203,8 @@ def run(root: Path = ROOT) -> dict[str, Any]:
         ],
         "golden": _golden_metrics(root),
     }
+    if not result["golden"]["targets_met"]:
+        raise RuntimeError("golden correctness targets were not met")
     result["result_hash"] = canonical_hash(result)
     output_dir = root / "artifacts" / "phase-5"
     output_dir.mkdir(parents=True, exist_ok=True)

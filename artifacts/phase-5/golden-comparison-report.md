@@ -3,7 +3,7 @@
 - Scenario: `SCN-GOLD-001`
 - State hash: `47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286`
 - Rule set: `impact-rules-v1.0.0`
-- Result hash: `3f63cf014ec38ec48898b06eacf9fa9fc18dc3f61595d4d10ccaf84218021eeb`
+- Result hash: `1459e495b540dce3e5bc971ad38da0b983e391effcc11f011f3bab95559d0d18`
 
 All frozen checks passed:
 

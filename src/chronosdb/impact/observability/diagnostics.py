@@ -33,7 +33,7 @@ class ImpactDiagnostics:
             yield
         except Exception:
             self.errors += 1
-            self.status = "FAILED"
+            self.finish("FAILED")
             raise
         finally:
             self.stage_timings_ms[name] = round(

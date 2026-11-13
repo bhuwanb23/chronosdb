@@ -46,40 +46,44 @@ def _checks(
     expected_traces: list[dict[str, Any]],
     expected_line_ids: dict[str, str],
     expected_engine_traces: list[dict[str, Any]],
+    scenario_orders: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
     metrics = result["headline_metrics"]
-    expected_late_lines = {
-        line["customer_order_id"]: line
-        for line in expected["customer_lines"]
-        if line["late_quantity"] > 0
+    expected_lines = {
+        line["customer_order_id"]: line for line in expected["customer_lines"]
     }
-    actual_late_lines = {
-        line["customer_order_line_id"]: line for line in result["affected_customer_orders"]
+    actual_all_lines = {
+        line["customer_order_line_id"]: line
+        for line in result["provenance"]["customer_line_results"]
     }
-    expected_late_line_ids = {
-        expected_line_ids[customer_id] for customer_id in expected_late_lines
-    }
-    customer_line_fidelity = all(
-        line_id in actual_late_lines
-        and (
-            actual_late_lines[line_id]["customer_order_id"],
-            actual_late_lines[line_id]["delay_hours"],
-            int(actual_late_lines[line_id]["late_quantity"]),
-            actual_late_lines[line_id]["projected_delivery"],
-            actual_late_lines[line_id]["promised_delivery"],
-            Decimal(actual_late_lines[line_id]["revenue_at_risk"]),
+    expected_all_line_ids = set(expected_line_ids.values())
+    customer_line_fidelity = set(actual_all_lines) == expected_all_line_ids and all(
+        (
+            actual_all_lines[expected_line_ids[customer_id]]["customer_order_id"],
+            actual_all_lines[expected_line_ids[customer_id]]["production_order_id"],
+            actual_all_lines[expected_line_ids[customer_id]]["delay_hours"],
+            int(actual_all_lines[expected_line_ids[customer_id]]["late_quantity"]),
+            actual_all_lines[expected_line_ids[customer_id]]["projected_delivery"],
+            actual_all_lines[expected_line_ids[customer_id]]["promised_delivery"],
+            Decimal(actual_all_lines[expected_line_ids[customer_id]]["revenue_at_risk"]),
+            actual_all_lines[expected_line_ids[customer_id]]["status"],
         )
         == (
             customer_id,
+            next(
+                order["production_order_id"]
+                for order in scenario_orders
+                if order["customer_order_id"] == customer_id
+            ),
             expected_line["delay_hours"],
             expected_line["late_quantity"],
             expected_line["projected_delivery"],
             expected_line["promised_delivery"],
             Decimal(expected_line["revenue_at_risk_inr"]),
+            "BREACHED" if expected_line["late_quantity"] > 0 else "ON_TIME",
         )
-        for customer_id, expected_line in expected_late_lines.items()
-        for line_id in [expected_line_ids[customer_id]]
-    ) and set(actual_late_lines) == expected_late_line_ids
+        for customer_id, expected_line in expected_lines.items()
+    )
     expected_trace_signature = {
         (
             trace["target"]["customer_order_line_id"],
@@ -193,6 +197,7 @@ def run(root: Path = ROOT) -> dict[str, Any]:
         expected_traces,
         expected_line_ids,
         expected_engine_traces,
+        scenario["orders"],
     )
     if any(check["status"] == "FAIL" for check in checks):
         failed = ", ".join(check["name"] for check in checks if check["status"] == "FAIL")

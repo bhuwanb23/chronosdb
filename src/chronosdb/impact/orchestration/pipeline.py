@@ -49,17 +49,23 @@ def calculate_impact(
     diagnostics: ImpactDiagnostics | None = None,
 ) -> ImpactResult:
     """Calculate the deterministic do-nothing impact through Phase 5Q."""
-    if allocation_policy not in {"priority-due-date-v1", "fifo-v1"}:
-        raise ContractError(f"unsupported allocation policy: {allocation_policy}")
-    if scheduling_policy not in {"batch-capacity-v1"}:
-        raise ContractError(f"unsupported scheduling policy: {scheduling_policy}")
-    if horizon.as_of_time.tzinfo is None or horizon.simulation_end_time.tzinfo is None:
-        raise ContractError("simulation horizon timestamps must include timezone")
-    if _utc_timestamp(horizon.as_of_time) != state.identity.as_of_time:
-        raise ContractError("state as_of_time must equal simulation horizon as_of_time")
-    validate_disruption(disruption)
     if diagnostics is not None:
         diagnostics.start("UNASSIGNED")
+    try:
+        if allocation_policy not in {"priority-due-date-v1", "fifo-v1"}:
+            raise ContractError(f"unsupported allocation policy: {allocation_policy}")
+        if scheduling_policy not in {"batch-capacity-v1"}:
+            raise ContractError(f"unsupported scheduling policy: {scheduling_policy}")
+        if horizon.as_of_time.tzinfo is None or horizon.simulation_end_time.tzinfo is None:
+            raise ContractError("simulation horizon timestamps must include timezone")
+        if _utc_timestamp(horizon.as_of_time) != state.identity.as_of_time:
+            raise ContractError("state as_of_time must equal simulation horizon as_of_time")
+        validate_disruption(disruption)
+    except Exception:
+        if diagnostics is not None:
+            diagnostics.errors += 1
+            diagnostics.finish("FAILED")
+        raise
     insufficient = insufficient_record_sets(state.records)
     with _diagnostic_stage(diagnostics, "disruption_resolution"):
         impacts = resolve_purchase_order_impacts(state, disruption) if not insufficient else ()
@@ -372,6 +378,7 @@ def calculate_impact(
         },
         "causal_trace_ids": [trace.trace_id for trace in traces],
         "quality_issues": [issue.to_dict() for issue in quality_issues],
+        "customer_line_results": [item.to_dict() for item in sla_results],
     }
     result = ImpactResult(
         impact_run_id=impact_run_id,
