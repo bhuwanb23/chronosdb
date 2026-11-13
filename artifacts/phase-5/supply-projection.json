@@ -11,6 +11,10 @@
       "quantity": "800",
       "rule_id": "SUP-006",
       "source": "DISRUPTION_ADJUSTED",
+      "source_record_ids": [
+        "PO-2208",
+        "EVT-GOLD-001"
+      ],
       "warehouse_id": "WH-PUNE",
       "within_horizon": true
     }

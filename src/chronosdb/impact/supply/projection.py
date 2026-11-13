@@ -20,11 +20,10 @@ def project_receipts(
             source="DISRUPTION_ADJUSTED",
             original_event_time=impact.original_arrival,
             within_horizon=(
-                horizon.as_of_time
-                <= impact.disrupted_arrival
-                <= horizon.simulation_end_time
+                horizon.as_of_time <= impact.disrupted_arrival <= horizon.simulation_end_time
             ),
             rule_id="SUP-006",
+            source_record_ids=impact.source_record_ids,
         )
         for impact in impacts
     ]

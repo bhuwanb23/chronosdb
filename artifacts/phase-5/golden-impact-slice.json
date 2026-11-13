@@ -25,7 +25,7 @@
   "data_quality_status": "COMPLETE",
   "errors": [],
   "headline_metrics": {},
-  "impact_run_id": "IR-48fb7b95742802c5",
+  "impact_run_id": "IR-39664cbd0a40a1f7",
   "input_state_hash": "57f0821ba2fe57bd95ebd887cd7889a83ed3ec85dc56a7ea6f9e9d53feaa5673",
   "inventory_timelines": [
     {
@@ -38,6 +38,10 @@
       "quantity": "800",
       "rule_id": "SUP-006",
       "source": "DISRUPTION_ADJUSTED",
+      "source_record_ids": [
+        "PO-2208",
+        "EVT-GOLD-001"
+      ],
       "warehouse_id": "WH-PUNE",
       "within_horizon": true
     }
@@ -60,7 +64,7 @@
     ],
     "state_version": "STATE-57F0821BA2FE"
   },
-  "result_hash": "8aac5f7619489cbd987da5afe99385553bbbbfb6c48a0fe80194243423a28d54",
+  "result_hash": "a317310f848ef2da12e0d3a06fa3ccf4ea80438aea5dae1ade05ff1bd4a31751",
   "rule_set_version": "impact-rules-v1.0.0",
   "scenario_id": "SCN-GOLD-001",
   "shortages": [],

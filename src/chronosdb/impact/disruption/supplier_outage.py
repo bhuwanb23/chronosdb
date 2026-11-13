@@ -1,13 +1,17 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from typing import Any
 
 from ..contracts.errors import DisruptionValidationError
 from ..contracts.requests import parse_time
 from ..state.reconstruction import OperationalState
+
+
+def _utc_iso(value: datetime) -> str:
+    return value.astimezone(UTC).isoformat().replace("+00:00", "Z")
 
 
 @dataclass(frozen=True)
@@ -81,8 +85,8 @@ class PurchaseOrderImpact:
             "component_id": self.component_id,
             "warehouse_id": self.warehouse_id,
             "outstanding_quantity": str(self.outstanding_quantity),
-            "original_arrival": self.original_arrival.isoformat().replace("+00:00", "Z"),
-            "disrupted_arrival": self.disrupted_arrival.isoformat().replace("+00:00", "Z"),
+            "original_arrival": _utc_iso(self.original_arrival),
+            "disrupted_arrival": _utc_iso(self.disrupted_arrival),
             "delay_hours": self.delay_hours,
             "rule_id": self.rule_id,
             "source_record_ids": list(self.source_record_ids),

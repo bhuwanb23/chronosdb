@@ -6,6 +6,8 @@ import json
 from datetime import timedelta
 from pathlib import Path
 
+from jsonschema import Draft202012Validator, FormatChecker
+
 from chronosdb.impact.contracts import SimulationHorizon
 from chronosdb.impact.contracts.requests import parse_time
 from chronosdb.impact.contracts.results import canonical_hash
@@ -22,11 +24,29 @@ from chronosdb.impact.supply import project_receipts
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def _validate_result_artifact(result: dict[str, object]) -> None:
+    schema = json.loads(
+        (ROOT / "schemas" / "impact-result.schema.json").read_text(encoding="utf-8")
+    )
+    errors = sorted(
+        Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(result),
+        key=lambda error: list(error.absolute_path),
+    )
+    if errors:
+        raise RuntimeError(f"impact result schema validation failed: {errors[0].message}")
+    expected_hash = result["result_hash"]
+    actual_hash = canonical_hash(
+        {key: value for key, value in result.items() if key != "result_hash"}
+    )
+    if expected_hash != actual_hash:
+        raise RuntimeError("impact result hash validation failed")
+
+
 def run() -> dict[str, object]:
     scenario = json.loads(
-        (
-            ROOT / "data" / "releases" / "v1.0.0" / "golden" / "scenario.json"
-        ).read_text(encoding="utf-8")
+        (ROOT / "data" / "releases" / "v1.0.0" / "golden" / "scenario.json").read_text(
+            encoding="utf-8"
+        )
     )
     as_of = parse_time(scenario["as_of_time"])
     horizon = SimulationHorizon(as_of, as_of + timedelta(days=30))
@@ -41,9 +61,7 @@ def run() -> dict[str, object]:
     ).to_dict()
     artifact_root = ROOT / "artifacts" / "phase-5"
     artifact_root.mkdir(parents=True, exist_ok=True)
-    no_duplicate_event_ids = len({receipt.event_id for receipt in receipts}) == len(
-        receipts
-    )
+    no_duplicate_event_ids = len({receipt.event_id for receipt in receipts}) == len(receipts)
     state_report = {
         "status": "PASS" if not state.warnings else "WARN",
         "state_identity": state.identity.__dict__,
@@ -60,14 +78,13 @@ def run() -> dict[str, object]:
         "projected_receipts": [receipt.to_dict() for receipt in receipts],
         "no_duplicate_event_ids": no_duplicate_event_ids,
     }
-    validation_errors = (
-        [] if no_duplicate_event_ids else ["duplicate projected receipt event IDs"]
-    )
+    validation_errors = [] if no_duplicate_event_ids else ["duplicate projected receipt event IDs"]
     if validation_errors:
         result["errors"] = validation_errors
         result["result_hash"] = canonical_hash(
             {key: value for key, value in result.items() if key != "result_hash"}
         )
+    _validate_result_artifact(result)
     for name, payload in (
         ("state-reconstruction.json", state_report),
         ("disruption-resolution.json", disruption_report),

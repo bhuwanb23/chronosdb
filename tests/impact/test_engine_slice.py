@@ -1,10 +1,14 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
+import pytest
+
 from chronosdb.impact.contracts import ImpactRequest, SimulationHorizon
+from chronosdb.impact.contracts.errors import ContractError, DisruptionValidationError
 from chronosdb.impact.disruption import (
     Disruption,
     PurchaseOrderImpact,
@@ -50,6 +54,26 @@ def test_state_hash_is_stable_and_golden_purchase_order_is_reconstructed() -> No
     assert any(row["id"] == "PO-2208" for row in first.get("purchase_orders"))
 
 
+def test_as_of_filter_excludes_not_yet_known_orders_and_disruptions() -> None:
+    state = ReleaseStateReconstructor(ROOT).reconstruct(datetime(2026, 6, 1, tzinfo=UTC))
+
+    assert all(
+        datetime.fromisoformat(row["order_time"].replace("Z", "+00:00"))
+        <= datetime(2026, 6, 1, tzinfo=UTC)
+        for row in state.get("purchase_orders")
+    )
+    assert all(
+        datetime.fromisoformat(row["reported_time"].replace("Z", "+00:00"))
+        <= datetime(2026, 6, 1, tzinfo=UTC)
+        for row in state.get("disruption_events")
+    )
+    assert (
+        next(row for row in state.get("purchase_orders") if row["id"] == "PO-P4-000004")["status"]
+        == "CONFIRMED"
+    )
+    assert state.get("inventory_opening_balances") == ()
+
+
 def test_golden_supplier_outage_projects_outstanding_supply_once() -> None:
     state = _state()
     disruption = _disruption(state)
@@ -82,9 +106,7 @@ def test_run_identity_includes_scenario_and_horizon_inputs() -> None:
     rules = load_rule_set(ROOT / "config" / "rules" / "impact-rules-v1.0.0.yaml")
     horizon = SimulationHorizon(AS_OF, AS_OF + timedelta(days=30))
 
-    first = calculate_impact(
-        state, disruption, horizon, rules, scenario_id="SCN-A"
-    ).to_dict()
+    first = calculate_impact(state, disruption, horizon, rules, scenario_id="SCN-A").to_dict()
     second = calculate_impact(
         state,
         disruption,
@@ -119,9 +141,7 @@ def test_reconstruction_keeps_only_latest_snapshot_per_location(
 
     state = reconstructor.reconstruct(AS_OF)
 
-    assert [row["id"] for row in state.get("inventory_snapshots_daily")] == [
-        "SNAP-NEW"
-    ]
+    assert [row["id"] for row in state.get("inventory_snapshots_daily")] == ["SNAP-NEW"]
 
 
 def test_filtered_empty_required_record_set_is_marked_incomplete(
@@ -151,9 +171,7 @@ def test_receipt_before_horizon_is_out_of_horizon() -> None:
         source_record_ids=("PO-OLD", "EVT-OLD"),
     )
 
-    receipt = project_receipts(
-        (impact,), SimulationHorizon(AS_OF, AS_OF + timedelta(days=30))
-    )[0]
+    receipt = project_receipts((impact,), SimulationHorizon(AS_OF, AS_OF + timedelta(days=30)))[0]
 
     assert receipt.within_horizon is False
 
@@ -182,3 +200,42 @@ def test_provenance_retains_disruption_source_without_affected_orders() -> None:
     assert result["provenance"]["source_record_ids"] == ["EVT-NO-MATCH"]
     assert "STATE-002" in result["provenance"]["rule_ids"]
     assert "DQ-001" in result["provenance"]["rule_ids"]
+
+
+def test_pipeline_rejects_misaligned_or_insufficient_state() -> None:
+    state = _state()
+    disruption = _disruption(state)
+    rules = load_rule_set(ROOT / "config" / "rules" / "impact-rules-v1.0.0.yaml")
+    horizon = SimulationHorizon(AS_OF, AS_OF + timedelta(days=30))
+    incomplete = replace(
+        state,
+        records={**state.records, "purchase_orders": ()},
+    )
+
+    rejected = calculate_impact(incomplete, disruption, horizon, rules).to_dict()
+
+    assert rejected["status"] == "REJECTED"
+    assert rejected["data_quality_status"] == "INSUFFICIENT"
+    assert rejected["affected_purchase_orders"] == []
+    with pytest.raises(ContractError):
+        calculate_impact(
+            state,
+            disruption,
+            SimulationHorizon(AS_OF + timedelta(hours=1), AS_OF + timedelta(days=30)),
+            rules,
+        )
+
+
+def test_disruption_validation_rejects_invalid_interval_and_lag() -> None:
+    with pytest.raises(DisruptionValidationError):
+        validate_disruption(
+            Disruption(
+                event_id="EVT-BAD",
+                event_type="SUPPLIER_OUTAGE",
+                supplier_id="SUP-BAD",
+                start_time=AS_OF,
+                end_time=AS_OF,
+                recovery_lag=timedelta(hours=-1),
+                scope_type="ALL_SUPPLY",
+            )
+        )
