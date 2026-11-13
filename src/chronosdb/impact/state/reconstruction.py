@@ -47,13 +47,21 @@ class _ImmutableDict(dict[str, Any]):
     def _blocked(self, *args: Any, **kwargs: Any) -> None:
         raise TypeError("cached operational state is immutable")
 
-    __setitem__ = __delitem__ = clear = pop = popitem = setdefault = update = _blocked
+    __setitem__ = __delitem__ = clear = pop = popitem = setdefault = update = _blocked  # type: ignore[assignment]
+    __ior__ = _blocked  # type: ignore[assignment]
 
-    def __deepcopy__(self, memo: dict[int, Any]) -> "_ImmutableDict":
+    def __deepcopy__(self, memo: dict[int, Any]) -> _ImmutableDict:
         return self
 
 
 def _freeze_state(state: OperationalState) -> OperationalState:
+    def freeze(value: Any) -> Any:
+        if isinstance(value, dict):
+            return _ImmutableDict({key: freeze(item) for key, item in value.items()})
+        if isinstance(value, list):
+            return tuple(freeze(item) for item in value)
+        return value
+
     records = _ImmutableDict(
         {
             name: tuple(_ImmutableDict(row) for row in rows)
@@ -64,7 +72,7 @@ def _freeze_state(state: OperationalState) -> OperationalState:
         identity=state.identity,
         records=records,
         warnings=state.warnings,
-        scenario_inputs=state.scenario_inputs,
+        scenario_inputs=tuple(freeze(item) for item in state.scenario_inputs),
     )
 
 

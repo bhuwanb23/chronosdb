@@ -13,6 +13,9 @@ from chronosdb.impact.contracts.requests import SimulationHorizon
 from chronosdb.impact.disruption import Disruption, validate_disruption
 from chronosdb.impact.inventory import InventoryEvent, detect_shortages
 from chronosdb.impact.inventory.timeline import build_inventory_timelines
+from chronosdb.impact.orchestration import calculate_impact
+from chronosdb.impact.persistence import ExecutionLedger
+from chronosdb.impact.rules import load_rule_set
 from chronosdb.impact.state import ReleaseStateReconstructor
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -87,3 +90,45 @@ def test_invalid_disruption_interval_is_rejected() -> None:
                 scope_type="ALL_SUPPLY",
             )
         )
+
+
+def test_cached_operational_state_is_immutable() -> None:
+    ReleaseStateReconstructor.clear_cache()
+    reconstructor = ReleaseStateReconstructor(ROOT)
+    reconstructor.reconstruct(AS_OF)
+    cached = reconstructor.reconstruct(AS_OF)
+
+    with pytest.raises(TypeError, match="immutable"):
+        cached.records["purchase_orders"] = ()
+    with pytest.raises(TypeError, match="immutable"):
+        cached.records["purchase_orders"][0]["id"] = "MUTATED"
+    scenario_input = cached.scenario_inputs[0]
+    with pytest.raises(TypeError, match="immutable"):
+        scenario_input |= {"mutated": True}
+
+
+def test_engine_failure_terminally_fails_pending_ledger(monkeypatch) -> None:
+    state = ReleaseStateReconstructor(ROOT).reconstruct(AS_OF)
+    rules = load_rule_set(ROOT / "config" / "rules" / "impact-rules-v1.0.0.yaml")
+    disruption = Disruption.from_state(state, "EVT-GOLD-001")
+    ledger = ExecutionLedger()
+
+    def fail_inventory(*args, **kwargs):
+        raise RuntimeError("inventory failure")
+
+    monkeypatch.setattr(
+        "chronosdb.impact.orchestration.pipeline.build_inventory_timelines",
+        fail_inventory,
+    )
+    with pytest.raises(RuntimeError, match="inventory failure"):
+        calculate_impact(
+            state,
+            disruption,
+            SimulationHorizon(AS_OF, END),
+            rules,
+            scenario_id="SCN-GOLD-001",
+            ledger=ledger,
+        )
+
+    assert len(ledger.all()) == 1
+    assert ledger.all()[0].status == "FAILED"

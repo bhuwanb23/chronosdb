@@ -8,7 +8,7 @@ import subprocess
 import sys
 from datetime import timedelta
 from pathlib import Path
-from typing import Any, cast
+from typing import Any
 
 from chronosdb.impact.contracts.requests import SimulationHorizon, parse_time
 from chronosdb.impact.contracts.results import canonical_hash
@@ -72,6 +72,13 @@ def run(root: Path = ROOT) -> dict[str, Any]:
         cwd=root,
         text=True,
     ).stdout.strip().splitlines()[-1]
+    deterministic = (
+        first == second
+        and first["result_hash"] == restarted
+        and all(result_hash == first["result_hash"] for result_hash in repeated_hashes)
+    )
+    if not deterministic:
+        raise RuntimeError("determinism release gate is not satisfied")
     required_artifacts = (
         root / "artifacts" / "phase-5" / "impact-benchmark-results.json",
         root / "artifacts" / "phase-5" / "golden-impact-result.json",
@@ -177,11 +184,7 @@ def run(root: Path = ROOT) -> dict[str, Any]:
         {
             "status": (
                 "PASS"
-                if (
-                    first == second
-                    and first["result_hash"] == restarted
-                    and len(set(repeated_hashes)) == 1
-                )
+                if deterministic
                 else "FAIL"
             ),
             "state_hash": state.identity.state_hash,
@@ -190,11 +193,7 @@ def run(root: Path = ROOT) -> dict[str, Any]:
             "restarted_result_hash": restarted,
             "repeated_run_count": len(repeated_hashes),
             "repeated_result_hashes": repeated_hashes,
-            "same_result": (
-                first == second
-                and first["result_hash"] == restarted
-                and len(set(repeated_hashes)) == 1
-            ),
+            "same_result": deterministic,
             "canonical_result_hash": canonical_hash(
                 {key: value for key, value in first.items() if key != "result_hash"}
             ),
@@ -282,7 +281,7 @@ def run(root: Path = ROOT) -> dict[str, Any]:
         "\n".join(completion) + "\n",
         encoding="utf-8",
     )
-    return cast(dict[str, Any], first)
+    return first
 
 
 def main() -> None:

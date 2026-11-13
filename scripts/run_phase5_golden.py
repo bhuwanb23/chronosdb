@@ -198,7 +198,7 @@ def run(root: Path = ROOT) -> dict[str, Any]:
         "\n".join(report_lines) + "\n",
         encoding="utf-8",
     )
-    return cast(dict[str, Any], result)
+    return result
 
 
 def main() -> None:

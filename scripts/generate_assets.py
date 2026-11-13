@@ -5,12 +5,13 @@ visual language can be reused in the product, README, demo video, and pitch
 materials. PNG derivatives are written beside each SVG.
 """
 
+# ruff: noqa: E501, UP030, UP032
+
 from __future__ import annotations
 
 from html import escape
 from pathlib import Path
 from textwrap import dedent
-
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets" / "chronosdb"
@@ -137,11 +138,12 @@ def pill(x: float, y: float, label: str, color: str = CYAN, width: int | None = 
 
 
 def dot(x: float, y: float, color: str = CYAN, radius: int = 7, glow: bool = False) -> str:
+    glow_filter = 'filter="url(#glowCyan)"' if glow and color == CYAN else ""
     return (
         f'<circle cx="{x}" cy="{y}" r="{radius * 2.3}" fill="{color}" opacity="0.12" '
-        f'{"filter=\"url(#glowCyan)\"" if glow and color == CYAN else ""}/>'
+        f"{glow_filter}/>"
         f'<circle cx="{x}" cy="{y}" r="{radius}" fill="{color}" '
-        f'{"filter=\"url(#glowCyan)\"" if glow and color == CYAN else ""}/>'
+        f"{glow_filter}/>"
     )
 
 

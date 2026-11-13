@@ -104,16 +104,18 @@ def _sample(
     workload: int,
 ) -> dict[str, float]:
     measurements: dict[str, list[float]] = {stage: [] for stage in STAGES}
-    for _ in range(workload):
+    for request_index in range(workload):
         scenario = json.loads(
             (root / "data" / "golden" / "scenario.json").read_text(encoding="utf-8")
         )
         as_of = parse_time(scenario["as_of_time"])
-        ReleaseStateReconstructor.clear_cache()
+        if request_index == 0:
+            ReleaseStateReconstructor.clear_cache()
         state, cold_state_ms = _measure(
             partial(ReleaseStateReconstructor(root).reconstruct, as_of)
         )
-        measurements["cold_state_reconstruction_ms"].append(cold_state_ms)
+        if request_index == 0:
+            measurements["cold_state_reconstruction_ms"].append(cold_state_ms)
         disruption = Disruption.from_state(state, "EVT-GOLD-001")
         horizon = SimulationHorizon(as_of, as_of + timedelta(days=30))
         rules = load_rule_set(root / "config" / "rules" / "impact-rules-v1.0.0.yaml")
@@ -193,9 +195,11 @@ def _sample(
         impact_result, _ = _measure(
             partial(calculate_impact, state, disruption, horizon, rules, scenario_id="SCN-GOLD-001")
         )
-        ReleaseStateReconstructor.clear_cache()
+        if request_index == 0:
+            ReleaseStateReconstructor.clear_cache()
         _, cold_total_ms = _measure(partial(_run_end_to_end, root))
-        measurements["cold_total_ms"].append(cold_total_ms)
+        if request_index == 0:
+            measurements["cold_total_ms"].append(cold_total_ms)
         _, total_ms = _measure(partial(_run_end_to_end, root))
         measurements["total_ms"].append(total_ms)
         ledger = ExecutionLedger()
@@ -207,7 +211,7 @@ def _sample(
             )
         )
         measurements["persistence_ms"].append(persistence_ms)
-    return {stage: sum(values) / workload for stage, values in measurements.items()}
+    return {stage: sum(values) / len(values) for stage, values in measurements.items()}
 
 
 def _run_end_to_end(root: Path) -> Any:
@@ -280,17 +284,43 @@ def _validate_targets(results: list[dict[str, Any]]) -> None:
                 )
 
 
+def _append_sample(
+    root: Path,
+    scale: str,
+    summary: dict[str, Any],
+) -> dict[str, Any]:
+    artifact = root / "artifacts" / "phase-5" / "performance" / f"{scale}-performance.json"
+    existing = json.loads(artifact.read_text(encoding="utf-8"))["scales"][0]
+    if existing["workload_count"] != summary["workload_count"]:
+        raise RuntimeError(f"{scale} artifact workload does not match current profile")
+    for stage in STAGES:
+        samples = existing["stages"][stage]["samples_ms"] + summary["stages"][stage]["samples_ms"]
+        summary["stages"][stage] = {
+            "median_ms": round(median(samples), 3),
+            "p95_ms": round(_percentile(samples, 0.95), 3),
+            "maximum_ms": round(max(samples), 3),
+            "samples_ms": samples,
+        }
+    summary["request_samples"] += existing["request_samples"]
+    return summary
+
+
 def run(
     root: Path = ROOT,
     repetitions: int = 3,
     selected_scale: str | None = None,
     sample_count_override: int | None = None,
+    append_sample: bool = False,
 ) -> dict[str, Any]:
     scales_to_run = (selected_scale,) if selected_scale is not None else tuple(SCALES)
     measured = {
         scale: _run_scale(root, scale, repetitions, sample_count_override)
         for scale in scales_to_run
     }
+    if append_sample:
+        if selected_scale is None:
+            raise ValueError("--append requires --scale")
+        measured[selected_scale] = _append_sample(root, selected_scale, measured[selected_scale])
     results = []
     for scale in SCALES:
         if scale in measured:
@@ -349,6 +379,8 @@ def run(
                 "- Scenario count per profile: `1` frozen golden scenario",
                 "- Error rate: `0.0` (failed executions are not included)",
                 "- Peak memory: `artifacts/phase-5/performance/memory.json`",
+                "- Targets: demo state `<500 ms` and total `<2 s`; "
+                "standard state `<1.5 s` and total `<6 s`.",
                 "",
                 "Each profile measures one frozen golden request per sample. "
                 "Profiles scale request load, not dataset cardinality; cold and cached "
@@ -356,6 +388,7 @@ def run(
                 "",
                 *[
                     f"- `{item['scale']}` workload `{item['workload_count']}`: "
+                    f"samples `{item['request_samples']}`, "
                     f"median `{item['stages']['total_ms']['median_ms']} ms`, "
                     f"p95 `{item['stages']['total_ms']['p95_ms']} ms`, "
                     f"maximum `{item['stages']['total_ms']['maximum_ms']} ms`, "
@@ -377,8 +410,15 @@ def main() -> None:
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--scale", choices=tuple(SCALES))
     parser.add_argument("--samples", type=int)
+    parser.add_argument("--append", action="store_true")
     args = parser.parse_args()
-    result = run(args.root, max(1, args.repetitions), args.scale, args.samples)
+    result = run(
+        args.root,
+        max(1, args.repetitions),
+        args.scale,
+        args.samples,
+        args.append,
+    )
     ReleaseStateReconstructor.clear_cache()
     tracemalloc.start()
     _run_end_to_end(args.root)

@@ -10,10 +10,20 @@
     "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
     "rule_set_version": "impact-rules-v1.0.0",
     "scenario_count": 1,
+    "targets_ms": {
+      "demo": {
+        "state_reconstruction_ms": 500.0,
+        "total_ms": 2000.0
+      },
+      "standard": {
+        "state_reconstruction_ms": 1500.0,
+        "total_ms": 6000.0
+      }
+    },
     "warm_or_cold": "warm process with separate cold and cached reconstruction timings"
   },
   "performance_version": "impact-engine-v1.0.0",
-  "result_hash": "9a42bf1b7e7a03aaf733170b5b1d8786e3b7cd322dea117c2e703dad64aba584",
+  "result_hash": "f4bd4ce4ea82613b1a30883e6f820fd889ced85ee89ce04a03647bb93319b5b4",
   "scales": [
     {
       "repetitions": 3,
@@ -21,113 +31,113 @@
       "scale": "demo",
       "stages": {
         "causal_trace_build_ms": {
-          "maximum_ms": 0.006,
-          "median_ms": 0.004,
-          "p95_ms": 0.006,
+          "maximum_ms": 0.005,
+          "median_ms": 0.005,
+          "p95_ms": 0.005,
           "samples_ms": [
-            0.006,
-            0.004,
-            0.004
+            0.005,
+            0.005,
+            0.005
           ]
         },
         "cold_state_reconstruction_ms": {
-          "maximum_ms": 9693.657,
-          "median_ms": 930.856,
-          "p95_ms": 9693.657,
+          "maximum_ms": 1104.714,
+          "median_ms": 1034.753,
+          "p95_ms": 1104.714,
           "samples_ms": [
-            9693.657,
-            924.869,
-            930.856
+            1104.714,
+            1034.753,
+            973.976
           ]
         },
         "cold_total_ms": {
-          "maximum_ms": 1000.988,
-          "median_ms": 996.783,
-          "p95_ms": 1000.988,
+          "maximum_ms": 1013.747,
+          "median_ms": 982.524,
+          "p95_ms": 1013.747,
           "samples_ms": [
-            879.843,
-            1000.988,
-            996.783
+            982.524,
+            1013.747,
+            937.099
           ]
         },
         "customer_impact_ms": {
-          "maximum_ms": 0.285,
-          "median_ms": 0.281,
-          "p95_ms": 0.285,
+          "maximum_ms": 0.345,
+          "median_ms": 0.319,
+          "p95_ms": 0.345,
           "samples_ms": [
-            0.285,
-            0.269,
-            0.281
+            0.301,
+            0.345,
+            0.319
           ]
         },
         "disruption_resolution_ms": {
-          "maximum_ms": 0.131,
-          "median_ms": 0.11,
-          "p95_ms": 0.131,
+          "maximum_ms": 0.156,
+          "median_ms": 0.132,
+          "p95_ms": 0.156,
           "samples_ms": [
-            0.131,
-            0.11,
-            0.106
+            0.128,
+            0.156,
+            0.132
           ]
         },
         "inventory_projection_ms": {
-          "maximum_ms": 1.153,
-          "median_ms": 1.099,
-          "p95_ms": 1.153,
+          "maximum_ms": 1.296,
+          "median_ms": 1.248,
+          "p95_ms": 1.296,
           "samples_ms": [
-            1.153,
-            1.087,
-            1.099
+            1.248,
+            1.296,
+            1.144
           ]
         },
         "material_allocation_ms": {
-          "maximum_ms": 0.265,
-          "median_ms": 0.244,
-          "p95_ms": 0.265,
+          "maximum_ms": 0.291,
+          "median_ms": 0.282,
+          "p95_ms": 0.291,
           "samples_ms": [
-            0.265,
-            0.242,
-            0.244
+            0.282,
+            0.291,
+            0.259
           ]
         },
         "persistence_ms": {
-          "maximum_ms": 2.117,
-          "median_ms": 1.877,
-          "p95_ms": 2.117,
+          "maximum_ms": 3.094,
+          "median_ms": 2.33,
+          "p95_ms": 3.094,
           "samples_ms": [
-            1.877,
-            1.875,
-            2.117
+            3.094,
+            2.33,
+            2.224
           ]
         },
         "production_scheduling_ms": {
-          "maximum_ms": 0.197,
-          "median_ms": 0.186,
-          "p95_ms": 0.197,
+          "maximum_ms": 0.215,
+          "median_ms": 0.204,
+          "p95_ms": 0.215,
           "samples_ms": [
-            0.197,
-            0.186,
-            0.183
+            0.204,
+            0.215,
+            0.192
           ]
         },
         "state_reconstruction_ms": {
-          "maximum_ms": 443.826,
-          "median_ms": 402.291,
-          "p95_ms": 443.826,
+          "maximum_ms": 482.951,
+          "median_ms": 419.856,
+          "p95_ms": 482.951,
           "samples_ms": [
-            349.341,
-            443.826,
-            402.291
+            415.302,
+            482.951,
+            419.856
           ]
         },
         "total_ms": {
-          "maximum_ms": 438.806,
-          "median_ms": 412.697,
-          "p95_ms": 438.806,
+          "maximum_ms": 500.927,
+          "median_ms": 428.251,
+          "p95_ms": 500.927,
           "samples_ms": [
-            406.1,
-            438.806,
-            412.697
+            428.251,
+            500.927,
+            423.924
           ]
         }
       },
