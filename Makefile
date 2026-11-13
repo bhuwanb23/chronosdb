@@ -1,6 +1,7 @@
 .PHONY: install run lint typecheck test test-db2 db-bootstrap db-health doctor \
 	data-clean data-generate data-validate ground-truth data-report data-checksums data-all \
 	phase4-intake phase4-build phase4-validate phase4-manifest phase4-repro \
+	impact-intake-check impact-golden-input-check impact-benchmark-manifest-check \
 	phase4-finalize
 
 install:
@@ -72,6 +73,15 @@ phase4-manifest:
 
 phase4-repro:
 	python scripts/verify_phase4_reproducibility.py --profile demo
+
+impact-intake-check:
+	python scripts/impact_intake.py --check intake
+
+impact-golden-input-check:
+	python scripts/impact_intake.py --check golden
+
+impact-benchmark-manifest-check:
+	python scripts/impact_intake.py --check benchmark
 
 phase4-finalize:
 	python scripts/finalize_phase4.py

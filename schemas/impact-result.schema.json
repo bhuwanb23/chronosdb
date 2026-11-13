@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronosdb.dev/schemas/impact-result.schema.json",
+  "type": "object",
+  "required": [
+    "impact_run_id",
+    "scenario_id",
+    "status",
+    "data_quality_status",
+    "rule_set_version",
+    "input_state_hash",
+    "result_hash",
+    "headline_metrics",
+    "provenance"
+  ],
+  "properties": {
+    "impact_run_id": {"type": "string"},
+    "scenario_id": {"type": "string"},
+    "status": {
+      "enum": [
+        "PENDING",
+        "VALIDATING",
+        "RECONSTRUCTING_STATE",
+        "APPLYING_DISRUPTION",
+        "PROJECTING_INVENTORY",
+        "SCHEDULING_PRODUCTION",
+        "CALCULATING_CUSTOMER_IMPACT",
+        "BUILDING_PROVENANCE",
+        "COMPLETED",
+        "PARTIALLY_COMPLETED",
+        "REJECTED",
+        "FAILED"
+      ]
+    },
+    "data_quality_status": {"enum": ["COMPLETE", "PARTIAL", "INSUFFICIENT"]},
+    "rule_set_version": {"type": "string"},
+    "input_state_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "result_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "headline_metrics": {"type": "object"},
+    "provenance": {"type": "object"}
+  }
+}

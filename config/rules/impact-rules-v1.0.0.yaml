@@ -1,0 +1,68 @@
+rule_set_version: impact-rules-v1.0.0
+domain_model_version: phase4-domain-model-1.0.0
+dataset_compatibility:
+  - "1.0.0"
+rules:
+  - rule_id: STATE-001
+    version: 1.0.0
+    name: effective_state_selection
+    inputs: [effective_from, effective_to, as_of_time]
+    outputs: [eligible_record]
+    units: timestamp
+    formula: effective_from <= as_of_time < effective_to
+    rounding: none
+    failure_conditions: [missing_effective_interval]
+  - rule_id: STATE-002
+    version: 1.0.0
+    name: information_time_selection
+    inputs: [ingested_time, as_of_time]
+    outputs: [known_record]
+    units: timestamp
+    formula: ingested_time <= as_of_time
+    rounding: none
+    failure_conditions: [invalid_ingested_time]
+  - rule_id: SUP-001
+    version: 1.0.0
+    name: outstanding_quantity
+    inputs: [ordered_quantity, received_quantity]
+    outputs: [outstanding_quantity]
+    units: quantity
+    formula: max(0, ordered_quantity - received_quantity)
+    rounding: decimal(3)
+    failure_conditions: [missing_ordered_quantity, missing_received_quantity]
+  - rule_id: SUP-004
+    version: 1.0.0
+    name: disrupted_arrival
+    inputs: [original_arrival, outage_end, recovery_lag]
+    outputs: [disrupted_arrival]
+    units: timestamp
+    formula: max(original_arrival, outage_end + recovery_lag)
+    rounding: none
+    failure_conditions: [missing_arrival, invalid_outage_interval]
+  - rule_id: SUP-005
+    version: 1.0.0
+    name: affected_purchase_order
+    inputs: [supplier_id, outstanding_quantity, scope, expected_arrival]
+    outputs: [affected_purchase_order]
+    units: boolean
+    formula: supplier_matches and outstanding_quantity > 0 and scope_matches
+    rounding: none
+    failure_conditions: [unknown_supplier, unsupported_scope]
+  - rule_id: SUP-006
+    version: 1.0.0
+    name: projected_receipt_quantity
+    inputs: [outstanding_quantity]
+    outputs: [projected_receipt_quantity]
+    units: quantity
+    formula: outstanding_quantity
+    rounding: decimal(3)
+    failure_conditions: [negative_outstanding_quantity]
+  - rule_id: DQ-001
+    version: 1.0.0
+    name: state_completeness
+    inputs: [required_record_classes, loaded_record_classes]
+    outputs: [data_quality_status]
+    units: enum
+    formula: complete when all required record classes are present
+    rounding: none
+    failure_conditions: [missing_required_record_class]

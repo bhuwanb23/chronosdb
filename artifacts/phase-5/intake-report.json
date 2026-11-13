@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "benchmark": "PASS",
+    "golden": "PASS",
+    "handoff": "PASS",
+    "intake": "PASS"
+  },
+  "dataset": "chronosdb-demo-dataset",
+  "dataset_version": "1.0.0",
+  "issues": [],
+  "runtime_expected_output_reads": false,
+  "status": "PASS"
+}

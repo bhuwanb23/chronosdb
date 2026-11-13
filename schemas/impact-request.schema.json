@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronosdb.dev/schemas/impact-request.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scenario_id",
+    "as_of_time",
+    "simulation_end_time",
+    "disruption_event_id",
+    "rule_set_version",
+    "allocation_policy",
+    "scheduling_policy"
+  ],
+  "properties": {
+    "scenario_id": {"type": "string", "minLength": 1},
+    "as_of_time": {"type": "string", "format": "date-time"},
+    "simulation_end_time": {"type": "string", "format": "date-time"},
+    "disruption_event_id": {"type": "string", "minLength": 1},
+    "rule_set_version": {"type": "string", "pattern": "^impact-rules-"},
+    "allocation_policy": {"type": "string", "minLength": 1},
+    "scheduling_policy": {"type": "string", "minLength": 1}
+  }
+}

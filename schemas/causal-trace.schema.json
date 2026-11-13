@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronosdb.dev/schemas/causal-trace.schema.json",
+  "type": "object",
+  "required": ["trace_id", "scenario_id", "steps"],
+  "properties": {
+    "trace_id": {"type": "string"},
+    "scenario_id": {"type": "string"},
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "rule_id", "output"],
+        "properties": {
+          "source_id": {"type": "string"},
+          "rule_id": {"type": "string"},
+          "output": {"type": "string"}
+        }
+      }
+    }
+  }
+}
