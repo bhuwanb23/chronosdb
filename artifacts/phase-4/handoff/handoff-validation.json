@@ -1,13 +1,15 @@
 {
   "checks": {
+    "auxiliary_assets": true,
     "checksums": true,
     "dependency_order": true,
     "foreign_keys": true,
     "paths": true,
+    "primary_keys": true,
     "row_counts": true,
     "schemas": true
   },
-  "files_checked": 765,
+  "files_checked": 712,
   "issues": [],
   "status": "PASS"
 }

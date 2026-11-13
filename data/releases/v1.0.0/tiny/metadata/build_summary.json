@@ -41,7 +41,7 @@
   "intervention_rows": {
     "alternates": 1,
     "costs": 4,
-    "expedites": 1,
+    "expedites": 2,
     "rescheduling": 3,
     "transfers": 2
   },

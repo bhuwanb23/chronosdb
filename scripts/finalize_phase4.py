@@ -252,6 +252,14 @@ def _oracle_candidate(
             row
             for row in source["expedites"]
             if row["purchase_order_id"] == po["id"]
+            and (
+                scenario["category"]
+                in {"PURCHASE_ORDER_DISRUPTION", "SELECTED_COMPONENT_OUTAGE"}
+                and row["eligible"] == "true"
+                or scenario["category"]
+                not in {"PURCHASE_ORDER_DISRUPTION", "SELECTED_COMPONENT_OUTAGE"}
+                and row["eligible"] == "false"
+            )
         ),
         None,
     )
@@ -292,38 +300,41 @@ def _oracle_candidate(
         cost = Decimal(str(transfer["fixed_cost_inr"])) + quantity * Decimal(
             str(transfer["variable_cost_per_unit_inr"])
         )
-        feasible = transfer["feasibility_status"] == "FEASIBLE"
-        rejection = transfer.get("rejection_reason") or ""
+        scenario_allows = scenario["category"] in {
+            "FULL_SUPPLIER_OUTAGE",
+            "INVENTORY_TRANSFER_CONSTRAINT",
+            "BUDGET_CONSTRAINED_RECOVERY",
+        }
+        feasible = transfer["feasibility_status"] == "FEASIBLE" and scenario_allows
+        rejection = (
+            ""
+            if feasible
+            else transfer.get("rejection_reason") or "TRANSFER_SCENARIO_CONSTRAINT"
+        )
         references = [transfer["id"]]
         coverage_quantity = Decimal(str(transfer["available_quantity"]))
         ready_time = _date(transfer["dispatch_time"]) + timedelta(
             days=int(transfer["lead_time_days"])
         )
-    elif candidate_type == "TRANSFER":
-        cost = Decimal(str(po["unit_cost_inr"])) * Decimal("0.05")
-        feasible = scenario["category"] in {
-            "INVENTORY_TRANSFER_CONSTRAINT",
-            "BUDGET_CONSTRAINED_RECOVERY",
-        }
-        rejection = "" if feasible else "TRANSFER_CAPABILITY_UNAVAILABLE"
-        references = [po["id"], scenario["reference_component_id"]]
     elif candidate_type == "ALTERNATE_SUPPLY" and alternate:
         cost = Decimal(str(alternate["incremental_premium_inr"]))
-        feasible = alternate["feasibility_status"] == "FEASIBLE"
-        rejection = "" if feasible else "ALTERNATE_CAPACITY_UNAVAILABLE"
+        scenario_allows = scenario["category"] in {
+            "FULL_SUPPLIER_OUTAGE",
+            "ALTERNATE_SUPPLIER_CONSTRAINT",
+        }
+        feasible = alternate["feasibility_status"] == "FEASIBLE" and scenario_allows
+        rejection = (
+            ""
+            if feasible
+            else "ALTERNATE_CAPACITY_UNAVAILABLE"
+            if alternate["feasibility_status"] != "FEASIBLE"
+            else "ALTERNATE_SCENARIO_CONSTRAINT"
+        )
         references = [alternate["id"]]
         coverage_quantity = Decimal(str(alternate["quantity"]))
         ready_time = _date(alternate["effective_from"]) + timedelta(
             days=int(alternate["lead_time_days"])
         )
-    elif candidate_type == "ALTERNATE_SUPPLY":
-        cost = Decimal(str(po["unit_cost_inr"])) * Decimal("0.18")
-        feasible = scenario["category"] in {
-            "FULL_SUPPLIER_OUTAGE",
-            "ALTERNATE_SUPPLIER_CONSTRAINT",
-        }
-        rejection = "" if feasible else "ALTERNATE_CAPABILITY_UNAVAILABLE"
-        references = [po["id"], scenario["reference_supplier_id"]]
     elif candidate_type == "EXPEDITE" and expedite:
         cost = Decimal(str(expedite["fixed_fee_inr"])) + Decimal(
             str(expedite["variable_fee_inr"])
@@ -334,25 +345,19 @@ def _oracle_candidate(
         coverage_quantity = Decimal(str(po["ordered_quantity"]))
         if expedite.get("earliest_achievable_arrival"):
             ready_time = _date(expedite["earliest_achievable_arrival"])
-    elif candidate_type == "EXPEDITE":
-        cost = Decimal(str(po["unit_cost_inr"])) * Decimal("0.10")
-        feasible = scenario["category"] in {
-            "PURCHASE_ORDER_DISRUPTION",
-            "SELECTED_COMPONENT_OUTAGE",
-        }
-        rejection = "" if feasible else "EXPEDITE_CAPABILITY_UNAVAILABLE"
-        references = [po["id"], scenario["reference_component_id"]]
     elif candidate_type == "RESCHEDULE" and reschedule:
         cost = Decimal(str(reschedule["reschedule_penalty_inr"]))
-        feasible = reschedule["feasibility_status"] == "FEASIBLE"
-        rejection = "" if feasible else "RESCHEDULE_LOCKED"
+        scenario_allows = scenario["category"] == "PARTIAL_SUPPLIER_OUTAGE"
+        feasible = reschedule["feasibility_status"] == "FEASIBLE" and scenario_allows
+        rejection = (
+            ""
+            if feasible
+            else "RESCHEDULE_LOCKED"
+            if reschedule["feasibility_status"] != "FEASIBLE"
+            else "RESCHEDULE_SCENARIO_CONSTRAINT"
+        )
         references = [reschedule["id"], reschedule["production_order_id"]]
         ready_time = planned_start
-    elif candidate_type == "RESCHEDULE":
-        cost = Decimal("10000")
-        feasible = scenario["category"] == "PARTIAL_SUPPLIER_OUTAGE"
-        rejection = "" if feasible else "RESCHEDULE_CAPABILITY_UNAVAILABLE"
-        references = [scenario["reference_purchase_order_id"]]
         ready_time = planned_start
     elif candidate_type == "HYBRID":
         transfer_cost = _oracle_candidate("TRANSFER", scenario, source, baseline_breaches)
@@ -360,9 +365,11 @@ def _oracle_candidate(
             "ALTERNATE_SUPPLY", scenario, source, baseline_breaches
         )
         cost = Decimal(transfer_cost["cost_inr"]) + Decimal(alternate_cost["cost_inr"])
-        feasible = bool(
-            transfer_cost["feasible"] and alternate_cost["feasible"]
-        ) or scenario["category"] == "FULL_SUPPLIER_OUTAGE"
+        feasible = (
+            scenario["category"] == "FULL_SUPPLIER_OUTAGE"
+            and transfer_cost["feasible"]
+            and alternate_cost["feasible"]
+        )
         rejection = "" if feasible else "HYBRID_COMPONENT_NOT_FEASIBLE"
         references = transfer_cost["source_record_ids"] + alternate_cost["source_record_ids"]
         coverage_quantity = Decimal(transfer_cost["coverage_quantity"]) + Decimal(
@@ -509,7 +516,12 @@ def _calculate_benchmark_oracle(
         if baseline_breaches is not None
         else None,
         "intervention_cost_inr": "0.00",
-        "source_record_ids": [po["id"], component, line["customer_order_id"]],
+        "source_record_ids": [
+            po["id"],
+            po["supplier_id"],
+            component,
+            line["customer_order_id"],
+        ],
     }
     candidate_types = (
         ["MONITOR_NO_INTERVENTION"]
@@ -529,7 +541,11 @@ def _calculate_benchmark_oracle(
                 if scenario["category"] == "NO_FEASIBLE_INTERVENTION"
                 else "DATA_REQUIRED"
             )
-    feasible = [row for row in candidates if row["feasible"] and row["constraint_checks"]["budget"]]
+    feasible = [
+        row
+        for row in candidates
+        if row["feasible"] and all(row["constraint_checks"].values())
+    ]
     if scenario["category"] in {"NO_FEASIBLE_INTERVENTION", "INSUFFICIENT_CRITICAL_DATA"}:
         recommended = scenario["category"].replace("_CRITICAL", "")
         recommended = "INSUFFICIENT_DATA" if "INSUFFICIENT" in recommended else recommended
@@ -556,11 +572,7 @@ def _calculate_benchmark_oracle(
         "input_state_hash": _json_hash(
             {
                 "scenario": scenario,
-                "source": {
-                    key: value
-                    for key, value in source.items()
-                    if key in {"purchase_orders", "opening", "requirements", "customer_lines"}
-                },
+                "source": source,
             }
         ),
         "rule_version": "phase4-source-record-oracle-2.0",
@@ -707,21 +719,54 @@ def _generate_ground_truth(root: Path) -> None:
     trace_rows: list[dict[str, Any]] = []
     hashes: list[dict[str, Any]] = []
     comparisons: list[str] = []
+    comparison_details: list[dict[str, Any]] = []
     for scenario_path in sorted(scenarios_dir.glob("*.json")):
         scenario = _json(scenario_path)
         oracle, intermediate, trace = _calculate_benchmark_oracle(scenario, source)
         frozen = _json(expected_dir / scenario_path.name)
-        if (
-            frozen.get("recommended_intervention") not in {
-                oracle["recommended_intervention_id"],
-                "PARETO_SET",
-                "NO_FEASIBLE_INTERVENTION",
-                "INSUFFICIENT_DATA",
-            }
-            and oracle["recommended_intervention_id"]
-            not in {"PARETO_SET", "NO_FEASIBLE_INTERVENTION", "INSUFFICIENT_DATA"}
+        mismatch_reasons: list[str] = []
+        if frozen.get("recommended_intervention") != oracle["recommended_intervention_id"]:
+            mismatch_reasons.append("recommended_intervention")
+        oracle_candidate_types = {
+            candidate["candidate_type"] for candidate in oracle["candidates"]
+        }
+        if not set(frozen.get("candidate_set", [])).issubset(oracle_candidate_types):
+            mismatch_reasons.append("candidate_set")
+        if frozen.get("causal_trace_id") != trace["trace_id"]:
+            mismatch_reasons.append("causal_trace_id")
+        if frozen.get("affected_customer_orders") != [
+            intermediate["customer_effect"]["customer_order_id"]
+        ]:
+            mismatch_reasons.append("affected_customer_orders")
+        if frozen.get("evidence_references") != [scenario["evidence_query_id"]]:
+            mismatch_reasons.append("evidence_references")
+        for field in (
+            "requires_temporal_reconstruction",
+            "has_misleading_evidence",
+            "partial_fulfillment",
         ):
+            if frozen.get(field) != scenario.get(field):
+                mismatch_reasons.append(field)
+        if not set(frozen.get("source_record_ids", [])).issubset(
+            set(oracle["provenance"]["source_record_ids"])
+        ):
+            mismatch_reasons.append("source_record_ids")
+        if frozen.get("sla_breach_count") is not None:
+            selected = next(
+                (
+                    candidate
+                    for candidate in oracle["candidates"]
+                    if candidate["candidate_type"] == oracle["recommended_intervention_id"]
+                ),
+                None,
+            )
+            if selected is None or frozen["sla_breach_count"] != selected["sla_breach_count"]:
+                mismatch_reasons.append("sla_breach_count")
+        if mismatch_reasons:
             comparisons.append(scenario["scenario_id"])
+            comparison_details.append(
+                {"scenario_id": scenario["scenario_id"], "fields": mismatch_reasons}
+            )
         expected_rows.append(oracle)
         intermediate_rows.append(intermediate)
         trace_rows.append(trace)
@@ -748,6 +793,7 @@ def _generate_ground_truth(root: Path) -> None:
             "scenarios": len(expected_rows),
             "independent_source_record_oracle": True,
             "frozen_expected_recommendation_mismatches": comparisons,
+            "frozen_expected_field_mismatches": comparison_details,
             "status": "PASS" if not comparisons else "FAIL",
         },
     )
@@ -1160,11 +1206,24 @@ def _write_readiness(root: Path) -> None:
             text=True,
         )
         elapsed_ms = round((time.perf_counter() - started) * 1000, 3)
-        run_hash = hashlib.sha256(
-            (
-                root / "artifacts" / "phase-4" / "ground-truth" / "expected-results.jsonl"
-            ).read_bytes()
-        ).hexdigest()
+        stability_paths = [
+            root / "artifacts" / "phase-4" / "ground-truth" / name
+            for name in (
+                "expected-results.jsonl",
+                "intermediate-calculations.jsonl",
+                "causal-traces.jsonl",
+                "scenario-input-hashes.csv",
+                "oracle-reconciliation.json",
+            )
+        ] + [
+            release_root(load_release_profile(root, "demo")) / name
+            for name in ("manifest.json", "checksums.sha256")
+        ]
+        digest = hashlib.sha256()
+        for path in stability_paths:
+            digest.update(path.relative_to(root).as_posix().encode("utf-8"))
+            digest.update(path.read_bytes())
+        run_hash = digest.hexdigest()
         result_hashes.append(run_hash)
         run_results.append(
             {
@@ -1186,6 +1245,7 @@ def _write_readiness(root: Path) -> None:
         {
             "reviewer": f"PROXY-{index}",
             "test": "ten_second_comprehension",
+            "evidence_type": "automated_smoke_check",
             "score": "5/5" if all(required_golden_facts.values()) else "0/5",
             "status": "PASS" if all(required_golden_facts.values()) else "FAIL",
         }
@@ -1208,13 +1268,23 @@ def _write_readiness(root: Path) -> None:
             "result_hash": result_hashes[0],
             "run_hashes": result_hashes,
             "run_results": run_results,
-            "source": "independent ground-truth assembly output",
+            "stability_inputs": [
+                "ground-truth expected results",
+                "ground-truth intermediate calculations",
+                "ground-truth causal traces",
+                "scenario input hashes",
+                "oracle reconciliation",
+                "demo release manifest",
+                "demo release checksums",
+            ],
+            "source": "independent ground-truth and release artifact output",
         },
     )
     (readiness_root / "comprehension-report.md").write_text(
         "# Demonstration Comprehension Review\n\n"
-        "5/5 proxy reviewers identified supplier, component, exposure, "
+        "5/5 automated proxy checks identified supplier, component, exposure, "
         "revenue risk, and recommendation.\n"
+        "This is a deterministic smoke check, not a human-subject study.\n"
         f"Recommendation: `{golden['recommended_intervention']}`.\n",
         encoding="utf-8",
     )
@@ -1222,7 +1292,8 @@ def _write_readiness(root: Path) -> None:
         "# Evidence Navigation Review\n\n"
         "Purchase order, inventory, BOM, production, customer, and procedure "
         "references are locatable.\n"
-        "Median proxy navigation time: under 3 minutes.\n"
+        "Automated evidence-navigation smoke check: PASS; estimated navigation "
+        "time target: under 3 minutes.\n"
         f"Required source facts: `{required_golden_facts}`.\n",
         encoding="utf-8",
     )
@@ -1231,7 +1302,7 @@ def _write_readiness(root: Path) -> None:
         "The comparison fixture checks transfer-only, alternate-supply, "
         "rescheduling, and hybrid candidate records against the frozen golden "
         f"recommendation `{golden['recommended_intervention']}`.\n\n"
-        "Reviewer result: 5/5 PASS.\n",
+        "Automated comparison fixture result: 5/5 PASS.\n",
         encoding="utf-8",
     )
     if not all(row["status"] == "PASS" for row in rows) or len(set(result_hashes)) != 1:
@@ -1294,6 +1365,55 @@ TABLE_ALIASES = {
     "TRANSFER": "INVENTORY_TRANSFER_TRANSACTIONS",
     "WAREHOUSE": "MASTER_WAREHOUSES",
 }
+
+
+def _contract_schema(path: Path) -> tuple[list[str], list[dict[str, Any]]]:
+    if path.suffix == ".csv":
+        with path.open(encoding="utf-8", newline="") as stream:
+            rows = list(csv.DictReader(stream))
+        return list(rows[0]) if rows else [], rows
+    if path.suffix == ".jsonl":
+        rows = [
+            json.loads(line)
+            for line in path.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+        records = [row for row in rows if isinstance(row, dict)]
+        return list(records[0]) if records else [], records
+    if path.suffix == ".json":
+        payload = _json(path)
+        if isinstance(payload, list):
+            records = [row for row in payload if isinstance(row, dict)]
+            return list(records[0]) if records else [], records
+        if isinstance(payload, dict):
+            return list(payload), [payload]
+    return [], []
+
+
+def _primary_key(columns: list[str], rows: list[dict[str, Any]]) -> list[str]:
+    candidates = [
+        column
+        for column in columns
+        if column.lower() in {"id", "document_id", "scenario_id"}
+    ]
+    candidates.extend(
+        column
+        for column in columns
+        if column.lower().endswith("_id") and column not in candidates
+    )
+    for column in candidates:
+        values = [row.get(column) for row in rows]
+        if values and all(value not in {None, ""} for value in values):
+            if len(set(map(str, values))) == len(values):
+                return [column]
+    id_columns = [
+        column for column in columns if column.lower().endswith("_id")
+    ]
+    if len(id_columns) > 1 and rows:
+        keys = [tuple(str(row.get(column, "")) for column in id_columns) for row in rows]
+        if all(all(value for value in key) for key in keys) and len(set(keys)) == len(keys):
+            return id_columns
+    return []
 
 
 def _target_table(relative_path: Path) -> str:
@@ -1364,66 +1484,24 @@ def _load_rank(relative_path: Path) -> int:
 def _handoff_entry(profile_name: str, output: Path, path: Path) -> dict[str, Any]:
     relative_path = path.relative_to(output)
     target_table = _target_table(relative_path)
-    columns: list[str] = []
-    if path.suffix == ".csv":
-        with path.open(encoding="utf-8", newline="") as stream:
-            columns = next(csv.reader(stream), [])
-    elif path.suffix == ".json":
-        payload = _json(path)
-        if isinstance(payload, dict):
-            columns = list(payload)
-        else:
-            columns = ["payload"]
-    elif path.suffix == ".jsonl":
-        first_line = next(
-            (
-                line
-                for line in path.read_text(encoding="utf-8").splitlines()
-                if line.strip()
-            ),
-            "{}",
-        )
-        payload = json.loads(first_line)
-        columns = list(payload) if isinstance(payload, dict) else ["payload"]
+    columns, rows = _contract_schema(path)
     column_mapping = {
         column: {
             "source_column": column,
             "target_column": column.upper(),
             "db2_type": _db2_type(column),
-            "nullable": column not in {"id", "document_id", "scenario_id"},
+            "nullable": column not in _primary_key(columns, rows),
         }
         for column in columns
     }
-    foreign_keys = []
-    for column in columns:
-        if not column.endswith("_id") or column in {"id", "scenario_id"}:
-            continue
-        base = column[:-3].upper()
-        if base not in TABLE_ALIASES:
-            continue
-        foreign_keys.append(
-            {
-                "column": column.upper(),
-                "referenced_table": f"CHRONOSDB.{TABLE_ALIASES[base]}",
-                "referenced_column": "ID",
-            }
-        )
     return {
         "profile": profile_name,
         "source_file": relative_path.as_posix(),
         "target_schema": "CHRONOSDB",
         "target_table": target_table,
         "column_mapping": column_mapping,
-        "primary_key": (
-            ["ID"]
-            if "id" in columns
-            else ["DOCUMENT_ID"]
-            if "document_id" in columns
-            else ["SCENARIO_ID"]
-            if "scenario_id" in columns
-            else [],
-        ),
-        "foreign_keys": foreign_keys,
+        "primary_key": [column.upper() for column in _primary_key(columns, rows)],
+        "foreign_keys": [],
         "unique_constraints": [["SCENARIO_ID"]] if "scenario_id" in columns else [],
         "check_constraints": (
             ["QUANTITY >= 0"] if any("quantity" in column for column in columns) else []
@@ -1437,6 +1515,38 @@ def _handoff_entry(profile_name: str, output: Path, path: Path) -> dict[str, Any
     }
 
 
+def _is_loadable_asset(path: Path) -> bool:
+    columns, rows = _contract_schema(path)
+    return bool(columns and _primary_key(columns, rows))
+
+
+def _populate_foreign_keys(entries: list[dict[str, Any]]) -> None:
+    primary_keys = {
+        entry["target_table"]: entry["primary_key"]
+        for entry in entries
+        if len(entry["primary_key"]) == 1
+    }
+    for entry in entries:
+        foreign_keys: list[dict[str, Any]] = []
+        for column in entry["column_mapping"]:
+            if not column.lower().endswith("_id"):
+                continue
+            referenced_table = TABLE_ALIASES.get(column[:-3].upper())
+            if not referenced_table or referenced_table == entry["target_table"]:
+                continue
+            referenced_key = primary_keys.get(referenced_table, [])
+            if len(referenced_key) != 1:
+                continue
+            foreign_keys.append(
+                {
+                    "column": column.upper(),
+                    "referenced_table": f"CHRONOSDB.{referenced_table}",
+                    "referenced_column": referenced_key[0],
+                }
+            )
+        entry["foreign_keys"] = foreign_keys
+
+
 def _write_handoff(root: Path) -> None:
     handoff_root = root / "artifacts" / "phase-4" / "handoff"
     entries: list[dict[str, Any]] = []
@@ -1445,17 +1555,31 @@ def _write_handoff(root: Path) -> None:
         profile = load_release_profile(root, profile_name)
         output = release_root(profile)
         for path in _release_files(output):
-            if path.suffix == ".md":
+            relative = path.relative_to(output)
+            if (
+                path.suffix == ".md"
+                or relative.parts[0] in {"metadata", "reports"}
+                or path.name in {"README.md", "DATASET_CARD.md", "license.json", "load-order.json"}
+                or not _is_loadable_asset(path)
+            ):
                 auxiliary_assets.append(
                     {
                         "profile": profile_name,
-                        "source_file": path.relative_to(output).as_posix(),
-                        "asset_type": "documentation",
+                        "source_file": relative.as_posix(),
+                        "asset_type": (
+                            "documentation"
+                            if path.suffix == ".md"
+                            else "release_metadata"
+                            if relative.parts[0] in {"metadata", "reports"}
+                            else "structured_auxiliary"
+                        ),
+                        "record_count": _logical_count(path),
                         "checksum": _sha(path),
                     }
                 )
             else:
                 entries.append(_handoff_entry(profile_name, output, path))
+    _populate_foreign_keys(entries)
     entries.sort(key=lambda entry: (entry["profile"], entry["load_order"], entry["source_file"]))
     load_phases = [
         "MASTER",
@@ -1535,7 +1659,11 @@ def _validate_handoff(root: Path) -> bool:
     contract_path = root / "artifacts" / "phase-4" / "handoff" / "phase5-load-contract.json"
     contract = _json(contract_path)
     entries = contract["files"]
+    auxiliary_assets = contract["auxiliary_assets"]
     known_tables = {entry["target_table"] for entry in entries}
+    table_entries: dict[str, dict[str, Any]] = {}
+    for entry in entries:
+        table_entries.setdefault(entry["target_table"], entry)
     order_index = {
         table: index for index, table in enumerate(contract["load_order"])
     }
@@ -1550,19 +1678,61 @@ def _validate_handoff(root: Path) -> bool:
             issues.append(f"row-count: {entry['profile']}:{entry['source_file']}")
         if not entry["column_mapping"]:
             issues.append(f"empty schema: {entry['source_file']}")
+        if not isinstance(entry["primary_key"], list) or any(
+            not isinstance(column, str) for column in entry["primary_key"]
+        ):
+            issues.append(f"malformed primary key: {entry['source_file']}")
+        elif not entry["primary_key"] or any(
+            column.lower()
+            not in {mapping_column.lower() for mapping_column in entry["column_mapping"]}
+            for column in entry["primary_key"]
+        ):
+            issues.append(f"invalid primary key: {entry['source_file']}")
+        for foreign_key in entry["foreign_keys"]:
+            if foreign_key["column"].lower() not in {
+                column.lower() for column in entry["column_mapping"]
+            }:
+                issues.append(f"malformed FK column: {entry['source_file']}")
         if entry["target_table"] not in order_index:
             issues.append(f"missing load order: {entry['target_table']}")
         for foreign_key in entry["foreign_keys"]:
             parent = foreign_key["referenced_table"].split(".", 1)[-1]
             if parent not in known_tables:
                 issues.append(f"unknown FK target: {entry['target_table']}->{parent}")
-            elif (
+            elif parent == entry["target_table"]:
+                issues.append(f"self-referential FK: {entry['source_file']}")
+            else:
+                parent_entry = table_entries[parent]
+                parent_columns = {
+                    column.lower() for column in parent_entry["column_mapping"]
+                }
+                parent_primary_keys = {
+                    column.lower() for column in parent_entry["primary_key"]
+                }
+                if foreign_key["referenced_column"].lower() not in parent_columns:
+                    issues.append(
+                        f"unknown FK column: {entry['target_table']}->{parent}"
+                    )
+                if foreign_key["referenced_column"].lower() not in parent_primary_keys:
+                    issues.append(
+                        f"FK does not target primary key: {entry['target_table']}->{parent}"
+                    )
+                if (
                 parent != entry["target_table"]
                 and order_index[parent] >= order_index[entry["target_table"]]
-            ):
-                issues.append(
-                    f"dependency order: {entry['target_table']} before {parent}"
-                )
+                ):
+                    issues.append(
+                        f"dependency order: {entry['target_table']} before {parent}"
+                    )
+    for asset in auxiliary_assets:
+        profile = load_release_profile(root, asset["profile"])
+        path = release_root(profile) / asset["source_file"]
+        if (
+            not path.exists()
+            or _sha(path) != asset["checksum"]
+            or _logical_count(path) != asset["record_count"]
+        ):
+            issues.append(f"auxiliary asset mismatch: {asset['source_file']}")
     report = {
         "status": "PASS" if not issues else "FAIL",
         "files_checked": len(entries),
@@ -1572,8 +1742,20 @@ def _validate_handoff(root: Path) -> bool:
             "checksums": not any(issue.startswith("checksum/path") for issue in issues),
             "row_counts": not any(issue.startswith("row-count") for issue in issues),
             "schemas": not any(issue.startswith("empty schema") for issue in issues),
-            "foreign_keys": not any(issue.startswith("unknown FK") for issue in issues),
+            "primary_keys": not any(
+                issue.startswith(("malformed primary key", "invalid primary key"))
+                for issue in issues
+            ),
+            "foreign_keys": not any(
+                issue.startswith(
+                    ("unknown FK", "malformed FK", "self-referential FK", "FK does not")
+                )
+                for issue in issues
+            ),
             "dependency_order": not any(issue.startswith("dependency order") for issue in issues),
+            "auxiliary_assets": not any(
+                issue.startswith("auxiliary asset") for issue in issues
+            ),
         },
     }
     _write_json(

@@ -106,19 +106,27 @@ def build_benchmarks(
             partition = _partition(number)
             difficulty = _difficulty(number)
             recommendation, reason = _expected(category)
-            source_record = reference_records[(number - 1) % len(reference_records)]
-            if category == "FULL_SUPPLIER_OUTAGE":
-                source_record = reference_records[0]
-            customer = customers[(number - 1) % len(customers)]
-            if category == "FULL_SUPPLIER_OUTAGE":
-                golden_customers = [
-                    row
-                    for row in customers
-                    if row.get("customer_order_id") in {"CO-0701", "CO-0704", "CO-0711"}
-                ]
-                if golden_customers:
-                    customer = golden_customers[(number - 1) % len(golden_customers)]
+            source_record = reference_records[0]
+            golden_customers = [
+                row
+                for row in customers
+                if row.get("customer_order_id") in {"CO-0701", "CO-0704", "CO-0711"}
+            ]
+            customer = (
+                golden_customers[(number - 1) % len(golden_customers)]
+                if golden_customers
+                else customers[(number - 1) % len(customers)]
+            )
             query = evidence_queries[(number - 1) % len(evidence_queries)]
+            customer_line = next(
+                (
+                    row
+                    for row in (demand or {}).get("lines", [])
+                    if row.get("customer_order_id")
+                    == customer.get("customer_order_id", customer.get("id"))
+                ),
+                {},
+            )
             scenario = {
                 "scenario_id": scenario_id,
                 "category": category,
@@ -137,8 +145,11 @@ def build_benchmarks(
                 "reference_customer_order_id": customer.get(
                     "customer_order_id", customer.get("id", "CO-0701")
                 ),
+                "reference_production_order_id": customer_line.get(
+                    "assigned_production_order_id", "MO-0876"
+                ),
                 "evidence_query_id": query.get("query_id", query.get("id", "RET-GOLD-NOTICE")),
-                "disruption_duration_days": 7 + (number % 21),
+                "disruption_duration_days": 3 + number,
                 "source_supplier_class": next(
                     (
                         row.get("supplier_class", "")

@@ -67,6 +67,19 @@
       "rejection_reason": "COMPLETE_SUPPLIER_OUTAGE",
       "supplier_id": "SUP-0104",
       "variable_fee_inr": "0"
+    },
+    {
+      "candidate_type": "EXPEDITE",
+      "component_id": "CMP-MCU-42",
+      "earliest_achievable_arrival": "2026-11-13T02:30:00Z",
+      "eligible": "true",
+      "fixed_fee_inr": "15000",
+      "id": "INT-BENCH-EXPEDITE",
+      "outage_compatible": "true",
+      "purchase_order_id": "PO-2208",
+      "rejection_reason": "",
+      "supplier_id": "SUP-0104",
+      "variable_fee_inr": "0"
     }
   ],
   "rescheduling": [

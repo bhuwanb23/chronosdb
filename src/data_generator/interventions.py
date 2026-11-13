@@ -64,7 +64,20 @@ def build_interventions(
             "variable_fee_inr": "0",
             "outage_compatible": "false",
             "rejection_reason": "COMPLETE_SUPPLIER_OUTAGE",
-        }
+        },
+        {
+            "id": "INT-BENCH-EXPEDITE",
+            "candidate_type": "EXPEDITE",
+            "purchase_order_id": "PO-2208",
+            "supplier_id": "SUP-0104",
+            "component_id": "CMP-MCU-42",
+            "eligible": "true",
+            "earliest_achievable_arrival": "2026-11-13T02:30:00Z",
+            "fixed_fee_inr": "15000",
+            "variable_fee_inr": "0",
+            "outage_compatible": "true",
+            "rejection_reason": "",
+        },
     ]
     alternates = [
         {

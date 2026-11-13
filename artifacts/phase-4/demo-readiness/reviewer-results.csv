@@ -1,6 +1,6 @@
-reviewer,test,score,status
-PROXY-1,ten_second_comprehension,5/5,PASS
-PROXY-2,ten_second_comprehension,5/5,PASS
-PROXY-3,ten_second_comprehension,5/5,PASS
-PROXY-4,ten_second_comprehension,5/5,PASS
-PROXY-5,ten_second_comprehension,5/5,PASS
+reviewer,test,evidence_type,score,status
+PROXY-1,ten_second_comprehension,automated_smoke_check,5/5,PASS
+PROXY-2,ten_second_comprehension,automated_smoke_check,5/5,PASS
+PROXY-3,ten_second_comprehension,automated_smoke_check,5/5,PASS
+PROXY-4,ten_second_comprehension,automated_smoke_check,5/5,PASS
+PROXY-5,ten_second_comprehension,automated_smoke_check,5/5,PASS

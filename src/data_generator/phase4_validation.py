@@ -158,6 +158,14 @@ def validate_procurement(
                 if supplier == key[0] and component == key[1]
             ]
             if all_windows and expected_date < min(all_windows):
+                if (
+                    order["status"] != "RECEIVED"
+                    or not order.get("actual_arrival_time")
+                    or str(order["actual_arrival_time"])[:10] >= min(all_windows)
+                ):
+                    raise Phase4ValidationError(
+                        f"historical supplier capacity exemption is not proven: {order['id']}"
+                    )
                 continue
             raise Phase4ValidationError(
                 f"supplier capacity window missing: {order['id']}"
