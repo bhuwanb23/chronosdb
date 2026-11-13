@@ -269,6 +269,7 @@ def _oracle_candidate(
     feasible = False
     rejection = "CAPABILITY_NOT_FOUND"
     references: list[str] = []
+    coverage_quantity = Decimal("0")
     affected_order_ids = {
         row["assigned_production_order_id"]
         for row in source["customer_lines"]
@@ -294,6 +295,7 @@ def _oracle_candidate(
         feasible = transfer["feasibility_status"] == "FEASIBLE"
         rejection = transfer.get("rejection_reason") or ""
         references = [transfer["id"]]
+        coverage_quantity = Decimal(str(transfer["available_quantity"]))
         ready_time = _date(transfer["dispatch_time"]) + timedelta(
             days=int(transfer["lead_time_days"])
         )
@@ -310,6 +312,7 @@ def _oracle_candidate(
         feasible = alternate["feasibility_status"] == "FEASIBLE"
         rejection = "" if feasible else "ALTERNATE_CAPACITY_UNAVAILABLE"
         references = [alternate["id"]]
+        coverage_quantity = Decimal(str(alternate["quantity"]))
         ready_time = _date(alternate["effective_from"]) + timedelta(
             days=int(alternate["lead_time_days"])
         )
@@ -328,6 +331,7 @@ def _oracle_candidate(
         feasible = expedite["eligible"] == "true" and expedite["outage_compatible"] == "true"
         rejection = "" if feasible else expedite.get("rejection_reason", "EXPEDITE_UNAVAILABLE")
         references = [expedite["id"], po["id"]]
+        coverage_quantity = Decimal(str(po["ordered_quantity"]))
         if expedite.get("earliest_achievable_arrival"):
             ready_time = _date(expedite["earliest_achievable_arrival"])
     elif candidate_type == "EXPEDITE":
@@ -361,6 +365,9 @@ def _oracle_candidate(
         ) or scenario["category"] == "FULL_SUPPLIER_OUTAGE"
         rejection = "" if feasible else "HYBRID_COMPONENT_NOT_FEASIBLE"
         references = transfer_cost["source_record_ids"] + alternate_cost["source_record_ids"]
+        coverage_quantity = Decimal(transfer_cost["coverage_quantity"]) + Decimal(
+            alternate_cost["coverage_quantity"]
+        )
         ready_time = max(
             _date(transfer_cost["material_ready_time"]),
             _date(alternate_cost["material_ready_time"]),
@@ -374,12 +381,29 @@ def _oracle_candidate(
     delay_hours = max(0, int((ready_time - planned_start).total_seconds() // 3600))
     breaches = None if baseline_breaches is None else baseline_breaches
     if feasible and baseline_breaches is not None:
+        required_quantity = sum(
+            (
+                Decimal(row["required_quantity"])
+                for row in source["requirements"]
+                if row["component_id"] == scenario["reference_component_id"]
+                and row["production_order_id"] in affected_order_ids
+            ),
+            Decimal("0"),
+        )
+        reduction = (
+            min(baseline_breaches, int(coverage_quantity / required_quantity))
+            if required_quantity > 0
+            else 0
+        )
         breaches = (
             baseline_breaches
             if candidate_type == "MONITOR_NO_INTERVENTION"
-            else 0
-            if delay_hours == 0
-            else min(baseline_breaches, max(1, (delay_hours + 23) // 24))
+            else max(
+                0,
+                baseline_breaches - reduction
+                if delay_hours == 0
+                else baseline_breaches - reduction,
+            )
         )
     return {
         "candidate_id": f"ORACLE-{candidate_type}-{scenario['scenario_id']}",
@@ -391,6 +415,7 @@ def _oracle_candidate(
         "sla_breach_count": breaches,
         "material_ready_time": ready_time.isoformat().replace("+00:00", "Z"),
         "projected_delay_hours": delay_hours,
+        "coverage_quantity": str(coverage_quantity),
         "delta_from_do_nothing": (
             None
             if breaches is None or baseline_breaches is None
@@ -423,6 +448,7 @@ def _calculate_benchmark_oracle(
             - Decimal(row.get("quarantined_quantity", "0"))
             for row in source["opening"]
             if row["component_id"] == component
+            and row["warehouse_id"] == po["destination_warehouse_id"]
         ),
         Decimal("0"),
     )
@@ -512,17 +538,17 @@ def _calculate_benchmark_oracle(
         optimal = [row["candidate_id"] for row in feasible[:2]]
         recommended = "PARETO_SET"
     else:
-        preferred = {
-            "NO_OPERATIONAL_IMPACT": "MONITOR_NO_INTERVENTION",
-            "INVENTORY_TRANSFER_CONSTRAINT": "TRANSFER",
-            "ALTERNATE_SUPPLIER_CONSTRAINT": "ALTERNATE_SUPPLY",
-            "BUDGET_CONSTRAINED_RECOVERY": "TRANSFER",
-            "PURCHASE_ORDER_DISRUPTION": "EXPEDITE",
-            "PARTIAL_SUPPLIER_OUTAGE": "RESCHEDULE",
-            "SELECTED_COMPONENT_OUTAGE": "EXPEDITE",
-        }.get(scenario["category"], "HYBRID")
-        selected = next((row for row in feasible if row["candidate_type"] == preferred), None)
-        selected = selected or (feasible[0] if feasible else None)
+        selected = min(
+            feasible,
+            key=lambda row: (
+                row["sla_breach_count"]
+                if row["sla_breach_count"] is not None
+                else 10**9,
+                Decimal(row["cost_inr"]),
+                row["candidate_type"],
+            ),
+            default=None,
+        )
         recommended = selected["candidate_type"] if selected else "NO_FEASIBLE_INTERVENTION"
         optimal = [selected["candidate_id"]] if selected else []
     expected = {
@@ -1293,6 +1319,8 @@ def _load_rank(relative_path: Path) -> int:
         return 1100
     if "expected" in relative_path.parts:
         return 1110
+    if "documents" in relative_path.parts:
+        return 900
     stem = relative_path.stem.upper()
     ordered = {
         "WAREHOUSES": 10,
@@ -1324,11 +1352,11 @@ def _load_rank(relative_path: Path) -> int:
         "EVIDENCE_DOCUMENTS": 900,
         "EXPECTED_RECOMMENDATION": 1000,
         "SCENARIOS": 1100,
-        "DOCUMENT_METADATA": 890,
+        "DOCUMENT_METADATA": 910,
         "DOCUMENTS": 900,
-        "ACCESS_CONTROL_LABELS": 910,
-        "RETRIEVAL_QUERIES": 920,
-        "RELEVANCE_LABELS": 930,
+        "ACCESS_CONTROL_LABELS": 920,
+        "RETRIEVAL_QUERIES": 930,
+        "RELEVANCE_LABELS": 940,
     }
     return ordered.get(stem, 1200)
 

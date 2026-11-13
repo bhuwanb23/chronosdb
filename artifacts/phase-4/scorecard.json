@@ -1,17 +1,15 @@
 {
-  "automatic_failures": [
-    "handoff"
-  ],
+  "automatic_failures": [],
   "gates": {
     "governance": true,
     "ground_truth": true,
-    "handoff": false,
+    "handoff": true,
     "readiness": true,
     "realism": true,
     "validation": true
   },
-  "score": 83,
-  "status": "FAIL",
+  "score": 100,
+  "status": "PASS",
   "validation": {
     "checksum_mismatches": 0,
     "errors": 0,
