@@ -1,0 +1,125 @@
+{
+  "benchmark_version": "impact-engine-v1.0.0",
+  "dataset_version": "1.0.0",
+  "golden": {
+    "affected_purchase_order_precision": 1.0,
+    "affected_purchase_order_recall": 1.0,
+    "causal_edge_precision": 1.0,
+    "causal_edge_recall": 1.0,
+    "component": {
+      "actual": [
+        "CMP-MCU-42"
+      ],
+      "expected": [
+        "CMP-MCU-42"
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "customer_order": {
+      "actual": [
+        "CO-0704",
+        "CO-0711"
+      ],
+      "expected": [
+        "CO-0704",
+        "CO-0711"
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "data_quality_classification_accuracy": 1.0,
+    "financial_fidelity": 1.0,
+    "numerical_exact_match_rate": 1.0,
+    "production_order": {
+      "actual": [
+        "MO-0882",
+        "MO-0889"
+      ],
+      "expected": [
+        "MO-0882",
+        "MO-0889"
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "result_hash": "3f63cf014ec38ec48898b06eacf9fa9fc18dc3f61595d4d10ccaf84218021eeb",
+    "scenario_id": "SCN-GOLD-001",
+    "sla_classification_accuracy": 1.0,
+    "targets_met": true
+  },
+  "partitions": {
+    "adversarial": 3,
+    "development": 24,
+    "golden": 3,
+    "review_holdout": 3,
+    "test": 18,
+    "validation": 12
+  },
+  "result_hash": "067b7d9dcd37b2d37d6da2b096b709c03330f0e69dda2dafaf31236c97700eb9",
+  "supported_scenarios": [
+    "SCN-GOLD-001"
+  ],
+  "unsupported_intervention_scenarios": [
+    "SCN-0055",
+    "SCN-0056",
+    "SCN-0057",
+    "SCN-0001",
+    "SCN-0002",
+    "SCN-0003",
+    "SCN-0004",
+    "SCN-0005",
+    "SCN-0006",
+    "SCN-0007",
+    "SCN-0008",
+    "SCN-0009",
+    "SCN-0010",
+    "SCN-0011",
+    "SCN-0012",
+    "SCN-0013",
+    "SCN-0014",
+    "SCN-0015",
+    "SCN-0016",
+    "SCN-0017",
+    "SCN-0018",
+    "SCN-0019",
+    "SCN-0020",
+    "SCN-0021",
+    "SCN-0022",
+    "SCN-0023",
+    "SCN-0024",
+    "SCN-0058",
+    "SCN-0059",
+    "SCN-0060",
+    "SCN-0037",
+    "SCN-0038",
+    "SCN-0039",
+    "SCN-0040",
+    "SCN-0041",
+    "SCN-0042",
+    "SCN-0043",
+    "SCN-0044",
+    "SCN-0045",
+    "SCN-0046",
+    "SCN-0047",
+    "SCN-0048",
+    "SCN-0049",
+    "SCN-0050",
+    "SCN-0051",
+    "SCN-0052",
+    "SCN-0053",
+    "SCN-0054",
+    "SCN-0025",
+    "SCN-0026",
+    "SCN-0027",
+    "SCN-0028",
+    "SCN-0029",
+    "SCN-0030",
+    "SCN-0031",
+    "SCN-0032",
+    "SCN-0033",
+    "SCN-0034",
+    "SCN-0035",
+    "SCN-0036"
+  ]
+}

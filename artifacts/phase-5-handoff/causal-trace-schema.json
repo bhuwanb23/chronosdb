@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "attribution": {
+      "type": "string"
+    },
+    "edges": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "nodes": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "rule_version": {
+      "type": "string"
+    },
+    "source_record_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "state_hash": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object"
+    },
+    "trace_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "trace_id",
+    "target",
+    "nodes",
+    "edges",
+    "rule_version",
+    "state_hash"
+  ],
+  "type": "object"
+}

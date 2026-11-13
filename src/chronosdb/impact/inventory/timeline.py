@@ -145,6 +145,9 @@ def _timeline(
     )
     safety_stock = _decimal(opening.get("safety_stock_quantity"))
     ordered = tuple(sorted(events, key=lambda event: event.sort_key()))
+    event_ids = [event.event_id for event in ordered]
+    if len(event_ids) != len(set(event_ids)):
+        raise ValueError(f"duplicate inventory event identity for {warehouse_id}/{component_id}")
     physical = opening_physical
     available = opening_available
     minimum = physical

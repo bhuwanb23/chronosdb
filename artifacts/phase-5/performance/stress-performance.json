@@ -1,0 +1,87 @@
+{
+  "dataset_version": "1.0.0",
+  "environment": {
+    "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "db2": "not used by release-file benchmark",
+    "memory_note": "Peak traced Python allocation is recorded per scale.",
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "rule_set_version": "impact-rules-v1.0.0",
+    "warm_or_cold": "warm process, cold state reconstruction per workload"
+  },
+  "performance_version": "impact-engine-v1.0.0",
+  "result_hash": "b087e079b9688aa3ffe1fa83b45a6e9ec4ad0c9490d3f5ea3ba7973482aa246e",
+  "scales": [
+    {
+      "repetitions": 1,
+      "scale": "stress",
+      "stages": {
+        "causal_trace_build_ms": {
+          "maximum_ms": 0.281,
+          "median_ms": 0.281,
+          "p95_ms": 0.281,
+          "samples_ms": [
+            0.281
+          ]
+        },
+        "customer_impact_ms": {
+          "maximum_ms": 4.738,
+          "median_ms": 4.738,
+          "p95_ms": 4.738,
+          "samples_ms": [
+            4.738
+          ]
+        },
+        "disruption_resolution_ms": {
+          "maximum_ms": 2.067,
+          "median_ms": 2.067,
+          "p95_ms": 2.067,
+          "samples_ms": [
+            2.067
+          ]
+        },
+        "inventory_projection_ms": {
+          "maximum_ms": 56.749,
+          "median_ms": 56.749,
+          "p95_ms": 56.749,
+          "samples_ms": [
+            56.749
+          ]
+        },
+        "material_allocation_ms": {
+          "maximum_ms": 18.211,
+          "median_ms": 18.211,
+          "p95_ms": 18.211,
+          "samples_ms": [
+            18.211
+          ]
+        },
+        "production_scheduling_ms": {
+          "maximum_ms": 11.977,
+          "median_ms": 11.977,
+          "p95_ms": 11.977,
+          "samples_ms": [
+            11.977
+          ]
+        },
+        "state_reconstruction_ms": {
+          "maximum_ms": 20206.144,
+          "median_ms": 20206.144,
+          "p95_ms": 20206.144,
+          "samples_ms": [
+            20206.144
+          ]
+        },
+        "total_ms": {
+          "maximum_ms": 241.155,
+          "median_ms": 241.155,
+          "p95_ms": 241.155,
+          "samples_ms": [
+            241.155
+          ]
+        }
+      },
+      "workload_count": 8
+    }
+  ]
+}

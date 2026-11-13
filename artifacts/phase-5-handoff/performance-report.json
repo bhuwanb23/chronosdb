@@ -1,0 +1,10 @@
+{
+  "memory": "artifacts/phase-5/performance/memory.json",
+  "performance_artifacts": [
+    "artifacts/phase-5/performance/tiny-performance.json",
+    "artifacts/phase-5/performance/demo-performance.json",
+    "artifacts/phase-5/performance/standard-performance.json",
+    "artifacts/phase-5/performance/stress-performance.json"
+  ],
+  "report": "artifacts/phase-5/performance/performance-report.md"
+}

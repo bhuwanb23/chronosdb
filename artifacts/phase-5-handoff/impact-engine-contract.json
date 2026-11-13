@@ -1,0 +1,10 @@
+{
+  "baseline_mode": "DO_NOTHING",
+  "contract_version": "1.0.0",
+  "deterministic": true,
+  "engine_id": "chronosdb-impact-engine-v1.0.0",
+  "input_state_immutable": true,
+  "phase6_overlay_boundary": "intervention overlay must not mutate operational state",
+  "request_contract": "chronosdb.impact.contracts.requests.ImpactRequest",
+  "result_schema": "schemas/impact-result.schema.json"
+}

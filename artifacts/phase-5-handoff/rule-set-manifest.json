@@ -1,0 +1,141 @@
+{
+  "dataset_compatibility": [
+    "1.0.0"
+  ],
+  "domain_model_version": "phase4-domain-model-1.0.0",
+  "rules": [
+    {
+      "failure_conditions": [
+        "missing_effective_interval"
+      ],
+      "formula": "effective_from <= as_of_time < effective_to",
+      "inputs": [
+        "effective_from",
+        "effective_to",
+        "as_of_time"
+      ],
+      "name": "effective_state_selection",
+      "outputs": [
+        "eligible_record"
+      ],
+      "rounding": "none",
+      "rule_id": "STATE-001",
+      "units": "timestamp",
+      "version": "1.0.0"
+    },
+    {
+      "failure_conditions": [
+        "invalid_ingested_time"
+      ],
+      "formula": "ingested_time <= as_of_time",
+      "inputs": [
+        "ingested_time",
+        "as_of_time"
+      ],
+      "name": "information_time_selection",
+      "outputs": [
+        "known_record"
+      ],
+      "rounding": "none",
+      "rule_id": "STATE-002",
+      "units": "timestamp",
+      "version": "1.0.0"
+    },
+    {
+      "failure_conditions": [
+        "missing_ordered_quantity",
+        "missing_received_quantity"
+      ],
+      "formula": "max(0, ordered_quantity - received_quantity)",
+      "inputs": [
+        "ordered_quantity",
+        "received_quantity"
+      ],
+      "name": "outstanding_quantity",
+      "outputs": [
+        "outstanding_quantity"
+      ],
+      "rounding": "decimal(3)",
+      "rule_id": "SUP-001",
+      "units": "quantity",
+      "version": "1.0.0"
+    },
+    {
+      "failure_conditions": [
+        "missing_arrival",
+        "invalid_outage_interval"
+      ],
+      "formula": "max(original_arrival, outage_end + recovery_lag)",
+      "inputs": [
+        "original_arrival",
+        "outage_end",
+        "recovery_lag"
+      ],
+      "name": "disrupted_arrival",
+      "outputs": [
+        "disrupted_arrival"
+      ],
+      "rounding": "none",
+      "rule_id": "SUP-004",
+      "units": "timestamp",
+      "version": "1.0.0"
+    },
+    {
+      "failure_conditions": [
+        "unknown_supplier",
+        "unsupported_scope"
+      ],
+      "formula": "supplier_matches and outstanding_quantity > 0 and scope_matches",
+      "inputs": [
+        "supplier_id",
+        "outstanding_quantity",
+        "scope",
+        "expected_arrival"
+      ],
+      "name": "affected_purchase_order",
+      "outputs": [
+        "affected_purchase_order"
+      ],
+      "rounding": "none",
+      "rule_id": "SUP-005",
+      "units": "boolean",
+      "version": "1.0.0"
+    },
+    {
+      "failure_conditions": [
+        "negative_outstanding_quantity"
+      ],
+      "formula": "outstanding_quantity",
+      "inputs": [
+        "outstanding_quantity"
+      ],
+      "name": "projected_receipt_quantity",
+      "outputs": [
+        "projected_receipt_quantity"
+      ],
+      "rounding": "decimal(3)",
+      "rule_id": "SUP-006",
+      "units": "quantity",
+      "version": "1.0.0"
+    },
+    {
+      "failure_conditions": [
+        "missing_required_record_class"
+      ],
+      "formula": "complete when all required record classes are present",
+      "inputs": [
+        "required_record_classes",
+        "loaded_record_classes"
+      ],
+      "name": "state_completeness",
+      "outputs": [
+        "data_quality_status"
+      ],
+      "rounding": "none",
+      "rule_id": "DQ-001",
+      "units": "enum",
+      "version": "1.0.0"
+    }
+  ],
+  "version": "impact-rules-v1.0.0"
+}

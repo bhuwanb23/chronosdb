@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+from contextlib import nullcontext
 from datetime import UTC, datetime
+from typing import Any
 
 from ..causality.builder import build_causal_traces
 from ..contracts.enums import DataQualityStatus, ImpactStatus
@@ -13,6 +15,7 @@ from ..fulfilment.allocation import build_customer_fulfilment
 from ..fulfilment.sla import calculate_sla_and_financial_impact
 from ..inventory import InventoryEvent, build_inventory_timelines, detect_shortages
 from ..materials import allocate_materials, build_material_requirements
+from ..observability import ImpactDiagnostics
 from ..persistence.repository import ExecutionLedger
 from ..production import schedule_production
 from ..provenance.calculation_trace import metric_provenance
@@ -27,6 +30,13 @@ def _utc_timestamp(value: datetime) -> str:
     return value.astimezone(UTC).isoformat().replace("+00:00", "Z")
 
 
+def _diagnostic_stage(
+    diagnostics: ImpactDiagnostics | None,
+    name: str,
+) -> Any:
+    return diagnostics.stage(name) if diagnostics is not None else nullcontext()
+
+
 def calculate_impact(
     state: OperationalState,
     disruption: Disruption,
@@ -36,6 +46,7 @@ def calculate_impact(
     allocation_policy: str = "priority-due-date-v1",
     scheduling_policy: str = "batch-capacity-v1",
     ledger: ExecutionLedger | None = None,
+    diagnostics: ImpactDiagnostics | None = None,
 ) -> ImpactResult:
     """Calculate the deterministic do-nothing impact through Phase 5Q."""
     if allocation_policy not in {"priority-due-date-v1", "fifo-v1"}:
@@ -48,8 +59,10 @@ def calculate_impact(
         raise ContractError("state as_of_time must equal simulation horizon as_of_time")
     validate_disruption(disruption)
     insufficient = insufficient_record_sets(state.records)
-    impacts = resolve_purchase_order_impacts(state, disruption) if not insufficient else ()
-    receipts = project_receipts(impacts, horizon) if not insufficient else ()
+    with _diagnostic_stage(diagnostics, "disruption_resolution"):
+        impacts = resolve_purchase_order_impacts(state, disruption) if not insufficient else ()
+    with _diagnostic_stage(diagnostics, "supply_projection"):
+        receipts = project_receipts(impacts, horizon) if not insufficient else ()
     affected_components = sorted({impact.component_id for impact in impacts})
     scenario_payload = next(
         (
@@ -89,6 +102,11 @@ def calculate_impact(
             },
         }
     )
+    impact_run_id = f"IR-{run_fingerprint[:16]}"
+    if diagnostics is not None:
+        diagnostics.start(impact_run_id)
+        diagnostics.count("purchase_orders_affected", len(impacts))
+        diagnostics.count("receipt_events_changed", len(receipts))
     data_quality_status = (
         DataQualityStatus.INSUFFICIENT
         if insufficient
@@ -98,8 +116,11 @@ def calculate_impact(
     )
     errors = [f"insufficient required state: {', '.join(insufficient)}"] if insufficient else []
     if insufficient:
+        if diagnostics is not None:
+            diagnostics.errors = len(errors)
+            diagnostics.finish(ImpactStatus.REJECTED.value)
         result = ImpactResult(
-            impact_run_id=f"IR-{run_fingerprint[:16]}",
+            impact_run_id=impact_run_id,
             scenario_id=scenario_id,
             status=ImpactStatus.REJECTED,
             data_quality_status=data_quality_status,
@@ -130,7 +151,10 @@ def calculate_impact(
             rule_set_version=rules.version,
             data_quality_status=data_quality_status.value,
         )
-    timelines = build_inventory_timelines(state, horizon, receipts)
+    with _diagnostic_stage(diagnostics, "inventory_projection"):
+        timelines = build_inventory_timelines(state, horizon, receipts)
+    if diagnostics is not None:
+        diagnostics.count("inventory_timelines_processed", len(timelines))
     scenario_order_ids: set[str] | None = None
     scenario_line_ids: set[str] | None = None
     if scenario_payload is not None:
@@ -158,20 +182,28 @@ def calculate_impact(
     baseline_components = {
         requirement.component_id for requirement in requirements
     } - set(affected_components)
-    allocations = allocate_materials(
-        requirements,
-        timelines,
-        policy=allocation_policy,
-        baseline_component_ids=baseline_components,
-    )
+    with _diagnostic_stage(diagnostics, "material_allocation"):
+        allocations = allocate_materials(
+            requirements,
+            timelines,
+            policy=allocation_policy,
+            baseline_component_ids=baseline_components,
+        )
     shortages = detect_shortages(allocations, horizon.simulation_end_time)
-    production_impacts = schedule_production(
-        state,
-        requirements,
-        allocations,
-        horizon,
-        policy=scheduling_policy,
-    )
+    with _diagnostic_stage(diagnostics, "production_scheduling"):
+        production_impacts = schedule_production(
+            state,
+            requirements,
+            allocations,
+            horizon,
+            policy=scheduling_policy,
+        )
+    if diagnostics is not None:
+        diagnostics.count("shortages_found", len(shortages))
+        diagnostics.count(
+            "production_batches_scheduled",
+            sum(len(impact.batches) for impact in production_impacts),
+        )
     projected_starts = {
         batch.batch_id: batch
         for impact in production_impacts
@@ -198,12 +230,15 @@ def calculate_impact(
             )
         )
     projected_consumption = tuple(projected_consumption_events)
-    timelines = build_inventory_timelines(
-        state,
-        horizon,
-        receipts,
-        projected_consumption=projected_consumption,
-    )
+    with _diagnostic_stage(diagnostics, "inventory_projection"):
+        timelines = build_inventory_timelines(
+            state,
+            horizon,
+            receipts,
+            projected_consumption=projected_consumption,
+        )
+    if diagnostics is not None:
+        diagnostics.count("inventory_timelines_processed", len(timelines))
     first_shortage_by_key: dict[tuple[str, str], datetime] = {}
     for shortage in shortages:
         key = (shortage.warehouse_id, shortage.component_id)
@@ -216,20 +251,23 @@ def calculate_impact(
         )
         for timeline in timelines
     )
-    customer_impacts = build_customer_fulfilment(
-        state,
-        production_impacts,
-        horizon,
-        production_order_ids=scenario_order_ids,
-        customer_order_line_ids=scenario_line_ids,
-    )
-    sla_results, headline_metrics = calculate_sla_and_financial_impact(
-        customer_impacts,
-        disruption_caused_production_order_ids={
-            shortage.production_order_id for shortage in shortages
-        },
-        horizon_end=horizon.simulation_end_time,
-    )
+    with _diagnostic_stage(diagnostics, "customer_impact"):
+        customer_impacts = build_customer_fulfilment(
+            state,
+            production_impacts,
+            horizon,
+            production_order_ids=scenario_order_ids,
+            customer_order_line_ids=scenario_line_ids,
+        )
+        sla_results, headline_metrics = calculate_sla_and_financial_impact(
+            customer_impacts,
+            disruption_caused_production_order_ids={
+                shortage.production_order_id for shortage in shortages
+            },
+            horizon_end=horizon.simulation_end_time,
+        )
+    if diagnostics is not None:
+        diagnostics.count("customer_lines_calculated", len(sla_results))
     quality_issues = [
         QualityIssue(
             code="MISSING_PROMISED_DELIVERY",
@@ -252,15 +290,17 @@ def calculate_impact(
     headline_metrics["shortage_affected_component_count"] = len(
         {shortage.component_id for shortage in shortages}
     )
-    traces = build_causal_traces(
-        disruption,
-        impacts,
-        production_impacts,
-        sla_results,
-        state.identity,
-        rules.version,
-    )
-    impact_run_id = f"IR-{run_fingerprint[:16]}"
+    with _diagnostic_stage(diagnostics, "causal_trace_build"):
+        traces = build_causal_traces(
+            disruption,
+            impacts,
+            production_impacts,
+            sla_results,
+            state.identity,
+            rules.version,
+        )
+    if diagnostics is not None:
+        diagnostics.count("causal_nodes_generated", sum(len(trace.nodes) for trace in traces))
     provenance = {
         "state_version": state.identity.state_version,
         "input_state_hash": state.identity.state_hash,
@@ -363,15 +403,22 @@ def calculate_impact(
     )
     result.result_hash = result.to_dict()["result_hash"]
     if ledger is not None:
-        try:
-            ledger.complete(
-                impact_run_id,
-                status=result.status.value,
-                data_quality_status=result.data_quality_status.value,
-                result_hash=result.result_hash,
-                payload=result.to_dict(),
-            )
-        except Exception as exc:
-            ledger.fail(impact_run_id, error_summary=str(exc))
-            raise
+        with _diagnostic_stage(diagnostics, "persistence"):
+            try:
+                ledger.complete(
+                    impact_run_id,
+                    status=result.status.value,
+                    data_quality_status=result.data_quality_status.value,
+                    result_hash=result.result_hash,
+                    payload=result.to_dict(),
+                )
+            except Exception as exc:
+                if diagnostics is not None:
+                    diagnostics.errors += 1
+                ledger.fail(impact_run_id, error_summary=str(exc))
+                raise
+    if diagnostics is not None:
+        diagnostics.warnings = len(result.warnings)
+        diagnostics.errors = len(result.errors)
+        diagnostics.finish(result.status.value)
     return result

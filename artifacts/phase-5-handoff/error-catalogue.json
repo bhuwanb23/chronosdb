@@ -1,0 +1,24 @@
+{
+  "errors": [
+    {
+      "code": "INVALID_CONTRACT",
+      "exception": "ContractError",
+      "terminal_status": "REJECTED"
+    },
+    {
+      "code": "INVALID_DISRUPTION",
+      "exception": "DisruptionValidationError",
+      "terminal_status": "REJECTED"
+    },
+    {
+      "code": "INSUFFICIENT_STATE",
+      "exception": "StateReconstructionError",
+      "terminal_status": "REJECTED or PARTIALLY_COMPLETED"
+    },
+    {
+      "code": "PERSISTENCE_FAILURE",
+      "exception": "PersistenceError",
+      "terminal_status": "FAILED"
+    }
+  ]
+}
