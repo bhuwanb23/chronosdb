@@ -50,7 +50,10 @@ def build_causal_traces(
     }
     traces: list[CausalTrace] = []
     for result in sla_results:
-        if result.status != "BREACHED":
+        if result.status != "BREACHED" or result.attribution not in {
+            "DISRUPTION_CAUSED",
+            "DISRUPTION_WORSENED",
+        }:
             continue
         production = production_by_id.get(result.production_order_id)
         component_id = (
@@ -59,7 +62,9 @@ def build_causal_traces(
             else next(iter(purchase_orders), "")
         )
         purchase = purchase_orders.get(component_id)
-        purchase_id = purchase.purchase_order_id if purchase else disruption.event_id
+        if purchase is None or not component_id:
+            continue
+        purchase_id = purchase.purchase_order_id
         nodes = (
             {"node_id": disruption.event_id, "node_type": "DISRUPTION"},
             {"node_id": purchase_id, "node_type": "PURCHASE_ORDER"},

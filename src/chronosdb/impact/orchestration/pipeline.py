@@ -51,10 +51,19 @@ def calculate_impact(
     impacts = resolve_purchase_order_impacts(state, disruption) if not insufficient else ()
     receipts = project_receipts(impacts, horizon) if not insufficient else ()
     affected_components = sorted({impact.component_id for impact in impacts})
+    scenario_payload = next(
+        (
+            scenario
+            for scenario in state.scenario_inputs
+            if scenario.get("scenario_id") == scenario_id
+        ),
+        None,
+    )
     run_fingerprint = canonical_hash(
         {
             "state": state.identity.state_hash,
             "scenario_id": scenario_id,
+            "scenario_input": scenario_payload,
             "allocation_policy": allocation_policy,
             "scheduling_policy": scheduling_policy,
             "disruption": {
@@ -124,23 +133,21 @@ def calculate_impact(
     timelines = build_inventory_timelines(state, horizon, receipts)
     scenario_order_ids: set[str] | None = None
     scenario_line_ids: set[str] | None = None
-    for scenario in state.scenario_inputs:
-        if scenario.get("scenario_id") == scenario_id:
-            order_ids = {
-                str(order.get("production_order_id"))
-                for order in scenario.get("orders", [])
-                if order.get("production_order_id")
-            }
-            if order_ids:
-                scenario_order_ids = order_ids
-            line_ids = {
-                str(line.get("id"))
-                for line in scenario.get("customer_order_lines", [])
-                if line.get("id")
-            }
-            if line_ids:
-                scenario_line_ids = line_ids
-            break
+    if scenario_payload is not None:
+        order_ids = {
+            str(order.get("production_order_id"))
+            for order in scenario_payload.get("orders", [])
+            if order.get("production_order_id")
+        }
+        if order_ids:
+            scenario_order_ids = order_ids
+        line_ids = {
+            str(line.get("id"))
+            for line in scenario_payload.get("customer_order_lines", [])
+            if line.get("id")
+        }
+        if line_ids:
+            scenario_line_ids = line_ids
     requirements = build_material_requirements(
         state,
         horizon.as_of_time,
@@ -171,28 +178,43 @@ def calculate_impact(
         for batch in impact.batches
         if batch.projected_start is not None
     }
-    projected_consumption = tuple(
-        InventoryEvent(
-            event_id=f"ISSUE-{allocation.batch_id}-{allocation.component_id}",
-            event_time=projected_starts[allocation.batch_id].projected_start,
-            event_type="PROJECTED_CONSUMPTION",
-            warehouse_id=allocation.warehouse_id,
-            component_id=allocation.component_id,
-            quantity=allocation.required_quantity,
-            reference_id=projected_starts[allocation.batch_id].production_order_id,
-            source_record_ids=(
-                allocation.batch_id,
-                projected_starts[allocation.batch_id].production_order_id,
-            ),
+    projected_consumption_events: list[InventoryEvent] = []
+    for allocation in allocations:
+        batch = projected_starts.get(allocation.batch_id)
+        if batch is None or allocation.component_id not in affected_components:
+            continue
+        if batch.projected_start is None:
+            continue
+        projected_consumption_events.append(
+            InventoryEvent(
+                event_id=f"ISSUE-{allocation.batch_id}-{allocation.component_id}",
+                event_time=batch.projected_start,
+                event_type="PROJECTED_CONSUMPTION",
+                warehouse_id=allocation.warehouse_id,
+                component_id=allocation.component_id,
+                quantity=allocation.required_quantity,
+                reference_id=batch.production_order_id,
+                source_record_ids=(allocation.batch_id, batch.production_order_id),
+            )
         )
-        for allocation in allocations
-        if allocation.batch_id in projected_starts
-    )
+    projected_consumption = tuple(projected_consumption_events)
     timelines = build_inventory_timelines(
         state,
         horizon,
         receipts,
         projected_consumption=projected_consumption,
+    )
+    first_shortage_by_key: dict[tuple[str, str], datetime] = {}
+    for shortage in shortages:
+        key = (shortage.warehouse_id, shortage.component_id)
+        current = first_shortage_by_key.get(key)
+        if current is None or shortage.required_time < current:
+            first_shortage_by_key[key] = shortage.required_time
+    timelines = tuple(
+        timeline.with_shortage_time(
+            first_shortage_by_key.get((timeline.warehouse_id, timeline.component_id))
+        )
+        for timeline in timelines
     )
     customer_impacts = build_customer_fulfilment(
         state,
@@ -201,7 +223,13 @@ def calculate_impact(
         production_order_ids=scenario_order_ids,
         customer_order_line_ids=scenario_line_ids,
     )
-    sla_results, headline_metrics = calculate_sla_and_financial_impact(customer_impacts)
+    sla_results, headline_metrics = calculate_sla_and_financial_impact(
+        customer_impacts,
+        disruption_caused_production_order_ids={
+            shortage.production_order_id for shortage in shortages
+        },
+        horizon_end=horizon.simulation_end_time,
+    )
     quality_issues = [
         QualityIssue(
             code="MISSING_PROMISED_DELIVERY",
@@ -239,6 +267,9 @@ def calculate_impact(
         "rule_set_version": rules.version,
         "allocation_policy": allocation_policy,
         "scheduling_policy": scheduling_policy,
+        "scenario_input_hash": canonical_hash(scenario_payload)
+        if scenario_payload is not None
+        else None,
         "rule_ids": [
             "STATE-001",
             "STATE-002",
@@ -332,11 +363,15 @@ def calculate_impact(
     )
     result.result_hash = result.to_dict()["result_hash"]
     if ledger is not None:
-        ledger.complete(
-            impact_run_id,
-            status=result.status.value,
-            data_quality_status=result.data_quality_status.value,
-            result_hash=result.result_hash,
-            payload=result.to_dict(),
-        )
+        try:
+            ledger.complete(
+                impact_run_id,
+                status=result.status.value,
+                data_quality_status=result.data_quality_status.value,
+                result_hash=result.result_hash,
+                payload=result.to_dict(),
+            )
+        except Exception as exc:
+            ledger.fail(impact_run_id, error_summary=str(exc))
+            raise
     return result

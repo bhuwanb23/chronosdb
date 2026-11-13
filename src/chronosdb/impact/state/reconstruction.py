@@ -255,6 +255,7 @@ class ReleaseStateReconstructor:
             selected = [row for row in rows if self._eligible(row, as_of)]
             if name in {
                 "inventory_transactions",
+                "transfer_transactions",
                 "inventory_opening_balances",
                 "inventory_snapshots_daily",
                 "purchase_order_receipts",

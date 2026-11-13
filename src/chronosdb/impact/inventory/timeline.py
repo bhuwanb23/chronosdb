@@ -100,28 +100,34 @@ def _events_from_transfer(row: dict[str, str]) -> tuple[InventoryEvent, ...]:
     quantity = _decimal(row.get("quantity"))
     transfer_id = row.get("transfer_id", row.get("id", ""))
     source_ids = (row.get("id", ""), transfer_id)
-    return (
-        InventoryEvent(
-            event_id=f"{row.get('id', '')}-OUT",
-            event_time=event_time,
-            event_type="EXISTING_TRANSFER_OUT",
-            warehouse_id=row.get("source_warehouse_id", ""),
-            component_id=row.get("component_id", ""),
-            quantity=quantity,
-            reference_id=transfer_id,
-            source_record_ids=source_ids,
-        ),
-        InventoryEvent(
-            event_id=f"{row.get('id', '')}-IN",
-            event_time=event_time,
-            event_type="EXISTING_TRANSFER_IN",
-            warehouse_id=row.get("destination_warehouse_id", ""),
-            component_id=row.get("component_id", ""),
-            quantity=quantity,
-            reference_id=transfer_id,
-            source_record_ids=source_ids,
-        ),
-    )
+    transaction_type = row.get("transaction_type", "").upper()
+    if transaction_type == "TRANSFER_DISPATCH":
+        return (
+            InventoryEvent(
+                event_id=f"{row.get('id', '')}-OUT",
+                event_time=event_time,
+                event_type="EXISTING_TRANSFER_OUT",
+                warehouse_id=row.get("source_warehouse_id", ""),
+                component_id=row.get("component_id", ""),
+                quantity=quantity,
+                reference_id=transfer_id,
+                source_record_ids=source_ids,
+            ),
+        )
+    if transaction_type == "TRANSFER_RECEIPT":
+        return (
+            InventoryEvent(
+                event_id=f"{row.get('id', '')}-IN",
+                event_time=event_time,
+                event_type="EXISTING_TRANSFER_IN",
+                warehouse_id=row.get("destination_warehouse_id", ""),
+                component_id=row.get("component_id", ""),
+                quantity=quantity,
+                reference_id=transfer_id,
+                source_record_ids=source_ids,
+            ),
+        )
+    return ()
 
 
 def _timeline(

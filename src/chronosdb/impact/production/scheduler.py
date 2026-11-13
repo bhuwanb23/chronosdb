@@ -133,12 +133,17 @@ def schedule_production(
     allocations_by_batch = defaultdict(list)
     for allocation in allocations:
         allocations_by_batch[allocation.batch_id].append(allocation)
-    requirements_by_batch = {requirement.batch_id: requirement for requirement in requirements}
+    requirements_by_batch: dict[str, list[MaterialRequirement]] = defaultdict(list)
+    for requirement in requirements:
+        requirements_by_batch[requirement.batch_id].append(requirement)
     capacity = _capacity_map(state)
     used: dict[tuple[str, str], Decimal] = defaultdict(Decimal)
     by_order: dict[str, list[ProductionBatch]] = defaultdict(list)
     queue = sorted(
-        requirements_by_batch.values(),
+        (
+            min(batch_requirements, key=lambda item: item.component_id)
+            for batch_requirements in requirements_by_batch.values()
+        ),
         key=lambda item: (
             item.order_priority,
             item.customer_priority,
