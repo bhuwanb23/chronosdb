@@ -21,7 +21,10 @@ class ImpactStatus(StrEnum):
 class DataQualityStatus(StrEnum):
     COMPLETE = "COMPLETE"
     PARTIAL = "PARTIAL"
+    PARTIAL_NONCRITICAL = "PARTIAL_NONCRITICAL"
+    PARTIAL_CRITICAL = "PARTIAL_CRITICAL"
     INSUFFICIENT = "INSUFFICIENT"
+    INVALID = "INVALID"
 
 
 class DisruptionScope(StrEnum):

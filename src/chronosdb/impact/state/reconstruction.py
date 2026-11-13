@@ -5,6 +5,7 @@ import json
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Any
 
 from ..contracts.errors import StateReconstructionError
 from ..contracts.results import StateIdentity
@@ -64,6 +65,7 @@ class OperationalState:
     identity: StateIdentity
     records: dict[str, tuple[dict[str, str], ...]]
     warnings: tuple[str, ...] = ()
+    scenario_inputs: tuple[dict[str, Any], ...] = ()
 
     def get(self, record_set: str) -> tuple[dict[str, str], ...]:
         return self.records.get(record_set, ())
@@ -91,12 +93,14 @@ class ReleaseStateReconstructor:
             "bom_lines": "master/bom_lines.csv",
             "warehouses": "master/warehouses.csv",
             "facilities": "master/facilities.csv",
+            "warehouse_facility_links": "master/warehouse_facility_links.csv",
             "transfer_lanes": "master/transfer_lanes.csv",
             "purchase_orders": "operations/purchase_orders.csv",
             "purchase_order_receipts": "operations/purchase_order_receipts.csv",
             "purchase_order_status_history": "operations/purchase_order_status_history.csv",
             "inventory_opening_balances": "inventory/inventory_opening_balances.csv",
             "inventory_transactions": "inventory/inventory_transactions.csv",
+            "transfer_transactions": "inventory/transfer_transactions.csv",
             "inventory_reservations": "inventory/inventory_reservations.csv",
             "inventory_snapshots_daily": "inventory/inventory_snapshots_daily.csv",
             "production_orders": "production/production_orders.csv",
@@ -115,6 +119,22 @@ class ReleaseStateReconstructor:
             "facility_capacity_calendar": "production/facility_capacity_calendar.csv",
         }
         return {name: self._read_csv(path) for name, path in mapping.items()}
+
+    def _read_scenario_inputs(self) -> tuple[dict[str, Any], ...]:
+        paths = []
+        golden = self.release / "golden" / "scenario.json"
+        if golden.exists():
+            paths.append(golden)
+        benchmark_directory = self.release / "benchmarks" / "scenarios"
+        if benchmark_directory.exists():
+            paths.extend(sorted(benchmark_directory.glob("*.json")))
+        scenarios: list[dict[str, Any]] = []
+        for path in paths:
+            with path.open(encoding="utf-8") as stream:
+                payload = json.load(stream)
+            if isinstance(payload, dict):
+                scenarios.append(payload)
+        return tuple(scenarios)
 
     @staticmethod
     def _eligible(row: dict[str, str], as_of: datetime) -> bool:
@@ -267,4 +287,5 @@ class ReleaseStateReconstructor:
             identity=identity,
             records={name: tuple(rows) for name, rows in filtered.items()},
             warnings=tuple(warnings),
+            scenario_inputs=self._read_scenario_inputs(),
         )

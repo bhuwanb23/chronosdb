@@ -41,7 +41,16 @@
         "FAILED"
       ]
     },
-    "data_quality_status": {"enum": ["COMPLETE", "PARTIAL", "INSUFFICIENT"]},
+    "data_quality_status": {
+      "enum": [
+        "COMPLETE",
+        "PARTIAL",
+        "PARTIAL_NONCRITICAL",
+        "PARTIAL_CRITICAL",
+        "INSUFFICIENT",
+        "INVALID"
+      ]
+    },
     "rule_set_version": {"type": "string"},
     "input_state_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
     "result_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
@@ -52,35 +61,65 @@
       "items": {
         "type": "object",
         "required": [
-          "event_id",
-          "purchase_order_id",
           "warehouse_id",
           "component_id",
-          "quantity",
-          "event_time",
-          "event_type",
-          "source",
-          "original_event_time",
-          "within_horizon",
-          "rule_id",
-          "source_record_ids"
+          "opening_time",
+          "opening_physical",
+          "opening_available",
+          "safety_stock",
+          "events",
+          "minimum_balance",
+          "ending_balance",
+          "ending_available"
         ],
         "properties": {
-          "event_id": {"type": "string"},
-          "purchase_order_id": {"type": "string"},
           "warehouse_id": {"type": "string"},
           "component_id": {"type": "string"},
-          "quantity": {"type": "string"},
-          "event_time": {"type": "string", "format": "date-time"},
-          "event_type": {"type": "string"},
-          "source": {"type": "string"},
-          "original_event_time": {"type": "string", "format": "date-time"},
-          "within_horizon": {"type": "boolean"},
-          "rule_id": {"type": "string"},
-          "source_record_ids": {
+          "opening_time": {"type": "string", "format": "date-time"},
+          "opening_physical": {"type": "string"},
+          "opening_available": {"type": "string"},
+          "safety_stock": {"type": "string"},
+          "events": {
             "type": "array",
-            "items": {"type": "string"}
-          }
+            "items": {
+              "type": "object",
+              "required": [
+                "event_id",
+                "event_time",
+                "event_type",
+                "warehouse_id",
+                "component_id",
+                "quantity",
+                "delta",
+                "source_record_ids"
+              ],
+              "properties": {
+                "event_id": {"type": "string"},
+                "event_time": {"type": "string", "format": "date-time"},
+                "event_type": {"type": "string"},
+                "warehouse_id": {"type": "string"},
+                "component_id": {"type": "string"},
+                "quantity": {"type": "string"},
+                "delta": {"type": "string"},
+                "reference_id": {"type": ["string", "null"]},
+                "source_record_ids": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                }
+              }
+            }
+          },
+          "minimum_balance": {"type": "string"},
+          "first_safety_stock_breach": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          },
+          "first_material_shortage": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          },
+          "ending_balance": {"type": "string"},
+          "ending_available": {"type": "string"}
         }
       }
     },
