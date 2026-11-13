@@ -26,6 +26,7 @@ from chronosdb.impact.fulfilment import (
 from chronosdb.impact.inventory import build_inventory_timelines, detect_shortages
 from chronosdb.impact.materials import allocate_materials, build_material_requirements
 from chronosdb.impact.orchestration import calculate_impact
+from chronosdb.impact.persistence import ExecutionLedger
 from chronosdb.impact.production import schedule_production
 from chronosdb.impact.rules import load_rule_set
 from chronosdb.impact.state import ReleaseStateReconstructor
@@ -41,6 +42,7 @@ STAGES = (
     "production_scheduling_ms",
     "customer_impact_ms",
     "causal_trace_build_ms",
+    "persistence_ms",
     "total_ms",
 )
 
@@ -149,7 +151,7 @@ def _sample(
             )
         )
         measurements["causal_trace_build_ms"].append(causal_ms)
-        _, total_ms = _measure(
+        impact_result, total_ms = _measure(
             partial(
                 calculate_impact,
                 state,
@@ -160,15 +162,44 @@ def _sample(
             )
         )
         measurements["total_ms"].append(total_ms)
-    return {stage: sum(values) for stage, values in measurements.items()}
+        ledger = ExecutionLedger()
+        _, persistence_ms = _measure(
+            partial(
+                _persist_result,
+                ledger,
+                impact_result,
+            )
+        )
+        measurements["persistence_ms"].append(persistence_ms)
+    return {stage: sum(values) / workload for stage, values in measurements.items()}
+
+
+def _persist_result(ledger: ExecutionLedger, result: Any) -> None:
+    run = ledger.begin(
+        impact_run_id=result.impact_run_id,
+        scenario_id=result.scenario_id,
+        request_fingerprint=canonical_hash(result.to_dict()),
+        input_state_hash=result.input_state_hash,
+        rule_set_version=result.rule_set_version,
+        data_quality_status=result.data_quality_status.value,
+    )
+    ledger.complete(
+        run.impact_run_id,
+        status=result.status.value,
+        data_quality_status=result.data_quality_status.value,
+        result_hash=result.result_hash,
+        payload=result.to_dict(),
+    )
 
 
 def _run_scale(root: Path, scale: str, repetitions: int) -> dict[str, Any]:
-    samples = [_sample(root, SCALES[scale]) for _ in range(repetitions)]
+    sample_count = max(1, repetitions * SCALES[scale])
+    samples = [_sample(root, 1) for _ in range(sample_count)]
     summary: dict[str, Any] = {
         "scale": scale,
         "workload_count": SCALES[scale],
         "repetitions": repetitions,
+        "request_samples": sample_count,
         "stages": {},
     }
     for stage in STAGES:

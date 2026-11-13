@@ -34,6 +34,10 @@ def _golden_metrics(root: Path) -> dict[str, Any]:
         scenario_id=scenario["scenario_id"],
     ).to_dict()
     expected = _json(root / "data" / "golden" / "expected_do_nothing.json")
+    expected_traces = _json(root / "data" / "golden" / "expected_causal_traces.json")
+    expected_engine_traces = _json(
+        root / "data" / "golden" / "expected_engine_causal_traces.json"
+    )
     expected_orders = {
         line["customer_order_id"]
         for line in expected["customer_lines"]
@@ -42,12 +46,20 @@ def _golden_metrics(root: Path) -> dict[str, Any]:
     actual_orders = {
         line["customer_order_id"] for line in result["affected_customer_orders"]
     }
-    expected_production = {"MO-0882", "MO-0889"}
+    expected_production = {
+        order["production_order_id"]
+        for order in scenario["orders"]
+        if order["customer_order_id"] in expected_orders
+    }
     actual_production = {
         row["production_order_id"] for row in result["affected_production_orders"]
     }
-    expected_components = {"CMP-MCU-42"}
+    expected_components = {scenario["component_id"]}
     actual_components = set(result["affected_components"])
+    expected_purchase_orders = {scenario["purchase_order_id"]}
+    actual_purchase_orders = {
+        row["purchase_order_id"] for row in result["affected_purchase_orders"]
+    }
 
     def ratio(actual: set[str], wanted: set[str]) -> dict[str, Any]:
         true_positive = len(actual & wanted)
@@ -78,27 +90,99 @@ def _golden_metrics(root: Path) -> dict[str, Any]:
         ),
     }
     exact_matches = sum(actual == wanted for actual, wanted in exact_fields.values())
+    expected_sla = {
+        line["customer_order_id"]
+        for line in expected["customer_lines"]
+        if line["late_quantity"] > 0
+    }
+    actual_sla = {
+        line["customer_order_id"] for line in result["affected_customer_orders"]
+    }
+    expected_edges = {
+        (
+            trace["target"]["customer_order_line_id"],
+            len(trace["steps"]),
+            tuple(sorted(step["source_id"] for step in trace["steps"][1:])),
+        )
+        for trace in expected_traces
+    }
+    actual_edges = {
+        (
+            trace["target"]["entity_id"],
+            len(trace["edges"]),
+            tuple(
+                sorted(
+                    source_id
+                    for source_id in trace["source_record_ids"]
+                    if source_id != "EVT-GOLD-001"
+                )
+            ),
+        )
+        for trace in result["causal_traces"]
+    }
+    causal_precision = (
+        len(actual_edges & expected_edges) / len(actual_edges) if actual_edges else 1.0
+    )
+    causal_recall = (
+        len(actual_edges & expected_edges) / len(expected_edges) if expected_edges else 1.0
+    )
+    expected_trace_hashes = {canonical_hash(trace) for trace in expected_engine_traces}
+    actual_trace_hashes = {canonical_hash(trace) for trace in result["causal_traces"]}
+    causal_precision = (
+        len(actual_trace_hashes & expected_trace_hashes) / len(actual_trace_hashes)
+        if actual_trace_hashes
+        else 1.0
+    )
+    causal_recall = (
+        len(actual_trace_hashes & expected_trace_hashes) / len(expected_trace_hashes)
+        if expected_trace_hashes
+        else 1.0
+    )
+    purchase_order = ratio(actual_purchase_orders, expected_purchase_orders)
+    component = ratio(actual_components, expected_components)
+    production_order = ratio(actual_production, expected_production)
+    customer_order = ratio(actual_orders, expected_orders)
     return {
         "scenario_id": scenario["scenario_id"],
         "result_hash": result["result_hash"],
-        "affected_purchase_order_precision": 1.0,
-        "affected_purchase_order_recall": 1.0,
-        "component": ratio(actual_components, expected_components),
-        "production_order": ratio(actual_production, expected_production),
-        "customer_order": ratio(actual_orders, expected_orders),
+        "purchase_order": purchase_order,
+        "component": component,
+        "production_order": production_order,
+        "customer_order": customer_order,
         "numerical_exact_match_rate": exact_matches / len(exact_fields),
-        "sla_classification_accuracy": 1.0,
-        "financial_fidelity": 1.0,
-        "causal_edge_precision": 1.0,
-        "causal_edge_recall": 1.0,
-        "data_quality_classification_accuracy": 1.0,
+        "sla_classification_accuracy": float(actual_sla == expected_sla),
+        "financial_fidelity": float(
+            metrics["revenue_at_risk"]["amount"] == expected["revenue_at_risk_inr"]
+        ),
+        "causal_edge_precision": causal_precision,
+        "causal_edge_recall": causal_recall,
+        "data_quality_classification_accuracy": float(
+            result["data_quality_status"]
+            == ("PARTIAL_NONCRITICAL" if state.warnings else "COMPLETE")
+        ),
         "targets_met": all(
             (
+                actual_purchase_orders == expected_purchase_orders,
                 metrics["breached_customer_order_count"] == expected["breached_customer_orders"],
                 metrics["late_quantity"]
                 == str(sum(line["late_quantity"] for line in expected["customer_lines"])),
                 metrics["total_delay_unit_hours"] == str(expected["total_delay_hours"]),
                 metrics["revenue_at_risk"]["amount"] == expected["revenue_at_risk_inr"],
+                purchase_order["precision"] == 1.0,
+                purchase_order["recall"] == 1.0,
+                component["precision"] == 1.0,
+                component["recall"] == 1.0,
+                production_order["precision"] == 1.0,
+                production_order["recall"] == 1.0,
+                customer_order["precision"] == 1.0,
+                customer_order["recall"] == 1.0,
+                exact_matches / len(exact_fields) == 1.0,
+                actual_sla == expected_sla,
+                metrics["revenue_at_risk"]["amount"] == expected["revenue_at_risk_inr"],
+                causal_precision == 1.0,
+                causal_recall == 1.0,
+                result["data_quality_status"]
+                == ("PARTIAL_NONCRITICAL" if state.warnings else "COMPLETE"),
             )
         ),
     }
@@ -114,7 +198,6 @@ def run(root: Path = ROOT) -> dict[str, Any]:
         "unsupported_intervention_scenarios": [
             scenario_id
             for name, values in partitions.items()
-            if name != "golden"
             for scenario_id in values
             if scenario_id != "SCN-GOLD-001"
         ],

@@ -10,74 +10,110 @@
     "warm_or_cold": "warm process, cold state reconstruction per workload"
   },
   "performance_version": "impact-engine-v1.0.0",
-  "result_hash": "b087e079b9688aa3ffe1fa83b45a6e9ec4ad0c9490d3f5ea3ba7973482aa246e",
+  "result_hash": "228978f63f0dcdd365a2bac083301a10f62976de7813072dbb0048b37e03d1d0",
   "scales": [
     {
       "repetitions": 1,
+      "request_samples": 4,
       "scale": "standard",
       "stages": {
         "causal_trace_build_ms": {
-          "maximum_ms": 0.133,
-          "median_ms": 0.133,
-          "p95_ms": 0.133,
+          "maximum_ms": 0.047,
+          "median_ms": 0.033,
+          "p95_ms": 0.047,
           "samples_ms": [
-            0.133
+            0.036,
+            0.047,
+            0.031,
+            0.026
           ]
         },
         "customer_impact_ms": {
-          "maximum_ms": 3.145,
-          "median_ms": 3.145,
-          "p95_ms": 3.145,
+          "maximum_ms": 1.722,
+          "median_ms": 0.497,
+          "p95_ms": 1.722,
           "samples_ms": [
-            3.145
+            0.47,
+            0.495,
+            0.5,
+            1.722
           ]
         },
         "disruption_resolution_ms": {
-          "maximum_ms": 1.269,
-          "median_ms": 1.269,
-          "p95_ms": 1.269,
+          "maximum_ms": 0.202,
+          "median_ms": 0.192,
+          "p95_ms": 0.202,
           "samples_ms": [
-            1.269
+            0.202,
+            0.184,
+            0.192,
+            0.193
           ]
         },
         "inventory_projection_ms": {
-          "maximum_ms": 31.891,
-          "median_ms": 31.891,
-          "p95_ms": 31.891,
+          "maximum_ms": 6.957,
+          "median_ms": 5.505,
+          "p95_ms": 6.957,
           "samples_ms": [
-            31.891
+            5.513,
+            5.469,
+            5.498,
+            6.957
           ]
         },
         "material_allocation_ms": {
-          "maximum_ms": 11.43,
-          "median_ms": 11.43,
-          "p95_ms": 11.43,
+          "maximum_ms": 3.878,
+          "median_ms": 2.677,
+          "p95_ms": 3.878,
           "samples_ms": [
-            11.43
+            3.293,
+            1.902,
+            3.878,
+            2.061
+          ]
+        },
+        "persistence_ms": {
+          "maximum_ms": 12.439,
+          "median_ms": 9.674,
+          "p95_ms": 12.439,
+          "samples_ms": [
+            8.448,
+            10.136,
+            12.439,
+            9.212
           ]
         },
         "production_scheduling_ms": {
-          "maximum_ms": 7.067,
-          "median_ms": 7.067,
-          "p95_ms": 7.067,
+          "maximum_ms": 1.931,
+          "median_ms": 1.407,
+          "p95_ms": 1.931,
           "samples_ms": [
-            7.067
+            1.565,
+            1.115,
+            1.249,
+            1.931
           ]
         },
         "state_reconstruction_ms": {
-          "maximum_ms": 11307.509,
-          "median_ms": 11307.509,
-          "p95_ms": 11307.509,
+          "maximum_ms": 3808.338,
+          "median_ms": 2440.489,
+          "p95_ms": 3808.338,
           "samples_ms": [
-            11307.509
+            2414.011,
+            2347.855,
+            3808.338,
+            2466.967
           ]
         },
         "total_ms": {
-          "maximum_ms": 163.165,
-          "median_ms": 163.165,
-          "p95_ms": 163.165,
+          "maximum_ms": 39.825,
+          "median_ms": 33.048,
+          "p95_ms": 39.825,
           "samples_ms": [
-            163.165
+            31.719,
+            34.377,
+            39.825,
+            30.137
           ]
         }
       },

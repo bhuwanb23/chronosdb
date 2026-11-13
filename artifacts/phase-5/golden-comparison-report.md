@@ -15,4 +15,7 @@ All frozen checks passed:
 - `affected_components`: `['CMP-MCU-42']`
 - `affected_production_orders`: `['MO-0882', 'MO-0889']`
 - `affected_customer_orders`: `['CO-0704', 'CO-0711']`
+- `customer_line_fidelity`: `True`
+- `causal_path_fidelity`: `True`
+- `causal_trace_exact`: `True`
 - `causal_trace_count`: `2`

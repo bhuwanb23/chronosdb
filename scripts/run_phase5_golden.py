@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 from datetime import timedelta
+from decimal import Decimal
 from pathlib import Path
 from typing import Any
 
@@ -39,8 +40,68 @@ def _validate_result(root: Path, result: dict[str, Any]) -> None:
         raise RuntimeError("golden result hash validation failed")
 
 
-def _checks(result: dict[str, Any], expected: dict[str, Any]) -> list[dict[str, Any]]:
+def _checks(
+    result: dict[str, Any],
+    expected: dict[str, Any],
+    expected_traces: list[dict[str, Any]],
+    expected_line_ids: dict[str, str],
+    expected_engine_traces: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
     metrics = result["headline_metrics"]
+    expected_late_lines = {
+        line["customer_order_id"]: line
+        for line in expected["customer_lines"]
+        if line["late_quantity"] > 0
+    }
+    actual_late_lines = {
+        line["customer_order_line_id"]: line for line in result["affected_customer_orders"]
+    }
+    expected_late_line_ids = {
+        expected_line_ids[customer_id] for customer_id in expected_late_lines
+    }
+    customer_line_fidelity = all(
+        line_id in actual_late_lines
+        and (
+            actual_late_lines[line_id]["customer_order_id"],
+            actual_late_lines[line_id]["delay_hours"],
+            int(actual_late_lines[line_id]["late_quantity"]),
+            actual_late_lines[line_id]["projected_delivery"],
+            actual_late_lines[line_id]["promised_delivery"],
+            Decimal(actual_late_lines[line_id]["revenue_at_risk"]),
+        )
+        == (
+            customer_id,
+            expected_line["delay_hours"],
+            expected_line["late_quantity"],
+            expected_line["projected_delivery"],
+            expected_line["promised_delivery"],
+            Decimal(expected_line["revenue_at_risk_inr"]),
+        )
+        for customer_id, expected_line in expected_late_lines.items()
+        for line_id in [expected_line_ids[customer_id]]
+    ) and set(actual_late_lines) == expected_late_line_ids
+    expected_trace_signature = {
+        (
+            trace["target"]["customer_order_line_id"],
+            len(trace["steps"]),
+            tuple(sorted(step["source_id"] for step in trace["steps"][1:])),
+        )
+        for trace in expected_traces
+    }
+    actual_trace_signature = {
+        (
+            trace["target"]["entity_id"],
+            len(trace["edges"]),
+            tuple(
+                sorted(
+                    source_id
+                    for source_id in trace["source_record_ids"]
+                    if source_id != "EVT-GOLD-001"
+                )
+            ),
+        )
+        for trace in result["causal_traces"]
+    }
     checks = [
         (
             "breached_customer_order_count",
@@ -74,6 +135,17 @@ def _checks(result: dict[str, Any], expected: dict[str, Any]) -> list[dict[str, 
             [row["customer_order_id"] for row in result["affected_customer_orders"]],
             ["CO-0704", "CO-0711"],
         ),
+        ("customer_line_fidelity", customer_line_fidelity, True),
+        (
+            "causal_path_fidelity",
+            actual_trace_signature == expected_trace_signature,
+            True,
+        ),
+        (
+            "causal_trace_exact",
+            result["causal_traces"] == expected_engine_traces,
+            True,
+        ),
         (
             "causal_trace_count",
             len(result["causal_traces"]),
@@ -94,6 +166,10 @@ def _checks(result: dict[str, Any], expected: dict[str, Any]) -> list[dict[str, 
 def run(root: Path = ROOT) -> dict[str, Any]:
     scenario = _read_json(root / "data" / "golden" / "scenario.json")
     expected = _read_json(root / "data" / "golden" / "expected_do_nothing.json")
+    expected_traces = _read_json(root / "data" / "golden" / "expected_causal_traces.json")
+    expected_engine_traces = _read_json(
+        root / "data" / "golden" / "expected_engine_causal_traces.json"
+    )
     as_of = parse_time(scenario["as_of_time"])
     horizon = SimulationHorizon(as_of, as_of + timedelta(days=30))
     state = ReleaseStateReconstructor(root).reconstruct(as_of)
@@ -108,7 +184,16 @@ def run(root: Path = ROOT) -> dict[str, Any]:
         scenario_id=scenario["scenario_id"],
     ).to_dict()
     _validate_result(root, result)
-    checks = _checks(result, expected)
+    expected_line_ids = {
+        line["customer_order_id"]: line["id"] for line in scenario["customer_order_lines"]
+    }
+    checks = _checks(
+        result,
+        expected,
+        expected_traces,
+        expected_line_ids,
+        expected_engine_traces,
+    )
     if any(check["status"] == "FAIL" for check in checks):
         failed = ", ".join(check["name"] for check in checks if check["status"] == "FAIL")
         raise RuntimeError(f"golden comparison failed: {failed}")

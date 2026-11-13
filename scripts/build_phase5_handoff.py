@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
+import sys
 from datetime import timedelta
 from pathlib import Path
 from typing import Any
@@ -40,6 +42,37 @@ def run(root: Path = ROOT) -> dict[str, Any]:
     second = calculate_impact(
         state, disruption, horizon, rules, scenario_id=scenario["scenario_id"]
     ).to_dict()
+    replay_code = (
+        "from pathlib import Path; "
+        "from datetime import timedelta; "
+        "from chronosdb.impact.contracts.requests import SimulationHorizon, parse_time; "
+        "from chronosdb.impact.disruption import Disruption; "
+        "from chronosdb.impact.rules import load_rule_set; "
+        "from chronosdb.impact.state import ReleaseStateReconstructor; "
+        "from chronosdb.impact.orchestration import calculate_impact; "
+        "root=Path('.'); "
+        "scenario=__import__('json').loads((root/'data/golden/scenario.json').read_text()); "
+        "as_of=parse_time(scenario['as_of_time']); "
+        "state=ReleaseStateReconstructor(root).reconstruct(as_of); "
+        "result=calculate_impact(state, Disruption.from_state(state, 'EVT-GOLD-001'), "
+        "SimulationHorizon(as_of, as_of+timedelta(days=30)), "
+        "load_rule_set(root/'config/rules/impact-rules-v1.0.0.yaml'), "
+        "scenario_id='SCN-GOLD-001').to_dict(); print(result['result_hash'])"
+    )
+    restarted = subprocess.run(
+        [sys.executable, "-c", replay_code],
+        check=True,
+        capture_output=True,
+        cwd=root,
+        text=True,
+    ).stdout.strip().splitlines()[-1]
+    required_artifacts = (
+        root / "artifacts" / "phase-5" / "impact-benchmark-results.json",
+        root / "artifacts" / "phase-5" / "performance" / "standard-performance.json",
+        root / "artifacts" / "phase-5" / "golden-impact-result.json",
+    )
+    if any(not path.exists() for path in required_artifacts):
+        raise RuntimeError("required Phase 5 evidence artifact is missing")
 
     output_dir = root / "artifacts" / "phase-5-handoff"
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -73,11 +106,16 @@ def run(root: Path = ROOT) -> dict[str, Any]:
     _write(
         output_dir / "determinism-report.json",
         {
-            "status": "PASS" if first == second else "FAIL",
+            "status": (
+                "PASS"
+                if first == second and first["result_hash"] == restarted
+                else "FAIL"
+            ),
             "state_hash": state.identity.state_hash,
             "first_result_hash": first["result_hash"],
             "second_result_hash": second["result_hash"],
-            "same_result": first == second,
+            "restarted_result_hash": restarted,
+            "same_result": first == second and first["result_hash"] == restarted,
             "canonical_result_hash": canonical_hash(
                 {key: value for key, value in first.items() if key != "result_hash"}
             ),

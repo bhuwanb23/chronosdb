@@ -58,6 +58,8 @@ def calculate_impact(
     if _utc_timestamp(horizon.as_of_time) != state.identity.as_of_time:
         raise ContractError("state as_of_time must equal simulation horizon as_of_time")
     validate_disruption(disruption)
+    if diagnostics is not None:
+        diagnostics.start("UNASSIGNED")
     insufficient = insufficient_record_sets(state.records)
     with _diagnostic_stage(diagnostics, "disruption_resolution"):
         impacts = resolve_purchase_order_impacts(state, disruption) if not insufficient else ()
@@ -142,6 +144,8 @@ def calculate_impact(
     if ledger is not None:
         existing = ledger.find_by_fingerprint(run_fingerprint)
         if existing is not None and existing.payload:
+            if diagnostics is not None:
+                diagnostics.finish(existing.status)
             return ImpactResult.from_dict(existing.payload)
         ledger.begin(
             impact_run_id=f"IR-{run_fingerprint[:16]}",
@@ -151,7 +155,7 @@ def calculate_impact(
             rule_set_version=rules.version,
             data_quality_status=data_quality_status.value,
         )
-    with _diagnostic_stage(diagnostics, "inventory_projection"):
+    with _diagnostic_stage(diagnostics, "inventory_projection_initial"):
         timelines = build_inventory_timelines(state, horizon, receipts)
     if diagnostics is not None:
         diagnostics.count("inventory_timelines_processed", len(timelines))
@@ -413,8 +417,6 @@ def calculate_impact(
                     payload=result.to_dict(),
                 )
             except Exception as exc:
-                if diagnostics is not None:
-                    diagnostics.errors += 1
                 ledger.fail(impact_run_id, error_summary=str(exc))
                 raise
     if diagnostics is not None:

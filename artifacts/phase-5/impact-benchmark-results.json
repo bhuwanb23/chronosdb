@@ -2,8 +2,6 @@
   "benchmark_version": "impact-engine-v1.0.0",
   "dataset_version": "1.0.0",
   "golden": {
-    "affected_purchase_order_precision": 1.0,
-    "affected_purchase_order_recall": 1.0,
     "causal_edge_precision": 1.0,
     "causal_edge_recall": 1.0,
     "component": {
@@ -43,6 +41,16 @@
       "precision": 1.0,
       "recall": 1.0
     },
+    "purchase_order": {
+      "actual": [
+        "PO-2208"
+      ],
+      "expected": [
+        "PO-2208"
+      ],
+      "precision": 1.0,
+      "recall": 1.0
+    },
     "result_hash": "3f63cf014ec38ec48898b06eacf9fa9fc18dc3f61595d4d10ccaf84218021eeb",
     "scenario_id": "SCN-GOLD-001",
     "sla_classification_accuracy": 1.0,
@@ -56,7 +64,7 @@
     "test": 18,
     "validation": 12
   },
-  "result_hash": "067b7d9dcd37b2d37d6da2b096b709c03330f0e69dda2dafaf31236c97700eb9",
+  "result_hash": "1914af50d8153a5030f17de895a7ceb54f036e8ce4dcd2e811fd9222aa38a007",
   "supported_scenarios": [
     "SCN-GOLD-001"
   ],
@@ -88,6 +96,8 @@
     "SCN-0022",
     "SCN-0023",
     "SCN-0024",
+    "SCN-GOLD-002",
+    "SCN-GOLD-003",
     "SCN-0058",
     "SCN-0059",
     "SCN-0060",

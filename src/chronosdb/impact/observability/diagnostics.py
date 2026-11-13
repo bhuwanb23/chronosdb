@@ -31,6 +31,10 @@ class ImpactDiagnostics:
         started = time.perf_counter()
         try:
             yield
+        except Exception:
+            self.errors += 1
+            self.status = "FAILED"
+            raise
         finally:
             self.stage_timings_ms[name] = round(
                 (time.perf_counter() - started) * 1000,
