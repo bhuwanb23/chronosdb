@@ -15,6 +15,7 @@ def calculate_impact(
     disruption: Disruption,
     horizon: SimulationHorizon,
     rules: RuleSet,
+    scenario_id: str = "UNKNOWN",
 ) -> ImpactResult:
     """Calculate the deterministic 5A–5G supply-impact slice."""
     validate_disruption(disruption)
@@ -25,9 +26,18 @@ def calculate_impact(
         "state_version": state.identity.state_version,
         "input_state_hash": state.identity.state_hash,
         "rule_set_version": rules.version,
-        "rule_ids": ["STATE-001", "SUP-001", "SUP-004", "SUP-005", "SUP-006"],
+        "rule_ids": [
+            "STATE-001",
+            "STATE-002",
+            "DQ-001",
+            "SUP-001",
+            "SUP-004",
+            "SUP-005",
+            "SUP-006",
+        ],
         "source_record_ids": sorted(
-            {
+            {disruption.event_id}
+            | {
                 source_id
                 for impact in impacts
                 for source_id in impact.source_record_ids
@@ -35,11 +45,35 @@ def calculate_impact(
         ),
     }
     run_fingerprint = canonical_hash(
-        {"state": state.identity.state_hash, "event": disruption.event_id}
+        {
+            "state": state.identity.state_hash,
+            "scenario_id": scenario_id,
+            "disruption": {
+                "event_id": disruption.event_id,
+                "event_type": disruption.event_type,
+                "supplier_id": disruption.supplier_id,
+                "start_time": disruption.start_time.isoformat(),
+                "end_time": disruption.end_time.isoformat(),
+                "recovery_lag_seconds": disruption.recovery_lag.total_seconds(),
+                "scope_type": disruption.scope_type,
+                "component_ids": sorted(disruption.component_ids),
+                "purchase_order_ids": sorted(disruption.purchase_order_ids),
+            },
+            "horizon": {
+                "as_of_time": horizon.as_of_time.isoformat(),
+                "simulation_end_time": horizon.simulation_end_time.isoformat(),
+            },
+            "rules": {
+                "version": rules.version,
+                "domain_model_version": rules.domain_model_version,
+                "dataset_compatibility": list(rules.dataset_compatibility),
+                "definitions": [rule.__dict__ for rule in rules.rules],
+            },
+        }
     )
     result = ImpactResult(
         impact_run_id=f"IR-{run_fingerprint[:16]}",
-        scenario_id=state.identity.state_version,
+        scenario_id=scenario_id,
         status=ImpactStatus.PARTIALLY_COMPLETED,
         data_quality_status=(
             DataQualityStatus.PARTIAL if state.warnings else DataQualityStatus.COMPLETE
@@ -54,5 +88,5 @@ def calculate_impact(
         ],
         provenance=provenance,
     )
-    result.result_hash = canonical_hash(result.to_dict())
+    result.result_hash = result.to_dict()["result_hash"]
     return result

@@ -1,0 +1,21 @@
+{
+  "event_id": "EVT-GOLD-001",
+  "purchase_order_impacts": [
+    {
+      "component_id": "CMP-MCU-42",
+      "delay_hours": 338,
+      "disrupted_arrival": "2026-11-27T02:30:00Z",
+      "original_arrival": "2026-11-13T00:00:00Z",
+      "outstanding_quantity": "800",
+      "purchase_order_id": "PO-2208",
+      "rule_id": "SUP-004",
+      "source_record_ids": [
+        "PO-2208",
+        "EVT-GOLD-001"
+      ],
+      "supplier_id": "SUP-0104",
+      "warehouse_id": "WH-PUNE"
+    }
+  ],
+  "status": "PASS"
+}

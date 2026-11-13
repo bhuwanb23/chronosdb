@@ -2,6 +2,7 @@
 	data-clean data-generate data-validate ground-truth data-report data-checksums data-all \
 	phase4-intake phase4-build phase4-validate phase4-manifest phase4-repro \
 	impact-intake-check impact-golden-input-check impact-benchmark-manifest-check \
+	impact-golden-slice \
 	phase4-finalize
 
 install:
@@ -82,6 +83,9 @@ impact-golden-input-check:
 
 impact-benchmark-manifest-check:
 	python scripts/impact_intake.py --check benchmark
+
+impact-golden-slice:
+	python scripts/run_impact_slice.py
 
 phase4-finalize:
 	python scripts/finalize_phase4.py

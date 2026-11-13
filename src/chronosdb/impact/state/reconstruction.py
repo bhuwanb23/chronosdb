@@ -95,7 +95,12 @@ class ReleaseStateReconstructor:
             event_time = next(
                 (
                     _time(row.get(column, ""))
-                    for column in ("transaction_time", "receipt_time", "event_time")
+                    for column in (
+                        "transaction_time",
+                        "receipt_time",
+                        "event_time",
+                        "snapshot_time",
+                    )
                     if row.get(column)
                 ),
                 None,
@@ -104,10 +109,29 @@ class ReleaseStateReconstructor:
                 result.append(row)
         return result
 
+    @staticmethod
+    def _latest_snapshots(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+        latest: dict[tuple[str, str], dict[str, str]] = {}
+        for row in rows:
+            key = (row.get("warehouse_id", ""), row.get("component_id", ""))
+            current = latest.get(key)
+            snapshot_time = _time(row.get("snapshot_time", ""))
+            current_time = _time(current.get("snapshot_time", "")) if current else None
+            candidate_key = (
+                snapshot_time or datetime.min.replace(tzinfo=UTC),
+                row.get("id", ""),
+            )
+            current_key = (
+                current_time or datetime.min.replace(tzinfo=UTC),
+                current.get("id", "") if current else "",
+            )
+            if current is None or candidate_key > current_key:
+                latest[key] = row
+        return list(latest.values())
+
     def reconstruct(self, as_of: datetime) -> OperationalState:
         as_of = as_of.astimezone(UTC)
         records = self._read_records()
-        warnings = validate_state_records(records)
         filtered: dict[str, list[dict[str, str]]] = {}
         for name, rows in records.items():
             selected = [
@@ -115,15 +139,19 @@ class ReleaseStateReconstructor:
             ]
             if name in {
                 "inventory_transactions",
+                "inventory_snapshots_daily",
                 "purchase_order_receipts",
                 "production_order_status_history",
                 "customer_order_status_history",
             }:
                 selected = self._historical(selected, as_of)
+            if name == "inventory_snapshots_daily":
+                selected = self._latest_snapshots(selected)
             filtered[name] = sorted(
                 selected,
                 key=lambda row: json.dumps(row, sort_keys=True, separators=(",", ":")),
             )
+        warnings = validate_state_records(filtered)
         as_of_value = as_of.isoformat().replace("+00:00", "Z")
         payload: dict[str, object] = {
             "dataset_version": "1.0.0",

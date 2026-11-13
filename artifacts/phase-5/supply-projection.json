@@ -1,0 +1,19 @@
+{
+  "no_duplicate_event_ids": true,
+  "projected_receipts": [
+    {
+      "component_id": "CMP-MCU-42",
+      "event_id": "RCPT-PROJ-PO-2208",
+      "event_time": "2026-11-27T02:30:00Z",
+      "event_type": "PROJECTED_PURCHASE_RECEIPT",
+      "original_event_time": "2026-11-13T00:00:00Z",
+      "purchase_order_id": "PO-2208",
+      "quantity": "800",
+      "rule_id": "SUP-006",
+      "source": "DISRUPTION_ADJUSTED",
+      "warehouse_id": "WH-PUNE",
+      "within_horizon": true
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,42 @@
+{
+  "record_counts": {
+    "bom_lines": 92,
+    "bom_versions": 16,
+    "components": 80,
+    "customer_order_lines": 1000,
+    "customer_order_status_history": 1000,
+    "customer_orders": 1000,
+    "customer_sla_assignments": 1000,
+    "disruption_events": 4,
+    "disruption_scope_components": 3,
+    "disruption_scope_purchase_orders": 2,
+    "facilities": 2,
+    "facility_capacity_calendar": 62,
+    "inventory_opening_balances": 240,
+    "inventory_reservations": 1,
+    "inventory_snapshots_daily": 240,
+    "inventory_transactions": 240,
+    "production_batches": 6,
+    "production_customer_allocations": 1000,
+    "production_material_allocations": 3,
+    "production_material_requirements": 1300,
+    "production_order_status_history": 204,
+    "production_orders": 400,
+    "products": 16,
+    "purchase_order_receipts": 574,
+    "purchase_order_status_history": 1174,
+    "purchase_orders": 600,
+    "supplier_component_agreements": 160,
+    "suppliers": 24,
+    "transfer_lanes": 6,
+    "warehouses": 3
+  },
+  "state_identity": {
+    "as_of_time": "2026-11-11T02:30:00Z",
+    "dataset_version": "1.0.0",
+    "state_hash": "57f0821ba2fe57bd95ebd887cd7889a83ed3ec85dc56a7ea6f9e9d53feaa5673",
+    "state_version": "STATE-57F0821BA2FE"
+  },
+  "status": "PASS",
+  "warnings": []
+}

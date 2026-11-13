@@ -1,0 +1,71 @@
+{
+  "affected_components": [
+    "CMP-MCU-42"
+  ],
+  "affected_customer_orders": [],
+  "affected_production_orders": [],
+  "affected_purchase_orders": [
+    {
+      "component_id": "CMP-MCU-42",
+      "delay_hours": 338,
+      "disrupted_arrival": "2026-11-27T02:30:00Z",
+      "original_arrival": "2026-11-13T00:00:00Z",
+      "outstanding_quantity": "800",
+      "purchase_order_id": "PO-2208",
+      "rule_id": "SUP-004",
+      "source_record_ids": [
+        "PO-2208",
+        "EVT-GOLD-001"
+      ],
+      "supplier_id": "SUP-0104",
+      "warehouse_id": "WH-PUNE"
+    }
+  ],
+  "causal_traces": [],
+  "data_quality_status": "COMPLETE",
+  "errors": [],
+  "headline_metrics": {},
+  "impact_run_id": "IR-48fb7b95742802c5",
+  "input_state_hash": "57f0821ba2fe57bd95ebd887cd7889a83ed3ec85dc56a7ea6f9e9d53feaa5673",
+  "inventory_timelines": [
+    {
+      "component_id": "CMP-MCU-42",
+      "event_id": "RCPT-PROJ-PO-2208",
+      "event_time": "2026-11-27T02:30:00Z",
+      "event_type": "PROJECTED_PURCHASE_RECEIPT",
+      "original_event_time": "2026-11-13T00:00:00Z",
+      "purchase_order_id": "PO-2208",
+      "quantity": "800",
+      "rule_id": "SUP-006",
+      "source": "DISRUPTION_ADJUSTED",
+      "warehouse_id": "WH-PUNE",
+      "within_horizon": true
+    }
+  ],
+  "provenance": {
+    "input_state_hash": "57f0821ba2fe57bd95ebd887cd7889a83ed3ec85dc56a7ea6f9e9d53feaa5673",
+    "rule_ids": [
+      "STATE-001",
+      "STATE-002",
+      "DQ-001",
+      "SUP-001",
+      "SUP-004",
+      "SUP-005",
+      "SUP-006"
+    ],
+    "rule_set_version": "impact-rules-v1.0.0",
+    "source_record_ids": [
+      "EVT-GOLD-001",
+      "PO-2208"
+    ],
+    "state_version": "STATE-57F0821BA2FE"
+  },
+  "result_hash": "8aac5f7619489cbd987da5afe99385553bbbbfb6c48a0fe80194243423a28d54",
+  "rule_set_version": "impact-rules-v1.0.0",
+  "scenario_id": "SCN-GOLD-001",
+  "shortages": [],
+  "status": "PARTIALLY_COMPLETED",
+  "warnings": [
+    "Downstream inventory, production, fulfilment, and financial stages are 5H\u20135M."
+  ]
+}

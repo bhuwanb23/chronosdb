@@ -19,7 +19,11 @@ def project_receipts(
             event_type="PROJECTED_PURCHASE_RECEIPT",
             source="DISRUPTION_ADJUSTED",
             original_event_time=impact.original_arrival,
-            within_horizon=impact.disrupted_arrival <= horizon.simulation_end_time,
+            within_horizon=(
+                horizon.as_of_time
+                <= impact.disrupted_arrival
+                <= horizon.simulation_end_time
+            ),
             rule_id="SUP-006",
         )
         for impact in impacts
