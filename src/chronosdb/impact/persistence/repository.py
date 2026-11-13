@@ -114,6 +114,18 @@ class ExecutionLedger:
             record.payload = deepcopy(payload)
         return deepcopy(record)
 
+    def fail_pending(self, *, scenario_id: str, error_summary: str) -> None:
+        """Terminally fail pending runs for a scenario after engine errors."""
+        pending = [
+            record
+            for record in self._runs.values()
+            if record.scenario_id == scenario_id
+            and record.status == "PENDING"
+            and record.completed_at is None
+        ]
+        for record in pending:
+            self.fail(record.impact_run_id, error_summary=error_summary)
+
     def get(self, impact_run_id: str) -> ImpactRunRecord | None:
         return deepcopy(self._runs.get(impact_run_id))
 

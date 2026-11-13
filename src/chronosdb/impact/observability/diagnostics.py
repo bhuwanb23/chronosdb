@@ -26,6 +26,11 @@ class ImpactDiagnostics:
         self.impact_run_id = impact_run_id
         self._started_at = time.perf_counter()
 
+    def set_run_id(self, impact_run_id: str) -> None:
+        self.impact_run_id = impact_run_id
+        if self._started_at is None:
+            self._started_at = time.perf_counter()
+
     @contextmanager
     def stage(self, name: str) -> Iterator[None]:
         started = time.perf_counter()

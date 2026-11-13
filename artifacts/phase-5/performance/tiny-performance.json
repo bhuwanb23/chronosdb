@@ -3,90 +3,131 @@
   "environment": {
     "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
     "db2": "not used by release-file benchmark",
-    "memory_note": "Peak traced Python allocation is recorded per scale.",
+    "db2_version": "not used by release-file benchmark",
+    "error_rate": 0.0,
+    "memory_note": "One cold end-to-end peak allocation probe for the release process.",
     "operating_system": "Windows-11-10.0.26200-SP0",
     "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
     "rule_set_version": "impact-rules-v1.0.0",
-    "warm_or_cold": "warm process, cold state reconstruction per workload"
+    "scenario_count": 1,
+    "warm_or_cold": "warm process with separate cold and cached reconstruction timings"
   },
   "performance_version": "impact-engine-v1.0.0",
-  "result_hash": "84fc646fd8bdc16ba1aa24be52a67e41551aa8e4f6a3afe328ec46f2dbd73133",
+  "result_hash": "ed6642c3336a7ca736547b0f25c7084db72741ad21f4b1b1147817ae58414395",
   "scales": [
     {
-      "repetitions": 1,
-      "request_samples": 1,
+      "repetitions": 3,
+      "request_samples": 3,
       "scale": "tiny",
       "stages": {
         "causal_trace_build_ms": {
-          "maximum_ms": 0.025,
-          "median_ms": 0.025,
-          "p95_ms": 0.025,
+          "maximum_ms": 0.006,
+          "median_ms": 0.005,
+          "p95_ms": 0.006,
           "samples_ms": [
-            0.025
+            0.006,
+            0.005,
+            0.003
+          ]
+        },
+        "cold_state_reconstruction_ms": {
+          "maximum_ms": 1080.889,
+          "median_ms": 904.924,
+          "p95_ms": 1080.889,
+          "samples_ms": [
+            1080.889,
+            904.924,
+            846.332
+          ]
+        },
+        "cold_total_ms": {
+          "maximum_ms": 957.997,
+          "median_ms": 945.885,
+          "p95_ms": 957.997,
+          "samples_ms": [
+            945.885,
+            957.997,
+            934.696
           ]
         },
         "customer_impact_ms": {
-          "maximum_ms": 0.709,
-          "median_ms": 0.709,
-          "p95_ms": 0.709,
+          "maximum_ms": 0.315,
+          "median_ms": 0.298,
+          "p95_ms": 0.315,
           "samples_ms": [
-            0.709
+            0.292,
+            0.315,
+            0.298
           ]
         },
         "disruption_resolution_ms": {
-          "maximum_ms": 0.71,
-          "median_ms": 0.71,
-          "p95_ms": 0.71,
+          "maximum_ms": 0.183,
+          "median_ms": 0.159,
+          "p95_ms": 0.183,
           "samples_ms": [
-            0.71
+            0.139,
+            0.183,
+            0.159
           ]
         },
         "inventory_projection_ms": {
-          "maximum_ms": 3.138,
-          "median_ms": 3.138,
-          "p95_ms": 3.138,
+          "maximum_ms": 1.726,
+          "median_ms": 1.335,
+          "p95_ms": 1.726,
           "samples_ms": [
-            3.138
+            1.335,
+            1.172,
+            1.726
           ]
         },
         "material_allocation_ms": {
-          "maximum_ms": 0.564,
-          "median_ms": 0.564,
-          "p95_ms": 0.564,
+          "maximum_ms": 0.276,
+          "median_ms": 0.268,
+          "p95_ms": 0.276,
           "samples_ms": [
-            0.564
+            0.276,
+            0.256,
+            0.268
           ]
         },
         "persistence_ms": {
-          "maximum_ms": 4.039,
-          "median_ms": 4.039,
-          "p95_ms": 4.039,
+          "maximum_ms": 2.222,
+          "median_ms": 2.008,
+          "p95_ms": 2.222,
           "samples_ms": [
-            4.039
+            2.222,
+            1.854,
+            2.008
           ]
         },
         "production_scheduling_ms": {
-          "maximum_ms": 0.39,
-          "median_ms": 0.39,
-          "p95_ms": 0.39,
+          "maximum_ms": 0.2,
+          "median_ms": 0.199,
+          "p95_ms": 0.2,
           "samples_ms": [
-            0.39
+            0.199,
+            0.2,
+            0.175
           ]
         },
         "state_reconstruction_ms": {
-          "maximum_ms": 844.24,
-          "median_ms": 844.24,
-          "p95_ms": 844.24,
+          "maximum_ms": 437.34,
+          "median_ms": 392.245,
+          "p95_ms": 437.34,
           "samples_ms": [
-            844.24
+            392.245,
+            339.883,
+            437.34
           ]
         },
         "total_ms": {
-          "maximum_ms": 864.74,
-          "median_ms": 864.74,
-          "p95_ms": 864.74,
+          "maximum_ms": 426.257,
+          "median_ms": 401.823,
+          "p95_ms": 426.257,
           "samples_ms": [
-            864.74
+            345.987,
+            426.257,
+            401.823
           ]
         }
       },

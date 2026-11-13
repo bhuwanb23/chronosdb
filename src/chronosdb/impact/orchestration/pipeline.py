@@ -37,7 +37,7 @@ def _diagnostic_stage(
     return diagnostics.stage(name) if diagnostics is not None else nullcontext()
 
 
-def calculate_impact(
+def _calculate_impact(
     state: OperationalState,
     disruption: Disruption,
     horizon: SimulationHorizon,
@@ -112,7 +112,7 @@ def calculate_impact(
     )
     impact_run_id = f"IR-{run_fingerprint[:16]}"
     if diagnostics is not None:
-        diagnostics.start(impact_run_id)
+        diagnostics.set_run_id(impact_run_id)
         diagnostics.count("purchase_orders_affected", len(impacts))
         diagnostics.count("receipt_events_changed", len(receipts))
     data_quality_status = (
@@ -148,19 +148,20 @@ def calculate_impact(
         result.result_hash = result.to_dict()["result_hash"]
         return result
     if ledger is not None:
-        existing = ledger.find_by_fingerprint(run_fingerprint)
-        if existing is not None and existing.payload:
-            if diagnostics is not None:
-                diagnostics.finish(existing.status)
-            return ImpactResult.from_dict(existing.payload)
-        ledger.begin(
-            impact_run_id=f"IR-{run_fingerprint[:16]}",
-            scenario_id=scenario_id,
-            request_fingerprint=run_fingerprint,
-            input_state_hash=state.identity.state_hash,
-            rule_set_version=rules.version,
-            data_quality_status=data_quality_status.value,
-        )
+        with _diagnostic_stage(diagnostics, "persistence_start"):
+            existing = ledger.find_by_fingerprint(run_fingerprint)
+            if existing is not None and existing.payload:
+                if diagnostics is not None:
+                    diagnostics.finish(existing.status)
+                return ImpactResult.from_dict(existing.payload)
+            ledger.begin(
+                impact_run_id=impact_run_id,
+                scenario_id=scenario_id,
+                request_fingerprint=run_fingerprint,
+                input_state_hash=state.identity.state_hash,
+                rule_set_version=rules.version,
+                data_quality_status=data_quality_status.value,
+            )
     with _diagnostic_stage(diagnostics, "inventory_projection_initial"):
         timelines = build_inventory_timelines(state, horizon, receipts)
     if diagnostics is not None:
@@ -431,3 +432,33 @@ def calculate_impact(
         diagnostics.errors = len(result.errors)
         diagnostics.finish(result.status.value)
     return result
+
+
+def calculate_impact(
+    state: OperationalState,
+    disruption: Disruption,
+    horizon: SimulationHorizon,
+    rules: RuleSet,
+    scenario_id: str = "UNKNOWN",
+    allocation_policy: str = "priority-due-date-v1",
+    scheduling_policy: str = "batch-capacity-v1",
+    ledger: ExecutionLedger | None = None,
+    diagnostics: ImpactDiagnostics | None = None,
+) -> ImpactResult:
+    """Calculate impact and terminally fail a begun ledger run on any error."""
+    try:
+        return _calculate_impact(
+            state,
+            disruption,
+            horizon,
+            rules,
+            scenario_id=scenario_id,
+            allocation_policy=allocation_policy,
+            scheduling_policy=scheduling_policy,
+            ledger=ledger,
+            diagnostics=diagnostics,
+        )
+    except Exception as exc:
+        if ledger is not None:
+            ledger.fail_pending(scenario_id=scenario_id, error_summary=str(exc))
+        raise

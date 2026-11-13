@@ -3,153 +3,131 @@
   "environment": {
     "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
     "db2": "not used by release-file benchmark",
-    "memory_note": "Peak traced Python allocation is recorded per scale.",
+    "db2_version": "not used by release-file benchmark",
+    "error_rate": 0.0,
+    "memory_note": "One cold end-to-end peak allocation probe for the release process.",
     "operating_system": "Windows-11-10.0.26200-SP0",
     "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
     "rule_set_version": "impact-rules-v1.0.0",
-    "warm_or_cold": "warm process, cold state reconstruction per workload"
+    "scenario_count": 1,
+    "warm_or_cold": "warm process with separate cold and cached reconstruction timings"
   },
   "performance_version": "impact-engine-v1.0.0",
-  "result_hash": "84fc646fd8bdc16ba1aa24be52a67e41551aa8e4f6a3afe328ec46f2dbd73133",
+  "result_hash": "983726c73593bf625b05d36faf61f00a9d9d5ebee98a9aefbc0dbc54d425d82e",
   "scales": [
     {
-      "repetitions": 1,
-      "request_samples": 8,
+      "repetitions": 3,
+      "request_samples": 3,
       "scale": "stress",
       "stages": {
         "causal_trace_build_ms": {
-          "maximum_ms": 0.034,
-          "median_ms": 0.015,
-          "p95_ms": 0.034,
+          "maximum_ms": 0.009,
+          "median_ms": 0.006,
+          "p95_ms": 0.009,
           "samples_ms": [
-            0.015,
-            0.016,
-            0.014,
-            0.013,
-            0.03,
-            0.016,
-            0.011,
-            0.034
+            0.006,
+            0.009,
+            0.004
+          ]
+        },
+        "cold_state_reconstruction_ms": {
+          "maximum_ms": 1093.107,
+          "median_ms": 937.126,
+          "p95_ms": 1093.107,
+          "samples_ms": [
+            1093.107,
+            905.103,
+            937.126
+          ]
+        },
+        "cold_total_ms": {
+          "maximum_ms": 1045.091,
+          "median_ms": 972.878,
+          "p95_ms": 1045.091,
+          "samples_ms": [
+            963.504,
+            1045.091,
+            972.878
           ]
         },
         "customer_impact_ms": {
-          "maximum_ms": 0.862,
-          "median_ms": 0.605,
-          "p95_ms": 0.862,
+          "maximum_ms": 0.471,
+          "median_ms": 0.284,
+          "p95_ms": 0.471,
           "samples_ms": [
-            0.597,
-            0.559,
-            0.72,
-            0.614,
-            0.586,
-            0.862,
-            0.618,
-            0.585
+            0.282,
+            0.471,
+            0.284
           ]
         },
         "disruption_resolution_ms": {
-          "maximum_ms": 0.265,
-          "median_ms": 0.229,
-          "p95_ms": 0.265,
+          "maximum_ms": 0.138,
+          "median_ms": 0.136,
+          "p95_ms": 0.138,
           "samples_ms": [
-            0.18,
-            0.229,
-            0.17,
-            0.221,
-            0.243,
-            0.231,
-            0.229,
-            0.265
+            0.138,
+            0.116,
+            0.136
           ]
         },
         "inventory_projection_ms": {
-          "maximum_ms": 3.141,
-          "median_ms": 2.689,
-          "p95_ms": 3.141,
+          "maximum_ms": 1.19,
+          "median_ms": 1.113,
+          "p95_ms": 1.19,
           "samples_ms": [
-            2.279,
-            3.106,
-            2.284,
-            2.959,
-            2.824,
-            2.392,
-            3.141,
-            2.554
+            1.113,
+            1.096,
+            1.19
           ]
         },
         "material_allocation_ms": {
-          "maximum_ms": 1.051,
-          "median_ms": 0.602,
-          "p95_ms": 1.051,
+          "maximum_ms": 0.262,
+          "median_ms": 0.249,
+          "p95_ms": 0.262,
           "samples_ms": [
-            0.613,
-            0.563,
-            0.592,
-            0.539,
-            0.611,
-            1.051,
-            0.624,
-            0.538
+            0.262,
+            0.247,
+            0.249
           ]
         },
         "persistence_ms": {
-          "maximum_ms": 5.235,
-          "median_ms": 4.718,
-          "p95_ms": 5.235,
+          "maximum_ms": 2.847,
+          "median_ms": 1.946,
+          "p95_ms": 2.847,
           "samples_ms": [
-            4.138,
-            4.853,
-            4.617,
-            5.235,
-            4.82,
-            5.126,
-            4.087,
-            3.964
+            1.898,
+            1.946,
+            2.847
           ]
         },
         "production_scheduling_ms": {
-          "maximum_ms": 1.207,
-          "median_ms": 0.369,
-          "p95_ms": 1.207,
+          "maximum_ms": 0.21,
+          "median_ms": 0.191,
+          "p95_ms": 0.21,
           "samples_ms": [
-            0.385,
-            0.375,
-            0.381,
-            0.347,
-            0.35,
-            1.207,
-            0.358,
-            0.363
+            0.21,
+            0.174,
+            0.191
           ]
         },
         "state_reconstruction_ms": {
-          "maximum_ms": 849.148,
-          "median_ms": 832.403,
-          "p95_ms": 849.148,
+          "maximum_ms": 456.592,
+          "median_ms": 392.038,
+          "p95_ms": 456.592,
           "samples_ms": [
-            849.148,
-            846.484,
-            834.389,
-            816.81,
-            803.454,
-            837.474,
-            830.417,
-            809.05
+            392.038,
+            456.592,
+            356.034
           ]
         },
         "total_ms": {
-          "maximum_ms": 891.711,
-          "median_ms": 859.398,
-          "p95_ms": 891.711,
+          "maximum_ms": 471.098,
+          "median_ms": 413.383,
+          "p95_ms": 471.098,
           "samples_ms": [
-            891.711,
-            862.256,
-            849.381,
-            859.434,
-            858.89,
-            843.703,
-            885.218,
-            859.362
+            413.383,
+            471.098,
+            390.615
           ]
         }
       },

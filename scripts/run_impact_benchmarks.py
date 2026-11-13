@@ -4,9 +4,10 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import Counter
 from datetime import timedelta
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from chronosdb.impact.contracts.requests import SimulationHorizon, parse_time
 from chronosdb.impact.contracts.results import canonical_hash
@@ -126,15 +127,22 @@ def _golden_metrics(root: Path) -> dict[str, Any]:
     causal_recall = (
         len(actual_edges & expected_edges) / len(expected_edges) if expected_edges else 1.0
     )
-    expected_trace_hashes = {canonical_hash(trace) for trace in expected_engine_traces}
-    actual_trace_hashes = {canonical_hash(trace) for trace in result["causal_traces"]}
+    expected_trace_hashes = Counter(
+        canonical_hash(trace) for trace in expected_engine_traces
+    )
+    actual_trace_hashes = Counter(
+        canonical_hash(trace) for trace in result["causal_traces"]
+    )
+    matching_trace_count = sum(
+        (actual_trace_hashes & expected_trace_hashes).values()
+    )
     causal_precision = (
-        len(actual_trace_hashes & expected_trace_hashes) / len(actual_trace_hashes)
+        matching_trace_count / sum(actual_trace_hashes.values())
         if actual_trace_hashes
         else 1.0
     )
     causal_recall = (
-        len(actual_trace_hashes & expected_trace_hashes) / len(expected_trace_hashes)
+        matching_trace_count / sum(expected_trace_hashes.values())
         if expected_trace_hashes
         else 1.0
     )
@@ -189,8 +197,11 @@ def _golden_metrics(root: Path) -> dict[str, Any]:
 
 
 def run(root: Path = ROOT) -> dict[str, Any]:
-    partitions = _json(root / "data" / "benchmarks" / "partitions.json")
-    result = {
+    partitions = cast(
+        dict[str, list[str]],
+        _json(root / "data" / "benchmarks" / "partitions.json"),
+    )
+    result: dict[str, Any] = {
         "benchmark_version": "impact-engine-v1.0.0",
         "dataset_version": "1.0.0",
         "partitions": {name: len(values) for name, values in partitions.items()},

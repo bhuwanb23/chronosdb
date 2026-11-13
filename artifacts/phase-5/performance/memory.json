@@ -1,3 +1,5 @@
 {
-  "peak_traced_bytes": 20089613
+  "measurement_scope": "single cold end-to-end golden request",
+  "peak_traced_bytes": 25424427,
+  "result_hash": "8d63bc5e24061fcfe5f1440f6d34528199e9df4885c9de3c14e884281ca4b981"
 }

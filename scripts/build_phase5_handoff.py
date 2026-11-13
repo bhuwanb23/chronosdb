@@ -8,7 +8,7 @@ import subprocess
 import sys
 from datetime import timedelta
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from chronosdb.impact.contracts.requests import SimulationHorizon, parse_time
 from chronosdb.impact.contracts.results import canonical_hash
@@ -42,6 +42,12 @@ def run(root: Path = ROOT) -> dict[str, Any]:
     second = calculate_impact(
         state, disruption, horizon, rules, scenario_id=scenario["scenario_id"]
     ).to_dict()
+    repeated_hashes = [
+        calculate_impact(
+            state, disruption, horizon, rules, scenario_id=scenario["scenario_id"]
+        ).result_hash
+        for _ in range(100)
+    ]
     replay_code = (
         "from pathlib import Path; "
         "from datetime import timedelta; "
@@ -68,18 +74,74 @@ def run(root: Path = ROOT) -> dict[str, Any]:
     ).stdout.strip().splitlines()[-1]
     required_artifacts = (
         root / "artifacts" / "phase-5" / "impact-benchmark-results.json",
-        root / "artifacts" / "phase-5" / "performance" / "standard-performance.json",
         root / "artifacts" / "phase-5" / "golden-impact-result.json",
+        *(
+            root / "artifacts" / "phase-5" / "performance" / f"{scale}-performance.json"
+            for scale in ("tiny", "demo", "standard", "stress")
+        ),
+        root / "artifacts" / "phase-5" / "performance" / "performance-report.md",
+        root / "artifacts" / "phase-5" / "performance" / "memory.json",
     )
     if any(not path.exists() for path in required_artifacts):
         raise RuntimeError("required Phase 5 evidence artifact is missing")
     benchmark = _read(root / "artifacts" / "phase-5" / "impact-benchmark-results.json")
+    expected_customer_lines = _read(
+        root / "data" / "golden" / "expected_engine_customer_lines.json"
+    )
+    expected_causal_traces = _read(
+        root / "data" / "golden" / "expected_engine_causal_traces.json"
+    )
+    if first["provenance"]["customer_line_results"] != expected_customer_lines:
+        raise RuntimeError("golden customer-line fixture does not match current result")
+    if first["causal_traces"] != expected_causal_traces:
+        raise RuntimeError("golden causal-trace fixture does not match current result")
     if not benchmark["golden"]["targets_met"]:
         raise RuntimeError("benchmark release gate is not satisfied")
+    if benchmark["result_hash"] != canonical_hash(
+        {key: value for key, value in benchmark.items() if key != "result_hash"}
+    ):
+        raise RuntimeError("benchmark artifact hash is invalid")
     if benchmark["golden"]["result_hash"] != first["result_hash"]:
         raise RuntimeError("benchmark result does not match current golden result")
     if first != _read(root / "artifacts" / "phase-5" / "golden-impact-result.json"):
         raise RuntimeError("stale golden artifact does not match current result")
+    performance_by_scale: dict[str, dict[str, Any]] = {}
+    for scale in ("tiny", "demo", "standard", "stress"):
+        performance = _read(
+            root / "artifacts" / "phase-5" / "performance" / f"{scale}-performance.json"
+        )
+        if performance["result_hash"] != canonical_hash(
+            {key: value for key, value in performance.items() if key != "result_hash"}
+        ):
+            raise RuntimeError(f"{scale} performance artifact hash is invalid")
+        performance_by_scale[scale] = performance
+    memory = _read(root / "artifacts" / "phase-5" / "performance" / "memory.json")
+    if memory["result_hash"] != canonical_hash(
+        {key: value for key, value in memory.items() if key != "result_hash"}
+    ):
+        raise RuntimeError("memory artifact hash is invalid")
+    performance_report_path = (
+        root / "artifacts" / "phase-5" / "performance" / "performance-report.md"
+    )
+    performance_report = performance_report_path.read_text(encoding="utf-8")
+    standard_performance = _read(
+        root / "artifacts" / "phase-5" / "performance" / "standard-performance.json"
+    )
+    performance_payload = {
+        **standard_performance,
+        "scales": [
+            performance_by_scale[scale]["scales"][0]
+            for scale in ("tiny", "demo", "standard", "stress")
+        ],
+    }
+    report_result_hash = canonical_hash(
+        {key: value for key, value in performance_payload.items() if key != "result_hash"}
+    )
+    if f"Result hash: `{report_result_hash}`" not in performance_report:
+        raise RuntimeError("performance report does not match standard artifact")
+    for scale, performance in performance_by_scale.items():
+        if performance["result_hash"] not in performance_report:
+            raise RuntimeError(f"performance report omits {scale} artifact")
 
     output_dir = root / "artifacts" / "phase-5-handoff"
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -115,14 +177,24 @@ def run(root: Path = ROOT) -> dict[str, Any]:
         {
             "status": (
                 "PASS"
-                if first == second and first["result_hash"] == restarted
+                if (
+                    first == second
+                    and first["result_hash"] == restarted
+                    and len(set(repeated_hashes)) == 1
+                )
                 else "FAIL"
             ),
             "state_hash": state.identity.state_hash,
             "first_result_hash": first["result_hash"],
             "second_result_hash": second["result_hash"],
             "restarted_result_hash": restarted,
-            "same_result": first == second and first["result_hash"] == restarted,
+            "repeated_run_count": len(repeated_hashes),
+            "repeated_result_hashes": repeated_hashes,
+            "same_result": (
+                first == second
+                and first["result_hash"] == restarted
+                and len(set(repeated_hashes)) == 1
+            ),
             "canonical_result_hash": canonical_hash(
                 {key: value for key, value in first.items() if key != "result_hash"}
             ),
@@ -210,7 +282,7 @@ def run(root: Path = ROOT) -> dict[str, Any]:
         "\n".join(completion) + "\n",
         encoding="utf-8",
     )
-    return first
+    return cast(dict[str, Any], first)
 
 
 def main() -> None:

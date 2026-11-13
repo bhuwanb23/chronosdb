@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
+from copy import deepcopy
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any
+from typing import Any, ClassVar
 
 from ..contracts.errors import StateReconstructionError
 from ..contracts.results import StateIdentity
@@ -37,6 +39,33 @@ TEMPORAL_COLUMNS = (
     "start_time",
     "transaction_time",
 )
+
+
+class _ImmutableDict(dict[str, Any]):
+    """Dict-compatible immutable snapshot value used by the state cache."""
+
+    def _blocked(self, *args: Any, **kwargs: Any) -> None:
+        raise TypeError("cached operational state is immutable")
+
+    __setitem__ = __delitem__ = clear = pop = popitem = setdefault = update = _blocked
+
+    def __deepcopy__(self, memo: dict[int, Any]) -> "_ImmutableDict":
+        return self
+
+
+def _freeze_state(state: OperationalState) -> OperationalState:
+    records = _ImmutableDict(
+        {
+            name: tuple(_ImmutableDict(row) for row in rows)
+            for name, rows in state.records.items()
+        }
+    )
+    return OperationalState(
+        identity=state.identity,
+        records=records,
+        warnings=state.warnings,
+        scenario_inputs=state.scenario_inputs,
+    )
 
 
 def _time(value: str) -> datetime | None:
@@ -72,6 +101,14 @@ class OperationalState:
 
 
 class ReleaseStateReconstructor:
+    _record_cache: ClassVar[
+        dict[tuple[str, str], dict[str, list[dict[str, str]]]]
+    ] = {}
+    _state_cache: ClassVar[
+        dict[tuple[str, str, str], OperationalState]
+    ] = {}
+    _max_cache_entries: ClassVar[int] = 16
+
     def __init__(self, root: Path, profile: str = "demo") -> None:
         release = root / "data" / "releases" / "v1.0.0"
         self.release = release if profile == "demo" else release / profile
@@ -83,7 +120,30 @@ class ReleaseStateReconstructor:
         with path.open(encoding="utf-8", newline="") as stream:
             return list(csv.DictReader(stream))
 
+    def _source_fingerprint(self) -> str:
+        digest = hashlib.sha256()
+        for path in sorted(
+            path
+            for path in self.release.rglob("*")
+            if path.is_file()
+            and path.suffix in {".csv", ".json"}
+            and path.relative_to(self.release).parts[0]
+            not in {"tiny", "standard", "stress"}
+        ):
+            digest.update(path.relative_to(self.release).as_posix().encode("utf-8"))
+            with path.open("rb") as stream:
+                for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+                    digest.update(chunk)
+        return digest.hexdigest()
+
     def _read_records(self) -> dict[str, list[dict[str, str]]]:
+        source_fingerprint = getattr(self, "_active_source_fingerprint", None)
+        if source_fingerprint is None:
+            source_fingerprint = self._source_fingerprint()
+        cache_key = (self.release.as_posix(), source_fingerprint)
+        cached = self._record_cache.get(cache_key)
+        if cached is not None:
+            return deepcopy(cached)
         mapping = {
             "suppliers": "master/suppliers.csv",
             "supplier_component_agreements": "master/supplier_component_agreements.csv",
@@ -118,7 +178,16 @@ class ReleaseStateReconstructor:
             "disruption_scope_purchase_orders": "disruptions/disruption_scope_purchase_orders.csv",
             "facility_capacity_calendar": "production/facility_capacity_calendar.csv",
         }
-        return {name: self._read_csv(path) for name, path in mapping.items()}
+        records = {name: self._read_csv(path) for name, path in mapping.items()}
+        self._record_cache[cache_key] = deepcopy(records)
+        while len(self._record_cache) > self._max_cache_entries:
+            self._record_cache.pop(next(iter(self._record_cache)))
+        return records
+
+    @classmethod
+    def clear_cache(cls) -> None:
+        cls._record_cache.clear()
+        cls._state_cache.clear()
 
     def _read_scenario_inputs(self) -> tuple[dict[str, Any], ...]:
         paths = []
@@ -249,7 +318,25 @@ class ReleaseStateReconstructor:
         if as_of.tzinfo is None:
             raise StateReconstructionError("as_of timestamp must include timezone")
         as_of = as_of.astimezone(UTC)
-        records = self._read_records()
+        standard_reader = (
+            getattr(self._read_records, "__func__", None)
+            is ReleaseStateReconstructor._read_records
+        )
+        source_fingerprint = self._source_fingerprint()
+        cache_key = (
+            self.release.as_posix(),
+            source_fingerprint,
+            as_of.isoformat(),
+        )
+        if standard_reader and cache_key in self._state_cache:
+            # Release snapshots are immutable inputs; sharing the cached state
+            # avoids re-copying the full snapshot on every deterministic replay.
+            return self._state_cache[cache_key]
+        self._active_source_fingerprint = source_fingerprint
+        try:
+            records = self._read_records()
+        finally:
+            del self._active_source_fingerprint
         filtered: dict[str, list[dict[str, str]]] = {}
         for name, rows in records.items():
             selected = [row for row in rows if self._eligible(row, as_of)]
@@ -284,9 +371,14 @@ class ReleaseStateReconstructor:
             state_hash=state_hash(payload),
             as_of_time=as_of_value,
         )
-        return OperationalState(
+        state = OperationalState(
             identity=identity,
             records={name: tuple(rows) for name, rows in filtered.items()},
             warnings=tuple(warnings),
             scenario_inputs=self._read_scenario_inputs(),
         )
+        if standard_reader:
+            self._state_cache[cache_key] = _freeze_state(state)
+            while len(self._state_cache) > self._max_cache_entries:
+                self._state_cache.pop(next(iter(self._state_cache)))
+        return state
