@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Simulation Overlay Schema",
+  "description": "Phase 6C: Scenario and Overlay Model",
+  "type": "object",
+  "properties": {
+    "overlay_id": { "type": "string" },
+    "action": {
+      "type": "string",
+      "enum": [
+        "TRANSFER_INVENTORY",
+        "EXPEDITE_PO",
+        "ACTIVATE_ALT_SUPPLIER",
+        "RESCHEDULE_PRODUCTION",
+        "HYBRID"
+      ]
+    },
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "component_id": { "type": "string" },
+        "quantity": { "type": "string" },
+        "from_warehouse": { "type": "string" },
+        "to_warehouse": { "type": "string" },
+        "purchase_order_id": { "type": "string" },
+        "lead_time_reduction_days": { "type": "integer" },
+        "supplier_id": { "type": "string" },
+        "available_quantity": { "type": "string" },
+        "production_order_id": { "type": "string" },
+        "priority": { "type": "integer" }
+      },
+      "required": ["action"]
+    }
+  },
+  "required": ["overlay_id", "action", "parameters"]
+}
