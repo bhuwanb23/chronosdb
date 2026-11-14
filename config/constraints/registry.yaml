@@ -1,0 +1,31 @@
+# Constraint Registry Configuration
+
+## Cost Constraints
+- CON-001: max_recovery_cost (≤ 200000 INR)
+- CON-002: min_budget_allocation (≥ 50000 INR)
+
+## Inventory Constraints
+- CON-003: min_safety_stock (≥ minimum)
+- CON-004: max_inventory_consumption (≤ available)
+
+## Supplier Constraints
+- CON-005: supplier_approved (true)
+- CON-006: supplier_capacity (≤ available)
+
+## Warehouse Constraints
+- CON-007: transfer_lane_approved (true)
+- CON-008: warehouse_capacity (≤ available)
+
+## Capacity Constraints
+- CON-009: capacity_utilization (≤ 100%)
+- CON-010: production_capacity (≤ available)
+
+## Delay Constraints
+- CON-011: max_delay (≤ 10 days)
+- CON-012: min_recovery_time (≥ minimum)
+
+## Regulatory Constraints
+- CON-013: regulatory_compliance (true)
+- CON-014: compliance_deadline (≤ deadline)
+
+## Phase 7D Status: IMPLEMENTED
