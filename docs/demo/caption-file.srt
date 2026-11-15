@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:20,000
+Modern supply chains generate huge amounts of operational data. When a disruption hits, most systems can only say something went wrong.
+
+2
+00:00:20,000 --> 00:00:45,000
+Supplier SUP-0104 is down. Our recovery budget is under two lakh rupees. Let's run the counterfactual analysis.
+
+3
+00:00:45,000 --> 00:01:15,000
+ChronosDB computes every impact with deterministic supply-chain logic. Revenue at risk is sixteen lakh rupees, with two customer orders and two SLA breaches at stake.
+
+4
+00:01:15,000 --> 00:01:50,000
+ChronosDB evaluates seven candidate actions and keeps only feasible ones. INT-GOLD-C costs one lakh thirty-two thousand rupees, protects sixteen lakh rupees, and leaves zero SLA breaches.
+
+5
+00:01:50,000 --> 00:02:20,000
+Every candidate links to supporting records stored in Db2: supplier notices, procedures, and incident reports.
+
+6
+00:02:20,000 --> 00:02:45,000
+Run the golden scenario again and you get the same hashes. The decision can be replayed and audited step by step.
+
+7
+00:02:45,000 --> 00:03:00,000
+ChronosDB doesn't ask you to trust an AI recommendation. It lets you replay, verify, and audit every decision. ChronosDB is the Db2 time machine for enterprise decisions.

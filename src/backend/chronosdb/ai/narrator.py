@@ -72,18 +72,31 @@ class DecisionNarrator:
 Phase 9I Status: COMPLETE
 """
 
+from src.backend.chronosdb.ai.claim_verifier import Claim
+
+
 class NarrationInput:
     pass
 
+
 class NarrationOutput:
-    pass
+    """Narration text plus the claims it makes, so a verifier can check them."""
+
+    def __init__(self, narration: str = "", claims: list[Claim] | None = None, provenance=None):
+        self.narration = narration
+        self.claims: list[Claim] = list(claims or [])
+        self.provenance = provenance or {}
+
 
 class DecisionNarrator:
+    """Produces narration only from values supplied by the engines."""
+
     def __init__(self):
         pass
-    
+
     def generate(self, scenario, optimization, impact, simulation, evidence):
-        # Implementation logic for narration
+        # No deterministic narration has been implemented, so it asserts nothing.
+        # Returning an empty claim set is honest: the verifier reports UNVERIFIED.
         return NarrationOutput()
 
 # Phase 9I Status: COMPLETE

@@ -1,0 +1,59 @@
+<svg width="1600" height="950" viewBox="0 0 1600 950" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,system-ui,sans-serif;background:#0B1220">
+  
+  <rect x="0" y="0" width="1600" height="90" fill="#111827"/>
+  <rect x="0" y="90" width="1600" height="2" fill="#334155"/>
+  <circle cx="40" cy="45" r="18" fill="#3B82F6"/>
+  <text x="40" y="51" font-size="16" font-weight="800" fill="white" text-anchor="middle">C</text>
+  <text x="70" y="42" font-size="20" font-weight="800" fill="#F8FAFC">ChronosDB</text>
+  <text x="70" y="64" font-size="11" fill="#94A3B8" letter-spacing="2">OPERATIONS WAR ROOM</text>
+  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLD-001</text>
+  <text x="1560" y="64" font-size="11" fill="#64748B" text-anchor="end">Recognition &lt; 10 sec  •  Deterministic  •  Auditable</text>
+
+  <text x="800" y="135" font-size="28" font-weight="800" fill="#F8FAFC" text-anchor="middle">Why Db2? — Db2 Deep Dive</text>
+  <text x="800" y="162" font-size="13" fill="#94A3B8" text-anchor="middle">Operational Store  •  Temporal Intelligence  •  Vector Retrieval  •  Audit Ledger  •  Counterfactual Futures</text>
+
+  <rect x="60" y="210" width="460" height="220" rx="16" fill="#1E293B" stroke="#3B82F6" stroke-width="2"/>
+  <text x="290" y="245" font-size="16" font-weight="800" fill="#F8FAFC" text-anchor="middle">Operational Store</text>
+  <text x="290" y="270" font-size="11" fill="#3B82F6" text-anchor="middle">Relational Capabilities</text>
+  <text x="90" y="300" font-size="12" fill="#94A3B8">• Suppliers, Components, Warehouses</text>
+  <text x="90" y="325" font-size="12" fill="#94A3B8">• Purchase Orders, Production Orders</text>
+  <text x="90" y="350" font-size="12" fill="#94A3B8">• Inventory, Customer Orders</text>
+  <text x="90" y="375" font-size="12" fill="#94A3B8">• Constraints, Indexes, Window Functions</text>
+  <text x="90" y="400" font-size="11" fill="#10B981">✓ ACID  •  ✓ Recursive Queries  •  ✓ BOM Explosion</text>
+
+  <rect x="570" y="210" width="460" height="220" rx="16" fill="#1E293B" stroke="#06B6D4" stroke-width="2"/>
+  <text x="800" y="245" font-size="16" font-weight="800" fill="#F8FAFC" text-anchor="middle">Temporal Intelligence</text>
+  <text x="800" y="270" font-size="11" fill="#06B6D4" text-anchor="middle">Historical Replay + State Reconstruction</text>
+  <text x="600" y="300" font-size="12" fill="#94A3B8">• Historical Incidents (175 docs)</text>
+  <text x="600" y="325" font-size="12" fill="#94A3B8">• State Reconstruction at any time T</text>
+  <text x="600" y="350" font-size="12" fill="#94A3B8">• Decision Replay — identical results</text>
+  <text x="600" y="375" font-size="12" fill="#94A3B8">• Golden Scenario persistence</text>
+  <text x="600" y="400" font-size="11" fill="#10B981">✓ Repeated runs identical hashes</text>
+
+  <rect x="1080" y="210" width="460" height="220" rx="16" fill="#1E293B" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="1310" y="245" font-size="16" font-weight="800" fill="#F8FAFC" text-anchor="middle">Vector Retrieval</text>
+  <text x="1310" y="270" font-size="11" fill="#8B5CF6" text-anchor="middle">VECTOR Type + Vector Indexes</text>
+  <text x="1110" y="300" font-size="12" fill="#94A3B8">• Evidence Store (Policies, SOPs)</text>
+  <text x="1110" y="325" font-size="12" fill="#94A3B8">• Embeddings (bge-small-en-v1.5)</text>
+  <text x="1110" y="350" font-size="12" fill="#94A3B8">• Retrieval metrics pending verification</text>
+  <text x="1110" y="375" font-size="12" fill="#94A3B8">• Metadata Accuracy 100%</text>
+  <text x="1110" y="400" font-size="11" fill="#10B981">✓ No free-form answers Sources</text>
+
+  <rect x="60" y="480" width="720" height="200" rx="16" fill="#1E293B" stroke="#10B981" stroke-width="2"/>
+  <text x="420" y="515" font-size="16" font-weight="800" fill="#F8FAFC" text-anchor="middle">Audit Ledger + Simulations</text>
+  <text x="420" y="540" font-size="11" fill="#10B981" text-anchor="middle">Decisions • Replays • Verifications • Counterfactual Futures</text>
+  <text x="90" y="570" font-size="12" fill="#94A3B8">• Decision Ledger (tamper-proof)</text>
+  <text x="90" y="595" font-size="12" fill="#94A3B8">• Simulation Runs (7 candidates, isolated overlays)</text>
+  <text x="90" y="620" font-size="12" fill="#94A3B8">• Recommendations (objective, constraints, evidence)</text>
+  <text x="90" y="645" font-size="11" fill="#10B981">✓ Correlation ID on every record  •  ✓ Judge Inspection</text>
+
+  <rect x="820" y="480" width="720" height="200" rx="16" fill="#0F172A" stroke="#334155"/>
+  <text x="1180" y="515" font-size="16" font-weight="800" fill="#F8FAFC" text-anchor="middle">Db2 Features Used</text>
+  <text x="1180" y="540" font-size="11" fill="#94A3B8" text-anchor="middle">Not just a database — a decision platform</text>
+  <text x="850" y="570" font-size="12" fill="#94A3B8">Relational  •  Constraints  •  Indexes  •  Window Functions  •  Recursive Queries</text>
+  <text x="850" y="595" font-size="12" fill="#94A3B8">VECTOR Type  •  Vector Indexes  •  Temporal Queries  •  Audit Triggers</text>
+  <text x="850" y="620" font-size="12" fill="#94A3B8">ACID Transactions  •  Stored Procedures  •  JSON Support</text>
+  <text x="850" y="650" font-size="11" fill="#10B981">✓ Security claims: pending re-verification</text>
+
+  <text x="800" y="750" font-size="11" fill="#64748B" text-anchor="middle">Phase 16E  •  Db2 Deep Dive  •  Judges will ask: Why Db2? — This is the dedicated answer.</text>
+</svg>

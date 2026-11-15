@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600" role="img" aria-label="SCN-GOLD-001  /  ONE OUTAGE, FIVE LINKED RECORDS">
+<defs>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#173E50" stroke-width="1" opacity="0.35"/>
+  </pattern>
+  <linearGradient id="fade" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#102B3B" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#0C2130" stop-opacity="0.9"/>
+  </linearGradient>
+</defs>
+<rect width="1600" height="600" fill="#07141E"/>
+<rect width="1600" height="600" fill="url(#grid)"/>
+<circle cx="1540" cy="40" r="220" fill="#6EF3FF" opacity="0.03"/>
+<text x="64" y="84" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#6EF3FF" font-weight="700" text-anchor="start" letter-spacing="5" opacity="1.0">SCN-GOLD-001  /  ONE OUTAGE, FIVE LINKED RECORDS</text>
+<text x="64" y="116" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="26" fill="#ECF8FA" font-weight="600" text-anchor="start" letter-spacing="0" opacity="1.0">The cascade is a stored causal trace, not a chart.</text>
+<line x1="64" y1="140" x2="1536" y2="140" stroke="#173E50" stroke-width="1"/>
+
+<rect x="64" y="250" width="250" height="130" rx="14" fill="#0C2130" stroke="#FFC857" stroke-width="1.5"/>
+<text x="88" y="294" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="0" opacity="1.0">EVT-GOLD-001</text>
+<text x="88" y="326" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">supplier outage</text>
+<circle cx="286" cy="276" r="5" fill="#FFC857"/>
+<text x="345.0" y="236" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#2DD4BF" font-weight="700" text-anchor="middle" letter-spacing="1" opacity="1.0">SUP-004</text>
+<line x1="322" y1="315" x2="358" y2="315" stroke="#2DD4BF" stroke-width="2.5" opacity="0.75"/><path d="M 354 308 L 370 315 L 354 322 Z" fill="#2DD4BF"/>
+<rect x="376" y="250" width="250" height="130" rx="14" fill="#0C2130" stroke="#FF6B6B" stroke-width="1.5"/>
+<text x="400" y="294" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="0" opacity="1.0">PO-2208</text>
+<text x="400" y="326" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">purchase order delayed</text>
+<circle cx="598" cy="276" r="5" fill="#FF6B6B"/>
+<text x="657.0" y="236" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#2DD4BF" font-weight="700" text-anchor="middle" letter-spacing="1" opacity="1.0">INV-003</text>
+<line x1="634" y1="315" x2="670" y2="315" stroke="#2DD4BF" stroke-width="2.5" opacity="0.75"/><path d="M 666 308 L 682 315 L 666 322 Z" fill="#2DD4BF"/>
+<rect x="688" y="250" width="250" height="130" rx="14" fill="#0C2130" stroke="#FF6B6B" stroke-width="1.5"/>
+<text x="712" y="294" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="0" opacity="1.0">CMP-MCU-42</text>
+<text x="712" y="326" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">shortage · 4 × 200 units</text>
+<circle cx="910" cy="276" r="5" fill="#FF6B6B"/>
+<text x="969.0" y="236" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#2DD4BF" font-weight="700" text-anchor="middle" letter-spacing="1" opacity="1.0">ALLOC-001</text>
+<line x1="946" y1="315" x2="982" y2="315" stroke="#2DD4BF" stroke-width="2.5" opacity="0.75"/><path d="M 978 308 L 994 315 L 978 322 Z" fill="#2DD4BF"/>
+<rect x="1000" y="250" width="250" height="130" rx="14" fill="#0C2130" stroke="#FFC857" stroke-width="1.5"/>
+<text x="1024" y="294" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="0" opacity="1.0">MO-0882</text>
+<text x="1024" y="326" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">production blocked</text>
+<circle cx="1222" cy="276" r="5" fill="#FFC857"/>
+<text x="1281.0" y="236" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#2DD4BF" font-weight="700" text-anchor="middle" letter-spacing="1" opacity="1.0">FUL-001</text>
+<line x1="1258" y1="315" x2="1294" y2="315" stroke="#2DD4BF" stroke-width="2.5" opacity="0.75"/><path d="M 1290 308 L 1306 315 L 1290 322 Z" fill="#2DD4BF"/>
+<rect x="1312" y="250" width="250" height="130" rx="14" fill="#0C2130" stroke="#FF6B6B" stroke-width="1.5"/>
+<text x="1336" y="294" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="0" opacity="1.0">CO-0704</text>
+<text x="1336" y="326" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">288 h late · ₹8,00,000</text>
+<circle cx="1534" cy="276" r="5" fill="#FF6B6B"/>
+<rect x="64" y="440" width="1472" height="96" rx="16" fill="#102B3B" stroke="#173E50" stroke-width="1.5"/>
+<text x="96" y="480" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" fill="#91B4C0" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">SECOND TRACE</text>
+<text x="96" y="510" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="17" fill="#ECF8FA" font-weight="600" text-anchor="start" letter-spacing="0" opacity="1.0">SUP-0104 → PO-2208 → CMP-MCU-42 → MO-0889 → CO-0711 · 264 h late</text>
+<text x="1010" y="480" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" fill="#91B4C0" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">RESULT HASH</text>
+<text x="1010" y="510" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#6EF3FF" font-weight="600" text-anchor="start" letter-spacing="0" opacity="1.0">1459e495b540dce3e5bc971ad38da0b9…</text>
+<text x="64" y="566" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">Headline metrics: ₹16,00,000 at risk · 2 SLA-breached orders · 288 h maximum delay</text>
+</svg>

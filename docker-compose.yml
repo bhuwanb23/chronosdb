@@ -1,6 +1,10 @@
-# ChronosDB single-command deployment (Phase 15L)
-# Usage: docker compose up -d --build
-name: chronosdb
+version: "3.8"
+
+# Phase 15L: Docker Packaging (hardened)
+#
+# No credential has a default. Compose refuses to start until the values are set
+# in the environment or in a local .env file that is not committed.
+# The database port is published on loopback only.
 
 services:
   db2:
@@ -8,13 +12,11 @@ services:
     container_name: chronosdb_db2
     privileged: true
     environment:
-      LICENSE: accept
-      DB2INSTANCE: db2inst1
-      DB2INST1_PASSWORD: ${DB2_PASSWORD:-change-me}
-      DBNAME: ${DB2_DATABASE:-CHRONOSDB}
-      BLU: "false"
+      - LICENSE=accept
+      - DB2INST1_PASSWORD=${DB2INST1_PASSWORD:?set DB2INST1_PASSWORD in .env}
+      - DB2INST1_DATABASE=${DB2_DATABASE:-CHRONOSDB}
     ports:
-      - "${DB2_PORT:-50000}:50000"
+      - "127.0.0.1:50000:50000"
     volumes:
       - db2_data:/database
       - ./sql:/sql:ro
@@ -32,20 +34,19 @@ services:
       dockerfile: docker/backend/Dockerfile
     container_name: chronosdb_backend
     environment:
-      APP_ENV: ${APP_ENV:-development}
-      APP_VERSION: ${APP_VERSION:-1.0.0}
-      SCHEMA_VERSION: ${SCHEMA_VERSION:-1}
-      LOG_LEVEL: ${LOG_LEVEL:-INFO}
-      DB2_HOST: db2
-      DB2_PORT: 50000
-      DB2_DATABASE: ${DB2_DATABASE:-CHRONOSDB}
-      DB2_USERNAME: ${DB2_USERNAME:-db2inst1}
-      DB2_PASSWORD: ${DB2_PASSWORD:-change-me}
-      DB2_SCHEMA: ${DB2_SCHEMA:-CHRONOSDB}
-      LLM_PROVIDER: ${LLM_PROVIDER:-LOCAL}
-      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-bge-small-en-v1.5}
+      - DB2_HOST=db2
+      - DB2_PORT=50000
+      - DB2_DATABASE=${DB2_DATABASE:-CHRONOSDB}
+      - DB2_USER=${DB2_USER:?set DB2_USER in .env}
+      - DB2_PASSWORD=${DB2_PASSWORD:?set DB2_PASSWORD in .env}
+      - DB2_SCHEMA=${DB2_SCHEMA:-CHRONOSDB}
+      - LLM_PROVIDER=${LLM_PROVIDER:-LOCAL}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-bge-small-en-v1.5}
+      - CHRONOSDB_API_KEY=${CHRONOSDB_API_KEY:?set CHRONOSDB_API_KEY in .env}
+      - CHRONOSDB_AUDIT_KEY=${CHRONOSDB_AUDIT_KEY:?set CHRONOSDB_AUDIT_KEY in .env}
+      - CHRONOSDB_DOCS_ENABLED=false
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     depends_on:
       db2:
         condition: service_healthy
@@ -59,7 +60,7 @@ services:
     environment:
       VITE_API_BASE_URL: http://localhost:8000
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
     depends_on:
       backend:
         condition: service_healthy

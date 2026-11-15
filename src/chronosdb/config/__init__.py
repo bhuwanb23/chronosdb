@@ -34,6 +34,10 @@ class Settings(BaseSettings):
         le=60,
     )
 
+    api_key: str = Field(default="", validation_alias="CHRONOSDB_API_KEY")
+    audit_api_key: str = Field(default="", validation_alias="CHRONOSDB_AUDIT_KEY")
+    docs_enabled: bool = Field(default=False, validation_alias="CHRONOSDB_DOCS_ENABLED")
+
     @property
     def db2_configured(self) -> bool:
         """Return whether all required Db2 connection values are present."""
@@ -47,6 +51,12 @@ class Settings(BaseSettings):
                 self.db2_schema.strip(),
             )
         )
+
+    @property
+    def api_auth_configured(self) -> bool:
+        """Return whether at least one API credential has been provisioned."""
+
+        return bool(self.api_key.strip() or self.audit_api_key.strip())
 
     def connection_dsn(self) -> str:
         """Build a Db2 DSN without including credentials in the returned value."""

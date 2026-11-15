@@ -1,0 +1,106 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,system-ui,sans-serif;background:#0B1220">
+  
+  <rect x="0" y="0" width="1600" height="90" fill="#111827"/>
+  <rect x="0" y="90" width="1600" height="2" fill="#334155"/>
+  <circle cx="40" cy="45" r="18" fill="#3B82F6"/>
+  <text x="40" y="51" font-size="16" font-weight="800" fill="white" text-anchor="middle">C</text>
+  <text x="70" y="42" font-size="20" font-weight="800" fill="#F8FAFC">ChronosDB</text>
+  <text x="70" y="64" font-size="11" fill="#94A3B8" letter-spacing="2">OPERATIONS WAR ROOM</text>
+  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLD-001</text>
+  <text x="1560" y="64" font-size="11" fill="#64748B" text-anchor="end">Recognition &lt; 10 sec  •  Deterministic  •  Auditable</text>
+
+  <!-- KPI Row -->
+  <rect x="40" y="110" width="360" height="110" rx="14" fill="#1E293B" stroke="#EF4444" stroke-width="2"/>
+  <text x="70" y="145" font-size="11" fill="#94A3B8" letter-spacing="1">REVENUE AT RISK</text>
+  <text x="70" y="180" font-size="32" font-weight="800" fill="#F8FAFC">₹16,00,000</text>
+  <text x="70" y="205" font-size="11" fill="#EF4444">▲ 2 customer orders affected  •  View Evidence →</text>
+
+  <rect x="430" y="110" width="280" height="110" rx="14" fill="#1E293B" stroke="#334155"/>
+  <text x="460" y="145" font-size="11" fill="#94A3B8" letter-spacing="1">SLA BREACHES</text>
+  <text x="460" y="180" font-size="32" font-weight="800" fill="#F8FAFC">2</text>
+  <text x="460" y="205" font-size="11" fill="#F59E0B">● 2 SLA-breached orders  •  View Evidence →</text>
+
+  <rect x="740" y="110" width="280" height="110" rx="14" fill="#1E293B" stroke="#334155"/>
+  <text x="770" y="145" font-size="11" fill="#94A3B8" letter-spacing="1">AFFECTED ORDERS</text>
+  <text x="770" y="180" font-size="32" font-weight="800" fill="#F8FAFC">2</text>
+  <text x="770" y="205" font-size="11" fill="#94A3B8">MO-0882  •  View Evidence →</text>
+
+  <rect x="1050" y="110" width="280" height="110" rx="14" fill="#1E293B" stroke="#10B981" stroke-width="2"/>
+  <text x="1080" y="145" font-size="11" fill="#94A3B8" letter-spacing="1">RECOVERY SAVINGS</text>
+  <text x="1080" y="180" font-size="32" font-weight="800" fill="#10B981">₹16,00,000</text>
+  <text x="1080" y="205" font-size="11" fill="#10B981">INT-GOLD-C plan  •  View Evidence →</text>
+
+  <!-- Recommendation -->
+  <rect x="40" y="240" width="1290" height="90" rx="14" fill="#10B981" opacity="0.95"/>
+  <text x="70" y="275" font-size="11" font-weight="700" fill="white" letter-spacing="1">★ RECOMMENDED INTERVENTION</text>
+  <text x="70" y="305" font-size="20" font-weight="800" fill="white">INT-GOLD-C — recommended</text>
+  <text x="1330" y="285" font-size="28" font-weight="800" fill="white" text-anchor="end">0</text>
+  <text x="1330" y="310" font-size="11" fill="white" text-anchor="end" opacity="0.9">SLA breaches  •  ₹1,32,000 cost</text>
+
+  <!-- Cascade -->
+  <rect x="40" y="350" width="640" height="300" rx="14" fill="#1E293B" stroke="#334155"/>
+  <text x="70" y="385" font-size="13" font-weight="700" fill="#F8FAFC">Dependency Cascade — Supplier → Component → Order → Revenue</text>
+  <text x="70" y="410" font-size="11" fill="#94A3B8">Click any node to inspect  •  Level 1: Impact Cascade</text>
+  <!-- Nodes -->
+  <circle cx="140" cy="480" r="28" fill="#EF4444"/><text x="140" y="485" font-size="10" font-weight="700" fill="white" text-anchor="middle">SUP</text>
+  <text x="140" y="525" font-size="10" fill="#94A3B8" text-anchor="middle">SUP-0104</text>
+  <circle cx="300" cy="480" r="28" fill="#F59E0B"/><text x="300" y="485" font-size="10" font-weight="700" fill="white" text-anchor="middle">CMP</text>
+  <text x="300" y="525" font-size="10" fill="#94A3B8" text-anchor="middle">MCU-42</text>
+  <circle cx="460" cy="480" r="28" fill="#3B82F6"/><text x="460" y="485" font-size="10" font-weight="700" fill="white" text-anchor="middle">MO</text>
+  <text x="460" y="525" font-size="10" fill="#94A3B8" text-anchor="middle">MO-0882</text>
+  <circle cx="600" cy="480" r="28" fill="#10B981"/><text x="600" y="485" font-size="10" font-weight="700" fill="white" text-anchor="middle">₹</text>
+  <text x="600" y="525" font-size="10" fill="#94A3B8" text-anchor="middle">₹16,00,000</text>
+  <line x1="168" y1="480" x2="272" y2="480" stroke="#64748B" stroke-width="2"/>
+  <line x1="328" y1="480" x2="432" y2="480" stroke="#64748B" stroke-width="2"/>
+  <line x1="488" y1="480" x2="572" y2="480" stroke="#64748B" stroke-width="2"/>
+  <text x="70" y="580" font-size="11" fill="#94A3B8">Cascade: SUP-0104 → CMP-MCU-42 → PO-2208 → MO-0882/MO-0889 → CO-0704/CO-0711  •  2 SLA breaches</text>
+  <text x="70" y="605" font-size="11" fill="#10B981">✓ Every node → Evidence</text>
+
+  <!-- Interventions -->
+  <rect x="710" y="350" width="620" height="300" rx="14" fill="#1E293B" stroke="#334155"/>
+  <text x="740" y="385" font-size="13" font-weight="700" fill="#F8FAFC">Intervention Comparison — 7 Candidates</text>
+  <text x="740" y="410" font-size="11" fill="#94A3B8">Cost  •  Delay  •  Revenue Protected  •  SLA Breaches</text>
+  <rect x="740" y="430" width="560" height="50" rx="10" fill="#10B981"/>
+  <text x="760" y="460" font-size="13" font-weight="800" fill="white">★ INT-GOLD-C  •  ₹1,32,000  •  ₹16,00,000 protected  •  0 breaches</text>
+  <rect x="740" y="490" width="560" height="36" rx="8" fill="#0F172A" stroke="#334155"/>
+  <text x="760" y="513" font-size="12" fill="#94A3B8">INT-GOLD-A  •  ₹60,000  •  264 h delay  •  ₹8,00,000 protected  •  1 breach</text>
+  <rect x="740" y="534" width="560" height="36" rx="8" fill="#0F172A" stroke="#334155"/>
+  <text x="760" y="557" font-size="12" fill="#94A3B8">INT-GOLD-EXPEDITE  •  infeasible: complete supplier outage</text>
+  <rect x="740" y="578" width="560" height="36" rx="8" fill="#0F172A" stroke="#334155"/>
+  <text x="760" y="601" font-size="12" fill="#94A3B8">DO-NOTHING  •  ₹0  •  288 h delay  •  ₹0 protected  •  2 breaches</text>
+
+  <!-- Evidence + Audit -->
+  <rect x="40" y="670" width="640" height="200" rx="14" fill="#1E293B" stroke="#334155"/>
+  <text x="70" y="705" font-size="13" font-weight="700" fill="#F8FAFC">Evidence Explorer — Referenced Documents</text>
+  <text x="70" y="735" font-size="12" fill="#94A3B8">📄 Supplier Contract v3.2  •  Document reference  •  View Original →</text>
+  <text x="70" y="765" font-size="12" fill="#94A3B8">📄 Historical Incident INC-104  •  Document reference  •  View Original →</text>
+  <text x="70" y="795" font-size="12" fill="#94A3B8">📄 Policy POL-07  •  Document reference  •  View Original →</text>
+  <text x="70" y="825" font-size="11" fill="#10B981">Each candidate cites 3 document references</text>
+
+  <rect x="710" y="670" width="620" height="200" rx="14" fill="#1E293B" stroke="#334155"/>
+  <text x="740" y="705" font-size="13" font-weight="700" fill="#F8FAFC">Audit Explorer — Decision Story</text>
+  <text x="740" y="735" font-size="12" fill="#94A3B8">Decision DEC-2026-001  •  Correlation COR-8821</text>
+  <text x="740" y="765" font-size="12" fill="#94A3B8">Scenario → Simulation → Recommendation → Verification</text>
+  <text x="740" y="795" font-size="12" fill="#94A3B8">Replay History: repeated runs produce identical hashes</text>
+  <text x="740" y="825" font-size="11" fill="#10B981">✓ Judge can re-run the golden scenario</text>
+
+  <!-- AI Console -->
+  <rect x="1360" y="110" width="200" height="760" rx="14" fill="#1E293B" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="1460" y="145" font-size="13" font-weight="800" fill="#F8FAFC" text-anchor="middle">AI Console</text>
+  <text x="1460" y="165" font-size="10" fill="#8B5CF6" text-anchor="middle">Verified Only</text>
+  <rect x="1380" y="190" width="160" height="80" rx="10" fill="#0F172A" stroke="#334155"/>
+  <text x="1395" y="215" font-size="11" fill="#94A3B8">"What is recommended?"</text>
+  <rect x="1380" y="290" width="160" height="120" rx="10" fill="#8B5CF6" opacity="0.9"/>
+  <text x="1395" y="315" font-size="11" fill="white">INT-GOLD-C intervention</text>
+  <text x="1395" y="335" font-size="10" fill="white" opacity="0.9">INT-GOLD-C recommended</text>
+  <text x="1395" y="355" font-size="10" fill="white" opacity="0.9">0 SLA breaches</text>
+  <text x="1395" y="380" font-size="10" fill="white" opacity="0.9">Evidence: 3 document refs</text>
+  <rect x="1380" y="430" width="160" height="36" rx="18" fill="#0F172A" stroke="#334155"/>
+  <text x="1460" y="453" font-size="11" fill="#94A3B8" text-anchor="middle">Ask ChronosDB…</text>
+  <text x="1460" y="500" font-size="10" fill="#64748B" text-anchor="middle">No free-form chat</text>
+  <text x="1460" y="520" font-size="10" fill="#64748B" text-anchor="middle">Verified answers only</text>
+  <text x="1460" y="560" font-size="10" fill="#10B981" text-anchor="middle">✓ Numbers from frozen artifacts</text>
+  <text x="1460" y="580" font-size="10" fill="#10B981" text-anchor="middle">✓ No free-form answers</text>
+
+  <text x="800" y="920" font-size="11" fill="#64748B" text-anchor="middle">Phase 12  •  War Room Main  •  Judge understands in &lt;10 seconds  •  Show impact first, AI second</text>
+</svg>

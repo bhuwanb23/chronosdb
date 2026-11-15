@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" role="img" aria-label="CHRONOSDB  ·  DECISION INTELLIGENCE ON IBM DB2">
+<defs>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#173E50" stroke-width="1" opacity="0.35"/>
+  </pattern>
+  <linearGradient id="fade" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#102B3B" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#0C2130" stop-opacity="0.9"/>
+  </linearGradient>
+</defs>
+<rect width="1600" height="800" fill="#07141E"/>
+<rect width="1600" height="800" fill="url(#grid)"/>
+<circle cx="1540" cy="40" r="220" fill="#6EF3FF" opacity="0.03"/>
+<text x="64" y="84" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#6EF3FF" font-weight="700" text-anchor="start" letter-spacing="5" opacity="1.0">CHRONOSDB  ·  DECISION INTELLIGENCE ON IBM DB2</text>
+<text x="64" y="116" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="26" fill="#ECF8FA" font-weight="600" text-anchor="start" letter-spacing="0" opacity="1.0">Supply-chain disruptions, answered with evidence.</text>
+<line x1="64" y1="140" x2="1536" y2="140" stroke="#173E50" stroke-width="1"/>
+
+<text x="64" y="210" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="56" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="0" opacity="1.0">When the chain breaks,</text>
+<text x="64" y="272" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="56" fill="#6EF3FF" font-weight="700" text-anchor="start" letter-spacing="0" opacity="1.0">show the next failure</text>
+<text x="64" y="334" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="56" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="0" opacity="1.0">and prove the fix.</text>
+<text x="64" y="390" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">Deterministic impact propagation → counterfactual recovery paths</text>
+<text x="64" y="418" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">→ constraint-ranked recommendation → a hash you can recompute.</text>
+<rect x="64" y="456" width="250" height="104" rx="16" fill="#102B3B" stroke="#173E50" stroke-width="1.5"/>
+<text x="88" y="508" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="34" fill="#FF6B6B" font-weight="700" text-anchor="start" letter-spacing="0" opacity="1.0">₹16,00,000</text>
+<text x="88" y="538" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" fill="#91B4C0" font-weight="600" text-anchor="start" letter-spacing="2" opacity="1.0">REVENUE AT RISK</text>
+<rect x="334" y="456" width="250" height="104" rx="16" fill="#102B3B" stroke="#173E50" stroke-width="1.5"/>
+<text x="358" y="508" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="34" fill="#FF6B6B" font-weight="700" text-anchor="start" letter-spacing="0" opacity="1.0">02</text>
+<text x="358" y="538" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" fill="#91B4C0" font-weight="600" text-anchor="start" letter-spacing="2" opacity="1.0">SLA-BREACHED ORDERS</text>
+<rect x="604" y="456" width="250" height="104" rx="16" fill="#102B3B" stroke="#173E50" stroke-width="1.5"/>
+<text x="628" y="508" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="34" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="0" opacity="1.0">7</text>
+<text x="628" y="538" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" fill="#91B4C0" font-weight="600" text-anchor="start" letter-spacing="2" opacity="1.0">CANDIDATES SIMULATED</text>
+<rect x="64" y="584" width="790" height="96" rx="16" fill="#102B3B" stroke="#B8F16B" stroke-width="1.5"/>
+<circle cx="92" cy="620" r="6" fill="#B8F16B"/>
+<text x="110" y="626" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#B8F16B" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">RECOMMENDED  ·  INT-GOLD-C</text>
+<text x="92" y="662" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="20" fill="#ECF8FA" font-weight="600" text-anchor="start" letter-spacing="0" opacity="1.0">₹1,32,000 spend protects ₹16,00,000 — 0 SLA breaches left.</text>
+<text x="64" y="730" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">Frozen SCN-GOLD-001 artifact · result hash 1459e495b540… · 1 unique hash across 100 runs</text>
+<rect x="900" y="180" width="636" height="500" rx="16" fill="url(#fade)" stroke="#173E50" stroke-width="1.5"/>
+<text x="932" y="226" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" fill="#6EF3FF" font-weight="700" text-anchor="start" letter-spacing="4" opacity="1.0">CASCADE  /  SCN-GOLD-001</text>
+<rect x="932" y="262" width="572" height="86" rx="14" fill="#0C2130" stroke="#FFC857" stroke-width="1.5"/>
+<circle cx="962" cy="305" r="5" fill="#FFC857"/>
+<text x="982" y="296" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="17" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">SUPPLIER</text>
+<text x="982" y="324" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">SUP-0104 · unavailable</text>
+<line x1="1218" y1="348" x2="1218" y2="360" stroke="#FFC857" stroke-width="2.5" opacity="0.75"/><path d="M 1211 356 L 1218 372 L 1225 356 Z" fill="#FFC857"/>
+<rect x="932" y="372" width="572" height="86" rx="14" fill="#0C2130" stroke="#FF6B6B" stroke-width="1.5"/>
+<circle cx="962" cy="415" r="5" fill="#FF6B6B"/>
+<text x="982" y="406" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="17" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">COMPONENT</text>
+<text x="982" y="434" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">CMP-MCU-42 · short 800 units</text>
+<line x1="1218" y1="458" x2="1218" y2="470" stroke="#FF6B6B" stroke-width="2.5" opacity="0.75"/><path d="M 1211 466 L 1218 482 L 1225 466 Z" fill="#FF6B6B"/>
+<rect x="932" y="482" width="572" height="86" rx="14" fill="#0C2130" stroke="#FFC857" stroke-width="1.5"/>
+<circle cx="962" cy="525" r="5" fill="#FFC857"/>
+<text x="982" y="516" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="17" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">PRODUCTION</text>
+<text x="982" y="544" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">MO-0882 · MO-0889 blocked</text>
+<line x1="1218" y1="568" x2="1218" y2="580" stroke="#FFC857" stroke-width="2.5" opacity="0.75"/><path d="M 1211 576 L 1218 592 L 1225 576 Z" fill="#FFC857"/>
+<rect x="932" y="592" width="572" height="86" rx="14" fill="#0C2130" stroke="#FF6B6B" stroke-width="1.5"/>
+<circle cx="962" cy="635" r="5" fill="#FF6B6B"/>
+<text x="982" y="626" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="17" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">CUSTOMER</text>
+<text x="982" y="654" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">CO-0704 · CO-0711 late</text>
+</svg>

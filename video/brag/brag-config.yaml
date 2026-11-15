@@ -1,0 +1,21 @@
+# brag configuration for ChronosDB (Phase 17)
+project: ChronosDB
+brief: video/brag/chronosdb-brief.md
+captions: docs/demo/caption-file.srt
+voiceover_script: docs/demo/final-script.md
+outputs:
+  full_video: assets/demo/demo-video.mp4        # target 2:45, max 3:00
+  launch_cut: video/brag/output/launch-20s.mp4  # 20 s
+  thumbnail: assets/demo/thumbnails/thumbnail-16x9.png
+  output_dir: video/brag/output
+resolution: 1920x1080
+fps: 30
+aspect_ratios: [16:9]          # add 9:16 later if needed
+music:
+  style: calm, confident, low-key tech; no vocals; ducks under voice-over
+  brief: video/brag/music-brief.md
+render:
+  gpu: user-local             # rendering is done by the user on their GPU
+  hyperframes: optional       # used only by /brag --full
+skill_preference:
+  opus_5_5: brag-slim         # /brag auto-switches; use --full for Hyperframes

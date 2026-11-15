@@ -1,0 +1,30 @@
+<svg width="1600" height="950" viewBox="0 0 1600 950" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,system-ui,sans-serif;background:#0B1220">
+  
+  <rect x="0" y="0" width="1600" height="90" fill="#111827"/>
+  <rect x="0" y="90" width="1600" height="2" fill="#334155"/>
+  <circle cx="40" cy="45" r="18" fill="#3B82F6"/>
+  <text x="40" y="51" font-size="16" font-weight="800" fill="white" text-anchor="middle">C</text>
+  <text x="70" y="42" font-size="20" font-weight="800" fill="#F8FAFC">ChronosDB</text>
+  <text x="70" y="64" font-size="11" fill="#94A3B8" letter-spacing="2">OPERATIONS WAR ROOM</text>
+  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLD-001</text>
+  <text x="1560" y="64" font-size="11" fill="#64748B" text-anchor="end">Recognition &lt; 10 sec  •  Deterministic  •  Auditable</text>
+
+  <text x="800" y="135" font-size="28" font-weight="800" fill="#F8FAFC" text-anchor="middle">Natural Language Console</text>
+  <text x="800" y="162" font-size="13" fill="#94A3B8" text-anchor="middle">Level 2: Natural Language  •  20% of UI  •  Verified Recommendation (not free-form chat)</text>
+  <rect x="60" y="210" width="1480" height="520" rx="16" fill="#1E293B" stroke="#8B5CF6" stroke-width="2"/>
+  <rect x="90" y="250" width="700" height="70" rx="14" fill="#0F172A" stroke="#334155"/>
+  <text x="120" y="290" font-size="14" fill="#F8FAFC">"What is recommended for the SUP-0104 outage?"</text>
+  <rect x="850" y="350" width="660" height="180" rx="14" fill="#8B5CF6"/>
+  <text x="880" y="385" font-size="14" font-weight="800" fill="white">INT-GOLD-C intervention recommended</text>
+  <text x="880" y="415" font-size="12" fill="white" opacity="0.9">INT-GOLD-C  •  Protects ₹16,00,000  •  0 SLA breaches</text>
+  <text x="880" y="445" font-size="12" fill="white" opacity="0.9">Evidence: 3 document refs  •  Verified claims: 3  •  Unsupported: 0</text>
+  <text x="880" y="475" font-size="11" fill="white" opacity="0.8">Why? INT-GOLD-C (action mix not yet verified) balances cost, delay, and protection.</text>
+  <rect x="90" y="560" width="700" height="70" rx="14" fill="#0F172A" stroke="#334155"/>
+  <text x="120" y="600" font-size="14" fill="#94A3B8">"Why not just transfer?"</text>
+  <rect x="850" y="650" width="660" height="60" rx="14" fill="#0F172A" stroke="#334155"/>
+  <text x="880" y="687" font-size="12" fill="#94A3B8">INT-GOLD-A protects ₹8,00,000 and leaves 1 SLA breach. INT-GOLD-C protects ₹16,00,000 with 0 breaches.</text>
+  <rect x="60" y="770" width="1480" height="100" rx="14" fill="#0F172A" stroke="#334155"/>
+  <text x="90" y="810" font-size="13" font-weight="700" fill="#F8FAFC">Controlled AI — No hallucinated numbers</text>
+  <text x="90" y="840" font-size="12" fill="#94A3B8">Verified answers only  •  Evidence-referenced</text>
+  <text x="800" y="920" font-size="11" fill="#64748B" text-anchor="middle">Phase 12J + 9  •  Natural Language Console  •  Recommendation Discovery ≤15 sec</text>
+</svg>

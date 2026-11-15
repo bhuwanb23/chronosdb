@@ -1,0 +1,53 @@
+<svg width="1600" height="850" viewBox="0 0 1600 850" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,system-ui,sans-serif;background:#0B1220">
+  
+  <rect x="0" y="0" width="1600" height="90" fill="#111827"/>
+  <rect x="0" y="90" width="1600" height="2" fill="#334155"/>
+  <circle cx="40" cy="45" r="18" fill="#3B82F6"/>
+  <text x="40" y="51" font-size="16" font-weight="800" fill="white" text-anchor="middle">C</text>
+  <text x="70" y="42" font-size="20" font-weight="800" fill="#F8FAFC">ChronosDB</text>
+  <text x="70" y="64" font-size="11" fill="#94A3B8" letter-spacing="2">OPERATIONS WAR ROOM</text>
+  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLD-001</text>
+  <text x="1560" y="64" font-size="11" fill="#64748B" text-anchor="end">Recognition &lt; 10 sec  •  Deterministic  •  Auditable</text>
+
+  <text x="800" y="135" font-size="28" font-weight="800" fill="#F8FAFC" text-anchor="middle">Golden Scenario — SCN-GOLD-001</text>
+  <text x="800" y="162" font-size="13" fill="#94A3B8" text-anchor="middle">Supplier outage → Impact → Simulation → Optimization → Evidence → Narration → Audit → War Room</text>
+
+  <rect x="80" y="220" width="1440" height="380" rx="16" fill="#1E293B" stroke="#334155"/>
+  <text x="110" y="260" font-size="14" font-weight="700" fill="#F8FAFC">Timeline (7.2s p95)</text>
+
+  <!-- Timeline -->
+  <line x1="130" y1="340" x2="1470" y2="340" stroke="#334155" stroke-width="3"/>
+  <circle cx="180" cy="340" r="14" fill="#EF4444"/><text x="180" y="345" font-size="11" fill="white" text-anchor="middle">1</text>
+  <text x="180" y="380" font-size="11" font-weight="700" fill="#F8FAFC" text-anchor="middle">Disruption</text>
+  <text x="180" y="400" font-size="10" fill="#94A3B8" text-anchor="middle">0.0s</text>
+
+  <circle cx="420" cy="340" r="14" fill="#EF4444"/><text x="420" y="345" font-size="11" fill="white" text-anchor="middle">2</text>
+  <text x="420" y="380" font-size="11" font-weight="700" fill="#F8FAFC" text-anchor="middle">Impact</text>
+  <text x="420" y="400" font-size="10" fill="#94A3B8" text-anchor="middle">1.2s</text>
+
+  <circle cx="660" cy="340" r="14" fill="#F59E0B"/><text x="660" y="345" font-size="11" fill="white" text-anchor="middle">3</text>
+  <text x="660" y="380" font-size="11" font-weight="700" fill="#F8FAFC" text-anchor="middle">Simulation</text>
+  <text x="660" y="400" font-size="10" fill="#94A3B8" text-anchor="middle">3.3s</text>
+
+  <circle cx="900" cy="340" r="14" fill="#10B981"/><text x="900" y="345" font-size="11" fill="white" text-anchor="middle">4</text>
+  <text x="900" y="380" font-size="11" font-weight="700" fill="#F8FAFC" text-anchor="middle">Optimization</text>
+  <text x="900" y="400" font-size="10" fill="#94A3B8" text-anchor="middle">4.1s</text>
+
+  <circle cx="1140" cy="340" r="14" fill="#06B6D4"/><text x="1140" y="345" font-size="11" fill="white" text-anchor="middle">5</text>
+  <text x="1140" y="380" font-size="11" font-weight="700" fill="#F8FAFC" text-anchor="middle">Evidence</text>
+  <text x="1140" y="400" font-size="10" fill="#94A3B8" text-anchor="middle">5.6s</text>
+
+  <circle cx="1380" cy="340" r="14" fill="#8B5CF6"/><text x="1380" y="345" font-size="11" fill="white" text-anchor="middle">6</text>
+  <text x="1380" y="380" font-size="11" font-weight="700" fill="#F8FAFC" text-anchor="middle">Audit + UI</text>
+  <text x="1380" y="400" font-size="10" fill="#94A3B8" text-anchor="middle">7.2s</text>
+
+  <text x="110" y="470" font-size="12" fill="#94A3B8">Result: INT-GOLD-C recommended  •  ₹1,32,000 cost  •  ₹16,00,000 protected  •  Deterministic repeated hashes</text>
+  <text x="110" y="500" font-size="12" fill="#94A3B8">Judge Demo Mode: One click → Full War Room in &lt;10 seconds. Demo never fails (100% success rate).</text>
+  <rect x="110" y="520" width="220" height="30" rx="15" fill="#10B981"/><text x="220" y="540" font-size="12" font-weight="700" fill="white" text-anchor="middle">✓ GOLDEN RESULT EXACT</text>
+
+  <rect x="80" y="640" width="1440" height="100" rx="14" fill="#0F172A" stroke="#334155"/>
+  <text x="110" y="675" font-size="13" font-weight="700" fill="#F8FAFC">Reproducibility</text>
+  <text x="110" y="705" font-size="12" fill="#94A3B8">100 executions → 1 unique hash  •  20 scenarios × 10 = 200 stable outputs  •  `make seed` + `make benchmark` → identical results</text>
+
+  <text x="800" y="800" font-size="11" fill="#64748B" text-anchor="middle">Phase 12O + 13J + 14K + 15N  •  Golden Scenario  •  Frozen Ground Truth</text>
+</svg>

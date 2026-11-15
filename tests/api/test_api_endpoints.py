@@ -6,8 +6,9 @@ Backend and API Integration
 import pytest
 from fastapi.testclient import TestClient
 from src.backend.chronosdb.api.app import app
+from tests.conftest import AUDITOR_HEADERS, OPERATOR_HEADERS
 
-client = TestClient(app)
+client = TestClient(app, headers=OPERATOR_HEADERS)
 
 class TestAPIEndpoints:
     """Phase 11: API Endpoint Tests"""
@@ -152,13 +153,13 @@ class TestAPIEndpoints:
         optimization_id = response.json()["data"].get("optimization_id", "OPT-TEST")
         
         # Get audit
-        response = client.get(f"/api/v1/audit/{optimization_id}")
+        response = client.get(f"/api/v1/audit/{optimization_id}", headers=AUDITOR_HEADERS)
         assert response.status_code == 200
         data = response.json()
         assert data["status"] == "SUCCESS"
         
         # Replay decision
-        response = client.post(f"/api/v1/replay/{optimization_id}")
+        response = client.post(f"/api/v1/replay/{optimization_id}", headers=AUDITOR_HEADERS)
         assert response.status_code == 200
         data = response.json()
         assert data["status"] == "SUCCESS"

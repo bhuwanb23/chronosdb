@@ -1,0 +1,69 @@
+<svg width="1600" height="950" viewBox="0 0 1600 950" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,system-ui,sans-serif;background:#0B1220">
+  
+  <rect x="0" y="0" width="1600" height="90" fill="#111827"/>
+  <rect x="0" y="90" width="1600" height="2" fill="#334155"/>
+  <circle cx="40" cy="45" r="18" fill="#3B82F6"/>
+  <text x="40" y="51" font-size="16" font-weight="800" fill="white" text-anchor="middle">C</text>
+  <text x="70" y="42" font-size="20" font-weight="800" fill="#F8FAFC">ChronosDB</text>
+  <text x="70" y="64" font-size="11" fill="#94A3B8" letter-spacing="2">OPERATIONS WAR ROOM</text>
+  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLD-001</text>
+  <text x="1560" y="64" font-size="11" fill="#64748B" text-anchor="end">Recognition &lt; 10 sec  •  Deterministic  •  Auditable</text>
+
+  <text x="800" y="135" font-size="28" font-weight="800" fill="#F8FAFC" text-anchor="middle">Trust Architecture — Controlled AI</text>
+  <text x="800" y="162" font-size="13" fill="#94A3B8" text-anchor="middle">Planner → Validator → Execution → Verifier  •  No hallucinated business outcomes</text>
+
+  <rect x="100" y="220" width="320" height="180" rx="16" fill="#1E293B" stroke="#3B82F6" stroke-width="2"/>
+  <text x="260" y="255" font-size="16" font-weight="800" fill="#F8FAFC" text-anchor="middle">1. Planner</text>
+  <text x="260" y="278" font-size="11" fill="#3B82F6" text-anchor="middle">Phase 9C  •  Typed Schema</text>
+  <text x="260" y="305" font-size="12" fill="#94A3B8" text-anchor="middle">Parse natural language</text>
+  <text x="260" y="325" font-size="12" fill="#94A3B8" text-anchor="middle">Resolve entities (SUP, CMP, MO)</text>
+  <text x="260" y="345" font-size="12" fill="#94A3B8" text-anchor="middle">Produce scenario plan</text>
+  <text x="260" y="375" font-size="11" fill="#10B981" text-anchor="middle">Parse Success ≥95%  •  Entity Accuracy ≥99%</text>
+
+  <rect x="480" y="220" width="320" height="180" rx="16" fill="#1E293B" stroke="#F59E0B" stroke-width="2"/>
+  <text x="640" y="255" font-size="16" font-weight="800" fill="#F8FAFC" text-anchor="middle">2. Validator</text>
+  <text x="640" y="278" font-size="11" fill="#F59E0B" text-anchor="middle">Phase 9E + 10I  •  Schema Gate</text>
+  <text x="640" y="305" font-size="12" fill="#94A3B8" text-anchor="middle">Reject unknown supplier</text>
+  <text x="640" y="325" font-size="12" fill="#94A3B8" text-anchor="middle">Reject negative duration</text>
+  <text x="640" y="345" font-size="12" fill="#94A3B8" text-anchor="middle">Reject prompt injection</text>
+  <text x="640" y="375" font-size="11" fill="#10B981" text-anchor="middle">Invalid Input Rejection 100%</text>
+
+  <rect x="860" y="220" width="320" height="180" rx="16" fill="#1E293B" stroke="#10B981" stroke-width="2"/>
+  <text x="1020" y="255" font-size="16" font-weight="800" fill="#F8FAFC" text-anchor="middle">3. Execution</text>
+  <text x="1020" y="278" font-size="11" fill="#10B981" text-anchor="middle">Phase 5–8  •  Deterministic Engines</text>
+  <text x="1020" y="305" font-size="12" fill="#94A3B8" text-anchor="middle">Impact → Simulation → Optimization</text>
+  <text x="1020" y="325" font-size="12" fill="#94A3B8" text-anchor="middle">Retrieval → Evidence Selection</text>
+  <text x="1020" y="345" font-size="12" fill="#94A3B8" text-anchor="middle">Db2 + VECTOR + Audit Ledger</text>
+  <text x="1020" y="375" font-size="11" fill="#10B981" text-anchor="middle">Financial fidelity 1.0  •  Repeated hashes identical</text>
+
+  <rect x="1240" y="220" width="260" height="180" rx="16" fill="#1E293B" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="1370" y="255" font-size="16" font-weight="800" fill="#F8FAFC" text-anchor="middle">4. Verifier</text>
+  <text x="1370" y="278" font-size="11" fill="#8B5CF6" text-anchor="middle">Phase 9H + 10U</text>
+  <text x="1370" y="305" font-size="12" fill="#94A3B8" text-anchor="middle">Verify every claim</text>
+  <text x="1370" y="325" font-size="12" fill="#94A3B8" text-anchor="middle">Attribute evidence</text>
+  <text x="1370" y="345" font-size="12" fill="#94A3B8" text-anchor="middle">Block unsupported claims</text>
+  <text x="1370" y="375" font-size="11" fill="#10B981" text-anchor="middle">Verified answers only</text>
+
+  <g stroke="#64748B" stroke-width="2.5" fill="none">
+    <path d="M420 310 L480 310" marker-end="url(#a)"/>
+    <path d="M800 310 L860 310" marker-end="url(#a)"/>
+    <path d="M1180 310 L1240 310" marker-end="url(#a)"/>
+  </g>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#64748B"/></marker></defs>
+
+  <!-- Security strip -->
+  <rect x="100" y="460" width="1400" height="140" rx="16" fill="#0F172A" stroke="#334155"/>
+  <text x="130" y="495" font-size="14" font-weight="800" fill="#F8FAFC">Security Controls (Phase 10)</text>
+  <text x="130" y="525" font-size="12" fill="#94A3B8">Security claims: pending re-verification in Phase 18</text>
+  <text x="130" y="555" font-size="12" fill="#94A3B8">Identity &amp; Access Control  •  Input Validation  •  Decision Ledger  •  Integrity &amp; Tamper Detection  •  Correlation &amp; Traceability</text>
+  <rect x="130" y="570" width="180" height="22" rx="11" fill="#10B981"/><text x="220" y="585" font-size="11" font-weight="700" fill="white" text-anchor="middle">ALL CONTROLS PASS</text>
+
+  <!-- Audit strip -->
+  <rect x="100" y="640" width="1400" height="140" rx="16" fill="#1E293B" stroke="#334155"/>
+  <text x="130" y="675" font-size="14" font-weight="800" fill="#F8FAFC">Audit &amp; Replay (Phase 10P–U)</text>
+  <text x="130" y="705" font-size="12" fill="#94A3B8">Decision ID  •  Correlation ID  •  Scenario  •  Simulation  •  Recommendation  •  Verification Status  •  Replay History</text>
+  <text x="130" y="735" font-size="12" fill="#94A3B8">Judge can re-run the golden decision and get identical hashes</text>
+  <rect x="130" y="750" width="200" height="22" rx="11" fill="#3B82F6"/><text x="230" y="765" font-size="11" font-weight="700" fill="white" text-anchor="middle">REPLAY VERIFIED</text>
+
+  <text x="800" y="840" font-size="11" fill="#64748B" text-anchor="middle">Phase 16K  •  Trust Architecture  •  Deterministic calculations outside LLM — prevent hallucinated business outcomes</text>
+</svg>
