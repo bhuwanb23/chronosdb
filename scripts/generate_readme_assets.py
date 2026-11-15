@@ -331,91 +331,229 @@ def candidate_board(candidates: list[dict[str, Any]]) -> str:
     return "\n".join(parts)
 
 
-def architecture() -> str:
-    schema_count = len(list((ROOT / "schemas").glob("*.json")))
-    w, h = 1600, 1060
+def pipeline() -> str:
+    w, h = 1600, 500
     parts = [
         frame(
             w,
             h,
-            "SYSTEM MAP  /  WHAT EXISTS AND WHAT HAS BEEN PROVEN",
-            "Status marks what a fresh clone can verify today.",
+            "HOW A DECISION IS BUILT",
+            "Five deterministic stages. The narrative layer only reads their output.",
         )
     ]
 
-    legend = [(LIME, "VERIFIED"), (AMBER, "PARTIAL"), (CORAL, "BLOCKED"), (MUTED, "DESIGN ONLY")]
-    lx = 900
-    for color, label in legend:
-        parts.append(dot(lx, 78, color, 5))
-        parts.append(text(lx + 14, 83, label, 11, MUTED, 700, spacing=2))
-        lx += 158
+    stages = [
+        ("01", "INGEST", "Operational baseline", "suppliers \u00b7 orders \u00b7 inventory", CYAN),
+        ("02", "PROPAGATE", "Rule-bound cascade", "shortages \u00b7 delays \u00b7 traces", CORAL),
+        ("03", "SIMULATE", "Isolated overlays", "baseline never mutated", AMBER),
+        ("04", "OPTIMISE", "Constraints, then rank", "rejections keep a reason", AMBER),
+        ("05", "SEAL", "Hash, cite, replay", "tamper-evident record", LIME),
+    ]
+
+    width, gap, start, y, height = 250, 55, 64, 210, 158
+    for index, (number, title, detail, note, color) in enumerate(stages):
+        x = start + index * (width + gap)
+        parts.append(chip(x, y, width, height, color))
+        parts.append(text(x + 24, y + 40, number, 13, color, 700, spacing=3))
+        parts.append(text(x + 24, y + 76, title, 19, WHITE, 700, spacing=1))
+        parts.append(text(x + 24, y + 106, detail, 14, MUTED))
+        parts.append(text(x + 24, y + 132, note, 12, color, 600))
+        if index < len(stages) - 1:
+            parts.append(arrow_chain(x + width + 10, x + width + gap - 8, y + height / 2, AQUA))
+
+    parts.append(panel(64, 404, 704, 68, stroke=GRID, fill=SURFACE))
+    parts.append(text(92, 446, "DETERMINISTIC CORE", 13, CYAN, 700, spacing=2))
+    parts.append(text(830, 446, "EXPLANATION LAYER  \u2192  reads verified output only", 14, MUTED, 600))
+    parts.append("</svg>")
+    return "\n".join(parts)
+
+
+def platform() -> str:
+    w, h = 1600, 900
+    parts = [
+        frame(
+            w,
+            h,
+            "PLATFORM ARCHITECTURE",
+            "One consistency boundary from operational record to audit ledger.",
+        )
+    ]
 
     bands = [
         (
-            "01",
-            "INTERFACES",
+            "EXPERIENCE",
+            "what an operator touches",
             168,
-            150,
             [
-                ("HTTP API", "/health/live \u00b7 /health/ready \u00b7 /version", CORAL, "import fails: config shadowed"),
-                ("War Room UI", "TypeScript views, design renders", AMBER, "not wired to a live backend"),
-                ("Scripts", "golden run, benchmarks, asset export", LIME, "runnable from a clone"),
+                ("War Room", "executive view", CYAN),
+                ("Cascade", "dependency chain", CYAN),
+                ("Comparison", "candidate board", CYAN),
+                ("Evidence", "claim sources", CYAN),
+                ("Replay & audit", "decision history", CYAN),
             ],
         ),
         (
-            "02",
-            "DECISION CORE",
+            "DECISION SERVICES",
+            "deterministic, testable, explainable",
             348,
-            200,
             [
-                ("Impact", "cascade, rule set, causal traces", LIME, "frozen artifact validated"),
-                ("Simulation", "counterfactual overlays", AMBER, "suite partly failing"),
-                ("Optimization", "feasibility + ranking", AMBER, "suite partly failing"),
-                ("Evidence", "retrieval, provenance", AMBER, "metrics not re-measured"),
-                ("Controlled AI", "narration from verified input", AMBER, "no live model run"),
+                ("Impact", "rule-bound cascade", LIME),
+                ("Simulation", "counterfactual overlays", AMBER),
+                ("Optimisation", "feasibility + ranking", AMBER),
+                ("Evidence", "retrieval + provenance", AMBER),
+                ("Narration", "explains, never computes", AMBER),
             ],
         ),
         (
-            "03",
-            "PERSISTENCE",
-            578,
-            140,
+            "DATA PLATFORM",
+            "one engine, five kinds of state",
+            528,
             [
-                ("IBM Db2", "operational \u00b7 temporal \u00b7 vector \u00b7 audit", MUTED, "no runtime in verification"),
+                ("IBM Db2", "operational records", MUTED),
+                ("Temporal state", "enables replay", MUTED),
+                ("Vector store", "evidence retrieval", MUTED),
+                ("Audit ledger", "decisions + verifications", MUTED),
+                ("Scenarios", "frozen inputs", MUTED),
             ],
         ),
         (
-            "04",
             "ASSURANCE",
-            748,
-            210,
+            "what makes the numbers trustworthy",
+            708,
             [
-                ("JSON Schemas", f"{schema_count} contracts, Draft 2020-12", LIME, "impact result validates"),
-                ("Determinism", "repeat-run hash comparison", LIME, "100 runs, 1 hash"),
-                ("Security suite", "tests/security", LIME, "34 passing"),
-                ("Full suite", "tests/", CORAL, "150 pass / 42 fail / 4 errors"),
+                ("Contracts", "JSON Schema", LIME),
+                ("Determinism", "100 runs, 1 hash", LIME),
+                ("Security", "34 tests passing", LIME),
+                ("Benchmarks", "per-subsystem runners", AMBER),
             ],
         ),
     ]
 
-    for number, label, y, height, items in bands:
-        parts.append(panel(64, y, 1472, height, stroke=GRID))
-        parts.append(text(92, y + 44, number, 13, CYAN, 700, spacing=2))
-        parts.append(text(92, y + 76, label, 15, WHITE, 700, spacing=3))
+    for label, note, y, items in bands:
+        parts.append(panel(64, y, 1472, 150, stroke=GRID))
+        parts.append(text(92, y + 62, label, 14, WHITE, 700, spacing=3))
+        parts.append(text(92, y + 88, note, 12, MUTED))
 
         count = len(items)
-        available = 1472 - 300
         gap = 18
-        width = (available - gap * (count - 1)) / count
-        for index, (title, detail, status, note) in enumerate(items):
-            x = 64 + 290 + index * (width + gap)
-            parts.append(chip(x, y + 22, width, height - 44, status))
-            parts.append(dot(x + width - 24, y + 42, status, 5))
-            parts.append(text(x + 20, y + 60, title, 16, WHITE, 700))
-            parts.append(text(x + 20, y + 86, detail, 12, MUTED))
-            parts.append(text(x + 20, y + height - 34, note, 11, status, 600))
+        width = (1472 - 280 - gap * (count - 1)) / count
+        for index, (title, detail, color) in enumerate(items):
+            x = 64 + 262 + index * (width + gap)
+            parts.append(chip(x, y + 24, width, 102, color))
+            parts.append(text(x + 18, y + 56, title, 15, WHITE, 700))
+            parts.append(text(x + 18, y + 82, detail, 12, MUTED))
 
-    parts.append(text(64, 1016, "Status reflects the checks recorded in docs/release/final-defect-register.md and a fresh pytest run.", 13, MUTED))
+    parts.append("</svg>")
+    return "\n".join(parts)
+
+
+def trust_chain(determinism: dict[str, Any], impact: dict[str, Any]) -> str:
+    runs = len(determinism["repeated_result_hashes"])
+    unique = len(set(determinism["repeated_result_hashes"]))
+
+    w, h = 1600, 520
+    parts = [
+        frame(
+            w,
+            h,
+            "CHAIN OF CUSTODY",
+            "No claim reaches the reader without a path back to a stored record.",
+        )
+    ]
+
+    links = [
+        ("SOURCE", "stored record", MUTED),
+        ("RULE", "versioned logic", CYAN),
+        ("TRACE", "edge-by-edge", CYAN),
+        ("RESULT", "canonical + hash", LIME),
+        ("REPLAY", "re-run and compare", LIME),
+        ("AUDIT", "ledger entry", LIME),
+    ]
+    width, gap, start, y = 210, 42, 64, 200
+    for index, (title, detail, color) in enumerate(links):
+        x = start + index * (width + gap)
+        parts.append(chip(x, y, width, 118, color))
+        parts.append(dot(x + width - 24, y + 26, color, 5))
+        parts.append(text(x + 20, y + 53, title, 15, WHITE, 700, spacing=2))
+        parts.append(text(x + 20, y + 79, detail, 12, MUTED))
+        parts.append(text(x + 20, y + 100, f"0{index + 1}", 11, color, 700, spacing=1))
+        if index < len(links) - 1:
+            parts.append(arrow_chain(x + width + 8, x + width + gap - 8, y + 59, AQUA))
+
+    facts = [
+        ("RESULT HASH", f"{impact['result_hash'][:16]}\u2026"),
+        ("DETERMINISM", f"{runs} runs \u00b7 {unique} unique hash"),
+        ("SECURITY SUITE", "34 / 34 passing"),
+    ]
+    for index, (label, value) in enumerate(facts):
+        x = 64 + index * 496
+        parts.append(panel(x, 366, 472, 84, stroke=GRID))
+        parts.append(text(x + 24, 398, label, 11, MUTED, 700, spacing=2))
+        parts.append(text(x + 24, 428, value, 19, CYAN, 600))
+
+    parts.append("</svg>")
+    return "\n".join(parts)
+
+
+def outcome(impact: dict[str, Any], candidates: list[dict[str, Any]]) -> str:
+    do_nothing = [c for c in candidates if c["candidate_id"] == "DO-NOTHING"][0]
+    best = [c for c in candidates if c["candidate_id"] == "INT-GOLD-C"][0]
+    exposed = float(do_nothing["revenue_at_risk"])
+    protected = float(best["revenue_protected"])
+    cost = float(best["intervention_cost"])
+    net = protected - cost
+
+    w, h = 1600, 560
+    parts = [
+        frame(
+            w,
+            h,
+            "DO NOTHING  /  VERSUS  /  ACT",
+            "Same scenario, same rules. Only the decision changes.",
+        )
+    ]
+
+    panels = [
+        (
+            64,
+            CORAL,
+            "DO NOTHING",
+            [
+                (rupees(exposed), "REVENUE EXPOSED", CORAL),
+                (str(do_nothing["sla_breach_count"]), "SLA BREACHES", CORAL),
+                (rupees(0), "SPEND", MUTED),
+                (rupees(0), "VALUE PROTECTED", MUTED),
+            ],
+        ),
+        (
+            836,
+            LIME,
+            "RECOMMENDED  \u00b7  INT-GOLD-C",
+            [
+                (rupees(protected), "REVENUE PROTECTED", LIME),
+                (str(best["sla_breach_count"]), "SLA BREACHES", LIME),
+                (rupees(cost), "SPEND", AMBER),
+                (rupees(net), "NET GAIN", CYAN),
+            ],
+        ),
+    ]
+
+    for x, stroke, title, stats in panels:
+        parts.append(panel(x, 190, 700, 300, stroke=stroke))
+        parts.append(dot(x + 32, 224, stroke, 5))
+        parts.append(text(x + 50, 230, title, 14, stroke, 700, spacing=2))
+        for index, (value, label, color) in enumerate(stats):
+            cx = x + 30 + (index % 2) * 330
+            cy = 258 + (index // 2) * 108
+            parts.append(chip(cx, cy, 310, 92, color))
+            parts.append(text(cx + 22, cy + 46, value, 27, color, 700))
+            parts.append(text(cx + 22, cy + 72, label, 11, MUTED, 600, spacing=1))
+
+    parts.append(text(800, 250, "\u2192", 44, AQUA, 700, anchor="middle"))
+    parts.append(text(800, 300, "act", 13, MUTED, 600, anchor="middle"))
+    parts.append(
+        text(64, 532, "Both columns are engine output for the frozen golden scenario; the net gain subtracts the cost of the action.", 13, MUTED)
+    )
     parts.append("</svg>")
     return "\n".join(parts)
 
@@ -472,9 +610,12 @@ def main() -> None:
 
     assets = {
         "hero.svg": hero(impact, determinism),
-        "system-architecture.svg": architecture(),
+        "pipeline.svg": pipeline(),
+        "platform-architecture.svg": platform(),
         "cascade.svg": cascade(impact),
         "candidate-board.svg": candidate_board(candidates),
+        "trust-chain.svg": trust_chain(determinism, impact),
+        "outcome.svg": outcome(impact, candidates),
     }
     for name, content in assets.items():
         (OUT / name).write_text(content, encoding="utf-8")

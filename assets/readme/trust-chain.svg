@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-label="CHAIN OF CUSTODY">
+<defs>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#173E50" stroke-width="1" opacity="0.35"/>
+  </pattern>
+  <linearGradient id="fade" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#102B3B" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#0C2130" stop-opacity="0.9"/>
+  </linearGradient>
+</defs>
+<rect width="1600" height="520" fill="#07141E"/>
+<rect width="1600" height="520" fill="url(#grid)"/>
+<circle cx="1540" cy="40" r="220" fill="#6EF3FF" opacity="0.03"/>
+<text x="64" y="84" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#6EF3FF" font-weight="700" text-anchor="start" letter-spacing="5" opacity="1.0">CHAIN OF CUSTODY</text>
+<text x="64" y="116" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="26" fill="#ECF8FA" font-weight="600" text-anchor="start" letter-spacing="0" opacity="1.0">No claim reaches the reader without a path back to a stored record.</text>
+<line x1="64" y1="140" x2="1536" y2="140" stroke="#173E50" stroke-width="1"/>
+
+<rect x="64" y="200" width="210" height="118" rx="14" fill="#0C2130" stroke="#91B4C0" stroke-width="1.5"/>
+<circle cx="250" cy="226" r="5" fill="#91B4C0"/>
+<text x="84" y="253" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">SOURCE</text>
+<text x="84" y="279" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">stored record</text>
+<text x="84" y="300" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#91B4C0" font-weight="700" text-anchor="start" letter-spacing="1" opacity="1.0">01</text>
+<line x1="282" y1="259" x2="296" y2="259" stroke="#2DD4BF" stroke-width="2.5" opacity="0.75"/><path d="M 292 252 L 308 259 L 292 266 Z" fill="#2DD4BF"/>
+<rect x="316" y="200" width="210" height="118" rx="14" fill="#0C2130" stroke="#6EF3FF" stroke-width="1.5"/>
+<circle cx="502" cy="226" r="5" fill="#6EF3FF"/>
+<text x="336" y="253" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">RULE</text>
+<text x="336" y="279" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">versioned logic</text>
+<text x="336" y="300" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#6EF3FF" font-weight="700" text-anchor="start" letter-spacing="1" opacity="1.0">02</text>
+<line x1="534" y1="259" x2="548" y2="259" stroke="#2DD4BF" stroke-width="2.5" opacity="0.75"/><path d="M 544 252 L 560 259 L 544 266 Z" fill="#2DD4BF"/>
+<rect x="568" y="200" width="210" height="118" rx="14" fill="#0C2130" stroke="#6EF3FF" stroke-width="1.5"/>
+<circle cx="754" cy="226" r="5" fill="#6EF3FF"/>
+<text x="588" y="253" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">TRACE</text>
+<text x="588" y="279" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">edge-by-edge</text>
+<text x="588" y="300" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#6EF3FF" font-weight="700" text-anchor="start" letter-spacing="1" opacity="1.0">03</text>
+<line x1="786" y1="259" x2="800" y2="259" stroke="#2DD4BF" stroke-width="2.5" opacity="0.75"/><path d="M 796 252 L 812 259 L 796 266 Z" fill="#2DD4BF"/>
+<rect x="820" y="200" width="210" height="118" rx="14" fill="#0C2130" stroke="#B8F16B" stroke-width="1.5"/>
+<circle cx="1006" cy="226" r="5" fill="#B8F16B"/>
+<text x="840" y="253" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">RESULT</text>
+<text x="840" y="279" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">canonical + hash</text>
+<text x="840" y="300" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#B8F16B" font-weight="700" text-anchor="start" letter-spacing="1" opacity="1.0">04</text>
+<line x1="1038" y1="259" x2="1052" y2="259" stroke="#2DD4BF" stroke-width="2.5" opacity="0.75"/><path d="M 1048 252 L 1064 259 L 1048 266 Z" fill="#2DD4BF"/>
+<rect x="1072" y="200" width="210" height="118" rx="14" fill="#0C2130" stroke="#B8F16B" stroke-width="1.5"/>
+<circle cx="1258" cy="226" r="5" fill="#B8F16B"/>
+<text x="1092" y="253" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">REPLAY</text>
+<text x="1092" y="279" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">re-run and compare</text>
+<text x="1092" y="300" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#B8F16B" font-weight="700" text-anchor="start" letter-spacing="1" opacity="1.0">05</text>
+<line x1="1290" y1="259" x2="1304" y2="259" stroke="#2DD4BF" stroke-width="2.5" opacity="0.75"/><path d="M 1300 252 L 1316 259 L 1300 266 Z" fill="#2DD4BF"/>
+<rect x="1324" y="200" width="210" height="118" rx="14" fill="#0C2130" stroke="#B8F16B" stroke-width="1.5"/>
+<circle cx="1510" cy="226" r="5" fill="#B8F16B"/>
+<text x="1344" y="253" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" fill="#ECF8FA" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">AUDIT</text>
+<text x="1344" y="279" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" fill="#91B4C0" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1.0">ledger entry</text>
+<text x="1344" y="300" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#B8F16B" font-weight="700" text-anchor="start" letter-spacing="1" opacity="1.0">06</text>
+<rect x="64" y="366" width="472" height="84" rx="16" fill="#102B3B" stroke="#173E50" stroke-width="1.5"/>
+<text x="88" y="398" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#91B4C0" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">RESULT HASH</text>
+<text x="88" y="428" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19" fill="#6EF3FF" font-weight="600" text-anchor="start" letter-spacing="0" opacity="1.0">1459e495b540dce3…</text>
+<rect x="560" y="366" width="472" height="84" rx="16" fill="#102B3B" stroke="#173E50" stroke-width="1.5"/>
+<text x="584" y="398" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#91B4C0" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">DETERMINISM</text>
+<text x="584" y="428" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19" fill="#6EF3FF" font-weight="600" text-anchor="start" letter-spacing="0" opacity="1.0">100 runs · 1 unique hash</text>
+<rect x="1056" y="366" width="472" height="84" rx="16" fill="#102B3B" stroke="#173E50" stroke-width="1.5"/>
+<text x="1080" y="398" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#91B4C0" font-weight="700" text-anchor="start" letter-spacing="2" opacity="1.0">SECURITY SUITE</text>
+<text x="1080" y="428" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="19" fill="#6EF3FF" font-weight="600" text-anchor="start" letter-spacing="0" opacity="1.0">34 / 34 passing</text>
+</svg>
