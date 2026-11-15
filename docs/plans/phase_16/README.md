@@ -10,12 +10,12 @@ Index of the Phase 16 specification split from `docs/plans/phases/phase_16.md`.
 - [05-phase-16a-phase-15-handoff-validation.md](05-phase-16a-phase-15-handoff-validation.md) — Phase 16A: Phase 15 Handoff Validation
 - [06-phase-16b-documentation-strategy.md](06-phase-16b-documentation-strategy.md) — Phase 16B: Documentation Strategy
 - [07-phase-16c-readme-construction.md](07-phase-16c-readme-construction.md) — Phase 16C: README Construction
-- [08-benchmarks.md](08-benchmarks.md) — Benchmarks
-- [09-security.md](09-security.md) — Security
-- [10-setup.md](10-setup.md) — Setup
-- [11-commands.md](11-commands.md) — Commands
-- [12-limitations.md](12-limitations.md) — Limitations
-- [13-future-work.md](13-future-work.md) — Future Work
+- [08-phase-16d-architecture-package.md](08-phase-16d-architecture-package.md) — Phase 16D: Architecture Package
+- [09-phase-16e-db2-deep-dive.md](09-phase-16e-db2-deep-dive.md) — Phase 16E: Db2 Deep Dive
+- [10-phase-16f-benchmark-results-package.md](10-phase-16f-benchmark-results-package.md) — Phase 16F: Benchmark Results Package
+- [11-phase-16g-threat-model-documentation.md](11-phase-16g-threat-model-documentation.md) — Phase 16G: Threat Model Documentation
+- [12-phase-16h-limitations-documentation.md](12-phase-16h-limitations-documentation.md) — Phase 16H: Limitations Documentation
+- [13-phase-16i-data-dictionary.md](13-phase-16i-data-dictionary.md) — Phase 16I: Data Dictionary
 - [14-phase-16j-decision-log.md](14-phase-16j-decision-log.md) — Phase 16J: Decision Log
 - [15-phase-16k-architecture-diagrams.md](15-phase-16k-architecture-diagrams.md) — Phase 16K: Architecture Diagrams
 - [16-phase-16l-data-flow-diagrams.md](16-phase-16l-data-flow-diagrams.md) — Phase 16L: Data Flow Diagrams
