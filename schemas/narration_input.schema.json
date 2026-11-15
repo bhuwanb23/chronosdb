@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NarrationInput",
+  "description": "Typed schema for narration generation input",
+  "type": "object",
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "pattern": "^SCENARIO-[A-Z0-9]+$",
+      "description": "Scenario identifier"
+    },
+    "recommendation": {
+      "type": "string",
+      "description": "Deterministic recommendation from optimization engine"
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "revenue_at_risk": {
+          "type": "number",
+          "description": "Revenue at risk in INR"
+        },
+        "sla_breaches_avoided": {
+          "type": "integer",
+          "description": "Number of SLA breaches avoided"
+        },
+        "recovery_cost": {
+          "type": "number",
+          "description": "Recovery cost in INR"
+        }
+      },
+      "required": ["revenue_at_risk", "sla_breaches_avoided", "recovery_cost"],
+      "additionalProperties": false
+    },
+    "evidence_package": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "document_id": {
+            "type": "string"
+          },
+          "document_type": {
+            "type": "string",
+            "enum": ["SOP", "INCIDENT", "POLICY", "OPERATIONAL"]
+          },
+          "source_document": {
+            "type": "string"
+          },
+          "text_excerpt": {
+            "type": "string"
+          }
+        },
+        "required": ["document_id", "document_type", "source_document", "text_excerpt"],
+        "additionalProperties": false
+      },
+      "description": "Evidence package from Phase 8"
+    },
+    "constraint_results": {
+      "type": "object",
+      "properties": {
+        "max_cost_satisfied": {
+          "type": "boolean"
+        },
+        "max_delay_satisfied": {
+          "type": "boolean"
+        }
+      },
+      "required": ["max_cost_satisfied", "max_delay_satisfied"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["scenario_id", "recommendation", "metrics", "evidence_package", "constraint_results"],
+  "additionalProperties": false
+}

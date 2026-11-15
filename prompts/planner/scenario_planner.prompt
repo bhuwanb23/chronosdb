@@ -1,0 +1,77 @@
+# Purpose
+Convert language into structured requests.
+
+# Input Format
+User request in natural language (e.g., "Supplier S-104 is unavailable for two weeks. Keep recovery costs under ₹2 lakh.")
+
+# Output Format
+JSON ONLY - NO EXPLANATION, NO RECOMMENDATIONS, NO NUMBERS, NO PREDICTIONS, NO ANALYSIS
+
+# Required Schema
+{
+  "event_type": "SUPPLIER_OUTAGE",
+  "supplier_id": "SUP-0104",
+  "duration_days": 14,
+  "objective": "MINIMIZE_SLA_BREACHES",
+  "constraints": {
+    "max_cost": 200000
+  }
+}
+
+# Rules
+1. Output JSON ONLY
+2. Never include recommendations
+3. Never include numbers not extracted from input
+4. Never include predictions
+5. Never include analysis
+6. Validate supplier_id format (SUP-XXXX)
+7. Validate duration_days (positive integer)
+8. Validate objective (from predefined enum)
+9. Validate constraints (max_cost, max_delay)
+10. Reject unknown suppliers (Entity Resolution Layer will handle)
+
+# Example 1
+# User: "Supplier S-104 is unavailable for two weeks. Keep recovery costs under ₹2 lakh."
+# Output:
+# {
+#   "event_type": "SUPPLIER_OUTAGE",
+#   "supplier_id": "SUP-0104",
+#   "duration_days": 14,
+#   "objective": "MINIMIZE_SLA_BREACHES",
+#   "constraints": {
+#     "max_cost": 200000
+#   }
+# }
+
+# Example 2
+# User: "Production delay of 5 days for supplier SUP-0205. Minimize SLA breaches."
+# Output:
+# {
+#   "event_type": "PRODUCTION_DELAY",
+#   "supplier_id": "SUP-0205",
+#   "duration_days": 5,
+#   "objective": "MINIMIZE_SLA_BREACHES",
+#   "constraints": {}
+# }
+
+# Example 3
+# User: "Inventory shortage for supplier SUP-0306. Keep delay under 3 days."
+# Output:
+# {
+#   "event_type": "INVENTORY_SHORTAGE",
+#   "supplier_id": "SUP-0306",
+#   "duration_days": 3,
+#   "objective": "MINIMIZE_REVENUE_RISK",
+#   "constraints": {
+#     "max_delay": 3
+#   }
+# }
+
+# Failure Conditions
+# - Unknown supplier ID -> Reject (Entity Resolution Layer)
+# - Negative duration -> Reject (Scenario Validation Engine)
+# - Invalid objective -> Reject (Scenario Validation Engine)
+# - Invalid constraints -> Reject (Scenario Validation Engine)
+# - Non-JSON output -> Reject (Schema Validation)
+
+# Phase 9C Status: COMPLETE

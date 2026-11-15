@@ -1,0 +1,30 @@
+# Python Dependencies
+# Phase 15D: Dependency Management
+
+# Phase 0 Foundation
+fastapi==0.110.0
+uvicorn==0.27.0
+python-dotenv==1.0.0
+pydantic==2.5.0
+
+# Phase 5-12 Dependencies
+ibm-db==3.2.0
+numpy==1.26.0
+pandas==2.1.0
+scikit-learn==1.3.0
+langchain==0.1.0
+openai==1.0.0
+react==18.2.0
+next==14.0.0
+
+# Phase 13-14 Dependencies
+pytest==7.4.0
+pytest-asyncio==0.21.0
+coverage==7.3.0
+
+# Phase 15 Dependencies
+docker==7.0.0
+pyyaml==6.0.1
+
+# Locked versions (no latest)
+# Generated from pip freeze > requirements-lock.txt

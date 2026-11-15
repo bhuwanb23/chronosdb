@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NarrationOutput",
+  "description": "Typed schema for narration generation output",
+  "type": "object",
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "pattern": "^SCENARIO-[A-Z0-9]+$",
+      "description": "Scenario identifier"
+    },
+    "narration": {
+      "type": "string",
+      "description": "Human-readable explanation"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "claim_text": {
+            "type": "string",
+            "description": "Specific claim in narration"
+          },
+          "source": {
+            "type": "string",
+            "enum": ["OPTIMIZATION", "SIMULATION", "EVIDENCE", "CONSTRAINT"],
+            "description": "Source of the claim"
+          },
+          "verified": {
+            "type": "boolean",
+            "description": "Verification status"
+          }
+        },
+        "required": ["claim_text", "source", "verified"],
+        "additionalProperties": false
+      },
+      "description": "Claims extracted from narration"
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "scenario": {
+          "type": "string"
+        },
+        "recommendation": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "retrieved_sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rule_versions": {
+          "type": "object"
+        },
+        "verification_results": {
+          "type": "object"
+        }
+      },
+      "required": ["scenario", "recommendation", "evidence", "retrieved_sources", "rule_versions", "verification_results"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["scenario_id", "narration", "claims", "provenance"],
+  "additionalProperties": false
+}

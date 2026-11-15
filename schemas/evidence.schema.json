@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Evidence Identity",
+  "type": "object",
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "pattern": "^EVD-[0-9]{3}$"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "OPERATIONAL",
+        "PROCEDURAL",
+        "HISTORICAL",
+        "GOVERNANCE"
+      ]
+    },
+    "source_document": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "region": { "type": "string" },
+        "effective_from": { "type": "string", "format": "date" },
+        "document_id": { "type": "string" },
+        "chunk_id": { "type": "string" },
+        "embedding_model": { "type": "string" },
+        "dimension": { "type": "integer" },
+        "retrieval_score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "scenario_id": { "type": "string" },
+        "retrieval_run_id": { "type": "string" }
+      },
+      "required": ["document_id", "version", "embedding_model", "retrieval_score"]
+    }
+  },
+  "required": ["evidence_id", "type", "source_document", "version", "metadata"],
+  "additionalProperties": false
+}
