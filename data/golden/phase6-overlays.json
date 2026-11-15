@@ -1,0 +1,76 @@
+{
+  "transfer": [
+    {
+      "overlay_id": "GI-001",
+      "action": "TRANSFER_INVENTORY",
+      "parameters": {
+        "component_id": "CMP-MCU-42",
+        "quantity": "400",
+        "from_warehouse": "WH-CHENNAI",
+        "to_warehouse": "WH-PUNE"
+      }
+    }
+  ],
+  "expedition": [
+    {
+      "overlay_id": "GI-002",
+      "action": "EXPEDITE_PO",
+      "parameters": {
+        "purchase_order_id": "PO-2208",
+        "lead_time_reduction_days": 5
+      }
+    }
+  ],
+  "alternate_supplier": [
+    {
+      "overlay_id": "GI-003",
+      "action": "ALTERNATE_SUPPLIER",
+      "parameters": {
+        "supplier_id": "SUP-0208",
+        "component_id": "CMP-MCU-42",
+        "available_quantity": "300",
+        "lead_time_days": 3
+      }
+    }
+  ],
+  "reschedule": [
+    {
+      "overlay_id": "GI-004",
+      "action": "RESCHEDULE_PRODUCTION",
+      "parameters": {
+        "production_order_id": "MO-0882",
+        "priority": "CRITICAL"
+      }
+    }
+  ],
+  "hybrid": [
+    {
+      "overlay_id": "GI-005-A",
+      "action": "TRANSFER_INVENTORY",
+      "parameters": {
+        "component_id": "CMP-MCU-42",
+        "quantity": "200",
+        "from_warehouse": "WH-CHENNAI",
+        "to_warehouse": "WH-PUNE"
+      }
+    },
+    {
+      "overlay_id": "GI-005-B",
+      "action": "ALTERNATE_SUPPLIER",
+      "parameters": {
+        "supplier_id": "SUP-0208",
+        "component_id": "CMP-MCU-42",
+        "available_quantity": "300",
+        "lead_time_days": 3
+      }
+    },
+    {
+      "overlay_id": "GI-005-C",
+      "action": "RESCHEDULE_PRODUCTION",
+      "parameters": {
+        "production_order_id": "MO-0882",
+        "priority": "HIGH"
+      }
+    }
+  ]
+}

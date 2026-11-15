@@ -8,7 +8,8 @@ COMPOSE ?= docker compose
 .PHONY: setup db-up db-check migrate seed validate-seed embeddings embedding-check \
 	backend frontend app benchmark test health demo clean validate-phase15 \
 	impact-intake-check impact-golden-input-check impact-benchmark-manifest-check \
-	impact-golden impact-benchmark impact-performance impact-handoff impact-validate
+	impact-golden impact-benchmark impact-performance impact-handoff impact-validate \
+	phase6-validate
 
 setup:
 	@bash scripts/setup.sh
@@ -87,3 +88,6 @@ impact-handoff:
 
 impact-validate:
 	@$(PYTHON) scripts/validate_phase5.py
+
+phase6-validate:
+	@$(PYTHON) scripts/validate_phase6.py

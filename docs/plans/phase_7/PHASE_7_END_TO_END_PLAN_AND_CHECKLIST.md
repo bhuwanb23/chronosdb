@@ -14,7 +14,7 @@
 - **Goal:** Confirm optimization operates only on validated simulation outputs
 - **Inputs:** Do-Nothing, Transfer, Expedite, Alternate Supplier, Reschedule, Hybrid
 - **Deliverable:** docs/optimization/phase-6-handoff-review.md
-- **Status:** ✅ Phase 6 A-V Complete (26/26 tests passed)
+- **Status:** ✅ Phase 6 validated (39/39 simulation tests passed)
 
 ### **Phase 7B: Optimization Contract** 📝 IMPLEMENT
 - **Signature:** OptimizationResult optimize(CandidateResults, Objective, Constraints, Scoring)
@@ -193,7 +193,7 @@
 ---
 
 ## 📊 CURRENT STATUS
-- **Phase 6 A-V:** ✅ COMPLETE (26/26 tests passed)
+- **Phase 6:** ✅ COMPLETE (39/39 simulation tests passed; Phase 6 validator PASS)
 - **Phase 7 A-U:** ❌ TODO (21 sub-phases)
 - **Workspace Size:** 34 MB (well within 128 MB budget)
 - **Documentation:** ✅ Fully cloned (381 files total, 26 Phase 7 files)

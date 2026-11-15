@@ -1,0 +1,17 @@
+{
+  "baseline_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+  "baseline_state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+  "checks": {
+    "adversarial": "PASS",
+    "determinism": "PASS",
+    "golden_interventions": "PASS",
+    "performance": "PASS",
+    "persistence": "PASS",
+    "phase5_handoff": "PASS"
+  },
+  "engine": "chronosdb-counterfactual-engine-v1.0.0",
+  "generated_at": "2026-11-15T13:04:50.810808+00:00",
+  "issues": [],
+  "phase": 6,
+  "status": "PASS"
+}

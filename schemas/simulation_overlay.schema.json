@@ -11,25 +11,32 @@
         "TRANSFER_INVENTORY",
         "EXPEDITE_PO",
         "ACTIVATE_ALT_SUPPLIER",
-        "RESCHEDULE_PRODUCTION",
-        "HYBRID"
+        "ALTERNATE_SUPPLIER",
+        "RESCHEDULE_PRODUCTION"
       ]
     },
     "parameters": {
       "type": "object",
       "properties": {
         "component_id": { "type": "string" },
-        "quantity": { "type": "string" },
+        "quantity": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$" },
+        "source_warehouse": { "type": "string" },
+        "destination_warehouse": { "type": "string" },
         "from_warehouse": { "type": "string" },
         "to_warehouse": { "type": "string" },
         "purchase_order_id": { "type": "string" },
-        "lead_time_reduction_days": { "type": "integer" },
+        "lead_time_reduction_days": { "type": "integer", "minimum": 1 },
         "supplier_id": { "type": "string" },
-        "available_quantity": { "type": "string" },
+        "available_quantity": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$" },
+        "lead_time_days": { "type": "integer", "minimum": 1 },
         "production_order_id": { "type": "string" },
-        "priority": { "type": "integer" }
+        "manufacturing_order_id": { "type": "string" },
+        "priority": {
+          "type": "string",
+          "enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW"]
+        }
       },
-      "required": ["action"]
+      "additionalProperties": false
     }
   },
   "required": ["overlay_id", "action", "parameters"]

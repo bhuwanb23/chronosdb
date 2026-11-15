@@ -1,0 +1,442 @@
+{
+  "alternate_supplier": {
+    "baseline_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+    "baseline_state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+    "data_quality_status": "COMPLETE",
+    "delta": {
+      "baseline_breaches": 2,
+      "baseline_delay_hours": 288,
+      "baseline_revenue_risk": "1600000.00",
+      "breaches_avoided": 0,
+      "delay_reduction_hours": 24,
+      "intervention_cost": "813000.00",
+      "net_benefit": "-413000.00",
+      "revenue_protected": "400000.00",
+      "scenario_breaches": 2,
+      "scenario_delay_hours": 264,
+      "scenario_revenue_risk": "1200000.00"
+    },
+    "events": [
+      {
+        "agreement_id": "AGR-0002",
+        "arrival_time": "2026-11-14T02:30:00Z",
+        "component_id": "CMP-MCU-42",
+        "event_type": "SIM_ALT_SUPPLIER_RECEIPT",
+        "overlay_id": "GI-003",
+        "quantity": "300",
+        "supplier_id": "SUP-0208"
+      }
+    ],
+    "headline_metrics": {
+      "affected_customer_order_count": 2,
+      "affected_production_order_count": 2,
+      "affected_purchase_order_count": 1,
+      "affected_supplier_count": 1,
+      "average_delay_hours": 252.0,
+      "breached_customer_order_count": 2,
+      "breached_customer_order_line_count": 2,
+      "late_quantity": "300",
+      "maximum_delay_hours": 264,
+      "revenue_at_risk": {
+        "amount": "1200000.00",
+        "currency": "INR"
+      },
+      "shortage_affected_component_count": 1,
+      "sla_breached_customer_order_count": 2,
+      "supply_affected_component_count": 1,
+      "total_delay_unit_hours": "74400"
+    },
+    "intervention_cost": "813000.00",
+    "overlays": [
+      {
+        "action": "ALTERNATE_SUPPLIER",
+        "overlay_id": "GI-003",
+        "parameters": {
+          "available_quantity": "300",
+          "component_id": "CMP-MCU-42",
+          "lead_time_days": 3,
+          "supplier_id": "SUP-0208"
+        }
+      }
+    ],
+    "provenance": {
+      "baseline_impact_run_id": "IR-22dd41fe8bf2f212",
+      "disruption_event_id": "EVT-GOLD-001",
+      "event_ids": [
+        "GI-003"
+      ],
+      "overlay_hashes": [
+        "f7bf619fbf8a2045c4a56ea8f7dd47602bd0b66c0ede3556211250359742ba58"
+      ],
+      "rule_set_version": "impact-rules-v1.0.0",
+      "simulated_impact_run_id": "IR-22dd41fe8bf2f212",
+      "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286"
+    },
+    "result_hash": "4d750c1e34e6ef6744bfb7a881884fc7fc2deb9c667810aae94ba46bc8e3818f",
+    "rule_set_version": "impact-rules-v1.0.0",
+    "scenario_id": "SCN-GOLD-001",
+    "simulated_result_hash": "190c2fd576739ed087fae62dda9b0a191df0001d5e6c39e1bceb4e89fea5e492",
+    "simulation_run_id": "SIM-4d750c1e34e6ef67",
+    "status": "COMPLETED",
+    "warnings": []
+  },
+  "expedition": {
+    "baseline_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+    "baseline_state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+    "data_quality_status": "COMPLETE",
+    "delta": {
+      "baseline_breaches": 2,
+      "baseline_delay_hours": 288,
+      "baseline_revenue_risk": "1600000.00",
+      "breaches_avoided": 2,
+      "delay_reduction_hours": 288,
+      "intervention_cost": "3650.00",
+      "net_benefit": "1596350.00",
+      "revenue_protected": "1600000.00",
+      "scenario_breaches": 0,
+      "scenario_delay_hours": 0,
+      "scenario_revenue_risk": "0.00"
+    },
+    "events": [
+      {
+        "arrival_time": "2026-11-22T02:30:00Z",
+        "component_id": "CMP-MCU-42",
+        "event_type": "SIM_EXPEDITION_RECEIPT",
+        "original_disrupted_arrival": "2026-11-27T02:30:00Z",
+        "overlay_id": "GI-002",
+        "purchase_order_id": "PO-2208",
+        "quantity": "800",
+        "reduction_days": 5
+      }
+    ],
+    "headline_metrics": {
+      "affected_customer_order_count": 0,
+      "affected_production_order_count": 0,
+      "affected_purchase_order_count": 0,
+      "affected_supplier_count": 0,
+      "average_delay_hours": 0,
+      "breached_customer_order_count": 0,
+      "breached_customer_order_line_count": 0,
+      "late_quantity": "0",
+      "maximum_delay_hours": 0,
+      "revenue_at_risk": {
+        "amount": "0.00",
+        "currency": "INR"
+      },
+      "shortage_affected_component_count": 0,
+      "sla_breached_customer_order_count": 0,
+      "supply_affected_component_count": 0,
+      "total_delay_unit_hours": "0"
+    },
+    "intervention_cost": "3650.00",
+    "overlays": [
+      {
+        "action": "EXPEDITE_PO",
+        "overlay_id": "GI-002",
+        "parameters": {
+          "lead_time_reduction_days": 5,
+          "purchase_order_id": "PO-2208"
+        }
+      }
+    ],
+    "provenance": {
+      "baseline_impact_run_id": "IR-22dd41fe8bf2f212",
+      "disruption_event_id": "EVT-GOLD-001",
+      "event_ids": [
+        "GI-002"
+      ],
+      "overlay_hashes": [
+        "a3f97837b05764041ff37d1c2a4a9eed4fca02ac7af83ec16aa9bcb0bc6ca586"
+      ],
+      "rule_set_version": "impact-rules-v1.0.0",
+      "simulated_impact_run_id": "IR-22dd41fe8bf2f212",
+      "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286"
+    },
+    "result_hash": "ede3feb89446119b40f55e4c5259672b81ff5b02d6313d9d88349c8832b1cc04",
+    "rule_set_version": "impact-rules-v1.0.0",
+    "scenario_id": "SCN-GOLD-001",
+    "simulated_result_hash": "a3ccfd067cf7342bcea9a59d3a0b9328a22d12414c7d1b82069f54928b8ebd6d",
+    "simulation_run_id": "SIM-ede3feb89446119b",
+    "status": "COMPLETED",
+    "warnings": []
+  },
+  "hybrid": {
+    "baseline_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+    "baseline_state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+    "data_quality_status": "COMPLETE",
+    "delta": {
+      "baseline_breaches": 2,
+      "baseline_delay_hours": 288,
+      "baseline_revenue_risk": "1600000.00",
+      "breaches_avoided": 1,
+      "delay_reduction_hours": 72,
+      "intervention_cost": "852400.00",
+      "net_benefit": "-52400.00",
+      "revenue_protected": "800000.00",
+      "scenario_breaches": 1,
+      "scenario_delay_hours": 216,
+      "scenario_revenue_risk": "800000.00"
+    },
+    "events": [
+      {
+        "arrival_time": "2026-11-14T02:30:00Z",
+        "component_id": "CMP-MCU-42",
+        "event_type": "SIM_TRANSFER_RECEIPT",
+        "from_warehouse": "WH-CHENNAI",
+        "lane_id": "LANE-0003",
+        "overlay_id": "GI-005-A",
+        "quantity": "200",
+        "to_warehouse": "WH-PUNE"
+      },
+      {
+        "agreement_id": "AGR-0002",
+        "arrival_time": "2026-11-14T02:30:00Z",
+        "component_id": "CMP-MCU-42",
+        "event_type": "SIM_ALT_SUPPLIER_RECEIPT",
+        "overlay_id": "GI-005-B",
+        "quantity": "300",
+        "supplier_id": "SUP-0208"
+      },
+      {
+        "event_type": "SIM_PRODUCTION_RESCHEDULE",
+        "overlay_id": "GI-005-C",
+        "previous_priority": "HIGH",
+        "priority": "HIGH",
+        "production_order_id": "MO-0882"
+      }
+    ],
+    "headline_metrics": {
+      "affected_customer_order_count": 1,
+      "affected_production_order_count": 1,
+      "affected_purchase_order_count": 1,
+      "affected_supplier_count": 1,
+      "average_delay_hours": 216.0,
+      "breached_customer_order_count": 1,
+      "breached_customer_order_line_count": 1,
+      "late_quantity": "200",
+      "maximum_delay_hours": 216,
+      "revenue_at_risk": {
+        "amount": "800000.00",
+        "currency": "INR"
+      },
+      "shortage_affected_component_count": 1,
+      "sla_breached_customer_order_count": 1,
+      "supply_affected_component_count": 1,
+      "total_delay_unit_hours": "43200"
+    },
+    "intervention_cost": "852400.00",
+    "overlays": [
+      {
+        "action": "TRANSFER_INVENTORY",
+        "overlay_id": "GI-005-A",
+        "parameters": {
+          "component_id": "CMP-MCU-42",
+          "from_warehouse": "WH-CHENNAI",
+          "quantity": "200",
+          "to_warehouse": "WH-PUNE"
+        }
+      },
+      {
+        "action": "ALTERNATE_SUPPLIER",
+        "overlay_id": "GI-005-B",
+        "parameters": {
+          "available_quantity": "300",
+          "component_id": "CMP-MCU-42",
+          "lead_time_days": 3,
+          "supplier_id": "SUP-0208"
+        }
+      },
+      {
+        "action": "RESCHEDULE_PRODUCTION",
+        "overlay_id": "GI-005-C",
+        "parameters": {
+          "priority": "HIGH",
+          "production_order_id": "MO-0882"
+        }
+      }
+    ],
+    "provenance": {
+      "baseline_impact_run_id": "IR-22dd41fe8bf2f212",
+      "disruption_event_id": "EVT-GOLD-001",
+      "event_ids": [
+        "GI-005-A",
+        "GI-005-B",
+        "GI-005-C"
+      ],
+      "overlay_hashes": [
+        "884a5bf2f638ad0bef7ebc84fe6bce9b19d528d5d141341b30c97110f0d2c514",
+        "f3dcff93f7f6d124e0d8a12a5089e2aa8df0f58bd724126d122165854790f2e4",
+        "5d4a3b1119ce75ba29fe2f2b660691b57a58afe25f5bfbb95143cd3d1d7198f8"
+      ],
+      "rule_set_version": "impact-rules-v1.0.0",
+      "simulated_impact_run_id": "IR-22dd41fe8bf2f212",
+      "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286"
+    },
+    "result_hash": "d53d8f06d19a52f4dbae670f999d6d90e10fd9a6ff7d1c328d7cbc914b247571",
+    "rule_set_version": "impact-rules-v1.0.0",
+    "scenario_id": "SCN-GOLD-001",
+    "simulated_result_hash": "076b3d4ab42edbd50da01c7064985b48f9f6d0fbe3399a4bce1c7b83e56c9e22",
+    "simulation_run_id": "SIM-d53d8f06d19a52f4",
+    "status": "COMPLETED",
+    "warnings": []
+  },
+  "reschedule": {
+    "baseline_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+    "baseline_state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+    "data_quality_status": "COMPLETE",
+    "delta": {
+      "baseline_breaches": 2,
+      "baseline_delay_hours": 288,
+      "baseline_revenue_risk": "1600000.00",
+      "breaches_avoided": 0,
+      "delay_reduction_hours": -72,
+      "intervention_cost": "12000.00",
+      "net_benefit": "-12000.00",
+      "revenue_protected": "0.00",
+      "scenario_breaches": 2,
+      "scenario_delay_hours": 360,
+      "scenario_revenue_risk": "1600000.00"
+    },
+    "events": [
+      {
+        "event_type": "SIM_PRODUCTION_RESCHEDULE",
+        "overlay_id": "GI-004",
+        "previous_priority": "HIGH",
+        "priority": "CRITICAL",
+        "production_order_id": "MO-0882"
+      }
+    ],
+    "headline_metrics": {
+      "affected_customer_order_count": 2,
+      "affected_production_order_count": 2,
+      "affected_purchase_order_count": 1,
+      "affected_supplier_count": 1,
+      "average_delay_hours": 312.0,
+      "breached_customer_order_count": 2,
+      "breached_customer_order_line_count": 2,
+      "late_quantity": "400",
+      "maximum_delay_hours": 360,
+      "revenue_at_risk": {
+        "amount": "1600000.00",
+        "currency": "INR"
+      },
+      "shortage_affected_component_count": 1,
+      "sla_breached_customer_order_count": 2,
+      "supply_affected_component_count": 1,
+      "total_delay_unit_hours": "124800"
+    },
+    "intervention_cost": "12000.00",
+    "overlays": [
+      {
+        "action": "RESCHEDULE_PRODUCTION",
+        "overlay_id": "GI-004",
+        "parameters": {
+          "priority": "CRITICAL",
+          "production_order_id": "MO-0882"
+        }
+      }
+    ],
+    "provenance": {
+      "baseline_impact_run_id": "IR-22dd41fe8bf2f212",
+      "disruption_event_id": "EVT-GOLD-001",
+      "event_ids": [
+        "GI-004"
+      ],
+      "overlay_hashes": [
+        "e4c46330bf3bb94605fdcebf7f0814f043b2d6b720a1d9ac3b1cc4f8eedf81d0"
+      ],
+      "rule_set_version": "impact-rules-v1.0.0",
+      "simulated_impact_run_id": "IR-22dd41fe8bf2f212",
+      "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286"
+    },
+    "result_hash": "a99c998b3006594cd36f78cb2477e1fc4b36fdc774f6f990e0cd544bdd13d2f2",
+    "rule_set_version": "impact-rules-v1.0.0",
+    "scenario_id": "SCN-GOLD-001",
+    "simulated_result_hash": "b640a66c71ef66eba33aae71fdb65bcd983d5cde7642dd8a7a6947409a4b8aaa",
+    "simulation_run_id": "SIM-a99c998b3006594c",
+    "status": "COMPLETED",
+    "warnings": []
+  },
+  "transfer": {
+    "baseline_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+    "baseline_state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+    "data_quality_status": "COMPLETE",
+    "delta": {
+      "baseline_breaches": 2,
+      "baseline_delay_hours": 288,
+      "baseline_revenue_risk": "1600000.00",
+      "breaches_avoided": 1,
+      "delay_reduction_hours": 72,
+      "intervention_cost": "32800.00",
+      "net_benefit": "767200.00",
+      "revenue_protected": "800000.00",
+      "scenario_breaches": 1,
+      "scenario_delay_hours": 216,
+      "scenario_revenue_risk": "800000.00"
+    },
+    "events": [
+      {
+        "arrival_time": "2026-11-14T02:30:00Z",
+        "component_id": "CMP-MCU-42",
+        "event_type": "SIM_TRANSFER_RECEIPT",
+        "from_warehouse": "WH-CHENNAI",
+        "lane_id": "LANE-0003",
+        "overlay_id": "GI-001",
+        "quantity": "400",
+        "to_warehouse": "WH-PUNE"
+      }
+    ],
+    "headline_metrics": {
+      "affected_customer_order_count": 1,
+      "affected_production_order_count": 1,
+      "affected_purchase_order_count": 1,
+      "affected_supplier_count": 1,
+      "average_delay_hours": 216.0,
+      "breached_customer_order_count": 1,
+      "breached_customer_order_line_count": 1,
+      "late_quantity": "200",
+      "maximum_delay_hours": 216,
+      "revenue_at_risk": {
+        "amount": "800000.00",
+        "currency": "INR"
+      },
+      "shortage_affected_component_count": 1,
+      "sla_breached_customer_order_count": 1,
+      "supply_affected_component_count": 1,
+      "total_delay_unit_hours": "43200"
+    },
+    "intervention_cost": "32800.00",
+    "overlays": [
+      {
+        "action": "TRANSFER_INVENTORY",
+        "overlay_id": "GI-001",
+        "parameters": {
+          "component_id": "CMP-MCU-42",
+          "from_warehouse": "WH-CHENNAI",
+          "quantity": "400",
+          "to_warehouse": "WH-PUNE"
+        }
+      }
+    ],
+    "provenance": {
+      "baseline_impact_run_id": "IR-22dd41fe8bf2f212",
+      "disruption_event_id": "EVT-GOLD-001",
+      "event_ids": [
+        "GI-001"
+      ],
+      "overlay_hashes": [
+        "36962e27f71f3a7cc03ef9c1811e645fb1cabd715d3b81125eed743353493a5e"
+      ],
+      "rule_set_version": "impact-rules-v1.0.0",
+      "simulated_impact_run_id": "IR-22dd41fe8bf2f212",
+      "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286"
+    },
+    "result_hash": "286e393558c419a2e5304300a14034069c9374097ee31e2c93c68c6cf2091fdd",
+    "rule_set_version": "impact-rules-v1.0.0",
+    "scenario_id": "SCN-GOLD-001",
+    "simulated_result_hash": "b9119ab7f2984aa64074bcb4da542aedb3e798c4a2099b8624302b1118029218",
+    "simulation_run_id": "SIM-286e393558c419a2",
+    "status": "COMPLETED",
+    "warnings": []
+  }
+}

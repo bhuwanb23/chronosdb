@@ -1,0 +1,15 @@
+{
+  "benchmark": {
+    "distinct_outputs": 20,
+    "reruns_per_scenario": 10,
+    "scenarios": 20,
+    "stable": true,
+    "total_outputs": 200
+  },
+  "golden_transfer": {
+    "result_hash": "286e393558c419a2e5304300a14034069c9374097ee31e2c93c68c6cf2091fdd",
+    "runs": 100,
+    "stable": true,
+    "unique_result_hashes": 1
+  }
+}

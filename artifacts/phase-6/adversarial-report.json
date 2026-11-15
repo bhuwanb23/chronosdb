@@ -1,0 +1,55 @@
+{
+  "all_passed": true,
+  "cases": [
+    {
+      "case": "negative_transfer_quantity",
+      "detail": "transfer quantity must be positive",
+      "status": "PASS"
+    },
+    {
+      "case": "transfer_exceeds_stock",
+      "detail": "transfer exceeds available source stock",
+      "status": "PASS"
+    },
+    {
+      "case": "transfer_violates_safety_stock",
+      "detail": "transfer violates source safety stock",
+      "status": "PASS"
+    },
+    {
+      "case": "unknown_alternate_supplier",
+      "detail": "unknown supplier: SUP-UNKNOWN-999",
+      "status": "PASS"
+    },
+    {
+      "case": "expedite_impossible_po",
+      "detail": "unknown purchase order: PO-IMPOSSIBLE-999",
+      "status": "PASS"
+    },
+    {
+      "case": "invalid_priority",
+      "detail": "invalid production priority",
+      "status": "PASS"
+    },
+    {
+      "case": "duplicate_intervention",
+      "detail": "duplicate overlay_id",
+      "status": "PASS"
+    },
+    {
+      "case": "conflicting_intervention",
+      "detail": "conflicting overlays target the same record",
+      "status": "PASS"
+    },
+    {
+      "case": "broken_overlay",
+      "detail": "unsupported overlay action: UNKNOWN_ACTION",
+      "status": "PASS"
+    },
+    {
+      "case": "expired_agreement",
+      "detail": "alternate supplier has no active agreement",
+      "status": "PASS"
+    }
+  ]
+}
