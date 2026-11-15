@@ -20300,7 +20300,7 @@
     },
     {
       "check_constraints": [],
-      "checksum": "e234100bcc552801f3d3cf5f9ae5b08fec7f0821eb506ece3c583f97a842bbb5",
+      "checksum": "9f24bfda01e8ac379f6affa67c6e7eae1336873fccc429092424d03cb3150398",
       "column_mapping": {
         "access_class": {
           "db2_type": "VARCHAR(256)",
@@ -58385,7 +58385,7 @@
     },
     {
       "check_constraints": [],
-      "checksum": "e234100bcc552801f3d3cf5f9ae5b08fec7f0821eb506ece3c583f97a842bbb5",
+      "checksum": "e6c4e5174db0afb197aeff7ba9de77039824ff698d1b844ebc573b1d1b083cb3",
       "column_mapping": {
         "access_class": {
           "db2_type": "VARCHAR(256)",
