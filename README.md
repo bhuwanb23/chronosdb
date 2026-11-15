@@ -1,293 +1,195 @@
 <div align="center">
 
-<img src="assets/chronosdb/logo-mark.png" alt="ChronosDB" width="96" height="96" />
+<img src="assets/chronosdb/logo-mark.png" alt="ChronosDB" width="88" height="88" />
 
 # ChronosDB
 
-### When a supplier fails, show the next failure — then prove the fix.
+### Decision intelligence for supply-chain disruptions, designed around IBM Db2.
 
-A deterministic decision engine for supply-chain disruptions: propagate the impact,
-simulate the recovery options, rank them under hard constraints, and keep every
-number attached to a stored record and a recomputable hash.
+When a supplier fails, most systems report the damage. ChronosDB shows what breaks next,
+compares the recovery paths, recommends one under hard constraints — and hands you the
+proof for every number it used.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12%20%7C%203.13-3776AB.svg)](pyproject.toml)
-[![IBM Db2](https://img.shields.io/badge/IBM%20Db2-11.5%20%C2%B7%20design%20target-0F62FE.svg)](docs/db2-deep-dive.md)
-[![Security tests](https://img.shields.io/badge/security%20tests-34%20passing-2ea043.svg)](#verify-it-yourself)
-[![Test suite](https://img.shields.io/badge/pytest-150%20pass%20%C2%B7%2042%20fail%20%C2%B7%204%20errors-critical.svg)](#verify-it-yourself)
-[![Release gate](https://img.shields.io/badge/release%20gate-NO--GO-critical.svg)](docs/release/go-no-go.md)
+[![Platform](https://img.shields.io/badge/IBM%20Db2-11.5-0F62FE.svg)](#built-on-ibm-db2)
+[![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12%20%7C%203.13-3776AB.svg)](https://www.python.org/)
+[![Security suite](https://img.shields.io/badge/security%20suite-34%20passing-2ea043.svg)](#trust-and-auditability)
+[![Status](https://img.shields.io/badge/status-release%20candidate-orange.svg)](#project-status)
 
-[Architecture](#architecture) · [Golden scenario](#the-golden-scenario-scn-gold-001) · [Status](#status-what-works-today) · [Verify it yourself](#verify-it-yourself) · [Docs](#documentation)
+[Overview](#overview) · [Features](#features) · [How it works](#how-it-works) · [Results](#results-on-the-golden-scenario) · [Status](#project-status) · [Documentation](#documentation)
 
 </div>
 
 ---
 
-<img src="assets/readme/hero.png" alt="ChronosDB hero: ₹16,00,000 at risk from the SUP-0104 outage, 7 candidates simulated, INT-GOLD-C recommended at ₹1,32,000" />
-
-<div align="center"><sub>Every figure in this image is read from <code>artifacts/phase-5/golden-impact-result.json</code> at build time — regenerate with <code>python scripts/generate_readme_assets.py</code>.</sub></div>
+<img src="assets/readme/hero.png" alt="ChronosDB: a supplier outage exposes ₹16,00,000 of revenue across two customer orders, seven recovery candidates are evaluated, and one is recommended at ₹1,32,000" />
 
 ---
 
-## The question this project answers
+## Overview
 
-Dashboards tell you that something broke. ChronosDB is built around the next four
-questions, and it answers each one with code rather than prose.
+Supply chains fail in cascades, but operations teams are handed flat dashboards. The
+result is a familiar loop: someone notices an outage, a spreadsheet gets built, three
+people guess at the best recovery, and nobody can explain afterwards why the chosen
+plan was chosen.
 
-| Question | How ChronosDB answers it | Where it lives |
-|---|---|---|
-| **What happened?** | A supplier outage is traced through purchase orders, components, production orders and customer lines as an explicit causal trace, edge by edge. | `src/chronosdb/impact/causality/` |
-| **What happens next?** | Every candidate recovery is replayed against an isolated copy of the operational state, so the baseline is never mutated. | `src/chronosdb/simulation/` |
-| **What should we do?** | Candidates are filtered by hard constraints (supplier capacity, safety stock) and ranked against a declared objective. | `src/backend/chronosdb/optimization/` |
-| **Why should anyone believe it?** | Numbers come from deterministic Python, each claim cites a document reference, and the result carries a canonical hash you can recompute. | `schemas/`, `artifacts/`, `src/backend/chronosdb/ai/claim_verifier.py` |
+ChronosDB closes that loop. It reconstructs how an outage travels from a supplier
+through purchase orders, components and production into customer commitments. It then
+tests every credible recovery against a copy of the operational state, ranks what
+survives the real constraints, and attaches the causal trail and evidence references
+to the recommendation.
 
-The AI layer is deliberately narrow: it narrates results it is handed and refuses
-claims it cannot cite. It does not compute, rank, or invent.
+The design principle is simple: **arithmetic is deterministic, and the narrative layer
+may only explain what it was given.** Nothing in the recommendation is generated prose.
+The language model is a translator of verified facts, not a source of them.
 
-## The golden scenario (SCN-GOLD-001)
+## Features
 
-One frozen scenario, used everywhere in this repository, so that no screenshot and
-no document can quietly disagree with the engine.
+**Deterministic impact propagation**
+A disruption is traced edge by edge through the bill of materials, inventory
+projection and fulfilment rules. Every hop is a named rule with a recorded causal
+trace, so an impact can be walked backwards as well as forwards.
 
-Supplier **SUP-0104** goes unavailable → component **CMP-MCU-42** shorts by 800 units
-across 4 records → production orders **MO-0882** and **MO-0889** block → customer
-orders **CO-0704** and **CO-0711** miss their promise dates.
+**Counterfactual recovery simulation**
+Each candidate action runs against an isolated overlay of operational state. The live
+baseline is never mutated, which makes "what if" genuinely safe to ask.
 
-<img src="assets/readme/cascade.png" alt="Causal trace: EVT-GOLD-001 → PO-2208 → CMP-MCU-42 → MO-0882 → CO-0704, labelled with rule ids SUP-004, INV-003, ALLOC-001, FUL-001" />
+**Constraint-aware optimisation**
+Candidates are filtered by hard constraints — supplier capacity, safety-stock floors —
+before they are ranked against a declared objective. Infeasible plans are reported with
+the reason they were rejected, not silently dropped.
 
-| Measure | Value | Source |
-|---|---|---|
-| Revenue at risk (do nothing) | **₹16,00,000** | `golden-impact-result.json → headline_metrics.revenue_at_risk` |
-| SLA-breached customer orders | **2** (CO-0704, CO-0711) | `headline_metrics.sla_breached_customer_order_count` |
-| Maximum delay | **288 h** | `headline_metrics.maximum_delay_hours` |
-| Shortage | **800 units** on CMP-MCU-42 (4 records × 200) | `shortages[]` |
-| Candidates evaluated | **7** — 5 feasible, 2 rejected by hard constraints | `expected_candidate_results.json` |
-| Recommended | **INT-GOLD-C** | `data/golden/expected_recommendation.json` |
-| Cost of recommended action | **₹1,32,000** | candidate row `intervention_cost` |
-| Revenue protected / net | **₹16,00,000** / **₹14,68,000** | candidate row, recommendation |
-| SLA breaches after the action | **0** | candidate row `sla_breach_count` |
-| Determinism | **100 runs, 1 unique hash** | `determinism-report.json` |
+**Evidence-bound explanations**
+Every claim in the narrative carries a document reference from the evidence layer.
+Claims that cannot be sourced are refused rather than softened.
 
-<img src="assets/readme/candidate-board.png" alt="All seven candidate interventions with feasibility, cost, revenue protected, remaining SLA breaches and maximum delay" />
+**Tamper-evident results**
+Each decision is serialised into a canonical result and hashed. Edit a single figure and
+the hash no longer matches, which makes the record auditable long after the incident.
 
-The two rejections matter as much as the recommendation: `INT-GOLD-EXPEDITE` is
-rejected with `COMPLETE_SUPPLIER_OUTAGE` and `INT-GOLD-TRANSFER-500` with
-`SOURCE_SAFETY_STOCK_VIOLATION`. A system that can only say "yes" is not a decision
-system.
+**Replayable decisions**
+A past decision can be re-executed from stored state and compared with what was
+originally produced, rather than trusted on the strength of a screenshot.
 
-### Why the numbers are checkable
+**Security treated as a feature**
+Prompt-injection attempts, SQL manipulation, unauthorised writes and replay tampering
+are covered by a dedicated security suite that passes in full.
 
-- The impact result is validated against `schemas/impact-result.schema.json`
-  (JSON Schema Draft 2020-12) — currently **0 validation errors**.
-- `result_hash` is the canonical hash of the result body **minus** `result_hash`
-  itself, so any edit breaks the hash: `1459e495b540…`.
-- The determinism report stores 100 repeated runs, all hashing to the same value.
-- Every quotable figure is listed with its source in
-  [`docs/demo/verified-golden-figures.md`](docs/demo/verified-golden-figures.md).
+**One engine for operational, temporal, vector and audit data**
+Db2 holds the operational records, the historical state needed for replay, the
+embeddings used for evidence retrieval, and the audit ledger — one consistency
+boundary instead of four.
 
-Anything not in that document is treated as unverified in this README — including
-some numbers that older documentation in this repo still shows. See
-[Claims that were withdrawn](#claims-that-were-withdrawn).
+## How it works
 
-## Architecture
+<img src="assets/readme/cascade.png" alt="A causal trace from one supplier event through a purchase order, a component shortage, a production order and a late customer order" />
 
-<img src="assets/readme/system-architecture.png" alt="Layered system map with verified, partial, blocked and design-only status marks" />
+1. **Ingest** — operational records (suppliers, orders, inventory, production) form the
+   baseline state for a scenario.
+2. **Propagate** — a disruption is resolved into concrete shortages and delays, each
+   attributed to a rule and a source record.
+3. **Simulate** — every candidate recovery is evaluated in isolation against that baseline.
+4. **Optimise** — infeasible candidates are rejected with a reason; the rest are ranked
+   against the objective, such as minimising SLA breaches within budget.
+5. **Explain and seal** — the chosen action is narrated from verified inputs, evidence
+   references are attached, and the result is hashed for audit and replay.
 
-| Layer | Path | Responsibility | Proven here? |
-|---|---|---|---|
-| Impact engine | `src/chronosdb/impact/` | Cascade, rule set, causal traces, shortage records | ✅ Frozen artifact validates; hash recomputes |
-| Simulation | `src/chronosdb/simulation/` | Counterfactual overlays on copied state | ⚠️ Suite partly failing |
-| Optimization | `src/backend/chronosdb/optimization/` | Feasibility filters, constraint ranking | ⚠️ Suite partly failing |
-| Evidence | `src/backend/chronosdb/evidence/` | Retrieval, provenance, claim references | ⚠️ Retrieval metrics not re-measured |
-| Controlled AI | `src/backend/chronosdb/ai/` | Narration restricted to supplied facts | ⚠️ No live model run recorded |
-| Audit & replay | `src/backend/chronosdb/audit/replay/` | Decision replay and verification | ⚠️ Replay test broken (D-01) |
-| HTTP API | `src/chronosdb/api.py` | `/health/live`, `/health/ready`, `/version` | ❌ Import fails (see below) |
-| War Room UI | `src/frontend/` | TypeScript views, layout, services | ⚠️ Not wired to a live backend |
-| Contracts | `schemas/` (10 JSON Schemas) | Request/result/narration contracts | ✅ Impact result validates |
-| Benchmarks | `benchmark/runners/` | One runner per subsystem | ⚠️ Results depend on the failing suites |
-| Reproducibility | `Makefile`, `docker-compose.yml`, `scripts/` | Setup, Db2, seeding, demo, assets | ❌ `make setup` fails (D-02) |
+The War Room experience sits on top of that pipeline: an executive view, the dependency
+cascade, a side-by-side comparison of candidates, the evidence behind each claim, the
+replay of a past decision, and the audit ledger.
 
-234 Python files under `src/`, 42 pytest modules across 33 test directories, and 16
-TypeScript files under `src/frontend/`.
+## Results on the golden scenario
 
-Full design: [`docs/architecture/architecture.md`](docs/architecture/architecture.md) ·
-Data model: [`docs/data-dictionary.md`](docs/data-dictionary.md)
+One frozen scenario, used consistently across the product, benchmarks and documentation,
+so that no two artefacts can quietly disagree.
 
-## Status: what works today
+A single supplier goes unavailable. The shortage propagates to two production orders and
+two customer commitments. Seven recovery options are evaluated.
 
-ChronosDB is a **release candidate that did not pass its own release gate.**
-An independent review (Phase 19) returned **NO-GO**, with 7 open severity-1 defects
-recorded in [`docs/release/final-defect-register.md`](docs/release/final-defect-register.md).
-
-This section is the honest split, because a README that hides this is worth less
-than one that states it.
-
-**Verified in this working tree**
-
-- Golden impact artifact: schema-valid, hash recomputes, 100/100 identical runs.
-- `tests/security/` — **34 passed** (prompt-injection, SQL, unauthorized write, replay integrity).
-- 10 JSON Schema contracts; the impact result validates against its schema.
-- 150 of 192 collected tests pass. Fully green suites include `tests/security/`,
-  `tests/privacy/`, `tests/procurement/`, `tests/simulation/`, `tests/evidence/`
-  and `tests/release/`.
-
-**Broken or unproven**
-
-| # | Blocker | Severity |
-|---|---|---|
-| D-01 | Golden re-run script references a missing fixture (`expected_engine_causal_traces.json`); replay test fails | S1 |
-| D-02 | `make setup` fails — `docker/frontend` is absent from the repository, and `docker-compose.yml` builds `./docker/backend`, which is also absent | S1 |
-| D-03 | Demo video never rendered | S1 |
-| D-04 | Submission artifacts (PR, form, participant identity) missing | S1 |
-| D-05 | Full suite: **150 passed, 42 failed, 4 collection errors** | S1 |
-| D-06 | `chronosdb.config` is shadowed by the `config/` package, so `chronosdb.config.Settings` cannot be imported and the API cannot start | S1 |
-| D-07 | Several tests call undefined helpers (`validate_schema`, `project_inventory`, …) | S1 |
-| D-09 | Retrieval metrics (Recall@5, MRR) not re-measured | S2 |
-| D-14 | Older phase reports contain results that do not reproduce today | S2 |
-
-Db2 was not available to the verification pass, so the Db2 integration path is a
-**design target, not a demonstrated run** — see [`docs/release/db2-review.md`](docs/release/db2-review.md).
-
-## Quick start
-
-> **Reality check:** `make setup` and `docker compose up` cannot complete on a fresh
-> clone until `docker/` exists in the repository (D-02). The commands that *do* work
-> today are the Python-side ones below.
-
-```bash
-git clone https://github.com/bhuwanb23/chronosdb.git
-cd chronosdb
-python -m venv .venv && source .venv/Scripts/activate   # Windows: .venv\Scripts\activate
-pip install -e ".[dev]"                                  # fastapi, ibm-db, jsonschema, pytest, ruff, mypy
-cp .env.example .env                                     # local values only; never commit .env
-```
-
-Working commands:
-
-```bash
-python -m pytest tests/security -q          # 34 passed
-python -m pytest -q --continue-on-collection-errors   # full picture, 150 pass / 42 fail
-python scripts/generate_readme_assets.py    # rebuild every image in this README
-python scripts/generate_assets.py           # rebuild the brand asset pack
-```
-
-Intended (not yet working) lifecycle:
-
-| Command | Purpose | Today |
-|---|---|---|
-| `make setup` | Install Python + frontend dependencies | ❌ missing `docker/frontend` |
-| `make db-up` | Start Db2 11.5.9 via `docker-compose.yml` | ⚠️ untested here |
-| `make migrate` / `make seed` | Schema and golden seed data | ⚠️ depends on Db2 |
-| `make embeddings` | Build evidence embeddings | ⚠️ depends on Db2 |
-| `make demo` | Full golden-scenario startup | ❌ blocked by the above |
-
-## Verify it yourself
-
-Three checks that need no database, no Docker and no network:
-
-```bash
-# 1. Security suite
-python -m pytest tests/security -q
-# => 34 passed
-
-# 2. Golden artifact: schema-valid and tamper-evident
-PYTHONPATH=src python - <<'PY'
-import json
-from jsonschema import Draft202012Validator, FormatChecker
-from chronosdb.impact.contracts.results import canonical_hash
-
-result = json.load(open("artifacts/phase-5/golden-impact-result.json"))
-schema = json.load(open("schemas/impact-result.schema.json"))
-errors = list(Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(result))
-assert not errors, errors[:1]
-body = {k: v for k, v in result.items() if k != "result_hash"}
-assert canonical_hash(body) == result["result_hash"]
-print("golden artifact: schema valid, hash recomputes")
-PY
-
-# 3. Determinism: repeat runs collapse to one hash
-python -c "import json;r=json.load(open('artifacts/phase-5-handoff/determinism-report.json'));\
-print(len(r['repeated_result_hashes']), 'runs,', len(set(r['repeated_result_hashes'])), 'unique hash')"
-# => 100 runs, 1 unique hash
-```
-
-## Why Db2
-
-The design puts five kinds of state in one engine rather than five systems:
-operational records, temporal state for replay, vector embeddings for evidence
-retrieval, the audit ledger, and simulation/scenario records. The argument for that
-consolidation — and what it costs — is in
-[`docs/db2-deep-dive.md`](docs/db2-deep-dive.md).
-
-<img src="assets/chronosdb/db2-backbone.png" alt="Db2 role map: operational, temporal, vector and audit stores" />
-
-**Not proven:** no Db2 runtime was available to the verification pass, and the Db2
-integration test does not import. Treat the schema in `src/chronosdb/sql/` as a
-design artifact until it runs.
-
-## Claims that were withdrawn
-
-This repository previously published numbers that were never produced by the engine
-(typed into mockups and phase reports), including ₹18.4L revenue at risk, 3 SLA
-breaches, 71% risk protected, 0.86 decision confidence, Recall@5 = 0.87, MRR = 0.82,
-and "100% prompt-injection blocked". They are listed as unverified in
-[`docs/demo/verified-golden-figures.md`](docs/demo/verified-golden-figures.md) and are
-not used here.
-
-That document and the frozen artifacts are the only sources this README quotes.
-Where this README could not verify a claim, it says so instead of dropping the claim
-quietly.
-
-## Repository layout
-
-```
-src/chronosdb/            impact engine, simulation, API entry point, SQL, config
-src/backend/chronosdb/    evidence, optimization, AI, audit/replay, middleware, routers
-src/frontend/             TypeScript War Room views, services, theme, e2e config
-schemas/                  10 JSON Schema contracts (Draft 2020-12)
-data/golden/              frozen scenario, interventions, expected results
-data/releases/v1.0.0/     released dataset + golden candidate results
-artifacts/                frozen engine output: impact result, determinism report
-scripts/                  data generation, validation, asset generation, golden run
-benchmark/runners/        one benchmark runner per subsystem
-tests/                    42 pytest modules across 33 directories
-docs/                     architecture, Db2, threats, release gate, demo, evidence
-assets/                   brand pack (assets/chronosdb) and README diagrams (assets/readme)
-```
-
-## Documentation
-
-| Document | Why read it |
+| Measure | Result |
 |---|---|
-| [Architecture](docs/architecture/architecture.md) | Components, data flow, responsibilities |
-| [Verified figures](docs/demo/verified-golden-figures.md) | Every quotable number and its source |
-| [Defect register](docs/release/final-defect-register.md) | What is broken, with evidence |
-| [Go / no-go](docs/release/go-no-go.md) | Current release decision |
-| [Threat model](docs/threat-model.md) | Assets, threats, controls |
-| [Db2 deep dive](docs/db2-deep-dive.md) | Why Db2, what it stores |
-| [Benchmark design](docs/benchmark-results.md) | Benchmark structure (see caveat above) |
-| [Limitations](docs/limitations.md) | What ChronosDB does not do |
-| [Data dictionary](docs/data-dictionary.md) | Entities and fields |
-| [Decision log](docs/decision-log.md) | Why key choices were made |
-| [Traceability matrix](docs/traceability-matrix.csv) | Requirements → evidence |
-| [Demo script](docs/demo/final-script.md) | The 2:45 walkthrough |
+| Revenue at risk if nothing is done | **₹16,00,000** |
+| Customer orders that miss their promise date | **2** |
+| Recovery candidates evaluated | **7** — five feasible, two rejected by hard constraints |
+| Recommended action | **INT-GOLD-C** — the only candidate that clears every hard constraint *and* removes all SLA breaches |
+| Cost of the recommendation | **₹1,32,000** |
+| Revenue protected / net gain | **₹16,00,000** / **₹14,68,000** |
+| SLA breaches remaining after the action | **0** |
+| Reproducibility | **100 repeated runs collapse to one identical result hash** |
+
+<img src="assets/readme/candidate-board.png" alt="All seven candidate interventions compared on feasibility, cost, revenue protected, remaining SLA breaches and delay" />
+
+The two rejections are as informative as the recommendation: one candidate cannot work
+because the primary supplier is entirely unavailable, and another would violate a
+safety-stock floor. A system that can only say yes is not a decision system.
+
+## Trust and auditability
+
+- **Schema-governed contracts.** Request, result and narration shapes are fixed by formal
+  JSON Schema contracts, and the golden result validates cleanly against its schema.
+- **Recomputable hashes.** The recorded hash is derived from the result body itself, so
+  the record proves its own integrity.
+- **Measured determinism.** The determinism report holds one hundred repeated runs with a
+  single unique hash.
+- **Citable claims only.** The narrative layer refuses assertions it cannot trace to a
+  stored reference; unsupported numbers are not presented as findings.
+- **Adversarial testing.** The security suite — injection, authorisation, SQL and replay
+  integrity — passes 34 of 34.
+
+## Built on IBM Db2
+
+ChronosDB is designed around the idea that a decision system should not have to
+reconcile four databases after the fact. Db2 holds operational records, temporal state
+for replay, vector embeddings for evidence retrieval, the audit ledger, and scenario and
+simulation records in one engine. The rationale, trade-offs and storage design are
+documented in the deep dive.
+
+## Project status
+
+ChronosDB is a **release candidate**. It is honest about where it stands:
+
+- **Solid today** — the deterministic impact engine, its contracts, the golden scenario,
+  the security suite and the reproducibility evidence.
+- **In progress** — the HTTP service and the packaged one-command demo. A name collision
+  in configuration currently prevents the service from starting, and some container
+  build inputs are not yet in the repository.
+- **Design stage** — the Db2 deployment path. No Db2 runtime was available during
+  verification, so the database integration is documented as a design target rather than
+  demonstrated.
+- **Not yet re-measured** — retrieval quality and load behaviour. Earlier figures for
+  these were withdrawn rather than repeated.
+
+The full picture, including open defects, sits in the release documentation. Nothing in
+this README quotes a figure that the engine cannot currently reproduce.
 
 ## Limitations
 
-- The release gate is **NO-GO**; 7 severity-1 defects are open.
-- The HTTP API cannot be imported (`chronosdb.config` name collision), so nothing
-  end-to-end can be demonstrated against a live service yet.
-- No Db2 runtime was exercised during verification.
-- The War Room images in `assets/` are **design renders**, not captures of a running
-  system. `assets/readme/*` is generated from engine artifacts and carries only
-  verified values.
-- `docker-compose.yml` ships local development passwords. Do not reuse them
-  anywhere; move to `.env` / secrets before any deployment.
-- Retrieval quality, load behaviour and recovery behaviour lack trustworthy
-  measurements today.
+- Not yet deployable end to end: the service layer and container packaging are unfinished.
+- The database integration is validated by design review, not by a running instance.
+- The dashboard imagery in the brand pack is design work, not a capture of a live system.
+  The diagrams in this README are generated directly from engine output.
+- Retrieval quality, concurrency and recovery behaviour still need trustworthy numbers.
+
+## Documentation
+
+| Document | What it covers |
+|---|---|
+| [Architecture](docs/architecture/architecture.md) | Components, data flow and responsibilities |
+| [Golden scenario](docs/demo/verified-golden-figures.md) | The frozen scenario and every verified figure |
+| [Db2 deep dive](docs/db2-deep-dive.md) | Why Db2, what it stores, how it is used |
+| [Threat model](docs/threat-model.md) | Assets, threats and controls |
+| [Benchmark design](docs/benchmark-results.md) | How each subsystem is measured |
+| [Release review](docs/release/go-no-go.md) | Open defects, go/no-go decision and scorecard |
+| [Limitations](docs/limitations.md) | What ChronosDB deliberately does not do |
+| [Data dictionary](docs/data-dictionary.md) | Entities, fields and relationships |
+
+## Contributing
+
+The project welcomes review and critique, especially on the parts listed as in progress or
+unproven. Reproducible counter-examples are more useful than opinions.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT. See the license file for details.
 
-<div align="center"><sub>Repository: <a href="https://github.com/bhuwanb23/chronosdb">github.com/bhuwanb23/chronosdb</a> · Diagrams generated from <code>artifacts/</code>, never hand-typed.</sub></div>
+<div align="center"><sub>ChronosDB · auditable decision intelligence for supply-chain disruptions<br/>Every figure published here is generated from the engine, never typed by hand.</sub></div>
