@@ -23,6 +23,14 @@ def _sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _jsonl(path: Path) -> list[dict[str, Any]]:
+    return [
+        json.loads(line)
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+
+
 def _count(path: Path) -> int:
     if path.suffix == ".csv":
         with path.open(encoding="utf-8", newline="") as stream:
@@ -92,9 +100,32 @@ def _check_golden_inputs() -> list[str]:
         issues.append("golden state timestamp does not match scenario")
     if _json(golden / "expected_recommendation.json").get("hard_constraints_satisfied") is not True:
         issues.append("golden hard-constraint fixture is not satisfied")
-    for name in ("scenario.json", "state_at_as_of.json", "expected_recommendation.json"):
+    for name in (
+        "scenario.json",
+        "state_at_as_of.json",
+        "expected_recommendation.json",
+        "expected_timeline.json",
+        "expected_causal_traces.json",
+        "manual_calculation.csv",
+    ):
         if not (golden / name).exists():
             issues.append(f"golden input missing: {name}")
+    do_nothing = _json(ROOT / "data" / "golden" / "expected_do_nothing.json")
+    if do_nothing.get("candidate_id") != "DO-NOTHING":
+        issues.append("golden expected do-nothing identity is invalid")
+    if do_nothing.get("breached_customer_orders") != 2:
+        issues.append("golden expected breach count is invalid")
+    if do_nothing.get("revenue_at_risk_inr") != "1600000.00":
+        issues.append("golden expected revenue is invalid")
+    if do_nothing.get("total_delay_hours") != 110400:
+        issues.append("golden expected delay is invalid")
+    if len(do_nothing.get("customer_lines", ())) != 3:
+        issues.append("golden customer-line fixture is incomplete")
+    traces = _json(ROOT / "data" / "golden" / "expected_causal_traces.json")
+    if not traces or any(not trace.get("target") for trace in traces):
+        issues.append("golden causal-root fixture is incomplete")
+    if len(_json(ROOT / "data" / "golden" / "expected_engine_causal_traces.json")) != 2:
+        issues.append("golden engine causal-trace fixture is incomplete")
     return issues
 
 
@@ -107,21 +138,60 @@ def _check_benchmarks() -> list[str]:
         issues.append(f"expected 60 unique benchmark scenarios, found {len(scenario_ids)}")
     if sum(len(values) for values in partitions.values()) != len(scenario_ids):
         issues.append("benchmark partitions overlap")
+    partition_by_scenario = {
+        scenario_id: partition
+        for partition, values in partitions.items()
+        for scenario_id in values
+    }
     hashes = {
-        row["scenario_id"]
+        row["scenario_id"]: row
         for row in csv.DictReader(
             (PHASE4 / "ground-truth" / "scenario-input-hashes.csv").open(
                 encoding="utf-8", newline=""
             )
         )
     }
+    expected_results = {
+        row["scenario_id"]: row
+        for row in _jsonl(PHASE4 / "ground-truth" / "expected-results.jsonl")
+    }
+    causal_traces = {
+        row["trace_id"]: row
+        for row in _jsonl(PHASE4 / "ground-truth" / "causal-traces.jsonl")
+    }
     for scenario_id in sorted(scenario_ids):
         scenario_path = RELEASE / "benchmarks" / "scenarios" / f"{scenario_id}.json"
         expected_path = RELEASE / "benchmarks" / "expected" / f"{scenario_id}.json"
         if not scenario_path.exists() or not expected_path.exists():
             issues.append(f"benchmark pair missing: {scenario_id}")
-        if scenario_id not in hashes:
+            continue
+        scenario = _json(scenario_path)
+        expected = _json(expected_path)
+        do_nothing = expected_results.get(scenario_id, {}).get("do_nothing")
+        if not do_nothing:
+            issues.append(f"expected do-nothing result missing: {scenario_id}")
+        else:
+            for field in ("late_quantity", "revenue_at_risk_inr", "source_record_ids"):
+                if field not in do_nothing:
+                    issues.append(f"{scenario_id} do-nothing field missing: {field}")
+        for field in ("as_of_time", "simulation_horizon_days", "partition"):
+            if field not in scenario:
+                issues.append(f"{scenario_id} scenario field missing: {field}")
+        if scenario.get("partition") != partition_by_scenario[scenario_id]:
+            issues.append(f"{scenario_id} partition does not match manifest")
+        hash_row = hashes.get(scenario_id)
+        if hash_row is None:
             issues.append(f"benchmark input hash missing: {scenario_id}")
+        elif expected_results.get(scenario_id, {}).get("input_state_hash") != hash_row["input_state_hash"]:
+            issues.append(f"{scenario_id} input hash differs from ground truth")
+        trace_id = expected.get("causal_trace_id")
+        if not trace_id or trace_id not in causal_traces:
+            issues.append(f"{scenario_id} expected causal root missing")
+        for field in ("affected_customer_orders", "source_record_ids", "reason_code"):
+            if field not in expected:
+                issues.append(f"{scenario_id} expected field missing: {field}")
+        if expected.get("scenario_id") != scenario_id:
+            issues.append(f"{scenario_id} expected scenario identity mismatch")
     return issues
 
 

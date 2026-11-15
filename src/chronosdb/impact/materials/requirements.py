@@ -6,7 +6,9 @@ from decimal import ROUND_CEILING, Decimal
 from typing import Any
 
 from ..contracts.requests import parse_time
+from ..production.batches import batch_count, batch_id, batch_quantity
 from ..state.reconstruction import OperationalState
+from ..validation.data_quality import QualityIssue, QualitySeverity
 from .bom import select_bom_version
 
 
@@ -70,6 +72,7 @@ def build_material_requirements(
     simulation_end: datetime | None = None,
     component_ids: set[str] | None = None,
     production_order_ids: set[str] | None = None,
+    quality_issues: list[QualityIssue] | None = None,
 ) -> tuple[MaterialRequirement, ...]:
     customer_priority: dict[str, int] = {}
     line_to_order = {
@@ -109,26 +112,40 @@ def build_material_requirements(
         if remaining_quantity <= 0:
             continue
         batch_size = _decimal(order.get("batch_size")) or Decimal("100")
-        batch_count = int(
-            (remaining_quantity / batch_size).to_integral_value(rounding=ROUND_CEILING)
-        )
-        bom, lines = select_bom_version(state, order.get("product_id", ""), planned_start)
-        warehouse_id = _facility_warehouse(state, order.get("facility_id", ""))
-        for batch_index in range(batch_count):
-            batch_quantity = min(
-                batch_size,
-                remaining_quantity - (Decimal(batch_index) * batch_size),
+        batches = batch_count(remaining_quantity, batch_size)
+        try:
+            bom, lines = select_bom_version(
+                state, order.get("product_id", ""), planned_start
             )
-            batch_id = f"{order['id']}-B{batch_index + 1:02d}"
+        except KeyError:
+            if quality_issues is not None:
+                quality_issues.append(
+                    QualityIssue(
+                        code="MISSING_ACTIVE_BOM",
+                        severity=QualitySeverity.CRITICAL_FOR_ENTITY,
+                        entity_type="PRODUCTION_ORDER",
+                        entity_id=order["id"],
+                        message=(
+                            "No BOM version is active at the production order's "
+                            "planned start."
+                        ),
+                        affected_outputs=(
+                            "material_requirements",
+                            "production_schedule",
+                            "sla_status",
+                        ),
+                    )
+                )
+            continue
+        warehouse_id = _facility_warehouse(state, order.get("facility_id", ""))
+        for batch_index in range(batches):
+            quantity = batch_quantity(remaining_quantity, batch_size, batch_index)
+            current_batch_id = batch_id(order["id"], batch_index)
             required_time = planned_start + timedelta(days=batch_index)
             for line in lines:
                 if component_ids is not None and line.component_id not in component_ids:
                     continue
-                gross = (
-                    batch_quantity
-                    * line.quantity_per
-                    * (Decimal("1") + line.scrap_factor)
-                )
+                gross = quantity * line.quantity_per * (Decimal("1") + line.scrap_factor)
                 required = (
                     gross.to_integral_value(rounding=ROUND_CEILING)
                     if gross != gross.to_integral_value()
@@ -137,12 +154,12 @@ def build_material_requirements(
                 requirements.append(
                     MaterialRequirement(
                         production_order_id=order["id"],
-                        batch_id=batch_id,
+                        batch_id=current_batch_id,
                         product_id=order.get("product_id", ""),
                         warehouse_id=warehouse_id,
                         component_id=line.component_id,
                         required_quantity=required,
-                        batch_quantity=batch_quantity,
+                        batch_quantity=quantity,
                         required_time=required_time,
                         bom_version_id=bom.bom_version_id,
                         bom_line_id=line.line_id,

@@ -10,6 +10,8 @@ from ..contracts.requests import SimulationHorizon, parse_time
 from ..materials.allocation import MaterialAllocation
 from ..materials.requirements import MaterialRequirement
 from ..state.reconstruction import OperationalState
+from .capacity import capacity_map, find_capacity_time, new_capacity_usage
+from .priority import scheduling_priority
 
 
 def _iso(value: datetime | None) -> str | None:
@@ -80,42 +82,8 @@ class ProductionImpact:
         }
 
 
-def _capacity_map(state: OperationalState) -> dict[tuple[str, str], Decimal]:
-    return {
-        (row.get("facility_id", ""), row.get("capacity_date", "")): Decimal(
-            row.get(
-                "available_capacity",
-                str(
-                    Decimal(row.get("effective_capacity", "0"))
-                    - Decimal(row.get("reserved_capacity", "0"))
-                    - Decimal(row.get("maintenance_capacity", "0"))
-                ),
-            )
-        )
-        for row in state.get("facility_capacity_calendar")
-    }
-
-
 def _facility_order(state: OperationalState) -> dict[str, dict[str, str]]:
     return {row.get("id", ""): row for row in state.get("production_orders")}
-
-
-def _find_capacity_time(
-    facility_id: str,
-    start: datetime,
-    quantity: Decimal,
-    capacity: dict[tuple[str, str], Decimal],
-    used: dict[tuple[str, str], Decimal],
-    horizon: SimulationHorizon,
-) -> datetime | None:
-    candidate = start
-    while candidate <= horizon.simulation_end_time:
-        date_key = candidate.date().isoformat()
-        effective = capacity.get((facility_id, date_key), Decimal("0"))
-        if effective - used[(facility_id, date_key)] >= quantity:
-            return candidate
-        candidate += timedelta(days=1)
-    return None
 
 
 def schedule_production(
@@ -136,21 +104,15 @@ def schedule_production(
     requirements_by_batch: dict[str, list[MaterialRequirement]] = defaultdict(list)
     for requirement in requirements:
         requirements_by_batch[requirement.batch_id].append(requirement)
-    capacity = _capacity_map(state)
-    used: dict[tuple[str, str], Decimal] = defaultdict(Decimal)
+    capacity = capacity_map(state)
+    used: dict[tuple[str, str], Decimal] = new_capacity_usage()
     by_order: dict[str, list[ProductionBatch]] = defaultdict(list)
     queue = sorted(
         (
             min(batch_requirements, key=lambda item: item.component_id)
             for batch_requirements in requirements_by_batch.values()
         ),
-        key=lambda item: (
-            item.order_priority,
-            item.customer_priority,
-            item.planned_start,
-            item.production_order_id,
-            item.batch_id,
-        ),
+        key=scheduling_priority,
     )
     facility_last_end: dict[str, datetime] = {}
     for requirement in queue:
@@ -196,7 +158,7 @@ def schedule_production(
                 material_ready,
                 facility_last_end.get(order.get("facility_id", ""), requirement.required_time),
             )
-            capacity_ready = _find_capacity_time(
+            capacity_ready = find_capacity_time(
                 order.get("facility_id", ""),
                 earliest,
                 requirement.batch_quantity,

@@ -181,7 +181,7 @@ def test_provenance_retains_disruption_source_without_affected_orders() -> None:
     disruption = Disruption(
         event_id="EVT-NO-MATCH",
         event_type="SUPPLIER_OUTAGE",
-        supplier_id="SUP-NO-MATCH",
+        supplier_id="SUP-0208",
         start_time=AS_OF,
         end_time=AS_OF + timedelta(hours=1),
         recovery_lag=timedelta(hours=1),

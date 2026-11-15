@@ -1,4 +1,847 @@
 {
+  "benchmark_scenario_count": 60,
+  "benchmark_scenarios": [
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0006",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "adversarial-only",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0006",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0007",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "adversarial-only",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0007",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0008",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "adversarial-only",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0008",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0009",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0009",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0010",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0010",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0011",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0011",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0012",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0012",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0013",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0013",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0014",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0014",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0015",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0015",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0016",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0016",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0017",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0017",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0018",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0018",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0020",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "PARTIAL_CAPACITY_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0020",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0021",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "PARTIAL_CAPACITY_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0021",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0022",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "PARTIAL_CAPACITY_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0022",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0023",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "PARTIAL_CAPACITY_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0023",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0024",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "PARTIAL_CAPACITY_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0024",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0025",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "PARTIAL_CAPACITY_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0025",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0026",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "PARTIAL_CAPACITY_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0026",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0028",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "COMPONENT_PATH_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0028",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0029",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "COMPONENT_PATH_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0029",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0030",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "COMPONENT_PATH_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0030",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0031",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "COMPONENT_PATH_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0031",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0032",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "COMPONENT_PATH_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0032",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0034",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "PO_SCOPED",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0034",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0035",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "development",
+      "reason_code": "PO_SCOPED",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0035",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0003",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "golden",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0003",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0004",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "golden",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0004",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0005",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "golden",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0005",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0001",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "test",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0001",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0002",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "test",
+      "reason_code": "MINIMIZE_SLA_BREACHES",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0002",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0019",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "100",
+      "partition": "test",
+      "reason_code": "PARTIAL_CAPACITY_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0019",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0027",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "100",
+      "partition": "test",
+      "reason_code": "COMPONENT_PATH_AVAILABLE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0027",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0033",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "100",
+      "partition": "test",
+      "reason_code": "PO_SCOPED",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0033",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0037",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "100",
+      "partition": "test",
+      "reason_code": "TRANSFER_CONSTRAINED",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0037",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0041",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "100",
+      "partition": "test",
+      "reason_code": "ALTERNATE_CONSTRAINED",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0041",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0045",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "100",
+      "partition": "test",
+      "reason_code": "BUDGET_COMPLIANT",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0045",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0049",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "0",
+      "partition": "test",
+      "reason_code": "NO_BREACH",
+      "revenue_at_risk_inr": "0.00",
+      "scenario_id": "SCN-BENCH-0049",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0052",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "INFEASIBLE",
+      "late_quantity": "200",
+      "partition": "test",
+      "reason_code": "NO_VALID_CANDIDATE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0052",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0053",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "INFEASIBLE",
+      "late_quantity": "200",
+      "partition": "test",
+      "reason_code": "NO_VALID_CANDIDATE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0053",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0054",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "INFEASIBLE",
+      "late_quantity": "200",
+      "partition": "test",
+      "reason_code": "NO_VALID_CANDIDATE",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0054",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0055",
+      "data_quality_status": "PARTIAL_CRITICAL",
+      "feasibility_status": "INFEASIBLE",
+      "late_quantity": "0",
+      "partition": "test",
+      "reason_code": "DATA_REQUIRED",
+      "revenue_at_risk_inr": null,
+      "scenario_id": "SCN-BENCH-0055",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0056",
+      "data_quality_status": "PARTIAL_CRITICAL",
+      "feasibility_status": "INFEASIBLE",
+      "late_quantity": "0",
+      "partition": "test",
+      "reason_code": "DATA_REQUIRED",
+      "revenue_at_risk_inr": null,
+      "scenario_id": "SCN-BENCH-0056",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0057",
+      "data_quality_status": "PARTIAL_CRITICAL",
+      "feasibility_status": "INFEASIBLE",
+      "late_quantity": "0",
+      "partition": "test",
+      "reason_code": "DATA_REQUIRED",
+      "revenue_at_risk_inr": null,
+      "scenario_id": "SCN-BENCH-0057",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0058",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "test",
+      "reason_code": "MULTIPLE_VALID_OPTIMA",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0058",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0059",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "test",
+      "reason_code": "MULTIPLE_VALID_OPTIMA",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0059",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0060",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "test",
+      "reason_code": "MULTIPLE_VALID_OPTIMA",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0060",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0036",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "validation",
+      "reason_code": "PO_SCOPED",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0036",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0038",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "validation",
+      "reason_code": "TRANSFER_CONSTRAINED",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0038",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0039",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "validation",
+      "reason_code": "TRANSFER_CONSTRAINED",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0039",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0040",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "validation",
+      "reason_code": "TRANSFER_CONSTRAINED",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0040",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0042",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "validation",
+      "reason_code": "ALTERNATE_CONSTRAINED",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0042",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0043",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "validation",
+      "reason_code": "ALTERNATE_CONSTRAINED",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0043",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0044",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "validation",
+      "reason_code": "ALTERNATE_CONSTRAINED",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0044",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0701"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0046",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "validation",
+      "reason_code": "BUDGET_COMPLIANT",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0046",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0047",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "validation",
+      "reason_code": "BUDGET_COMPLIANT",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0047",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0048",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "200",
+      "partition": "validation",
+      "reason_code": "BUDGET_COMPLIANT",
+      "revenue_at_risk_inr": "800000.00",
+      "scenario_id": "SCN-BENCH-0048",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0704"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0050",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "0",
+      "partition": "validation",
+      "reason_code": "NO_BREACH",
+      "revenue_at_risk_inr": "0.00",
+      "scenario_id": "SCN-BENCH-0050",
+      "supported_by_do_nothing_engine": false
+    },
+    {
+      "affected_customer_orders": [
+        "CO-0711"
+      ],
+      "causal_trace_id": "TRACE-SCN-BENCH-0051",
+      "data_quality_status": "COMPLETE",
+      "feasibility_status": "FEASIBLE",
+      "late_quantity": "0",
+      "partition": "validation",
+      "reason_code": "NO_BREACH",
+      "revenue_at_risk_inr": "0.00",
+      "scenario_id": "SCN-BENCH-0051",
+      "supported_by_do_nothing_engine": false
+    }
+  ],
   "benchmark_version": "impact-engine-v1.0.0",
   "dataset_version": "1.0.0",
   "golden": {
@@ -51,85 +894,83 @@
       "precision": 1.0,
       "recall": 1.0
     },
-    "result_hash": "1459e495b540dce3e5bc971ad38da0b983e391effcc11f011f3bab95559d0d18",
+    "result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
     "scenario_id": "SCN-GOLD-001",
     "sla_classification_accuracy": 1.0,
     "targets_met": true
   },
   "partitions": {
-    "adversarial": 3,
+    "adversarial-only": 3,
     "development": 24,
     "golden": 3,
-    "review_holdout": 3,
     "test": 18,
     "validation": 12
   },
-  "result_hash": "6ae6d82cfd28e80dbe422c15153a645bbd5dcd9931f77b2a6702c1de7fa28476",
+  "result_hash": "c3c8f7fab999e595604a85d7c8916061ddda9571dad2c8e582a46424fd4265d1",
+  "runtime_expected_output_reads": false,
   "supported_scenarios": [
     "SCN-GOLD-001"
   ],
   "unsupported_intervention_scenarios": [
-    "SCN-0055",
-    "SCN-0056",
-    "SCN-0057",
-    "SCN-0001",
-    "SCN-0002",
-    "SCN-0003",
-    "SCN-0004",
-    "SCN-0005",
-    "SCN-0006",
-    "SCN-0007",
-    "SCN-0008",
-    "SCN-0009",
-    "SCN-0010",
-    "SCN-0011",
-    "SCN-0012",
-    "SCN-0013",
-    "SCN-0014",
-    "SCN-0015",
-    "SCN-0016",
-    "SCN-0017",
-    "SCN-0018",
-    "SCN-0019",
-    "SCN-0020",
-    "SCN-0021",
-    "SCN-0022",
-    "SCN-0023",
-    "SCN-0024",
-    "SCN-GOLD-002",
-    "SCN-GOLD-003",
-    "SCN-0058",
-    "SCN-0059",
-    "SCN-0060",
-    "SCN-0037",
-    "SCN-0038",
-    "SCN-0039",
-    "SCN-0040",
-    "SCN-0041",
-    "SCN-0042",
-    "SCN-0043",
-    "SCN-0044",
-    "SCN-0045",
-    "SCN-0046",
-    "SCN-0047",
-    "SCN-0048",
-    "SCN-0049",
-    "SCN-0050",
-    "SCN-0051",
-    "SCN-0052",
-    "SCN-0053",
-    "SCN-0054",
-    "SCN-0025",
-    "SCN-0026",
-    "SCN-0027",
-    "SCN-0028",
-    "SCN-0029",
-    "SCN-0030",
-    "SCN-0031",
-    "SCN-0032",
-    "SCN-0033",
-    "SCN-0034",
-    "SCN-0035",
-    "SCN-0036"
+    "SCN-BENCH-0006",
+    "SCN-BENCH-0007",
+    "SCN-BENCH-0008",
+    "SCN-BENCH-0009",
+    "SCN-BENCH-0010",
+    "SCN-BENCH-0011",
+    "SCN-BENCH-0012",
+    "SCN-BENCH-0013",
+    "SCN-BENCH-0014",
+    "SCN-BENCH-0015",
+    "SCN-BENCH-0016",
+    "SCN-BENCH-0017",
+    "SCN-BENCH-0018",
+    "SCN-BENCH-0020",
+    "SCN-BENCH-0021",
+    "SCN-BENCH-0022",
+    "SCN-BENCH-0023",
+    "SCN-BENCH-0024",
+    "SCN-BENCH-0025",
+    "SCN-BENCH-0026",
+    "SCN-BENCH-0028",
+    "SCN-BENCH-0029",
+    "SCN-BENCH-0030",
+    "SCN-BENCH-0031",
+    "SCN-BENCH-0032",
+    "SCN-BENCH-0034",
+    "SCN-BENCH-0035",
+    "SCN-BENCH-0003",
+    "SCN-BENCH-0004",
+    "SCN-BENCH-0005",
+    "SCN-BENCH-0001",
+    "SCN-BENCH-0002",
+    "SCN-BENCH-0019",
+    "SCN-BENCH-0027",
+    "SCN-BENCH-0033",
+    "SCN-BENCH-0037",
+    "SCN-BENCH-0041",
+    "SCN-BENCH-0045",
+    "SCN-BENCH-0049",
+    "SCN-BENCH-0052",
+    "SCN-BENCH-0053",
+    "SCN-BENCH-0054",
+    "SCN-BENCH-0055",
+    "SCN-BENCH-0056",
+    "SCN-BENCH-0057",
+    "SCN-BENCH-0058",
+    "SCN-BENCH-0059",
+    "SCN-BENCH-0060",
+    "SCN-BENCH-0036",
+    "SCN-BENCH-0038",
+    "SCN-BENCH-0039",
+    "SCN-BENCH-0040",
+    "SCN-BENCH-0042",
+    "SCN-BENCH-0043",
+    "SCN-BENCH-0044",
+    "SCN-BENCH-0046",
+    "SCN-BENCH-0047",
+    "SCN-BENCH-0048",
+    "SCN-BENCH-0050",
+    "SCN-BENCH-0051"
   ]
 }

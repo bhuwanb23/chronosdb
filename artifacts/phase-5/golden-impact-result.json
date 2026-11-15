@@ -361,7 +361,7 @@
       "trace_id": "CT-COL-CO-0711-01"
     }
   ],
-  "data_quality_status": "PARTIAL_NONCRITICAL",
+  "data_quality_status": "COMPLETE",
   "errors": [],
   "headline_metrics": {
     "affected_customer_order_count": 2,
@@ -382,7 +382,7 @@
     "supply_affected_component_count": 1,
     "total_delay_unit_hours": "110400"
   },
-  "impact_run_id": "IR-616369cfe097f27c",
+  "impact_run_id": "IR-22dd41fe8bf2f212",
   "input_state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
   "inventory_timelines": [
     {
@@ -1444,12 +1444,199 @@
       }
     ],
     "metric_provenance": {
+      "affected_customer_order_count": {
+        "calculation_step_ids": [
+          "FUL-001"
+        ],
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
+        "input_record_ids": [
+          "COL-CO-0701-01",
+          "COL-CO-0704-01",
+          "COL-CO-0711-01"
+        ],
+        "metric_id": "METRIC-AFFECTED-CUSTOMER-ORDER-COUNT",
+        "metric_name": "affected_customer_order_count",
+        "rule_id": "FUL-001",
+        "rule_version": "impact-rules-v1.0.0",
+        "scenario_id": "SCN-GOLD-001",
+        "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+        "timestamp": "2026-11-11T02:30:00Z",
+        "unit": "count",
+        "value": 2
+      },
+      "affected_production_order_count": {
+        "calculation_step_ids": [
+          "PROD-003"
+        ],
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
+        "input_record_ids": [
+          "MO-0876",
+          "MO-0882",
+          "MO-0889"
+        ],
+        "metric_id": "METRIC-AFFECTED-PRODUCTION-ORDER-COUNT",
+        "metric_name": "affected_production_order_count",
+        "rule_id": "PROD-003",
+        "rule_version": "impact-rules-v1.0.0",
+        "scenario_id": "SCN-GOLD-001",
+        "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+        "timestamp": "2026-11-11T02:30:00Z",
+        "unit": "count",
+        "value": 2
+      },
+      "affected_purchase_order_count": {
+        "calculation_step_ids": [
+          "SUP-005"
+        ],
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
+        "input_record_ids": [
+          "EVT-GOLD-001",
+          "PO-2208"
+        ],
+        "metric_id": "METRIC-AFFECTED-PURCHASE-ORDER-COUNT",
+        "metric_name": "affected_purchase_order_count",
+        "rule_id": "SUP-005",
+        "rule_version": "impact-rules-v1.0.0",
+        "scenario_id": "SCN-GOLD-001",
+        "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+        "timestamp": "2026-11-11T02:30:00Z",
+        "unit": "count",
+        "value": 1
+      },
+      "affected_supplier_count": {
+        "calculation_step_ids": [
+          "SUP-005"
+        ],
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
+        "input_record_ids": [
+          "EVT-GOLD-001",
+          "PO-2208"
+        ],
+        "metric_id": "METRIC-AFFECTED-SUPPLIER-COUNT",
+        "metric_name": "affected_supplier_count",
+        "rule_id": "SUP-005",
+        "rule_version": "impact-rules-v1.0.0",
+        "scenario_id": "SCN-GOLD-001",
+        "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+        "timestamp": "2026-11-11T02:30:00Z",
+        "unit": "count",
+        "value": 1
+      },
+      "average_delay_hours": {
+        "calculation_step_ids": [
+          "SLA-001"
+        ],
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
+        "input_record_ids": [
+          "COL-CO-0701-01",
+          "COL-CO-0704-01",
+          "COL-CO-0711-01"
+        ],
+        "metric_id": "METRIC-AVERAGE-DELAY-HOURS",
+        "metric_name": "average_delay_hours",
+        "rule_id": "SLA-001",
+        "rule_version": "impact-rules-v1.0.0",
+        "scenario_id": "SCN-GOLD-001",
+        "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+        "timestamp": "2026-11-11T02:30:00Z",
+        "unit": "hours",
+        "value": 276.0
+      },
+      "breached_customer_order_count": {
+        "calculation_step_ids": [
+          "SLA-001"
+        ],
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
+        "input_record_ids": [
+          "COL-CO-0701-01",
+          "COL-CO-0704-01",
+          "COL-CO-0711-01"
+        ],
+        "metric_id": "METRIC-BREACHED-CUSTOMER-ORDER-COUNT",
+        "metric_name": "breached_customer_order_count",
+        "rule_id": "SLA-001",
+        "rule_version": "impact-rules-v1.0.0",
+        "scenario_id": "SCN-GOLD-001",
+        "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+        "timestamp": "2026-11-11T02:30:00Z",
+        "unit": "count",
+        "value": 2
+      },
+      "breached_customer_order_line_count": {
+        "calculation_step_ids": [
+          "SLA-001"
+        ],
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
+        "input_record_ids": [
+          "COL-CO-0701-01",
+          "COL-CO-0704-01",
+          "COL-CO-0711-01"
+        ],
+        "metric_id": "METRIC-BREACHED-CUSTOMER-ORDER-LINE-COUNT",
+        "metric_name": "breached_customer_order_line_count",
+        "rule_id": "SLA-001",
+        "rule_version": "impact-rules-v1.0.0",
+        "scenario_id": "SCN-GOLD-001",
+        "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+        "timestamp": "2026-11-11T02:30:00Z",
+        "unit": "count",
+        "value": 2
+      },
+      "late_quantity": {
+        "calculation_step_ids": [
+          "SLA-001"
+        ],
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
+        "input_record_ids": [
+          "COL-CO-0701-01",
+          "COL-CO-0704-01",
+          "COL-CO-0711-01"
+        ],
+        "metric_id": "METRIC-LATE-QUANTITY",
+        "metric_name": "late_quantity",
+        "rule_id": "SLA-001",
+        "rule_version": "impact-rules-v1.0.0",
+        "scenario_id": "SCN-GOLD-001",
+        "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+        "timestamp": "2026-11-11T02:30:00Z",
+        "unit": "quantity",
+        "value": "400"
+      },
+      "maximum_delay_hours": {
+        "calculation_step_ids": [
+          "SLA-001"
+        ],
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
+        "input_record_ids": [
+          "COL-CO-0701-01",
+          "COL-CO-0704-01",
+          "COL-CO-0711-01"
+        ],
+        "metric_id": "METRIC-MAXIMUM-DELAY-HOURS",
+        "metric_name": "maximum_delay_hours",
+        "rule_id": "SLA-001",
+        "rule_version": "impact-rules-v1.0.0",
+        "scenario_id": "SCN-GOLD-001",
+        "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+        "timestamp": "2026-11-11T02:30:00Z",
+        "unit": "hours",
+        "value": 288
+      },
       "revenue_at_risk": {
         "calculation_step_ids": [
           "FIN-004"
         ],
-        "data_quality_status": "PARTIAL_NONCRITICAL",
-        "impact_run_id": "IR-616369cfe097f27c",
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
         "input_record_ids": [
           "COL-CO-0701-01",
           "COL-CO-0704-01",
@@ -1468,18 +1655,77 @@
           "currency": "INR"
         }
       },
-      "total_delay_unit_hours": {
+      "shortage_affected_component_count": {
+        "calculation_step_ids": [
+          "INV-003"
+        ],
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
+        "input_record_ids": [
+          "CMP-MCU-42"
+        ],
+        "metric_id": "METRIC-SHORTAGE-AFFECTED-COMPONENT-COUNT",
+        "metric_name": "shortage_affected_component_count",
+        "rule_id": "INV-003",
+        "rule_version": "impact-rules-v1.0.0",
+        "scenario_id": "SCN-GOLD-001",
+        "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+        "timestamp": "2026-11-11T02:30:00Z",
+        "unit": "count",
+        "value": 1
+      },
+      "sla_breached_customer_order_count": {
         "calculation_step_ids": [
           "SLA-001"
         ],
-        "data_quality_status": "PARTIAL_NONCRITICAL",
-        "impact_run_id": "IR-616369cfe097f27c",
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
         "input_record_ids": [
           "COL-CO-0701-01",
           "COL-CO-0704-01",
           "COL-CO-0711-01"
         ],
-        "metric_id": "METRIC-DELAY-UNIT-HOURS",
+        "metric_id": "METRIC-SLA-BREACHED-CUSTOMER-ORDER-COUNT",
+        "metric_name": "sla_breached_customer_order_count",
+        "rule_id": "SLA-001",
+        "rule_version": "impact-rules-v1.0.0",
+        "scenario_id": "SCN-GOLD-001",
+        "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+        "timestamp": "2026-11-11T02:30:00Z",
+        "unit": "count",
+        "value": 2
+      },
+      "supply_affected_component_count": {
+        "calculation_step_ids": [
+          "SUP-006"
+        ],
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
+        "input_record_ids": [
+          "CMP-MCU-42"
+        ],
+        "metric_id": "METRIC-SUPPLY-AFFECTED-COMPONENT-COUNT",
+        "metric_name": "supply_affected_component_count",
+        "rule_id": "SUP-006",
+        "rule_version": "impact-rules-v1.0.0",
+        "scenario_id": "SCN-GOLD-001",
+        "state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+        "timestamp": "2026-11-11T02:30:00Z",
+        "unit": "count",
+        "value": 1
+      },
+      "total_delay_unit_hours": {
+        "calculation_step_ids": [
+          "SLA-001"
+        ],
+        "data_quality_status": "COMPLETE",
+        "impact_run_id": "IR-22dd41fe8bf2f212",
+        "input_record_ids": [
+          "COL-CO-0701-01",
+          "COL-CO-0704-01",
+          "COL-CO-0711-01"
+        ],
+        "metric_id": "METRIC-TOTAL-DELAY-UNIT-HOURS",
         "metric_name": "total_delay_unit_hours",
         "rule_id": "SLA-001",
         "rule_version": "impact-rules-v1.0.0",
@@ -1536,7 +1782,7 @@
     ],
     "state_version": "STATE-47E178713708"
   },
-  "result_hash": "1459e495b540dce3e5bc971ad38da0b983e391effcc11f011f3bab95559d0d18",
+  "result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
   "rule_set_version": "impact-rules-v1.0.0",
   "scenario_id": "SCN-GOLD-001",
   "shortages": [
@@ -1613,8 +1859,6 @@
       "warehouse_id": "WH-PUNE"
     }
   ],
-  "status": "PARTIALLY_COMPLETED",
-  "warnings": [
-    "empty record set: transfer_transactions"
-  ]
+  "status": "COMPLETED",
+  "warnings": []
 }

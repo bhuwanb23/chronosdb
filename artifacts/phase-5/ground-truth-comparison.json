@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "attribution": true,
+    "breached_customer_orders": true,
+    "customer_line_count": true,
+    "customer_line_values": true,
+    "late_quantity": true,
+    "revenue_at_risk": true,
+    "total_delay_hours": true
+  },
+  "failed": [],
+  "result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+  "status": "PASS"
+}

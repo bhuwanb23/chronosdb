@@ -6,7 +6,9 @@ NPM ?= npm
 COMPOSE ?= docker compose
 
 .PHONY: setup db-up db-check migrate seed validate-seed embeddings embedding-check \
-	backend frontend app benchmark test health demo clean validate-phase15
+	backend frontend app benchmark test health demo clean validate-phase15 \
+	impact-intake-check impact-golden-input-check impact-benchmark-manifest-check \
+	impact-golden impact-benchmark impact-performance impact-handoff impact-validate
 
 setup:
 	@bash scripts/setup.sh
@@ -61,3 +63,27 @@ clean:
 
 validate-phase15:
 	@$(PYTHON) scripts/validate_phase15.py
+
+impact-intake-check:
+	@$(PYTHON) scripts/impact_intake.py --check all
+
+impact-golden-input-check:
+	@$(PYTHON) scripts/impact_intake.py --check golden
+
+impact-benchmark-manifest-check:
+	@$(PYTHON) scripts/impact_intake.py --check benchmark
+
+impact-golden:
+	@$(PYTHON) scripts/run_phase5_golden.py
+
+impact-benchmark:
+	@$(PYTHON) scripts/run_impact_benchmarks.py
+
+impact-performance:
+	@$(PYTHON) scripts/run_impact_performance.py
+
+impact-handoff:
+	@$(PYTHON) scripts/build_phase5_handoff.py
+
+impact-validate:
+	@$(PYTHON) scripts/validate_phase5.py

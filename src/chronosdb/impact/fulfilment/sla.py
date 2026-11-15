@@ -5,6 +5,9 @@ from datetime import UTC, datetime
 from decimal import Decimal
 from typing import Any
 
+from ..financial.delay import calculate_delay_hours
+from ..financial.metrics import monetary_payload
+from ..financial.revenue import calculate_revenue_at_risk
 from .allocation import CustomerImpact
 
 
@@ -50,27 +53,53 @@ class SLAResult:
         }
 
 
+def _attribution(
+    *,
+    status: str,
+    promised_delivery: datetime | None,
+    projected_delivery: datetime | None,
+    baseline_delivery: datetime | None,
+    production_order_id: str,
+    disruption_caused_production_order_ids: set[str],
+    as_of: datetime | None,
+) -> str:
+    if status != "BREACHED" or promised_delivery is None:
+        return "INSUFFICIENT_EVIDENCE" if promised_delivery is None else "UNRELATED"
+    pre_existing = (
+        baseline_delivery is not None and baseline_delivery > promised_delivery
+    ) or (as_of is not None and promised_delivery < as_of)
+    if pre_existing:
+        if (
+            projected_delivery is not None
+            and baseline_delivery is not None
+            and projected_delivery > baseline_delivery
+        ):
+            return "DISRUPTION_WORSENED"
+        return "PRE_EXISTING"
+    if production_order_id in disruption_caused_production_order_ids:
+        return "DISRUPTION_CAUSED"
+    return "UNRELATED"
+
+
 def calculate_sla_and_financial_impact(
     customer_impacts: tuple[CustomerImpact, ...],
     *,
     disruption_caused_production_order_ids: set[str] | None = None,
     horizon_end: datetime | None = None,
+    baseline_delivery_by_production_order: dict[str, datetime] | None = None,
+    as_of: datetime | None = None,
 ) -> tuple[tuple[SLAResult, ...], dict[str, Any]]:
     disruption_caused_production_order_ids = disruption_caused_production_order_ids or set()
+    baseline_delivery_by_production_order = baseline_delivery_by_production_order or {}
     results: list[SLAResult] = []
     for impact in customer_impacts:
         segments = []
         for segment in impact.segments:
             segment_payload = segment.to_dict()
             if impact.promised_delivery is not None:
-                segment_delay = max(
-                    0,
-                    int(
-                        (
-                            segment.projected_delivery - impact.promised_delivery
-                        ).total_seconds()
-                        // 3600
-                    ),
+                segment_delay = calculate_delay_hours(
+                    segment.projected_delivery,
+                    impact.promised_delivery,
                 )
                 segment_payload["delay_hours"] = segment_delay
                 segment_payload["status"] = (
@@ -113,21 +142,11 @@ def calculate_sla_and_financial_impact(
         )
         late_quantity = max(Decimal("0"), impact.open_quantity - on_time_quantity)
         delay_hours = (
-            max(
-                0,
-                int(
-                    (projected_delivery - impact.promised_delivery).total_seconds()
-                    // 3600
-                ),
-            )
+            calculate_delay_hours(projected_delivery, impact.promised_delivery)
             if projected_delivery is not None
-            else max(
-                0,
-                int(
-                    ((horizon_end or impact.promised_delivery) - impact.promised_delivery)
-                    .total_seconds()
-                    // 3600
-                ),
+            else calculate_delay_hours(
+                horizon_end or impact.promised_delivery,
+                impact.promised_delivery,
             )
         )
         status = "BREACHED" if late_quantity > 0 else "ON_TIME"
@@ -144,16 +163,22 @@ def calculate_sla_and_financial_impact(
                 promised_delivery=impact.promised_delivery,
                 delay_hours=delay_hours,
                 unit_revenue=impact.unit_revenue,
-                revenue_at_risk=late_quantity * impact.unit_revenue,
+                revenue_at_risk=calculate_revenue_at_risk(
+                    late_quantity, impact.unit_revenue
+                ),
                 segments=segments_tuple,
-                attribution=(
-                    "DISRUPTION_CAUSED"
-                    if (
-                        status == "BREACHED"
-                        and impact.production_order_id
-                        in disruption_caused_production_order_ids
-                    )
-                    else "UNRELATED"
+                attribution=_attribution(
+                    status=status,
+                    promised_delivery=impact.promised_delivery,
+                    projected_delivery=projected_delivery,
+                    baseline_delivery=baseline_delivery_by_production_order.get(
+                        impact.production_order_id
+                    ),
+                    production_order_id=impact.production_order_id,
+                    disruption_caused_production_order_ids=(
+                        disruption_caused_production_order_ids
+                    ),
+                    as_of=as_of,
                 ),
             )
         )
@@ -185,6 +210,6 @@ def calculate_sla_and_financial_impact(
         "average_delay_hours": (
             sum(item.delay_hours for item in late) / len(late) if late else 0
         ),
-        "revenue_at_risk": {"amount": f"{revenue:.2f}", "currency": "INR"},
+        "revenue_at_risk": monetary_payload(revenue),
     }
     return tuple(results), metrics

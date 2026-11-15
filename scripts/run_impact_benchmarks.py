@@ -196,21 +196,76 @@ def _golden_metrics(root: Path) -> dict[str, Any]:
     }
 
 
-def run(root: Path = ROOT) -> dict[str, Any]:
-    partitions = cast(
-        dict[str, list[str]],
-        _json(root / "data" / "benchmarks" / "partitions.json"),
+def _benchmark_manifest(root: Path) -> dict[str, Any]:
+    manifest = _json(
+        root / "data" / "releases" / "v1.0.0" / "benchmarks" / "partition_manifest.json"
     )
+    partitions = cast(dict[str, list[str]], manifest["exclusive_partitions"])
+    expected_results = {
+        row["scenario_id"]: row
+        for row in (
+            json.loads(line)
+            for line in (
+                root / "artifacts" / "phase-4" / "ground-truth" / "expected-results.jsonl"
+            )
+            .read_text(encoding="utf-8")
+            .splitlines()
+            if line.strip()
+        )
+    }
+    scenarios = []
+    for partition, scenario_ids in sorted(partitions.items()):
+        for scenario_id in sorted(scenario_ids):
+            expected = _json(
+                root
+                / "data"
+                / "releases"
+                / "v1.0.0"
+                / "benchmarks"
+                / "expected"
+                / f"{scenario_id}.json"
+            )
+            do_nothing = expected_results.get(scenario_id, {}).get("do_nothing", {})
+            scenarios.append(
+                {
+                    "scenario_id": scenario_id,
+                    "partition": partition,
+                    "affected_customer_orders": expected.get(
+                        "affected_customer_orders", []
+                    ),
+                    "causal_trace_id": expected.get("causal_trace_id"),
+                    "reason_code": expected.get("reason_code"),
+                    "feasibility_status": expected.get("feasibility_status"),
+                    "data_quality_status": expected_results.get(scenario_id, {}).get(
+                        "data_quality_status"
+                    ),
+                    "late_quantity": do_nothing.get("late_quantity"),
+                    "revenue_at_risk_inr": do_nothing.get("revenue_at_risk_inr"),
+                    "supported_by_do_nothing_engine": False,
+                }
+            )
+    return {
+        "version": manifest.get("version"),
+        "partitions": {name: len(values) for name, values in partitions.items()},
+        "scenario_count": len(scenarios),
+        "scenarios": scenarios,
+    }
+
+
+def run(root: Path = ROOT) -> dict[str, Any]:
+    manifest = _benchmark_manifest(root)
     result: dict[str, Any] = {
         "benchmark_version": "impact-engine-v1.0.0",
         "dataset_version": "1.0.0",
-        "partitions": {name: len(values) for name, values in partitions.items()},
+        "partitions": manifest["partitions"],
+        "benchmark_scenario_count": manifest["scenario_count"],
+        "benchmark_scenarios": manifest["scenarios"],
+        "runtime_expected_output_reads": False,
         "supported_scenarios": ["SCN-GOLD-001"],
         "unsupported_intervention_scenarios": [
-            scenario_id
-            for name, values in partitions.items()
-            for scenario_id in values
-            if scenario_id != "SCN-GOLD-001"
+            scenario["scenario_id"]
+            for scenario in manifest["scenarios"]
+            if scenario["scenario_id"] != "SCN-GOLD-001"
         ],
         "golden": _golden_metrics(root),
     }
@@ -231,6 +286,7 @@ def run(root: Path = ROOT) -> dict[str, Any]:
         "",
         f"- Result hash: `{result['result_hash']}`",
         f"- Supported scenarios: `{len(result['supported_scenarios'])}`",
+        f"- Frozen benchmark scenarios: `{result['benchmark_scenario_count']}`",
         f"- Frozen partition counts: `{result['partitions']}`",
         "",
         "Golden correctness targets:",
@@ -249,8 +305,10 @@ def run(root: Path = ROOT) -> dict[str, Any]:
         f"- Causal precision/recall: `{result['golden']['causal_edge_precision']:.3f}`/"
         f"`{result['golden']['causal_edge_recall']:.3f}`",
         "",
-        "Intervention benchmark scenarios remain explicitly out of scope for the "
-        "Phase 5 do-nothing engine and are reserved for Phase 6.",
+        "The benchmark manifest covers all 60 frozen Phase 4 scenarios. The "
+        "do-nothing engine is evaluated against the supported golden scenario; "
+        "intervention candidates remain Phase 6 scope and are listed in the JSON "
+        "artifact with their frozen ground-truth metadata.",
     ]
     (output_dir / "impact-benchmark-report.md").write_text(
         "\n".join(report) + "\n",

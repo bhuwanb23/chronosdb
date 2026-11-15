@@ -57,6 +57,78 @@ rules:
     formula: outstanding_quantity
     rounding: decimal(3)
     failure_conditions: [negative_outstanding_quantity]
+  - rule_id: INV-003
+    version: 1.0.0
+    name: component_shortage
+    inputs: [required_quantity, allocated_quantity, required_time]
+    outputs: [shortage_quantity, shortage_type, resolved_time]
+    units: quantity
+    formula: max(0, required_quantity - allocated_quantity)
+    rounding: decimal(3)
+    failure_conditions: [missing_required_time, missing_allocation]
+  - rule_id: INV-004
+    version: 1.0.0
+    name: projected_inventory_balance
+    inputs: [opening_available_quantity, receipt_events, consumption_events, transfer_events]
+    outputs: [projected_balance]
+    units: quantity
+    formula: prior_balance + receipts + transfers_in - consumption - transfers_out
+    rounding: decimal(3)
+    failure_conditions: [missing_opening_state, negative_balance]
+  - rule_id: ALLOC-001
+    version: 1.0.0
+    name: material_allocation
+    inputs: [required_quantity, eligible_source_lots, allocation_priority]
+    outputs: [allocated_quantity, source_lots, allocation_status]
+    units: quantity
+    formula: min(required_quantity, sum(eligible_source_lots))
+    rounding: decimal(3)
+    failure_conditions: [missing_requirement, duplicate_allocation]
+  - rule_id: PROD-003
+    version: 1.0.0
+    name: projected_production_schedule
+    inputs: [planned_start, material_ready_time, capacity_ready_time, processing_duration]
+    outputs: [projected_start, projected_completion, delay_hours]
+    units: timestamp
+    formula: max(planned_start, material_ready_time, capacity_ready_time) + processing_duration
+    rounding: none
+    failure_conditions: [capacity_exceeded, material_unavailable]
+  - rule_id: FUL-001
+    version: 1.0.0
+    name: customer_fulfilment
+    inputs: [open_quantity, product_availability_events, delivery_lead_time]
+    outputs: [segments, projected_delivery, on_time_quantity, late_quantity]
+    units: quantity
+    formula: on_time = min(open_quantity, available_by_promised); late = max(0, open - on_time)
+    rounding: decimal(3)
+    failure_conditions: [missing_promised_delivery, over_fulfilment]
+  - rule_id: SLA-001
+    version: 1.0.0
+    name: sla_classification
+    inputs: [projected_delivery, promised_delivery]
+    outputs: [sla_status, delay_hours]
+    units: hours
+    formula: breach when projected_delivery > promised_delivery; delay = max(0, projected - promised)
+    rounding: none
+    failure_conditions: [missing_promised_delivery]
+  - rule_id: FIN-004
+    version: 1.0.0
+    name: revenue_at_risk
+    inputs: [late_quantity, unit_revenue]
+    outputs: [revenue_at_risk, currency]
+    units: INR
+    formula: late_quantity * unit_revenue
+    rounding: decimal(2)
+    failure_conditions: [missing_unit_revenue, negative_quantity]
+  - rule_id: CAU-001
+    version: 1.0.0
+    name: causal_trace
+    inputs: [disruption, affected_records, production_impact, sla_impact]
+    outputs: [causal_nodes, causal_edges, attribution]
+    units: graph
+    formula: link each breach to its production, material, supply, and disruption ancestors
+    rounding: none
+    failure_conditions: [missing_causal_parent, invalid_entity_reference]
   - rule_id: DQ-001
     version: 1.0.0
     name: state_completeness

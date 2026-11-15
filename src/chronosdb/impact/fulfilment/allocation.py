@@ -1,25 +1,18 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import UTC, datetime, time, timedelta
+from datetime import UTC, datetime
 from decimal import Decimal
 from typing import Any
 
 from ..contracts.requests import SimulationHorizon, parse_time
 from ..production.scheduler import ProductionImpact
 from ..state.reconstruction import OperationalState
+from .delivery import projected_delivery
 
 
 def _iso(value: datetime | None) -> str | None:
     return value.astimezone(UTC).isoformat().replace("+00:00", "Z") if value else None
-
-
-def _delivery_time(completion: datetime, lead_days: int = 1) -> datetime:
-    return datetime.combine(
-        completion.date() + timedelta(days=lead_days),
-        time.min,
-        tzinfo=UTC,
-    )
 
 
 @dataclass(frozen=True)
@@ -125,7 +118,7 @@ def build_customer_fulfilment(
                     continue
                 quantity = min(remaining, batch.quantity)
                 availability = batch.projected_completion
-                delivery = _delivery_time(availability)
+                delivery = projected_delivery(availability)
                 if availability <= horizon.simulation_end_time:
                     segments.append(
                         FulfilmentSegment(

@@ -1,0 +1,15 @@
+benchmark_id: chronosdb-impact-engine-v1.0.0
+dataset_version: "1.0.0"
+rule_set_version: impact-rules-v1.0.0
+golden_scenario: SCN-GOLD-001
+benchmark_manifest: data/releases/v1.0.0/benchmarks/partition_manifest.json
+supported_engine_scope: DO_NOTHING
+partitions:
+  golden: 3
+  development: 24
+  validation: 12
+  test: 18
+  adversarial-only: 3
+outputs:
+  results: artifacts/phase-5/impact-benchmark-results.json
+  report: artifacts/phase-5/impact-benchmark-report.md

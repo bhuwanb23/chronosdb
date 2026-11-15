@@ -2,9 +2,10 @@
 
 The deterministic Phase 5 do-nothing engine is evaluated against the frozen complete golden scenario.
 
-- Result hash: `6ae6d82cfd28e80dbe422c15153a645bbd5dcd9931f77b2a6702c1de7fa28476`
+- Result hash: `c3c8f7fab999e595604a85d7c8916061ddda9571dad2c8e582a46424fd4265d1`
 - Supported scenarios: `1`
-- Frozen partition counts: `{'adversarial': 3, 'development': 24, 'golden': 3, 'review_holdout': 3, 'test': 18, 'validation': 12}`
+- Frozen benchmark scenarios: `60`
+- Frozen partition counts: `{'adversarial-only': 3, 'development': 24, 'golden': 3, 'test': 18, 'validation': 12}`
 
 Golden correctness targets:
 
@@ -16,4 +17,4 @@ Golden correctness targets:
 - Financial fidelity: `1.000`
 - Causal precision/recall: `1.000`/`1.000`
 
-Intervention benchmark scenarios remain explicitly out of scope for the Phase 5 do-nothing engine and are reserved for Phase 6.
+The benchmark manifest covers all 60 frozen Phase 4 scenarios. The do-nothing engine is evaluated against the supported golden scenario; intervention candidates remain Phase 6 scope and are listed in the JSON artifact with their frozen ground-truth metadata.

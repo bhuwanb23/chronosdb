@@ -10,8 +10,9 @@ from ..contracts.errors import ContractError
 from ..contracts.requests import SimulationHorizon
 from ..contracts.results import ImpactResult, canonical_hash
 from ..disruption.supplier_outage import Disruption, resolve_purchase_order_impacts
-from ..disruption.validation import validate_disruption
+from ..disruption.validation import validate_disruption, validate_disruption_against_state
 from ..fulfilment.allocation import build_customer_fulfilment
+from ..fulfilment.delivery import baseline_deliveries
 from ..fulfilment.sla import calculate_sla_and_financial_impact
 from ..inventory import InventoryEvent, build_inventory_timelines, detect_shortages
 from ..materials import allocate_materials, build_material_requirements
@@ -35,6 +36,67 @@ def _diagnostic_stage(
     name: str,
 ) -> Any:
     return diagnostics.stage(name) if diagnostics is not None else nullcontext()
+
+
+def _build_metric_provenance(
+    *,
+    headline_metrics: dict[str, Any],
+    scenario_id: str,
+    impact_run_id: str,
+    state_hash: str,
+    rule_set_version: str,
+    as_of: datetime,
+    data_quality_status: DataQualityStatus,
+    impacts: tuple[Any, ...],
+    production_impacts: tuple[Any, ...],
+    sla_results: tuple[Any, ...],
+    shortages: tuple[Any, ...],
+    disruption: Disruption,
+) -> dict[str, Any]:
+    customer_ids = [item.customer_order_line_id for item in sla_results]
+    production_ids = sorted(
+        {item.production_order_id for item in production_impacts}
+    )
+    shortage_components = sorted({item.component_id for item in shortages})
+    impact_ids = sorted(
+        {disruption.event_id}
+        | {impact.purchase_order_id for impact in impacts}
+    )
+    definitions = (
+        ("affected_supplier_count", "SUP-005", "count", impact_ids),
+        ("affected_purchase_order_count", "SUP-005", "count", impact_ids),
+        ("supply_affected_component_count", "SUP-006", "count", shortage_components),
+        ("shortage_affected_component_count", "INV-003", "count", shortage_components),
+        ("affected_production_order_count", "PROD-003", "count", production_ids),
+        ("affected_customer_order_count", "FUL-001", "count", customer_ids),
+        ("sla_breached_customer_order_count", "SLA-001", "count", customer_ids),
+        ("breached_customer_order_count", "SLA-001", "count", customer_ids),
+        ("breached_customer_order_line_count", "SLA-001", "count", customer_ids),
+        ("late_quantity", "SLA-001", "quantity", customer_ids),
+        ("total_delay_unit_hours", "SLA-001", "quantity-hours", customer_ids),
+        ("maximum_delay_hours", "SLA-001", "hours", customer_ids),
+        ("average_delay_hours", "SLA-001", "hours", customer_ids),
+        ("revenue_at_risk", "FIN-004", "INR", customer_ids),
+    )
+    return {
+        metric: metric_provenance(
+            f"METRIC-{metric.upper().replace('_', '-')}",
+            metric,
+            headline_metrics[metric],
+            unit,
+            rule_id,
+            rule_set_version,
+            input_ids,
+            [rule_id],
+            scenario_id,
+            impact_run_id,
+            state_hash,
+            as_of,
+            data_quality_status.value,
+        )
+        for metric, rule_id, unit, input_ids in definitions
+        if metric in headline_metrics
+    }
 
 
 def _calculate_impact(
@@ -61,6 +123,7 @@ def _calculate_impact(
         if _utc_timestamp(horizon.as_of_time) != state.identity.as_of_time:
             raise ContractError("state as_of_time must equal simulation horizon as_of_time")
         validate_disruption(disruption)
+        validate_disruption_against_state(state, disruption)
     except Exception:
         if diagnostics is not None:
             diagnostics.errors += 1
@@ -183,12 +246,14 @@ def _calculate_impact(
         }
         if line_ids:
             scenario_line_ids = line_ids
+    material_quality_issues: list[QualityIssue] = []
     requirements = build_material_requirements(
         state,
         horizon.as_of_time,
         horizon.simulation_end_time,
         component_ids=None,
         production_order_ids=scenario_order_ids,
+        quality_issues=material_quality_issues,
     )
     baseline_components = {
         requirement.component_id for requirement in requirements
@@ -276,20 +341,27 @@ def _calculate_impact(
                 shortage.production_order_id for shortage in shortages
             },
             horizon_end=horizon.simulation_end_time,
+            baseline_delivery_by_production_order=baseline_deliveries(
+                production_impacts
+            ),
+            as_of=horizon.as_of_time,
         )
     if diagnostics is not None:
         diagnostics.count("customer_lines_calculated", len(sla_results))
     quality_issues = [
-        QualityIssue(
-            code="MISSING_PROMISED_DELIVERY",
-            severity=QualitySeverity.CRITICAL_FOR_ENTITY,
-            entity_type="CUSTOMER_ORDER_LINE",
-            entity_id=item.customer_order_line_id,
-            message="Promised delivery is required for SLA calculation.",
-            affected_outputs=("sla_status", "delay_hours", "revenue_at_risk"),
-        )
-        for item in sla_results
-        if item.status == "INSUFFICIENT_DATA"
+        *material_quality_issues,
+        *[
+            QualityIssue(
+                code="MISSING_PROMISED_DELIVERY",
+                severity=QualitySeverity.CRITICAL_FOR_ENTITY,
+                entity_type="CUSTOMER_ORDER_LINE",
+                entity_id=item.customer_order_line_id,
+                message="Promised delivery is required for SLA calculation.",
+                affected_outputs=("sla_status", "delay_hours", "revenue_at_risk"),
+            )
+            for item in sla_results
+            if item.status == "INSUFFICIENT_DATA"
+        ],
     ]
     quality_status = classify_issues(quality_issues)
     if state.warnings and quality_status == DataQualityStatus.COMPLETE:
@@ -345,38 +417,20 @@ def _calculate_impact(
         "projected_receipts": [receipt.to_dict() for receipt in receipts],
         "material_requirements": [requirement.to_dict() for requirement in requirements],
         "material_allocations": [allocation.to_dict() for allocation in allocations],
-        "metric_provenance": {
-            "revenue_at_risk": metric_provenance(
-                "METRIC-REVENUE-AT-RISK",
-                "revenue_at_risk",
-                headline_metrics["revenue_at_risk"],
-                "INR",
-                "FIN-004",
-                rules.version,
-                [item.customer_order_line_id for item in sla_results],
-                ["FIN-004"],
-                scenario_id,
-                impact_run_id,
-                state.identity.state_hash,
-                horizon.as_of_time,
-                data_quality_status.value,
-            ),
-            "total_delay_unit_hours": metric_provenance(
-                "METRIC-DELAY-UNIT-HOURS",
-                "total_delay_unit_hours",
-                headline_metrics["total_delay_unit_hours"],
-                "quantity-hours",
-                "SLA-001",
-                rules.version,
-                [item.customer_order_line_id for item in sla_results],
-                ["SLA-001"],
-                scenario_id,
-                impact_run_id,
-                state.identity.state_hash,
-                horizon.as_of_time,
-                data_quality_status.value,
-            ),
-        },
+        "metric_provenance": _build_metric_provenance(
+            headline_metrics=headline_metrics,
+            scenario_id=scenario_id,
+            impact_run_id=impact_run_id,
+            state_hash=state.identity.state_hash,
+            rule_set_version=rules.version,
+            as_of=horizon.as_of_time,
+            data_quality_status=data_quality_status,
+            impacts=impacts,
+            production_impacts=production_impacts,
+            sla_results=sla_results,
+            shortages=shortages,
+            disruption=disruption,
+        ),
         "causal_trace_ids": [trace.trace_id for trace in traces],
         "quality_issues": [issue.to_dict() for issue in quality_issues],
         "customer_line_results": [item.to_dict() for item in sla_results],

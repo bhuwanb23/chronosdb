@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from ..contracts.errors import DisruptionValidationError
+from ..state.reconstruction import OperationalState
 from .supplier_outage import Disruption
 
 
@@ -21,3 +22,23 @@ def validate_disruption(disruption: Disruption) -> None:
         raise DisruptionValidationError("component scope has no component IDs")
     if disruption.scope_type == "PURCHASE_ORDER" and not disruption.purchase_order_ids:
         raise DisruptionValidationError("purchase-order scope has no purchase-order IDs")
+
+
+def validate_disruption_against_state(
+    state: OperationalState,
+    disruption: Disruption,
+) -> None:
+    """Reject scopes that refer to records absent from the reconstructed state."""
+    supplier_ids = {row.get("id", "") for row in state.get("suppliers")}
+    if disruption.supplier_id not in supplier_ids:
+        raise DisruptionValidationError(f"unknown supplier: {disruption.supplier_id}")
+    if disruption.scope_type == "COMPONENT":
+        component_ids = {row.get("id", "") for row in state.get("components")}
+        unknown = sorted(disruption.component_ids - component_ids)
+        if unknown:
+            raise DisruptionValidationError(f"unknown component scope: {unknown}")
+    if disruption.scope_type == "PURCHASE_ORDER":
+        purchase_order_ids = {row.get("id", "") for row in state.get("purchase_orders")}
+        unknown = sorted(disruption.purchase_order_ids - purchase_order_ids)
+        if unknown:
+            raise DisruptionValidationError(f"unknown purchase-order scope: {unknown}")

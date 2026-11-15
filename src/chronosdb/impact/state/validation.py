@@ -29,8 +29,8 @@ def validate_state_records(records: dict[str, list[dict[str, str]]]) -> list[str
     if duplicate_purchase_orders:
         raise StateReconstructionError(f"duplicate purchase order IDs: {duplicate_purchase_orders}")
     warnings: list[str] = []
-    for name, rows in records.items():
-        if not rows:
+    for name in sorted(REQUIRED_RECORD_SETS):
+        if not records.get(name):
             warnings.append(f"empty record set: {name}")
     return warnings
 
