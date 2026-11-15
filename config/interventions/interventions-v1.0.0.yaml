@@ -1,0 +1,28 @@
+intervention_set_version: interventions-v1.0.0
+domain_model_version: phase4-domain-model-1.0.0
+interventions:
+  - intervention_id: INT-TRANSFER
+    version: 1.0.0
+    name: inventory_transfer
+    inputs: [component_id, quantity, source_warehouse, destination_warehouse]
+    validation: [transferable_inventory_gt_quantity, remaining_after_transfer_ge_safety_stock]
+  - intervention_id: INT-EXPEDITE
+    version: 1.0.0
+    name: purchase_order_expedition
+    inputs: [purchase_order_id, lead_time_reduction_days]
+    validation: [cannot_precede_shipment_release, cannot_exceed_supplier_capability, must_incur_cost]
+  - intervention_id: INT-SUPPLIER
+    version: 1.0.0
+    name: alternate_supplier_activation
+    inputs: [supplier_id, component_id, available_quantity]
+    validation: [approved_component, active_agreement, supplier_capacity_available]
+  - intervention_id: INT-RESCHEDULE
+    version: 1.0.0
+    name: production_rescheduling
+    inputs: [production_order_id, priority]
+    validation: [valid_priority, valid_manufacturing_orders]
+  - intervention_id: INT-HYBRID
+    version: 1.0.0
+    name: hybrid_multi_action_recovery
+    inputs: []
+    validation: [deterministic_overlay_order]
