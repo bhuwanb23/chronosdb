@@ -5,9 +5,21 @@
 ### 1. Hook
 **ChronosDB is a Db2-native decision intelligence platform that reconstructs operational history, simulates alternative futures, optimizes recovery actions, and proves every recommendation through auditable evidence.**
 
-### 2. Demo Visual
-![ChronosDB War Room](docs/screenshots/war-room-demo.png)
-*ChronosDB Operations War Room: Judge understands disruption impact, visualizes supply-chain cascade, compares recovery plans, inspects recommendations, reviews evidence, replays decisions, audits outcomes within 10 seconds.*
+### 2. Demo Visual — War Room (Judge understands in <10 seconds)
+
+![ChronosDB War Room Main](docs/screenshots/war_room_main.png)
+*ChronosDB Operations War Room: $15.2M at risk, 306 orders, 42 SLA breaches, HYBRID recommendation (Utility 0.91), cascade, 6 futures, evidence, audit, AI console — all in one screen.*
+
+![Decision Flow](docs/diagrams/decision_flow.png)
+*Decision Flow (README centerpiece): Disruption → Impact → 6 Candidate Futures → Optimization → Recommendation → Evidence → Audit*
+
+![System Architecture](docs/diagrams/system_architecture.png)
+*System Architecture: Judge → War Room UI → API Platform → Db2 → Impact/Simulation/Optimization/Evidence/AI → Trust → Benchmark → Reliability → Reproducibility*
+
+#### Full Visual Package (19 assets)
+**Diagrams:** `docs/diagrams/` — system_architecture, trust_architecture, data_flow, decision_flow, db2_architecture, benchmark_comparison, performance_latency, golden_scenario, reproducibility
+
+**Screenshots:** `docs/screenshots/` — war_room_main, executive_dashboard, dependency_cascade, intervention_comparison, evidence_explorer, audit_explorer, timeline_replay, benchmark_results, natural_language_console, judge_demo_mode
 
 ### 3. Problem
 Dashboards show failures.
