@@ -1,0 +1,16 @@
+version: 1.0.0
+project: ChronosDB
+paths:
+  datasets: benchmark/datasets
+  reports: benchmark/reports
+  charts: benchmark/charts
+  baselines: benchmark/baselines
+partitions:
+  development: 24
+  validation: 12
+  test: 18
+  golden: 3
+  adversarial-only: 3
+targets:
+  revenue_fidelity: 1.0
+  determinism: 1.0

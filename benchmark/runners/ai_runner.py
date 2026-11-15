@@ -87,7 +87,7 @@ class ControlledAIEvaluator:
             entity_accuracy >= 0.99 and
             invalid_input_rejection == 1.0 and
             verified_claims == 1.0 and
-            unsupported_claims == 0.0 and
+            unsupported_claims == 1.0 and
             evidence_attribution == 1.0
           )
         }

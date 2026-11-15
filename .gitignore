@@ -28,3 +28,4 @@ data/releases/v1.0.0/benchmarks/scenarios/*
 *sla_breach_count*
 *sla_breach_count*
 *documents*
+*.db
