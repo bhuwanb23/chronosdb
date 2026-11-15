@@ -1,0 +1,23 @@
+{
+  "as_of_time": "2026-11-11T02:30:00Z",
+  "category": "PARTIAL_SUPPLIER_OUTAGE",
+  "difficulty": "L2_CONNECTED",
+  "disruption_duration_days": 22,
+  "evidence_query_id": "RET-GOLD-NOTICE",
+  "expected_outcome_file": "expected/SCN-BENCH-0019.json",
+  "has_misleading_evidence": true,
+  "multi_product_impact": true,
+  "objective_mode": "MINIMIZE_SLA_BREACHES",
+  "partial_fulfillment": true,
+  "partition": "test",
+  "reference_component_id": "CMP-MCU-42",
+  "reference_customer_order_id": "CO-0701",
+  "reference_production_order_id": "MO-0876",
+  "reference_purchase_order_id": "PO-2208",
+  "reference_supplier_id": "SUP-0104",
+  "requires_temporal_reconstruction": true,
+  "scenario_id": "SCN-BENCH-0019",
+  "simulation_horizon_days": 30,
+  "source_supplier_class": "DOMESTIC_NATIONAL",
+  "test_specific_branch": "false"
+}
