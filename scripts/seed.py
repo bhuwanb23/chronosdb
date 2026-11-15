@@ -1,73 +1,83 @@
 #!/usr/bin/env python3
+"""Phase 15H: load ChronosDB seed data into Db2.
+
+The seed SQL files are intentionally small, reviewable fixtures generated
+from the frozen release. Use --dry-run on machines without a Db2 client.
 """
-Phase 15H: Dataset Seeding
-Benchmark and Evaluation System
-"""
 
-import json
-import os
-from typing import Dict, Any
+from __future__ import annotations
 
-class DatasetSeeder:
-    """
-    Phase 15H: Dataset Seeding
-    
-    Populate ChronosDB automatically.
-    
-    Seed Command: make seed
-    
-    Loads:
-    - Suppliers
-    - Components
-    - Inventory
-    - Orders
-    - Scenarios
-    - Historical Incidents
-    - Policies
-    - SOPs
-    
-    Validation: make validate-seed
-    """
-    
-    def __init__(self):
-        self.datasets = {
-          'suppliers': '/home/user/chronosdb/sql/seeds/suppliers.sql',
-          'components': '/home/user/chronosdb/sql/seeds/components.sql',
-          'inventory': '/home/user/chronosdb/sql/seeds/inventory.sql',
-          'orders': '/home/user/chronosdb/sql/seeds/orders.sql',
-          'scenarios': '/home/user/chronosdb/sql/seeds/scenarios.sql',
-          'historical_incidents': '/home/user/chronosdb/sql/seeds/historical_incidents.sql',
-          'policies': '/home/user/chronosdb/sql/seeds/policies.sql',
-          'sops': '/home/user/chronosdb/sql/seeds/sops.sql'
-        }
-    
-    def seed_database(self):
-        """Load all datasets into Db2"""
-        for dataset_name, file_path in self.datasets.items():
-            print(f"Loading {dataset_name}...")
-            # Execute seed script
-            os.system(f"db2 -tvf {file_path}")
-        
-        print("Dataset seeding complete.")
-    
-    def validate_seed(self):
-        """Validate seed data"""
-        # Validate all datasets loaded correctly
-        for dataset_name, file_path in self.datasets.items():
-            result = self._validate_dataset(dataset_name)
-            if not result:
-                raise ValueError(f"Dataset {dataset_name} validation failed")
-        
-        print("Dataset validation complete.")
-    
-    def _validate_dataset(self, dataset_name: str) -> bool:
-        """Validate individual dataset"""
-        # Implementation for validation
-        return True
+import argparse
+import shutil
+import subprocess
+import sys
+from pathlib import Path
 
-# Phase 15H Status: ✅ COMPLETE
+ROOT = Path(__file__).resolve().parents[1]
+SEED_DIR = ROOT / "sql" / "seeds"
+DATASETS = (
+    "suppliers",
+    "components",
+    "inventory",
+    "orders",
+    "customer_orders",
+    "production_orders",
+    "scenarios",
+    "historical_incidents",
+    "policies",
+    "sops",
+)
+
+
+def seed_files() -> list[Path]:
+    return [SEED_DIR / f"{name}.sql" for name in DATASETS]
+
+
+def validate_seed() -> list[str]:
+    issues: list[str] = []
+    for path in seed_files():
+        if not path.exists():
+            issues.append(f"missing seed file: {path.relative_to(ROOT)}")
+        elif not path.read_text(encoding="utf-8").strip():
+            issues.append(f"empty seed file: {path.relative_to(ROOT)}")
+    return issues
+
+
+def run_sql(path: Path, dry_run: bool) -> None:
+    if dry_run:
+        print(f"[dry-run] db2 -tvf {path.relative_to(ROOT)}")
+        return
+    db2 = shutil.which("db2")
+    if db2 is None:
+        raise RuntimeError(
+            "db2 CLI not found; install the Db2 client or use --dry-run"
+        )
+    subprocess.run([db2, "-tvf", str(path)], check=True)
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--validate-only", action="store_true")
+    args = parser.parse_args()
+
+    issues = validate_seed()
+    if issues:
+        print("Seed validation failed:", file=sys.stderr)
+        for issue in issues:
+            print(f"  - {issue}", file=sys.stderr)
+        return 1
+    print(f"Seed files present: {len(seed_files())}")
+    if args.validate_only:
+        print("Seed validation complete.")
+        return 0
+
+    for path in seed_files():
+        print(f"Loading {path.stem}...")
+        run_sql(path, args.dry_run)
+    print("Dataset seeding complete.")
+    return 0
+
+
 if __name__ == "__main__":
-    seeder = DatasetSeeder()
-    seeder.seed_database()
-    seeder.validate_seed()
-    print("Dataset seeding and validation complete.")
+    raise SystemExit(main())

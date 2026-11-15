@@ -1,27 +1,32 @@
-#!/bin/bash
-# Phase 15F: Db2 Provisioning
-# Automate Db2 environment creation
+#!/usr/bin/env bash
+# Phase 15F: start a local Db2 instance through Docker Compose.
+set -euo pipefail
 
-set -e
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
 
-echo "Starting Db2 provisioning..."
-
-# Docker mode (Preferred)
-if [ -f "docker-compose.yml" ]; then
-  echo "Starting Db2 via Docker Compose..."
-  docker compose up -d db2
-  
-  # Wait for Db2 to be ready
-  sleep 30
-  
-  echo "Db2 started successfully."
-else
-  # Local installation fallback
-  echo "Starting Db2 locally..."
-  # Implementation for local Db2 startup
-  echo "Db2 started successfully."
+if ! command -v docker >/dev/null 2>&1; then
+  echo "docker is required for the default Db2 provisioning mode." >&2
+  echo "Install Docker Desktop/Engine or follow docs/reproducibility/troubleshooting.md for the local fallback." >&2
+  exit 1
 fi
 
-echo "Db2 provisioning complete."
+if ! docker compose version >/dev/null 2>&1; then
+  echo "docker compose v2 is required (docker compose, not docker-compose)." >&2
+  exit 1
+fi
 
-# Phase 15F Status: ✅ COMPLETE
+echo "Starting Db2 via Docker Compose..."
+docker compose up -d db2
+
+echo "Waiting for Db2 to accept connections..."
+for attempt in $(seq 1 60); do
+  if docker compose exec -T db2 bash -lc 'db2 connect to "$DBNAME" >/dev/null 2>&1' >/dev/null 2>&1; then
+    echo "Db2 is ready."
+    exit 0
+  fi
+  sleep 5
+done
+
+echo "Db2 did not become ready in time. Inspect: docker compose logs db2" >&2
+exit 1

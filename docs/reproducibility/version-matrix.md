@@ -1,28 +1,32 @@
 # Phase 15C: Environment Definition
 
-## Phase 15 Deep Dive: Packaging and Reproducibility
+## Pinned versions
 
-### Everything Must Be Pinned
-
-#### Version Matrix
 | Component | Version |
 |-----------|---------|
-| Python | 3.12.x |
-| FastAPI | pinned |
-| Node.js | pinned |
-| Db2 | pinned |
-| Embedding Model | pinned |
-| LangChain | pinned |
-| React/Next | pinned |
+| Python | 3.12.x (supported 3.11–3.13) |
+| FastAPI | 0.162.4 |
+| Uvicorn | 0.54.0 |
+| Pydantic | 2.14.3 |
+| ibm-db | 3.3.0 |
+| PyYAML | 6.0.3 |
+| pytest | 8.4.2 |
+| Node.js | 20.x (Docker image `node:20-alpine`) |
+| Db2 | `icr.io/db2_community/db2:11.5.9.0` |
+| Embedding model | `bge-small-en-v1.5` (deterministic fallback supported) |
+| React | 18.2.x |
+| Vite | 4.x |
 
-#### Environment Matrix
-- **OS:** Linux (Ubuntu 22.04)
-- **CPU:** x86_64
-- **RAM:** 16GB minimum
-- **Storage:** 50GB minimum
-- **Docker Version:** 24.x
+## Environment matrix
 
-### Deliverable Location
-`/home/user/chronosdb/docs/reproducibility/version-matrix.md`
+| Resource | Minimum |
+|----------|---------|
+| OS | Linux x86_64 (Ubuntu 22.04 reference) or Windows with WSL2 |
+| CPU | 4 cores |
+| RAM | 8 GB (16 GB recommended for Db2) |
+| Storage | 20 GB free |
+| Docker | Docker Engine/Desktop with Compose v2 |
 
-## Phase 15C Status: ✅ COMPLETE
+The exact Python pins live in `requirements.txt` and `requirements-lock.txt`.
+The frontend lock file is `src/frontend/package-lock.json` (mirrored at the
+repository root as `package-lock.json`).

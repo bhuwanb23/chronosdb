@@ -1,21 +1,24 @@
-#!/bin/bash
-# Phase 15J: Application Startup Automation (Run Demo Script)
-# Phase 15K: Makefile Orchestration (make demo)
+#!/usr/bin/env bash
+# Phase 15J/15K: verify the demo is healthy and print evaluator-facing URLs.
+set -euo pipefail
 
-set -e
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
 
-echo "Running ChronosDB Demo..."
+PYTHON="${PYTHON:-python3}"
+if ! command -v "$PYTHON" >/dev/null 2>&1; then
+  PYTHON=python
+fi
 
-# Check health
-echo "Checking system health..."
-python3 /home/user/chronosdb/scripts/health_check.py
+echo "Checking ChronosDB health..."
+"$PYTHON" scripts/health_check.py --base-url "${CHRONOSDB_BACKEND_URL:-http://localhost:8000}" --retries 30
 
-# Print URLs
-echo "========================================"
-echo "ChronosDB Demo Ready!"
-echo "Backend API: http://localhost:8000"
-echo "Frontend UI: http://localhost:3000"
-echo "Golden Scenario: SCN-GOLDEN-001"
-echo "========================================"
-
-# Phase 15J Status: ✅ COMPLETE
+cat <<'MSG'
+========================================
+ChronosDB Demo Ready
+Backend API:  http://localhost:8000
+API docs:     http://localhost:8000/docs
+Frontend UI:  http://localhost:3000
+Golden:       SCN-GOLDEN-001
+========================================
+MSG

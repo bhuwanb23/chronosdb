@@ -35,6 +35,6 @@ Phase 16 receives:
 - **Independent Environment Review:** ✅ Complete (Phase 15Q)
 
 ### Deliverable Location
-`/home/user/chronosdb/docs/reproducibility/phase-16-handoff.md`
+`docs/reproducibility/phase-16-handoff.md`
 
 ## Phase 15R Status: ✅ COMPLETE

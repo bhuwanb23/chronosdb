@@ -1,49 +1,37 @@
 # Phase 15N: Reproducibility Validation
 
-## Phase 15 Deep Dive: Packaging and Reproducibility
+## Automated validation
 
-### Run full installation tests.
+```bash
+python scripts/validate_phase15.py
+```
 
-#### Environment A: Fresh machine
-- Clean OS installation
-- Run: `make setup`
-- Run: `make demo`
-- Validate: Success
+The validator checks required files, Makefile targets, pinned dependencies,
+environment keys, Compose services/Dockerfiles, `/health` and `/readiness`
+responses, seed fixtures, embedding fallback, and benchmark artifacts. It writes
+`artifacts/reproducibility/validation-report.json`.
 
-#### Environment B: Fresh VM
-- Clean VM installation
-- Run: `make setup`
-- Run: `make demo`
-- Validate: Success
+## Installation test matrix
 
-#### Environment C: Docker environment
-- Docker Compose
-- Run: `docker compose up`
-- Validate: Success
+| Environment | Command | Status |
+|-------------|---------|--------|
+| A: fresh machine | `make setup && make demo` | Requires Docker/Db2 host |
+| B: fresh VM | `make setup && make demo` | Requires Docker/Db2 host |
+| C: Docker host | `docker compose up -d --build` | Requires Docker/Db2 host |
 
-### Validation Checks
-1. **Setup Success**
-   - All dependencies installed
-   - Configuration generated
-   - No errors
+## Golden scenario and benchmark
 
-2. **Startup Success**
-   - Backend starts
-   - Frontend starts
-   - Db2 starts
-   - Health checks pass
+```bash
+python benchmark/runners/benchmark_runner.py
+python -m pytest tests -q
+```
 
-3. **Golden Scenario Success**
-   - Golden Scenario SCN-GOLDEN-001 executes
-   - Exact result produced
-   - No corruption
+The benchmark runner writes JSON, Markdown, and SQLite reports. The full test
+suite covers the golden scenario, replay, recovery, adversarial, load, and
+reproducibility paths.
 
-4. **Benchmark Success**
-   - Benchmark runner executes
-   - Results match Phase 13
-   - Reproducibility confirmed
+## Current limitation
 
-### Deliverable Location
-`/home/user/chronosdb/artifacts/reproducibility/`
-
-## Phase 15N Status: ✅ COMPLETE
+This workspace has no Docker Engine and no Db2 server. The static contract and
+API health routes were validated here; live container startup and Db2 migration
+must be re-run on a Docker-capable host.

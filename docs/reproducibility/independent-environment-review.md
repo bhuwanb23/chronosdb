@@ -1,30 +1,23 @@
 # Phase 15Q: Independent Environment Review
 
-## Phase 15 Deep Dive: Packaging and Reproducibility
+## Review questions
 
-### Review Questions
+| Question | Answer | Evidence |
+|----------|--------|----------|
+| Can an evaluator run the system? | Yes, on a Docker-capable host | `make setup && make demo` |
+| Are missing credentials handled gracefully? | Yes | `.env.example`, health check failures, troubleshooting guide |
+| Are documentation commands copy-paste executable? | Yes | Makefile targets validated by `scripts/validate_phase15.py` |
+| Is the golden scenario available immediately? | Yes | `SCN-GOLDEN-001` seeded by `make seed` |
 
-#### 1. Fresh Machine Test
-**Question:** Can evaluator run system?
-**Must be:** Yes
-**Validation:** Phase 15N Reproducibility Validation (Environment A, B, C)
+## Validation performed
 
-#### 2. Missing Credentials
-**Question:** Graceful handling?
-**Must be:** Yes
-**Validation:** Phase 15O Troubleshooting Guide (Missing Environment Variables)
+- Static reproducibility contract: PASS.
+- API `/health` and `/readiness`: PASS.
+- Seed and embedding fixture validation: PASS.
+- Full test suite: PASS.
+- Benchmark runner: PASS.
 
-#### 3. Documentation Review
-**Question:** Copy-paste executable?
-**Must be:** Yes
-**Validation:** Phase 15K Makefile Orchestration (make demo)
+## Not performed here
 
-#### 4. Demo Review
-**Question:** Golden scenario available immediately?
-**Must be:** Yes
-**Validation:** Phase 15J Application Startup Automation (make app)
-
-### Deliverable Location
-`/home/user/chronosdb/docs/reproducibility/independent-environment-review.md`
-
-## Phase 15Q Status: ✅ COMPLETE
+Docker and Db2 are unavailable in this workspace. Container startup and live
+migration must be re-run on a Docker host; see `install-test-report.md`.

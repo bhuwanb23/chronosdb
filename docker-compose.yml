@@ -1,50 +1,69 @@
-version: '3.8'
+# ChronosDB single-command deployment (Phase 15L)
+# Usage: docker compose up -d --build
+name: chronosdb
 
 services:
   db2:
-    image: ibmcom/db2:11.5.9
+    image: icr.io/db2_community/db2:11.5.9.0
     container_name: chronosdb_db2
+    privileged: true
     environment:
-      - DB2INST1_PASSWORD=secure_password_123
-      - DB2INST1_PORT=50000
-      - DB2INST1_DATABASE=CHRONOSDB
+      LICENSE: accept
+      DB2INSTANCE: db2inst1
+      DB2INST1_PASSWORD: ${DB2_PASSWORD:-change-me}
+      DBNAME: ${DB2_DATABASE:-CHRONOSDB}
+      BLU: "false"
     ports:
-      - "50000:50000"
+      - "${DB2_PORT:-50000}:50000"
     volumes:
       - db2_data:/database
+      - ./sql:/sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "su - db2inst1 -c 'db2 connect to $${DBNAME}' >/dev/null 2>&1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 120s
     restart: unless-stopped
 
   backend:
-    build: ./docker/backend
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
     container_name: chronosdb_backend
     environment:
-      - DB2_HOST=db2
-      - DB2_PORT=50000
-      - DB2_DATABASE=CHRONOSDB
-      - DB2_USER=chronosdb
-      - DB2_PASSWORD=secure_password_123
-      - LLM_PROVIDER=LOCAL
-      - EMBEDDING_MODEL=bge-small-en-v1.5
-      - CHRONOSDB_API_KEY=chronosdb_api_key_123
-      - CHRONOSDB_AUDIT_KEY=chronosdb_audit_key_123
+      APP_ENV: ${APP_ENV:-development}
+      APP_VERSION: ${APP_VERSION:-1.0.0}
+      SCHEMA_VERSION: ${SCHEMA_VERSION:-1}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      DB2_HOST: db2
+      DB2_PORT: 50000
+      DB2_DATABASE: ${DB2_DATABASE:-CHRONOSDB}
+      DB2_USERNAME: ${DB2_USERNAME:-db2inst1}
+      DB2_PASSWORD: ${DB2_PASSWORD:-change-me}
+      DB2_SCHEMA: ${DB2_SCHEMA:-CHRONOSDB}
+      LLM_PROVIDER: ${LLM_PROVIDER:-LOCAL}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-bge-small-en-v1.5}
     ports:
       - "8000:8000"
     depends_on:
-      - db2
+      db2:
+        condition: service_healthy
     restart: unless-stopped
 
   frontend:
-    build: ./docker/frontend
+    build:
+      context: .
+      dockerfile: docker/frontend/Dockerfile
     container_name: chronosdb_frontend
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000
     ports:
       - "3000:3000"
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     restart: unless-stopped
 
 volumes:
   db2_data:
-
-# Phase 15L: Docker Packaging
-# Preferred evaluation mode.
-# Single command deployment: docker compose up

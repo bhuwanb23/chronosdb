@@ -1,69 +1,65 @@
 #!/usr/bin/env python3
-"""
-Phase 15M: Health Verification Framework
-Benchmark and Evaluation System
-"""
+"""Phase 15M: verify ChronosDB backend health and readiness."""
 
-import requests
+from __future__ import annotations
+
+import argparse
 import json
-import os
-from typing import Dict, Any
+import sys
+import time
+import urllib.error
+import urllib.request
+from typing import Any
 
-class HealthVerifier:
-    """
-    Phase 15M: Health Verification Framework
-    
-    Judge-friendly validation.
-    
-    Endpoint: GET /health
-    Checks: Backend, Db2, Vectors, Audit, Simulation
-    
-    Endpoint: GET /readiness
-    Returns: { "status": "READY" }
-    """
-    
-    def __init__(self, base_url: str = 'http://localhost:8000'):
-        self.base_url = base_url
-    
-    def check_health(self) -> Dict[str, Any]:
-        """Check system health"""
-        try:
-            response = requests.get(f"{self.base_url}/health")
-            response.raise_for_status()
-            return response.json()
-        except Exception as e:
-            return {'status': 'ERROR', 'message': str(e)}
-    
-    def check_readiness(self) -> Dict[str, Any]:
-        """Check system readiness"""
-        try:
-            response = requests.get(f"{self.base_url}/readiness")
-            response.raise_for_status()
-            return response.json()
-        except Exception as e:
-            return {'status': 'ERROR', 'message': str(e)}
-    
-    def validate_health(self) -> bool:
-        """Validate health checks"""
-        health = self.check_health()
-        readiness = self.check_readiness()
-        
-        # Required: status == READY
-        return (
-          health.get('status') == 'READY' and
-          readiness.get('status') == 'READY'
-        )
 
-# Phase 15M Status: ✅ COMPLETE
-if __name__ == "__main__":
-    verifier = HealthVerifier()
-    health_result = verifier.check_health()
-    readiness_result = verifier.check_readiness()
-    
-    print(f"Health: {health_result}")
-    print(f"Readiness: {readiness_result}")
-    
-    if verifier.validate_health():
-        print("Health verification passed.")
+def fetch(base_url: str, path: str, timeout: float) -> dict[str, Any]:
+    url = base_url.rstrip("/") + path
+    request = urllib.request.Request(url, headers={"Accept": "application/json"})
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def check(base_url: str, timeout: float, retries: int) -> dict[str, Any]:
+    last_error = None
+    for attempt in range(retries + 1):
+        try:
+            health = fetch(base_url, "/health", timeout)
+            readiness = fetch(base_url, "/readiness", timeout)
+            return {"health": health, "readiness": readiness}
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+            last_error = str(exc)
+            if attempt < retries:
+                time.sleep(2)
+    return {"error": last_error}
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--base-url", default="http://localhost:8000")
+    parser.add_argument("--timeout", type=float, default=5.0)
+    parser.add_argument("--retries", type=int, default=0)
+    parser.add_argument("--json", action="store_true")
+    args = parser.parse_args()
+
+    result = check(args.base_url, args.timeout, args.retries)
+    if args.json:
+        print(json.dumps(result, indent=2, sort_keys=True))
     else:
-        print("Health verification failed.")
+        print(f"Health: {result.get('health', result)}")
+        print(f"Readiness: {result.get('readiness', result)}")
+
+    health = result.get("health", {})
+    readiness = result.get("readiness", {})
+    ok = (
+        health.get("status") == "READY"
+        and readiness.get("status") == "READY"
+    )
+    if ok:
+        print("Health verification passed.")
+        return 0
+    print("Health verification failed.", file=sys.stderr)
+    return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

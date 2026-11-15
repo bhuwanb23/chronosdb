@@ -20,6 +20,6 @@ Starts: Backend and Frontend
 No manual service startup order.
 
 ### Deliverable Location
-`/home/user/chronosdb/scripts/run_demo.sh`
+`scripts/run_demo.sh`
 
 ## Phase 15J Status: ✅ COMPLETE

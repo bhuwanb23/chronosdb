@@ -19,6 +19,6 @@
 - Maximum
 
 ### Deliverable Location
-`/home/user/chronosdb/artifacts/reproducibility/install-performance.md`
+`artifacts/reproducibility/install-performance.md`
 
 ## Phase 15P Status: ✅ COMPLETE

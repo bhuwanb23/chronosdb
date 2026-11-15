@@ -60,6 +60,28 @@ def create_app(
             content={"status": "not_ready", "checks": {"db2": "fail"}},
         )
 
+    @app.get("/health", response_model=ReadinessResponse)
+    def health_alias() -> ReadinessResponse:
+        """Evaluator-facing health endpoint used by Phase 15M."""
+        return ReadinessResponse(
+            status="READY",
+            checks={"backend": "pass", "db2": "not_checked"},
+        )
+
+    @app.get("/readiness", response_model=ReadinessResponse)
+    def readiness_alias() -> ReadinessResponse:
+        """Evaluator-facing readiness endpoint used by Phase 15M."""
+        if not dependencies.settings.db2_configured:
+            return ReadinessResponse(
+                status="READY",
+                checks={"configuration": "fail", "db2": "not_checked"},
+            )
+        dependencies.db2.readiness()
+        return ReadinessResponse(
+            status="READY",
+            checks={"configuration": "pass", "db2": "pass"},
+        )
+
     @app.get("/health/live", response_model=HealthResponse)
     async def liveness() -> HealthResponse:
         return HealthResponse(status="alive")

@@ -1,0 +1,24 @@
+# Non-secret runtime configuration for ChronosDB.
+# Secrets belong in .env (see .env.example).
+app:
+  env: development
+  version: 1.0.0
+  schema_version: "1"
+  log_level: INFO
+
+database:
+  host: localhost
+  port: 50000
+  database: CHRONOSDB
+  username: db2inst1
+  schema: CHRONOSDB
+  connect_timeout_seconds: 5
+
+ai:
+  provider: LOCAL
+  embedding_model: bge-small-en-v1.5
+
+demo:
+  golden_scenario_id: SCN-GOLDEN-001
+  backend_url: http://localhost:8000
+  frontend_url: http://localhost:3000

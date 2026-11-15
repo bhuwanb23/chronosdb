@@ -93,18 +93,26 @@ Supplier outage → Impact → Simulation → Optimization → Evidence → Narr
 - Release Gate (Phase 10V)
 
 ### 10. Setup
-`make setup`
-`make db-up`
-`make migrate`
-`make seed`
-`make embeddings`
-`make app`
-`make demo`
+
+Prerequisites: Python 3.11–3.13, Node.js 20+, and Docker Engine/Desktop with
+Compose v2 for the Db2 container.
+
+```bash
+cp .env.example .env      # replace every change-me value
+make setup                # Python + frontend dependencies
+make demo                 # Db2, migrations, seeds, embeddings, app, health
+```
+
+Open the UI at `http://localhost:3000` and the API docs at
+`http://localhost:8000/docs`. Health is available at `/health` and
+`/readiness`.
 
 ### 11. Commands
 - `make benchmark` (Phase 13M)
 - `make test` (Phase 14)
 - `make demo` (Phase 15K)
+- `make validate-phase15` (Phase 15N)
+- `make health` (Phase 15M)
 - `make clean` (Phase 15K)
 
 ### 12. Limitations
@@ -120,6 +128,6 @@ Supplier outage → Impact → Simulation → Optimization → Evidence → Narr
 - Phase 20: Project Closure ✅ (Future)
 
 ### Deliverable Location
-`/home/user/chronosdb/README.md`
+`README.md`
 
 ## Phase 16C Status: ✅ COMPLETE

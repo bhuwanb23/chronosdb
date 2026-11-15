@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "benchmark_artifacts": "PASS",
+    "dependencies": "PASS",
+    "docker_compose": "PASS",
+    "environment": "PASS",
+    "health_routes": "PASS",
+    "makefile": "PASS",
+    "required_files": "PASS",
+    "scripts": "PASS"
+  },
+  "environment": {
+    "node": "not-captured",
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.14"
+  },
+  "generated_at": "2026-11-15T10:09:26.947797+00:00",
+  "issues": {},
+  "report_version": "1.0.0",
+  "status": "PASS"
+}

@@ -1,76 +1,63 @@
-# Makefile for ChronosDB Reproducibility
-# Phase 15K: Makefile Orchestration
+# ChronosDB reproducibility Makefile (Phase 15K)
+# Fresh clone -> make setup -> make demo
 
-# This becomes the heart of reproducibility.
+PYTHON ?= $(shell command -v python3 2>/dev/null || command -v python)
+NPM ?= npm
+COMPOSE ?= docker compose
 
-# Required Commands
-# make setup
-# make db-up
-# make migrate
-# make seed
-# make embeddings
-# make app
-# make benchmark
-# make test
-# make demo
-# make clean
-
-# Most Important Command: make demo
-# Required Behavior:
-# - Start Db2
-# - Run migrations
-# - Load seed data
-# - Prepare embeddings
-# - Start backend
-# - Start frontend
-# - Run health checks
-# - Print URLs
-
-# Phase 15K Status: ✅ COMPLETE
-
-.PHONY: setup db-up migrate seed embeddings app benchmark test demo clean
+.PHONY: setup db-up db-check migrate seed validate-seed embeddings embedding-check \
+	backend frontend app benchmark test health demo clean validate-phase15
 
 setup:
-	@echo "Setting up ChronosDB environment..."
-	@python3 -m pip install -r requirements.txt
-	@npm install --prefix ./docker/frontend
-	@echo "Setup complete."
+	@bash scripts/setup.sh
 
 db-up:
-	@./scripts/db_up.sh
+	@bash scripts/db_up.sh
+
+db-check:
+	@bash scripts/db_check.sh
 
 migrate:
-	@./scripts/migrate.sh
+	@bash scripts/migrate.sh
 
 seed:
-	@python3 scripts/seed.py
+	@$(PYTHON) scripts/seed.py
+
+validate-seed:
+	@$(PYTHON) scripts/seed.py --validate-only
 
 embeddings:
-	@python3 scripts/build_embeddings.py
+	@$(PYTHON) scripts/build_embeddings.py
+
+embedding-check:
+	@$(PYTHON) scripts/build_embeddings.py --check
+
+backend:
+	@PYTHONPATH=src:. $(PYTHON) -m uvicorn backend.chronosdb.api.app:app --host 0.0.0.0 --port 8000
+
+frontend:
+	@cd src/frontend && $(NPM) run dev -- --host 0.0.0.0 --port 3000
 
 app:
-	@docker compose up -d
+	@$(COMPOSE) up -d --build
 
 benchmark:
-	@python3 benchmark/runners/benchmark_runner.py
+	@$(PYTHON) benchmark/runners/benchmark_runner.py
 
 test:
-	@python3 -m pytest tests/ -v
+	@$(PYTHON) -m pytest tests -q
 
-demo:
-	@echo "Starting ChronosDB Demo..."
-	@make db-up
-	@make migrate
-	@make seed
-	@make embeddings
-	@make app
-	@python3 scripts/run_demo.sh
-	@echo "Demo ready! Visit http://localhost:3000"
+health:
+	@$(PYTHON) scripts/health_check.py --retries 30
+
+demo: db-up migrate seed embeddings app health
+	@bash scripts/run_demo.sh
 
 clean:
-	@docker compose down
-	@rm -rf /home/user/chronosdb/docker/backend/node_modules
-	@rm -rf /home/user/chronosdb/docker/frontend/node_modules
+	@$(COMPOSE) down -v --remove-orphans || true
+	@rm -rf .pytest_cache .coverage htmlcov
+	@rm -rf src/frontend/node_modules
 	@echo "Cleanup complete."
 
-# Phase 15K Status: ✅ COMPLETE
+validate-phase15:
+	@$(PYTHON) scripts/validate_phase15.py

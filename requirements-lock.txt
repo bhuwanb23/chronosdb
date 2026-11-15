@@ -1,0 +1,14 @@
+# Locked Python dependency set for ChronosDB reproducible release v1.0.0.
+# Generated from requirements.txt; keep both files identical.
+fastapi==0.162.4
+uvicorn[standard]==0.54.0
+pydantic==2.14.3
+pydantic-settings==2.16.2
+ibm-db==3.3.0
+jsonschema==4.23.0
+PyYAML==6.0.3
+python-dotenv==1.2.4
+httpx==0.28.1
+pytest==8.4.2
+pytest-cov==6.3.0
+coverage==7.17.2

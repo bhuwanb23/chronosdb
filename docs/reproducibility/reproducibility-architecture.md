@@ -30,6 +30,6 @@ Everything demonstrated must be reproducible.
 7. **UI** (Phase 12)
 
 ### Deliverable Location
-`/home/user/chronosdb/docs/reproducibility/reproducibility-architecture.md`
+`docs/reproducibility/reproducibility-architecture.md`
 
 ## Phase 15B Status: ✅ COMPLETE

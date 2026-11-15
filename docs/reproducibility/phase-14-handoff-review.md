@@ -21,6 +21,6 @@
 - **Reliability Metrics Documented:** Verified ✅ (Phase 14O)
 
 ### Deliverable Location
-`/home/user/chronosdb/docs/reproducibility/phase-14-handoff-review.md`
+`docs/reproducibility/phase-14-handoff-review.md`
 
 ## Phase 15A Status: ✅ COMPLETE
