@@ -61,9 +61,11 @@ class RecommendationSelection:
         
         # Step 3: Normalization
         ranges = self.normalization_engine.calculate_ranges(extracted_metrics)
+        min_values = {k: v["min"] for k, v in ranges.items()}
+        max_values = {k: v["max"] for k, v in ranges.items()}
         normalized_metrics = []
         for metrics in extracted_metrics:
-            norm = self.normalization_engine.normalize_single(metrics, ranges["min"], ranges["max"])
+            norm = self.normalization_engine.normalize_single(metrics, min_values, max_values)
             normalized_metrics.append(norm.__dict__)
         
         # Step 4: Utility scoring
