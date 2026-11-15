@@ -1,0 +1,1582 @@
+{
+  "baseline_state_hash": "47e178713708fe62e1eee1c68edbaa448fb88a519c418221a6fa31f96142b286",
+  "candidates": [
+    {
+      "baseline_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+      "breaches_avoided": 0,
+      "candidate": "DO_NOTHING",
+      "candidate_id": "DO_NOTHING",
+      "capacity_utilization_pct": 0.0,
+      "cost": 0.0,
+      "delay": 288.0,
+      "delay_hours": 288.0,
+      "delay_reduction": 0.0,
+      "delay_reduction_hours": 0.0,
+      "feasibility_metadata": {
+        "phase6_data_quality": "COMPLETE",
+        "phase6_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+        "phase6_status": "COMPLETED",
+        "regulatory_compliance": false,
+        "risk_policy_version": "operational-risk-v1.0.0",
+        "safety_stock_ok": true,
+        "supplier_approved": false,
+        "transfer_lane_approved": false,
+        "uses_capacity": false,
+        "uses_regulatory": false,
+        "uses_supplier": false,
+        "uses_transfer_lane": false
+      },
+      "inventory_consumed": 0.0,
+      "label": "Do Nothing",
+      "recovery_cost": 0.0,
+      "remaining_inventory": 300.0,
+      "revenue_protected": 0.0,
+      "revenue_risk": 1600000.0,
+      "rule_set_version": "impact-rules-v1.0.0",
+      "simulation_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+      "sla_breaches": 2,
+      "source": "PHASE6",
+      "supplier_risk": 0.0,
+      "warnings": []
+    },
+    {
+      "baseline_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+      "breaches_avoided": 1,
+      "candidate": "TRANSFER",
+      "candidate_id": "TRANSFER",
+      "capacity_utilization_pct": 0.0,
+      "cost": 32800.0,
+      "delay": 216.0,
+      "delay_hours": 216.0,
+      "delay_reduction": 72.0,
+      "delay_reduction_hours": 72.0,
+      "feasibility_metadata": {
+        "phase6_data_quality": "COMPLETE",
+        "phase6_result_hash": "286e393558c419a2e5304300a14034069c9374097ee31e2c93c68c6cf2091fdd",
+        "phase6_status": "COMPLETED",
+        "regulatory_compliance": false,
+        "risk_policy_version": "operational-risk-v1.0.0",
+        "safety_stock_ok": true,
+        "supplier_approved": true,
+        "transfer_lane_approved": true,
+        "uses_capacity": false,
+        "uses_regulatory": false,
+        "uses_supplier": false,
+        "uses_transfer_lane": true
+      },
+      "inventory_consumed": 400.0,
+      "label": "Warehouse Transfer",
+      "recovery_cost": 32800.0,
+      "remaining_inventory": 180.0,
+      "revenue_protected": 800000.0,
+      "revenue_risk": 800000.0,
+      "rule_set_version": "impact-rules-v1.0.0",
+      "simulation_hash": "286e393558c419a2e5304300a14034069c9374097ee31e2c93c68c6cf2091fdd",
+      "sla_breaches": 1,
+      "source": "PHASE6",
+      "supplier_risk": 0.05,
+      "warnings": []
+    },
+    {
+      "baseline_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+      "breaches_avoided": 2,
+      "candidate": "EXPEDITE",
+      "candidate_id": "EXPEDITE",
+      "capacity_utilization_pct": 4.41989,
+      "cost": 3650.0,
+      "delay": 0.0,
+      "delay_hours": 0.0,
+      "delay_reduction": 288.0,
+      "delay_reduction_hours": 288.0,
+      "feasibility_metadata": {
+        "phase6_data_quality": "COMPLETE",
+        "phase6_result_hash": "ede3feb89446119b40f55e4c5259672b81ff5b02d6313d9d88349c8832b1cc04",
+        "phase6_status": "COMPLETED",
+        "regulatory_compliance": false,
+        "risk_policy_version": "operational-risk-v1.0.0",
+        "safety_stock_ok": true,
+        "supplier_approved": true,
+        "transfer_lane_approved": false,
+        "uses_capacity": true,
+        "uses_regulatory": false,
+        "uses_supplier": true,
+        "uses_transfer_lane": false
+      },
+      "inventory_consumed": 0.0,
+      "label": "PO Expedition",
+      "recovery_cost": 3650.0,
+      "remaining_inventory": 410.0,
+      "revenue_protected": 1600000.0,
+      "revenue_risk": 0.0,
+      "rule_set_version": "impact-rules-v1.0.0",
+      "simulation_hash": "ede3feb89446119b40f55e4c5259672b81ff5b02d6313d9d88349c8832b1cc04",
+      "sla_breaches": 0,
+      "source": "PHASE6",
+      "supplier_risk": 0.25442,
+      "warnings": []
+    },
+    {
+      "baseline_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+      "breaches_avoided": 0,
+      "candidate": "ALTERNATE_SUPPLIER",
+      "candidate_id": "ALTERNATE_SUPPLIER",
+      "capacity_utilization_pct": 100.0,
+      "cost": 813000.0,
+      "delay": 264.0,
+      "delay_hours": 264.0,
+      "delay_reduction": 24.0,
+      "delay_reduction_hours": 24.0,
+      "feasibility_metadata": {
+        "phase6_data_quality": "COMPLETE",
+        "phase6_result_hash": "4d750c1e34e6ef6744bfb7a881884fc7fc2deb9c667810aae94ba46bc8e3818f",
+        "phase6_status": "COMPLETED",
+        "regulatory_compliance": true,
+        "risk_policy_version": "operational-risk-v1.0.0",
+        "safety_stock_ok": true,
+        "supplier_approved": true,
+        "transfer_lane_approved": false,
+        "uses_capacity": true,
+        "uses_regulatory": true,
+        "uses_supplier": true,
+        "uses_transfer_lane": false
+      },
+      "inventory_consumed": 300.0,
+      "label": "Alternate Supplier",
+      "recovery_cost": 813000.0,
+      "remaining_inventory": 410.0,
+      "revenue_protected": 400000.0,
+      "revenue_risk": 1200000.0,
+      "rule_set_version": "impact-rules-v1.0.0",
+      "simulation_hash": "4d750c1e34e6ef6744bfb7a881884fc7fc2deb9c667810aae94ba46bc8e3818f",
+      "sla_breaches": 2,
+      "source": "PHASE6",
+      "supplier_risk": 0.25,
+      "warnings": []
+    },
+    {
+      "baseline_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+      "breaches_avoided": 0,
+      "candidate": "RESCHEDULE",
+      "candidate_id": "RESCHEDULE",
+      "capacity_utilization_pct": 0.0,
+      "cost": 12000.0,
+      "delay": 360.0,
+      "delay_hours": 360.0,
+      "delay_reduction": -72.0,
+      "delay_reduction_hours": -72.0,
+      "feasibility_metadata": {
+        "phase6_data_quality": "COMPLETE",
+        "phase6_result_hash": "a99c998b3006594cd36f78cb2477e1fc4b36fdc774f6f990e0cd544bdd13d2f2",
+        "phase6_status": "COMPLETED",
+        "regulatory_compliance": false,
+        "risk_policy_version": "operational-risk-v1.0.0",
+        "safety_stock_ok": true,
+        "supplier_approved": true,
+        "transfer_lane_approved": false,
+        "uses_capacity": false,
+        "uses_regulatory": false,
+        "uses_supplier": false,
+        "uses_transfer_lane": false
+      },
+      "inventory_consumed": 0.0,
+      "label": "Production Reschedule",
+      "recovery_cost": 12000.0,
+      "remaining_inventory": 300.0,
+      "revenue_protected": 0.0,
+      "revenue_risk": 1600000.0,
+      "rule_set_version": "impact-rules-v1.0.0",
+      "simulation_hash": "a99c998b3006594cd36f78cb2477e1fc4b36fdc774f6f990e0cd544bdd13d2f2",
+      "sla_breaches": 2,
+      "source": "PHASE6",
+      "supplier_risk": 0.1,
+      "warnings": []
+    },
+    {
+      "baseline_result_hash": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+      "breaches_avoided": 1,
+      "candidate": "HYBRID",
+      "candidate_id": "HYBRID",
+      "capacity_utilization_pct": 100.0,
+      "cost": 852400.0,
+      "delay": 216.0,
+      "delay_hours": 216.0,
+      "delay_reduction": 72.0,
+      "delay_reduction_hours": 72.0,
+      "feasibility_metadata": {
+        "phase6_data_quality": "COMPLETE",
+        "phase6_result_hash": "d53d8f06d19a52f4dbae670f999d6d90e10fd9a6ff7d1c328d7cbc914b247571",
+        "phase6_status": "COMPLETED",
+        "regulatory_compliance": true,
+        "risk_policy_version": "operational-risk-v1.0.0",
+        "safety_stock_ok": true,
+        "supplier_approved": true,
+        "transfer_lane_approved": true,
+        "uses_capacity": true,
+        "uses_regulatory": true,
+        "uses_supplier": true,
+        "uses_transfer_lane": true
+      },
+      "inventory_consumed": 500.0,
+      "label": "Hybrid Recovery",
+      "recovery_cost": 852400.0,
+      "remaining_inventory": 380.0,
+      "revenue_protected": 800000.0,
+      "revenue_risk": 800000.0,
+      "rule_set_version": "impact-rules-v1.0.0",
+      "simulation_hash": "d53d8f06d19a52f4dbae670f999d6d90e10fd9a6ff7d1c328d7cbc914b247571",
+      "sla_breaches": 1,
+      "source": "PHASE6",
+      "supplier_risk": 0.3,
+      "warnings": []
+    }
+  ],
+  "constraints": {
+    "constraints": [
+      {
+        "category": "COST",
+        "constraint_id": "CON-001",
+        "description": "Recovery intervention cost must not exceed the configured budget.",
+        "name": "max_recovery_cost",
+        "operator": "<=",
+        "severity": "HARD",
+        "unit": "INR",
+        "value": 200000.0
+      },
+      {
+        "category": "INVENTORY",
+        "constraint_id": "CON-002",
+        "description": "Remaining inventory must stay at or above safety stock.",
+        "name": "min_remaining_inventory",
+        "operator": ">=",
+        "severity": "HARD",
+        "unit": "units",
+        "value": 0.0
+      },
+      {
+        "category": "INVENTORY",
+        "constraint_id": "CON-003",
+        "description": "A plan may commit at most 500 units of inventory.",
+        "name": "max_inventory_commitment",
+        "operator": "<=",
+        "severity": "HARD",
+        "unit": "units",
+        "value": 500.0
+      },
+      {
+        "category": "SUPPLIER",
+        "constraint_id": "CON-004",
+        "description": "Any supplier used by the plan must be active and approved.",
+        "name": "supplier_approved",
+        "operator": "==",
+        "severity": "HARD",
+        "unit": "boolean",
+        "value": true
+      },
+      {
+        "category": "SUPPLIER",
+        "constraint_id": "CON-005",
+        "description": "Operational supplier risk should remain below the soft threshold.",
+        "name": "max_supplier_risk",
+        "operator": "<=",
+        "severity": "SOFT",
+        "unit": "score",
+        "value": 0.35
+      },
+      {
+        "category": "WAREHOUSE",
+        "constraint_id": "CON-006",
+        "description": "Any transfer lane used by the plan must be active.",
+        "name": "transfer_lane_approved",
+        "operator": "==",
+        "severity": "HARD",
+        "unit": "boolean",
+        "value": true
+      },
+      {
+        "category": "CAPACITY",
+        "constraint_id": "CON-007",
+        "description": "Supplier capacity utilization must not exceed 100 percent.",
+        "name": "max_capacity_utilization",
+        "operator": "<=",
+        "severity": "HARD",
+        "unit": "percent",
+        "value": 100.0
+      },
+      {
+        "category": "DELAY",
+        "constraint_id": "CON-008",
+        "description": "Maximum customer delay must not exceed 10 days.",
+        "name": "max_delay_hours",
+        "operator": "<=",
+        "severity": "HARD",
+        "unit": "hours",
+        "value": 240.0
+      },
+      {
+        "category": "REGULATORY",
+        "constraint_id": "CON-009",
+        "description": "Any alternate supplier used must be regulatory compliant.",
+        "name": "regulatory_compliance",
+        "operator": "==",
+        "severity": "HARD",
+        "unit": "boolean",
+        "value": true
+      }
+    ],
+    "source": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\chronosDB\\config\\constraints\\registry.yaml",
+    "version": "phase7-constraints-v1"
+  },
+  "constraints_version": "phase7-constraints-v1",
+  "engine_version": "phase7-optimization-v1",
+  "feasibility_results": [
+    {
+      "candidate": "DO_NOTHING",
+      "candidate_id": "DO_NOTHING",
+      "constraint_results": [
+        {
+          "actual": 0.0,
+          "applicable": true,
+          "category": "COST",
+          "constraint_id": "CON-001",
+          "name": "max_recovery_cost",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_recovery_cost satisfied",
+          "severity": "HARD",
+          "threshold": 200000.0
+        },
+        {
+          "actual": 300.0,
+          "applicable": true,
+          "category": "INVENTORY",
+          "constraint_id": "CON-002",
+          "name": "min_remaining_inventory",
+          "operator": ">=",
+          "passed": true,
+          "reason": "min_remaining_inventory satisfied",
+          "severity": "HARD",
+          "threshold": 0.0
+        },
+        {
+          "actual": 0.0,
+          "applicable": true,
+          "category": "INVENTORY",
+          "constraint_id": "CON-003",
+          "name": "max_inventory_commitment",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_inventory_commitment satisfied",
+          "severity": "HARD",
+          "threshold": 500.0
+        },
+        {
+          "actual": false,
+          "applicable": false,
+          "category": "SUPPLIER",
+          "constraint_id": "CON-004",
+          "name": "supplier_approved",
+          "operator": "==",
+          "passed": true,
+          "reason": "supplier_approved is not used by this plan",
+          "severity": "HARD",
+          "threshold": true
+        },
+        {
+          "actual": 0.0,
+          "applicable": true,
+          "category": "SUPPLIER",
+          "constraint_id": "CON-005",
+          "name": "max_supplier_risk",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_supplier_risk satisfied",
+          "severity": "SOFT",
+          "threshold": 0.35
+        },
+        {
+          "actual": false,
+          "applicable": false,
+          "category": "WAREHOUSE",
+          "constraint_id": "CON-006",
+          "name": "transfer_lane_approved",
+          "operator": "==",
+          "passed": true,
+          "reason": "transfer_lane_approved is not used by this plan",
+          "severity": "HARD",
+          "threshold": true
+        },
+        {
+          "actual": 0.0,
+          "applicable": false,
+          "category": "CAPACITY",
+          "constraint_id": "CON-007",
+          "name": "max_capacity_utilization",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_capacity_utilization is not used by this plan",
+          "severity": "HARD",
+          "threshold": 100.0
+        },
+        {
+          "actual": 288.0,
+          "applicable": true,
+          "category": "DELAY",
+          "constraint_id": "CON-008",
+          "name": "max_delay_hours",
+          "operator": "<=",
+          "passed": false,
+          "reason": "max_delay_hours violated: 288.0 <= 240.0 hours",
+          "severity": "HARD",
+          "threshold": 240.0
+        },
+        {
+          "actual": false,
+          "applicable": false,
+          "category": "REGULATORY",
+          "constraint_id": "CON-009",
+          "name": "regulatory_compliance",
+          "operator": "==",
+          "passed": true,
+          "reason": "regulatory_compliance is not used by this plan",
+          "severity": "HARD",
+          "threshold": true
+        }
+      ],
+      "hard_violations": [
+        "max_delay_hours"
+      ],
+      "reason": "max_delay_hours violated: 288.0 <= 240.0 hours",
+      "soft_violations": [],
+      "status": "INFEASIBLE"
+    },
+    {
+      "candidate": "TRANSFER",
+      "candidate_id": "TRANSFER",
+      "constraint_results": [
+        {
+          "actual": 32800.0,
+          "applicable": true,
+          "category": "COST",
+          "constraint_id": "CON-001",
+          "name": "max_recovery_cost",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_recovery_cost satisfied",
+          "severity": "HARD",
+          "threshold": 200000.0
+        },
+        {
+          "actual": 180.0,
+          "applicable": true,
+          "category": "INVENTORY",
+          "constraint_id": "CON-002",
+          "name": "min_remaining_inventory",
+          "operator": ">=",
+          "passed": true,
+          "reason": "min_remaining_inventory satisfied",
+          "severity": "HARD",
+          "threshold": 0.0
+        },
+        {
+          "actual": 400.0,
+          "applicable": true,
+          "category": "INVENTORY",
+          "constraint_id": "CON-003",
+          "name": "max_inventory_commitment",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_inventory_commitment satisfied",
+          "severity": "HARD",
+          "threshold": 500.0
+        },
+        {
+          "actual": true,
+          "applicable": false,
+          "category": "SUPPLIER",
+          "constraint_id": "CON-004",
+          "name": "supplier_approved",
+          "operator": "==",
+          "passed": true,
+          "reason": "supplier_approved is not used by this plan",
+          "severity": "HARD",
+          "threshold": true
+        },
+        {
+          "actual": 0.05,
+          "applicable": true,
+          "category": "SUPPLIER",
+          "constraint_id": "CON-005",
+          "name": "max_supplier_risk",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_supplier_risk satisfied",
+          "severity": "SOFT",
+          "threshold": 0.35
+        },
+        {
+          "actual": true,
+          "applicable": true,
+          "category": "WAREHOUSE",
+          "constraint_id": "CON-006",
+          "name": "transfer_lane_approved",
+          "operator": "==",
+          "passed": true,
+          "reason": "transfer_lane_approved satisfied",
+          "severity": "HARD",
+          "threshold": true
+        },
+        {
+          "actual": 0.0,
+          "applicable": false,
+          "category": "CAPACITY",
+          "constraint_id": "CON-007",
+          "name": "max_capacity_utilization",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_capacity_utilization is not used by this plan",
+          "severity": "HARD",
+          "threshold": 100.0
+        },
+        {
+          "actual": 216.0,
+          "applicable": true,
+          "category": "DELAY",
+          "constraint_id": "CON-008",
+          "name": "max_delay_hours",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_delay_hours satisfied",
+          "severity": "HARD",
+          "threshold": 240.0
+        },
+        {
+          "actual": false,
+          "applicable": false,
+          "category": "REGULATORY",
+          "constraint_id": "CON-009",
+          "name": "regulatory_compliance",
+          "operator": "==",
+          "passed": true,
+          "reason": "regulatory_compliance is not used by this plan",
+          "severity": "HARD",
+          "threshold": true
+        }
+      ],
+      "hard_violations": [],
+      "reason": "",
+      "soft_violations": [],
+      "status": "FEASIBLE"
+    },
+    {
+      "candidate": "EXPEDITE",
+      "candidate_id": "EXPEDITE",
+      "constraint_results": [
+        {
+          "actual": 3650.0,
+          "applicable": true,
+          "category": "COST",
+          "constraint_id": "CON-001",
+          "name": "max_recovery_cost",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_recovery_cost satisfied",
+          "severity": "HARD",
+          "threshold": 200000.0
+        },
+        {
+          "actual": 410.0,
+          "applicable": true,
+          "category": "INVENTORY",
+          "constraint_id": "CON-002",
+          "name": "min_remaining_inventory",
+          "operator": ">=",
+          "passed": true,
+          "reason": "min_remaining_inventory satisfied",
+          "severity": "HARD",
+          "threshold": 0.0
+        },
+        {
+          "actual": 0.0,
+          "applicable": true,
+          "category": "INVENTORY",
+          "constraint_id": "CON-003",
+          "name": "max_inventory_commitment",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_inventory_commitment satisfied",
+          "severity": "HARD",
+          "threshold": 500.0
+        },
+        {
+          "actual": true,
+          "applicable": true,
+          "category": "SUPPLIER",
+          "constraint_id": "CON-004",
+          "name": "supplier_approved",
+          "operator": "==",
+          "passed": true,
+          "reason": "supplier_approved satisfied",
+          "severity": "HARD",
+          "threshold": true
+        },
+        {
+          "actual": 0.25442,
+          "applicable": true,
+          "category": "SUPPLIER",
+          "constraint_id": "CON-005",
+          "name": "max_supplier_risk",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_supplier_risk satisfied",
+          "severity": "SOFT",
+          "threshold": 0.35
+        },
+        {
+          "actual": false,
+          "applicable": false,
+          "category": "WAREHOUSE",
+          "constraint_id": "CON-006",
+          "name": "transfer_lane_approved",
+          "operator": "==",
+          "passed": true,
+          "reason": "transfer_lane_approved is not used by this plan",
+          "severity": "HARD",
+          "threshold": true
+        },
+        {
+          "actual": 4.41989,
+          "applicable": true,
+          "category": "CAPACITY",
+          "constraint_id": "CON-007",
+          "name": "max_capacity_utilization",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_capacity_utilization satisfied",
+          "severity": "HARD",
+          "threshold": 100.0
+        },
+        {
+          "actual": 0.0,
+          "applicable": true,
+          "category": "DELAY",
+          "constraint_id": "CON-008",
+          "name": "max_delay_hours",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_delay_hours satisfied",
+          "severity": "HARD",
+          "threshold": 240.0
+        },
+        {
+          "actual": false,
+          "applicable": false,
+          "category": "REGULATORY",
+          "constraint_id": "CON-009",
+          "name": "regulatory_compliance",
+          "operator": "==",
+          "passed": true,
+          "reason": "regulatory_compliance is not used by this plan",
+          "severity": "HARD",
+          "threshold": true
+        }
+      ],
+      "hard_violations": [],
+      "reason": "",
+      "soft_violations": [],
+      "status": "FEASIBLE"
+    },
+    {
+      "candidate": "ALTERNATE_SUPPLIER",
+      "candidate_id": "ALTERNATE_SUPPLIER",
+      "constraint_results": [
+        {
+          "actual": 813000.0,
+          "applicable": true,
+          "category": "COST",
+          "constraint_id": "CON-001",
+          "name": "max_recovery_cost",
+          "operator": "<=",
+          "passed": false,
+          "reason": "max_recovery_cost violated: 813000.0 <= 200000.0 INR",
+          "severity": "HARD",
+          "threshold": 200000.0
+        },
+        {
+          "actual": 410.0,
+          "applicable": true,
+          "category": "INVENTORY",
+          "constraint_id": "CON-002",
+          "name": "min_remaining_inventory",
+          "operator": ">=",
+          "passed": true,
+          "reason": "min_remaining_inventory satisfied",
+          "severity": "HARD",
+          "threshold": 0.0
+        },
+        {
+          "actual": 300.0,
+          "applicable": true,
+          "category": "INVENTORY",
+          "constraint_id": "CON-003",
+          "name": "max_inventory_commitment",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_inventory_commitment satisfied",
+          "severity": "HARD",
+          "threshold": 500.0
+        },
+        {
+          "actual": true,
+          "applicable": true,
+          "category": "SUPPLIER",
+          "constraint_id": "CON-004",
+          "name": "supplier_approved",
+          "operator": "==",
+          "passed": true,
+          "reason": "supplier_approved satisfied",
+          "severity": "HARD",
+          "threshold": true
+        },
+        {
+          "actual": 0.25,
+          "applicable": true,
+          "category": "SUPPLIER",
+          "constraint_id": "CON-005",
+          "name": "max_supplier_risk",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_supplier_risk satisfied",
+          "severity": "SOFT",
+          "threshold": 0.35
+        },
+        {
+          "actual": false,
+          "applicable": false,
+          "category": "WAREHOUSE",
+          "constraint_id": "CON-006",
+          "name": "transfer_lane_approved",
+          "operator": "==",
+          "passed": true,
+          "reason": "transfer_lane_approved is not used by this plan",
+          "severity": "HARD",
+          "threshold": true
+        },
+        {
+          "actual": 100.0,
+          "applicable": true,
+          "category": "CAPACITY",
+          "constraint_id": "CON-007",
+          "name": "max_capacity_utilization",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_capacity_utilization satisfied",
+          "severity": "HARD",
+          "threshold": 100.0
+        },
+        {
+          "actual": 264.0,
+          "applicable": true,
+          "category": "DELAY",
+          "constraint_id": "CON-008",
+          "name": "max_delay_hours",
+          "operator": "<=",
+          "passed": false,
+          "reason": "max_delay_hours violated: 264.0 <= 240.0 hours",
+          "severity": "HARD",
+          "threshold": 240.0
+        },
+        {
+          "actual": true,
+          "applicable": true,
+          "category": "REGULATORY",
+          "constraint_id": "CON-009",
+          "name": "regulatory_compliance",
+          "operator": "==",
+          "passed": true,
+          "reason": "regulatory_compliance satisfied",
+          "severity": "HARD",
+          "threshold": true
+        }
+      ],
+      "hard_violations": [
+        "max_recovery_cost",
+        "max_delay_hours"
+      ],
+      "reason": "max_recovery_cost violated: 813000.0 <= 200000.0 INR; max_delay_hours violated: 264.0 <= 240.0 hours",
+      "soft_violations": [],
+      "status": "INFEASIBLE"
+    },
+    {
+      "candidate": "RESCHEDULE",
+      "candidate_id": "RESCHEDULE",
+      "constraint_results": [
+        {
+          "actual": 12000.0,
+          "applicable": true,
+          "category": "COST",
+          "constraint_id": "CON-001",
+          "name": "max_recovery_cost",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_recovery_cost satisfied",
+          "severity": "HARD",
+          "threshold": 200000.0
+        },
+        {
+          "actual": 300.0,
+          "applicable": true,
+          "category": "INVENTORY",
+          "constraint_id": "CON-002",
+          "name": "min_remaining_inventory",
+          "operator": ">=",
+          "passed": true,
+          "reason": "min_remaining_inventory satisfied",
+          "severity": "HARD",
+          "threshold": 0.0
+        },
+        {
+          "actual": 0.0,
+          "applicable": true,
+          "category": "INVENTORY",
+          "constraint_id": "CON-003",
+          "name": "max_inventory_commitment",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_inventory_commitment satisfied",
+          "severity": "HARD",
+          "threshold": 500.0
+        },
+        {
+          "actual": true,
+          "applicable": false,
+          "category": "SUPPLIER",
+          "constraint_id": "CON-004",
+          "name": "supplier_approved",
+          "operator": "==",
+          "passed": true,
+          "reason": "supplier_approved is not used by this plan",
+          "severity": "HARD",
+          "threshold": true
+        },
+        {
+          "actual": 0.1,
+          "applicable": true,
+          "category": "SUPPLIER",
+          "constraint_id": "CON-005",
+          "name": "max_supplier_risk",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_supplier_risk satisfied",
+          "severity": "SOFT",
+          "threshold": 0.35
+        },
+        {
+          "actual": false,
+          "applicable": false,
+          "category": "WAREHOUSE",
+          "constraint_id": "CON-006",
+          "name": "transfer_lane_approved",
+          "operator": "==",
+          "passed": true,
+          "reason": "transfer_lane_approved is not used by this plan",
+          "severity": "HARD",
+          "threshold": true
+        },
+        {
+          "actual": 0.0,
+          "applicable": false,
+          "category": "CAPACITY",
+          "constraint_id": "CON-007",
+          "name": "max_capacity_utilization",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_capacity_utilization is not used by this plan",
+          "severity": "HARD",
+          "threshold": 100.0
+        },
+        {
+          "actual": 360.0,
+          "applicable": true,
+          "category": "DELAY",
+          "constraint_id": "CON-008",
+          "name": "max_delay_hours",
+          "operator": "<=",
+          "passed": false,
+          "reason": "max_delay_hours violated: 360.0 <= 240.0 hours",
+          "severity": "HARD",
+          "threshold": 240.0
+        },
+        {
+          "actual": false,
+          "applicable": false,
+          "category": "REGULATORY",
+          "constraint_id": "CON-009",
+          "name": "regulatory_compliance",
+          "operator": "==",
+          "passed": true,
+          "reason": "regulatory_compliance is not used by this plan",
+          "severity": "HARD",
+          "threshold": true
+        }
+      ],
+      "hard_violations": [
+        "max_delay_hours"
+      ],
+      "reason": "max_delay_hours violated: 360.0 <= 240.0 hours",
+      "soft_violations": [],
+      "status": "INFEASIBLE"
+    },
+    {
+      "candidate": "HYBRID",
+      "candidate_id": "HYBRID",
+      "constraint_results": [
+        {
+          "actual": 852400.0,
+          "applicable": true,
+          "category": "COST",
+          "constraint_id": "CON-001",
+          "name": "max_recovery_cost",
+          "operator": "<=",
+          "passed": false,
+          "reason": "max_recovery_cost violated: 852400.0 <= 200000.0 INR",
+          "severity": "HARD",
+          "threshold": 200000.0
+        },
+        {
+          "actual": 380.0,
+          "applicable": true,
+          "category": "INVENTORY",
+          "constraint_id": "CON-002",
+          "name": "min_remaining_inventory",
+          "operator": ">=",
+          "passed": true,
+          "reason": "min_remaining_inventory satisfied",
+          "severity": "HARD",
+          "threshold": 0.0
+        },
+        {
+          "actual": 500.0,
+          "applicable": true,
+          "category": "INVENTORY",
+          "constraint_id": "CON-003",
+          "name": "max_inventory_commitment",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_inventory_commitment satisfied",
+          "severity": "HARD",
+          "threshold": 500.0
+        },
+        {
+          "actual": true,
+          "applicable": true,
+          "category": "SUPPLIER",
+          "constraint_id": "CON-004",
+          "name": "supplier_approved",
+          "operator": "==",
+          "passed": true,
+          "reason": "supplier_approved satisfied",
+          "severity": "HARD",
+          "threshold": true
+        },
+        {
+          "actual": 0.3,
+          "applicable": true,
+          "category": "SUPPLIER",
+          "constraint_id": "CON-005",
+          "name": "max_supplier_risk",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_supplier_risk satisfied",
+          "severity": "SOFT",
+          "threshold": 0.35
+        },
+        {
+          "actual": true,
+          "applicable": true,
+          "category": "WAREHOUSE",
+          "constraint_id": "CON-006",
+          "name": "transfer_lane_approved",
+          "operator": "==",
+          "passed": true,
+          "reason": "transfer_lane_approved satisfied",
+          "severity": "HARD",
+          "threshold": true
+        },
+        {
+          "actual": 100.0,
+          "applicable": true,
+          "category": "CAPACITY",
+          "constraint_id": "CON-007",
+          "name": "max_capacity_utilization",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_capacity_utilization satisfied",
+          "severity": "HARD",
+          "threshold": 100.0
+        },
+        {
+          "actual": 216.0,
+          "applicable": true,
+          "category": "DELAY",
+          "constraint_id": "CON-008",
+          "name": "max_delay_hours",
+          "operator": "<=",
+          "passed": true,
+          "reason": "max_delay_hours satisfied",
+          "severity": "HARD",
+          "threshold": 240.0
+        },
+        {
+          "actual": true,
+          "applicable": true,
+          "category": "REGULATORY",
+          "constraint_id": "CON-009",
+          "name": "regulatory_compliance",
+          "operator": "==",
+          "passed": true,
+          "reason": "regulatory_compliance satisfied",
+          "severity": "HARD",
+          "threshold": true
+        }
+      ],
+      "hard_violations": [
+        "max_recovery_cost"
+      ],
+      "reason": "max_recovery_cost violated: 852400.0 <= 200000.0 INR",
+      "soft_violations": [],
+      "status": "INFEASIBLE"
+    }
+  ],
+  "normalized_metrics": [
+    {
+      "breaches_avoided_norm": 0.0,
+      "candidate_id": "TRANSFER",
+      "delay_reduction_norm": 0.0,
+      "recovery_cost_norm": 0.0,
+      "revenue_protected_norm": 0.0,
+      "supplier_risk_norm": 1.0
+    },
+    {
+      "breaches_avoided_norm": 1.0,
+      "candidate_id": "EXPEDITE",
+      "delay_reduction_norm": 1.0,
+      "recovery_cost_norm": 1.0,
+      "revenue_protected_norm": 1.0,
+      "supplier_risk_norm": 0.0
+    }
+  ],
+  "objective": "BALANCED_RECOVERY",
+  "observability": {
+    "event_count": 5,
+    "events": [
+      {
+        "event": "optimization_started",
+        "scenario": "phase6-live"
+      },
+      {
+        "candidate_ids": [
+          "DO_NOTHING",
+          "TRANSFER",
+          "EXPEDITE",
+          "ALTERNATE_SUPPLIER",
+          "RESCHEDULE",
+          "HYBRID"
+        ],
+        "event": "phase6_candidates_loaded"
+      },
+      {
+        "event": "feasibility_completed",
+        "statuses": {
+          "ALTERNATE_SUPPLIER": "INFEASIBLE",
+          "DO_NOTHING": "INFEASIBLE",
+          "EXPEDITE": "FEASIBLE",
+          "HYBRID": "INFEASIBLE",
+          "RESCHEDULE": "INFEASIBLE",
+          "TRANSFER": "FEASIBLE"
+        }
+      },
+      {
+        "event": "scoring_completed",
+        "utilities": {
+          "ALTERNATE_SUPPLIER": 0.0,
+          "DO_NOTHING": 0.0,
+          "EXPEDITE": 0.95,
+          "HYBRID": 0.0,
+          "RESCHEDULE": 0.0,
+          "TRANSFER": 0.05
+        }
+      },
+      {
+        "event": "recommendation_completed",
+        "selected": "EXPEDITE",
+        "stable": true
+      }
+    ]
+  },
+  "optimization_id": "opt-3e9ec9cdb479b06c",
+  "optimization_run_id": "opt-3e9ec9cdb479b06c",
+  "pareto_frontier": [
+    "TRANSFER",
+    "EXPEDITE"
+  ],
+  "pareto_results": [
+    {
+      "candidate": "DO_NOTHING",
+      "candidate_id": "DO_NOTHING",
+      "dominated_by": [],
+      "dominates": [],
+      "pareto_status": "NOT_EVALUATED",
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "candidate": "TRANSFER",
+      "candidate_id": "TRANSFER",
+      "dominated_by": [],
+      "dominates": [],
+      "pareto_status": "PARETO_OPTIMAL",
+      "status": "PARETO_OPTIMAL"
+    },
+    {
+      "candidate": "EXPEDITE",
+      "candidate_id": "EXPEDITE",
+      "dominated_by": [],
+      "dominates": [],
+      "pareto_status": "PARETO_OPTIMAL",
+      "status": "PARETO_OPTIMAL"
+    },
+    {
+      "candidate": "ALTERNATE_SUPPLIER",
+      "candidate_id": "ALTERNATE_SUPPLIER",
+      "dominated_by": [],
+      "dominates": [],
+      "pareto_status": "NOT_EVALUATED",
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "candidate": "RESCHEDULE",
+      "candidate_id": "RESCHEDULE",
+      "dominated_by": [],
+      "dominates": [],
+      "pareto_status": "NOT_EVALUATED",
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "candidate": "HYBRID",
+      "candidate_id": "HYBRID",
+      "dominated_by": [],
+      "dominates": [],
+      "pareto_status": "NOT_EVALUATED",
+      "status": "NOT_EVALUATED"
+    }
+  ],
+  "provenance": {
+    "candidate_ids": [
+      "DO_NOTHING",
+      "TRANSFER",
+      "EXPEDITE",
+      "ALTERNATE_SUPPLIER",
+      "RESCHEDULE",
+      "HYBRID"
+    ],
+    "constraint_results": [
+      {
+        "actual": 3650.0,
+        "applicable": true,
+        "category": "COST",
+        "constraint_id": "CON-001",
+        "name": "max_recovery_cost",
+        "operator": "<=",
+        "passed": true,
+        "reason": "max_recovery_cost satisfied",
+        "severity": "HARD",
+        "threshold": 200000.0
+      },
+      {
+        "actual": 410.0,
+        "applicable": true,
+        "category": "INVENTORY",
+        "constraint_id": "CON-002",
+        "name": "min_remaining_inventory",
+        "operator": ">=",
+        "passed": true,
+        "reason": "min_remaining_inventory satisfied",
+        "severity": "HARD",
+        "threshold": 0.0
+      },
+      {
+        "actual": 0.0,
+        "applicable": true,
+        "category": "INVENTORY",
+        "constraint_id": "CON-003",
+        "name": "max_inventory_commitment",
+        "operator": "<=",
+        "passed": true,
+        "reason": "max_inventory_commitment satisfied",
+        "severity": "HARD",
+        "threshold": 500.0
+      },
+      {
+        "actual": true,
+        "applicable": true,
+        "category": "SUPPLIER",
+        "constraint_id": "CON-004",
+        "name": "supplier_approved",
+        "operator": "==",
+        "passed": true,
+        "reason": "supplier_approved satisfied",
+        "severity": "HARD",
+        "threshold": true
+      },
+      {
+        "actual": 0.25442,
+        "applicable": true,
+        "category": "SUPPLIER",
+        "constraint_id": "CON-005",
+        "name": "max_supplier_risk",
+        "operator": "<=",
+        "passed": true,
+        "reason": "max_supplier_risk satisfied",
+        "severity": "SOFT",
+        "threshold": 0.35
+      },
+      {
+        "actual": false,
+        "applicable": false,
+        "category": "WAREHOUSE",
+        "constraint_id": "CON-006",
+        "name": "transfer_lane_approved",
+        "operator": "==",
+        "passed": true,
+        "reason": "transfer_lane_approved is not used by this plan",
+        "severity": "HARD",
+        "threshold": true
+      },
+      {
+        "actual": 4.41989,
+        "applicable": true,
+        "category": "CAPACITY",
+        "constraint_id": "CON-007",
+        "name": "max_capacity_utilization",
+        "operator": "<=",
+        "passed": true,
+        "reason": "max_capacity_utilization satisfied",
+        "severity": "HARD",
+        "threshold": 100.0
+      },
+      {
+        "actual": 0.0,
+        "applicable": true,
+        "category": "DELAY",
+        "constraint_id": "CON-008",
+        "name": "max_delay_hours",
+        "operator": "<=",
+        "passed": true,
+        "reason": "max_delay_hours satisfied",
+        "severity": "HARD",
+        "threshold": 240.0
+      },
+      {
+        "actual": false,
+        "applicable": false,
+        "category": "REGULATORY",
+        "constraint_id": "CON-009",
+        "name": "regulatory_compliance",
+        "operator": "==",
+        "passed": true,
+        "reason": "regulatory_compliance is not used by this plan",
+        "severity": "HARD",
+        "threshold": true
+      }
+    ],
+    "decision_id": "45262eb848bbfaace402e8cedcc05154",
+    "dominated_by": [],
+    "dominates": [],
+    "explanation": "Selected EXPEDITE: INR 1,600,000 revenue protected, 2 SLA breaches avoided, 288 h delay reduction, INR 3,650 recovery cost, risk 0.25; utility 0.950000; feasibility FEASIBLE; PARETO_OPTIMAL; hard violations: 0.",
+    "feasibility_reason": "",
+    "feasibility_status": "FEASIBLE",
+    "metric_values": {
+      "breaches_avoided": 2,
+      "delay_reduction_hours": 288.0,
+      "recovery_cost": 3650.0,
+      "revenue_protected": 1600000.0,
+      "supplier_risk": 0.25442
+    },
+    "objective": "BALANCED_RECOVERY",
+    "pareto_status": "PARETO_OPTIMAL",
+    "rule_versions": {
+      "phase6": "impact-rules-v1.0.0",
+      "phase7": "phase7-optimization-v1"
+    },
+    "scoring_policy_version": "balanced-utility-v1.0.0",
+    "selected_candidate": "EXPEDITE",
+    "simulation_hashes": {
+      "ALTERNATE_SUPPLIER": "4d750c1e34e6ef6744bfb7a881884fc7fc2deb9c667810aae94ba46bc8e3818f",
+      "DO_NOTHING": "e200e191f0fa5f6ca61b5057205076fdd8913a9adf490560556c43812d38bc3b",
+      "EXPEDITE": "ede3feb89446119b40f55e4c5259672b81ff5b02d6313d9d88349c8832b1cc04",
+      "HYBRID": "d53d8f06d19a52f4dbae670f999d6d90e10fd9a6ff7d1c328d7cbc914b247571",
+      "RESCHEDULE": "a99c998b3006594cd36f78cb2477e1fc4b36fdc774f6f990e0cd544bdd13d2f2",
+      "TRANSFER": "286e393558c419a2e5304300a14034069c9374097ee31e2c93c68c6cf2091fdd"
+    },
+    "tie_break_policy": "utility desc, revenue_protected desc, breaches_avoided desc, delay_reduction desc, recovery_cost asc, supplier_risk asc, candidate_id asc",
+    "utility_score": 0.95,
+    "weighted_components": {
+      "cost_efficiency": 0.15,
+      "delay_reduction": 0.1,
+      "revenue_protected": 0.4,
+      "risk_avoidance": 0.0,
+      "sla_saved": 0.3
+    },
+    "weights_used": {
+      "cost": 0.15,
+      "delay": 0.1,
+      "revenue": 0.4,
+      "risk": 0.05,
+      "sla": 0.3
+    }
+  },
+  "recommendation": {
+    "candidate_id": "EXPEDITE",
+    "feasibility_status": "FEASIBLE",
+    "label": "PO Expedition",
+    "pareto_status": "PARETO_OPTIMAL",
+    "provenance": {
+      "ranking": [
+        "EXPEDITE",
+        "TRANSFER"
+      ],
+      "selected_simulation_hash": "ede3feb89446119b40f55e4c5259672b81ff5b02d6313d9d88349c8832b1cc04",
+      "weights": {
+        "cost": 0.15,
+        "delay": 0.1,
+        "revenue": 0.4,
+        "risk": 0.05,
+        "sla": 0.3
+      }
+    },
+    "rank": 1,
+    "rationale": "Selected EXPEDITE: INR 1,600,000 revenue protected, 2 SLA breaches avoided, 288 h delay reduction, INR 3,650 recovery cost, risk 0.25; utility 0.950000; feasibility FEASIBLE; PARETO_OPTIMAL; hard violations: 0.",
+    "recommended_candidate": "EXPEDITE",
+    "score": 0.95,
+    "utility_score": 0.95,
+    "weighted_components": {
+      "cost_efficiency": 0.15,
+      "delay_reduction": 0.1,
+      "revenue_protected": 0.4,
+      "risk_avoidance": 0.0,
+      "sla_saved": 0.3
+    }
+  },
+  "recommended_candidate": "EXPEDITE",
+  "result_hash": "3e9ec9cdb479b06c2cbc51663c297036925ea41a0b112328abb21abf5307730c",
+  "review": {
+    "checks": {
+      "feasible_candidates_exist": true,
+      "no_simulation_warnings": true,
+      "pareto_results_present": true,
+      "ranking_present": true,
+      "selected_candidate": true,
+      "selected_feasible": true,
+      "selected_no_hard_violations": true,
+      "simulation_success": true,
+      "utility_scores_present": true
+    },
+    "failures": [],
+    "passed": true,
+    "requires_human_review": false,
+    "review_type": "domain_optimization_audit_judge"
+  },
+  "runtime_ms": 2249.511200003326,
+  "scenario_id": "SCN-GOLD-001",
+  "sensitivity": {
+    "base_winner": "EXPEDITE",
+    "stable": true,
+    "stable_count": 8,
+    "switches_to": [],
+    "total_variations": 8,
+    "variations": [
+      {
+        "category": "revenue",
+        "changed": false,
+        "recommended_candidate": "EXPEDITE",
+        "score": 0.956666666667,
+        "variation": "1.20x",
+        "weights": {
+          "cost": 0.13,
+          "delay": 0.08666666666666668,
+          "revenue": 0.48,
+          "risk": 0.04333333333333334,
+          "sla": 0.26
+        }
+      },
+      {
+        "category": "revenue",
+        "changed": false,
+        "recommended_candidate": "EXPEDITE",
+        "score": 0.943333333333,
+        "variation": "0.80x",
+        "weights": {
+          "cost": 0.16999999999999998,
+          "delay": 0.11333333333333334,
+          "revenue": 0.32000000000000006,
+          "risk": 0.05666666666666667,
+          "sla": 0.33999999999999997
+        }
+      },
+      {
+        "category": "sla",
+        "changed": false,
+        "recommended_candidate": "EXPEDITE",
+        "score": 0.954285714286,
+        "variation": "1.20x",
+        "weights": {
+          "cost": 0.13714285714285712,
+          "delay": 0.09142857142857143,
+          "revenue": 0.3657142857142857,
+          "risk": 0.045714285714285714,
+          "sla": 0.36
+        }
+      },
+      {
+        "category": "sla",
+        "changed": false,
+        "recommended_candidate": "EXPEDITE",
+        "score": 0.945714285714,
+        "variation": "0.80x",
+        "weights": {
+          "cost": 0.16285714285714284,
+          "delay": 0.10857142857142857,
+          "revenue": 0.4342857142857143,
+          "risk": 0.054285714285714284,
+          "sla": 0.24
+        }
+      },
+      {
+        "category": "cost",
+        "changed": false,
+        "recommended_candidate": "EXPEDITE",
+        "score": 0.951764705882,
+        "variation": "1.20x",
+        "weights": {
+          "cost": 0.18,
+          "delay": 0.09647058823529414,
+          "revenue": 0.38588235294117657,
+          "risk": 0.04823529411764707,
+          "sla": 0.28941176470588237
+        }
+      },
+      {
+        "category": "cost",
+        "changed": false,
+        "recommended_candidate": "EXPEDITE",
+        "score": 0.948235294118,
+        "variation": "0.80x",
+        "weights": {
+          "cost": 0.12,
+          "delay": 0.1035294117647059,
+          "revenue": 0.4141176470588236,
+          "risk": 0.05176470588235295,
+          "sla": 0.31058823529411766
+        }
+      },
+      {
+        "category": "delay",
+        "changed": false,
+        "recommended_candidate": "EXPEDITE",
+        "score": 0.951111111111,
+        "variation": "1.20x",
+        "weights": {
+          "cost": 0.14666666666666667,
+          "delay": 0.12,
+          "revenue": 0.39111111111111113,
+          "risk": 0.04888888888888889,
+          "sla": 0.29333333333333333
+        }
+      },
+      {
+        "category": "delay",
+        "changed": false,
+        "recommended_candidate": "EXPEDITE",
+        "score": 0.948888888889,
+        "variation": "0.80x",
+        "weights": {
+          "cost": 0.15333333333333332,
+          "delay": 0.08000000000000002,
+          "revenue": 0.4088888888888889,
+          "risk": 0.051111111111111114,
+          "sla": 0.30666666666666664
+        }
+      }
+    ],
+    "winner_changes": 0
+  },
+  "utility_score": 0.95,
+  "utility_scores": [
+    {
+      "candidate": "DO_NOTHING",
+      "candidate_id": "DO_NOTHING",
+      "rank": null,
+      "score": 0.0,
+      "utility_score": 0.0,
+      "weighted_components": {}
+    },
+    {
+      "candidate": "TRANSFER",
+      "candidate_id": "TRANSFER",
+      "rank": 2,
+      "score": 0.05,
+      "utility_score": 0.05,
+      "weighted_components": {
+        "cost_efficiency": 0.0,
+        "delay_reduction": 0.0,
+        "revenue_protected": 0.0,
+        "risk_avoidance": 0.05,
+        "sla_saved": 0.0
+      }
+    },
+    {
+      "candidate": "EXPEDITE",
+      "candidate_id": "EXPEDITE",
+      "rank": 1,
+      "score": 0.95,
+      "utility_score": 0.95,
+      "weighted_components": {
+        "cost_efficiency": 0.15,
+        "delay_reduction": 0.1,
+        "revenue_protected": 0.4,
+        "risk_avoidance": 0.0,
+        "sla_saved": 0.3
+      }
+    },
+    {
+      "candidate": "ALTERNATE_SUPPLIER",
+      "candidate_id": "ALTERNATE_SUPPLIER",
+      "rank": null,
+      "score": 0.0,
+      "utility_score": 0.0,
+      "weighted_components": {}
+    },
+    {
+      "candidate": "RESCHEDULE",
+      "candidate_id": "RESCHEDULE",
+      "rank": null,
+      "score": 0.0,
+      "utility_score": 0.0,
+      "weighted_components": {}
+    },
+    {
+      "candidate": "HYBRID",
+      "candidate_id": "HYBRID",
+      "rank": null,
+      "score": 0.0,
+      "utility_score": 0.0,
+      "weighted_components": {}
+    }
+  ],
+  "weights": {
+    "cost": 0.15,
+    "delay": 0.1,
+    "revenue": 0.4,
+    "risk": 0.05,
+    "sla": 0.3
+  }
+}

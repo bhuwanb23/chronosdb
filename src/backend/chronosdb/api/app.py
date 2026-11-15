@@ -77,7 +77,8 @@ async def correlation_and_auditing_middleware(request: Request, call_next):
     
     # Generate Correlation ID
     correlation_id = correlation_engine.generate_correlation_id()
-    
+    request.state.correlation_id = correlation_id
+
     # Process request
     response = await call_next(request)
     

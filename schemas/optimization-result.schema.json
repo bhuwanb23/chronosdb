@@ -1,0 +1,250 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Phase 7 Optimization Result",
+  "type": "object",
+  "required": [
+    "optimization_run_id",
+    "scenario_id",
+    "engine_version",
+    "objective",
+    "weights",
+    "constraints_version",
+    "candidates",
+    "feasibility_results",
+    "normalized_metrics",
+    "utility_scores",
+    "pareto_results",
+    "pareto_frontier",
+    "recommendation",
+    "recommended_candidate",
+    "utility_score",
+    "sensitivity",
+    "provenance",
+    "result_hash",
+    "baseline_state_hash"
+  ],
+  "properties": {
+    "optimization_run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "optimization_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "engine_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "objective": {
+      "type": "string",
+      "enum": [
+        "MINIMIZE_REVENUE_RISK",
+        "MINIMIZE_SLA_BREACHES",
+        "MINIMIZE_DELAY",
+        "MINIMIZE_COST",
+        "MAXIMIZE_SERVICE_LEVEL",
+        "BALANCED_RECOVERY"
+      ]
+    },
+    "weights": {
+      "type": "object",
+      "required": [
+        "revenue",
+        "sla",
+        "cost",
+        "delay",
+        "risk"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "revenue": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "sla": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "cost": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "delay": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "risk": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "constraints_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "constraints": {
+      "type": "object"
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/candidate"
+      }
+    },
+    "feasibility_results": {
+      "type": "array",
+      "minItems": 1
+    },
+    "normalized_metrics": {
+      "type": "array",
+      "minItems": 1
+    },
+    "utility_scores": {
+      "type": "array",
+      "minItems": 1
+    },
+    "pareto_results": {
+      "type": "array",
+      "minItems": 1
+    },
+    "pareto_frontier": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommendation": {
+      "type": "object"
+    },
+    "recommended_candidate": {
+      "type": "string",
+      "minLength": 1
+    },
+    "utility_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "sensitivity": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "observability": {
+      "type": "object"
+    },
+    "runtime_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "result_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "baseline_state_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "review": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "candidate": {
+      "type": "object",
+      "required": [
+        "candidate_id",
+        "label",
+        "revenue_risk",
+        "revenue_protected",
+        "sla_breaches",
+        "breaches_avoided",
+        "delay_hours",
+        "delay_reduction_hours",
+        "recovery_cost",
+        "simulation_hash",
+        "rule_set_version",
+        "baseline_result_hash"
+      ],
+      "properties": {
+        "candidate_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revenue_risk": {
+          "type": "number",
+          "minimum": 0
+        },
+        "revenue_protected": {
+          "type": "number"
+        },
+        "sla_breaches": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "breaches_avoided": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "delay_hours": {
+          "type": "number",
+          "minimum": 0
+        },
+        "delay_reduction_hours": {
+          "type": "number"
+        },
+        "recovery_cost": {
+          "type": "number",
+          "minimum": 0
+        },
+        "capacity_utilization_pct": {
+          "type": "number",
+          "minimum": 0
+        },
+        "inventory_consumed": {
+          "type": "number",
+          "minimum": 0
+        },
+        "remaining_inventory": {
+          "type": "number",
+          "minimum": 0
+        },
+        "supplier_risk": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "simulation_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "rule_set_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "baseline_result_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "checks": [
+    {
+      "actual": "HYBRID",
+      "check": "selected_candidate",
+      "expected": "HYBRID",
+      "passed": true
+    },
+    {
+      "actual": {
+        "ALTERNATE_SUPPLIER": "FEASIBLE",
+        "DO_NOTHING": "INFEASIBLE",
+        "EXPEDITE": "FEASIBLE",
+        "HYBRID": "FEASIBLE",
+        "RESCHEDULE": "INFEASIBLE",
+        "TRANSFER": "FEASIBLE"
+      },
+      "check": "feasibility_accuracy",
+      "expected": {
+        "ALTERNATE_SUPPLIER": "FEASIBLE",
+        "DO_NOTHING": "INFEASIBLE",
+        "EXPEDITE": "FEASIBLE",
+        "HYBRID": "FEASIBLE",
+        "RESCHEDULE": "INFEASIBLE",
+        "TRANSFER": "FEASIBLE"
+      },
+      "passed": true
+    },
+    {
+      "actual": {
+        "ALTERNATE_SUPPLIER": 0.114375,
+        "DO_NOTHING": 0.0,
+        "EXPEDITE": 0.8,
+        "HYBRID": 0.889,
+        "RESCHEDULE": 0.0,
+        "TRANSFER": 0.2
+      },
+      "check": "utility_fidelity",
+      "expected": {
+        "ALTERNATE_SUPPLIER": 0.114375,
+        "DO_NOTHING": 0.0,
+        "EXPEDITE": 0.8,
+        "HYBRID": 0.889,
+        "RESCHEDULE": 0.0,
+        "TRANSFER": 0.2
+      },
+      "passed": true
+    },
+    {
+      "actual": [
+        "HYBRID",
+        "TRANSFER"
+      ],
+      "check": "pareto_accuracy",
+      "expected": [
+        "HYBRID",
+        "TRANSFER"
+      ],
+      "passed": true
+    },
+    {
+      "check": "constraint_accuracy",
+      "passed": true,
+      "value": 1.0
+    }
+  ],
+  "constraint_accuracy": 1.0,
+  "feasibility_accuracy": 1.0,
+  "pareto_accuracy": 1.0,
+  "passed": true,
+  "recommendation_accuracy": 1.0,
+  "score": 1.0,
+  "utility_fidelity": 1.0
+}

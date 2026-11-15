@@ -1,31 +1,74 @@
-# Constraint Registry Configuration
-
-## Cost Constraints
-- CON-001: max_recovery_cost (≤ 200000 INR)
-- CON-002: min_budget_allocation (≥ 50000 INR)
-
-## Inventory Constraints
-- CON-003: min_safety_stock (≥ minimum)
-- CON-004: max_inventory_consumption (≤ available)
-
-## Supplier Constraints
-- CON-005: supplier_approved (true)
-- CON-006: supplier_capacity (≤ available)
-
-## Warehouse Constraints
-- CON-007: transfer_lane_approved (true)
-- CON-008: warehouse_capacity (≤ available)
-
-## Capacity Constraints
-- CON-009: capacity_utilization (≤ 100%)
-- CON-010: production_capacity (≤ available)
-
-## Delay Constraints
-- CON-011: max_delay (≤ 10 days)
-- CON-012: min_recovery_time (≥ minimum)
-
-## Regulatory Constraints
-- CON-013: regulatory_compliance (true)
-- CON-014: compliance_deadline (≤ deadline)
-
-## Phase 7D Status: IMPLEMENTED
+version: "phase7-constraints-v1"
+constraints:
+  - constraint_id: CON-001
+    name: max_recovery_cost
+    category: COST
+    operator: "<="
+    value: 200000
+    unit: INR
+    severity: HARD
+    description: "Recovery intervention cost must not exceed the configured budget."
+  - constraint_id: CON-002
+    name: min_remaining_inventory
+    category: INVENTORY
+    operator: ">="
+    value: 0
+    unit: units
+    severity: HARD
+    description: "Remaining inventory must stay at or above safety stock."
+  - constraint_id: CON-003
+    name: max_inventory_commitment
+    category: INVENTORY
+    operator: "<="
+    value: 500
+    unit: units
+    severity: HARD
+    description: "A plan may commit at most 500 units of inventory."
+  - constraint_id: CON-004
+    name: supplier_approved
+    category: SUPPLIER
+    operator: "=="
+    value: true
+    unit: boolean
+    severity: HARD
+    description: "Any supplier used by the plan must be active and approved."
+  - constraint_id: CON-005
+    name: max_supplier_risk
+    category: SUPPLIER
+    operator: "<="
+    value: 0.35
+    unit: score
+    severity: SOFT
+    description: "Operational supplier risk should remain below the soft threshold."
+  - constraint_id: CON-006
+    name: transfer_lane_approved
+    category: WAREHOUSE
+    operator: "=="
+    value: true
+    unit: boolean
+    severity: HARD
+    description: "Any transfer lane used by the plan must be active."
+  - constraint_id: CON-007
+    name: max_capacity_utilization
+    category: CAPACITY
+    operator: "<="
+    value: 100
+    unit: percent
+    severity: HARD
+    description: "Supplier capacity utilization must not exceed 100 percent."
+  - constraint_id: CON-008
+    name: max_delay_hours
+    category: DELAY
+    operator: "<="
+    value: 240
+    unit: hours
+    severity: HARD
+    description: "Maximum customer delay must not exceed 10 days."
+  - constraint_id: CON-009
+    name: regulatory_compliance
+    category: REGULATORY
+    operator: "=="
+    value: true
+    unit: boolean
+    severity: HARD
+    description: "Any alternate supplier used must be regulatory compliant."

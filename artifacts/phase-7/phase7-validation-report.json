@@ -1,0 +1,168 @@
+{
+  "checks": [
+    {
+      "check": "constraint_registry_categories",
+      "detail": [
+        "CAPACITY",
+        "COST",
+        "DELAY",
+        "INVENTORY",
+        "REGULATORY",
+        "SUPPLIER",
+        "WAREHOUSE"
+      ],
+      "passed": true
+    },
+    {
+      "check": "golden_selected_candidate",
+      "detail": "HYBRID",
+      "passed": true
+    },
+    {
+      "check": "golden_cost",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "golden_benchmark",
+      "detail": {
+        "checks": [
+          {
+            "actual": "HYBRID",
+            "check": "selected_candidate",
+            "expected": "HYBRID",
+            "passed": true
+          },
+          {
+            "actual": {
+              "ALTERNATE_SUPPLIER": "FEASIBLE",
+              "DO_NOTHING": "INFEASIBLE",
+              "EXPEDITE": "FEASIBLE",
+              "HYBRID": "FEASIBLE",
+              "RESCHEDULE": "INFEASIBLE",
+              "TRANSFER": "FEASIBLE"
+            },
+            "check": "feasibility_accuracy",
+            "expected": {
+              "ALTERNATE_SUPPLIER": "FEASIBLE",
+              "DO_NOTHING": "INFEASIBLE",
+              "EXPEDITE": "FEASIBLE",
+              "HYBRID": "FEASIBLE",
+              "RESCHEDULE": "INFEASIBLE",
+              "TRANSFER": "FEASIBLE"
+            },
+            "passed": true
+          },
+          {
+            "actual": {
+              "ALTERNATE_SUPPLIER": 0.114375,
+              "DO_NOTHING": 0.0,
+              "EXPEDITE": 0.8,
+              "HYBRID": 0.889,
+              "RESCHEDULE": 0.0,
+              "TRANSFER": 0.2
+            },
+            "check": "utility_fidelity",
+            "expected": {
+              "ALTERNATE_SUPPLIER": 0.114375,
+              "DO_NOTHING": 0.0,
+              "EXPEDITE": 0.8,
+              "HYBRID": 0.889,
+              "RESCHEDULE": 0.0,
+              "TRANSFER": 0.2
+            },
+            "passed": true
+          },
+          {
+            "actual": [
+              "HYBRID",
+              "TRANSFER"
+            ],
+            "check": "pareto_accuracy",
+            "expected": [
+              "HYBRID",
+              "TRANSFER"
+            ],
+            "passed": true
+          },
+          {
+            "check": "constraint_accuracy",
+            "passed": true,
+            "value": 1.0
+          }
+        ],
+        "constraint_accuracy": 1.0,
+        "feasibility_accuracy": 1.0,
+        "pareto_accuracy": 1.0,
+        "passed": true,
+        "recommendation_accuracy": 1.0,
+        "score": 1.0,
+        "utility_fidelity": 1.0
+      },
+      "passed": true
+    },
+    {
+      "check": "golden_reproducible_hash",
+      "detail": "26b6524754ac5cd289371788fb75885db418d3023862789de1405d884a0f338e",
+      "passed": true
+    },
+    {
+      "check": "live_selected_candidate",
+      "detail": "EXPEDITE",
+      "passed": true
+    },
+    {
+      "check": "live_hybrid_infeasible_under_real_cost",
+      "detail": "INFEASIBLE",
+      "passed": true
+    },
+    {
+      "check": "live_candidate_count",
+      "detail": 6,
+      "passed": true
+    },
+    {
+      "check": "live_phase6_provenance",
+      "detail": {
+        "phase6": "impact-rules-v1.0.0",
+        "phase7": "phase7-optimization-v1"
+      },
+      "passed": true
+    },
+    {
+      "check": "phase8_handoff_contract",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check": "ledger_record_types",
+      "detail": [
+        "OPTIMIZATION_RUN",
+        "INPUT",
+        "CANDIDATE_SCORE",
+        "CONSTRAINT_RESULT",
+        "PARETO_RESULT",
+        "RECOMMENDATION",
+        "SENSITIVITY_RESULT"
+      ],
+      "passed": true
+    },
+    {
+      "check": "ledger_deterministic_run_id",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "optimization_performance_budget",
+      "detail": 0.011973199958447367,
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Live Phase 6 hybrid costs INR 852400 and is infeasible under the INR 200000 budget; the live recommendation is EXPEDITE. The specification's HYBRID expectation belongs to the frozen synthetic golden fixture, not the live scenario.",
+    "Docker and Db2 are unavailable on this machine, so the JSONL ledger is verified but Db2 optimization-run persistence is not.",
+    "No independent real-world optimization benchmark exists; accuracy is measured against the frozen fixture and Phase 6 consistency."
+  ],
+  "phase": 7,
+  "status": "PASS"
+}

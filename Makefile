@@ -9,7 +9,7 @@ COMPOSE ?= docker compose
 	backend frontend app benchmark test health demo clean validate-phase15 \
 	impact-intake-check impact-golden-input-check impact-benchmark-manifest-check \
 	impact-golden impact-benchmark impact-performance impact-handoff impact-validate \
-	phase6-validate
+	phase6-validate phase7-validate
 
 setup:
 	@bash scripts/setup.sh
@@ -91,3 +91,6 @@ impact-validate:
 
 phase6-validate:
 	@$(PYTHON) scripts/validate_phase6.py
+
+phase7-validate:
+	@$(PYTHON) scripts/validate_phase7.py
