@@ -6,7 +6,7 @@
   <text x="40" y="51" font-size="16" font-weight="800" fill="white" text-anchor="middle">C</text>
   <text x="70" y="42" font-size="20" font-weight="800" fill="#F8FAFC">ChronosDB</text>
   <text x="70" y="64" font-size="11" fill="#94A3B8" letter-spacing="2">OPERATIONS WAR ROOM</text>
-  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLDEN-001</text>
+  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLD-001</text>
   <text x="1560" y="64" font-size="11" fill="#64748B" text-anchor="end">Recognition &lt; 10 sec  •  Deterministic  •  Auditable</text>
 
   <text x="800" y="135" font-size="28" font-weight="800" fill="#F8FAFC" text-anchor="middle">Trust Architecture — Controlled AI</text>
@@ -34,7 +34,7 @@
   <text x="1020" y="305" font-size="12" fill="#94A3B8" text-anchor="middle">Impact → Simulation → Optimization</text>
   <text x="1020" y="325" font-size="12" fill="#94A3B8" text-anchor="middle">Retrieval → Evidence Selection</text>
   <text x="1020" y="345" font-size="12" fill="#94A3B8" text-anchor="middle">Db2 + VECTOR + Audit Ledger</text>
-  <text x="1020" y="375" font-size="11" fill="#10B981" text-anchor="middle">Revenue Fidelity 100%  •  Replay 100%</text>
+  <text x="1020" y="375" font-size="11" fill="#10B981" text-anchor="middle">Financial fidelity 1.0  •  Repeated hashes identical</text>
 
   <rect x="1240" y="220" width="260" height="180" rx="16" fill="#1E293B" stroke="#8B5CF6" stroke-width="2"/>
   <text x="1370" y="255" font-size="16" font-weight="800" fill="#F8FAFC" text-anchor="middle">4. Verifier</text>
@@ -42,7 +42,7 @@
   <text x="1370" y="305" font-size="12" fill="#94A3B8" text-anchor="middle">Verify every claim</text>
   <text x="1370" y="325" font-size="12" fill="#94A3B8" text-anchor="middle">Attribute evidence</text>
   <text x="1370" y="345" font-size="12" fill="#94A3B8" text-anchor="middle">Block unsupported claims</text>
-  <text x="1370" y="375" font-size="11" fill="#10B981" text-anchor="middle">Verified 100%  •  Unsupported 0%</text>
+  <text x="1370" y="375" font-size="11" fill="#10B981" text-anchor="middle">Verified answers only</text>
 
   <g stroke="#64748B" stroke-width="2.5" fill="none">
     <path d="M420 310 L480 310" marker-end="url(#a)"/>
@@ -54,7 +54,7 @@
   <!-- Security strip -->
   <rect x="100" y="460" width="1400" height="140" rx="16" fill="#0F172A" stroke="#334155"/>
   <text x="130" y="495" font-size="14" font-weight="800" fill="#F8FAFC">Security Controls (Phase 10)</text>
-  <text x="130" y="525" font-size="12" fill="#94A3B8">SQL Injection Blocked 100%  •  Prompt Injection 0% Success  •  Unauthorized Writes 0%  •  Audit Tampering Blocked  •  Secrets Scanned 0 Findings</text>
+  <text x="130" y="525" font-size="12" fill="#94A3B8">Security claims: pending re-verification in Phase 18</text>
   <text x="130" y="555" font-size="12" fill="#94A3B8">Identity &amp; Access Control  •  Input Validation  •  Decision Ledger  •  Integrity &amp; Tamper Detection  •  Correlation &amp; Traceability</text>
   <rect x="130" y="570" width="180" height="22" rx="11" fill="#10B981"/><text x="220" y="585" font-size="11" font-weight="700" fill="white" text-anchor="middle">ALL CONTROLS PASS</text>
 
@@ -62,7 +62,7 @@
   <rect x="100" y="640" width="1400" height="140" rx="16" fill="#1E293B" stroke="#334155"/>
   <text x="130" y="675" font-size="14" font-weight="800" fill="#F8FAFC">Audit &amp; Replay (Phase 10P–U)</text>
   <text x="130" y="705" font-size="12" fill="#94A3B8">Decision ID  •  Correlation ID  •  Scenario  •  Simulation  •  Recommendation  •  Verification Status  •  Replay History</text>
-  <text x="130" y="735" font-size="12" fill="#94A3B8">Judge can replay any decision and get identical result — 100% Replay Accuracy</text>
+  <text x="130" y="735" font-size="12" fill="#94A3B8">Judge can re-run the golden decision and get identical hashes</text>
   <rect x="130" y="750" width="200" height="22" rx="11" fill="#3B82F6"/><text x="230" y="765" font-size="11" font-weight="700" fill="white" text-anchor="middle">REPLAY VERIFIED</text>
 
   <text x="800" y="840" font-size="11" fill="#64748B" text-anchor="middle">Phase 16K  •  Trust Architecture  •  Deterministic calculations outside LLM — prevent hallucinated business outcomes</text>

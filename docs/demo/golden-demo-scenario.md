@@ -1,33 +1,35 @@
-# Phase 17E: Golden Demo Scenario
+# Phase 17E: Golden Demo Scenario (SCN-GOLD-001)
 
-## Phase 17 Deep Dive: Demo, Storytelling, and Visual Assets
+All values are verified against the frozen engine artifacts. See `verified-golden-figures.md` for sources.
 
-### This becomes the official demonstration.
+## Disruption
+- Supplier SUP-0104, component CMP-MCU-42
+- Recovery budget: under ₹2 lakh
 
-#### Disruption
-- **Supplier:** SUP-0104
-- **Duration:** 14 Days
-- **Constraint:** Recovery under ₹2 lakh (budget)
+## Impact (Do-Nothing)
+- Revenue at risk: ₹16,00,000
+- SLA-breached customer orders: 2 (CO-0704, CO-0711)
+- Production orders affected: 2 (MO-0882, MO-0889)
+- Purchase order affected: PO-2208
+- Max delay: 288 hours
 
-#### Phase 5 Result (Impact Engine)
-- **Revenue at Risk:** ₹16,00,000 ($15.2M in War Room)
-- **SLA Breaches:** 2 (42 in War Room full dataset)
-- **Affected Orders:** 306
+## Recommendation
+- INT-GOLD-C (objective MINIMIZE_SLA_BREACHES, hard constraints satisfied)
+- Cost ₹1,32,000 (within budget)
+- Revenue protected ₹16,00,000, net ₹14,68,000
+- SLA breaches: 0
 
-#### Phase 7 Result (Optimization Engine)
-- **Hybrid Recovery Plan:** Recommended ★
-- **Improvement:**
-  - Revenue Risk Reduced: $8.4M saved
-  - SLA Breaches Reduced: 42 → 0
-  - Budget Constraint Satisfied: $2.1M cost
+## Alternatives
+- INT-GOLD-A and INT-GOLD-RESCHEDULE: ₹60,000, protect ₹8,00,000, 1 breach
+- INT-GOLD-B: ₹72,000, protects nothing, 2 breaches
+- INT-GOLD-EXPEDITE: infeasible (complete supplier outage)
+- INT-GOLD-TRANSFER-500: infeasible (safety-stock violation)
 
-#### Frozen Outputs
-Everything shown in demo uses frozen outputs from Phase 12O Golden Scenario.
-- Determinism: 100% (100 executions → 1 hash)
-- Replay: 100% (identical results)
-- Demo Success Rate: 100%
+## Reproducibility
+- Repeated runs produce identical hashes (determinism report).
+- Financial fidelity 1.0 on the golden benchmark.
 
-### Deliverable Location
-`/home/user/chronosdb/docs/demo/golden-demo-scenario.md`
-
-## Phase 17E Status: ✅ COMPLETE
+## Open items
+1. Confirm the action mix of INT-GOLD-C before calling it "Transfer + Expedite + Reschedule" (not present in public data reviewed).
+2. Retrieval metrics (Recall@5, MRR) must be re-measured before being shown.
+3. Security claims (SQL injection, prompt injection) must be re-verified before being shown.

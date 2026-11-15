@@ -6,7 +6,7 @@
   <text x="40" y="51" font-size="16" font-weight="800" fill="white" text-anchor="middle">C</text>
   <text x="70" y="42" font-size="20" font-weight="800" fill="#F8FAFC">ChronosDB</text>
   <text x="70" y="64" font-size="11" fill="#94A3B8" letter-spacing="2">OPERATIONS WAR ROOM</text>
-  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLDEN-001</text>
+  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLD-001</text>
   <text x="1560" y="64" font-size="11" fill="#64748B" text-anchor="end">Recognition &lt; 10 sec  •  Deterministic  •  Auditable</text>
 
   <text x="800" y="135" font-size="28" font-weight="800" fill="#F8FAFC" text-anchor="middle">Audit Explorer — Decision as Story</text>
@@ -14,13 +14,13 @@
   <rect x="60" y="210" width="1480" height="520" rx="16" fill="#1E293B" stroke="#334155"/>
   <text x="90" y="250" font-size="14" font-weight="700" fill="#F8FAFC">Decision DEC-2026-001  •  Correlation COR-8821  •  Status: VERIFIED ✓</text>
   <line x1="120" y1="300" x2="120" y2="680" stroke="#334155" stroke-width="3"/>
-  <circle cx="120" cy="320" r="12" fill="#3B82F6"/><text x="150" y="325" font-size="13" font-weight="700" fill="#F8FAFC">Scenario Created</text><text x="150" y="345" font-size="11" fill="#94A3B8">SCN-GOLDEN-001  •  Supplier outage detected  •  2026-11-14 09:00:00</text>
-  <circle cx="120" cy="400" r="12" fill="#EF4444"/><text x="150" y="405" font-size="13" font-weight="700" fill="#F8FAFC">Impact Computed</text><text x="150" y="425" font-size="11" fill="#94A3B8">$15.2M at risk  •  306 orders  •  Deterministic</text>
-  <circle cx="120" cy="480" r="12" fill="#F59E0B"/><text x="150" y="485" font-size="13" font-weight="700" fill="#F8FAFC">Simulation Executed</text><text x="150" y="505" font-size="11" fill="#94A3B8">6 futures  •  Isolated overlays  •  Replayable</text>
-  <circle cx="120" cy="560" r="12" fill="#10B981"/><text x="150" y="565" font-size="13" font-weight="700" fill="#F8FAFC">Optimization Completed</text><text x="150" y="585" font-size="11" fill="#94A3B8">HYBRID selected  •  Utility 0.91  •  Confidence 96%</text>
+  <circle cx="120" cy="320" r="12" fill="#3B82F6"/><text x="150" y="325" font-size="13" font-weight="700" fill="#F8FAFC">Scenario Created</text><text x="150" y="345" font-size="11" fill="#94A3B8">SCN-GOLD-001  •  Supplier outage detected  •  2026-11-14 09:00:00</text>
+  <circle cx="120" cy="400" r="12" fill="#EF4444"/><text x="150" y="405" font-size="13" font-weight="700" fill="#F8FAFC">Impact Computed</text><text x="150" y="425" font-size="11" fill="#94A3B8">₹16,00,000 at risk  •  2 orders  •  Deterministic</text>
+  <circle cx="120" cy="480" r="12" fill="#F59E0B"/><text x="150" y="485" font-size="13" font-weight="700" fill="#F8FAFC">Simulation Executed</text><text x="150" y="505" font-size="11" fill="#94A3B8">7 candidates  •  Isolated overlays  •  Replayable</text>
+  <circle cx="120" cy="560" r="12" fill="#10B981"/><text x="150" y="565" font-size="13" font-weight="700" fill="#F8FAFC">Optimization Completed</text><text x="150" y="585" font-size="11" fill="#94A3B8">INT-GOLD-C selected  •  INT-GOLD-C recommended  •  0 SLA breaches</text>
   <circle cx="120" cy="640" r="12" fill="#8B5CF6"/><text x="150" y="645" font-size="13" font-weight="700" fill="#F8FAFC">Recommendation Verified</text><text x="150" y="665" font-size="11" fill="#94A3B8">3 claims verified  •  0 unsupported  •  Evidence attached</text>
   <rect x="60" y="770" width="1480" height="100" rx="14" fill="#0F172A" stroke="#334155"/>
   <text x="90" y="810" font-size="13" font-weight="700" fill="#F8FAFC">Enterprise differentiator: Audit as story, not table</text>
-  <text x="90" y="840" font-size="12" fill="#94A3B8">Judge can replay this decision and get identical result — 100% Replay Accuracy  •  Tamper-proof Ledger</text>
+  <text x="90" y="840" font-size="12" fill="#94A3B8">Judge can re-run this decision and get identical hashes  •  Audit ledger</text>
   <text x="800" y="920" font-size="11" fill="#64748B" text-anchor="middle">Phase 12I + 10P-U  •  Audit Explorer  •  Audit Discovery ≤30 sec</text>
 </svg>

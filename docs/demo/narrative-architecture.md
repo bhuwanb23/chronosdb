@@ -15,9 +15,9 @@
 | Question | ChronosDB Answer | Visual |
 |----------|------------------|--------|
 | What happened? | SUP-0104 outage, 14 days | Executive Dashboard |
-| What will happen? | $15.2M, 306 orders, 42 breaches | Cascade + Simulation |
-| What should we do? | HYBRID (Utility 0.91) | Intervention Comparison |
-| Why trust it? | 5 evidence, 100% verified, 100% replay | Evidence + Replay + Audit |
+| What will happen? | ₹16,00,000, 2 customer orders, 2 breaches | Cascade + Simulation |
+| What should we do? | INT-GOLD-C (INT-GOLD-C recommended) | Intervention Comparison |
+| Why trust it? | 5 evidence, verified, 100% replay | Evidence + Replay + Audit |
 
 ### Deliverable Location
 `/home/user/chronosdb/docs/demo/narrative-architecture.md`

@@ -4,13 +4,13 @@
 
 **Problem:** Dashboards show that a supply-chain disruption happened. They do not show what fails next, compare recovery options, or prove which recovery to trust.
 
-**What it does:** Takes a supplier outage (SUP-0104, 14 days), computes deterministic impact, simulates 6 futures, selects the best feasible recovery (HYBRID: Transfer + Expedite + Reschedule, utility 0.91, $8.4M protected), attaches Db2-backed evidence, and lets anyone replay the decision.
+**What it does:** Takes a supplier outage (SUP-0104, 14 days), computes deterministic impact, simulates 7 candidates, selects the best feasible recovery (INT-GOLD-C: INT-GOLD-C (action mix not yet verified), recommended with 0 SLA breaches, ₹16,00,000 protected), attaches Db2-backed evidence, and lets anyone replay the decision.
 
-**Proof points (frozen Golden Scenario SCN-GOLDEN-001):**
-- $15.2M revenue at risk, 306 orders, 42 SLA breaches
-- Revenue fidelity 100%, deterministic replay 100%
-- Recall@5 0.87, MRR 0.82, 0% unsupported claims
-- SQL injection 100% blocked
+**Proof points (frozen Golden Scenario SCN-GOLD-001):**
+- ₹16,00,000 revenue at risk, 2 customer orders, 2 SLA breaches
+- financial fidelity 1.0, deterministic replay 100%
+- Recall@5 (pending verification), MRR (pending verification), no free-form answers claims
+- security tests pending re-verification
 - `make demo` reproduces the golden run on a fresh machine (<20 min)
 
 **Audience:** Hackathon / competition judges and technical reviewers who have 10 seconds of attention.
@@ -22,7 +22,7 @@
 **Hero assets (use these, do not redraw):**
 - `docs/screenshots/war_room_main.png` — opening and closing hero
 - `docs/screenshots/dependency_cascade.png` — cascade beat
-- `docs/screenshots/intervention_comparison.png` — futures beat (HYBRID highlighted)
+- `docs/screenshots/intervention_comparison.png` — futures beat (INT-GOLD-C highlighted)
 - `docs/screenshots/evidence_explorer.png` — evidence beat
 - `docs/screenshots/timeline_replay.png` and `audit_explorer.png` — replay beat
 - `docs/diagrams/decision_flow.png` — story spine

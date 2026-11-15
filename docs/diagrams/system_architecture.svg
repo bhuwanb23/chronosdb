@@ -6,7 +6,7 @@
   <text x="40" y="51" font-size="16" font-weight="800" fill="white" text-anchor="middle">C</text>
   <text x="70" y="42" font-size="20" font-weight="800" fill="#F8FAFC">ChronosDB</text>
   <text x="70" y="64" font-size="11" fill="#94A3B8" letter-spacing="2">OPERATIONS WAR ROOM</text>
-  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLDEN-001</text>
+  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLD-001</text>
   <text x="1560" y="64" font-size="11" fill="#64748B" text-anchor="end">Recognition &lt; 10 sec  •  Deterministic  •  Auditable</text>
 
   <text x="800" y="135" font-size="28" font-weight="800" fill="#F8FAFC" text-anchor="middle">ChronosDB System Architecture</text>
@@ -53,37 +53,37 @@
   <text x="200" y="490" font-size="15" font-weight="800" fill="#F8FAFC" text-anchor="middle">Impact Engine</text>
   <text x="200" y="510" font-size="11" fill="#EF4444" text-anchor="middle">Phase 5  •  Deterministic</text>
   <text x="200" y="532" font-size="11" fill="#94A3B8" text-anchor="middle">Revenue • Delay • SLA • Quantities</text>
-  <text x="200" y="550" font-size="11" fill="#10B981" text-anchor="middle">100% Fidelity</text>
+  <text x="200" y="550" font-size="11" fill="#10B981" text-anchor="middle">Financial fidelity 1.0</text>
 
   <rect x="380" y="460" width="280" height="110" rx="14" fill="#1E293B" stroke="#F59E0B" stroke-width="2"/>
   <text x="520" y="490" font-size="15" font-weight="800" fill="#F8FAFC" text-anchor="middle">Simulation Engine</text>
   <text x="520" y="510" font-size="11" fill="#F59E0B" text-anchor="middle">Phase 6  •  Counterfactual</text>
   <text x="520" y="532" font-size="11" fill="#94A3B8" text-anchor="middle">Overlays • Isolated • Replayable</text>
-  <text x="520" y="550" font-size="11" fill="#10B981" text-anchor="middle">100% Overlay Fidelity</text>
+  <text x="520" y="550" font-size="11" fill="#10B981" text-anchor="middle">Isolated overlays</text>
 
   <rect x="700" y="460" width="280" height="110" rx="14" fill="#1E293B" stroke="#10B981" stroke-width="2"/>
   <text x="840" y="490" font-size="15" font-weight="800" fill="#F8FAFC" text-anchor="middle">Optimization Engine</text>
-  <text x="840" y="510" font-size="11" fill="#10B981" text-anchor="middle">Phase 7  •  Pareto + Utility</text>
-  <text x="840" y="532" font-size="11" fill="#94A3B8" text-anchor="middle">Feasibility • Constraints • Utility</text>
+  <text x="840" y="510" font-size="11" fill="#10B981" text-anchor="middle">Phase 7  •  Constraints + Objective</text>
+  <text x="840" y="532" font-size="11" fill="#94A3B8" text-anchor="middle">Feasibility • Constraints • SLA objective</text>
   <text x="840" y="550" font-size="11" fill="#10B981" text-anchor="middle">100% Constraint Compliance</text>
 
   <rect x="1020" y="460" width="280" height="110" rx="14" fill="#1E293B" stroke="#3B82F6" stroke-width="2"/>
   <text x="1160" y="490" font-size="15" font-weight="800" fill="#F8FAFC" text-anchor="middle">Evidence Layer</text>
   <text x="1160" y="510" font-size="11" fill="#3B82F6" text-anchor="middle">Phase 8  •  Retrieval</text>
   <text x="1160" y="532" font-size="11" fill="#94A3B8" text-anchor="middle">Recall@5 ≥0.85 • MRR ≥0.80</text>
-  <text x="1160" y="550" font-size="11" fill="#10B981" text-anchor="middle">0% Unsupported Sources</text>
+  <text x="1160" y="550" font-size="11" fill="#10B981" text-anchor="middle">Verified answers only</text>
 
   <rect x="1340" y="460" width="200" height="110" rx="14" fill="#1E293B" stroke="#8B5CF6" stroke-width="2"/>
   <text x="1440" y="490" font-size="15" font-weight="800" fill="#F8FAFC" text-anchor="middle">Controlled AI</text>
   <text x="1440" y="510" font-size="11" fill="#8B5CF6" text-anchor="middle">Phase 9</text>
   <text x="1440" y="532" font-size="11" fill="#94A3B8" text-anchor="middle">Planner • Verifier</text>
-  <text x="1440" y="550" font-size="11" fill="#10B981" text-anchor="middle">100% Verified Claims</text>
+  <text x="1440" y="550" font-size="11" fill="#10B981" text-anchor="middle">Verified answers only</text>
 
   <!-- Trust row -->
   <rect x="60" y="610" width="360" height="100" rx="14" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
   <text x="240" y="640" font-size="15" font-weight="800" fill="#F8FAFC" text-anchor="middle">Trust Platform</text>
   <text x="240" y="660" font-size="11" fill="#94A3B8" text-anchor="middle">Phase 10  •  Security • Audit • Replay • Tamper Detection</text>
-  <text x="240" y="682" font-size="11" fill="#10B981" text-anchor="middle">SQLi 100% Blocked  •  Prompt Injection 0% Success</text>
+  <text x="240" y="682" font-size="11" fill="#10B981" text-anchor="middle">Security tests: pending re-verification</text>
 
   <rect x="460" y="610" width="360" height="100" rx="14" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
   <text x="640" y="640" font-size="15" font-weight="800" fill="#F8FAFC" text-anchor="middle">Benchmark Framework</text>
@@ -118,7 +118,7 @@
   <rect x="60" y="760" width="1480" height="90" rx="14" fill="#0F172A" stroke="#334155"/>
   <text x="80" y="790" font-size="13" font-weight="700" fill="#F8FAFC">Design Principles</text>
   <text x="80" y="815" font-size="12" fill="#94A3B8">Deterministic calculations outside LLM  •  Every number has evidence  •  Audit as story, not table  •  Show impact first, AI second</text>
-  <text x="80" y="835" font-size="11" fill="#64748B">Golden Scenario: SCN-GOLDEN-001  •  Revenue Fidelity 100%  •  Replay Accuracy 100%  •  Determinism 100%</text>
+  <text x="80" y="835" font-size="11" fill="#64748B">Golden Scenario: SCN-GOLD-001  •  Revenue at risk ₹16,00,000  •  Financial fidelity 1.0  •  Repeated hashes identical</text>
   <text x="1520" y="815" font-size="11" fill="#10B981" text-anchor="end">chronosdb-documentation-suite-v1.0.0</text>
 
   <text x="800" y="900" font-size="11" fill="#64748B" text-anchor="middle">Phase 16K  •  System Architecture  •  Db2-native Decision Intelligence Platform</text>

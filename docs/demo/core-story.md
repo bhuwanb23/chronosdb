@@ -15,20 +15,20 @@ Operations team doesn't know what will fail next.
 
 #### Escalation
 Supply shortage → Production delays → Customer impact → Revenue risk
-- $15.2M Revenue At Risk
-- 306 Orders Affected
-- 42 SLA Breaches
+- ₹16,00,000 Revenue At Risk
+- 2 Customer Orders Affected
+- 2 SLA Breaches
 
 #### Resolution
 ChronosDB evaluates alternatives and identifies the best recovery.
-- 6 futures simulated (Do Nothing, Transfer, Expedite, Alt Supplier, Reschedule, Hybrid)
-- HYBRID wins: Utility 0.91, $8.4M saved, 0 breaches
+- 7 candidates simulated (Do Nothing, Transfer, Expedite, Alt Supplier, Reschedule, Hybrid)
+- INT-GOLD-C recommended: INT-GOLD-C recommended, ₹16,00,000 saved, 0 breaches
 
 #### Proof
 Evidence + Replay + Auditability
-- 5 evidence sources (Recall@5 0.87)
-- 100% verified claims, 0% unsupported
-- 100% replay accuracy — judge can verify
+- 3 document references per candidate (Recall@5 (pending verification))
+- verified answers only, no free-form answers
+- repeated runs identical — judge can verify
 
 ### Memorable Line
 **"ChronosDB is the Db2 Time Machine for Enterprise Decisions."**

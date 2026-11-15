@@ -12,8 +12,8 @@ No reviewer sessions have been run yet. Any scores in earlier drafts were placeh
 | # | Question | Answer key |
 |---|----------|-----------|
 | 1 | What happened? | A supplier (SUP-0104) went down for 14 days; components and orders are at risk. |
-| 2 | What was recommended? | A HYBRID plan: transfer + expedite + reschedule. |
-| 3 | Why? | It ranks highest among feasible options (utility 0.91), protects about $8.4M, and each claim links to evidence. |
+| 2 | What was recommended? | A INT-GOLD-C plan: INT-GOLD-C. |
+| 3 | Why? | It ranks highest among feasible options (recommended, 0 SLA breaches), protects about ₹16,00,000, and each claim links to evidence. |
 | 4 | Why is it different? | It simulates alternative futures, picks the best recovery, and proves it with Db2 evidence and replay. |
 
 ## Success criteria (from the Phase 17 quality benchmarks)

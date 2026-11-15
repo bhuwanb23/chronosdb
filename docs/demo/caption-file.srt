@@ -1,27 +1,27 @@
 1
 00:00:00,000 --> 00:00:20,000
-Modern supply chains generate enormous amounts of operational data, but when a disruption occurs, most systems can only tell you that something has gone wrong. They cannot explain what fails next, compare recovery options, or prove why a recommendation should be trusted.
+Modern supply chains generate huge amounts of operational data. When a disruption hits, most systems can only say something went wrong.
 
 2
 00:00:20,000 --> 00:00:45,000
-Supplier SUP-0104 is unavailable for 14 days. Recovery budget: 2 lakh rupees. Let's run counterfactual analysis.
+Supplier SUP-0104 is down. Our recovery budget is under two lakh rupees. Let's run the counterfactual analysis.
 
 3
 00:00:45,000 --> 00:01:15,000
-ChronosDB calculates every impact using deterministic supply-chain logic, not language-model estimation. One supplier outage cascades to 15.2 million dollars at risk, 306 orders affected, 42 SLA breaches.
+ChronosDB computes every impact with deterministic supply-chain logic. Revenue at risk is sixteen lakh rupees, with two customer orders and two SLA breaches at stake.
 
 4
 00:01:15,000 --> 00:01:50,000
-ChronosDB compares multiple possible futures and ranks only feasible interventions. Hybrid — transfer plus expedite plus reschedule — wins with utility 0.91, protecting 8.4 million dollars with zero breaches.
+ChronosDB evaluates seven candidate actions and keeps only feasible ones. INT-GOLD-C costs one lakh thirty-two thousand rupees, protects sixteen lakh rupees, and leaves zero SLA breaches.
 
 5
 00:01:50,000 --> 00:02:20,000
-Every recommendation is linked to supporting records, procedures, and historical events stored in Db2. Five evidence sources, 100% verified claims, zero unsupported.
+Every candidate links to supporting records stored in Db2: supplier notices, procedures, and incident reports.
 
 6
 00:02:20,000 --> 00:02:45,000
-ChronosDB can reconstruct exactly what the organization knew and when it knew it. The judge can replay any decision and get identical results — 100% replay accuracy.
+Run the golden scenario again and you get the same hashes. The decision can be replayed and audited step by step.
 
 7
 00:02:45,000 --> 00:03:00,000
-ChronosDB doesn't ask users to trust an AI recommendation. It lets them replay, verify, and audit every decision. ChronosDB is the Db2 time machine for enterprise decisions.
+ChronosDB doesn't ask you to trust an AI recommendation. It lets you replay, verify, and audit every decision. ChronosDB is the Db2 time machine for enterprise decisions.

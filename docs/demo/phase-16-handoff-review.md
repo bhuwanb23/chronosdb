@@ -6,11 +6,11 @@
 - **Phase 16 Deliverable:** `chronosdb-documentation-suite-v1.0.0` ✅ COMPLETE (Milestone M5: Evidence Complete)
 - **README:** Available ✅ (13 sections, 5-min readable)
 - **Architecture Package:** Available ✅ (system + trust + data flow + decision flow)
-- **Benchmarks:** Available ✅ (100% fidelity, Recall@5 0.87, Determinism 100%)
+- **Benchmarks:** Available ✅ (financial fidelity 1.0, Recall@5 (pending verification), deterministic (identical hashes))
 - **War Room UI:** Available ✅ (10 screenshots, pixel-perfect)
-- **Golden Scenario:** Frozen ✅ (SCN-GOLDEN-001)
-- **Optimization Results:** Frozen ✅ (HYBRID, Utility 0.91)
-- **Evidence Explorer:** Available ✅ (5 sources)
+- **Golden Scenario:** Frozen ✅ (SCN-GOLD-001)
+- **Optimization Results:** Frozen ✅ (INT-GOLD-C, INT-GOLD-C recommended)
+- **Evidence Explorer:** Available ✅ (3 document references)
 - **Replay Engine:** Available ✅ (100% accuracy)
 
 ### Demo Governance Inputs

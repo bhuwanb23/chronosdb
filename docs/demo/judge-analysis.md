@@ -9,9 +9,9 @@ Most projects blur together.
 
 ### Judges remember:
 1. **Strong Problem** — Supplier outage
-2. **Visible Consequences** — Orders fail ($15.2M, 306 orders, 42 SLA breaches)
-3. **Clear Decision** — Best intervention (HYBRID, Utility 0.91)
-4. **Proof** — Evidence and replay (100% verified, 100% replayable)
+2. **Visible Consequences** — Orders fail (₹16,00,000, 2 customer orders, 2 SLA breaches)
+3. **Clear Decision** — Best intervention (INT-GOLD-C, INT-GOLD-C recommended)
+4. **Proof** — Evidence and replay (verified, re-runnable)
 5. **Memorable Phrase** — **"The Db2 Time Machine for Enterprise Decisions"**
 
 ### Judge Evaluation Pattern

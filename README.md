@@ -8,7 +8,7 @@
 ### 2. Demo Visual — War Room (Judge understands in <10 seconds)
 
 ![ChronosDB War Room Main](docs/screenshots/war_room_main.png)
-*ChronosDB Operations War Room: $15.2M at risk, 306 orders, 42 SLA breaches, HYBRID recommendation (Utility 0.91), cascade, 6 futures, evidence, audit, AI console — all in one screen.*
+*ChronosDB Operations War Room: ₹16,00,000 at risk, 2 customer orders, 2 SLA breaches, INT-GOLD-C recommendation (INT-GOLD-C recommended), cascade, 7 candidates, evidence, audit, AI console — all in one screen.*
 
 ![Decision Flow](docs/diagrams/decision_flow.png)
 *Decision Flow (README centerpiece): Disruption → Impact → 6 Candidate Futures → Optimization → Recommendation → Evidence → Audit*
@@ -50,9 +50,9 @@ Phase 15: Packaging and Reproducibility
 - Counterfactual Futures (Simulation Engine)
 
 ### 6. Golden Scenario
-**SCN-GOLDEN-001**
+**SCN-GOLD-001**
 Supplier outage → Impact → Simulation → Optimization → Evidence → Narration → Audit → War Room UI
-**Result:** Exact golden result, Complete Workflow Success, Determinism 100%
+**Result:** Exact golden result, Complete Workflow Success, deterministic (identical hashes)
 
 ### 7. Architecture
 - Impact Engine (Phase 5)

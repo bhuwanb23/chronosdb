@@ -22,7 +22,7 @@ See `final-script.md` for complete script with timestamps.
 ### Recording Tips
 - Record in quiet room, close mic (15cm)
 - Pause 0.3s between sentences
-- Emphasize numbers: "15.2 million", "306 orders", "42 breaches", "0.91", "8.4 million"
+- Emphasize numbers: "15.2 million", "2 customer orders", "2 breaches", "0.91", "8.4 million"
 - Final line slow: "ChronosDB is the Db2 time machine for enterprise decisions."
 
 ### Deliverable Location

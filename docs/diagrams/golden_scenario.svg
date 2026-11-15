@@ -6,10 +6,10 @@
   <text x="40" y="51" font-size="16" font-weight="800" fill="white" text-anchor="middle">C</text>
   <text x="70" y="42" font-size="20" font-weight="800" fill="#F8FAFC">ChronosDB</text>
   <text x="70" y="64" font-size="11" fill="#94A3B8" letter-spacing="2">OPERATIONS WAR ROOM</text>
-  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLDEN-001</text>
+  <text x="1560" y="42" font-size="12" fill="#94A3B8" text-anchor="end">● LIVE  •  Db2 Connected  •  Golden Scenario SCN-GOLD-001</text>
   <text x="1560" y="64" font-size="11" fill="#64748B" text-anchor="end">Recognition &lt; 10 sec  •  Deterministic  •  Auditable</text>
 
-  <text x="800" y="135" font-size="28" font-weight="800" fill="#F8FAFC" text-anchor="middle">Golden Scenario — SCN-GOLDEN-001</text>
+  <text x="800" y="135" font-size="28" font-weight="800" fill="#F8FAFC" text-anchor="middle">Golden Scenario — SCN-GOLD-001</text>
   <text x="800" y="162" font-size="13" fill="#94A3B8" text-anchor="middle">Supplier outage → Impact → Simulation → Optimization → Evidence → Narration → Audit → War Room</text>
 
   <rect x="80" y="220" width="1440" height="380" rx="16" fill="#1E293B" stroke="#334155"/>
@@ -41,7 +41,7 @@
   <text x="1380" y="380" font-size="11" font-weight="700" fill="#F8FAFC" text-anchor="middle">Audit + UI</text>
   <text x="1380" y="400" font-size="10" fill="#94A3B8" text-anchor="middle">7.2s</text>
 
-  <text x="110" y="470" font-size="12" fill="#94A3B8">Result: HYBRID intervention  •  Utility 0.91  •  $8.4M saved  •  100% deterministic  •  100% replayable</text>
+  <text x="110" y="470" font-size="12" fill="#94A3B8">Result: INT-GOLD-C recommended  •  ₹1,32,000 cost  •  ₹16,00,000 protected  •  Deterministic repeated hashes</text>
   <text x="110" y="500" font-size="12" fill="#94A3B8">Judge Demo Mode: One click → Full War Room in &lt;10 seconds. Demo never fails (100% success rate).</text>
   <rect x="110" y="520" width="220" height="30" rx="15" fill="#10B981"/><text x="220" y="540" font-size="12" font-weight="700" fill="white" text-anchor="middle">✓ GOLDEN RESULT EXACT</text>
 
