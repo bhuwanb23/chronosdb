@@ -71,13 +71,3 @@ class Phase10Handoff:
         return {}
 
 # Phase 9U Status: COMPLETE
-
-try:
-    from .handoff_validation import Phase8HandoffValidation
-except Exception:
-    class Phase8HandoffValidation:
-        def __init__(self, *args, **kwargs):
-            pass
-        def validate(self):
-            return {"status": "pass", "checks": {}}
-

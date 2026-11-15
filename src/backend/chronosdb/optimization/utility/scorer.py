@@ -14,7 +14,7 @@ Recommended Default Weights:
 """
 
 from dataclasses import dataclass
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any
 
 @dataclass(frozen=True)
 class UtilityScore:

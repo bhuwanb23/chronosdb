@@ -86,11 +86,10 @@ class NormalizationEngine:
             max_values.get("delay", 720)
         )
         
-        recovery_cost_val = metrics.get("recovery_cost", metrics.get("cost", 0.0))
         recovery_cost_norm = self._normalize_cost(
-            recovery_cost_val,
-            min_values.get("recovery_cost", min_values.get("cost", 0.0)),
-            max_values.get("recovery_cost", max_values.get("cost", 500000))
+            metrics.get("recovery_cost", 0.0),
+            min_values.get("recovery_cost", 0.0),
+            max_values.get("recovery_cost", 500000)
         )
         
         capacity_usage_norm = self._normalize_cost(
@@ -150,10 +149,7 @@ class NormalizationEngine:
         ]
         
         for key in keys:
-            if key == "recovery_cost":
-                values = [m.get("recovery_cost", m.get("cost", 0.0)) for m in metrics_list]
-            else:
-                values = [m.get(key, 0.0) for m in metrics_list]
+            values = [m.get(key, 0.0) for m in metrics_list]
             ranges[key] = {
                 "min": min(values) if values else 0.0,
                 "max": max(values) if values else 1.0
