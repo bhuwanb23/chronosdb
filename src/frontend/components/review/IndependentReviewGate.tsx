@@ -1,8 +1,3 @@
-"""
-Phase 12S: Independent Review Gate (Updated)
-Judge-Facing User Experience
-"""
-
 import React from 'react';
 import { Card, Typography, Grid, Checkbox, Button } from '@mui/material';
 

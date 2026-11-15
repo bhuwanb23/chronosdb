@@ -1,8 +1,3 @@
-"""
-Phase 12L: Error and Degraded States (Updated)
-Judge-Facing User Experience
-"""
-
 import React from 'react';
 import { Card, Typography, Box, Button } from '@mui/material';
 

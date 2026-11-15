@@ -1,8 +1,3 @@
-"""
-Phase 12H: Evidence Explorer (Updated)
-Judge-Facing User Experience
-"""
-
 import React from 'react';
 import { Card, Typography, Grid, List, ListItem, ListItemText } from '@mui/material';
 

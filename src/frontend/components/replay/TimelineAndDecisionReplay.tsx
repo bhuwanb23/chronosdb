@@ -1,8 +1,3 @@
-"""
-Phase 12G: Timeline and Decision Replay (Updated)
-Judge-Facing User Experience
-"""
-
 import React from 'react';
 import { Slider, Typography, Box, Card } from '@mui/material';
 
@@ -25,7 +20,7 @@ export const TimelineAndDecisionReplay: React.FC<TimelineAndReplayProps> = ({
 }) => {
   const [currentStage, setCurrentStage] = React.useState(0);
   
-  const handleSliderChange = (event: React.SyntheticEvent, value: number | number[]) => {
+  const handleSliderChange = (event: Event, value: number | number[]) => {
     const stageIndex = typeof value === 'number' ? value : value[0];
     setCurrentStage(stageIndex);
     onStageChange(stageIndex);

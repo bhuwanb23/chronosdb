@@ -1,8 +1,3 @@
-"""
-Phase 12E: Dependency Cascade Visualization (Updated)
-Judge-Facing User Experience
-"""
-
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 

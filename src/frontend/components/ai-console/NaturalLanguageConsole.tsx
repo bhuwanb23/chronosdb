@@ -1,8 +1,3 @@
-"""
-Phase 12J: Natural Language Console (Updated)
-Judge-Facing User Experience
-"""
-
 import React, { useState } from 'react';
 import { TextField, Button, Box, Typography, Paper } from '@mui/material';
 

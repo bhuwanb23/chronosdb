@@ -1,10 +1,5 @@
-"""
-Phase 12F: Intervention Comparison Center (Updated)
-Judge-Facing User Experience
-"""
-
 import React from 'react';
-import { Card, Typography, Grid, BarChart, Bar } from '@mui/material';
+import { Card, Typography, Grid, Chip } from '@mui/material';
 
 interface Intervention {
   type: string;
@@ -50,16 +45,9 @@ export const InterventionComparisonCenter: React.FC<InterventionComparisonProps>
       
       {/* Bar Chart Implementation */}
       <div className="comparison-chart">
-        <BarChart>
-          {interventions.map(intervention => (
-            <Bar
-              key={intervention.type}
-              label={intervention.type}
-              value={intervention.utilityScore}
-              color={intervention.isRecommended ? 'primary' : 'default'}
-            />
-          ))}
-        </BarChart>
+        {interventions.map(intervention => (
+          <div key={intervention.type}>{intervention.type}: {intervention.utilityScore}</div>
+        ))}
       </div>
     </div>
   );

@@ -1,8 +1,3 @@
-"""
-Phase 12D: Executive Impact Dashboard (Updated)
-Judge-Facing User Experience
-"""
-
 import React from 'react';
 import { Card, Typography, Grid, Chip } from '@mui/material';
 

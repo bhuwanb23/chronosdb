@@ -1,8 +1,3 @@
-"""
-Phase 12K: Judge Demo Mode (Updated)
-Judge-Facing User Experience
-"""
-
 import React, { useState, useEffect } from 'react';
 import { Button, Typography, Box, CircularProgress } from '@mui/material';
 

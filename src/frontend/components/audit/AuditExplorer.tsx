@@ -1,8 +1,3 @@
-"""
-Phase 12I: Audit Explorer (Updated)
-Judge-Facing User Experience
-"""
-
 import React from 'react';
 import { Card, Typography, Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
@@ -59,11 +54,11 @@ export const AuditExplorer: React.FC<AuditExplorerProps> = ({
       {/* Replay History */}
       <Card className="replay-history">
         <Typography variant="h6">Replay History</Typography>
-        <List>
+        <div>
           {auditRecords.flatMap(audit => audit.replayHistory).map((replay, index) => (
             <Typography key={index} variant="body2">{replay}</Typography>
           ))}
-        </List>
+        </div>
       </Card>
     </div>
   );

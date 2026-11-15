@@ -1,8 +1,3 @@
-"""
-Phase 12N: Accessibility and Responsiveness (Updated)
-Judge-Facing User Experience
-"""
-
 import React from 'react';
 import { useTheme, useMediaQuery } from '@mui/material';
 
