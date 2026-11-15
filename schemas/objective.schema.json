@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Optimization Objective",
+  "type": "object",
+  "properties": {
+    "objective": {
+      "type": "string",
+      "enum": [
+        "MINIMIZE_REVENUE_RISK",
+        "MINIMIZE_SLA_BREACHES",
+        "MINIMIZE_DELAY",
+        "MINIMIZE_COST",
+        "MAXIMIZE_SERVICE_LEVEL",
+        "BALANCED_RECOVERY"
+      ]
+    },
+    "weights": {
+      "type": "object",
+      "properties": {
+        "revenue": { "type": "number", "minimum": 0, "maximum": 1 },
+        "sla": { "type": "number", "minimum": 0, "maximum": 1 },
+        "cost": { "type": "number", "minimum": 0, "maximum": 1 },
+        "delay": { "type": "number", "minimum": 0, "maximum": 1 },
+        "risk": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "required": ["revenue", "sla", "cost", "delay", "risk"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["objective", "weights"],
+  "additionalProperties": false
+}

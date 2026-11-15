@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScenarioRequest",
+  "description": "Typed schema for natural language to structured scenario conversion",
+  "type": "object",
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "enum": ["SUPPLIER_OUTAGE", "PRODUCTION_DELAY", "INVENTORY_SHORTAGE", "CONSTRAINT_CHANGE", "RECOVERY_PLAN"],
+      "description": "Type of event or request"
+    },
+    "supplier_id": {
+      "type": "string",
+      "pattern": "^SUP-[0-9]{4}$",
+      "description": "Validated supplier ID (e.g., SUP-0104)"
+    },
+    "duration_days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 365,
+      "description": "Duration in days (positive integer)"
+    },
+    "objective": {
+      "type": "string",
+      "enum": ["MINIMIZE_SLA_BREACHES", "MINIMIZE_REVENUE_RISK", "MAXIMIZE_RECOVERY", "MINIMIZE_COST"],
+      "description": "Optimization objective"
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "max_cost": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Maximum recovery cost in INR"
+        },
+        "max_delay": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Maximum acceptable delay in days"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["event_type", "supplier_id", "duration_days", "objective"],
+  "additionalProperties": false
+}

@@ -1,0 +1,32 @@
+-- Phase 10D: Identity and Access Control
+-- Principle: No component should have more access than required
+
+-- Roles
+-- READ_ONLY_APP: Can read operational records, Cannot write operational records
+-- SIMULATION_WRITER: Can write simulation outputs, Cannot modify source data
+-- AUDIT_WRITER: Can write audit logs, Cannot delete audit logs
+-- ADMIN_MIGRATION: Can schema upgrades, Cannot run application workflows
+
+CREATE ROLE READ_ONLY_APP;
+GRANT SELECT ON supply_chain.* TO READ_ONLY_APP;
+GRANT SELECT ON simulation.* TO READ_ONLY_APP;
+GRANT SELECT ON evidence.* TO READ_ONLY_APP;
+GRANT SELECT ON audit.* TO READ_ONLY_APP;
+
+CREATE ROLE SIMULATION_WRITER;
+GRANT SELECT, INSERT, UPDATE ON simulation.* TO SIMULATION_WRITER;
+GRANT SELECT ON supply_chain.* TO SIMULATION_WRITER;
+GRANT SELECT ON evidence.* TO SIMULATION_WRITER;
+
+CREATE ROLE AUDIT_WRITER;
+GRANT INSERT ON audit.* TO AUDIT_WRITER;
+REVOKE DELETE ON audit.* FROM AUDIT_WRITER;
+REVOKE UPDATE ON audit.* FROM AUDIT_WRITER;
+
+CREATE ROLE ADMIN_MIGRATION;
+GRANT ALL PRIVILEGES ON SCHEMA supply_chain TO ADMIN_MIGRATION WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON SCHEMA simulation TO ADMIN_MIGRATION WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON SCHEMA evidence TO ADMIN_MIGRATION WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON SCHEMA audit TO ADMIN_MIGRATION WITH GRANT OPTION;
+
+-- Phase 10D Status: COMPLETE
