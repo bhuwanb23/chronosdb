@@ -3,9 +3,12 @@ Phase 11S: Observability and Logging
 Backend and API Integration
 """
 
-from typing import Dict, Any
+from collections import deque
+from typing import Deque, Dict, Any, List
 import logging
 from datetime import datetime
+
+MAX_AUDIT_ENTRIES = 5000
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +25,7 @@ class AuditingMiddleware:
     """
     
     def __init__(self):
-        self.logs = []
+        self.logs: Deque[Dict[str, Any]] = deque(maxlen=MAX_AUDIT_ENTRIES)
         
     def log_request(self, correlation_id: str, endpoint: str, duration_ms: float, status: str = "SUCCESS") -> Dict[str, Any]:
         """
@@ -41,10 +44,10 @@ class AuditingMiddleware:
         
         return log_entry
         
-    def get_logs(self) -> list:
+    def get_logs(self) -> List[Dict[str, Any]]:
         """
-        Get all audit logs
+        Get the retained audit logs (bounded ring buffer)
         """
-        return self.logs
+        return list(self.logs)
 
 # Phase 11S Status: ✅ COMPLETE

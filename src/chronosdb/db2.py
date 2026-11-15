@@ -4,7 +4,10 @@ from collections.abc import Iterator
 from contextlib import contextmanager
 from typing import Any, Protocol
 
-import ibm_db
+try:  # The driver is optional at import time so health checks still run without it.
+    import ibm_db
+except ImportError:  # pragma: no cover - exercised only on machines without Db2
+    ibm_db = None  # type: ignore[assignment]
 
 from chronosdb.config import Settings
 
@@ -29,6 +32,9 @@ class Db2Client:
     @contextmanager
     def connection(self) -> Iterator[Any]:
         """Yield a connection and always close it after use."""
+
+        if ibm_db is None:
+            raise Db2UnavailableError("The Db2 driver is not installed")
 
         if not self.settings.db2_configured:
             raise Db2UnavailableError("Db2 configuration is incomplete")

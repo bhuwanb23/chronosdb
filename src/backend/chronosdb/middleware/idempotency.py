@@ -3,7 +3,7 @@ Phase 11M: Idempotency Engine
 Backend and API Integration
 """
 
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 import hashlib
 import time
 

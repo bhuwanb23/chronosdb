@@ -13,7 +13,7 @@ proof for every number it used.
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/IBM%20Db2-11.5-0F62FE.svg)](#platform)
 [![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12%20%7C%203.13-3776AB.svg)](https://www.python.org/)
-[![Security review](https://img.shields.io/badge/security%20review-2%20critical%20%C2%B7%204%20high-critical.svg)](#trust-and-auditability)
+[![Security](https://img.shields.io/badge/security-auth%20enforced%20%C2%B7%2068%20tests-2ea043.svg)](#trust-and-auditability)
 [![Status](https://img.shields.io/badge/status-release%20candidate-orange.svg)](#project-status)
 
 [Overview](#overview) · [Features](#features) · [How it works](#how-it-works) · [Results](#results-on-the-golden-scenario) · [Platform](#platform) · [Status](#project-status)
@@ -114,10 +114,16 @@ inputs — one consistency boundary instead of four. The trade-offs are in the D
 - **Hash-checked records** — the hash derives from the result body, so the record proves
   its own integrity.
 - **Measured determinism** — one hundred repeated runs collapse to a single hash.
-- **Known gaps, published** — an API security posture assessment found 2 critical and
-  4 high findings, led by missing authentication on every route and guardrails that are
-  still stubs. The existing security tests assert nothing and are not cited as evidence.
-  See the [security posture assessment](docs/security/api-security-posture-assessment.md).
+- **Authentication and roles on every business route** — API keys are compared in
+  constant time; operators may read and write, auditors may read and replay, and the
+  guardrail returns 403 for override attempts instead of passing them through.
+- **Integrity you can break** — audit records are sealed with a canonical hash, tampering
+  sets `integrity_verified` to false, and unknown decisions return 404 rather than a
+  fabricated record.
+- **68 behavioural security tests** cover auth, injection, tampering, validation and
+  idempotency. A published [posture assessment](docs/security/api-security-posture-assessment.md)
+  records 10 of 12 findings remediated, with two open (canned business values and
+  dependency scanning).
 
 ## Project status
 

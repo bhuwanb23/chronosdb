@@ -5,12 +5,13 @@ Backend and API Integration
 
 from fastapi import APIRouter, HTTPException, Depends
 from typing import Dict, Any
+from src.backend.chronosdb.api.security import WRITE, require_scope
 from src.backend.chronosdb.services.simulation_service import SimulationService
 
 router = APIRouter(prefix="/api/v1/scenarios", tags=["simulations"])
 service = SimulationService()
 
-@router.post("/{scenario_id}/simulate", response_model=Dict[str, Any])
+@router.post("/{scenario_id}/simulate", response_model=Dict[str, Any], dependencies=[Depends(require_scope(WRITE))])
 async def run_simulation(scenario_id: str, request: Dict[str, Any]):
     """
     POST /api/v1/scenarios/{id}/simulate
@@ -24,7 +25,7 @@ async def run_simulation(scenario_id: str, request: Dict[str, Any]):
     result = service.run_simulation(scenario_id, intervention)
     return {"status": "SUCCESS", "correlation_id": "CID-PLACEHOLDER", "data": result}
 
-@router.post("/{scenario_id}/simulate-all", response_model=Dict[str, Any])
+@router.post("/{scenario_id}/simulate-all", response_model=Dict[str, Any], dependencies=[Depends(require_scope(WRITE))])
 async def run_all_simulations(scenario_id: str):
     """
     POST /api/v1/scenarios/{id}/simulate-all

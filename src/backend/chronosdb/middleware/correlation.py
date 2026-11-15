@@ -3,9 +3,13 @@ Phase 11N: Correlation and Tracing
 Backend and API Integration
 """
 
+from collections import deque
 from typing import Dict, Any, Optional
 import uuid
 from datetime import datetime
+
+MAX_TRACES_PER_ID = 100
+MAX_CORRELATION_IDS = 1000
 
 class CorrelationEngine:
     """
@@ -16,7 +20,7 @@ class CorrelationEngine:
     """
     
     def __init__(self):
-        self.correlation_logs = {}
+        self.correlation_logs: Dict[str, deque] = {}
         
     def generate_correlation_id(self) -> str:
         """
@@ -39,7 +43,9 @@ class CorrelationEngine:
         }
         
         if correlation_id not in self.correlation_logs:
-            self.correlation_logs[correlation_id] = []
+            if len(self.correlation_logs) >= MAX_CORRELATION_IDS:
+                self.correlation_logs.pop(next(iter(self.correlation_logs)))
+            self.correlation_logs[correlation_id] = deque(maxlen=MAX_TRACES_PER_ID)
         self.correlation_logs[correlation_id].append(log_entry)
         
         return log_entry

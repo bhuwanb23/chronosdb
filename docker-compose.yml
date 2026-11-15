@@ -1,15 +1,21 @@
-version: '3.8'
+version: "3.8"
+
+# Phase 15L: Docker Packaging (hardened)
+#
+# No credential has a default. Compose refuses to start until the values are set
+# in the environment or in a local .env file that is not committed.
+# The database port is published on loopback only.
 
 services:
   db2:
     image: ibmcom/db2:11.5.9
     container_name: chronosdb_db2
     environment:
-      - DB2INST1_PASSWORD=secure_password_123
-      - DB2INST1_PORT=50000
-      - DB2INST1_DATABASE=CHRONOSDB
+      - LICENSE=accept
+      - DB2INST1_PASSWORD=${DB2INST1_PASSWORD:?set DB2INST1_PASSWORD in .env}
+      - DB2INST1_DATABASE=${DB2_DATABASE:-CHRONOSDB}
     ports:
-      - "50000:50000"
+      - "127.0.0.1:50000:50000"
     volumes:
       - db2_data:/database
     restart: unless-stopped
@@ -20,15 +26,17 @@ services:
     environment:
       - DB2_HOST=db2
       - DB2_PORT=50000
-      - DB2_DATABASE=CHRONOSDB
-      - DB2_USER=chronosdb
-      - DB2_PASSWORD=secure_password_123
-      - LLM_PROVIDER=LOCAL
-      - EMBEDDING_MODEL=bge-small-en-v1.5
-      - CHRONOSDB_API_KEY=chronosdb_api_key_123
-      - CHRONOSDB_AUDIT_KEY=chronosdb_audit_key_123
+      - DB2_DATABASE=${DB2_DATABASE:-CHRONOSDB}
+      - DB2_USER=${DB2_USER:?set DB2_USER in .env}
+      - DB2_PASSWORD=${DB2_PASSWORD:?set DB2_PASSWORD in .env}
+      - DB2_SCHEMA=${DB2_SCHEMA:-CHRONOSDB}
+      - LLM_PROVIDER=${LLM_PROVIDER:-LOCAL}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-bge-small-en-v1.5}
+      - CHRONOSDB_API_KEY=${CHRONOSDB_API_KEY:?set CHRONOSDB_API_KEY in .env}
+      - CHRONOSDB_AUDIT_KEY=${CHRONOSDB_AUDIT_KEY:?set CHRONOSDB_AUDIT_KEY in .env}
+      - CHRONOSDB_DOCS_ENABLED=false
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     depends_on:
       - db2
     restart: unless-stopped
@@ -37,14 +45,10 @@ services:
     build: ./docker/frontend
     container_name: chronosdb_frontend
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
     depends_on:
       - backend
     restart: unless-stopped
 
 volumes:
   db2_data:
-
-# Phase 15L: Docker Packaging
-# Preferred evaluation mode.
-# Single command deployment: docker compose up

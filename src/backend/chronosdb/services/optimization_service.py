@@ -39,7 +39,11 @@ class OptimizationService:
         }
         
         self.optimizations[optimization_id] = optimization
-        return {"recommended_candidate": recommended_candidate, "utility_score": utility_score}
+        return {
+            "optimization_id": optimization_id,
+            "recommended_candidate": recommended_candidate,
+            "utility_score": utility_score,
+        }
         
     def get_candidates(self, optimization_id: str) -> Optional[Dict[str, Any]]:
         """

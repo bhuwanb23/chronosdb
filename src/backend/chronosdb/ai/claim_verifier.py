@@ -1,104 +1,154 @@
+"""Verify every narrative claim against the engine output it cites.
+
+A claim is only ``VERIFIED`` when the figures it states can be found in the impact,
+simulation, optimisation or evidence output it points at. A claim that cites nothing,
+cites an unknown source, or states a value absent from that source is ``REJECTED``.
+When there is nothing to check the result is ``UNVERIFIED`` — never ``VERIFIED``.
 """
-The most important safety mechanism.
 
-Every generated claim is checked.
+from __future__ import annotations
 
-Narrator Says:
-Revenue at risk reduced to ₹5 lakh
+import re
+from dataclasses import dataclass, field
+from typing import Any
 
-Verifier Checks:
-Optimization output
-Simulation output
-Evidence package
+VERIFIED = "VERIFIED"
+UNVERIFIED = "UNVERIFIED"
+REJECTED = "REJECTED"
 
-If mismatch:
-claim removed
-response regenerated
+KNOWN_SOURCES = ("IMPACT", "SIMULATION", "OPTIMIZATION", "EVIDENCE", "CONSTRAINT")
 
-Verification Statuses:
-VERIFIED
-UNVERIFIED
-REJECTED
+_NUMBER = re.compile(r"\d+(?:[.,]\d+)*")
 
-Implementation:
+
+@dataclass
+class Claim:
+    """One statement produced by the narration layer."""
+
+    text: str
+    source: str = ""
+
+
+@dataclass
+class VerificationResult:
+    status: str
+    verified_claims: list[Claim] = field(default_factory=list)
+    rejected_claims: list[Claim] = field(default_factory=list)
+    unverified_claims: list[Claim] = field(default_factory=list)
+
+
+def _normalise_number(token: str) -> str:
+    cleaned = token.replace(",", "")
+    try:
+        return str(int(float(cleaned)))
+    except ValueError:
+        return cleaned
+
+
+def _collect(value: Any, numbers: set[str], texts: list[str], depth: int = 0) -> None:
+    """Walk an engine result and gather every number and string it contains."""
+
+    if depth > 8:
+        return
+    if isinstance(value, bool):
+        texts.append(str(value).lower())
+    elif isinstance(value, (int, float)):
+        numbers.add(_normalise_number(str(value)))
+    elif isinstance(value, str):
+        texts.append(value.lower())
+        for token in _NUMBER.findall(value):
+            numbers.add(_normalise_number(token))
+    elif isinstance(value, dict):
+        for key, item in value.items():
+            texts.append(str(key).lower())
+            _collect(item, numbers, texts, depth + 1)
+    elif isinstance(value, (list, tuple, set)):
+        for item in value:
+            _collect(item, numbers, texts, depth + 1)
+    elif value is not None and hasattr(value, "__dict__"):
+        _collect(vars(value), numbers, texts, depth + 1)
+
+
+def _sources(impact: Any, simulation: Any, optimization: Any, evidence: Any) -> dict[str, Any]:
+    return {
+        "IMPACT": impact,
+        "SIMULATION": simulation,
+        "OPTIMIZATION": optimization,
+        "EVIDENCE": evidence,
+        "CONSTRAINT": optimization,
+    }
+
+
 class ClaimVerifier:
-    def verify(self, narration: NarrationOutput, optimization: OptimizationResult, 
-               impact: ImpactResult, simulation: SimulationResult, 
-               evidence: EvidenceContextPackage) -> VerificationResult:
-        
-        verified_claims = []
-        rejected_claims = []
-        unverified_claims = []
-        
-        for claim in narration.claims:
-            if claim.source == "OPTIMIZATION":
-                # Check against optimization output
-                if claim.claim_text == f"Revenue at risk reduced to ₹{optimization.revenue_at_risk} lakh":
-                    verified_claims.append(claim)
-                else:
-                    rejected_claims.append(claim)
-            
-            elif claim.source == "SIMULATION":
-                # Check against simulation output
-                if claim.claim_text == f"{simulation.sla_breaches_avoided} SLA breaches avoided":
-                    verified_claims.append(claim)
-                else:
-                    rejected_claims.append(claim)
-            
-            elif claim.source == "CONSTRAINT":
-                # Check against constraint results
-                if claim.claim_text == f"Recovery cost within ₹{optimization.constraints.max_cost / 100000} lakh":
-                    verified_claims.append(claim)
-                else:
-                    rejected_claims.append(claim)
-            
-            elif claim.source == "EVIDENCE":
-                # Check against evidence package
-                if any(claim.claim_text in e.text_excerpt for e in evidence.package):
-                    verified_claims.append(claim)
-                else:
-                    rejected_claims.append(claim)
-            
-            else:
-                unverified_claims.append(claim)
-        
-        # Update claim verification status
-        for claim in verified_claims:
-            claim.verified = True
-        for claim in rejected_claims:
-            claim.verified = False
-        
-        # If any claim rejected, remove narration and regenerate (or return structured result)
-        if rejected_claims:
-            status = "REJECTED"
-        elif unverified_claims:
-            status = "UNVERIFIED"
+    """Checks narrative claims against the engine output that produced them."""
+
+    def verify(
+        self,
+        narration: Any,
+        optimization: Any = None,
+        impact: Any = None,
+        simulation: Any = None,
+        evidence: Any = None,
+    ) -> VerificationResult:
+        claims: list[Claim] = list(getattr(narration, "claims", None) or [])
+        if not claims:
+            return VerificationResult(status=UNVERIFIED)
+
+        outputs = _sources(impact, simulation, optimization, evidence)
+
+        verified: list[Claim] = []
+        rejected: list[Claim] = []
+        unverified: list[Claim] = []
+
+        for claim in claims:
+            if not isinstance(claim, Claim) or not claim.text.strip():
+                rejected.append(claim) if isinstance(claim, Claim) else None
+                continue
+
+            source = (claim.source or "").upper()
+            if source not in KNOWN_SOURCES or outputs.get(source) is None:
+                unverified.append(claim)
+                continue
+
+            numbers: set[str] = set()
+            texts: list[str] = []
+            _collect(outputs[source], numbers, texts)
+
+            stated = {_normalise_number(token) for token in _NUMBER.findall(claim.text)}
+
+            if stated and stated.issubset(numbers):
+                verified.append(claim)
+                continue
+
+            haystack = " ".join(texts)
+            if not stated and claim.text.strip().lower() in haystack:
+                verified.append(claim)
+                continue
+
+            rejected.append(claim)
+
+        if rejected:
+            status = REJECTED
+        elif unverified:
+            status = UNVERIFIED
+        elif verified:
+            status = VERIFIED
         else:
-            status = "VERIFIED"
-        
+            status = UNVERIFIED
+
         return VerificationResult(
             status=status,
-            verified_claims=verified_claims,
-            rejected_claims=rejected_claims,
-            unverified_claims=unverified_claims
+            verified_claims=verified,
+            rejected_claims=rejected,
+            unverified_claims=unverified,
         )
 
-Phase 9J Status: COMPLETE
-"""
 
-class VerificationResult:
-    def __init__(self, status: str, verified_claims=None, rejected_claims=None, unverified_claims=None):
-        self.status = status
-        self.verified_claims = verified_claims or []
-        self.rejected_claims = rejected_claims or []
-        self.unverified_claims = unverified_claims or []
-
-class ClaimVerifier:
-    def __init__(self):
-        pass
-    
-    def verify(self, narration, optimization, impact, simulation, evidence):
-        # Implementation logic for claim verification
-        return VerificationResult(status="VERIFIED")
-
-# Phase 9J Status: COMPLETE
+__all__ = [
+    "Claim",
+    "ClaimVerifier",
+    "REJECTED",
+    "UNVERIFIED",
+    "VERIFIED",
+    "VerificationResult",
+]

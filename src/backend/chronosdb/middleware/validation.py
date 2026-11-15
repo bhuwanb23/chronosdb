@@ -32,17 +32,26 @@ class ValidationFramework:
         
         errors = []
         
-        # Check schema
+        # Check schema and types
         if not supplier_id or not duration_days or not objective:
             errors.append("Missing required fields")
-            
+
+        if supplier_id is not None and not isinstance(supplier_id, str):
+            errors.append("supplier_id must be a string")
+
+        if objective is not None and not isinstance(objective, str):
+            errors.append("objective must be a string")
+
         # Check supplier
-        if supplier_id and supplier_id not in self.valid_suppliers:
+        if isinstance(supplier_id, str) and supplier_id and supplier_id not in self.valid_suppliers:
             errors.append(f"Unknown supplier: {supplier_id}")
-            
+
         # Check dates
-        if duration_days and (duration_days <= 0 or duration_days > 365):
-            errors.append("Invalid duration (must be 1-365 days)")
+        if duration_days is not None:
+            if isinstance(duration_days, bool) or not isinstance(duration_days, int):
+                errors.append("Invalid duration (must be an integer between 1 and 365 days)")
+            elif duration_days <= 0 or duration_days > 365:
+                errors.append("Invalid duration (must be 1-365 days)")
             
         # Check objective
         valid_objectives = ["MINIMIZE_SLA_BREACH", "MINIMIZE_REVENUE_RISK", "BALANCED_RECOVERY"]

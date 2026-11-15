@@ -7,8 +7,9 @@ import pytest
 import time
 from fastapi.testclient import TestClient
 from src.backend.chronosdb.api.app import app
+from tests.conftest import AUDITOR_HEADERS, OPERATOR_HEADERS
 
-client = TestClient(app)
+client = TestClient(app, headers=OPERATOR_HEADERS)
 
 class TestPerformanceAndLoad:
     """
@@ -115,7 +116,7 @@ class TestPerformanceAndLoad:
         
         # Replay decision
         start = time.time()
-        response = client.post(f"/api/v1/replay/{optimization_id}")
+        response = client.post(f"/api/v1/replay/{optimization_id}", headers=AUDITOR_HEADERS)
         elapsed = (time.time() - start) * 1000
         assert response.status_code == 200
         assert elapsed < 2000, f"Replay took {elapsed}ms, expected <2000ms"
