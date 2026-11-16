@@ -10,7 +10,9 @@ every response carries baseline security headers.
 from datetime import datetime
 
 from fastapi import FastAPI, Request
-from starlette.responses import Response
+from fastapi.exceptions import RequestValidationError
+from starlette.exceptions import HTTPException as StarletteHTTPException
+from starlette.responses import JSONResponse, Response
 
 from chronosdb.config import get_settings
 from src.backend.chronosdb.middleware.auditing import AuditingMiddleware
@@ -50,11 +52,20 @@ app.include_router(ai_router)
 app.include_router(audit_router)
 app.include_router(health_router)
 
+SECURITY_HEADERS = {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "no-referrer",
+    "Content-Security-Policy": "default-src 'none'; frame-ancestors 'none'",
+    "Cache-Control": "no-store",
+}
+
 @app.get("/health", tags=["health"])
-async def root_health():
+async def root_health(request: Request):
     """Phase 15M evaluator-facing health endpoint."""
     return {
         "status": "READY",
+        "correlation_id": getattr(request.state, "correlation_id", ""),
         "checks": {
             "backend": "pass",
             "db2": "pass",
@@ -66,10 +77,11 @@ async def root_health():
 
 
 @app.get("/readiness", tags=["health"])
-async def root_readiness():
+async def root_readiness(request: Request):
     """Phase 15M evaluator-facing readiness endpoint."""
     return {
         "status": "READY",
+        "correlation_id": getattr(request.state, "correlation_id", ""),
         "checks": {
             "backend": "pass",
             "db2": "pass",
@@ -78,6 +90,39 @@ async def root_readiness():
             "simulation": "pass",
         },
     }
+
+
+@app.exception_handler(StarletteHTTPException)
+async def http_exception_handler(
+    request: Request, exc: StarletteHTTPException
+) -> JSONResponse:
+    return JSONResponse(
+        status_code=exc.status_code,
+        headers=exc.headers,
+        content={
+            "detail": exc.detail,
+            "correlation_id": getattr(request.state, "correlation_id", ""),
+        },
+    )
+
+
+@app.exception_handler(RequestValidationError)
+async def request_validation_exception_handler(
+    request: Request,
+    exc: RequestValidationError,
+) -> JSONResponse:
+    errors = []
+    for error in exc.errors():
+        safe_error = dict(error)
+        safe_error.pop("input", None)
+        errors.append(safe_error)
+    return JSONResponse(
+        status_code=422,
+        content={
+            "detail": errors,
+            "correlation_id": getattr(request.state, "correlation_id", ""),
+        },
+    )
 
 
 @app.middleware("http")
@@ -92,7 +137,17 @@ async def correlation_and_auditing_middleware(request: Request, call_next):
     request.state.correlation_id = correlation_id
 
     # Process request
-    response: Response = await call_next(request)
+    try:
+        response: Response = await call_next(request)
+    except Exception:
+        response = JSONResponse(
+            status_code=500,
+            content={
+                "status": "ERROR",
+                "detail": "Internal server error",
+                "correlation_id": correlation_id,
+            },
+        )
 
     # Calculate duration
     duration_ms = (datetime.utcnow() - start_time).total_seconds() * 1000

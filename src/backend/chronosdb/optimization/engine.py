@@ -3,29 +3,29 @@
 from __future__ import annotations
 
 import time
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Mapping, Sequence
+from typing import Any
 
 from .constraints import ConstraintRegistry
 from .contracts import (
+    SCORING_POLICY_VERSION,
+    TIE_BREAK_POLICY,
     CandidateMetrics,
     DecisionProvenance,
     FeasibilityStatus,
-    ParetoResult,
-    ParetoStatus,
+    NoFeasibleCandidatesError,
     OptimizationObjective,
     OptimizationResult,
-    NoFeasibleCandidatesError,
     OptimizationValidationError,
-    SCORING_POLICY_VERSION,
-    TIE_BREAK_POLICY,
+    ParetoResult,
+    ParetoStatus,
     UtilityScore,
     canonical_hash,
 )
 from .feasibility import FeasibilityValidationEngine
 from .handoff import HandoffEngine
-from .review import ReviewGate
 from .ledger import OptimizationLedger
 from .normalization import NormalizationEngine
 from .observability import OptimizationObservability
@@ -33,6 +33,7 @@ from .pareto import ParetoEngine
 from .phase6 import Phase6CandidateBuilder
 from .provenance import ProvenanceTracker
 from .recommendation import RecommendationSelector
+from .review import ReviewGate
 from .sensitivity import SensitivityAnalyzer
 from .utility import UtilityScoringEngine
 
@@ -69,6 +70,7 @@ class OptimizationEngine:
         overlays_path: Path | None = None,
         run_id: str | None = None,
         ledger: OptimizationLedger | None = None,
+        scenario_id: str | None = None,
     ) -> OptimizationResult:
         started = time.perf_counter()
         self.observability.clear()
@@ -86,7 +88,7 @@ class OptimizationEngine:
         )
         return self._optimize_candidates(
             handoff.candidates,
-            scenario_id=handoff.scenario_id,
+            scenario_id=scenario_id or handoff.scenario_id,
             baseline_state_hash=handoff.baseline_state_hash,
             rule_set_version=handoff.rule_set_version,
             run_id=run_id,
