@@ -22,6 +22,84 @@ proof for every number it used.
 
 ---
 
+## Getting started
+
+### Prerequisites
+
+- Python 3.11, 3.12, or 3.13
+- Git
+- Docker Desktop and Docker Compose for the Db2-backed stack
+- IBM Db2 credentials when running against Db2
+
+The deterministic engine and test suite can run locally without a live Db2
+instance. Db2 is required for database-backed persistence and the full Compose
+stack.
+
+### Local Python setup
+
+From the repository root:
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+$env:PYTHONPATH = "$PWD\src"
+```
+
+Copy `.env.example` to `.env` and replace every `change-me` value before
+starting the API:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+For local API authentication, set `CHRONOSDB_API_KEY` and
+`CHRONOSDB_AUDIT_KEY` in `.env`. Requests must send the corresponding value in
+the `X-API-Key` header.
+
+Start the development API:
+
+```powershell
+python -m uvicorn backend.chronosdb.api.app:app --host 127.0.0.1 --port 8000
+```
+
+The API is available at `http://127.0.0.1:8000`; interactive documentation is
+disabled unless `APP_ENV=development` or `CHRONOSDB_DOCS_ENABLED=true`.
+
+### Run validation
+
+```powershell
+python -m pytest -q tests/optimization tests/evidence
+python scripts/validate_phase7.py
+```
+
+Phase 7 and Phase 8 implementation details and gate evidence are documented in
+[the Phase 7 audit](docs/plans/phase_7/PHASE_7_END_TO_END_AUDIT_REPORT.md) and
+[the Phase 8 audit](docs/plans/phase_8/PHASE_8_END_TO_END_AUDIT_REPORT.md).
+
+### Start the Db2-backed stack
+
+Create `.env` with non-default local credentials, then run:
+
+```powershell
+docker compose up --build
+```
+
+Before running Compose, fill in `DB2INST1_PASSWORD`, `DB2_PASSWORD`,
+`DB2_USER`, `DB2_USERNAME`, `CHRONOSDB_API_KEY`, and
+`CHRONOSDB_AUDIT_KEY` in `.env`; the template intentionally leaves these
+credentials blank.
+
+The backend listens on `http://127.0.0.1:8000` and the frontend on
+`http://127.0.0.1:3000`. Stop the stack with `docker compose down`; add
+`-v` only when you intentionally want to delete the local Db2 volume.
+
+For deployment environments, bind the API to `0.0.0.0` and the platform
+provided `PORT` rather than the loopback development address.
+
+---
+
 <img src="assets/readme/hero.png" alt="ChronosDB: a supplier outage exposes ₹16,00,000 of revenue across two customer orders, seven recovery candidates are evaluated, and one is recommended at ₹1,32,000" />
 
 ---

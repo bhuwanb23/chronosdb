@@ -1385,7 +1385,7 @@
     "requires_human_review": false,
     "review_type": "domain_optimization_audit_judge"
   },
-  "runtime_ms": 2249.511200003326,
+  "runtime_ms": 1030.9370000031777,
   "scenario_id": "SCN-GOLD-001",
   "sensitivity": {
     "base_winner": "EXPEDITE",

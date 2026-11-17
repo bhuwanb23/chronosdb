@@ -154,7 +154,7 @@
     },
     {
       "check": "optimization_performance_budget",
-      "detail": 0.011973199958447367,
+      "detail": 0.0047113999899011105,
       "passed": true
     }
   ],

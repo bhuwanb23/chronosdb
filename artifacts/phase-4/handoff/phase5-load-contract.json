@@ -20300,7 +20300,7 @@
     },
     {
       "check_constraints": [],
-      "checksum": "9f24bfda01e8ac379f6affa67c6e7eae1336873fccc429092424d03cb3150398",
+      "checksum": "6973f6f6810e9bda35331bab312b9bb32602fc588ab4e1217a3b5aa6b553fa92",
       "column_mapping": {
         "access_class": {
           "db2_type": "VARCHAR(256)",
